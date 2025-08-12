@@ -23,7 +23,17 @@ namespace AnimalAnatomy
             Init();
         }
 
+        void Update()
+        {
+            UpdateViewRotation();
+        }
+
         public void Init()
+        {
+
+        }
+
+        void UpdateViewRotation()
         {
 
         }
