@@ -6,6 +6,19 @@ namespace AnimalAnatomy
     {
         public static CameraController Instance;
 
+        [SerializeField] Camera mainCamera;
+        [SerializeField] float rotationSpeed = 5f;
+
+        [Header("Camera Zoom")]
+        //ћинимальное, базовое и максимальное рассто€ние камеры
+        public Vector3 cameraDistanceLimits = new Vector3(1f, 5f, 10f);
+        public float scrollSpeed = 1.0f;
+
+        Vector2 lastMousePosition;
+        float xRotation = 0f;
+
+        float currentZoom;
+
         void Awake()
         {
             if (Instance != null)
@@ -26,16 +39,53 @@ namespace AnimalAnatomy
         void Update()
         {
             UpdateViewRotation();
+            UpdateViewZoom();
         }
 
         public void Init()
         {
-
+            currentZoom = cameraDistanceLimits.y;
+            mainCamera.transform.localPosition = new Vector3(0, 0, cameraDistanceLimits.y);
         }
 
         void UpdateViewRotation()
         {
+            if (Input.GetMouseButton(0))
+            {
+                Vector3 currentMousePosition = Input.mousePosition;
 
+                if (Input.GetMouseButtonDown(0))
+                {
+                    lastMousePosition = currentMousePosition;
+                    return;
+                }
+
+                // ¬ычисл€ем разницу движени€ мыши по ос€м X и Y
+                float mouseDeltaX = - (currentMousePosition.x - lastMousePosition.x) * rotationSpeed * Time.deltaTime;
+                float mouseDeltaY = (currentMousePosition.y - lastMousePosition.y) * rotationSpeed * Time.deltaTime;
+
+                // ќбновл€ем угол поворота по оси X (вертикальное вращение)
+                xRotation -= mouseDeltaY; // ћинус дл€ интуитивного направлени€
+                xRotation = Mathf.Clamp(xRotation, -89f, 89f); // ќграничиваем угол от -89 до 89 градусов
+
+                // ѕримен€ем вращение: по оси Y Ч горизонтально, по оси X Ч вертикально
+                transform.rotation = Quaternion.Euler(xRotation, transform.eulerAngles.y - mouseDeltaX, 0);
+
+                lastMousePosition = currentMousePosition;
+            }
+        }
+
+        void UpdateViewZoom()
+        {
+            if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+                currentZoom -= scrollSpeed;
+            else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+                currentZoom += scrollSpeed;
+
+            currentZoom = Mathf.Clamp(currentZoom, cameraDistanceLimits.x, cameraDistanceLimits.z);
+            
+            mainCamera.transform.localPosition = new Vector3(0, 0, -currentZoom);
+            
         }
     }
 }
