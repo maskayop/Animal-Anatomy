@@ -9,6 +9,7 @@ namespace AnimalAnatomy
     public class BodyPartsList
     {
         public GameController.SystemType systemType;
+        public bool isActive = true;
         public List<BodyPartInfo> bodyParts = new List<BodyPartInfo>();
     }
 
@@ -16,7 +17,7 @@ namespace AnimalAnatomy
     {
         public static GameController Instance;
 
-        public enum SystemType { skeleton, muscles, nervous, circulatory, sensory, respiratory, digestive, excretory, reproductive, skin }
+        public enum SystemType { skeleton, muscles, nervous, circulatory, sensory, respiratory, digestive, excretory, reproductive, skin, lymphatic }
         public SystemType systemType;
 
         public List<BodyPartInfo> allBodyParts = new List<BodyPartInfo>();
@@ -67,6 +68,8 @@ namespace AnimalAnatomy
                     newBodyPartsList.systemType = SystemType.reproductive;
                 else if (i == 9)
                     newBodyPartsList.systemType = SystemType.skin;
+                else if (i == 10)
+                    newBodyPartsList.systemType = SystemType.lymphatic;
 
                 bodyPartsLists.Add(newBodyPartsList);
             }
@@ -105,7 +108,10 @@ namespace AnimalAnatomy
                 for (int l = 0; l < bodyPartsLists[i].bodyParts.Count; l++)
                 {
                     if (bodyPartsLists[i].systemType == type)
+                    {
+                        bodyPartsLists[i].isActive = state;
                         bodyPartsLists[i].bodyParts[l].gameObject.SetActive(state);
+                    }
                 }
             }
         }

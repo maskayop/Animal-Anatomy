@@ -114,6 +114,14 @@ namespace AnimalAnatomy
                 GameController.Instance.DisableSystem(GameController.SystemType.skin);
         }
 
+        public void ActivateSystemLymphatic(bool state)
+        {
+            if (state)
+                GameController.Instance.EnableSystem(GameController.SystemType.lymphatic);
+            else
+                GameController.Instance.DisableSystem(GameController.SystemType.lymphatic);
+        }
+
         public void ActivateAllSystems(bool state)
         {
             if (state)
@@ -128,6 +136,7 @@ namespace AnimalAnatomy
                 GameController.Instance.EnableSystem(GameController.SystemType.excretory);
                 GameController.Instance.EnableSystem(GameController.SystemType.reproductive);
                 GameController.Instance.EnableSystem(GameController.SystemType.skin);
+                GameController.Instance.EnableSystem(GameController.SystemType.lymphatic);
             }
             else
             {
@@ -141,6 +150,7 @@ namespace AnimalAnatomy
                 GameController.Instance.DisableSystem(GameController.SystemType.excretory);
                 GameController.Instance.DisableSystem(GameController.SystemType.reproductive);
                 GameController.Instance.DisableSystem(GameController.SystemType.skin);
+                GameController.Instance.DisableSystem(GameController.SystemType.lymphatic);
             }
         }
     }
