@@ -26,6 +26,8 @@ namespace AnimalAnatomy
         void Update()
         {
             SelectBodyPart();
+            ActivateSystems();
+            UpdateView();
         }
 
         public void Init()
@@ -43,10 +45,13 @@ namespace AnimalAnatomy
                 {
                     BodyPartInfo info = hit.collider.GetComponentInParent<BodyPartInfo>();
 
-                    if (info != null)
-                    {
-                        GameController.Instance.SelectBodyPart(info);                        
-                    }
+                    if (info)
+                        GameController.Instance.SelectBodyPart(info);
+                }
+                else
+                {
+                    if (!GameController.Instance.isolated)
+                        GameController.Instance.UnSelectBodyPart();
                 }
             }
 
@@ -55,13 +60,26 @@ namespace AnimalAnatomy
                 if (GameController.Instance.isolated)
                     GameController.Instance.SetIsolatedMode(false);
                 else
-                    GameController.Instance.UnSelectBodyPart();                
+                    GameController.Instance.UnSelectBodyPart();
             }
 
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 GameController.Instance.SetIsolatedMode(!GameController.Instance.isolated);
             }
+        }
+
+        void UpdateView()
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                CameraController.Instance.UpdatePosition();
+            }
+        }
+
+        void ActivateSystems()
+        {
+
         }
     }
 }

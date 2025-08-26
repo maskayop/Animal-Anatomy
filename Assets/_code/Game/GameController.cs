@@ -144,6 +144,8 @@ namespace AnimalAnatomy
             selectedBodyPart = info;
             UIMainCanvas.Instance.SelectBodyPart(info);
             info.Select();
+
+            
         }
 
         public void UnSelectBodyPart()
@@ -170,7 +172,7 @@ namespace AnimalAnatomy
 
             isolated = state;
 
-            if (state == true)
+            if (state)
             {
                 selectedBodyPart.UnSelect();
 
@@ -194,6 +196,8 @@ namespace AnimalAnatomy
                     }
                 }
             }
+
+            CameraController.Instance.UpdatePosition();
         }
     }
 }

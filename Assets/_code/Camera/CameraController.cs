@@ -19,6 +19,7 @@ namespace AnimalAnatomy
         float xRotation = 0f;
 
         float currentZoom;
+        Vector3 defaultPosition;
 
         void Awake()
         {
@@ -47,6 +48,7 @@ namespace AnimalAnatomy
         {
             currentZoom = cameraDistanceLimits.y;
             mainCamera.transform.localPosition = new Vector3(0, 0, cameraDistanceLimits.y);
+            defaultPosition = transform.position;
         }
 
         void UpdateViewRotation()
@@ -85,8 +87,20 @@ namespace AnimalAnatomy
 
             currentZoom = Mathf.Clamp(currentZoom, cameraDistanceLimits.x, cameraDistanceLimits.z);
             
-            mainCamera.transform.localPosition = new Vector3(0, 0, -currentZoom);
-            
+            mainCamera.transform.localPosition = new Vector3(0, 0, -currentZoom);            
+        }
+
+        public void UpdatePosition()
+        {
+            if (GameController.Instance.selectedBodyPart != null)
+                transform.position = GetCenterOfObject();
+            else
+                transform.position = defaultPosition;
+        }
+
+        Vector3 GetCenterOfObject()
+        {
+            return GameController.Instance.selectedBodyPart.meshRenderer.bounds.center;
         }
     }
 }
