@@ -23,9 +23,45 @@ namespace AnimalAnatomy
             Init();
         }
 
+        void Update()
+        {
+            SelectBodyPart();
+        }
+
         public void Init()
         {
 
+        }
+
+        void SelectBodyPart()
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                Ray ray = CameraController.Instance.mainCamera.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(ray, out RaycastHit hit, 100000, 1 << 6))
+                {
+                    BodyPartInfo info = hit.collider.GetComponentInParent<BodyPartInfo>();
+
+                    if (info != null)
+                    {
+                        GameController.Instance.SelectBodyPart(info);                        
+                    }
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (GameController.Instance.isolated)
+                    GameController.Instance.SetIsolatedMode(false);
+                else
+                    GameController.Instance.UnSelectBodyPart();                
+            }
+
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                GameController.Instance.SetIsolatedMode(!GameController.Instance.isolated);
+            }
         }
     }
 }

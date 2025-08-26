@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 1910314505550734274}
   - component: {fileID: 2218433865814243035}
   - component: {fileID: 7882596312061283144}
+  - component: {fileID: -2148156105614684158}
   - component: {fileID: 8594607977435300836}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Eye L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9103484930961366303, guid: f91939b864ca003418327dacc2f6e267, type: 3}
+  - {fileID: 2100000, guid: d9cd8fef52125784480d638c017dc128, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -90,6 +91,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-2148156105614684158
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4483620240489456497}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6509229799927629192, guid: f91939b864ca003418327dacc2f6e267, type: 3}
 --- !u!114 &8594607977435300836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,3 +126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartInfo
   systemType: 9
+  partName: 
+  partDescription: 
+  meshRenderer: {fileID: 0}

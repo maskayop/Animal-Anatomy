@@ -48,14 +48,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 3a47971d345ea5f459ec2d61068a7e55, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 218a646144799ed4083b6358f63bb0dc, type: 2}
     - target: {fileID: 919132149155446097, guid: 3a47971d345ea5f459ec2d61068a7e55, type: 3}
       propertyPath: m_Name
       value: Transverse Pectoral
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3a47971d345ea5f459ec2d61068a7e55, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3a47971d345ea5f459ec2d61068a7e55, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7765337673429752171}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3a47971d345ea5f459ec2d61068a7e55, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4826744505620478791}
@@ -65,6 +76,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3a47971d345ea5f459ec2d61068a7e55, type: 3}
   m_PrefabInstance: {fileID: 19062280150691189}
   m_PrefabAsset: {fileID: 0}
+--- !u!64 &-7765337673429752171
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901512514728136740}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -727509162359257782, guid: 3a47971d345ea5f459ec2d61068a7e55, type: 3}
 --- !u!114 &4826744505620478791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,3 +111,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartInfo
   systemType: 1
+  partName: 
+  partDescription: 
+  meshRenderer: {fileID: 0}

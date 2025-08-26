@@ -2,10 +2,8 @@ using UnityEngine;
 
 namespace AnimalAnatomy
 {
-    public class UISystemActivatingButton : MonoBehaviour
+    public class UIButtonIsolatedMode : MonoBehaviour
     {
-        public GameController.SystemType systemType;
-
         [SerializeField] GameObject tumblerOn;
         [SerializeField] GameObject tumblerOff;
 
@@ -18,21 +16,23 @@ namespace AnimalAnatomy
 
         public void Init()
         {
-            isActive = false;
+            isActive = true;
             SwitchActiveState();
         }
 
         public void SwitchActiveState()
         {
-            isActive = !isActive;
+            SetActiveState(!isActive);
+
+            GameController.Instance.SetIsolatedMode(isActive);
+        }
+
+        public void SetActiveState(bool state)
+        {
+            isActive = state;
 
             tumblerOn.SetActive(isActive);
             tumblerOff.SetActive(!isActive);
-
-            if(isActive)
-                GameController.Instance.EnableSystem(systemType);
-            else
-                GameController.Instance.DisableSystem(systemType);
         }
     }
 }

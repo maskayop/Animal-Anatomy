@@ -6,11 +6,12 @@ namespace AnimalAnatomy
     {
         public static CameraController Instance;
 
-        [SerializeField] Camera mainCamera;
+        public Camera mainCamera;
+
         [SerializeField] float rotationSpeed = 5f;
 
         [Header("Camera Zoom")]
-        //Минимальное, базовое и максимальное расстояние камеры
+        //Минимальное, базовое, максимальное расстояние камеры
         public Vector3 cameraDistanceLimits = new Vector3(1f, 5f, 10f);
         public float scrollSpeed = 1.0f;
 

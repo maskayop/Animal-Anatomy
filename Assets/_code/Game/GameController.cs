@@ -23,6 +23,13 @@ namespace AnimalAnatomy
         public List<BodyPartInfo> allBodyParts = new List<BodyPartInfo>();
         public List<BodyPartsList> bodyPartsLists = new List<BodyPartsList>();
 
+        [Header("Materials")]
+        public Material selectedMaterial;
+
+        [Header("Info")]
+        public BodyPartInfo selectedBodyPart;
+        public bool isolated = false;
+
         void Awake()
         {
             if (Instance != null)
@@ -75,6 +82,8 @@ namespace AnimalAnatomy
             }
 
             StartCoroutine(UpdateBodyPartsLists());
+
+            UnSelectBodyPart();
         }
 
         IEnumerator UpdateBodyPartsLists()
@@ -111,6 +120,77 @@ namespace AnimalAnatomy
                     {
                         bodyPartsLists[i].isActive = state;
                         bodyPartsLists[i].bodyParts[l].gameObject.SetActive(state);
+                    }
+                }
+            }
+        }
+
+        public void ActivateAllSystems(bool state)
+        {
+            for (int i = 0; i < bodyPartsLists.Count; i++)
+            {
+                for (int l = 0; l < bodyPartsLists[i].bodyParts.Count; l++)
+                {
+                    bodyPartsLists[i].isActive = state;
+                    bodyPartsLists[i].bodyParts[l].gameObject.SetActive(state);
+                }
+            }
+        }
+
+        public void SelectBodyPart(BodyPartInfo info)
+        {
+            UnSelectBodyPart();
+
+            selectedBodyPart = info;
+            UIMainCanvas.Instance.SelectBodyPart(info);
+            info.Select();
+        }
+
+        public void UnSelectBodyPart()
+        {
+            selectedBodyPart = null;
+            UIMainCanvas.Instance.UnSelectBodyPart();
+
+            for (int i = 0; i < allBodyParts.Count; i++)
+            {
+                allBodyParts[i].UnSelect();
+            }
+        }
+
+        public void SetIsolatedMode(bool state)
+        {
+            IsolateBodyPart(state);
+            UIMainCanvas.Instance.SetIsolatedMode(state);
+        }
+
+        void IsolateBodyPart(bool state)
+        {
+            if (selectedBodyPart == null)
+                return;
+
+            isolated = state;
+
+            if (state == true)
+            {
+                selectedBodyPart.UnSelect();
+
+                for (int i = 0; i < allBodyParts.Count; i++)
+                {
+                    allBodyParts[i].gameObject.SetActive(false);
+
+                    if (allBodyParts[i] == selectedBodyPart)
+                        selectedBodyPart.gameObject.SetActive(true);
+                }
+            }
+            else
+            {
+                selectedBodyPart.Select();
+
+                for (int i = 0; i < bodyPartsLists.Count; i++)
+                {
+                    for (int l = 0; l < bodyPartsLists[i].bodyParts.Count; l++)
+                    {
+                        bodyPartsLists[i].bodyParts[l].gameObject.SetActive(bodyPartsLists[i].isActive);
                     }
                 }
             }

@@ -48,14 +48,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 218a646144799ed4083b6358f63bb0dc, type: 2}
     - target: {fileID: 919132149155446097, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
       propertyPath: m_Name
       value: Rhomboideus Cervicis
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8243407364101271072}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8389103967029827160}
@@ -65,6 +76,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
   m_PrefabInstance: {fileID: 6790416047694347511}
   m_PrefabAsset: {fileID: 0}
+--- !u!64 &8243407364101271072
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5979952076202164646}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2168864809522480716, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
 --- !u!114 &8389103967029827160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,3 +111,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartInfo
   systemType: 1
+  partName: 
+  partDescription: 
+  meshRenderer: {fileID: 0}

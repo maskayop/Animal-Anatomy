@@ -1,11 +1,20 @@
 using UnityEngine;
-
+using TMPro;
 
 namespace AnimalAnatomy
 {
     public class UIMainCanvas : MonoBehaviour
     {
         public static UIMainCanvas Instance;
+
+        [Header("System Activating")]
+        [SerializeField] GameObject systemActivatingButtonsPanel;
+
+        [Header("Body Part Info")]
+        [SerializeField] GameObject bodyPartInfoPanel;
+        [SerializeField] TextMeshProUGUI bodyPartNameText;
+        [SerializeField] TextMeshProUGUI bodyPartDescriptionText;
+        [SerializeField] UIButtonIsolatedMode isolatedModeButton;
         
         void Awake()
         {
@@ -32,6 +41,27 @@ namespace AnimalAnatomy
         public void Init()
         {
 
+        }
+
+        public void SelectBodyPart(BodyPartInfo info)
+        {
+            bodyPartInfoPanel.SetActive(true);
+            bodyPartNameText.text = info.partName;
+            bodyPartDescriptionText.text = info.partDescription;
+        }
+
+        public void UnSelectBodyPart()
+        {
+            bodyPartInfoPanel.SetActive(false);
+        }
+
+        public void SetIsolatedMode(bool state)
+        {
+            if (GameController.Instance.selectedBodyPart == null)
+                return;
+
+            isolatedModeButton.SetActiveState(state);
+            systemActivatingButtonsPanel.SetActive(!state);
         }
 
         public void ActivateSystemSkeleton(bool state)
@@ -124,34 +154,7 @@ namespace AnimalAnatomy
 
         public void ActivateAllSystems(bool state)
         {
-            if (state)
-            {
-                GameController.Instance.EnableSystem(GameController.SystemType.skeleton);
-                GameController.Instance.EnableSystem(GameController.SystemType.muscles);
-                GameController.Instance.EnableSystem(GameController.SystemType.nervous);
-                GameController.Instance.EnableSystem(GameController.SystemType.circulatory);
-                GameController.Instance.EnableSystem(GameController.SystemType.sensory);
-                GameController.Instance.EnableSystem(GameController.SystemType.respiratory);
-                GameController.Instance.EnableSystem(GameController.SystemType.digestive);
-                GameController.Instance.EnableSystem(GameController.SystemType.excretory);
-                GameController.Instance.EnableSystem(GameController.SystemType.reproductive);
-                GameController.Instance.EnableSystem(GameController.SystemType.skin);
-                GameController.Instance.EnableSystem(GameController.SystemType.lymphatic);
-            }
-            else
-            {
-                GameController.Instance.DisableSystem(GameController.SystemType.skeleton);
-                GameController.Instance.DisableSystem(GameController.SystemType.muscles);
-                GameController.Instance.DisableSystem(GameController.SystemType.nervous);
-                GameController.Instance.DisableSystem(GameController.SystemType.circulatory);
-                GameController.Instance.DisableSystem(GameController.SystemType.sensory);
-                GameController.Instance.DisableSystem(GameController.SystemType.respiratory);
-                GameController.Instance.DisableSystem(GameController.SystemType.digestive);
-                GameController.Instance.DisableSystem(GameController.SystemType.excretory);
-                GameController.Instance.DisableSystem(GameController.SystemType.reproductive);
-                GameController.Instance.DisableSystem(GameController.SystemType.skin);
-                GameController.Instance.DisableSystem(GameController.SystemType.lymphatic);
-            }
+            GameController.Instance.ActivateAllSystems(state);
         }
     }
 }
