@@ -93,14 +93,9 @@ namespace AnimalAnatomy
         public void UpdatePosition()
         {
             if (GameController.Instance.selectedBodyPart != null)
-                transform.position = GetCenterOfObject();
+                transform.position = GameController.Instance.selectedBodyPart.GetCenterOfObject();
             else
                 transform.position = defaultPosition;
-        }
-
-        Vector3 GetCenterOfObject()
-        {
-            return GameController.Instance.selectedBodyPart.meshRenderer.bounds.center;
         }
     }
 }

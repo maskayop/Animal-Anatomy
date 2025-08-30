@@ -11,11 +11,13 @@ namespace AnimalAnatomy
         [SerializeField] GameObject systemActivatingButtonsPanel;
 
         [Header("Body Part Info")]
-        [SerializeField] GameObject bodyPartInfoPanel;
+        [SerializeField] RectTransform bodyPartInfoPanel;
         [SerializeField] TextMeshProUGUI bodyPartNameText;
         [SerializeField] TextMeshProUGUI bodyPartDescriptionText;
         [SerializeField] UIButtonIsolatedMode isolatedModeButton;
-        
+
+        RectTransform bodyPartDescriptionTransform;
+
         void Awake()
         {
             if (Instance != null)
@@ -35,24 +37,24 @@ namespace AnimalAnatomy
         
         void Update()
         {
-
+            ForceExpandBodyPartInfoPanel();
         }
         
         public void Init()
         {
-
+            bodyPartDescriptionTransform = bodyPartDescriptionText.GetComponent<RectTransform>();
         }
 
         public void SelectBodyPart(BodyPartInfo info)
         {
-            bodyPartInfoPanel.SetActive(true);
+            bodyPartInfoPanel.gameObject.SetActive(true);
             bodyPartNameText.text = info.partName;
             bodyPartDescriptionText.text = info.partDescription;
         }
 
         public void UnSelectBodyPart()
         {
-            bodyPartInfoPanel.SetActive(false);
+            bodyPartInfoPanel.gameObject.SetActive(false);
         }
 
         public void SetIsolatedMode(bool state)
@@ -67,6 +69,14 @@ namespace AnimalAnatomy
         public void ActivateAllSystems(bool state)
         {
             GameController.Instance.ActivateAllSystems(state);
+        }
+
+        void ForceExpandBodyPartInfoPanel()
+        {
+            bodyPartInfoPanel.sizeDelta = new Vector2 (bodyPartInfoPanel.sizeDelta.x,
+                bodyPartDescriptionTransform.offsetMin.y +
+                -bodyPartDescriptionTransform.offsetMax.y +
+                bodyPartDescriptionText.GetRenderedValues().y);
         }
     }
 }
