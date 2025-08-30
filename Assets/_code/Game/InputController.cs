@@ -26,7 +26,6 @@ namespace AnimalAnatomy
         void Update()
         {
             SelectBodyPart();
-            ActivateSystems();
             UpdateView();
         }
 
@@ -75,11 +74,6 @@ namespace AnimalAnatomy
             {
                 CameraController.Instance.UpdatePosition();
             }
-        }
-
-        void ActivateSystems()
-        {
-
         }
     }
 }

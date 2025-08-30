@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 namespace AnimalAnatomy
 {
@@ -6,9 +7,17 @@ namespace AnimalAnatomy
     {
         public GameController.SystemType systemType;
 
+        [Header("KeyCode")]
+        [SerializeField] KeyCode keyCode;
+        [SerializeField] GameObject keyCodePanel;
+        [SerializeField] TextMeshProUGUI keyCodeText;
+        [SerializeField] string customKeyCodeName;
+
+        [Header("Tumbler")]
         [SerializeField] GameObject tumblerOn;
         [SerializeField] GameObject tumblerOff;
 
+        [Header("Info")]
         public bool isActive;
 
         void Start()
@@ -16,10 +25,31 @@ namespace AnimalAnatomy
             Init();
         }
 
+        void Update()
+        {
+            if (keyCode != KeyCode.None)
+                if (Input.GetKeyDown(keyCode))
+                    SwitchActiveState();
+        }
+
         public void Init()
         {
             isActive = false;
             SwitchActiveState();
+
+            if (keyCode == KeyCode.None)
+            {
+                keyCodePanel.SetActive(false);
+            }
+            else
+            {
+                keyCodePanel.SetActive(true);
+
+                if (customKeyCodeName == "")
+                    keyCodeText.text = keyCode.ToString();
+                else
+                    keyCodeText.text = customKeyCodeName;
+            }
         }
 
         public void SwitchActiveState()

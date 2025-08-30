@@ -17,7 +17,7 @@ namespace AnimalAnatomy
     {
         public static GameController Instance;
 
-        public enum SystemType { skeleton, muscles, nervous, circulatory, sensory, respiratory, digestive, excretory, reproductive, skin, lymphatic }
+        public enum SystemType { skeleton, muscles, nervous, circulatory, sensory, respiratory, digestive, excretory, reproductive, skin, lymphatic, endocrine }
         public SystemType systemType;
 
         public List<BodyPartInfo> allBodyParts = new List<BodyPartInfo>();
@@ -49,6 +49,13 @@ namespace AnimalAnatomy
 
         public void Init()
         {
+            CreateBodyPartsLists();
+            StartCoroutine(UpdateBodyPartsLists());
+            UnSelectBodyPart();
+        }
+
+        void CreateBodyPartsLists()
+        {
             int count = Enum.GetValues(typeof(SystemType)).Length;
 
             for (int i = 0; i < count; i++)
@@ -77,13 +84,11 @@ namespace AnimalAnatomy
                     newBodyPartsList.systemType = SystemType.skin;
                 else if (i == 10)
                     newBodyPartsList.systemType = SystemType.lymphatic;
+                else if (i == 11)
+                    newBodyPartsList.systemType = SystemType.endocrine;
 
                 bodyPartsLists.Add(newBodyPartsList);
             }
-
-            StartCoroutine(UpdateBodyPartsLists());
-
-            UnSelectBodyPart();
         }
 
         IEnumerator UpdateBodyPartsLists()
