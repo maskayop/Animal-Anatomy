@@ -14,6 +14,7 @@ namespace AnimalAnatomy
         //Минимальное, базовое, максимальное расстояние камеры
         public Vector3 cameraDistanceLimits = new Vector3(1f, 5f, 10f);
         public float scrollSpeed = 1.0f;
+        public float distanceLimitsMultiplier = 1.0f;
 
         Vector2 lastMousePosition;
         float xRotation = 0f;
@@ -85,7 +86,7 @@ namespace AnimalAnatomy
             else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
                 currentZoom += scrollSpeed;
 
-            currentZoom = Mathf.Clamp(currentZoom, cameraDistanceLimits.x, cameraDistanceLimits.z);
+            currentZoom = Mathf.Clamp(currentZoom, cameraDistanceLimits.x * distanceLimitsMultiplier, cameraDistanceLimits.z * distanceLimitsMultiplier);
             
             mainCamera.transform.localPosition = new Vector3(0, 0, -currentZoom);            
         }

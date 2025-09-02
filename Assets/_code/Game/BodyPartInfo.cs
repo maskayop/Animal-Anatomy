@@ -9,6 +9,8 @@ namespace AnimalAnatomy
 
         [SerializeField] List<MeshRenderer> meshRenderers = new List<MeshRenderer>();
 
+        public float cameraDistanceLimitsMultiplier = 1.0f;
+
         [Header("Texts")]
         public string partName;
         [TextArea(1, 5)]

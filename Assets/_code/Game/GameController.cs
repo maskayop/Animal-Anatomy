@@ -140,6 +140,8 @@ namespace AnimalAnatomy
                     bodyPartsLists[i].bodyParts[l].gameObject.SetActive(state);
                 }
             }
+
+            UIMainCanvas.Instance.ActivateAllSystems(state);
         }
 
         public void SelectBodyPart(BodyPartInfo info)
@@ -150,7 +152,7 @@ namespace AnimalAnatomy
             UIMainCanvas.Instance.SelectBodyPart(info);
             info.Select();
 
-            
+            CameraController.Instance.distanceLimitsMultiplier = selectedBodyPart.cameraDistanceLimitsMultiplier;
         }
 
         public void UnSelectBodyPart()
@@ -162,6 +164,8 @@ namespace AnimalAnatomy
             {
                 allBodyParts[i].UnSelect();
             }
+
+            CameraController.Instance.distanceLimitsMultiplier = 1.0f;
         }
 
         public void SetIsolatedMode(bool state)

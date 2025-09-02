@@ -28,8 +28,18 @@ namespace AnimalAnatomy
         void Update()
         {
             if (keyCode != KeyCode.None)
+            {
                 if (Input.GetKeyDown(keyCode))
-                    SwitchActiveState();
+                {
+                    if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+                    {
+                        InputController.Instance.DisableAllSystemsExceptSystem(systemType);
+                        SetActiveState(true);
+                    }
+                    else
+                        SwitchActiveState();
+                }
+            }
         }
 
         public void Init()
@@ -54,15 +64,20 @@ namespace AnimalAnatomy
 
         public void SwitchActiveState()
         {
-            isActive = !isActive;
-
-            tumblerOn.SetActive(isActive);
-            tumblerOff.SetActive(!isActive);
+            SetActiveState(!isActive);
 
             if (isActive)
                 GameController.Instance.EnableSystem(systemType);
             else
                 GameController.Instance.DisableSystem(systemType);
+        }
+
+        public void SetActiveState(bool state)
+        {
+            isActive = state;
+
+            tumblerOn.SetActive(isActive);
+            tumblerOff.SetActive(!isActive);
         }
     }
 }

@@ -75,5 +75,11 @@ namespace AnimalAnatomy
                 CameraController.Instance.UpdatePosition();
             }
         }
+
+        public void DisableAllSystemsExceptSystem(GameController.SystemType systemType)
+        {
+            GameController.Instance.ActivateAllSystems(false);
+            GameController.Instance.EnableSystem(systemType);
+        }
     }
 }

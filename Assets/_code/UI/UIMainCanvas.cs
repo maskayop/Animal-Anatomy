@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -17,6 +18,8 @@ namespace AnimalAnatomy
         [SerializeField] UIButtonIsolatedMode isolatedModeButton;
 
         RectTransform bodyPartDescriptionTransform;
+
+        UIButtonSystemActivating[] systemActivatingButtons;
 
         void Awake()
         {
@@ -43,6 +46,7 @@ namespace AnimalAnatomy
         public void Init()
         {
             bodyPartDescriptionTransform = bodyPartDescriptionText.GetComponent<RectTransform>();
+            systemActivatingButtons = FindObjectsByType<UIButtonSystemActivating>(FindObjectsSortMode.None);
         }
 
         public void SelectBodyPart(BodyPartInfo info)
@@ -68,7 +72,10 @@ namespace AnimalAnatomy
 
         public void ActivateAllSystems(bool state)
         {
-            GameController.Instance.ActivateAllSystems(state);
+            for (int i = 0; i < systemActivatingButtons.Length; i++)
+            {
+                systemActivatingButtons[i].SetActiveState(state);
+            }
         }
 
         void ForceExpandBodyPartInfoPanel()
