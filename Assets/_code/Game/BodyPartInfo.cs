@@ -13,7 +13,7 @@ namespace AnimalAnatomy
 
         [Header("Texts")]
         public string partName;
-        [TextArea(1, 5)]
+        [TextArea(1, 10)]
         public string partDescription;
 
         bool isHidden = false;
