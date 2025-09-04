@@ -1,3 +1,4 @@
+using System.Buffers;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +19,8 @@ namespace AnimalAnatomy
 
         bool isHidden = false;
         public bool IsHidden {  get { return isHidden; } }
+
+        Material defaultMaterial;
 
         void Reset()
         {
@@ -47,8 +50,13 @@ namespace AnimalAnatomy
                 partDescription = partName + ": Description";
 
             if (meshRenderers.Count == 0)
+            {
                 if (GetComponent<MeshRenderer>())
                     meshRenderers.Add(GetComponent<MeshRenderer>());
+            }
+            
+            if (meshRenderers.Count != 0)
+                defaultMaterial = meshRenderers[0].material;
         }
 
         public void Select()
@@ -77,6 +85,21 @@ namespace AnimalAnatomy
         public void Hide(bool state)
         {
             isHidden = state;
+        }
+
+        public void SetAsTransparent(bool state)
+        {
+            for (int i = 0; i < meshRenderers.Count; i++)
+            {
+                Material[] materials = new Material[1];
+
+                if (state)
+                    materials[0] = GameController.Instance.transparentModeMaterial;
+                else
+                    materials[0] = defaultMaterial;
+                
+                meshRenderers[i].materials = materials;
+            }
         }
 
         public Vector3 GetCenterOfObject()

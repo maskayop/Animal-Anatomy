@@ -4,6 +4,8 @@ namespace AnimalAnatomy
 {
     public class UIButtonIsolatedMode : MonoBehaviour
     {
+        [SerializeField] bool transparentMode = false;
+
         [SerializeField] GameObject tumblerOn;
         [SerializeField] GameObject tumblerOff;
 
@@ -24,7 +26,10 @@ namespace AnimalAnatomy
         {
             SetActiveState(!isActive);
 
-            GameController.Instance.SetIsolatedMode(isActive);
+            if (transparentMode)
+                GameController.Instance.SetTransparentMode(isActive);
+            else
+                GameController.Instance.SetIsolatedMode(isActive);
         }
 
         public void SetActiveState(bool state)

@@ -16,6 +16,7 @@ namespace AnimalAnatomy
         [SerializeField] TextMeshProUGUI bodyPartNameText;
         [SerializeField] TextMeshProUGUI bodyPartDescriptionText;
         [SerializeField] UIButtonIsolatedMode isolatedModeButton;
+        [SerializeField] UIButtonIsolatedMode transparentModeButton;
 
         RectTransform bodyPartDescriptionTransform;
 
@@ -67,6 +68,17 @@ namespace AnimalAnatomy
                 return;
 
             isolatedModeButton.SetActiveState(state);
+            transparentModeButton.gameObject.SetActive(!state);
+            systemActivatingButtonsPanel.SetActive(!state);
+        }
+
+        public void SetTransparentMode(bool state)
+        {
+            if (GameController.Instance.selectedBodyPart == null)
+                return;
+
+            transparentModeButton.SetActiveState(state);
+            isolatedModeButton.gameObject.SetActive(!state);
             systemActivatingButtonsPanel.SetActive(!state);
         }
 

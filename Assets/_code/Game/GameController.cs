@@ -25,10 +25,12 @@ namespace AnimalAnatomy
 
         [Header("Materials")]
         public Material selectedMaterial;
+        public Material transparentModeMaterial;
 
         [Header("Info")]
         public BodyPartInfo selectedBodyPart;
-        public bool isolated = false;
+        public bool isolatedMode = false;
+        public bool transparentMode = false;
 
         void Awake()
         {
@@ -179,7 +181,7 @@ namespace AnimalAnatomy
             if (selectedBodyPart == null)
                 return;
 
-            isolated = state;
+            isolatedMode = state;
 
             if (state)
             {
@@ -204,6 +206,33 @@ namespace AnimalAnatomy
                         bodyPartsLists[i].bodyParts[l].gameObject.SetActive(bodyPartsLists[i].isActive);
                     }
                 }
+            }
+
+            CameraController.Instance.UpdatePosition();
+        }
+
+        public void SetTransparentMode(bool state)
+        {
+            IsolateBodyPartTransparent(state);
+            UIMainCanvas.Instance.SetTransparentMode(state);
+        }
+
+        void IsolateBodyPartTransparent(bool state)
+        {
+            if (selectedBodyPart == null)
+                return;
+
+            transparentMode = state;
+
+            if (state)
+                selectedBodyPart.UnSelect();
+            else
+                selectedBodyPart.Select();
+
+            for (int i = 0; i < allBodyParts.Count; i++)
+            {
+                if (allBodyParts[i] != selectedBodyPart)
+                    allBodyParts[i].SetAsTransparent(state);
             }
 
             CameraController.Instance.UpdatePosition();

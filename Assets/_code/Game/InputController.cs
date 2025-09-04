@@ -38,33 +38,40 @@ namespace AnimalAnatomy
         {
             if (Input.GetMouseButtonDown(1))
             {
-                Ray ray = CameraController.Instance.mainCamera.ScreenPointToRay(Input.mousePosition);
-
-                if (Physics.Raycast(ray, out RaycastHit hit, 100000, 1 << 6))
+                if (!GameController.Instance.isolatedMode && !GameController.Instance.transparentMode)
                 {
-                    BodyPartInfo info = hit.collider.GetComponentInParent<BodyPartInfo>();
+                    Ray ray = CameraController.Instance.mainCamera.ScreenPointToRay(Input.mousePosition);
 
-                    if (info)
-                        GameController.Instance.SelectBodyPart(info);
-                }
-                else
-                {
-                    if (!GameController.Instance.isolated)
+                    if (Physics.Raycast(ray, out RaycastHit hit, 100000, 1 << 6))
+                    {
+                        BodyPartInfo info = hit.collider.GetComponentInParent<BodyPartInfo>();
+
+                        if (info)
+                            GameController.Instance.SelectBodyPart(info);
+                    }
+                    else
+                    {
                         GameController.Instance.UnSelectBodyPart();
+                    }
                 }
             }
 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                if (GameController.Instance.isolated)
+                if (GameController.Instance.isolatedMode)
                     GameController.Instance.SetIsolatedMode(false);
                 else
                     GameController.Instance.UnSelectBodyPart();
             }
 
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.Q) && !GameController.Instance.transparentMode)
             {
-                GameController.Instance.SetIsolatedMode(!GameController.Instance.isolated);
+                GameController.Instance.SetIsolatedMode(!GameController.Instance.isolatedMode);
+            }
+
+            if (Input.GetKeyDown(KeyCode.W) && !GameController.Instance.isolatedMode)
+            {
+                GameController.Instance.SetTransparentMode(!GameController.Instance.transparentMode);
             }
         }
 
