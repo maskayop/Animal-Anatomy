@@ -19,6 +19,18 @@ namespace AnimalAnatomy
         bool isHidden = false;
         public bool IsHidden {  get { return isHidden; } }
 
+        void Reset()
+        {
+            foreach (Transform child in transform)
+            {
+                if (child.GetComponent<MeshRenderer>())
+                    meshRenderers.Add(child.GetComponent<MeshRenderer>());
+            }
+
+            if (!GetComponent<LODGroup>())
+                transform.gameObject.AddComponent<LODGroup>();
+        }
+
         void Start()
         {
             Init();
