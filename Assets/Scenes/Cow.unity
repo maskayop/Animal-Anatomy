@@ -862,17 +862,17 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1497976691}
+  - {fileID: 1787019323}
+  - {fileID: 1628458120}
+  - {fileID: 2087085952}
+  - {fileID: 46885829}
+  - {fileID: 720023941}
   - {fileID: 1111573716}
   - {fileID: 1373676355}
-  - {fileID: 46885829}
   - {fileID: 2102563708}
-  - {fileID: 1497976691}
   - {fileID: 759159040}
-  - {fileID: 720023941}
   - {fileID: 1232975961}
-  - {fileID: 1787019323}
-  - {fileID: 337800713}
-  - {fileID: 1628458120}
   m_Father: {fileID: 158036050}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &545422142 stripped
@@ -2208,17 +2208,17 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 993438781}
+  - {fileID: 503292623}
+  - {fileID: 1605445967}
+  - {fileID: 1561016892}
+  - {fileID: 2423604}
+  - {fileID: 1119966884}
   - {fileID: 688360784}
   - {fileID: 660505301}
-  - {fileID: 2423604}
   - {fileID: 1209583838}
-  - {fileID: 993438781}
   - {fileID: 1530895432}
-  - {fileID: 1119966884}
   - {fileID: 351069738}
-  - {fileID: 503292623}
-  - {fileID: 1183575450}
-  - {fileID: 1605445967}
   m_Father: {fileID: 158036050}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1551908778 stripped
@@ -2236,6 +2236,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 168060667395313558, guid: b50359215b62e1f4e8cc3776761be1e1, type: 3}
   m_PrefabInstance: {fileID: 3525884881376036886}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1561016891
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1561016892}
+  m_Layer: 0
+  m_Name: BL Tarsus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1561016892
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561016891}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1183575450}
+  m_Father: {fileID: 1547144753}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1564688657 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7487427754956698111, guid: cf96d2c4ad674ae4781c519ec2d5672a, type: 3}
@@ -3176,6 +3208,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9091436019311930356, guid: 2497ff69c9ded4d4babdbe365db8d5cf, type: 3}
   m_PrefabInstance: {fileID: 5409339969232885107}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2087085951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2087085952}
+  m_Layer: 0
+  m_Name: BR Tarsus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2087085952
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087085951}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 337800713}
+  m_Father: {fileID: 517386144}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2094436051 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6606822746146354335, guid: ec1866cc48c00be48b6cda8561eeee04, type: 3}
@@ -8056,7 +8120,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1547144753}
+    m_TransformParent: {fileID: 1561016892}
     m_Modifications:
     - target: {fileID: 8517944504059281880, guid: 77cac6dd12f16984f8ca3b0722607ebb, type: 3}
       propertyPath: m_Name
@@ -8398,7 +8462,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 517386144}
+    m_TransformParent: {fileID: 2087085952}
     m_Modifications:
     - target: {fileID: 6132227777184209672, guid: 095c211c2dcdc424ab8333fda846e8d4, type: 3}
       propertyPath: m_Name
