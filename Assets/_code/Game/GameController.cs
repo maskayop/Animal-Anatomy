@@ -237,5 +237,18 @@ namespace AnimalAnatomy
 
             CameraController.Instance.UpdatePosition();
         }
+
+        public void HideSelectedBodyPart()
+        {
+            selectedBodyPart.UnSelect();
+
+            for (int i = 0; i < allBodyParts.Count; i++)
+            {
+                if (allBodyParts[i] == selectedBodyPart)
+                    selectedBodyPart.gameObject.SetActive(false);
+            }
+
+            UnSelectBodyPart();
+        }
     }
 }

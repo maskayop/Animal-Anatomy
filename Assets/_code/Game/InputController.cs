@@ -47,7 +47,12 @@ namespace AnimalAnatomy
                         BodyPartInfo info = hit.collider.GetComponentInParent<BodyPartInfo>();
 
                         if (info)
+                        {
                             GameController.Instance.SelectBodyPart(info);
+
+                            if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
+                                GameController.Instance.HideSelectedBodyPart();
+                        }
                     }
                     else
                     {
@@ -60,6 +65,8 @@ namespace AnimalAnatomy
             {
                 if (GameController.Instance.isolatedMode)
                     GameController.Instance.SetIsolatedMode(false);
+                if (GameController.Instance.transparentMode)
+                    GameController.Instance.SetTransparentMode(false);
                 else
                     GameController.Instance.UnSelectBodyPart();
             }
