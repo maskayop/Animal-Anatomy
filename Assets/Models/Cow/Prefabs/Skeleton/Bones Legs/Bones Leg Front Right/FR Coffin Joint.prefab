@@ -48,7 +48,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: 97846f25c0903754aad02e19b98ed073, type: 3}
+    - target: {fileID: -5959066209776095714, guid: 97846f25c0903754aad02e19b98ed073, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5959066209776095714, guid: 97846f25c0903754aad02e19b98ed073, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5959066209776095714, guid: 97846f25c0903754aad02e19b98ed073, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5959066209776095714, guid: 97846f25c0903754aad02e19b98ed073, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5959066209776095714, guid: 97846f25c0903754aad02e19b98ed073, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5293876671590888029, guid: 97846f25c0903754aad02e19b98ed073, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 701515d5a96dbf545b89011f695a800b, type: 2}
@@ -60,6 +80,30 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6546016573714290984, guid: 97846f25c0903754aad02e19b98ed073, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546016573714290984, guid: 97846f25c0903754aad02e19b98ed073, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546016573714290984, guid: 97846f25c0903754aad02e19b98ed073, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546016573714290984, guid: 97846f25c0903754aad02e19b98ed073, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546016573714290984, guid: 97846f25c0903754aad02e19b98ed073, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7988604766098143096, guid: 97846f25c0903754aad02e19b98ed073, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 701515d5a96dbf545b89011f695a800b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -67,6 +111,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 97846f25c0903754aad02e19b98ed073, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4111048584277645041}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 97846f25c0903754aad02e19b98ed073, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5143973751460886852}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 97846f25c0903754aad02e19b98ed073, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6363994411678482473}
@@ -97,7 +144,30 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 7588859468409909803, guid: 97846f25c0903754aad02e19b98ed073, type: 3}
+  m_Mesh: {fileID: 6967827089711245878, guid: 97846f25c0903754aad02e19b98ed073, type: 3}
+--- !u!205 &5143973751460886852
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387613244534859783}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -0.000000014901161, y: -0.00000014528632, z: -0.00000014528632}
+  m_Size: 0.1185613
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.2
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 2956890241345296629}
+  - screenRelativeHeight: 0.01
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 8168855176558944814}
+  m_Enabled: 1
 --- !u!114 &6363994411678482473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,7 +181,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartInfo
   systemType: 0
-  meshRenderers: []
-  cameraDistanceLimitsMultiplier: 1
-  partName: 
-  partDescription: 
+  meshRenderers:
+  - {fileID: 2956890241345296629}
+  - {fileID: 8168855176558944814}
+  cameraDistanceLimitsMultiplier: 0.25
+  partName: "\u0414\u0438\u0441\u0442\u0430\u043B\u044C\u043D\u044B\u0435 \u0441\u0435\u0441\u0430\u043C\u043E\u0432\u0438\u0434\u043D\u044B\u0435
+    \u043A\u043E\u0441\u0442\u0438 (\u043F\u0440\u0430\u0432\u044B\u0435)"
+  partDescription: "os sesamoideum distale \u2013 \u043D\u0435\u043F\u0430\u0440\u043D\u0430\u044F,
+    \u043D\u0430\u0445\u043E\u0434\u0438\u0442\u0441\u044F \u043D\u0430 \u043F\u0430\u043B\u044C\u043C\u0430\u0440\u043D\u043E\u0439
+    \u043F\u043E\u0432\u0435\u0440\u0445\u043D\u043E\u0441\u0442\u0438 \u0441\u0443\u0441\u0442\u0430\u0432\u0430
+    \u0442\u0440\u0435\u0442\u044C\u0435\u0439 \u0444\u0430\u043B\u0430\u043D\u0433\u0438."
+--- !u!23 &2956890241345296629 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -5293876671590888029, guid: 97846f25c0903754aad02e19b98ed073, type: 3}
+  m_PrefabInstance: {fileID: 2269993661199390038}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &8168855176558944814 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7988604766098143096, guid: 97846f25c0903754aad02e19b98ed073, type: 3}
+  m_PrefabInstance: {fileID: 2269993661199390038}
+  m_PrefabAsset: {fileID: 0}

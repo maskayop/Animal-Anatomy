@@ -48,7 +48,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: fd032b75ec8687b43a80e625a0bafd86, type: 3}
+    - target: {fileID: -5995012081015160797, guid: fd032b75ec8687b43a80e625a0bafd86, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 701515d5a96dbf545b89011f695a800b, type: 2}
@@ -60,6 +60,50 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5317987734856271542, guid: fd032b75ec8687b43a80e625a0bafd86, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5317987734856271542, guid: fd032b75ec8687b43a80e625a0bafd86, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5317987734856271542, guid: fd032b75ec8687b43a80e625a0bafd86, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5317987734856271542, guid: fd032b75ec8687b43a80e625a0bafd86, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5317987734856271542, guid: fd032b75ec8687b43a80e625a0bafd86, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815531085594168977, guid: fd032b75ec8687b43a80e625a0bafd86, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 701515d5a96dbf545b89011f695a800b, type: 2}
+    - target: {fileID: 8396214250847638899, guid: fd032b75ec8687b43a80e625a0bafd86, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396214250847638899, guid: fd032b75ec8687b43a80e625a0bafd86, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396214250847638899, guid: fd032b75ec8687b43a80e625a0bafd86, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396214250847638899, guid: fd032b75ec8687b43a80e625a0bafd86, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8396214250847638899, guid: fd032b75ec8687b43a80e625a0bafd86, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -69,8 +113,16 @@ PrefabInstance:
       addedObject: {fileID: -8120796047362374829}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fd032b75ec8687b43a80e625a0bafd86, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 6627172390273505797}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fd032b75ec8687b43a80e625a0bafd86, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 2861507290482160252}
   m_SourcePrefab: {fileID: 100100000, guid: fd032b75ec8687b43a80e625a0bafd86, type: 3}
+--- !u!23 &4378839759789728191 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7815531085594168977, guid: fd032b75ec8687b43a80e625a0bafd86, type: 3}
+  m_PrefabInstance: {fileID: 5814881122894655278}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6661934645423084159 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fd032b75ec8687b43a80e625a0bafd86, type: 3}
@@ -97,7 +149,30 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: -4460373684999799995, guid: fd032b75ec8687b43a80e625a0bafd86, type: 3}
+  m_Mesh: {fileID: -1631595151989607173, guid: fd032b75ec8687b43a80e625a0bafd86, type: 3}
+--- !u!205 &6627172390273505797
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6661934645423084159}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -0.000000014901161, y: -0.00000007264316, z: -0.00000009685755}
+  m_Size: 0.0929082
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.2
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 8971148282464579341}
+  - screenRelativeHeight: 0.01
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 4378839759789728191}
+  m_Enabled: 1
 --- !u!114 &2861507290482160252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,7 +186,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartInfo
   systemType: 0
-  meshRenderers: []
-  cameraDistanceLimitsMultiplier: 1
-  partName: 
-  partDescription: 
+  meshRenderers:
+  - {fileID: 8971148282464579341}
+  - {fileID: 4378839759789728191}
+  cameraDistanceLimitsMultiplier: 0.25
+  partName: "\u041F\u0440\u043E\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u044B\u0435
+    \u0441\u0435\u0441\u0430\u043C\u043E\u0432\u0438\u0434\u043D\u044B\u0435 \u043A\u043E\u0441\u0442\u0438
+    (\u043F\u0440\u0430\u0432\u044B\u0435)"
+  partDescription: "ossa sesamoidea proximalia - \u043F\u0430\u0440\u043D\u044B\u0435,
+    \u0440\u0430\u0441\u043F\u043E\u043B\u0430\u0433\u0430\u044E\u0442\u0441\u044F
+    \u043D\u0430 \u043F\u0430\u043B\u044C\u043C\u0430\u0440\u043D\u043E\u0439 \u043F\u043E\u0432\u0435\u0440\u0445\u043D\u043E\u0441\u0442\u0438
+    \u043F\u044F\u0441\u0442\u043D\u043E\u0444\u0430\u043B\u0430\u043D\u0433\u043E\u0432\u043E\u0433\u043E
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430."
+--- !u!23 &8971148282464579341 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -5995012081015160797, guid: fd032b75ec8687b43a80e625a0bafd86, type: 3}
+  m_PrefabInstance: {fileID: 5814881122894655278}
+  m_PrefabAsset: {fileID: 0}
