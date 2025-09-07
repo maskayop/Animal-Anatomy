@@ -27,6 +27,14 @@ namespace AnimalAnatomy
         {
             SelectBodyPart();
             UpdateView();
+
+            if (!GameController.Instance.isolatedMode && !GameController.Instance.transparentMode)
+            {
+                if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
+                    UIMainCanvas.Instance.SetExclusionMode(true);
+                else
+                    UIMainCanvas.Instance.SetExclusionMode(false);
+            }
         }
 
         public void Init()

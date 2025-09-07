@@ -15,11 +15,11 @@ namespace AnimalAnatomy
         [SerializeField] TextMeshProUGUI bodyPartNameText;
         [SerializeField] TextMeshProUGUI bodyPartScientificNameText;
         [SerializeField] TextMeshProUGUI bodyPartDescriptionText;
-        [SerializeField] float topBottomOffset;
 
         [Header("Isolated Mode Buttons")]
         [SerializeField] UIButtonIsolatedMode isolatedModeButton;
         [SerializeField] UIButtonIsolatedMode transparentModeButton;
+        [SerializeField] GameObject exclusionModeButton;
 
         UIButtonSystemActivating[] systemActivatingButtons;
 
@@ -42,7 +42,8 @@ namespace AnimalAnatomy
         
         void Update()
         {
-            ForceExpandBodyPartInfoPanel();
+            if (GameController.Instance.isolatedMode || GameController.Instance.transparentMode)
+                SetExclusionMode(false);
         }
         
         public void Init()
@@ -91,10 +92,9 @@ namespace AnimalAnatomy
             }
         }
 
-        void ForceExpandBodyPartInfoPanel()
+        public void SetExclusionMode(bool state)
         {
-            bodyPartInfoPanel.sizeDelta = new Vector2
-                (bodyPartInfoPanel.sizeDelta.x, topBottomOffset + bodyPartDescriptionText.GetRenderedValues().y);
+            exclusionModeButton.SetActive(state);
         }
     }
 }
