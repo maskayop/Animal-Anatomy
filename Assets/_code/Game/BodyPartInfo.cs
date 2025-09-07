@@ -1,4 +1,3 @@
-using System.Buffers;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,6 +13,7 @@ namespace AnimalAnatomy
 
         [Header("Texts")]
         public string partName;
+        public string partScientificName;
         [TextArea(1, 10)]
         public string partDescription;
 

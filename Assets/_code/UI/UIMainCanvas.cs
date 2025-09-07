@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -14,11 +13,13 @@ namespace AnimalAnatomy
         [Header("Body Part Info")]
         [SerializeField] RectTransform bodyPartInfoPanel;
         [SerializeField] TextMeshProUGUI bodyPartNameText;
+        [SerializeField] TextMeshProUGUI bodyPartScientificNameText;
         [SerializeField] TextMeshProUGUI bodyPartDescriptionText;
+        [SerializeField] float topBottomOffset;
+
+        [Header("Isolated Mode Buttons")]
         [SerializeField] UIButtonIsolatedMode isolatedModeButton;
         [SerializeField] UIButtonIsolatedMode transparentModeButton;
-
-        RectTransform bodyPartDescriptionTransform;
 
         UIButtonSystemActivating[] systemActivatingButtons;
 
@@ -46,7 +47,6 @@ namespace AnimalAnatomy
         
         public void Init()
         {
-            bodyPartDescriptionTransform = bodyPartDescriptionText.GetComponent<RectTransform>();
             systemActivatingButtons = FindObjectsByType<UIButtonSystemActivating>(FindObjectsSortMode.None);
         }
 
@@ -54,6 +54,7 @@ namespace AnimalAnatomy
         {
             bodyPartInfoPanel.gameObject.SetActive(true);
             bodyPartNameText.text = info.partName;
+            bodyPartScientificNameText.text = info.partScientificName;
             bodyPartDescriptionText.text = info.partDescription;
         }
 
@@ -92,10 +93,8 @@ namespace AnimalAnatomy
 
         void ForceExpandBodyPartInfoPanel()
         {
-            bodyPartInfoPanel.sizeDelta = new Vector2 (bodyPartInfoPanel.sizeDelta.x,
-                bodyPartDescriptionTransform.offsetMin.y +
-                -bodyPartDescriptionTransform.offsetMax.y +
-                bodyPartDescriptionText.GetRenderedValues().y);
+            bodyPartInfoPanel.sizeDelta = new Vector2
+                (bodyPartInfoPanel.sizeDelta.x, topBottomOffset + bodyPartDescriptionText.GetRenderedValues().y);
         }
     }
 }
