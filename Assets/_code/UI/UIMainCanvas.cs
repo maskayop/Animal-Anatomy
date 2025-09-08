@@ -96,5 +96,10 @@ namespace AnimalAnatomy
         {
             exclusionModeButton.SetActive(state);
         }
+
+        public void ExitApp()
+        {
+            App.Instance.ExitGame();
+        }
     }
 }
