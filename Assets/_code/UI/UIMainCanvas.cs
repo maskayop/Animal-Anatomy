@@ -1,5 +1,8 @@
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Collections;
+using UnityEngine.UI;
 
 namespace AnimalAnatomy
 {
@@ -21,7 +24,13 @@ namespace AnimalAnatomy
         [SerializeField] UIButtonIsolatedMode transparentModeButton;
         [SerializeField] GameObject exclusionModeButton;
 
+        [Header("Body Parts List")]
+        [SerializeField] Transform bodyPartsListContainer;
+        [SerializeField] GameObject partsListButtonPrefab;
+
         UIButtonSystemActivating[] systemActivatingButtons;
+        List<UIPartsListButton> partsListButtons = new List<UIPartsListButton>();
+        List<BodyPartsList> bodyPartsLists = new List<BodyPartsList>();
 
         void Awake()
         {
@@ -37,7 +46,7 @@ namespace AnimalAnatomy
         
         void Start()
         {
-            Init();
+            StartCoroutine(InitializeDelayed());
         }
         
         void Update()
@@ -49,6 +58,7 @@ namespace AnimalAnatomy
         public void Init()
         {
             systemActivatingButtons = FindObjectsByType<UIButtonSystemActivating>(FindObjectsSortMode.None);
+            CreateBodyPartsListButtons();
         }
 
         public void SelectBodyPart(BodyPartInfo info)
@@ -100,6 +110,41 @@ namespace AnimalAnatomy
         public void ExitApp()
         {
             App.Instance.ExitGame();
+        }
+
+        void CreateBodyPartsListButtons()
+        {
+            partsListButtons.Clear();
+
+            foreach (Transform t in bodyPartsListContainer)
+                Destroy(t.gameObject);
+
+            bodyPartsLists = GameController.Instance.bodyPartsLists;
+
+            for (int i = 0; i < bodyPartsLists.Count; i++)
+            {
+                if (bodyPartsLists[i].bodyParts.Count != 0)
+                {
+                    GameObject newSystemTypeGO = Instantiate(partsListButtonPrefab, bodyPartsListContainer);
+                    UIPartsListButton systemTypeListButton = newSystemTypeGO.GetComponent<UIPartsListButton>();
+                    systemTypeListButton.GetComponent<Button>().interactable = false;
+                    systemTypeListButton.Init(bodyPartsLists[i].systemType);
+
+                    for (int b = 0; b < bodyPartsLists[i].bodyParts.Count; b++)
+                    {
+                        GameObject newGO = Instantiate(partsListButtonPrefab, bodyPartsListContainer);
+                        UIPartsListButton listButton = newGO.GetComponent<UIPartsListButton>();
+                        listButton.Init(bodyPartsLists[i].bodyParts[b]);
+                    }
+                }
+            }
+        }
+
+        IEnumerator InitializeDelayed()
+        {
+            yield return new WaitForSeconds(2.0f);
+
+            Init();
         }
     }
 }

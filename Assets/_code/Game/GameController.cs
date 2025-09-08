@@ -105,6 +105,14 @@ namespace AnimalAnatomy
                         bodyPartsLists[l].bodyParts.Add(allBodyParts[i]);
                 }
             }
+
+            for (int i = 0; i < allBodyParts.Count; i++)
+            {
+                for (int l = 0; l < bodyPartsLists.Count; l++)
+                {
+                    bodyPartsLists[l].bodyParts.Sort((x, y) => { return x.partName.CompareTo(y.partName); });
+                }
+            }
         }
 
         public void EnableSystem(SystemType type)
