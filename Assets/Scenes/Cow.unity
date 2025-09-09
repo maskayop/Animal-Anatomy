@@ -133,8 +133,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 14852168}
+  - component: {fileID: 14852169}
   m_Layer: 0
-  m_Name: Bones Spine
+  m_Name: "\u0413\u0440\u0443\u0434\u043D\u043E\u0439 \u043E\u0442\u0434\u0435\u043B
+    - vertebrae thoracicae "
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,7 +150,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 14852167}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -166,16 +168,99 @@ Transform:
   - {fileID: 569310977}
   - {fileID: 463701300}
   - {fileID: 850921638}
-  - {fileID: 1789455405}
-  - {fileID: 288564258}
-  - {fileID: 801955208}
-  - {fileID: 687729611}
-  - {fileID: 2062557698}
-  - {fileID: 1873423715}
-  - {fileID: 1763141917}
-  - {fileID: 1121496520}
-  m_Father: {fileID: 425755815}
+  m_Father: {fileID: 1395728951}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &14852169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14852167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: "\u0413\u0440\u0443\u0434\u043D\u043E\u0439 \u043E\u0442\u0434\u0435\u043B
+    (\u0433\u0440\u0443\u0434\u043D\u044B\u0435 \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u0438)"
+  groupScientificName: vertebrae thoracicae
+  description: "\u0423\u0447\u0430\u0441\u0442\u0432\u0443\u044E\u0442 \u0432 \u043E\u0431\u0440\u0430\u0437\u043E\u0432\u0430\u043D\u0438\u0438
+    \u0433\u0440\u0443\u0434\u043D\u043E\u0439 \u043A\u043B\u0435\u0442\u043A\u0438.
+    \u041E\u043D\u0438 \u0438\u043C\u0435\u044E\u0442 \u043A\u043E\u0440\u043E\u0442\u043A\u0438\u0435
+    \u0442\u0435\u043B\u0430 \u0438 \u0441\u0438\u043B\u044C\u043D\u043E \u0432\u044B\u0440\u0430\u0436\u0435\u043D\u043D\u044B\u0435
+    \u043E\u0441\u0442\u0438\u0441\u0442\u044B\u0435 \u043E\u0442\u0440\u043E\u0441\u0442\u043A\u0438,
+    \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u0432\u043C\u0435\u0441\u0442\u0435
+    \u0441 \u0445\u0440\u044F\u0449\u0430\u043C\u0438 \u043B\u043E\u043F\u0430\u0442\u043A\u0438
+    \u0441\u043E\u0441\u0442\u0430\u0432\u043B\u044F\u044E\u0442 \u043E\u0441\u0442\u043E\u0432
+    \u0445\u043E\u043B\u043A\u0438. \u041E\u0441\u0442\u0438\u0441\u0442\u044B\u0435
+    \u043E\u0442\u0440\u043E\u0441\u0442\u043A\u0438 \u0438\u043C\u0435\u044E\u0442
+    \u043A\u0430\u0443\u0434\u043E\u0434\u043E\u0440\u0441\u0430\u043B\u044C\u043D\u044B\u0439
+    \u043D\u0430\u043A\u043B\u043E\u043D, \u0443\u043C\u0435\u043D\u044C\u0448\u0430\u044E\u0449\u0438\u0439\u0441\u044F
+    \u043A \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u0438\u043C \u0433\u0440\u0443\u0434\u043D\u044B\u043C
+    \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u0430\u043C. \u041F\u043E\u0437\u0432\u043E\u043D\u043E\u043A,
+    \u0438\u043C\u0435\u044E\u0449\u0438\u0439 \u0432\u0435\u0440\u0442\u0438\u043A\u0430\u043B\u044C\u043D\u043E\u0435
+    \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435 \u043E\u0441\u0442\u0438\u0441\u0442\u043E\u0433\u043E
+    \u043E\u0442\u0440\u043E\u0441\u0442\u043A\u0430, \u043D\u0430\u0437\u044B\u0432\u0430\u0435\u0442\u0441\u044F
+    \u0434\u0438\u0430\u0444\u0440\u0430\u0433\u043C\u0430\u043B\u044C\u043D\u044B\u043C,
+    \u0438\u043B\u0438 \u0430\u043D\u0442\u0438\u043A\u043B\u0438\u043D\u0430\u043B\u044C\u043D\u044B\u043C
+    (vertebra anticlinalis). \u0423 \u043F\u043E\u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0445
+    \u0433\u0440\u0443\u0434\u043D\u044B\u0445 \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u043E\u0432
+    \u043E\u0441\u0442\u0438\u0441\u0442\u044B\u0435 \u043E\u0442\u0440\u043E\u0441\u0442\u043A\u0438
+    \u043D\u0430\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u044B \u0434\u043E\u0440\u0441\u043E\u043A\u0440\u0430\u043D\u0438\u0430\u043B\u044C\u043D\u043E.\n\u041D\u0430
+    \u0442\u0435\u043B\u0435 \u0433\u0440\u0443\u0434\u043D\u044B\u0445 \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u043E\u0432
+    \u0445\u043E\u0440\u043E\u0448\u043E \u0432\u044B\u0440\u0430\u0436\u0435\u043D\u044B
+    \u043F\u0430\u0440\u043D\u044B\u0435 \u043A\u0440\u0430\u043D\u0438\u0430\u043B\u044C\u043D\u0430\u044F
+    \u0438 \u043A\u0430\u0443\u0434\u0430\u043B\u044C\u043D\u0430\u044F \u0440\u0451\u0431\u0435\u0440\u043D\u044B\u0435
+    \u044F\u043C\u043A\u0438 (fovea costales cranialis et caudalis). \u041F\u043E\u043F\u0435\u0440\u0435\u0447\u043D\u044B\u0439
+    \u043E\u0442\u0440\u043E\u0441\u0442\u043E\u043A \u043A\u043E\u0440\u043E\u0442\u043A\u0438\u0439
+    \u0438 \u043D\u0435\u0441\u0451\u0442 \u043D\u0430 \u0441\u0435\u0431\u0435 \u0440\u0451\u0431\u0435\u0440\u043D\u0443\u044E
+    \u044F\u043C\u043A\u0443 (fovea costalis processus transversi), \u0441\u043B\u0443\u0436\u0430\u0449\u0443\u044E
+    \u0434\u043B\u044F \u0441\u043E\u0447\u043B\u0435\u043D\u0435\u043D\u0438\u044F
+    \u0441 \u0431\u0443\u0433\u043E\u0440\u043A\u043E\u043C \u0440\u0435\u0431\u0440\u0430.
+    \u041D\u0430 \u0434\u043E\u0440\u0441\u0430\u043B\u044C\u043D\u043E\u0439 \u043F\u043E\u0432\u0435\u0440\u0445\u043D\u043E\u0441\u0442\u0438
+    \u043F\u043E\u043F\u0435\u0440\u0435\u0447\u043D\u043E\u0433\u043E \u043E\u0442\u0440\u043E\u0441\u0442\u043A\u0430
+    \u0432\u044B\u0441\u0442\u0443\u043F\u0430\u0435\u0442 \u043D\u0435\u0431\u043E\u043B\u044C\u0448\u0438\u0445
+    \u0440\u0430\u0437\u043C\u0435\u0440\u043E\u0432 \u0441\u043E\u0441\u0446\u0435\u0432\u0438\u0434\u043D\u044B\u0439
+    \u043E\u0442\u0440\u043E\u0441\u0442\u043E\u043A (processus mamillaris). \u0421\u0443\u0441\u0442\u0430\u0432\u043D\u044B\u0435
+    \u043E\u0442\u0440\u043E\u0441\u0442\u043A\u0438 \u0445\u043E\u0440\u043E\u0448\u043E
+    \u0432\u044B\u0440\u0430\u0436\u0435\u043D\u044B \u043B\u0438\u0448\u044C \u043D\u0430
+    \u043F\u0435\u0440\u0432\u043E\u043C \u0438 \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u0438\u0445
+    \u0433\u0440\u0443\u0434\u043D\u044B\u0445 \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u0430\u0445,
+    \u0442\u043E\u0433\u0434\u0430 \u043A\u0430\u043A \u043D\u0430 \u0434\u0440\u0443\u0433\u0438\u0445
+    \u043E\u043D\u0438 \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u044B
+    \u0441\u0443\u0441\u0442\u0430\u0432\u043D\u044B\u043C\u0438 \u0444\u0430\u0441\u0435\u0442\u043A\u0430\u043C\u0438,
+    \u0440\u0430\u0441\u043F\u043E\u043B\u0430\u0433\u0430\u044E\u0449\u0438\u043C\u0438\u0441\u044F
+    \u043D\u0435\u043F\u043E\u0441\u0440\u0435\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u043E
+    \u043D\u0430 \u0434\u0443\u0433\u0435 \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u0430.\n\u0423
+    \u0436\u0432\u0430\u0447\u043D\u044B\u0445 \u0433\u0440\u0443\u0434\u043D\u044B\u0445
+    \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u043E\u0432 13 (12 \u2013 14). \u0418\u0445
+    \u0442\u0435\u043B\u0430 \u0438\u043C\u0435\u044E\u0442 \u043E\u043A\u0440\u0443\u0433\u043B\u043E\u0432\u043E\u0433\u043D\u0443\u0442\u0443\u044E
+    \u0444\u043E\u0440\u043C\u0443 \u0441\u043E \u0441\u043B\u0430\u0431\u043E \u0432\u044B\u0440\u0430\u0436\u0435\u043D\u043D\u044B\u043C\u0438
+    \u0433\u043E\u043B\u043E\u0432\u043A\u043E\u0439 \u0438 \u044F\u043C\u043A\u043E\u0439.
+    \u041A\u0430\u0443\u0434\u0430\u043B\u044C\u043D\u044B\u0435 \u043C\u0435\u0436\u043F\u043E\u0437\u0432\u043E\u043D\u043E\u0447\u043D\u044B\u0435
+    \u0432\u044B\u0440\u0435\u0437\u043A\u0438 \u043E\u0442\u0434\u0435\u043B\u0435\u043D\u044B
+    \u043A\u043E\u0441\u0442\u043D\u044B\u043C\u0438 \u043F\u0435\u0440\u0435\u043C\u044B\u0447\u043A\u0430\u043C\u0438
+    \u0441 \u043E\u0431\u0440\u0430\u0437\u043E\u0432\u0430\u043D\u0438\u0435\u043C
+    \u043C\u0435\u0436\u043F\u043E\u0437\u0432\u043E\u043D\u043E\u0447\u043D\u044B\u0445
+    \u043E\u0442\u0432\u0435\u0440\u0441\u0442\u0438\u0439 (foramen intervertebrale).
+    \u0420\u0451\u0431\u0435\u0440\u043D\u044B\u0435 \u044F\u043C\u043A\u0438 \u0448\u0438\u0440\u043E\u043A\u0438\u0435,
+    \u0443\u043F\u043B\u043E\u0449\u0451\u043D\u043D\u043E\u0439 \u0444\u043E\u0440\u043C\u044B.
+    \u041D\u0430 \u043F\u043E\u043F\u0435\u0440\u0435\u0447\u043D\u044B\u0445 \u043E\u0442\u0440\u043E\u0441\u0442\u043A\u0430\u0445
+    \u0440\u0451\u0431\u0435\u0440\u043D\u044B\u0435 \u044F\u043C\u043A\u0438, \u043E\u0441\u043E\u0431\u0435\u043D\u043D\u043E
+    \u043D\u0430 \u043F\u0435\u0440\u0432\u044B\u0445 \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u0430\u0445,
+    \u0441\u0435\u0434\u043B\u043E\u0432\u0438\u0434\u043D\u043E\u0439 \u0444\u043E\u0440\u043C\u044B.
+    \u041E\u0441\u0442\u0438\u0441\u0442\u044B\u0435 \u043E\u0442\u0440\u043E\u0441\u0442\u043A\u0438
+    \u0448\u0438\u0440\u043E\u043A\u0438\u0435, \u0441 \u0437\u0430\u043E\u0441\u0442\u0440\u0435\u043D\u043D\u044B\u043C\u0438
+    \u043A\u0440\u0430\u043D\u0438\u0430\u043B\u044C\u043D\u044B\u043C\u0438 \u0438
+    \u043A\u0430\u0443\u0434\u0430\u043B\u044C\u043D\u044B\u043C\u0438 \u043A\u0440\u0430\u044F\u043C\u0438.
+    \u041F\u043E\u0441\u043B\u0435\u0434\u043D\u0438\u0439 (13-\u0439) \u0433\u0440\u0443\u0434\u043D\u043E\u0439
+    \u043F\u043E\u0437\u0432\u043E\u043D\u043E\u043A \u0430\u043D\u0442\u0438\u043A\u043B\u0438\u043D\u0430\u043B\u044C\u043D\u044B\u0439"
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &16237087 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 632022010932321325, guid: fcc402464cee08145a0a0e783b07c8e3, type: 3}
@@ -352,6 +437,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 158036050}
+  - component: {fileID: 158036051}
   m_Layer: 0
   m_Name: Bones Legs
   m_TagString: Untagged
@@ -378,6 +464,26 @@ Transform:
   - {fileID: 472458268}
   m_Father: {fileID: 425755815}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &158036051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158036049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: 
+  groupScientificName: 
+  description: 
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &170904337 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2618616858270533518, guid: 7f87cb03d74db8042bead605091f8d50, type: 3}
@@ -392,6 +498,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 171509563}
+  - component: {fileID: 171509564}
   m_Layer: 0
   m_Name: Lymphatic System
   m_TagString: Untagged
@@ -415,6 +522,26 @@ Transform:
   - {fileID: 1058690008}
   m_Father: {fileID: 1288319924}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &171509564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171509562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: 
+  groupScientificName: 
+  description: 
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &172701566 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7115601196285894741, guid: d915b939b5c4c6d4c9bd4489f515bce5, type: 3}
@@ -434,6 +561,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 187646429}
+  - component: {fileID: 187646430}
   m_Layer: 0
   m_Name: Bones Leg Front Left
   m_TagString: Untagged
@@ -468,6 +596,26 @@ Transform:
   - {fileID: 1407344303}
   m_Father: {fileID: 158036050}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &187646430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187646428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: 
+  groupScientificName: 
+  description: 
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &197061741 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3485926533957466711, guid: da6ac06726e88d84687fb8b01faad108, type: 3}
@@ -513,6 +661,72 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8632767084747378681, guid: 65927f7499a9a7544956caa6cbe09269, type: 3}
   m_PrefabInstance: {fileID: 8081217468850834101}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &273503643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 273503644}
+  - component: {fileID: 273503645}
+  m_Layer: 0
+  m_Name: "\u041A\u0440\u0435\u0441\u0442\u0446\u043E\u0432\u044B\u0439 \u043E\u0442\u0434\u0435\u043B
+    - vertebrae sacrales"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &273503644
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273503643}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1763141917}
+  - {fileID: 1121496520}
+  m_Father: {fileID: 1395728951}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &273503645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273503643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: "\u041A\u0440\u0435\u0441\u0442\u0446\u043E\u0432\u044B\u0439 \u043E\u0442\u0434\u0435\u043B
+    (\u043A\u0440\u0435\u0441\u0442\u0446\u043E\u0432\u044B\u0435 \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u0438)"
+  groupScientificName: vertebrae sacrales
+  description: "\u0412 \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u0435
+    3 \u2013 5 \u0441\u043B\u0443\u0436\u0430\u0442 \u043C\u0435\u0441\u0442\u043E\u043C
+    \u043F\u0440\u0438\u043A\u0440\u0435\u043F\u043B\u0435\u043D\u0438\u044F \u043F\u043E\u0434\u0432\u0437\u0434\u043E\u0448\u043D\u044B\u0445
+    \u043A\u043E\u0441\u0442\u0435\u0439 \u0442\u0430\u0437\u043E\u0432\u043E\u0433\u043E
+    \u043F\u043E\u044F\u0441\u0430 \u0438 \u043F\u043E\u044D\u0442\u043E\u043C\u0443
+    \u0443 \u0432\u0441\u0435\u0445 \u0436\u0438\u0432\u043E\u0442\u043D\u044B\u0445
+    \u0440\u0430\u043D\u043E \u0441\u0440\u0430\u0441\u0442\u0430\u044E\u0442\u0441\u044F
+    \u043C\u0435\u0436\u0434\u0443 \u0441\u043E\u0431\u043E\u0439 \u0432 \u043E\u0434\u043D\u0443
+    \u043E\u0431\u0449\u0443\u044E \u043A\u0440\u0435\u0441\u0442\u0446\u043E\u0432\u0443\u044E
+    \u043A\u043E\u0441\u0442\u044C (os sacrale), \u0438\u043B\u0438 \u043A\u0440\u0435\u0441\u0442\u0435\u0446
+    (sacrum)"
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &275455787 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4133387580417027538, guid: 6bea8cd9a0b5bda41a879251595491c4, type: 3}
@@ -532,8 +746,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 289670337}
+  - component: {fileID: 289670338}
   m_Layer: 0
-  m_Name: Bones Neck
+  m_Name: "\u0428\u0435\u0439\u043D\u044B\u0439 \u043E\u0442\u0434\u0435\u043B -
+    vert\u0435brae cervicales"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -547,7 +763,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289670336}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -559,8 +775,40 @@ Transform:
   - {fileID: 349715066}
   - {fileID: 669737989}
   - {fileID: 2012951416}
-  m_Father: {fileID: 425755815}
+  m_Father: {fileID: 1395728951}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &289670338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289670336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: "\u0428\u0435\u0439\u043D\u044B\u0439 \u043E\u0442\u0434\u0435\u043B
+    (\u0448\u0435\u0439\u043D\u044B\u0435 \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u0438)"
+  groupScientificName: "vert\u0435brae cervicales"
+  description: "\u0421\u043E\u0441\u0442\u0430\u0432\u043B\u044F\u044E\u0442 \u043A\u043E\u0441\u0442\u043D\u0443\u044E
+    \u043E\u0441\u043D\u043E\u0432\u0443 \u0448\u0435\u0438, \u0432\u044B\u043F\u043E\u043B\u043D\u044F\u044E\u0449\u0435\u0439
+    \u0440\u043E\u043B\u044C \u043C\u043E\u0449\u043D\u043E\u0433\u043E \u043E\u0434\u043D\u043E\u043F\u043B\u0435\u0447\u0435\u0433\u043E
+    \u0440\u044B\u0447\u0430\u0433\u0430, \u043D\u0430 \u043F\u0435\u0440\u0435\u0434\u043D\u0435\u043C
+    \u043A\u043E\u043D\u0446\u0435 \u043A\u043E\u0442\u043E\u0440\u043E\u0433\u043E
+    \u043A\u0440\u0435\u043F\u0438\u0442\u0441\u044F \u0433\u043E\u043B\u043E\u0432\u0430.
+    \u041D\u0435\u0441\u043C\u043E\u0442\u0440\u044F \u043D\u0430 \u0437\u043D\u0430\u0447\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0435
+    \u0440\u0430\u0437\u043B\u0438\u0447\u0438\u044F \u0432 \u0434\u043B\u0438\u043D\u0435
+    \u0448\u0435\u0438, \u0443 \u0432\u0441\u0435\u0445 \u0434\u043E\u043C\u0430\u0448\u043D\u0438\u0445
+    \u043C\u043B\u0435\u043A\u043E\u043F\u0438\u0442\u0430\u044E\u0449\u0438\u0445
+    \u0438\u043C\u0435\u0435\u0442\u0441\u044F 7 \u0448\u0435\u0439\u043D\u044B\u0445
+    \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u043E\u0432"
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &293072590 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7304716971531748018, guid: d9814d5269f28e54fba81cc1dca2c69a, type: 3}
@@ -595,6 +843,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 317263232}
+  - component: {fileID: 317263233}
   m_Layer: 0
   m_Name: Digestive System
   m_TagString: Untagged
@@ -622,6 +871,26 @@ Transform:
   - {fileID: 879559361}
   m_Father: {fileID: 1288319924}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &317263233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317263231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: 
+  groupScientificName: 
+  description: 
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &322756505 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1735215423486958555, guid: 39c503f24466c2944a252ee0b63e70d7, type: 3}
@@ -696,8 +965,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 425755815}
+  - component: {fileID: 425755816}
   m_Layer: 0
-  m_Name: Skeleton
+  m_Name: "\u0421\u043A\u0435\u043B\u0435\u0442 - skeleton"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -717,13 +987,73 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1469251717}
-  - {fileID: 289670337}
+  - {fileID: 1395728951}
   - {fileID: 158036050}
   - {fileID: 679908830}
-  - {fileID: 14852168}
-  - {fileID: 750859370}
   m_Father: {fileID: 1288319924}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &425755816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425755814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: "\u0421\u043A\u0435\u043B\u0435\u0442"
+  groupScientificName: skeleton
+  description: "\u041A\u043E\u0441\u0442\u0438, \u0437\u0430\u043A\u043E\u043D\u043E\u043C\u0435\u0440\u043D\u043E
+    \u0441\u043E\u0435\u0434\u0438\u043D\u0451\u043D\u043D\u044B\u0435 \u043C\u0435\u0436\u0434\u0443
+    \u0441\u043E\u0431\u043E\u0439 \u043F\u043E\u0441\u0440\u0435\u0434\u0441\u0442\u0432\u043E\u043C
+    \u0444\u0438\u0431\u0440\u043E\u0437\u043D\u043E\u0439, \u0445\u0440\u044F\u0449\u0435\u0432\u043E\u0439
+    \u0438\u043B\u0438 \u043A\u043E\u0441\u0442\u043D\u043E\u0439 \u0442\u043A\u0430\u043D\u0435\u0439,
+    \u0441\u043E\u0441\u0442\u0430\u0432\u043B\u044F\u044E\u0442 \u043F\u0440\u043E\u0447\u043D\u044B\u0439
+    \u043E\u0441\u0442\u043E\u0432 \u0442\u0435\u043B\u0430 \u0436\u0438\u0432\u043E\u0442\u043D\u043E\u0433\u043E,
+    \u0438\u043B\u0438 \u0435\u0433\u043E \u0441\u043A\u0435\u043B\u0435\u0442 \u2013
+    skeleton (\u0433\u0440. skeletos \u2013 \u0432\u044B\u0441\u043E\u0445\u0448\u0438\u0439,
+    \u0438\u0441\u0441\u043E\u0445\u0448\u0438\u0439; \u043E\u0442 skele \u2013 \u0441\u0443\u0448\u0443).\n\u0421\u043A\u0435\u043B\u0435\u0442
+    \u043C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C \u043D\u0430\u0440\u0443\u0436\u043D\u044B\u043C,
+    \u0440\u0430\u0437\u0432\u0438\u0432\u0430\u044E\u0449\u0438\u043C\u0441\u044F
+    \u0432 \u043A\u043E\u0436\u0435 \u0438 \u0432\u044B\u043F\u043E\u043B\u043D\u044F\u044E\u0449\u0438\u043C
+    \u043F\u0440\u0435\u0438\u043C\u0443\u0449\u0435\u0441\u0442\u0432\u0435\u043D\u043D\u043E
+    \u0437\u0430\u0449\u0438\u0442\u043D\u0443\u044E \u0440\u043E\u043B\u044C (\u043A\u043E\u0436\u043D\u044B\u0439
+    \u0441\u043A\u0435\u043B\u0435\u0442 \u0438 \u043F\u043E\u043A\u0440\u043E\u0432\u043D\u044B\u0435
+    \u043A\u043E\u0441\u0442\u0438 \u0441\u043A\u0435\u043B\u0435\u0442\u0430 \u0433\u043E\u043B\u043E\u0432\u044B
+    \u043D\u0438\u0437\u0448\u0438\u0445 \u043F\u043E\u0437\u0432\u043E\u043D\u043E\u0447\u043D\u044B\u0445,
+    \u043F\u0430\u043D\u0446\u0438\u0440\u044C \u0442\u0435\u043B\u0430 \u0447\u0435\u0440\u0435\u043F\u0430\u0445\u0438),
+    \u0438 \u0432\u043D\u0443\u0442\u0440\u0435\u043D\u043D\u0438\u0439, \u043A\u043E\u0442\u043E\u0440\u044B\u0439
+    \u0440\u0430\u0437\u0432\u0438\u0432\u0430\u0435\u0442\u0441\u044F \u0438\u0437
+    \u043C\u0435\u0437\u0435\u043D\u0445\u0438\u043C\u044B \u0438 \u0440\u0430\u0441\u043F\u043E\u043B\u0430\u0433\u0430\u0435\u0442\u0441\u044F
+    \u043F\u043E\u0434 \u043A\u043E\u0436\u0435\u0439 \u0442\u0435\u043B\u0430 \u0436\u0438\u0432\u043E\u0442\u043D\u043E\u0433\u043E.
+    \u041C\u043B\u0435\u043A\u043E\u043F\u0438\u0442\u0430\u044E\u0449\u0438\u0435
+    \u0438\u043C\u0435\u044E\u0442 \u043B\u0438\u0448\u044C \u0432\u043D\u0443\u0442\u0440\u0435\u043D\u043D\u0438\u0439
+    \u0441\u043A\u0435\u043B\u0435\u0442, \u0432 \u0441\u043E\u0441\u0442\u0430\u0432
+    \u043A\u043E\u0442\u043E\u0440\u043E\u0433\u043E \u0432\u043E\u0448\u043B\u0438
+    \u043D\u0435\u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043A\u043E\u0441\u0442\u0438
+    \u043A\u043E\u0436\u043D\u043E\u0433\u043E \u043F\u0440\u043E\u0438\u0441\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u044F
+    (\u043E\u0442\u0434\u0435\u043B\u044C\u043D\u044B\u0435 \u043A\u043E\u0441\u0442\u0438
+    \u043B\u0438\u0446\u0430 \u0438 \u0447\u0435\u0440\u0435\u043F\u0430, \u0437\u0443\u0431\u044B,
+    \u0440\u043E\u0433\u043E\u0432\u044B\u0435 \u043E\u0442\u0440\u043E\u0441\u0442\u043A\u0438
+    \u043B\u043E\u0431\u043D\u044B\u0445 \u043A\u043E\u0441\u0442\u0435\u0439 \u0436\u0432\u0430\u0447\u043D\u044B\u0445,
+    \u0440\u043E\u0433\u0430 \u043E\u043B\u0435\u043D\u044C\u0438\u0445) \u0438 \u0440\u0430\u0437\u0432\u0438\u0432\u0448\u0438\u0435\u0441\u044F
+    \u0438\u0437 \u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0439
+    \u0442\u043A\u0430\u043D\u0438 \u043A\u0430\u043A \u0432\u0441\u043F\u043E\u043C\u043E\u0433\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0435
+    \u043E\u0440\u0433\u0430\u043D\u044B \u0441\u043A\u0435\u043B\u0435\u0442\u043D\u044B\u0445
+    \u043C\u044B\u0448\u0446 (\u0441\u0435\u0441\u0430\u043C\u043E\u0432\u0438\u0434\u043D\u044B\u0435
+    \u043A\u043E\u0441\u0442\u0438).\n\u041A\u043E\u0441\u0442\u0438 \u0441\u043A\u0435\u043B\u0435\u0442\u0430
+    \u0432\u044B\u043F\u043E\u043B\u043D\u044F\u044E\u0442 \u0440\u0430\u0437\u043D\u043E\u043E\u0431\u0440\u0430\u0437\u043D\u044B\u0435
+    \u043C\u0435\u0445\u0430\u043D\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u0438
+    \u0431\u0438\u043E\u043B\u043E\u0433\u0438\u0447\u0435\u0441\u043A\u0438\u0435
+    \u0444\u0443\u043D\u043A\u0446\u0438\u0438"
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &430350122 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2966474027736314847, guid: 7242224038582a541b0f45a4dbbc0c2b, type: 3}
@@ -783,6 +1113,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 472458268}
+  - component: {fileID: 472458269}
   m_Layer: 0
   m_Name: Bones Leg Front Right
   m_TagString: Untagged
@@ -817,6 +1148,26 @@ Transform:
   - {fileID: 1197944304}
   m_Father: {fileID: 158036050}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &472458269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472458267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: 
+  groupScientificName: 
+  description: 
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &482067129 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7437483430356532855, guid: b485420b43fe3f243bc8f5a27d45f64f, type: 3}
@@ -856,6 +1207,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 517386144}
+  - component: {fileID: 517386145}
   m_Layer: 0
   m_Name: Bones Leg Back Right
   m_TagString: Untagged
@@ -888,6 +1240,26 @@ Transform:
   - {fileID: 1232975961}
   m_Father: {fileID: 158036050}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &517386145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517386143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: 
+  groupScientificName: 
+  description: 
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &545422142 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5305650365668371779, guid: 7c07511246d378342a84aec362717744, type: 3}
@@ -1015,6 +1387,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 679908830}
+  - component: {fileID: 679908831}
   m_Layer: 0
   m_Name: Bones Ribs
   m_TagString: Untagged
@@ -1040,6 +1413,26 @@ Transform:
   - {fileID: 1151391593}
   m_Father: {fileID: 425755815}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &679908831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679908829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: 
+  groupScientificName: 
+  description: 
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &683633670 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1569685974753335207, guid: bb55bf3601fa5e941889548f94283d17, type: 3}
@@ -1124,8 +1517,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 750859370}
+  - component: {fileID: 750859371}
   m_Layer: 0
-  m_Name: Bones Tail
+  m_Name: "\u0425\u0432\u043E\u0441\u0442\u043E\u0432\u043E\u0439 \u043E\u0442\u0434\u0435\u043B
+    - vertebrae caudales "
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1139,7 +1534,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750859369}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1161,8 +1556,70 @@ Transform:
   - {fileID: 1694748823}
   - {fileID: 252770340}
   - {fileID: 1029415410}
-  m_Father: {fileID: 425755815}
+  m_Father: {fileID: 1395728951}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &750859371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750859369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: "\u0425\u0432\u043E\u0441\u0442\u043E\u0432\u043E\u0439 \u043E\u0442\u0434\u0435\u043B
+    (\u0445\u0432\u043E\u0441\u0442\u043E\u0432\u044B\u0435 \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u0438)"
+  groupScientificName: vertebrae caudales
+  description: "\u0412 \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u0435
+    18 \u2013 20 \u0441\u043E\u0441\u0442\u0430\u0432\u043B\u044F\u044E\u0442 \u043E\u0441\u043D\u043E\u0432\u0443
+    \u0445\u0432\u043E\u0441\u0442\u043E\u0432\u043E\u0433\u043E \u043E\u0442\u0434\u0435\u043B\u0430,
+    \u0432\u044B\u043F\u043E\u043B\u043D\u044F\u044E\u0449\u0435\u0433\u043E \u0437\u0430\u0449\u0438\u0442\u043D\u0443\u044E
+    \u0444\u0443\u043D\u043A\u0446\u0438\u044E \u0438 \u0440\u043E\u043B\u044C \u0441\u0432\u043E\u0435\u043E\u0431\u0440\u0430\u0437\u043D\u043E\u0433\u043E
+    \u0440\u0443\u043B\u044F \u043F\u0440\u0438 \u0431\u044B\u0441\u0442\u0440\u044B\u0445
+    \u043F\u0435\u0440\u0435\u0434\u0432\u0438\u0436\u0435\u043D\u0438\u044F\u0445.
+    \u0423 \u0440\u0430\u0437\u043B\u0438\u0447\u043D\u044B\u0445 \u0432\u0438\u0434\u043E\u0432
+    \u0434\u043E\u043C\u0430\u0448\u043D\u0438\u0445 \u0436\u0438\u0432\u043E\u0442\u043D\u044B\u0445
+    \u043E\u0442\u0434\u0435\u043B\u044C\u043D\u044B\u0435 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u044B
+    \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u0430 \u0441\u043E\u0445\u0440\u0430\u043D\u044F\u044E\u0442\u0441\u044F
+    \u043B\u0438\u0448\u044C \u0443 \u043F\u0435\u0440\u0432\u044B\u0445 5 \u2013
+    8, \u0432 \u0442\u043E \u0432\u0440\u0435\u043C\u044F \u043A\u0430\u043A \u0443
+    \u043E\u0441\u0442\u0430\u043B\u044C\u043D\u044B\u0445 \u043E\u043D\u0438 \u043F\u043E\u0434\u0432\u0435\u0440\u0433\u043B\u0438\u0441\u044C
+    \u0437\u043D\u0430\u0447\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0439 \u0440\u0435\u0434\u0443\u043A\u0446\u0438\u0438.
+    \u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0432\u0448\u0438\u0435\u0441\u044F
+    \u0442\u0435\u043B\u0430 \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u043E\u0432
+    \u0438\u043C\u0435\u044E\u0442 \u0432\u0438\u0434 \u043A\u043E\u0440\u043E\u0442\u043A\u0438\u0445
+    \u0438 \u0442\u043E\u043D\u043A\u0438\u0445 \u0441\u0442\u043E\u043B\u0431\u0438\u043A\u043E\u0432\u0438\u0434\u043D\u043E\u0439
+    \u0444\u043E\u0440\u043C\u044B \u043E\u0431\u0440\u0430\u0437\u043E\u0432\u0430\u043D\u0438\u0439.\n\u0423
+    \u043A\u0440\u0443\u043F\u043D\u043E\u0433\u043E \u0440\u043E\u0433\u0430\u0442\u043E\u0433\u043E
+    \u0441\u043A\u043E\u0442\u0430 \u0445\u0432\u043E\u0441\u0442 \u0434\u043B\u0438\u043D\u043D\u044B\u0439
+    \u0437\u0430 \u0441\u0447\u0451\u0442 \u0437\u043D\u0430\u0447\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0439
+    \u0434\u043B\u0438\u043D\u044B \u0442\u0435\u043B \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u043E\u0432.
+    \u0420\u0443\u0434\u0438\u043C\u0435\u043D\u0442\u044B \u043F\u043E\u0437\u0432\u043E\u043D\u043E\u0447\u043D\u044B\u0445
+    \u0434\u0443\u0433 \u0445\u043E\u0440\u043E\u0448\u043E \u0432\u044B\u0440\u0430\u0436\u0435\u043D\u044B
+    \u043D\u0430 \u043F\u0435\u0440\u0432\u044B\u0445 \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u0430\u0445.
+    \u0418\u0437 \u0441\u0443\u0441\u0442\u0430\u0432\u043D\u044B\u0445 \u043E\u0442\u0440\u043E\u0441\u0442\u043A\u043E\u0432
+    \u0441\u043E\u0445\u0440\u0430\u043D\u0438\u043B\u0438\u0441\u044C \u043B\u0438\u0448\u044C
+    \u043A\u0440\u0430\u043D\u0438\u0430\u043B\u044C\u043D\u044B\u0435, \u0430 \u043F\u043E\u043F\u0435\u0440\u0435\u0447\u043D\u044B\u0435
+    \u043F\u0440\u0438\u043D\u044F\u043B\u0438 \u0444\u043E\u0440\u043C\u0443 \u0448\u0438\u0440\u043E\u043A\u0438\u0445
+    \u043F\u043B\u0430\u0441\u0442\u0438\u043D\u043E\u043A, \u0437\u0430\u0433\u043D\u0443\u0442\u044B\u0445
+    \u0432\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u043E. \u041D\u0430 \u043A\u0440\u0430\u043D\u0438\u0430\u043B\u044C\u043D\u044B\u0445
+    \u043A\u043E\u043D\u0446\u0430\u0445 \u043F\u0435\u0440\u0432\u044B\u0445 8 \u2013
+    10 \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u043E\u0432 \u0441 \u0432\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u043E\u0439
+    \u043F\u043E\u0432\u0435\u0440\u0445\u043D\u043E\u0441\u0442\u0438 \u0438\u043C\u0435\u044E\u0442\u0441\u044F
+    \u0433\u0435\u043C\u0430\u043B\u044C\u043D\u044B\u0435 \u043E\u0442\u0440\u043E\u0441\u0442\u043A\u0438
+    (processus hemales), \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043E\u0441\u043E\u0431\u0435\u043D\u043D\u043E
+    \u0432\u044B\u0440\u0430\u0436\u0435\u043D\u044B \u043D\u0430 \u043F\u0435\u0440\u0432\u044B\u0445
+    3 \u2013 5 \u0438 \u0438\u043D\u043E\u0433\u0434\u0430 \u043C\u043E\u0433\u0443\u0442
+    \u043E\u0431\u0440\u0430\u0437\u043E\u0432\u044B\u0432\u0430\u0442\u044C \u0433\u0435\u043C\u0430\u043B\u044C\u043D\u044B\u0435
+    \u0434\u0443\u0433\u0438 (arcus hemales)"
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &753887352 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6539220192739249454, guid: 3361cb59e7b2f2b4abeeb69400c2a791, type: 3}
@@ -1360,6 +1817,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 902311350}
+  - component: {fileID: 902311351}
   m_Layer: 0
   m_Name: Respiratory System
   m_TagString: Untagged
@@ -1384,6 +1842,26 @@ Transform:
   - {fileID: 1893737753}
   m_Father: {fileID: 1288319924}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &902311351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902311349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: 
+  groupScientificName: 
+  description: 
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &906710379 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6704319238756201758, guid: f5129d189b6e9154bbad57dd102958a8, type: 3}
@@ -1483,6 +1961,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 985571372}
+  - component: {fileID: 985571373}
   m_Layer: 0
   m_Name: Excretory System
   m_TagString: Untagged
@@ -1507,6 +1986,26 @@ Transform:
   - {fileID: 1481118350}
   m_Father: {fileID: 1288319924}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &985571373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985571371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: 
+  groupScientificName: 
+  description: 
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &993438781 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4250014476765721057, guid: cb5bbaa26f7cc06468c4f3b8decee3b4, type: 3}
@@ -1572,6 +2071,100 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6629886330756289173, guid: 9d3253b934156074890ad7ac8c6579b5, type: 3}
   m_PrefabInstance: {fileID: 5493791707616655056}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1060991225
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1060991226}
+  - component: {fileID: 1060991227}
+  m_Layer: 0
+  m_Name: "\u041F\u043E\u044F\u0441\u043D\u0438\u0447\u043D\u044B\u0439 \u043E\u0442\u0434\u0435\u043B
+    - vertebrae lumbales"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1060991226
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060991225}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1789455405}
+  - {fileID: 288564258}
+  - {fileID: 801955208}
+  - {fileID: 687729611}
+  - {fileID: 2062557698}
+  - {fileID: 1873423715}
+  m_Father: {fileID: 1395728951}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1060991227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060991225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: "\u041F\u043E\u044F\u0441\u043D\u0438\u0447\u043D\u044B\u0439 \u043E\u0442\u0434\u0435\u043B
+    (\u043F\u043E\u044F\u0441\u043D\u0438\u0447\u043D\u044B\u0435 \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u0438)"
+  groupScientificName: vertebrae lumbales
+  description: "\u0425\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u0438\u0437\u0443\u044E\u0442\u0441\u044F
+    \u043F\u0440\u0438\u0437\u043D\u0430\u043A\u0430\u043C\u0438, \u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0438\u0432\u0430\u044E\u0449\u0438\u043C\u0438
+    \u044D\u0442\u043E\u043C\u0443 \u043E\u0442\u0434\u0435\u043B\u0443 \u0431\u043E\u043B\u044C\u0448\u0443\u044E
+    \u043F\u0440\u043E\u0447\u043D\u043E\u0441\u0442\u044C \u0438 \u0437\u043D\u0430\u0447\u0438\u0442\u0435\u043B\u044C\u043D\u0443\u044E
+    \u043F\u043E\u0434\u0432\u0438\u0436\u043D\u043E\u0441\u0442\u044C. \u0412 \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u0435
+    6, \u043E\u043D\u0438 \u043E\u0442\u043B\u0438\u0447\u0430\u044E\u0442\u0441\u044F
+    \u0431\u043E\u043B\u0435\u0435 \u043C\u043E\u0449\u043D\u044B\u043C\u0438 \u0442\u0435\u043B\u0430\u043C\u0438
+    \u0441\u043E \u0441\u043B\u0430\u0431\u043E \u0432\u044B\u0440\u0430\u0436\u0435\u043D\u043D\u044B\u043C\u0438
+    \u0433\u043E\u043B\u043E\u0432\u043A\u0430\u043C\u0438 \u0438 \u044F\u043C\u043A\u0430\u043C\u0438.
+    \u041E\u0441\u0442\u0438\u0441\u0442\u044B\u0435 \u043E\u0442\u0440\u043E\u0441\u0442\u043A\u0438
+    \u043F\u043B\u0430\u0441\u0442\u0438\u043D\u0447\u0430\u0442\u044B\u0435, \u043F\u043E\u0447\u0442\u0438
+    \u043E\u0434\u0438\u043D\u0430\u043A\u043E\u0432\u043E\u0439 \u0432\u044B\u0441\u043E\u0442\u044B
+    \u0438 \u0448\u0438\u0440\u0438\u043D\u044B. \u041F\u043E\u043F\u0435\u0440\u0435\u0447\u043D\u044B\u0435
+    \u043E\u0442\u0440\u043E\u0441\u0442\u043A\u0438 \u043F\u043B\u0430\u0441\u0442\u0438\u043D\u0447\u0430\u0442\u044B\u0435
+    \u0438 \u0448\u0438\u0440\u043E\u043A\u0438\u0435.\n\u0423 \u0436\u0432\u0430\u0447\u043D\u044B\u0445
+    \u0442\u0435\u043B\u0430 \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u043E\u0432
+    \u0434\u043B\u0438\u043D\u043D\u044B\u0435 \u0438 \u0448\u0438\u0440\u043E\u043A\u0438\u0435,
+    \u0432 \u0441\u0440\u0435\u0434\u043D\u0435\u0439 \u0447\u0430\u0441\u0442\u0438
+    \u0441\u0443\u0436\u0435\u043D\u044B. \u041A\u0440\u0430\u043D\u0438\u0430\u043B\u044C\u043D\u044B\u0435
+    \u0441\u0443\u0441\u0442\u0430\u0432\u043D\u044B\u0435 \u043E\u0442\u0440\u043E\u0441\u0442\u043A\u0438
+    \u0437\u0430 \u0441\u0447\u0451\u0442 \u0441\u0438\u043B\u044C\u043D\u043E \u0440\u0430\u0437\u0432\u0438\u0442\u044B\u0445
+    \u0441\u043E\u0441\u0446\u0435\u0432\u0438\u0434\u043D\u044B\u0445 \u043E\u0442\u0440\u043E\u0441\u0442\u043A\u043E\u0432
+    \u043F\u0440\u0438\u043E\u0431\u0440\u0435\u0442\u0430\u044E\u0442 \u0436\u0435\u043B\u043E\u0431\u043E\u0432\u0430\u0442\u0443\u044E
+    \u0444\u043E\u0440\u043C\u0443, \u0442\u043E\u0433\u0434\u0430 \u043A\u0430\u043A
+    \u043A\u0430\u0443\u0434\u0430\u043B\u044C\u043D\u044B\u0435 \u0438\u043C\u0435\u044E\u0442
+    \u0446\u0438\u043B\u0438\u043D\u0434\u0440\u0438\u0447\u0435\u0441\u043A\u0443\u044E
+    \u0444\u043E\u0440\u043C\u0443. \u041F\u043E\u043F\u0435\u0440\u0435\u0447\u043D\u044B\u0435
+    \u043E\u0442\u0440\u043E\u0441\u0442\u043A\u0438 \u0440\u0430\u0441\u043F\u043E\u043B\u0430\u0433\u0430\u044E\u0442\u0441\u044F
+    \u0433\u043E\u0440\u0438\u0437\u043E\u043D\u0442\u0430\u043B\u044C\u043D\u043E,
+    \u0438\u043C\u0435\u044E\u0442 \u0438\u0437\u0440\u0435\u0437\u0430\u043D\u043D\u043E\u0439
+    \u0444\u043E\u0440\u043C\u044B \u043E\u0441\u0442\u0440\u044B\u0435 \u043A\u0440\u0430\u044F
+    \u0438 \u043D\u0430\u0438\u0431\u043E\u043B\u044C\u0448\u0443\u044E \u0434\u043B\u0438\u043D\u0443
+    \u0443 3-\u0433\u043E \u0438 4-\u0433\u043E \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u043E\u0432.
+    \u041A\u0430\u0443\u0434\u0430\u043B\u044C\u043D\u044B\u0435 \u043F\u043E\u0437\u0432\u043E\u043D\u043E\u0447\u043D\u044B\u0435
+    \u0432\u044B\u0440\u0435\u0437\u043A\u0438 \u0433\u043B\u0443\u0431\u043E\u043A\u0438\u0435"
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1087758717 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3340279543445452488, guid: 3343c8b16f4cf3f45aed52c2e90c2b0b, type: 3}
@@ -1619,6 +2212,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1111044626}
+  - component: {fileID: 1111044627}
   m_Layer: 0
   m_Name: Circulatory System
   m_TagString: Untagged
@@ -1644,6 +2238,26 @@ Transform:
   - {fileID: 1493287179}
   m_Father: {fileID: 1288319924}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1111044627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111044625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: 
+  groupScientificName: 
+  description: 
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1111573716 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1797930561429902125, guid: 10549487e31c50547a4bb2288dfc9d56, type: 3}
@@ -1827,6 +2441,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1220634820}
+  - component: {fileID: 1220634821}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -1852,6 +2467,37 @@ Transform:
   - {fileID: 8215466213876085377}
   m_Father: {fileID: 1288319924}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1220634821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220634819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: "\u0428\u043A\u0443\u0440\u0430"
+  groupScientificName: integumentum commune (cutis)
+  description: "\u0428\u043A\u0443\u0440\u0430 \u2014 \u043D\u0430\u0440\u0443\u0436\u043D\u044B\u0439
+    \u043F\u043E\u043A\u0440\u043E\u0432 \u0442\u0435\u043B\u0430 \u0436\u0438\u0432\u043E\u0442\u043D\u043E\u0433\u043E,
+    \u043E\u043D\u0430 \u0441\u043B\u0443\u0436\u0438\u0442 \u0437\u0430\u0449\u0438\u0442\u043E\u0439
+    \u0435\u0433\u043E \u043E\u0440\u0433\u0430\u043D\u0438\u0437\u043C\u0430 \u043E\u0442
+    \u0432\u043D\u0435\u0448\u043D\u0438\u0445 \u0432\u043E\u0437\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0439
+    \u0438 \u043E\u0434\u043D\u043E\u0432\u0440\u0435\u043C\u0435\u043D\u043D\u043E
+    \u0443\u0447\u0430\u0441\u0442\u0432\u0443\u0435\u0442 \u0432 \u0440\u0435\u0433\u0443\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0438
+    \u043E\u0431\u043C\u0435\u043D\u0430 \u0432\u0435\u0449\u0435\u0441\u0442\u0432,
+    \u0442\u0435\u043F\u043B\u0430, \u0430 \u0442\u0430\u043A\u0436\u0435 \u0432
+    \u0432\u043E\u0441\u043F\u0440\u0438\u044F\u0442\u0438\u0438 \u0440\u0430\u0437\u043B\u0438\u0447\u043D\u044B\u0445
+    \u0440\u0430\u0437\u0434\u0440\u0430\u0436\u0435\u043D\u0438\u0439 \u043E\u043A\u0440\u0443\u0436\u0430\u044E\u0449\u0435\u0439
+    \u0441\u0440\u0435\u0434\u044B"
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!1 &1229741718
 GameObject:
   m_ObjectHideFlags: 0
@@ -2012,6 +2658,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1357722160}
+  - component: {fileID: 1357722161}
   m_Layer: 0
   m_Name: Reproductive System
   m_TagString: Untagged
@@ -2038,6 +2685,26 @@ Transform:
   - {fileID: 934719167}
   m_Father: {fileID: 1288319924}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1357722161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357722159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: 
+  groupScientificName: 
+  description: 
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1359961297 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8235121643684903823, guid: 1335cc8256be701499e3f42d3a585968, type: 3}
@@ -2053,6 +2720,96 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3552585069516125882, guid: c4ddf08745b8ae245b912cbffc4fd056, type: 3}
   m_PrefabInstance: {fileID: 8148318173840402226}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1395728950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1395728951}
+  - component: {fileID: 1395728952}
+  m_Layer: 0
+  m_Name: "\u041F\u043E\u0437\u0432\u043E\u043D\u043E\u0447\u043D\u044B\u0439 \u0441\u0442\u043E\u043B\u0431
+    - columna vertebralis"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1395728951
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395728950}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 289670337}
+  - {fileID: 14852168}
+  - {fileID: 1060991226}
+  - {fileID: 273503644}
+  - {fileID: 750859370}
+  m_Father: {fileID: 425755815}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1395728952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395728950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: "\u041F\u043E\u0437\u0432\u043E\u043D\u043E\u0447\u043D\u044B\u0439
+    \u0441\u0442\u043E\u043B\u0431"
+  groupScientificName: columna vertebralis
+  description: "\u0421\u043B\u0443\u0436\u0438\u0442 \u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u043D\u044B\u043C
+    \u043F\u0440\u0438\u0437\u043D\u0430\u043A\u043E\u043C \u0434\u043B\u044F \u043F\u043E\u0434\u0442\u0438\u043F\u0430
+    \u0445\u043E\u0440\u0434\u043E\u0432\u044B\u0445 \u2013 \u043F\u043E\u0437\u0432\u043E\u043D\u043E\u0447\u043D\u044B\u0445
+    (Vertebrata), \u0432\u043A\u043B\u044E\u0447\u0430\u044E\u0449\u0438\u043C \u0432
+    \u0441\u0432\u043E\u0439 \u0441\u043E\u0441\u0442\u0430\u0432 \u0440\u044B\u0431,
+    \u0437\u0435\u043C\u043D\u043E\u0432\u043E\u0434\u043D\u044B\u0445, \u0440\u0435\u043F\u0442\u0438\u043B\u0438\u0439,
+    \u043F\u0442\u0438\u0446 \u0438 \u043C\u043B\u0435\u043A\u043E\u043F\u0438\u0442\u0430\u044E\u0449\u0438\u0445.
+    \u0423 \u043D\u0430\u0437\u0435\u043C\u043D\u044B\u0445 \u043F\u043E\u0437\u0432\u043E\u043D\u043E\u0447\u043D\u044B\u0445
+    \u043E\u043D \u0432\u044B\u043F\u043E\u043B\u043D\u044F\u0435\u0442 \u0440\u043E\u043B\u044C
+    \u043E\u0441\u043D\u043E\u0432\u043D\u043E\u0433\u043E \u0441\u0442\u0435\u0440\u0436\u043D\u044F
+    \u0442\u0435\u043B\u0430, \u043F\u0435\u0440\u0435\u043A\u0438\u043D\u0443\u0442\u043E\u0433\u043E
+    \u0432 \u0432\u0438\u0434\u0435 \u0430\u0440\u043A\u0438 \u043C\u0435\u0436\u0434\u0443
+    \u0433\u0440\u0443\u0434\u043D\u044B\u043C\u0438 \u0438 \u0442\u0430\u0437\u043E\u0432\u044B\u043C\u0438
+    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u044F\u043C\u0438, \u0438
+    \u0441\u043B\u0443\u0436\u0438\u0442 \u043E\u0440\u0433\u0430\u043D\u043E\u043C
+    \u0446\u0435\u043D\u0442\u0440\u0430\u043B\u0438\u0437\u043E\u0432\u0430\u043D\u043D\u043E\u0433\u043E
+    \u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u044F\u043C\u0438
+    \u0436\u0438\u0432\u043E\u0442\u043D\u043E\u0433\u043E. \u0414\u043B\u044F \u043A\u0430\u0436\u0434\u043E\u0433\u043E
+    \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u0430, \u0432\u0445\u043E\u0434\u044F\u0449\u0435\u0433\u043E
+    \u0432 \u0441\u043E\u0441\u0442\u0430\u0432 \u043F\u043E\u0437\u0432\u043E\u043D\u043E\u0447\u043D\u043E\u0433\u043E
+    \u0441\u0442\u043E\u043B\u0431\u0430, \u043D\u0430\u0440\u044F\u0434\u0443 \u0441
+    \u043D\u0430\u043B\u0438\u0447\u0438\u0435\u043C \u043E\u0431\u0449\u0438\u0445
+    \u043C\u043E\u0440\u0444\u043E\u043B\u043E\u0433\u0438\u0447\u0435\u0441\u043A\u0438\u0445
+    \u043F\u0440\u0438\u0437\u043D\u0430\u043A\u043E\u0432 \u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u043D\u044B
+    \u0432\u0438\u0434\u043E\u0432\u044B\u0435 \u043E\u0442\u043B\u0438\u0447\u0438\u044F.
+    \u0418\u0445 \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0432
+    \u0440\u0430\u0437\u043B\u0438\u0447\u043D\u044B\u0445 \u043E\u0442\u0434\u0435\u043B\u0430\u0445
+    \u043F\u043E\u0437\u0432\u043E\u043D\u043E\u0447\u043D\u0438\u043A\u0430 \u0434\u0430\u0436\u0435
+    \u0443 \u043E\u0434\u043D\u043E\u0433\u043E \u0438 \u0442\u043E\u0433\u043E \u0436\u0435
+    \u0432\u0438\u0434\u0430 \u0436\u0438\u0432\u043E\u0442\u043D\u043E\u0433\u043E
+    \u043C\u043E\u0436\u0435\u0442 \u0438\u043C\u0435\u0442\u044C \u043D\u0435\u043A\u043E\u0442\u043E\u0440\u044B\u0435
+    \u043A\u043E\u043B\u0435\u0431\u0430\u043D\u0438\u044F"
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1407344303 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8922990470131179720, guid: 56fd740aa17b4ef4ea38c12d890be4c9, type: 3}
@@ -2077,6 +2834,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1430502111}
+  - component: {fileID: 1430502112}
   m_Layer: 0
   m_Name: FR Carpus
   m_TagString: Untagged
@@ -2105,6 +2863,26 @@ Transform:
   - {fileID: 906710379}
   m_Father: {fileID: 472458268}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1430502112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430502110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: 
+  groupScientificName: 
+  description: 
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1449013449 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3654444897169271449, guid: b6ca446f2071801419cfe62c14e7bcfc, type: 3}
@@ -2139,8 +2917,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1469251717}
+  - component: {fileID: 1469251718}
   m_Layer: 0
-  m_Name: Bones Head
+  m_Name: "\u0421\u043A\u0435\u043B\u0435\u0442 \u0433\u043E\u043B\u043E\u0432\u044B
+    - skeleton capitis"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2167,6 +2947,88 @@ Transform:
   - {fileID: 794833040}
   m_Father: {fileID: 425755815}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1469251718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469251716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: "\u0421\u043A\u0435\u043B\u0435\u0442 \u0433\u043E\u043B\u043E\u0432\u044B"
+  groupScientificName: skeleton capitis
+  description: "\u0421\u043B\u0443\u0436\u0438\u0442 \u0432\u043C\u0435\u0441\u0442\u0438\u043B\u0438\u0449\u0435\u043C
+    \u0438 \u043D\u0430\u0434\u0451\u0436\u043D\u043E\u0439 \u0437\u0430\u0449\u0438\u0442\u043E\u0439
+    \u0434\u043B\u044F \u0433\u043E\u043B\u043E\u0432\u043D\u043E\u0433\u043E \u043C\u043E\u0437\u0433\u0430
+    \u0441 \u043E\u0440\u0433\u0430\u043D\u0430\u043C\u0438 \u0447\u0443\u0432\u0441\u0442\u0432
+    (\u043E\u0431\u043E\u043D\u044F\u043D\u0438\u044F, \u0437\u0440\u0435\u043D\u0438\u044F,
+    \u0441\u043B\u0443\u0445\u0430 \u0438 \u0440\u0430\u0432\u043D\u043E\u0432\u0435\u0441\u0438\u044F).
+    \u041E\u043D \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u043E\u0441\u0442\u043E\u0432\u043E\u043C
+    \u0440\u043E\u0442\u043E\u0432\u043E\u0439 \u0438 \u043D\u043E\u0441\u043E\u0432\u043E\u0439
+    \u043F\u043E\u043B\u043E\u0441\u0442\u0435\u0439, \u0433\u0434\u0435 \u0440\u0430\u0441\u043F\u043E\u043B\u0430\u0433\u0430\u044E\u0442\u0441\u044F
+    \u043D\u0430\u0447\u0430\u043B\u044C\u043D\u044B\u0435 \u043E\u0442\u0434\u0435\u043B\u044B
+    \u0430\u043F\u043F\u0430\u0440\u0430\u0442\u043E\u0432 \u043F\u0438\u0449\u0435\u0432\u0430\u0440\u0435\u043D\u0438\u044F
+    \u0438 \u0434\u044B\u0445\u0430\u043D\u0438\u044F.\n\u0421\u043A\u0435\u043B\u0435\u0442
+    \u0433\u043E\u043B\u043E\u0432\u044B \u043F\u043E\u0434\u0440\u0430\u0437\u0434\u0435\u043B\u044F\u0435\u0442\u0441\u044F
+    \u043D\u0430 \u043A\u043E\u0441\u0442\u0438 \u043C\u043E\u0437\u0433\u043E\u0432\u043E\u0433\u043E
+    \u0438 \u043B\u0438\u0446\u0435\u0432\u043E\u0433\u043E \u043E\u0442\u0434\u0435\u043B\u043E\u0432.
+    \u0413\u0440\u0430\u043D\u0438\u0446\u0435\u0439 \u043C\u0435\u0436\u0434\u0443
+    \u043B\u0438\u0446\u0435\u0432\u044B\u043C \u0438 \u043C\u043E\u0437\u0433\u043E\u0432\u044B\u043C
+    \u043E\u0442\u0434\u0435\u043B\u0430\u043C\u0438 \u0441\u043B\u0443\u0436\u0438\u0442
+    \u043B\u0438\u043D\u0438\u044F, \u043F\u0440\u043E\u0432\u0435\u0434\u0435\u043D\u043D\u0430\u044F
+    \u0432 \u043F\u043E\u043F\u0435\u0440\u0435\u0447\u043D\u043E\u0439 \u043F\u043B\u043E\u0441\u043A\u043E\u0441\u0442\u0438
+    \u043A\u0430\u0441\u0430\u0442\u0435\u043B\u044C\u043D\u043E \u0440\u043E\u0441\u0442\u0440\u0430\u043B\u044C\u043D\u043E\u0433\u043E
+    \u043A\u0440\u0430\u044F \u0433\u043B\u0430\u0437\u043D\u0438\u0446\u044B.\n\u0411\u043E\u043B\u044C\u0448\u0438\u043D\u0441\u0442\u0432\u043E
+    \u043A\u043E\u0441\u0442\u0435\u0439 \u0441\u043A\u0435\u043B\u0435\u0442\u0430
+    \u0433\u043E\u043B\u043E\u0432\u044B \u043F\u043B\u043E\u0441\u043A\u0438\u0435
+    \u0438 \u0441\u043E\u0435\u0434\u0438\u043D\u044F\u044E\u0442\u0441\u044F \u043C\u0435\u0436\u0434\u0443
+    \u0441\u043E\u0431\u043E\u0439 \u043D\u0435\u043F\u0440\u0435\u0440\u044B\u0432\u043D\u043E
+    \u043F\u043E\u0441\u0440\u0435\u0434\u0441\u0442\u0432\u043E\u043C \u0438\u043B\u0438
+    \u0444\u0438\u0431\u0440\u043E\u0437\u043D\u043E\u0439, \u0438\u043B\u0438 \u0445\u0440\u044F\u0449\u0435\u0432\u043E\u0439
+    \u0442\u043A\u0430\u043D\u0435\u0439. \u041D\u0435\u043A\u043E\u0442\u043E\u0440\u044B\u0435
+    \u043A\u043E\u0441\u0442\u0438 \u043F\u043D\u0435\u0432\u043C\u0430\u0442\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u043D\u044B.
+    \u0418\u0445 \u043F\u043E\u043B\u043E\u0441\u0442\u0438 \u0432\u044B\u0441\u0442\u043B\u0430\u043D\u044B
+    \u0441\u043B\u0438\u0437\u0438\u0441\u0442\u043E\u0439 \u043E\u0431\u043E\u043B\u043E\u0447\u043A\u043E\u0439
+    \u0438 \u0441\u043E\u043E\u0431\u0449\u0430\u044E\u0442\u0441\u044F \u0441 \u043D\u043E\u0441\u043E\u0432\u043E\u0439
+    \u043F\u043E\u043B\u043E\u0441\u0442\u044C\u044E, \u0447\u0442\u043E \u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0438\u0432\u0430\u0435\u0442
+    \u043D\u0435 \u0442\u043E\u043B\u044C\u043A\u043E \u0445\u043E\u0440\u043E\u0448\u0443\u044E
+    \u0442\u0435\u0440\u043C\u043E\u0438\u0437\u043E\u043B\u044F\u0446\u0438\u044E
+    \u0434\u043B\u044F \u0433\u043E\u043B\u043E\u0432\u043D\u043E\u0433\u043E \u043C\u043E\u0437\u0433\u0430
+    \u0438 \u0432\u0430\u0436\u043D\u0435\u0439\u0448\u0438\u0445 \u043E\u0440\u0433\u0430\u043D\u043E\u0432
+    \u0447\u0443\u0432\u0441\u0442\u0432, \u0443\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+    \u0440\u0435\u0444\u043B\u0435\u043A\u0441\u043E\u0433\u0435\u043D\u043D\u0443\u044E
+    \u0437\u043E\u043D\u0443 \u0434\u044B\u0445\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0445
+    \u043F\u0443\u0442\u0435\u0439, \u043D\u043E \u0438 \u0432 \u0437\u043D\u0430\u0447\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0439
+    \u0441\u0442\u0435\u043F\u0435\u043D\u0438 \u0443\u043C\u0435\u043D\u044C\u0448\u0430\u0435\u0442
+    \u043C\u0430\u0441\u0441\u0443 \u0433\u043E\u043B\u043E\u0432\u044B \u0438 \u0443\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+    \u043F\u043B\u043E\u0449\u0430\u0434\u044C \u0434\u043B\u044F \u043F\u0440\u0438\u043A\u0440\u0435\u043F\u043B\u0435\u043D\u0438\u044F
+    \u0436\u0435\u0432\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0445 \u0438 \u043C\u0438\u043C\u0438\u0447\u0435\u0441\u043A\u0438\u0445
+    \u043C\u044B\u0448\u0446.\n\u0412\u0435\u043B\u0438\u0447\u0438\u043D\u0430 \u043C\u043E\u0437\u0433\u043E\u0432\u043E\u0433\u043E
+    \u0438 \u043B\u0438\u0446\u0435\u0432\u043E\u0433\u043E \u043E\u0442\u0434\u0435\u043B\u043E\u0432
+    \u0441\u043A\u0435\u043B\u0435\u0442\u0430 \u0433\u043E\u043B\u043E\u0432\u044B
+    \u043D\u0430\u0445\u043E\u0434\u0438\u0442\u0441\u044F \u0432 \u043F\u0440\u044F\u043C\u043E\u0439
+    \u0437\u0430\u0432\u0438\u0441\u0438\u043C\u043E\u0441\u0442\u0438 \u043E\u0442
+    \u0440\u0430\u0437\u043C\u0435\u0440\u043E\u0432 \u0433\u043E\u043B\u043E\u0432\u043D\u043E\u0433\u043E
+    \u043C\u043E\u0437\u0433\u0430, \u0441\u0442\u0435\u043F\u0435\u043D\u0438 \u0440\u0430\u0437\u0432\u0438\u0442\u0438\u044F
+    \u0436\u0435\u0432\u0430\u0442\u0435\u043B\u044C\u043D\u043E\u0433\u043E \u0430\u043F\u043F\u0430\u0440\u0430\u0442\u0430,
+    \u0432\u043E\u0437\u0440\u0430\u0441\u0442\u0430 \u0436\u0438\u0432\u043E\u0442\u043D\u043E\u0433\u043E,
+    \u0435\u0433\u043E \u0432\u0438\u0434\u043E\u0432\u043E\u0439 \u0438 \u043F\u043E\u0440\u043E\u0434\u043D\u043E\u0439
+    \u043F\u0440\u0438\u043D\u0430\u0434\u043B\u0435\u0436\u043D\u043E\u0441\u0442\u0438.
+    \u0423 \u0436\u0432\u0430\u0447\u043D\u044B\u0445 \u043D\u0430 \u0444\u043E\u0440\u043C\u0443
+    \u0441\u043A\u0435\u043B\u0435\u0442\u0430 \u0433\u043E\u043B\u043E\u0432\u044B
+    \u0432 \u0437\u043D\u0430\u0447\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0439
+    \u0441\u0442\u0435\u043F\u0435\u043D\u0438 \u0432\u043B\u0438\u044F\u044E\u0442
+    \u0432\u0435\u043B\u0438\u0447\u0438\u043D\u0430 \u0438 \u0444\u043E\u0440\u043C\u0430
+    \u0440\u043E\u0433\u043E\u0432\u044B\u0445 \u043E\u0442\u0440\u043E\u0441\u0442\u043A\u043E\u0432"
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1481118350 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 115286034098347724, guid: 03944dd3f3bd93345b8ef8f4e0fa903d, type: 3}
@@ -2221,6 +3083,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1547144753}
+  - component: {fileID: 1547144754}
   m_Layer: 0
   m_Name: Bones Leg Back Left
   m_TagString: Untagged
@@ -2253,6 +3116,26 @@ Transform:
   - {fileID: 351069738}
   m_Father: {fileID: 158036050}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1547144754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547144752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: 
+  groupScientificName: 
+  description: 
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1551908778 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8116203777415473318, guid: f776496284ea1e541939909b37057628, type: 3}
@@ -2277,6 +3160,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1561016892}
+  - component: {fileID: 1561016893}
   m_Layer: 0
   m_Name: BL Tarsus
   m_TagString: Untagged
@@ -2306,6 +3190,26 @@ Transform:
   - {fileID: 451003143}
   m_Father: {fileID: 1547144753}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1561016893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561016891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: 
+  groupScientificName: 
+  description: 
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1564688657 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7487427754956698111, guid: cf96d2c4ad674ae4781c519ec2d5672a, type: 3}
@@ -2580,6 +3484,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1713804938}
+  - component: {fileID: 1713804939}
   m_Layer: 0
   m_Name: Nervous System
   m_TagString: Untagged
@@ -2604,6 +3509,26 @@ Transform:
   - {fileID: 947529200}
   m_Father: {fileID: 1288319924}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1713804939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713804937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: 
+  groupScientificName: 
+  description: 
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1729556692 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1075912863840005409, guid: f9979d0d01e4ad042ac7473af8d92c74, type: 3}
@@ -2728,6 +3653,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1803354905}
+  - component: {fileID: 1803354906}
   m_Layer: 0
   m_Name: FL Carpus
   m_TagString: Untagged
@@ -2756,6 +3682,26 @@ Transform:
   - {fileID: 2062850883}
   m_Father: {fileID: 187646429}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1803354906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803354904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: 
+  groupScientificName: 
+  description: 
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!1 &1804602151
 GameObject:
   m_ObjectHideFlags: 0
@@ -3055,6 +4001,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1915068702}
+  - component: {fileID: 1915068703}
   m_Layer: 0
   m_Name: Muscles
   m_TagString: Untagged
@@ -3082,6 +4029,26 @@ Transform:
   - {fileID: 1734044109}
   m_Father: {fileID: 1288319924}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1915068703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915068701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: 
+  groupScientificName: 
+  description: 
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!1 &1920578327
 GameObject:
   m_ObjectHideFlags: 0
@@ -3143,6 +4110,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1927197056}
+  - component: {fileID: 1927197057}
   m_Layer: 0
   m_Name: Endocrine System
   m_TagString: Untagged
@@ -3166,6 +4134,26 @@ Transform:
   - {fileID: 787306596}
   m_Father: {fileID: 1288319924}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1927197057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927197055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: 
+  groupScientificName: 
+  description: 
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1927470593 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4162001718745802350, guid: d744e6e80b2552a4d82c417b4a4c14fb, type: 3}
@@ -3265,6 +4253,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2087085952}
+  - component: {fileID: 2087085953}
   m_Layer: 0
   m_Name: BR Tarsus
   m_TagString: Untagged
@@ -3294,6 +4283,26 @@ Transform:
   - {fileID: 2026379155}
   m_Father: {fileID: 517386144}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2087085953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087085951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  groupName: 
+  groupScientificName: 
+  description: 
+  partListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &2094436051 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6606822746146354335, guid: ec1866cc48c00be48b6cda8561eeee04, type: 3}
@@ -10969,7 +11978,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 14852168}
+    m_TransformParent: {fileID: 1060991226}
     m_Modifications:
     - target: {fileID: 5084435686118261443, guid: 207e4395a5283a0469da3ff049fd945f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11368,7 +12377,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 14852168}
+    m_TransformParent: {fileID: 273503644}
     m_Modifications:
     - target: {fileID: 2672632363096062596, guid: b1c6358f48947da42b06a7a40fdfbad3, type: 3}
       propertyPath: m_Name
@@ -11425,7 +12434,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 14852168}
+    m_TransformParent: {fileID: 273503644}
     m_Modifications:
     - target: {fileID: 4696959500846021916, guid: 0ab67551f60c1d24190c188ce173187a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11715,7 +12724,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 14852168}
+    m_TransformParent: {fileID: 1060991226}
     m_Modifications:
     - target: {fileID: 15058087394061745, guid: bae52bc26d583bd4f86f6e80366647c6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13098,7 +14107,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 14852168}
+    m_TransformParent: {fileID: 1060991226}
     m_Modifications:
     - target: {fileID: 8339011669252750044, guid: a3db79bbdae8e7c43b76eea1b540f178, type: 3}
       propertyPath: m_Name
@@ -13383,7 +14392,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 14852168}
+    m_TransformParent: {fileID: 1060991226}
     m_Modifications:
     - target: {fileID: 4911148362535097531, guid: 59ff1122858755548b84eca43b3ef712, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18766,7 +19775,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 14852168}
+    m_TransformParent: {fileID: 1060991226}
     m_Modifications:
     - target: {fileID: 1583330998835672595, guid: 30ea74f0a003ff74ea4392e922b2174f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21165,7 +22174,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 14852168}
+    m_TransformParent: {fileID: 1060991226}
     m_Modifications:
     - target: {fileID: 5812784683742853562, guid: 57ad661bd896d2d43bb5d45207ca5643, type: 3}
       propertyPath: m_LocalPosition.x

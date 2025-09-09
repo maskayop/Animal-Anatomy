@@ -11,6 +11,7 @@ namespace AnimalAnatomy
         [SerializeField] TextMeshProUGUI scientificNameText;
 
         BodyPartInfo bodyPartInfo;
+        BodyPartGroup bodyPartGroup;
 
         public void Init(BodyPartInfo info)
         {
@@ -26,9 +27,31 @@ namespace AnimalAnatomy
             Destroy(scientificNameText.gameObject);
         }
 
+        public void Init(BodyPartGroup info)
+        {
+            bodyPartGroup = info;
+            nameText.text = info.groupName;
+            scientificNameText.text = info.groupScientificName;
+        }
+
         public void SelectBodyPart()
         {
+            if (!bodyPartInfo)
+            {
+                SelectBodyPartGroup();
+                return;
+            }
+            
             GameController.Instance.SelectBodyPart(bodyPartInfo);
+            CameraController.Instance.UpdatePosition();
+        }
+
+        public void SelectBodyPartGroup()
+        {
+            if (!bodyPartGroup)
+                return;
+
+            GameController.Instance.SelectBodyPartGroup(bodyPartGroup);
             CameraController.Instance.UpdatePosition();
         }
     }

@@ -95,6 +95,13 @@ namespace AnimalAnatomy
         {
             if (GameController.Instance.selectedBodyPart != null)
                 transform.position = GameController.Instance.selectedBodyPart.GetCenterOfObject();
+            else if (GameController.Instance.selectedBodyPartsGroup != null)
+            {
+                transform.position = GameController.Instance.selectedBodyPartsGroup.GetCenterOfGroup();
+
+                if (transform.position == Vector3.zero)
+                    transform.position = defaultPosition;
+            }
             else
                 transform.position = defaultPosition;
         }

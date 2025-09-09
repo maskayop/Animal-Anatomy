@@ -20,6 +20,7 @@ namespace AnimalAnatomy
         [SerializeField] TextMeshProUGUI bodyPartDescriptionText;
 
         [Header("Isolated Mode Buttons")]
+        [SerializeField] GameObject isolatedModeButtonsContainer;
         [SerializeField] UIButtonIsolatedMode isolatedModeButton;
         [SerializeField] UIButtonIsolatedMode transparentModeButton;
         [SerializeField] GameObject exclusionModeButton;
@@ -27,6 +28,10 @@ namespace AnimalAnatomy
         [Header("Body Parts List")]
         [SerializeField] Transform bodyPartsListContainer;
         [SerializeField] GameObject partsListButtonPrefab;
+
+        [Header("Body Parts Group")]
+        [SerializeField] GameObject bodyPartsGroupPanel;
+        [SerializeField] UIPartsListButton bodyPartsGroupButton;
 
         UIButtonSystemActivating[] systemActivatingButtons;
         List<UIPartsListButton> partsListButtons = new List<UIPartsListButton>();
@@ -54,24 +59,18 @@ namespace AnimalAnatomy
             if (GameController.Instance.isolatedMode || GameController.Instance.transparentMode)
                 SetExclusionMode(false);
         }
-        
+
+        IEnumerator InitializeDelayed()
+        {
+            yield return new WaitForSeconds(2.0f);
+
+            Init();
+        }
+
         public void Init()
         {
             systemActivatingButtons = FindObjectsByType<UIButtonSystemActivating>(FindObjectsSortMode.None);
             CreateBodyPartsListButtons();
-        }
-
-        public void SelectBodyPart(BodyPartInfo info)
-        {
-            bodyPartInfoPanel.gameObject.SetActive(true);
-            bodyPartNameText.text = info.partName;
-            bodyPartScientificNameText.text = info.partScientificName;
-            bodyPartDescriptionText.text = info.partDescription;
-        }
-
-        public void UnSelectBodyPart()
-        {
-            bodyPartInfoPanel.gameObject.SetActive(false);
         }
 
         public void SetIsolatedMode(bool state)
@@ -129,22 +128,65 @@ namespace AnimalAnatomy
                     UIPartsListButton systemTypeListButton = newSystemTypeGO.GetComponent<UIPartsListButton>();
                     systemTypeListButton.GetComponent<Button>().interactable = false;
                     systemTypeListButton.Init(bodyPartsLists[i].systemType);
+                    bodyPartsLists[i].partListButton = systemTypeListButton;
 
                     for (int b = 0; b < bodyPartsLists[i].bodyParts.Count; b++)
                     {
                         GameObject newGO = Instantiate(partsListButtonPrefab, bodyPartsListContainer);
                         UIPartsListButton listButton = newGO.GetComponent<UIPartsListButton>();
                         listButton.Init(bodyPartsLists[i].bodyParts[b]);
+                        bodyPartsLists[i].bodyParts[b].partListButton = listButton;
                     }
                 }
             }
         }
 
-        IEnumerator InitializeDelayed()
+        public void SelectBodyPart(BodyPartInfo info)
         {
-            yield return new WaitForSeconds(2.0f);
+            bodyPartInfoPanel.gameObject.SetActive(true);
+            isolatedModeButtonsContainer.gameObject.SetActive(true);
+            bodyPartNameText.text = info.partName;
+            bodyPartScientificNameText.text = info.partScientificName;
+            bodyPartDescriptionText.text = info.partDescription;
 
-            Init();
+            if (info.bodyPartGroup)
+            {
+                bodyPartsGroupPanel.gameObject.SetActive(true);
+                bodyPartsGroupButton.Init(info.bodyPartGroup);
+            }
+            else
+                bodyPartsGroupPanel.gameObject.SetActive(false);
+        }
+
+        public void UnSelectBodyPart()
+        {
+            bodyPartInfoPanel.gameObject.SetActive(false);
+            isolatedModeButtonsContainer.gameObject.SetActive(false);
+            bodyPartsGroupPanel.gameObject.SetActive(false);
+        }
+
+        public void SelectBodyPartGroup(BodyPartGroup info)
+        {
+            bodyPartInfoPanel.gameObject.SetActive(true);
+            isolatedModeButtonsContainer.gameObject.SetActive(false);
+            bodyPartNameText.text = info.groupName;
+            bodyPartScientificNameText.text = info.groupScientificName;
+            bodyPartDescriptionText.text = info.description;
+
+            if (info.parentBodyPartGroup)
+            {
+                bodyPartsGroupPanel.gameObject.SetActive(true);
+                bodyPartsGroupButton.Init(info.parentBodyPartGroup);
+            }
+            else
+                bodyPartsGroupPanel.gameObject.SetActive(false);
+        }
+
+        public void UnSelectBodyPartGroup()
+        {
+            bodyPartInfoPanel.gameObject.SetActive(false);
+            isolatedModeButtonsContainer.gameObject.SetActive(false);
+            bodyPartsGroupPanel.gameObject.SetActive(false);
         }
     }
 }

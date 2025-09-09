@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace AnimalAnatomy
@@ -11,6 +12,7 @@ namespace AnimalAnatomy
         public GameController.SystemType systemType;
         public bool isActive = true;
         public List<BodyPartInfo> bodyParts = new List<BodyPartInfo>();
+        public UIPartsListButton partListButton;
     }
 
     public class GameController : MonoBehaviour
@@ -21,6 +23,7 @@ namespace AnimalAnatomy
         public SystemType systemType;
 
         public List<BodyPartInfo> allBodyParts = new List<BodyPartInfo>();
+        public List<BodyPartGroup> allBodyPartsGroups = new List<BodyPartGroup>();
         public List<BodyPartsList> bodyPartsLists = new List<BodyPartsList>();
 
         [Header("Materials")]
@@ -29,6 +32,7 @@ namespace AnimalAnatomy
 
         [Header("Info")]
         public BodyPartInfo selectedBodyPart;
+        public BodyPartGroup selectedBodyPartsGroup;
         public bool isolatedMode = false;
         public bool transparentMode = false;
 
@@ -159,6 +163,7 @@ namespace AnimalAnatomy
             UnSelectBodyPart();
 
             selectedBodyPart = info;
+            selectedBodyPartsGroup = null;
             UIMainCanvas.Instance.SelectBodyPart(info);
             info.Select();
 
@@ -178,34 +183,60 @@ namespace AnimalAnatomy
             CameraController.Instance.distanceLimitsMultiplier = 1.0f;
         }
 
+        public void SelectBodyPartGroup(BodyPartGroup info)
+        {
+            UnSelectBodyPartGroup();
+
+            selectedBodyPart = null;
+            selectedBodyPartsGroup = info;
+            UIMainCanvas.Instance.SelectBodyPartGroup(info);
+            info.Select();
+
+            CameraController.Instance.distanceLimitsMultiplier = selectedBodyPartsGroup.cameraDistanceLimitsMultiplier;
+        }
+
+        public void UnSelectBodyPartGroup()
+        {
+            selectedBodyPartsGroup = null;
+            UIMainCanvas.Instance.UnSelectBodyPartGroup();
+
+            for (int i = 0; i < allBodyParts.Count; i++)
+            {
+                allBodyParts[i].UnSelect();
+            }
+
+            CameraController.Instance.distanceLimitsMultiplier = 1.0f;
+        }
+
         public void SetIsolatedMode(bool state)
         {
-            IsolateBodyPart(state);
+            if (selectedBodyPart)
+                IsolateBodyPart(state, selectedBodyPart);
+            //else if (selectedBodyPartsGroup)
+            //    IsolateBodyPart(state, selectedBodyPartsGroup.allChildrenBodyParts);
+            
             UIMainCanvas.Instance.SetIsolatedMode(state);
         }
 
-        void IsolateBodyPart(bool state)
+        void IsolateBodyPart(bool state, BodyPartInfo bodyPart)
         {
-            if (selectedBodyPart == null)
-                return;
-
             isolatedMode = state;
 
             if (state)
             {
-                selectedBodyPart.UnSelect();
+                bodyPart.UnSelect();
 
                 for (int i = 0; i < allBodyParts.Count; i++)
                 {
                     allBodyParts[i].gameObject.SetActive(false);
 
-                    if (allBodyParts[i] == selectedBodyPart)
-                        selectedBodyPart.gameObject.SetActive(true);
+                    if (allBodyParts[i] == bodyPart)
+                        bodyPart.gameObject.SetActive(true);
                 }
             }
             else
             {
-                selectedBodyPart.Select();
+                bodyPart.Select();
 
                 for (int i = 0; i < bodyPartsLists.Count; i++)
                 {
@@ -257,6 +288,6 @@ namespace AnimalAnatomy
             }
 
             UnSelectBodyPart();
-        }
+        }        
     }
 }

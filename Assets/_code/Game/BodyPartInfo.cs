@@ -14,11 +14,14 @@ namespace AnimalAnatomy
         [Header("Texts")]
         public string partName;
         public string partScientificName;
-        [TextArea(1, 10)]
+        [TextArea(1, 20)]
         public string partDescription;
 
-        bool isHidden = false;
-        public bool IsHidden {  get { return isHidden; } }
+        [HideInInspector]
+        public UIPartsListButton partListButton;
+
+        [HideInInspector]
+        public BodyPartGroup bodyPartGroup;
 
         Material defaultMaterial;
 
@@ -80,11 +83,6 @@ namespace AnimalAnatomy
 
                 meshRenderers[i].materials = materials;
             }
-        }
-
-        public void Hide(bool state)
-        {
-            isHidden = state;
         }
 
         public void SetAsTransparent(bool state)
