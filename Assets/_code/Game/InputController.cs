@@ -25,6 +25,9 @@ namespace AnimalAnatomy
 
         void Update()
         {
+            if (UIMainCanvas.Instance.isLoading)
+                return;
+
             SelectBodyPart();
             UpdateView();
 

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace AnimalAnatomy
         public float cameraDistanceLimitsMultiplier = 1.0f;
         public List<BodyPartGroup> bodyPartsGroups = new List<BodyPartGroup>();
         public List<BodyPartInfo> bodyParts = new List<BodyPartInfo>();
+        public List<BodyPartInfo> allChildrenBodyParts = new List<BodyPartInfo>();
 
         [Header("Texts")]
         public string groupName;
@@ -21,9 +23,6 @@ namespace AnimalAnatomy
         [HideInInspector]
         public BodyPartGroup parentBodyPartGroup;
 
-        [HideInInspector]
-        public BodyPartInfo allChildrenBodyParts;
-
         void Start()
         {
             Init();
@@ -33,22 +32,45 @@ namespace AnimalAnatomy
         {
             foreach (Transform t in transform)
             {
-                if (t.GetComponent<BodyPartInfo>())
+                BodyPartInfo info = t.GetComponent<BodyPartInfo>();
+                BodyPartGroup groupInfo = t.GetComponent<BodyPartGroup>();
+
+                if (info)
                 {
-                    bodyParts.Add(t.GetComponent<BodyPartInfo>());
-                    t.GetComponent<BodyPartInfo>().bodyPartGroup = this;
+                    bodyParts.Add(info);
+                    info.bodyPartGroup = this;
                 }
                 
-                if (t.GetComponent<BodyPartGroup>())
+                if (groupInfo)
                 {
-                    t.GetComponent<BodyPartGroup>().parentBodyPartGroup = this;
-                    bodyPartsGroups.Add(t.GetComponent<BodyPartGroup>());
+                    groupInfo.parentBodyPartGroup = this;
+                    bodyPartsGroups.Add(groupInfo);
                 }
             }
 
             GameController.Instance.allBodyPartsGroups.Add(this);
 
+            StartCoroutine(InitializeDelayed());
+        }
 
+        IEnumerator InitializeDelayed()
+        {
+            yield return new WaitForSeconds(1.0f);
+
+            SetAllChildrenPartInfos(allChildrenBodyParts);
+        }
+
+        public void SetAllChildrenPartInfos(List<BodyPartInfo> list)
+        {
+            for (int g = 0; g < bodyPartsGroups.Count; g++)
+            {
+                bodyPartsGroups[g].SetAllChildrenPartInfos(list);
+            }
+
+            for (int p = 0; p < bodyParts.Count; p++)
+            {
+                list.Add(bodyParts[p]);
+            }
         }
 
         public void Select()
@@ -77,32 +99,19 @@ namespace AnimalAnatomy
             }
         }
 
-        public void SetAsTransparent(bool state)
-        {
-            for (int g = 0; g < bodyPartsGroups.Count; g++)
-            {
-                bodyPartsGroups[g].SetAsTransparent(state);
-            }
-
-            for (int p = 0; p < bodyParts.Count; p++)
-            {
-                bodyParts[p].SetAsTransparent(state);
-            }
-        }    
-        
         public Vector3 GetCenterOfGroup()
         {
-            if (bodyParts.Count == 0)
+            if (allChildrenBodyParts.Count == 0)
                 return Vector3.zero;
 
             Vector3 position = Vector3.zero;
 
-            for (int g = 0; g < bodyParts.Count; g++)
+            for (int i = 0; i < allChildrenBodyParts.Count; i++)
             {
-                position += bodyParts[g].GetCenterOfObject();
+                position += allChildrenBodyParts[i].GetCenterOfObject();
             }
 
-            position /= bodyParts.Count;
+            position /= allChildrenBodyParts.Count;
 
             return position;
         }

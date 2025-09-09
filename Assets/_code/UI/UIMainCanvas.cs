@@ -10,6 +10,10 @@ namespace AnimalAnatomy
     {
         public static UIMainCanvas Instance;
 
+        [Header("Loadning Screen")]
+        [SerializeField] GameObject loadingScreen;
+        [SerializeField] float loadingTime = 1.0f;
+
         [Header("System Activating")]
         [SerializeField] GameObject systemActivatingButtonsPanel;
 
@@ -37,6 +41,9 @@ namespace AnimalAnatomy
         List<UIPartsListButton> partsListButtons = new List<UIPartsListButton>();
         List<BodyPartsList> bodyPartsLists = new List<BodyPartsList>();
 
+        [HideInInspector]
+        public bool isLoading = false;
+
         void Awake()
         {
             if (Instance != null)
@@ -51,7 +58,11 @@ namespace AnimalAnatomy
         
         void Start()
         {
+            loadingScreen.SetActive(true);
+            isLoading = true;
+
             StartCoroutine(InitializeDelayed());
+            StartCoroutine(DisableLoadingScreen());
         }
         
         void Update()
@@ -67,6 +78,14 @@ namespace AnimalAnatomy
             Init();
         }
 
+        IEnumerator DisableLoadingScreen()
+        {
+            yield return new WaitForSeconds(loadingTime);
+
+            loadingScreen.SetActive(false);
+            isLoading = false;
+        }
+
         public void Init()
         {
             systemActivatingButtons = FindObjectsByType<UIButtonSystemActivating>(FindObjectsSortMode.None);
@@ -75,22 +94,22 @@ namespace AnimalAnatomy
 
         public void SetIsolatedMode(bool state)
         {
-            if (GameController.Instance.selectedBodyPart == null)
-                return;
-
-            isolatedModeButton.SetActiveState(state);
-            transparentModeButton.gameObject.SetActive(!state);
-            systemActivatingButtonsPanel.SetActive(!state);
+            if (GameController.Instance.selectedBodyPart || GameController.Instance.selectedBodyPartsGroup)
+            {
+                isolatedModeButton.SetActiveState(state);
+                transparentModeButton.gameObject.SetActive(!state);
+                systemActivatingButtonsPanel.SetActive(!state);
+            }
         }
 
         public void SetTransparentMode(bool state)
         {
-            if (GameController.Instance.selectedBodyPart == null)
-                return;
-
-            transparentModeButton.SetActiveState(state);
-            isolatedModeButton.gameObject.SetActive(!state);
-            systemActivatingButtonsPanel.SetActive(!state);
+            if (GameController.Instance.selectedBodyPart || GameController.Instance.selectedBodyPartsGroup)
+            {
+                transparentModeButton.SetActiveState(state);
+                isolatedModeButton.gameObject.SetActive(!state);
+                systemActivatingButtonsPanel.SetActive(!state);
+            }
         }
 
         public void ActivateAllSystems(bool state)
@@ -168,7 +187,7 @@ namespace AnimalAnatomy
         public void SelectBodyPartGroup(BodyPartGroup info)
         {
             bodyPartInfoPanel.gameObject.SetActive(true);
-            isolatedModeButtonsContainer.gameObject.SetActive(false);
+            isolatedModeButtonsContainer.gameObject.SetActive(true);
             bodyPartNameText.text = info.groupName;
             bodyPartScientificNameText.text = info.groupScientificName;
             bodyPartDescriptionText.text = info.description;

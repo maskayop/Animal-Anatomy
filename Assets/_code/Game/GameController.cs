@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 namespace AnimalAnatomy
@@ -210,33 +209,71 @@ namespace AnimalAnatomy
 
         public void SetIsolatedMode(bool state)
         {
-            if (selectedBodyPart)
-                IsolateBodyPart(state, selectedBodyPart);
-            //else if (selectedBodyPartsGroup)
-            //    IsolateBodyPart(state, selectedBodyPartsGroup.allChildrenBodyParts);
+            IsolateBodyPart(state);
+            IsolateBodyPartGroup(state);
             
             UIMainCanvas.Instance.SetIsolatedMode(state);
         }
 
-        void IsolateBodyPart(bool state, BodyPartInfo bodyPart)
+        void IsolateBodyPart(bool state)
         {
+            if (selectedBodyPart == null)
+                return;
+
             isolatedMode = state;
 
             if (state)
             {
-                bodyPart.UnSelect();
+                selectedBodyPart.UnSelect();
 
                 for (int i = 0; i < allBodyParts.Count; i++)
                 {
                     allBodyParts[i].gameObject.SetActive(false);
 
-                    if (allBodyParts[i] == bodyPart)
-                        bodyPart.gameObject.SetActive(true);
+                    if (allBodyParts[i] == selectedBodyPart)
+                        selectedBodyPart.gameObject.SetActive(true);
                 }
             }
             else
             {
-                bodyPart.Select();
+                selectedBodyPart.Select();
+
+                for (int i = 0; i < bodyPartsLists.Count; i++)
+                {
+                    for (int l = 0; l < bodyPartsLists[i].bodyParts.Count; l++)
+                    {
+                        bodyPartsLists[i].bodyParts[l].gameObject.SetActive(bodyPartsLists[i].isActive);
+                    }
+                }
+            }
+
+            CameraController.Instance.UpdatePosition();
+        }
+
+        void IsolateBodyPartGroup(bool state)
+        {
+            if (selectedBodyPartsGroup == null)
+                return;
+
+            isolatedMode = state;
+
+            if (state)
+            {
+                selectedBodyPartsGroup.UnSelect();
+
+                for (int i = 0; i < allBodyParts.Count; i++)
+                {
+                    allBodyParts[i].gameObject.SetActive(false);
+                }
+
+                for (int p = 0; p < selectedBodyPartsGroup.allChildrenBodyParts.Count; p++)
+                {
+                    selectedBodyPartsGroup.allChildrenBodyParts[p].gameObject.SetActive(true);
+                }
+            }
+            else
+            {
+                selectedBodyPartsGroup.Select();
 
                 for (int i = 0; i < bodyPartsLists.Count; i++)
                 {
@@ -253,6 +290,7 @@ namespace AnimalAnatomy
         public void SetTransparentMode(bool state)
         {
             IsolateBodyPartTransparent(state);
+            IsolateBodyPartGroupTransparent(state);
             UIMainCanvas.Instance.SetTransparentMode(state);
         }
 
@@ -273,6 +311,31 @@ namespace AnimalAnatomy
                 if (allBodyParts[i] != selectedBodyPart)
                     allBodyParts[i].SetAsTransparent(state);
             }
+
+            CameraController.Instance.UpdatePosition();
+        }
+
+        void IsolateBodyPartGroupTransparent(bool state)
+        {
+            if (selectedBodyPartsGroup == null)
+                return;
+
+            transparentMode = state;
+
+            for (int i = 0; i < allBodyParts.Count; i++)
+            {
+                allBodyParts[i].SetAsTransparent(state);
+            }
+
+            for (int i = 0; i < selectedBodyPartsGroup.allChildrenBodyParts.Count; i++)
+            {
+                selectedBodyPartsGroup.allChildrenBodyParts[i].SetAsTransparent(false);
+            }
+
+            if (state)
+                selectedBodyPartsGroup.UnSelect();
+            else
+                selectedBodyPartsGroup.Select();
 
             CameraController.Instance.UpdatePosition();
         }
