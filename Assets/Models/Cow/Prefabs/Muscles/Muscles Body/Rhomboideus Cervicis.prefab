@@ -48,10 +48,54 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
+    - target: {fileID: -5037569559828669142, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 218a646144799ed4083b6358f63bb0dc, type: 2}
+    - target: {fileID: -3407624328460572234, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3407624328460572234, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3407624328460572234, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3407624328460572234, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3407624328460572234, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3078225362651823221, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 218a646144799ed4083b6358f63bb0dc, type: 2}
+    - target: {fileID: -788611566955395482, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -788611566955395482, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -788611566955395482, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -788611566955395482, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -788611566955395482, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
       propertyPath: m_Name
       value: Rhomboideus Cervicis
@@ -69,8 +113,16 @@ PrefabInstance:
       addedObject: {fileID: 8243407364101271072}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 2457357810235009268}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 8389103967029827160}
   m_SourcePrefab: {fileID: 100100000, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
+--- !u!23 &827419043888938876 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -3078225362651823221, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
+  m_PrefabInstance: {fileID: 6790416047694347511}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5979952076202164646 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
@@ -97,7 +149,30 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 2168864809522480716, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
+  m_Mesh: {fileID: -4448801201337555820, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
+--- !u!205 &2457357810235009268
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5979952076202164646}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0.00064274296, z: 0.0006096363}
+  m_Size: 0.6248739
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.22
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 7217742190229430749}
+  - screenRelativeHeight: 0.01
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 827419043888938876}
+  m_Enabled: 1
 --- !u!114 &8389103967029827160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +186,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartInfo
   systemType: 1
+  meshRenderers:
+  - {fileID: 7217742190229430749}
+  - {fileID: 827419043888938876}
+  cameraDistanceLimitsMultiplier: 1
   partName: 
+  partScientificName: 
   partDescription: 
-  meshRenderer: {fileID: 0}
+  partListButton: {fileID: 0}
+  bodyPartGroup: {fileID: 0}
+--- !u!23 &7217742190229430749 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -5037569559828669142, guid: 7d71ebe7bd2fc394aa8b327ac894ebee, type: 3}
+  m_PrefabInstance: {fileID: 6790416047694347511}
+  m_PrefabAsset: {fileID: 0}
