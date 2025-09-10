@@ -207,5 +207,10 @@ namespace AnimalAnatomy
             isolatedModeButtonsContainer.gameObject.SetActive(false);
             bodyPartsGroupPanel.gameObject.SetActive(false);
         }
+
+        public void ShowBodyPartDescription(bool state)
+        {
+            bodyPartDescriptionText.gameObject.SetActive(state);
+        }
     }
 }
