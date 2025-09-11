@@ -22,6 +22,8 @@ namespace AnimalAnatomy
         float currentZoom;
         Vector3 defaultPosition;
 
+        bool isFreezed = false;
+
         void Awake()
         {
             if (Instance != null)
@@ -42,6 +44,9 @@ namespace AnimalAnatomy
         void Update()
         {
             if (UIMainCanvas.Instance.isLoading)
+                return;
+
+            if (isFreezed)
                 return;
 
             UpdateViewRotation();
@@ -107,6 +112,11 @@ namespace AnimalAnatomy
             }
             else
                 transform.position = defaultPosition;
+        }
+
+        public void Freeze(bool state)
+        {
+            isFreezed = state;
         }
     }
 }

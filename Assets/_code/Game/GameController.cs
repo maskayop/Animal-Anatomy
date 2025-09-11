@@ -27,6 +27,7 @@ namespace AnimalAnatomy
 
         [Header("Materials")]
         public Material selectedMaterial;
+        public Material selectedGroupMaterial;
         public Material transparentModeMaterial;
 
         [Header("Info")]
@@ -34,6 +35,9 @@ namespace AnimalAnatomy
         public BodyPartGroup selectedBodyPartsGroup;
         public bool isolatedMode = false;
         public bool transparentMode = false;
+
+        [HideInInspector]
+        public BodyPartGroup baseBodyPartGroup;
 
         void Awake()
         {
@@ -57,6 +61,8 @@ namespace AnimalAnatomy
             CreateBodyPartsLists();
             StartCoroutine(UpdateBodyPartsLists());
             UnSelectBodyPart();
+
+            baseBodyPartGroup = GameObject.FindGameObjectWithTag("Player").GetComponent<BodyPartGroup>();
         }
 
         void CreateBodyPartsLists()
@@ -160,11 +166,12 @@ namespace AnimalAnatomy
         public void SelectBodyPart(BodyPartInfo info)
         {
             UnSelectBodyPart();
+            UnSelectBodyPartGroup();
 
             selectedBodyPart = info;
             selectedBodyPartsGroup = null;
             UIMainCanvas.Instance.SelectBodyPart(info);
-            info.Select();
+            info.Select(false);
 
             CameraController.Instance.distanceLimitsMultiplier = selectedBodyPart.cameraDistanceLimitsMultiplier;
         }
@@ -198,6 +205,11 @@ namespace AnimalAnatomy
         {
             selectedBodyPartsGroup = null;
             UIMainCanvas.Instance.UnSelectBodyPartGroup();
+
+            for (int i = 0; i < allBodyPartsGroups.Count; i++)
+            {
+                allBodyPartsGroups[i].UnSelect();
+            }
 
             for (int i = 0; i < allBodyParts.Count; i++)
             {
@@ -236,7 +248,7 @@ namespace AnimalAnatomy
             }
             else
             {
-                selectedBodyPart.Select();
+                selectedBodyPart.Select(false);
 
                 for (int i = 0; i < bodyPartsLists.Count; i++)
                 {
@@ -304,7 +316,7 @@ namespace AnimalAnatomy
             if (state)
                 selectedBodyPart.UnSelect();
             else
-                selectedBodyPart.Select();
+                selectedBodyPart.Select(false);
 
             for (int i = 0; i < allBodyParts.Count; i++)
             {

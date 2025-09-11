@@ -30,16 +30,18 @@ namespace AnimalAnatomy
         [SerializeField] GameObject exclusionModeButton;
 
         [Header("Body Parts List")]
+        [SerializeField] GameObject bodyPartsListPanel;
         [SerializeField] Transform bodyPartsListContainer;
         [SerializeField] GameObject partsListButtonPrefab;
+        [SerializeField] GameObject partsGroupListButtonPrefab;
+        [SerializeField] int listButtonsContainerOffset = 5;
 
         [Header("Body Parts Group")]
         [SerializeField] GameObject bodyPartsGroupPanel;
-        [SerializeField] UIPartsListButton bodyPartsGroupButton;
+        [SerializeField] UIPartsGroupListButton bodyPartsGroupButton;
 
         UIButtonSystemActivating[] systemActivatingButtons;
         List<UIPartsListButton> partsListButtons = new List<UIPartsListButton>();
-        List<BodyPartsList> bodyPartsLists = new List<BodyPartsList>();
 
         [HideInInspector]
         public bool isLoading = false;
@@ -89,7 +91,7 @@ namespace AnimalAnatomy
         public void Init()
         {
             systemActivatingButtons = FindObjectsByType<UIButtonSystemActivating>(FindObjectsSortMode.None);
-            CreateBodyPartsListButtons();
+            CreateBodyPartsGroupsListButtons();
         }
 
         public void SetIsolatedMode(bool state)
@@ -130,32 +132,55 @@ namespace AnimalAnatomy
             App.Instance.ExitGame();
         }
 
-        void CreateBodyPartsListButtons()
+        void CreateBodyPartsGroupsListButtons()
         {
             partsListButtons.Clear();
 
             foreach (Transform t in bodyPartsListContainer)
                 Destroy(t.gameObject);
 
-            bodyPartsLists = GameController.Instance.bodyPartsLists;
+            if (!GameController.Instance.baseBodyPartGroup)
+                return;
 
-            for (int i = 0; i < bodyPartsLists.Count; i++)
+            CreateBodyPartsSingleGroupListButtons(GameController.Instance.baseBodyPartGroup);
+            CreateBodyPartsListButtons(GameController.Instance.baseBodyPartGroup);
+        }
+
+        void CreateBodyPartsSingleGroupListButtons(BodyPartGroup group)
+        {
+            GameObject newGroupGO = Instantiate(partsGroupListButtonPrefab, bodyPartsListContainer);
+            UIPartsGroupListButton groupListButton = newGroupGO.GetComponent<UIPartsGroupListButton>();
+            groupListButton.Init(group);
+            group.partGroupListButton = groupListButton;
+
+            if (group.parentBodyPartGroup)
+                groupListButton.containerTransform.offsetMin = 
+                    new Vector2(group.parentBodyPartGroup.partGroupListButton.containerTransform.offsetMin.x + listButtonsContainerOffset, 0);
+
+            CreateBodyPartsGroupsListButtons(group.bodyPartsGroups);
+        }
+
+        void CreateBodyPartsGroupsListButtons(List<BodyPartGroup> groups)
+        {
+            for (int i = 0; i < groups.Count; i++)
             {
-                if (bodyPartsLists[i].bodyParts.Count != 0)
+                CreateBodyPartsSingleGroupListButtons(groups[i]);
+                CreateBodyPartsListButtons(groups[i]);
+            }
+        }
+        
+        void CreateBodyPartsListButtons(BodyPartGroup group)
+        {
+            if (group.bodyParts.Count != 0)
+            {
+                for (int b = 0; b < group.bodyParts.Count; b++)
                 {
-                    GameObject newSystemTypeGO = Instantiate(partsListButtonPrefab, bodyPartsListContainer);
-                    UIPartsListButton systemTypeListButton = newSystemTypeGO.GetComponent<UIPartsListButton>();
-                    systemTypeListButton.GetComponent<Button>().interactable = false;
-                    systemTypeListButton.Init(bodyPartsLists[i].systemType);
-                    bodyPartsLists[i].partListButton = systemTypeListButton;
-
-                    for (int b = 0; b < bodyPartsLists[i].bodyParts.Count; b++)
-                    {
-                        GameObject newGO = Instantiate(partsListButtonPrefab, bodyPartsListContainer);
-                        UIPartsListButton listButton = newGO.GetComponent<UIPartsListButton>();
-                        listButton.Init(bodyPartsLists[i].bodyParts[b]);
-                        bodyPartsLists[i].bodyParts[b].partListButton = listButton;
-                    }
+                    GameObject newGO = Instantiate(partsListButtonPrefab, bodyPartsListContainer);
+                    UIPartsListButton listButton = newGO.GetComponent<UIPartsListButton>();
+                    listButton.Init(group.bodyParts[b]);
+                    group.bodyParts[b].partListButton = listButton;
+                    listButton.containerTransform.offsetMin = 
+                        new Vector2(group.parentBodyPartGroup.partGroupListButton.containerTransform.offsetMin.x + listButtonsContainerOffset, 0);
                 }
             }
         }
@@ -211,6 +236,22 @@ namespace AnimalAnatomy
         public void ShowBodyPartDescription(bool state)
         {
             bodyPartDescriptionText.gameObject.SetActive(state);
+        }
+
+        public void FreezeCamera(bool state)
+        {
+            CameraController.Instance.Freeze(state);
+        }
+
+        public void OpenPartsListPanel()
+        {
+            bodyPartsListPanel.SetActive(true);
+        }
+
+        public void ClosePartsListPanel()
+        {
+            bodyPartsListPanel.SetActive(false);
+            CameraController.Instance.Freeze(false);
         }
     }
 }

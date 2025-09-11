@@ -62,16 +62,22 @@ namespace AnimalAnatomy
                 defaultMaterial = meshRenderers[0].material;
         }
 
-        public void Select()
+        public void Select(bool isGroupSelection)
         {
             for (int i = 0; i < meshRenderers.Count; i++)
             {
                 Material[] materials = new Material[2];
                 materials[0] = meshRenderers[i].materials[0];
-                materials[1] = GameController.Instance.selectedMaterial;
 
+                if (isGroupSelection)
+                    materials[1] = GameController.Instance.selectedGroupMaterial;
+                else
+                    materials[1] = GameController.Instance.selectedMaterial;
+                
                 meshRenderers[i].materials = materials;
             }
+            
+            partListButton.SetAsSelected(true);
         }
 
         public void UnSelect()
@@ -83,6 +89,8 @@ namespace AnimalAnatomy
 
                 meshRenderers[i].materials = materials;
             }
+
+            partListButton.SetAsSelected(false);
         }
 
         public void SetAsTransparent(bool state)

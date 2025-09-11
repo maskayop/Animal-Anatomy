@@ -7,11 +7,17 @@ namespace AnimalAnatomy
 {
     public class UIPartsListButton : MonoBehaviour
     {
-        [SerializeField] TextMeshProUGUI nameText;
-        [SerializeField] TextMeshProUGUI scientificNameText;
-
+        public TextMeshProUGUI nameText;
+        public TextMeshProUGUI scientificNameText;
+        public RectTransform containerTransform;
+        public GameObject selectionImage;
+        
         BodyPartInfo bodyPartInfo;
-        BodyPartGroup bodyPartGroup;
+
+        void Start()
+        {
+            SetAsSelected(false);
+        }
 
         public void Init(BodyPartInfo info)
         {
@@ -27,32 +33,25 @@ namespace AnimalAnatomy
             Destroy(scientificNameText.gameObject);
         }
 
-        public void Init(BodyPartGroup info)
-        {
-            bodyPartGroup = info;
-            nameText.text = info.groupName;
-            scientificNameText.text = info.groupScientificName;
-        }
-
         public void SelectBodyPart()
         {
             if (!bodyPartInfo)
-            {
-                SelectBodyPartGroup();
                 return;
-            }
             
             GameController.Instance.SelectBodyPart(bodyPartInfo);
             CameraController.Instance.UpdatePosition();
+            SetAsSelected(true);
         }
 
-        public void SelectBodyPartGroup()
+        public void UnSelectBodyPart()
         {
-            if (!bodyPartGroup)
-                return;
+            SetAsSelected(false);
+        }
 
-            GameController.Instance.SelectBodyPartGroup(bodyPartGroup);
-            CameraController.Instance.UpdatePosition();
+        public virtual void SetAsSelected(bool state)
+        {
+            if (selectionImage)
+                selectionImage.SetActive(state);
         }
     }
 }

@@ -18,7 +18,7 @@ namespace AnimalAnatomy
         public string description;
 
         [HideInInspector]
-        public UIPartsListButton partListButton;
+        public UIPartsGroupListButton partGroupListButton;
 
         [HideInInspector]
         public BodyPartGroup parentBodyPartGroup;
@@ -82,8 +82,10 @@ namespace AnimalAnatomy
 
             for (int p = 0; p < bodyParts.Count; p++)
             {
-                bodyParts[p].Select();
+                bodyParts[p].Select(true);
             }
+
+            partGroupListButton.SetAsSelected(true);
         }
 
         public void UnSelect()
@@ -97,6 +99,8 @@ namespace AnimalAnatomy
             {
                 bodyParts[p].UnSelect();
             }
+
+            partGroupListButton.SetAsSelected(false);
         }
 
         public Vector3 GetCenterOfGroup()

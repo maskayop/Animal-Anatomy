@@ -68,6 +68,7 @@ namespace AnimalAnatomy
                     else
                     {
                         GameController.Instance.UnSelectBodyPart();
+                        GameController.Instance.UnSelectBodyPartGroup();
                     }
                 }
             }
