@@ -31,6 +31,8 @@ namespace AnimalAnatomy
             GameController.Instance.SelectBodyPartGroup(bodyPartGroup);
             CameraController.Instance.UpdatePosition();
             SetAsSelected(true);
+
+            CopyTextsToClipboard();
         }
 
         public void UnSelectBodyPartGroup()
@@ -107,6 +109,14 @@ namespace AnimalAnatomy
             {
                 bodyPartGroup.bodyParts[i].partListButton.gameObject.SetActive(true);
             }
+        }
+
+        void CopyTextsToClipboard()
+        {
+            textToCopy = "Название группы: " + bodyPartGroup.groupName + "\n" + "Научное название: " + bodyPartGroup.groupScientificName +
+                "\n" + "Описание: " + bodyPartGroup.description;
+
+            GUIUtility.systemCopyBuffer = textToCopy;
         }
     }
 }

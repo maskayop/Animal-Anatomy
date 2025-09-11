@@ -14,6 +14,8 @@ namespace AnimalAnatomy
         
         BodyPartInfo bodyPartInfo;
 
+        public string textToCopy;
+
         void Start()
         {
             SetAsSelected(false);
@@ -41,6 +43,8 @@ namespace AnimalAnatomy
             GameController.Instance.SelectBodyPart(bodyPartInfo);
             CameraController.Instance.UpdatePosition();
             SetAsSelected(true);
+
+            CopyTextsToClipboard();
         }
 
         public void UnSelectBodyPart()
@@ -52,6 +56,14 @@ namespace AnimalAnatomy
         {
             if (selectionImage)
                 selectionImage.SetActive(state);
+        }
+
+        void CopyTextsToClipboard()
+        {
+            textToCopy = "Название части тела: " + bodyPartInfo.partName + "\n" + "Научное название: " + bodyPartInfo.partScientificName +
+                "\n" + "Описание: " + bodyPartInfo.partDescription;
+
+            GUIUtility.systemCopyBuffer = textToCopy;
         }
     }
 }
