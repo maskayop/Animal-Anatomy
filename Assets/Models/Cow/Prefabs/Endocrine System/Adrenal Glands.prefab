@@ -48,10 +48,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: e6b95adc3f09a354099ed226a47f4195, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: a034d53c71961774883c8c33275dc0e3, type: 2}
+    - target: {fileID: -263456722998255526, guid: e6b95adc3f09a354099ed226a47f4195, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -263456722998255526, guid: e6b95adc3f09a354099ed226a47f4195, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -263456722998255526, guid: e6b95adc3f09a354099ed226a47f4195, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -263456722998255526, guid: e6b95adc3f09a354099ed226a47f4195, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -263456722998255526, guid: e6b95adc3f09a354099ed226a47f4195, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e6b95adc3f09a354099ed226a47f4195, type: 3}
       propertyPath: m_Name
       value: Adrenal Glands
@@ -59,6 +75,34 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e6b95adc3f09a354099ed226a47f4195, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1132718726097681908, guid: e6b95adc3f09a354099ed226a47f4195, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a034d53c71961774883c8c33275dc0e3, type: 2}
+    - target: {fileID: 3770086306235971345, guid: e6b95adc3f09a354099ed226a47f4195, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a034d53c71961774883c8c33275dc0e3, type: 2}
+    - target: {fileID: 4173211841519717552, guid: e6b95adc3f09a354099ed226a47f4195, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173211841519717552, guid: e6b95adc3f09a354099ed226a47f4195, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173211841519717552, guid: e6b95adc3f09a354099ed226a47f4195, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173211841519717552, guid: e6b95adc3f09a354099ed226a47f4195, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173211841519717552, guid: e6b95adc3f09a354099ed226a47f4195, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -69,8 +113,16 @@ PrefabInstance:
       addedObject: {fileID: -1572921871415149961}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e6b95adc3f09a354099ed226a47f4195, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 2631460740424045838}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e6b95adc3f09a354099ed226a47f4195, type: 3}
+      insertIndex: -1
       addedObject: {fileID: -7381679705771933521}
   m_SourcePrefab: {fileID: 100100000, guid: e6b95adc3f09a354099ed226a47f4195, type: 3}
+--- !u!23 &689623974005193873 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3770086306235971345, guid: e6b95adc3f09a354099ed226a47f4195, type: 3}
+  m_PrefabInstance: {fileID: 4449557380777003904}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3531219087741122257 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e6b95adc3f09a354099ed226a47f4195, type: 3}
@@ -97,7 +149,30 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 6623395712884542621, guid: e6b95adc3f09a354099ed226a47f4195, type: 3}
+  m_Mesh: {fileID: 8381158398631610326, guid: e6b95adc3f09a354099ed226a47f4195, type: 3}
+--- !u!205 &2631460740424045838
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3531219087741122257}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.0016758144, y: -0.0000150203705, z: 0.0013219416}
+  m_Size: 0.45100924
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.2
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 3636719864708757108}
+  - screenRelativeHeight: 0.01
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 689623974005193873}
+  m_Enabled: 1
 --- !u!114 &-7381679705771933521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +186,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartInfo
   systemType: 11
+  meshRenderers:
+  - {fileID: 3636719864708757108}
+  - {fileID: 689623974005193873}
+  cameraDistanceLimitsMultiplier: 1
   partName: 
+  partScientificName: 
   partDescription: 
-  meshRenderer: {fileID: 0}
+  partListButton: {fileID: 0}
+  bodyPartGroup: {fileID: 0}
+--- !u!23 &3636719864708757108 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1132718726097681908, guid: e6b95adc3f09a354099ed226a47f4195, type: 3}
+  m_PrefabInstance: {fileID: 4449557380777003904}
+  m_PrefabAsset: {fileID: 0}
