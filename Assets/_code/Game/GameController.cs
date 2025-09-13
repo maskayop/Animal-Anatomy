@@ -158,6 +158,12 @@ namespace AnimalAnatomy
             UIMainCanvas.Instance.ActivateAllSystems(state);
         }
 
+        public void DisableAllSystemsExceptSystem(SystemType systemType)
+        {
+            ActivateAllSystems(false);
+            EnableSystem(systemType);
+        }
+
         public void SelectBodyPart(BodyPartInfo info)
         {
             UnSelectBodyPart();

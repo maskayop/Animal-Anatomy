@@ -23,10 +23,13 @@ namespace AnimalAnatomy
             if (UIMainCanvas.Instance.isLoading)
                 return;
 
+            if (ExaminationController.Instance.isExamination)
+                return;
+
             SelectBodyPart();
             UpdateView();
 
-            if (!GameController.Instance.isolatedMode && !GameController.Instance.transparentMode && !ExaminationController.Instance.isExamination)
+            if (!GameController.Instance.isolatedMode && !GameController.Instance.transparentMode)
             {
                 if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
                     UIMainCanvas.Instance.SetExclusionMode(true);
@@ -63,9 +66,6 @@ namespace AnimalAnatomy
                 }
             }
 
-            if (ExaminationController.Instance.isExamination)
-                return;
-
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 if (GameController.Instance.isolatedMode)
@@ -74,6 +74,14 @@ namespace AnimalAnatomy
                     GameController.Instance.SetTransparentMode(false);
                 else
                     GameController.Instance.UnSelectBodyPart();
+            }
+        }
+
+        void UpdateView()
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                CameraController.Instance.UpdatePosition();
             }
 
             if (Input.GetKeyDown(KeyCode.Q) && !GameController.Instance.transparentMode)
@@ -85,20 +93,6 @@ namespace AnimalAnatomy
             {
                 GameController.Instance.SetTransparentMode(!GameController.Instance.transparentMode);
             }
-        }
-
-        void UpdateView()
-        {
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                CameraController.Instance.UpdatePosition();
-            }
-        }
-
-        public void DisableAllSystemsExceptSystem(GameController.SystemType systemType)
-        {
-            GameController.Instance.ActivateAllSystems(false);
-            GameController.Instance.EnableSystem(systemType);
         }
     }
 }

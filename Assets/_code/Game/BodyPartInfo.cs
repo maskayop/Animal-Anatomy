@@ -112,5 +112,21 @@ namespace AnimalAnatomy
         {
             return meshRenderers[0].bounds.center;
         }
+
+        public void SelectCorrect(bool isCorrect)
+        {
+            for (int i = 0; i < meshRenderers.Count; i++)
+            {
+                Material[] materials = new Material[2];
+                materials[0] = meshRenderers[i].materials[0];
+
+                if (isCorrect)
+                    materials[1] = GlobalMaterialsManager.Instance.examModeCorrectMaterial;
+                else
+                    materials[1] = GlobalMaterialsManager.Instance.examModeWrongMaterial;
+
+                meshRenderers[i].materials = materials;
+            }
+        }
     }
 }

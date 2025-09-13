@@ -308,7 +308,7 @@ MonoBehaviour:
   m_MinWidth: -1
   m_MinHeight: -1
   m_PreferredWidth: -1
-  m_PreferredHeight: 100
+  m_PreferredHeight: 140
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
@@ -1480,7 +1480,7 @@ MonoBehaviour:
   m_MinWidth: -1
   m_MinHeight: -1
   m_PreferredWidth: -1
-  m_PreferredHeight: 100
+  m_PreferredHeight: 140
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
@@ -1751,7 +1751,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 680, y: 780}
+  m_SizeDelta: {x: 760, y: 820}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2389740977898678406
 CanvasRenderer:
@@ -4023,7 +4023,7 @@ MonoBehaviour:
   m_MinWidth: -1
   m_MinHeight: -1
   m_PreferredWidth: -1
-  m_PreferredHeight: 100
+  m_PreferredHeight: 140
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
@@ -4963,7 +4963,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -20}
-  m_SizeDelta: {x: -200, y: -60}
+  m_SizeDelta: {x: -120, y: -60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5996421933809593314
 MonoBehaviour:
@@ -4996,7 +4996,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 1
-  m_Spacing: 50
+  m_Spacing: 20
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
@@ -7451,7 +7451,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 1
-  m_Spacing: 50
+  m_Spacing: 20
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
@@ -7715,8 +7715,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 164731272019966710}
   m_HandleRect: {fileID: 1606289634564967077}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.9250675
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7831,7 +7831,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -20}
-  m_SizeDelta: {x: -200, y: -60}
+  m_SizeDelta: {x: -120, y: -60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8728174418012562616
 MonoBehaviour:
@@ -7864,7 +7864,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 1
-  m_Spacing: 50
+  m_Spacing: 20
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
@@ -8547,6 +8547,34 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 8728174418012562616}
+    - target: {fileID: 7681798611490346870, guid: 067a465b4af7ee946bcaf3d0d265219c, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 067a465b4af7ee946bcaf3d0d265219c, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 067a465b4af7ee946bcaf3d0d265219c, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3993700628109916088}
+    - target: {fileID: 7681798611490346870, guid: 067a465b4af7ee946bcaf3d0d265219c, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 067a465b4af7ee946bcaf3d0d265219c, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetExamDifficulty
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 067a465b4af7ee946bcaf3d0d265219c, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AnimalAnatomy.UIExaminationWindow, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 067a465b4af7ee946bcaf3d0d265219c, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7917426331566535269, guid: 067a465b4af7ee946bcaf3d0d265219c, type: 3}
       propertyPath: m_fontSize
       value: 16
@@ -9327,6 +9355,34 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 6176325027487342977}
+    - target: {fileID: 7681798611490346870, guid: 5d3f785aabb72c847a01f017b09299f3, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 5d3f785aabb72c847a01f017b09299f3, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 5d3f785aabb72c847a01f017b09299f3, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3993700628109916088}
+    - target: {fileID: 7681798611490346870, guid: 5d3f785aabb72c847a01f017b09299f3, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 5d3f785aabb72c847a01f017b09299f3, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetExamSystemType
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 5d3f785aabb72c847a01f017b09299f3, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AnimalAnatomy.UIExaminationWindow, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 5d3f785aabb72c847a01f017b09299f3, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7917426331566535269, guid: 5d3f785aabb72c847a01f017b09299f3, type: 3}
       propertyPath: m_fontSize
       value: 16
@@ -9441,6 +9497,34 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 5996421933809593314}
+    - target: {fileID: 7681798611490346870, guid: 849d2a12457221a4ea7f5f8839f32b41, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 849d2a12457221a4ea7f5f8839f32b41, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 849d2a12457221a4ea7f5f8839f32b41, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3993700628109916088}
+    - target: {fileID: 7681798611490346870, guid: 849d2a12457221a4ea7f5f8839f32b41, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 849d2a12457221a4ea7f5f8839f32b41, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetExamMode
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 849d2a12457221a4ea7f5f8839f32b41, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AnimalAnatomy.UIExaminationWindow, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 849d2a12457221a4ea7f5f8839f32b41, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7917426331566535269, guid: 849d2a12457221a4ea7f5f8839f32b41, type: 3}
       propertyPath: m_fontSize
       value: 16
@@ -9713,6 +9797,34 @@ PrefabInstance:
     - target: {fileID: 6161916586372581618, guid: ce99fae34e970314b94a9abaccfe24f8, type: 3}
       propertyPath: m_Name
       value: Timeout Slider
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618746742555631251, guid: ce99fae34e970314b94a9abaccfe24f8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618746742555631251, guid: ce99fae34e970314b94a9abaccfe24f8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618746742555631251, guid: ce99fae34e970314b94a9abaccfe24f8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3993700628109916088}
+    - target: {fileID: 6618746742555631251, guid: ce99fae34e970314b94a9abaccfe24f8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618746742555631251, guid: ce99fae34e970314b94a9abaccfe24f8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetExamTimeOut
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618746742555631251, guid: ce99fae34e970314b94a9abaccfe24f8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AnimalAnatomy.UIExaminationWindow, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618746742555631251, guid: ce99fae34e970314b94a9abaccfe24f8, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6820680388218191550, guid: ce99fae34e970314b94a9abaccfe24f8, type: 3}
       propertyPath: m_AnchorMax.x
@@ -11997,6 +12109,38 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 6176325027487342977}
+    - target: {fileID: 7681798611490346870, guid: 168faa7cd5a252341b7b9e1d30e13ebb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 168faa7cd5a252341b7b9e1d30e13ebb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 168faa7cd5a252341b7b9e1d30e13ebb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3993700628109916088}
+    - target: {fileID: 7681798611490346870, guid: 168faa7cd5a252341b7b9e1d30e13ebb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 168faa7cd5a252341b7b9e1d30e13ebb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetExamSystemType
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 168faa7cd5a252341b7b9e1d30e13ebb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AnimalAnatomy.UIExaminationWindow, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 168faa7cd5a252341b7b9e1d30e13ebb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 168faa7cd5a252341b7b9e1d30e13ebb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7917426331566535269, guid: 168faa7cd5a252341b7b9e1d30e13ebb, type: 3}
       propertyPath: m_fontSize
       value: 16
@@ -12747,6 +12891,38 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 5996421933809593314}
+    - target: {fileID: 7681798611490346870, guid: 6a2abd2eb50423043b856c64959d51fd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 6a2abd2eb50423043b856c64959d51fd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 6a2abd2eb50423043b856c64959d51fd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3993700628109916088}
+    - target: {fileID: 7681798611490346870, guid: 6a2abd2eb50423043b856c64959d51fd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 6a2abd2eb50423043b856c64959d51fd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetExamMode
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 6a2abd2eb50423043b856c64959d51fd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AnimalAnatomy.UIExaminationWindow, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 6a2abd2eb50423043b856c64959d51fd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 6a2abd2eb50423043b856c64959d51fd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7917426331566535269, guid: 6a2abd2eb50423043b856c64959d51fd, type: 3}
       propertyPath: m_fontSize
       value: 16
@@ -13635,6 +13811,38 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 8728174418012562616}
+    - target: {fileID: 7681798611490346870, guid: 2d1a1886849b5d049bdb41f17b6017dd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 2d1a1886849b5d049bdb41f17b6017dd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 2d1a1886849b5d049bdb41f17b6017dd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3993700628109916088}
+    - target: {fileID: 7681798611490346870, guid: 2d1a1886849b5d049bdb41f17b6017dd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 2d1a1886849b5d049bdb41f17b6017dd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetExamDifficulty
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 2d1a1886849b5d049bdb41f17b6017dd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AnimalAnatomy.UIExaminationWindow, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 2d1a1886849b5d049bdb41f17b6017dd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: 2d1a1886849b5d049bdb41f17b6017dd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7917426331566535269, guid: 2d1a1886849b5d049bdb41f17b6017dd, type: 3}
       propertyPath: m_fontSize
       value: 16
@@ -14212,6 +14420,34 @@ PrefabInstance:
     - target: {fileID: 6161916586372581618, guid: a73b1fab3e9bc2841b915c23df7ad24b, type: 3}
       propertyPath: m_Name
       value: Question Amount Slider
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618746742555631251, guid: a73b1fab3e9bc2841b915c23df7ad24b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618746742555631251, guid: a73b1fab3e9bc2841b915c23df7ad24b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618746742555631251, guid: a73b1fab3e9bc2841b915c23df7ad24b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3993700628109916088}
+    - target: {fileID: 6618746742555631251, guid: a73b1fab3e9bc2841b915c23df7ad24b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618746742555631251, guid: a73b1fab3e9bc2841b915c23df7ad24b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetExamQuestionsAmount
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618746742555631251, guid: a73b1fab3e9bc2841b915c23df7ad24b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AnimalAnatomy.UIExaminationWindow, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618746742555631251, guid: a73b1fab3e9bc2841b915c23df7ad24b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6820680388218191550, guid: a73b1fab3e9bc2841b915c23df7ad24b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -14947,6 +15183,38 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 6176325027487342977}
+    - target: {fileID: 7681798611490346870, guid: d4a722a766ee3d948bbd1cbc859d4ca1, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: d4a722a766ee3d948bbd1cbc859d4ca1, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: d4a722a766ee3d948bbd1cbc859d4ca1, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3993700628109916088}
+    - target: {fileID: 7681798611490346870, guid: d4a722a766ee3d948bbd1cbc859d4ca1, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: d4a722a766ee3d948bbd1cbc859d4ca1, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetExamSystemType
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: d4a722a766ee3d948bbd1cbc859d4ca1, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AnimalAnatomy.UIExaminationWindow, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: d4a722a766ee3d948bbd1cbc859d4ca1, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681798611490346870, guid: d4a722a766ee3d948bbd1cbc859d4ca1, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7917426331566535269, guid: d4a722a766ee3d948bbd1cbc859d4ca1, type: 3}
       propertyPath: m_fontSize
       value: 16

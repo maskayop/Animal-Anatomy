@@ -49,6 +49,37 @@ namespace AnimalAnatomy
         {
             questionsAmountText.text = questionsAmountSlider.value.ToString();
             timeoutValueText.text = timeoutSlider.value.ToString();
+
+            SetExamMode(0);
+            SetExamDifficulty(0);
+            SetExamSystemType(0);
+            SetExamQuestionsAmount();
+            SetExamTimeOut();
+        }
+
+        public void SetExamMode(int value)
+        {
+            ExaminationController.Instance.examMode = value;
+        }
+
+        public void SetExamDifficulty(int value)
+        {
+            ExaminationController.Instance.examDifficulty = value;
+        }
+
+        public void SetExamSystemType(int value)
+        {
+            ExaminationController.Instance.examSystemType = value;
+        }
+
+        public void SetExamQuestionsAmount()
+        {
+            ExaminationController.Instance.questionsAmount = Mathf.FloorToInt(questionsAmountSlider.value);
+        }
+
+        public void SetExamTimeOut()
+        {
+            ExaminationController.Instance.timeout = Mathf.FloorToInt(timeoutSlider.value);
         }
     }
 }

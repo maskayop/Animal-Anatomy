@@ -102,15 +102,23 @@ namespace AnimalAnatomy
         public void UpdatePosition()
         {
             if (GameController.Instance.selectedBodyPart != null)
-                transform.position = GameController.Instance.selectedBodyPart.GetCenterOfObject();
+                UpdatePositionOnBodyPart(GameController.Instance.selectedBodyPart);
             else if (GameController.Instance.selectedBodyPartsGroup != null)
-            {
-                transform.position = GameController.Instance.selectedBodyPartsGroup.GetCenterOfGroup();
-
-                if (transform.position == Vector3.zero)
-                    transform.position = defaultPosition;
-            }
+                UpdatePositionOnBodyGroup(GameController.Instance.selectedBodyPartsGroup);
             else
+                transform.position = defaultPosition;
+        }
+
+        public void UpdatePositionOnBodyPart(BodyPartInfo info)
+        {
+            transform.position = info.GetCenterOfObject();
+        }
+
+        public void UpdatePositionOnBodyGroup(BodyPartGroup info)
+        {
+            transform.position = GameController.Instance.selectedBodyPartsGroup.GetCenterOfGroup();
+            
+            if (transform.position == Vector3.zero)
                 transform.position = defaultPosition;
         }
 

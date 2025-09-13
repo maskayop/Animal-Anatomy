@@ -99,6 +99,7 @@ namespace AnimalAnatomy
         public void Init()
         {
             systemActivatingButtons = FindObjectsByType<UIButtonSystemActivating>(FindObjectsSortMode.None);
+            examWindow.SetActive(false);
             CreateBodyPartsGroupsListButtons();
         }
 
@@ -285,6 +286,8 @@ namespace AnimalAnatomy
 
             GameController.Instance.SetIsolatedMode(false);
             GameController.Instance.SetTransparentMode(false);
+
+            ExaminationController.Instance.StartExamination();
         }
 
         public void FinishExamination()
@@ -300,6 +303,8 @@ namespace AnimalAnatomy
 
             GameController.Instance.SetIsolatedMode(false);
             GameController.Instance.SetTransparentMode(false);
+
+            ExaminationController.Instance.StopExamination();
         }
     }
 }

@@ -33,7 +33,7 @@ namespace AnimalAnatomy
                 {
                     if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
                     {
-                        InputController.Instance.DisableAllSystemsExceptSystem(systemType);
+                        GameController.Instance.DisableAllSystemsExceptSystem(systemType);
                         SetActiveState(true);
                     }
                     else
