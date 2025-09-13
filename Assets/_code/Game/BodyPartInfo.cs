@@ -70,9 +70,9 @@ namespace AnimalAnatomy
                 materials[0] = meshRenderers[i].materials[0];
 
                 if (isGroupSelection)
-                    materials[1] = GameController.Instance.selectedGroupMaterial;
+                    materials[1] = GlobalMaterialsManager.Instance.selectedGroupMaterial;
                 else
-                    materials[1] = GameController.Instance.selectedMaterial;
+                    materials[1] = GlobalMaterialsManager.Instance.selectedMaterial;
                 
                 meshRenderers[i].materials = materials;
             }
@@ -100,7 +100,7 @@ namespace AnimalAnatomy
                 Material[] materials = new Material[1];
 
                 if (state)
-                    materials[0] = GameController.Instance.transparentModeMaterial;
+                    materials[0] = GlobalMaterialsManager.Instance.transparentModeMaterial;
                 else
                     materials[0] = defaultMaterial;
                 

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5774792275700747063}
   - component: {fileID: 5758534066293214647}
   - component: {fileID: 4744033071781961499}
+  - component: {fileID: 8348161921302091938}
+  - component: {fileID: 4241067815494528954}
   m_Layer: 0
   m_Name: Game Controller
   m_TagString: Untagged
@@ -49,9 +51,6 @@ MonoBehaviour:
   allBodyParts: []
   allBodyPartsGroups: []
   bodyPartsLists: []
-  selectedMaterial: {fileID: 2100000, guid: 87944408a8c20a54f93b47aca3668eee, type: 2}
-  selectedGroupMaterial: {fileID: 2100000, guid: ff6df965d0283d5429b89465ded81ac2, type: 2}
-  transparentModeMaterial: {fileID: 2100000, guid: 054c1fd1f35c3d64e98448a95c442bcc, type: 2}
   selectedBodyPart: {fileID: 0}
   selectedBodyPartsGroup: {fileID: 0}
   isolatedMode: 0
@@ -69,3 +68,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4579012f1a64f3343bda652475ce8eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8348161921302091938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7477548313674678754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6135cc0b263ad7b4f8bebbfca2bd41ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.GlobalMaterialsController
+  selectedMaterial: {fileID: 2100000, guid: 87944408a8c20a54f93b47aca3668eee, type: 2}
+  selectedGroupMaterial: {fileID: 2100000, guid: ff6df965d0283d5429b89465ded81ac2, type: 2}
+  transparentModeMaterial: {fileID: 2100000, guid: 054c1fd1f35c3d64e98448a95c442bcc, type: 2}
+  examModeCorrectMaterial: {fileID: 2100000, guid: d0be6b95222fb6b4bb20659b79e8df93, type: 2}
+  examModeWrongMaterial: {fileID: 2100000, guid: 821d5f1048a67554d824784f91633892, type: 2}
+--- !u!114 &4241067815494528954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7477548313674678754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3737b260e2b3741b4941f8c89548ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ExaminationController
+  examMode: 0
+  examDifficulty: 0
+  examSystemType: 0
+  questionsAmount: 0
+  timeout: 0
+  isExamination: 0

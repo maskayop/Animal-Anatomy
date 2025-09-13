@@ -25,11 +25,6 @@ namespace AnimalAnatomy
         public List<BodyPartGroup> allBodyPartsGroups = new List<BodyPartGroup>();
         public List<BodyPartsList> bodyPartsLists = new List<BodyPartsList>();
 
-        [Header("Materials")]
-        public Material selectedMaterial;
-        public Material selectedGroupMaterial;
-        public Material transparentModeMaterial;
-
         [Header("Info")]
         public BodyPartInfo selectedBodyPart;
         public BodyPartGroup selectedBodyPartsGroup;

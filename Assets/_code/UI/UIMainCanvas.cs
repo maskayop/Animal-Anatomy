@@ -14,6 +14,11 @@ namespace AnimalAnatomy
         [SerializeField] GameObject loadingScreen;
         [SerializeField] float loadingTime = 1.0f;
 
+        [Header("Windows")]
+        [SerializeField] GameObject mainWindow;
+        [SerializeField] GameObject menuWindow;
+        [SerializeField] GameObject examWindow;
+
         [Header("System Activating")]
         [SerializeField] GameObject systemActivatingButtonsPanel;
 
@@ -39,6 +44,9 @@ namespace AnimalAnatomy
         [Header("Body Parts Group")]
         [SerializeField] GameObject bodyPartsGroupPanel;
         [SerializeField] UIPartsGroupListButton bodyPartsGroupButton;
+
+        [Header("Examination")]
+        [SerializeField] GameObject examinationSettingsWindow;
 
         UIButtonSystemActivating[] systemActivatingButtons;
         List<UIPartsListButton> partsListButtons = new List<UIPartsListButton>();
@@ -252,6 +260,46 @@ namespace AnimalAnatomy
         {
             bodyPartsListPanel.SetActive(false);
             CameraController.Instance.Freeze(false);
+        }
+
+        public void OpenExamWindow()
+        {
+            examinationSettingsWindow.SetActive(true);
+            UIExaminationWindow.Instance.IsOpen = true;
+            CameraController.Instance.Freeze(true);
+        }
+
+        public void CloseExamWindow()
+        {
+            examinationSettingsWindow.SetActive(false);
+            UIExaminationWindow.Instance.IsOpen = false;
+            CameraController.Instance.Freeze(false);
+        }
+
+        public void StartExamination()
+        {
+            CloseExamWindow();
+            mainWindow.SetActive(false);
+            menuWindow.SetActive(false);
+            examWindow.SetActive(true);
+
+            GameController.Instance.SetIsolatedMode(false);
+            GameController.Instance.SetTransparentMode(false);
+        }
+
+        public void FinishExamination()
+        {
+            StopExamination();
+        }
+
+        public void StopExamination()
+        {
+            mainWindow.SetActive(true);
+            menuWindow.SetActive(true);
+            examWindow.SetActive(false);
+
+            GameController.Instance.SetIsolatedMode(false);
+            GameController.Instance.SetTransparentMode(false);
         }
     }
 }

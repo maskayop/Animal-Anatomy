@@ -18,11 +18,6 @@ namespace AnimalAnatomy
             Instance = this;
         }
 
-        void Start()
-        {
-            Init();
-        }
-
         void Update()
         {
             if (UIMainCanvas.Instance.isLoading)
@@ -31,18 +26,13 @@ namespace AnimalAnatomy
             SelectBodyPart();
             UpdateView();
 
-            if (!GameController.Instance.isolatedMode && !GameController.Instance.transparentMode)
+            if (!GameController.Instance.isolatedMode && !GameController.Instance.transparentMode && !ExaminationController.Instance.isExamination)
             {
                 if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
                     UIMainCanvas.Instance.SetExclusionMode(true);
                 else
                     UIMainCanvas.Instance.SetExclusionMode(false);
             }
-        }
-
-        public void Init()
-        {
-
         }
 
         void SelectBodyPart()
@@ -72,6 +62,9 @@ namespace AnimalAnatomy
                     }
                 }
             }
+
+            if (ExaminationController.Instance.isExamination)
+                return;
 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
