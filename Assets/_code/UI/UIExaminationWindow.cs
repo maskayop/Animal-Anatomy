@@ -14,9 +14,17 @@ namespace AnimalAnatomy
         [SerializeField] Slider questionsAmountSlider;
         [SerializeField] TextMeshProUGUI questionsAmountText;
 
-        [Header("Timeout")]
+        [Header("Timeout Settings")]
         [SerializeField] Slider timeoutSlider;
         [SerializeField] TextMeshProUGUI timeoutValueText;
+
+        [Header("Timeout Panel")]
+        [SerializeField] GameObject currentTimeoutPanel;
+        [SerializeField] TextMeshProUGUI currentTimeText;
+        [SerializeField] TextMeshProUGUI currentAnswersAmountText;
+        [SerializeField] Image clockImage;
+        [SerializeField] Color clockStartColor = Color.white;
+        [SerializeField] Color clockEndColor = Color.white;
 
         [Header("Answers")]
         [SerializeField] GameObject answersPanel;
@@ -63,11 +71,20 @@ namespace AnimalAnatomy
 
         void Update()
         {
+            if (examinationController.isExamination)
+            {
+                currentTimeText.text = Mathf.FloorToInt(examinationController.currentTime).ToString();
+                currentAnswersAmountText.text = examinationController.totalAnswers.ToString() + " / " +
+                    examinationController.questionsAmount.ToString();
+                clockImage.fillAmount = examinationController.currentTime / (examinationController.timeout * 60);
+                clockImage.color = Color.Lerp(clockStartColor, clockEndColor, 1 - clockImage.fillAmount);
+            }
+
             if (!isOpen)
                 return;
 
             questionsAmountText.text = questionsAmountSlider.value.ToString();
-            timeoutValueText.text = timeoutSlider.value.ToString();
+            timeoutValueText.text = timeoutSlider.value.ToString();            
         }
 
         public void Init()
@@ -113,6 +130,7 @@ namespace AnimalAnatomy
         {
             answersPanel.SetActive(false);
             finishExamPanel.SetActive(false);
+            currentTimeoutPanel.SetActive(true);
         }
 
         public void StartNextQuestion(List<BodyPartInfo> info)
@@ -181,20 +199,21 @@ namespace AnimalAnatomy
             answersPanel.SetActive(false);
             finishQuestionPanel.SetActive(false);
             finishExamPanel.SetActive(true);
+            currentTimeoutPanel.SetActive(false);
 
             answersAmountText.text = examinationController.correctAnswers.ToString() + " / " +
-                examinationController.totalAnswers.ToString();
+                examinationController.questionsAmount.ToString();
 
             imageBest.SetActive(false);
             imageGood.SetActive(false);
             imageNormal.SetActive(false);
             imageBad.SetActive(false);
 
-            if (examinationController.correctAnswers / examinationController.totalAnswers >= 0.85f)
+            if (examinationController.correctAnswers / examinationController.questionsAmount >= 0.85f)
                 imageBest.SetActive(true);
-            else if (examinationController.correctAnswers / examinationController.totalAnswers >= 0.7f)
+            else if (examinationController.correctAnswers / examinationController.questionsAmount >= 0.7f)
                 imageGood.SetActive(true);
-            else if (examinationController.correctAnswers / examinationController.totalAnswers >= 0.5f)
+            else if (examinationController.correctAnswers / examinationController.questionsAmount >= 0.5f)
                 imageNormal.SetActive(true);
             else
                 imageBad.SetActive(true);

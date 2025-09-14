@@ -25,7 +25,7 @@ namespace AnimalAnatomy
         public int wrongAnswers = 0;
         public int totalAnswers = 0;
 
-        float currentTime;
+        public float currentTime;
 
         void Awake()
         {
@@ -46,7 +46,13 @@ namespace AnimalAnatomy
 
         void Update()
         {
-            
+            if (!isExamination)
+                return;
+
+            currentTime -= Time.deltaTime;
+
+            if (currentTime <= 0)
+                FinishExamination();
         }
 
         public void Init()
@@ -82,6 +88,7 @@ namespace AnimalAnatomy
             correctAnswers = 0;
             wrongAnswers = 0;
             totalAnswers = 0;
+            currentTime = timeout * 60;
 
             UIExaminationWindow.Instance.StartExamination();
             StartNextQuestion();
