@@ -1,18 +1,21 @@
 using UnityEngine;
 
-public class DestroyAfterTime : MonoBehaviour
+namespace Vopere.Common
 {
-	[SerializeField] float time = 1.0f;
-	[SerializeField] bool destroyAtStart = true;
-
-	void Start()
+	public class DestroyAfterTime : MonoBehaviour
 	{
-		if (destroyAtStart)
-			DestroyGameObject();
-	}
+		[SerializeField] float time = 1.0f;
+		[SerializeField] bool destroyAtStart = true;
 
-	public void DestroyGameObject()
-	{
-		Destroy(gameObject, time);
+		void Start()
+		{
+			if (destroyAtStart)
+				DestroyGameObject();
+		}
+
+		public void DestroyGameObject()
+		{
+			Destroy(gameObject, time);
+		}
 	}
 }

@@ -1,6 +1,8 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Vopere.Common;
 
 namespace AnimalAnatomy
 {
@@ -16,8 +18,31 @@ namespace AnimalAnatomy
         [SerializeField] Slider timeoutSlider;
         [SerializeField] TextMeshProUGUI timeoutValueText;
 
+        [Header("Answers")]
+        [SerializeField] GameObject answersPanel;
+        [SerializeField] GameObject answersContainer;
+        [SerializeField] GameObject correctAnswerButtonPrefab;
+        [SerializeField] GameObject wrongAnswerButtonPrefab;
+
+        [Header("Finish Question Panel")]
+        [SerializeField] GameObject finishQuestionPanel;
+        [SerializeField] GameObject correctAnswerPanel;
+        [SerializeField] GameObject wrongAnswerPanel;
+
+        [Header("Finish Exam Panel")]
+        [SerializeField] GameObject finishExamPanel;
+        [SerializeField] TextMeshProUGUI answersAmountText;
+        [SerializeField] GameObject imageBest;
+        [SerializeField] GameObject imageGood;
+        [SerializeField] GameObject imageNormal;
+        [SerializeField] GameObject imageBad;
+
         bool isOpen = false;
         public bool IsOpen { get { return isOpen; } set { isOpen = value; } }
+
+        List<UIExamAnswerButton> examAnswerButtons = new List<UIExamAnswerButton>();
+
+        ExaminationController examinationController;
 
         void Awake()
         {
@@ -47,6 +72,8 @@ namespace AnimalAnatomy
 
         public void Init()
         {
+            examinationController = ExaminationController.Instance;
+
             questionsAmountText.text = questionsAmountSlider.value.ToString();
             timeoutValueText.text = timeoutSlider.value.ToString();
 
@@ -59,27 +86,118 @@ namespace AnimalAnatomy
 
         public void SetExamMode(int value)
         {
-            ExaminationController.Instance.examMode = value;
+            examinationController.examMode = value;
         }
 
         public void SetExamDifficulty(int value)
         {
-            ExaminationController.Instance.examDifficulty = value;
+            examinationController.examDifficulty = value;
         }
 
         public void SetExamSystemType(int value)
         {
-            ExaminationController.Instance.examSystemType = value;
+            examinationController.examSystemType = value;
         }
 
         public void SetExamQuestionsAmount()
         {
-            ExaminationController.Instance.questionsAmount = Mathf.FloorToInt(questionsAmountSlider.value);
+            examinationController.questionsAmount = Mathf.FloorToInt(questionsAmountSlider.value);
         }
 
         public void SetExamTimeOut()
         {
-            ExaminationController.Instance.timeout = Mathf.FloorToInt(timeoutSlider.value);
+            examinationController.timeout = Mathf.FloorToInt(timeoutSlider.value);
+        }
+
+        public void StartExamination()
+        {
+            answersPanel.SetActive(false);
+            finishExamPanel.SetActive(false);
+        }
+
+        public void StartNextQuestion(List<BodyPartInfo> info)
+        {
+            answersPanel.SetActive(true);
+            finishQuestionPanel.SetActive(false);
+            examAnswerButtons.Clear();
+
+            foreach (Transform t in answersContainer.transform)
+                Destroy(t.gameObject);
+
+            List<int> randomIds = new List<int>();
+
+            for (int i = 0; i < info.Count; i++)
+            {
+                randomIds.Add(i);
+            }
+
+            randomIds.Shuffle();
+
+            int counter = 0;
+
+            for (int i = 0; i < info.Count; i++)
+            {
+                if (randomIds[i] == 0)
+                {
+                    GameObject correctButton = Instantiate(correctAnswerButtonPrefab, answersContainer.transform);
+                    UIExamAnswerButton examButton = correctButton.GetComponent<UIExamAnswerButton>();
+                    examButton.Init(info[0], true);
+                    examAnswerButtons.Add(examButton);
+                }
+                else
+                {
+                    GameObject wrongButton = Instantiate(wrongAnswerButtonPrefab, answersContainer.transform);
+                    UIExamAnswerButton examButton = wrongButton.GetComponent<UIExamAnswerButton>();
+                    examButton.Init(info[randomIds[i]], false);
+                    examAnswerButtons.Add(examButton);
+                }
+
+                counter++;
+            }
+        }
+
+        public void FinishQuestion(bool isCorrect)
+        {
+            for (int i = 0; i < examAnswerButtons.Count; i++)
+            {
+                if (examAnswerButtons[i].isCorrectAnswer)
+                    examAnswerButtons[i].ShowSelection(true);
+
+                examAnswerButtons[i].SetInteractable(false);
+            }
+
+            finishQuestionPanel.SetActive(true);
+            correctAnswerPanel.SetActive(isCorrect);
+            wrongAnswerPanel.SetActive(!isCorrect);
+        }
+
+        public void CallStartNextQuestion()
+        {
+            examinationController.StartNextQuestion();
+        }
+
+        public void FinishExamination()
+        {
+            answersPanel.SetActive(false);
+            finishQuestionPanel.SetActive(false);
+            finishExamPanel.SetActive(true);
+
+            answersAmountText.text = examinationController.correctAnswers.ToString() + " / " +
+                examinationController.totalAnswers.ToString();
+
+            imageBest.SetActive(false);
+            imageGood.SetActive(false);
+            imageNormal.SetActive(false);
+            imageBad.SetActive(false);
+
+            if (examinationController.correctAnswers / examinationController.totalAnswers >= 0.85f)
+                imageBest.SetActive(true);
+            else if (examinationController.correctAnswers / examinationController.totalAnswers >= 0.7f)
+                imageGood.SetActive(true);
+            else if (examinationController.correctAnswers / examinationController.totalAnswers >= 0.5f)
+                imageNormal.SetActive(true);
+            else
+                imageBad.SetActive(true);
         }
     }
 }

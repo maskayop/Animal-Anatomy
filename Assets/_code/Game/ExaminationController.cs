@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Vopere.Common;
 
 namespace AnimalAnatomy
 {
@@ -7,6 +8,7 @@ namespace AnimalAnatomy
     {
         public static ExaminationController Instance;
 
+        [Header("Settings")]
         public int examMode = 0;
         public int examDifficulty = 0;
         public int examSystemType = 0;
@@ -15,8 +17,13 @@ namespace AnimalAnatomy
 
         public bool isExamination = false;
 
-        BodyPartInfo currentQuestionBodyPartInfo;
+        List<BodyPartInfo> currentQuestionBodyPartInfos = new List<BodyPartInfo>();
         List<BodyPartInfo> examSystemTypeBodyPartInfos = new List<BodyPartInfo>();
+
+        [Header("Info")]
+        public int correctAnswers = 0;
+        public int wrongAnswers = 0;
+        public int totalAnswers = 0;
 
         float currentTime;
 
@@ -44,13 +51,14 @@ namespace AnimalAnatomy
 
         public void Init()
         {
-            currentQuestionBodyPartInfo = null;
+            currentQuestionBodyPartInfos.Clear();
         }
 
         public void StartExamination()
         {
             isExamination = true;
             examSystemTypeBodyPartInfos.Clear();
+            currentQuestionBodyPartInfos.Clear();
             GameController.Instance.DisableAllSystemsExceptSystem(GameController.SystemType.skin);
 
             if (examSystemType == 0)
@@ -62,7 +70,7 @@ namespace AnimalAnatomy
                 UpdateExamSystemTypeBodyPartInfos(GameController.SystemType.muscles);
 
             }
-            else
+            else if (examSystemType == 2)
             {
                 UpdateExamSystemTypeBodyPartInfos(GameController.SystemType.digestive);
                 UpdateExamSystemTypeBodyPartInfos(GameController.SystemType.endocrine);
@@ -71,19 +79,25 @@ namespace AnimalAnatomy
                 UpdateExamSystemTypeBodyPartInfos(GameController.SystemType.respiratory);
             }
             
+            correctAnswers = 0;
+            wrongAnswers = 0;
+            totalAnswers = 0;
+
+            UIExaminationWindow.Instance.StartExamination();
             StartNextQuestion();
         }
 
         public void FinishExamination()
         {
             StopExamination();
+            UIExaminationWindow.Instance.FinishExamination();
         }
 
         public void StopExamination()
         {
             isExamination = false;
             examSystemTypeBodyPartInfos.Clear();
-            currentQuestionBodyPartInfo = null;
+            currentQuestionBodyPartInfos.Clear();
 
             for (int i = 0; i < GameController.Instance.allBodyParts.Count; i++)
             {
@@ -91,19 +105,34 @@ namespace AnimalAnatomy
             }
 
             GameController.Instance.ActivateAllSystems(true);
+            CameraController.Instance.UpdatePosition();
         }
 
-        void StartNextQuestion()
+        public void StartNextQuestion()
         {
+            if (totalAnswers >= questionsAmount)
+            {
+                FinishExamination();
+                return;
+            }
+
+            examSystemTypeBodyPartInfos.Shuffle();
+
             for (int i = 0; i < GameController.Instance.allBodyParts.Count; i++)
             {
                 GameController.Instance.allBodyParts[i].SetAsTransparent(true);
             }
 
-            int randomValue = Random.Range(0, examSystemTypeBodyPartInfos.Count);
-            currentQuestionBodyPartInfo = examSystemTypeBodyPartInfos[randomValue];
-            currentQuestionBodyPartInfo.SetAsTransparent(false);
-            CameraController.Instance.UpdatePositionOnBodyPart(currentQuestionBodyPartInfo);
+            currentQuestionBodyPartInfos.Clear();
+
+            for (int i = 0; i < 4; i++)
+            {
+                currentQuestionBodyPartInfos.Add(examSystemTypeBodyPartInfos[i]);
+            }
+
+            currentQuestionBodyPartInfos[0].SetAsTransparent(false);
+            CameraController.Instance.UpdatePositionOnBodyPart(currentQuestionBodyPartInfos[0]);
+            UIExaminationWindow.Instance.StartNextQuestion(currentQuestionBodyPartInfos);
         }
 
         void UpdateExamSystemTypeBodyPartInfos(GameController.SystemType systemType)
@@ -120,6 +149,18 @@ namespace AnimalAnatomy
                     }
                 }
             }
+        }
+
+        public void FinishQuestion(bool isCorrect)
+        {
+            if (isCorrect)
+                correctAnswers++;
+            else
+                wrongAnswers++;
+
+            totalAnswers++;
+
+            UIExaminationWindow.Instance.FinishQuestion(isCorrect);
         }
     }
 }
