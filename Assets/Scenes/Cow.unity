@@ -272,6 +272,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 632022010932321325, guid: fcc402464cee08145a0a0e783b07c8e3, type: 3}
   m_PrefabInstance: {fileID: 7800889647072179078}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &17514724 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7866897587051549443, guid: 20618a13f8eb9794c9faca38d210bcd3, type: 3}
+  m_PrefabInstance: {fileID: 2305299026463100087}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &17757821 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4355234966649357299, guid: a46d34f6d5fd5f4448fb323718d610ba, type: 3}
@@ -338,7 +343,7 @@ GameObject:
   - component: {fileID: 85006202}
   - component: {fileID: 85006203}
   m_Layer: 0
-  m_Name: Muscles Body
+  m_Name: "\u041C\u044B\u0448\u0446\u044B \u0442\u0443\u043B\u043E\u0432\u0438\u0449\u0430"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -357,6 +362,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1117909836}
   - {fileID: 1981646163}
   - {fileID: 934464103}
   - {fileID: 687655604}
@@ -401,9 +407,12 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  groupName: "\u041C\u044B\u0448\u0446\u044B \u0442\u0435\u043B\u0430"
-  groupScientificName: 
-  description: 
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u0442\u0443\u043B\u043E\u0432\u0438\u0449\u0430"
+  groupScientificName: musculi trunci
+  description: "\u0414\u0435\u043B\u044F\u0442\u0441\u044F \u043D\u0430 \u043A\u043E\u0436\u043D\u044B\u0435
+    \u043C\u044B\u0448\u0446\u044B, \u043C\u044B\u0448\u0446\u044B \u043F\u043E\u0437\u0432\u043E\u043D\u043E\u0447\u043D\u043E\u0433\u043E
+    \u0441\u0442\u043E\u043B\u0431\u0430, \u0433\u0440\u0443\u0434\u043D\u043E\u0439
+    \u043A\u043B\u0435\u0442\u043A\u0438 \u0438 \u043C\u044B\u0448\u0446\u044B \u0436\u0438\u0432\u043E\u0442\u0430"
   partGroupListButton: {fileID: 0}
   parentBodyPartGroup: {fileID: 0}
 --- !u!4 &86355161 stripped
@@ -411,6 +420,90 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4024595330216943815, guid: 61684e102a5b78a4990d0786db3f12cb, type: 3}
   m_PrefabInstance: {fileID: 8209654253406544966}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &89610115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 89610116}
+  - component: {fileID: 89610117}
+  m_Layer: 0
+  m_Name: "\u041F\u043E\u0434\u044A\u044F\u0437\u044B\u0447\u043D\u044B\u0435"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &89610116
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89610115}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1932855760}
+  - {fileID: 1559139866}
+  - {fileID: 545422142}
+  m_Father: {fileID: 1673766958}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &89610117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89610115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u043F\u043E\u0434\u044A\u044F\u0437\u044B\u0447\u043D\u043E\u0433\u043E
+    \u0430\u043F\u043F\u0430\u0440\u0430\u0442\u0430"
+  groupScientificName: musculi hyoidei
+  description: "\u041F\u043E\u0434\u044A\u044F\u0437\u044B\u0447\u043D\u0430\u044F
+    \u043A\u043E\u0441\u0442\u044C \u0438 \u0435\u0451 \u043C\u043D\u043E\u0433\u043E\u0447\u0438\u0441\u043B\u0435\u043D\u043D\u044B\u0435
+    \u043C\u044B\u0448\u0446\u044B (musculi hyoidei), \u043E\u0431\u044A\u0435\u0434\u0438\u043D\u0451\u043D\u043D\u044B\u0435
+    \u0432 \u0435\u0434\u0438\u043D\u044B\u0439 \u043F\u043E\u0434\u044A\u044F\u0437\u044B\u0447\u043D\u044B\u0439
+    \u0430\u043F\u043F\u0430\u0440\u0430\u0442, \u0440\u0430\u0437\u0432\u0438\u043B\u0438\u0441\u044C
+    \u0432 \u0442\u0435\u0441\u043D\u043E\u0439 \u0432\u0437\u0430\u0438\u043C\u043E\u0441\u0432\u044F\u0437\u0438
+    \u0438 \u0432\u0437\u0430\u0438\u043C\u043E\u0437\u0430\u0432\u0438\u0441\u0438\u043C\u043E\u0441\u0442\u0438
+    \u0441 \u043E\u0440\u0433\u0430\u043D\u0430\u043C\u0438 \u0430\u043F\u043F\u0430\u0440\u0430\u0442\u0430
+    \u043F\u0438\u0449\u0435\u0432\u0430\u0440\u0435\u043D\u0438\u044F (\u0440\u043E\u0442\u043E\u0432\u0430\u044F
+    \u043F\u043E\u043B\u043E\u0441\u0442\u044C, \u043C\u044F\u0433\u043A\u043E\u0435
+    \u043D\u0451\u0431\u043E, \u0433\u043B\u043E\u0442\u043A\u0430) \u0438 \u0430\u043F\u043F\u0430\u0440\u0430\u0442\u0430
+    \u0434\u044B\u0445\u0430\u043D\u0438\u044F (\u0433\u043E\u0440\u0442\u0430\u043D\u044C).
+    \u041F\u043E\u044D\u0442\u043E\u043C\u0443 \u0447\u0430\u0441\u0442\u044C \u043C\u044B\u0448\u0446
+    \u043F\u043E\u0434\u044A\u044F\u0437\u044B\u0447\u043D\u043E\u0433\u043E \u0430\u043F\u043F\u0430\u0440\u0430\u0442\u0430
+    \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442\u043E\u043C
+    \u043F\u0440\u0435\u043E\u0431\u0440\u0430\u0437\u043E\u0432\u0430\u043D\u0438\u044F
+    \u043E\u0431\u0449\u0435\u0433\u043E \u0441\u0436\u0438\u043C\u0430\u0442\u0435\u043B\u044F
+    \u0432\u0438\u0441\u0446\u0435\u0440\u0430\u043B\u044C\u043D\u043E\u0433\u043E
+    \u0430\u043F\u043F\u0430\u0440\u0430\u0442\u0430 \u043D\u0438\u0437\u0448\u0438\u0445
+    \u043F\u043E\u0437\u0432\u043E\u043D\u043E\u0447\u043D\u044B\u0445, \u0434\u0440\u0443\u0433\u0430\u044F
+    \u0447\u0430\u0441\u0442\u044C \u2013 \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u043D\u044B\u043C\u0438
+    \u043C\u0435\u0437\u0435\u043D\u0445\u0438\u043C\u043D\u044B\u0445 \u0437\u0430\u043A\u043B\u0430\u0434\u043E\u043A
+    \u0436\u0430\u0431\u0435\u0440\u043D\u044B\u0445 \u0434\u0443\u0433 \u0438, \u043D\u0430\u043A\u043E\u043D\u0435\u0446,
+    \u0442\u0440\u0435\u0442\u044C\u044F \u0447\u0430\u0441\u0442\u044C \u2013 \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u043D\u044B\u043C\u0438
+    \u0432\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u044B\u0445 \u043E\u0442\u0440\u043E\u0441\u0442\u043A\u043E\u0432
+    \u0437\u0430\u0442\u044B\u043B\u043E\u0447\u043D\u044B\u0445 \u0438 \u0447\u0430\u0441\u0442\u0438\u0447\u043D\u043E
+    \u043F\u0435\u0440\u0435\u0434\u043D\u0438\u0445 \u0442\u0443\u043B\u043E\u0432\u0438\u0449\u043D\u044B\u0445
+    \u043C\u0438\u043E\u0442\u043E\u043C\u043E\u0432"
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &92994708 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5338362567452378131, guid: 88f00b9400acb774a9499fd5bc0e5555, type: 3}
@@ -502,6 +595,61 @@ MonoBehaviour:
   allChildrenBodyParts: []
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043F\u0435\u0440\u0435\u0434\u043D\u0438\u0445
     \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439 (\u043F\u0440\u0430\u0432\u044B\u0435)"
+  groupScientificName: 
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
+--- !u!1 &125699835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 125699836}
+  - component: {fileID: 125699837}
+  m_Layer: 0
+  m_Name: "\u041B \u041C\u044B\u0448\u0446\u044B \u0437\u0430\u043F\u044F\u0441\u0442\u043D\u043E\u0433\u043E
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &125699836
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125699835}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 741943817}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &125699837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125699835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u0437\u0430\u043F\u044F\u0441\u0442\u043D\u043E\u0433\u043E
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043B\u0435\u0432\u044B\u0435)"
   groupScientificName: 
   description: 
   partGroupListButton: {fileID: 0}
@@ -673,6 +821,84 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1512461828522879851, guid: f88b78b556e4bc24a8dafad9c1401085, type: 3}
   m_PrefabInstance: {fileID: 8977140668093722372}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &175917216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 175917217}
+  - component: {fileID: 175917218}
+  m_Layer: 0
+  m_Name: "\u0416\u0435\u0432\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0435"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &175917217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175917216}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 550978168}
+  - {fileID: 390800384}
+  m_Father: {fileID: 1673766958}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &175917218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175917216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u0416\u0435\u0432\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0435
+    \u043C\u044B\u0448\u0446\u044B"
+  groupScientificName: 
+  description: "\u0420\u0430\u0441\u043F\u043E\u043B\u0430\u0433\u0430\u044E\u0442\u0441\u044F
+    \u0432 \u043E\u0431\u043B\u0430\u0441\u0442\u0438 \u043C\u043E\u0437\u0433\u043E\u0432\u043E\u0433\u043E
+    \u043E\u0442\u0434\u0435\u043B\u0430 \u0433\u043E\u043B\u043E\u0432\u044B. \u0412
+    \u043E\u0442\u043B\u0438\u0447\u0438\u0435 \u043E\u0442 \u043C\u0438\u043C\u0438\u0447\u0435\u0441\u043A\u0438\u0445,
+    \u043E\u043D\u0438 \u0438\u043C\u0435\u044E\u0442 \u0434\u0432\u0443\u0441\u0442\u043E\u0440\u043E\u043D\u043D\u0435\u0435
+    \u043F\u0440\u0438\u043A\u0440\u0435\u043F\u043B\u0435\u043D\u0438\u0435 \u043D\u0430
+    \u043A\u043E\u0441\u0442\u043D\u043E\u0439 \u043E\u0441\u043D\u043E\u0432\u0435.
+    \u0418\u0445 \u043F\u0440\u043E\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u0430\u044F
+    \u0438\u043B\u0438 \u0444\u0438\u043A\u0441\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u0430\u044F
+    \u0442\u043E\u0447\u043A\u0430 (punctum fixum) \u043D\u0430\u0445\u043E\u0434\u0438\u0442\u0441\u044F
+    \u043D\u0430 \u043A\u043E\u0441\u0442\u044F\u0445 \u0447\u0435\u0440\u0435\u043F\u0430,
+    \u0430 \u043F\u043E\u0434\u0432\u0438\u0436\u043D\u0430\u044F (punctum mobile)
+    \u2013 \u043D\u0430 \u043D\u0438\u0436\u043D\u0435\u0439 \u0447\u0435\u043B\u044E\u0441\u0442\u0438.
+    \u041D\u0435\u0441\u043C\u043E\u0442\u0440\u044F \u043D\u0430 \u0441\u0432\u043E\u044E
+    \u043C\u0430\u043B\u043E\u0447\u0438\u0441\u043B\u0435\u043D\u043D\u043E\u0441\u0442\u044C,
+    \u0436\u0435\u0432\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0435 \u043C\u044B\u0448\u0446\u044B
+    \u0432\u044B\u043F\u043E\u043B\u043D\u044F\u044E\u0442 \u0431\u043E\u043B\u044C\u0448\u0443\u044E
+    \u0444\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u0443\u044E
+    \u043D\u0430\u0433\u0440\u0443\u0437\u043A\u0443 \u043A\u0430\u043A \u043F\u0440\u0438
+    \u0437\u0430\u0445\u0432\u0430\u0442\u0435 \u043F\u0438\u0449\u0438 \u0438 \u0435\u0451
+    \u0443\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u0438, \u0442\u0430\u043A \u0438
+    \u043F\u0440\u0438 \u0438\u0437\u043C\u0435\u043B\u044C\u0447\u0435\u043D\u0438\u0438
+    \u0432 \u043F\u0438\u0449\u0435\u0432\u0443\u044E \u043C\u0430\u0441\u0441\u0443"
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!1 &187646428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,6 +1379,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8228967737448186238, guid: d02c831b636d3ca41b259a2b233a6405, type: 3}
   m_PrefabInstance: {fileID: 9040126707390654659}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &361768742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 361768743}
+  - component: {fileID: 361768744}
+  m_Layer: 0
+  m_Name: "\u041F \u041C\u044B\u0448\u0446\u044B \u0442\u0430\u0437\u043E\u0431\u0435\u0434\u0440\u0435\u043D\u043D\u043E\u0433\u043E
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &361768743
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361768742}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 399012651}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &361768744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361768742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u0442\u0430\u0437\u043E\u0431\u0435\u0434\u0440\u0435\u043D\u043D\u043E\u0433\u043E
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043F\u0440\u0430\u0432\u044B\u0435)"
+  groupScientificName: 
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &371620079 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1403681272879515532, guid: 49cf268ea9f56c14ab0221882d7ea5df, type: 3}
@@ -1178,6 +1459,65 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3568931153189857014, guid: 7a255e4c99145cb47a466faf0da55151, type: 3}
   m_PrefabInstance: {fileID: 1974557567838756035}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &399012650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 399012651}
+  - component: {fileID: 399012652}
+  m_Layer: 0
+  m_Name: "\u041F \u041C\u044B\u0448\u0446\u044B \u0442\u0430\u0437\u043E\u0432\u043E\u0439
+    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &399012651
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399012650}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 361768743}
+  - {fileID: 974463365}
+  - {fileID: 813885212}
+  - {fileID: 2050952355}
+  m_Father: {fileID: 671376092}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &399012652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399012650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u0442\u0430\u0437\u043E\u0432\u043E\u0439
+    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438 (\u043F\u0440\u0430\u0432\u044B\u0435)"
+  groupScientificName: 
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &413305158 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1627944156107113636, guid: bcc79be58234a14429d2769e96c094ff, type: 3}
@@ -1428,6 +1768,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7623743148115928314, guid: bd689b5689558994e9adfd79def8d91e, type: 3}
   m_PrefabInstance: {fileID: 2423864739733097657}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &507748051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 507748052}
+  - component: {fileID: 507748053}
+  m_Layer: 0
+  m_Name: "\u041B \u041C\u044B\u0448\u0446\u044B \u0437\u0430\u043F\u043B\u044E\u0441\u043D\u0435\u0432\u043E\u0433\u043E
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &507748052
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507748051}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 947928097}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &507748053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507748051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u0437\u0430\u043F\u043B\u044E\u0441\u043D\u0435\u0432\u043E\u0433\u043E
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043B\u0435\u0432\u044B\u0435)"
+  groupScientificName: 
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &512109713 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 344141674709518372, guid: 9864e3f4097532947bf3070db4c1b583, type: 3}
@@ -1497,6 +1892,90 @@ MonoBehaviour:
   description: 
   partGroupListButton: {fileID: 0}
   parentBodyPartGroup: {fileID: 0}
+--- !u!1 &542781379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 542781380}
+  - component: {fileID: 542781381}
+  m_Layer: 0
+  m_Name: "\u041F \u041C\u044B\u0448\u0446\u044B \u0433\u0440\u0443\u0434\u043D\u043E\u0439
+    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &542781380
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542781379}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2081031697}
+  - {fileID: 1667704024}
+  - {fileID: 937574435}
+  - {fileID: 593488505}
+  - {fileID: 810935544}
+  m_Father: {fileID: 671376092}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &542781381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542781379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u0433\u0440\u0443\u0434\u043D\u043E\u0439
+    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438 (\u043F\u0440\u0430\u0432\u044B\u0435)"
+  groupScientificName: musculi membri thoracici
+  description: "\u041F\u043E\u0434\u0440\u0430\u0437\u0434\u0435\u043B\u044F\u044E\u0442\u0441\u044F
+    \u043D\u0430 \u0434\u0432\u0435 \u0433\u0440\u0443\u043F\u043F\u044B, \u0438\u0437
+    \u043A\u043E\u0442\u043E\u0440\u044B\u0445 \u043E\u0434\u043D\u0430 \u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0438\u0432\u0430\u0435\u0442
+    \u0441\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u0435 \u0433\u0440\u0443\u0434\u043D\u043E\u0439
+    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438 \u0441 \u0442\u0443\u043B\u043E\u0432\u0438\u0449\u0435\u043C
+    (\u043C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
+    \u043F\u043E\u044F\u0441\u0430), \u0430 \u0432\u0442\u043E\u0440\u0430\u044F
+    \u2013 \u0441\u043E\u0431\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0435 \u043C\u044B\u0448\u0446\u044B,
+    \u0440\u0430\u0441\u043F\u043E\u043B\u0430\u0433\u0430\u044E\u0449\u0438\u0435\u0441\u044F
+    \u043D\u0430 \u043B\u043E\u043F\u0430\u0442\u043A\u0435 \u0438 \u0437\u0432\u0435\u043D\u044C\u044F\u0445
+    \u0441\u0432\u043E\u0431\u043E\u0434\u043D\u043E\u0433\u043E \u043E\u0442\u0434\u0435\u043B\u0430,
+    \u043E\u043A\u0430\u0437\u044B\u0432\u0430\u044F \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435
+    \u043D\u0430 \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0439, \u043B\u043E\u043A\u0442\u0435\u0432\u043E\u0439,
+    \u0437\u0430\u043F\u044F\u0441\u0442\u043D\u044B\u0439 \u0438 \u043F\u0430\u043B\u044C\u0446\u0435\u0432\u044B\u0435
+    \u0441\u0443\u0441\u0442\u0430\u0432\u044B. \u0423 \u0440\u0430\u0437\u043B\u0438\u0447\u043D\u044B\u0445
+    \u0432\u0438\u0434\u043E\u0432 \u0434\u043E\u043C\u0430\u0448\u043D\u0438\u0445
+    \u0436\u0438\u0432\u043E\u0442\u043D\u044B\u0445 \u043C\u043E\u0440\u0444\u043E\u043B\u043E\u0433\u0438\u0447\u0435\u0441\u043A\u0438\u0435
+    \u043E\u0441\u043E\u0431\u0435\u043D\u043D\u043E\u0441\u0442\u0438 \u043C\u044B\u0448\u0446
+    \u0433\u0440\u0443\u0434\u043D\u044B\u0445 \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439
+    \u043D\u0430\u0445\u043E\u0434\u044F\u0442\u0441\u044F \u0432 \u043F\u0440\u044F\u043C\u043E\u0439
+    \u0437\u0430\u0432\u0438\u0441\u0438\u043C\u043E\u0441\u0442\u0438 \u043E\u0442
+    \u0444\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0445
+    \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E\u0441\u0442\u0435\u0439 \u0442\u0435\u0445
+    \u0441\u0443\u0441\u0442\u0430\u0432\u043E\u0432, \u043D\u0430 \u043A\u043E\u0442\u043E\u0440\u044B\u0435
+    \u043E\u043D\u0438 \u0432\u043E\u0437\u0434\u0435\u0439\u0441\u0442\u0432\u0443\u044E\u0442"
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &545422142 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5305650365668371779, guid: 7c07511246d378342a84aec362717744, type: 3}
@@ -1512,6 +1991,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 785430197100119631, guid: 6cf71b54bb16dfd4ba79b1255abcd330, type: 3}
   m_PrefabInstance: {fileID: 4538465936619152167}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &557864214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 557864215}
+  - component: {fileID: 557864216}
+  m_Layer: 0
+  m_Name: "\u041B \u041C\u044B\u0448\u0446\u044B \u043B\u043E\u043A\u0442\u0435\u0432\u043E\u0433\u043E
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &557864215
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557864214}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 741943817}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &557864216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557864214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u043B\u043E\u043A\u0442\u0435\u0432\u043E\u0433\u043E
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043B\u0435\u0432\u044B\u0435)"
+  groupScientificName: 
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &558704635 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2487340569875422591, guid: 9fd8ccdc1a180ea408646ce4e7f333bf, type: 3}
@@ -1537,6 +2071,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8775528828993994688, guid: d99391d3bef4f73419209f374beca11f, type: 3}
   m_PrefabInstance: {fileID: 7082000717568758746}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &593488504
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 593488505}
+  - component: {fileID: 593488506}
+  m_Layer: 0
+  m_Name: "\u041F \u041C\u044B\u0448\u0446\u044B \u0437\u0430\u043F\u044F\u0441\u0442\u043D\u043E\u0433\u043E
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &593488505
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593488504}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 542781380}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &593488506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593488504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u0437\u0430\u043F\u044F\u0441\u0442\u043D\u043E\u0433\u043E
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043F\u0440\u0430\u0432\u044B\u0435)"
+  groupScientificName: 
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &598620940 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3016146088093007702, guid: d6dff373916b4b948afca1e2fce1830e, type: 3}
@@ -1557,6 +2146,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1738274389802071305, guid: 0fc26c22948023b4dbb686632f46658c, type: 3}
   m_PrefabInstance: {fileID: 6695123312881967898}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &632331276
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 632331277}
+  - component: {fileID: 632331278}
+  m_Layer: 0
+  m_Name: "\u041B \u041C\u044B\u0448\u0446\u044B \u0442\u0430\u0437\u043E\u0431\u0435\u0434\u0440\u0435\u043D\u043D\u043E\u0433\u043E
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &632331277
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632331276}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 947928097}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &632331278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632331276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u0442\u0430\u0437\u043E\u0431\u0435\u0434\u0440\u0435\u043D\u043D\u043E\u0433\u043E
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043B\u0435\u0432\u044B\u0435)"
+  groupScientificName: 
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &639270831 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2029132343694764386, guid: 203b654230f307947a4c0071815dc192, type: 3}
@@ -1598,7 +2242,7 @@ GameObject:
   - component: {fileID: 671376092}
   - component: {fileID: 671376093}
   m_Layer: 0
-  m_Name: Muscles Legs
+  m_Name: "\u041C\u044B\u0448\u0446\u044B \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1617,6 +2261,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 741943817}
+  - {fileID: 542781380}
+  - {fileID: 947928097}
+  - {fileID: 399012651}
   - {fileID: 1179461231}
   - {fileID: 1651076912}
   - {fileID: 255882747}
@@ -1640,8 +2288,92 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439"
-  groupScientificName: 
-  description: 
+  groupScientificName: musculi membri
+  description: "\u0418\u043C\u0435\u044E\u0442 \u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u043D\u044B\u0435
+    \u0432\u0438\u0434\u043E\u0432\u044B\u0435 \u043E\u0442\u043B\u0438\u0447\u0438\u044F,
+    \u0447\u0442\u043E \u043D\u0430\u0438\u0431\u043E\u043B\u0435\u0435 \u0432\u044B\u0440\u0430\u0436\u0435\u043D\u043E
+    \u0432 \u0434\u0438\u0441\u0442\u0430\u043B\u044C\u043D\u044B\u0445 \u0437\u0432\u0435\u043D\u044C\u044F\u0445
+    \u0432 \u0441\u0432\u044F\u0437\u0438 \u0441 \u043E\u0441\u043E\u0431\u0435\u043D\u043D\u043E\u0441\u0442\u044F\u043C\u0438
+    \u0442\u0438\u043F\u0430 \u043E\u043F\u043E\u0440\u044B \u0438 \u0441\u0442\u0435\u043F\u0435\u043D\u044C\u044E
+    \u0440\u0435\u0434\u0443\u043A\u0446\u0438\u0438 \u0431\u043E\u043A\u043E\u0432\u044B\u0445
+    \u043B\u0443\u0447\u0435\u0439.\n\u0412 \u043F\u0440\u043E\u0446\u0435\u0441\u0441\u0435
+    \u0438\u0441\u0442\u043E\u0440\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
+    \u0438 \u0438\u043D\u0434\u0438\u0432\u0438\u0434\u0443\u0430\u043B\u044C\u043D\u043E\u0433\u043E
+    \u0440\u0430\u0437\u0432\u0438\u0442\u0438\u044F \u043C\u044B\u0448\u0446\u044B
+    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439, \u0440\u0430\u0432\u043D\u043E
+    \u043A\u0430\u043A \u0438 \u043A\u043E\u0441\u0442\u043D\u0430\u044F \u043E\u0441\u043D\u043E\u0432\u0430,
+    \u043F\u0440\u0435\u0442\u0435\u0440\u043F\u0435\u0432\u0430\u044E\u0442 \u0441\u043B\u043E\u0436\u043D\u044B\u0435
+    \u043F\u0440\u0435\u043E\u0431\u0440\u0430\u0437\u043E\u0432\u0430\u043D\u0438\u044F.
+    \u0418\u0441\u0442\u043E\u0447\u043D\u0438\u043A\u043E\u043C \u0438\u0445 \u0440\u0430\u0437\u0432\u0438\u0442\u0438\u044F
+    \u0441\u043B\u0443\u0436\u0430\u0442 \u043F\u043E\u0447\u043A\u043E\u043E\u0431\u0440\u0430\u0437\u043D\u044B\u0435
+    \u0432\u044B\u0440\u043E\u0441\u0442\u044B \u0432\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u043E\u0439
+    \u0447\u0430\u0441\u0442\u0438 \u043C\u0438\u043E\u0442\u043E\u043C\u043E\u0432
+    \u0442\u0443\u043B\u043E\u0432\u0438\u0449\u0430, \u0432 \u0447\u0451\u043C \u043D\u0430\u0433\u043B\u044F\u0434\u043D\u043E
+    \u043C\u043E\u0436\u043D\u043E \u0443\u0431\u0435\u0434\u0438\u0442\u044C\u0441\u044F
+    \u043F\u0440\u0438 \u0441\u0440\u0430\u0432\u043D\u0435\u043D\u0438\u0438 \u044D\u043C\u0431\u0440\u0438\u043E\u043D\u043E\u0432
+    \u0440\u0430\u043D\u043D\u0438\u0445 \u044D\u0442\u0430\u043F\u043E\u0432 \u0440\u0430\u0437\u0432\u0438\u0442\u0438\u044F
+    \u0440\u0430\u0437\u043B\u0438\u0447\u043D\u044B\u0445 \u043F\u043E\u0437\u0432\u043E\u043D\u043E\u0447\u043D\u044B\u0445.
+    \u042D\u0442\u043E \u043F\u043E\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0430\u0435\u0442\u0441\u044F
+    \u0438 \u0438\u0445 \u0438\u043D\u043D\u0435\u0440\u0432\u0430\u0446\u0438\u0435\u0439
+    \u0437\u0430 \u0441\u0447\u0451\u0442 \u0432\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u044B\u0445
+    \u0432\u0435\u0442\u0432\u0435\u0439 \u0441\u043F\u0438\u043D\u043D\u043E\u043C\u043E\u0437\u0433\u043E\u0432\u044B\u0445
+    \u043D\u0435\u0440\u0432\u043E\u0432.\n\u0423 \u043C\u043B\u0435\u043A\u043E\u043F\u0438\u0442\u0430\u044E\u0449\u0438\u0445
+    \u043F\u0440\u043E\u0438\u0437\u043E\u0448\u043B\u043E \u0443\u0441\u0438\u043B\u0435\u043D\u0438\u0435
+    \u0438\u0445 \u0441\u0442\u0430\u0442\u043E\u0434\u0438\u043D\u0430\u043C\u0438\u0447\u0435\u0441\u043A\u0438\u0445
+    \u0438 \u0441\u0442\u0430\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0445 \u0441\u0432\u043E\u0439\u0441\u0442\u0432,
+    \u0447\u0442\u043E \u043E\u0441\u043E\u0431\u0435\u043D\u043D\u043E \u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u043D\u043E
+    \u0434\u043B\u044F \u0443\u0437\u043A\u043E\u0441\u043F\u0435\u0446\u0438\u0430\u043B\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0445
+    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439 \u043A\u043E\u043F\u044B\u0442\u043D\u044B\u0445
+    \u0436\u0438\u0432\u043E\u0442\u043D\u044B\u0445, \u043A\u043E\u0442\u043E\u0440\u044B\u0435
+    \u043F\u0440\u0438 \u043F\u0435\u0440\u0435\u0445\u043E\u0434\u0435 \u043E\u0442
+    \u0441\u0442\u043E\u043F\u043E- \u043A \u043F\u0430\u043B\u044C\u0446\u0435-
+    \u0438 \u0444\u0430\u043B\u0430\u043D\u0433\u043E\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u044E
+    \u0443\u0442\u0440\u0430\u0442\u0438\u043B\u0438 \u0441\u0432\u043E\u044E \u043F\u0435\u0440\u0432\u0438\u0447\u043D\u0443\u044E
+    \u043C\u0443\u043B\u044C\u0442\u0438\u0444\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u044C.
+    \u041F\u043E\u0441\u043B\u0435\u0434\u043D\u0435\u0435 \u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0430\u043B\u043E\u0441\u044C
+    \u043D\u0435 \u0442\u043E\u043B\u044C\u043A\u043E \u0443\u0441\u0438\u043B\u0435\u043D\u0438\u0435\u043C
+    \u043E\u0434\u043D\u0438\u0445 \u043C\u044B\u0448\u0446 (\u0440\u0430\u0437\u0433\u0438\u0431\u0430\u0442\u0435\u043B\u0435\u0439
+    \u0438 \u0441\u0433\u0438\u0431\u0430\u0442\u0435\u043B\u0435\u0439) \u0438 \u0440\u0435\u0434\u0443\u043A\u0446\u0438\u0435\u0439
+    \u0434\u0440\u0443\u0433\u0438\u0445 (\u0441\u0443\u043F\u0438\u043D\u0430\u0442\u043E\u0440\u043E\u0432
+    \u0438 \u043F\u0440\u043E\u043D\u0430\u0442\u043E\u0440\u043E\u0432), \u043D\u043E
+    \u0438 \u043E\u0431\u044A\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u0435\u043C
+    \u043E\u0442\u0434\u0435\u043B\u044C\u043D\u044B\u0445 \u043C\u044B\u0448\u0446
+    \u0432 \u043C\u044B\u0448\u0435\u0447\u043D\u044B\u0435 \u043A\u043E\u043C\u043F\u043B\u0435\u043A\u0441\u044B,
+    \u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0438\u0432\u0430\u044E\u0449\u0438\u0435
+    \u043C\u0435\u0436\u0434\u0443 \u0441\u0443\u0441\u0442\u0430\u0432\u0430\u043C\u0438
+    \u0442\u0435\u0441\u043D\u0443\u044E \u043C\u043E\u0440\u0444\u043E\u0444\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u0443\u044E
+    \u0432\u0437\u0430\u0438\u043C\u043E\u0437\u0430\u0432\u0438\u0441\u0438\u043C\u043E\u0441\u0442\u044C.\n\u0417\u043D\u0430\u0447\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u043C
+    \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u044F\u043C \u043F\u043E\u0434\u0432\u0435\u0440\u0433\u043B\u0438\u0441\u044C
+    \u0438 \u0444\u0430\u0441\u0446\u0438\u0438 \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439,
+    \u0447\u0442\u043E \u043E\u0441\u043E\u0431\u0435\u043D\u043D\u043E \u043E\u0442\u0440\u0430\u0437\u0438\u043B\u043E\u0441\u044C
+    \u043D\u0430 \u0441\u0442\u0435\u043F\u0435\u043D\u0438 \u0432\u044B\u0440\u0430\u0436\u0435\u043D\u043D\u043E\u0441\u0442\u0438
+    \u0433\u043B\u0443\u0431\u043E\u043A\u043E\u0439 \u0444\u0430\u0441\u0446\u0438\u0438
+    \u0438 \u0435\u0451 \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u043D\u044B\u0445.\n\u041D\u0430
+    \u0433\u0440\u0443\u0434\u043D\u044B\u0445 \u0438 \u0442\u0430\u0437\u043E\u0432\u044B\u0445
+    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u044F\u0445 \u043F\u043E\u0432\u0435\u0440\u0445\u043D\u043E\u0441\u0442\u043D\u044B\u0435
+    \u0444\u0430\u0441\u0446\u0438\u0438 \u0442\u0435\u0441\u043D\u043E \u0441\u0440\u0430\u0441\u0442\u0430\u044E\u0442\u0441\u044F
+    \u0441 \u043A\u043E\u0436\u0435\u0439 \u0438 \u043B\u0438\u0448\u044C \u0432
+    \u043E\u0442\u0434\u0435\u043B\u044C\u043D\u044B\u0445 \u0443\u0447\u0430\u0441\u0442\u043A\u0430\u0445
+    \u043F\u0440\u0438\u043A\u0440\u0435\u043F\u043B\u044F\u044E\u0442\u0441\u044F
+    \u043D\u0430 \u043A\u043E\u0441\u0442\u043D\u043E\u0439 \u043E\u0441\u043D\u043E\u0432\u0435.
+    \u0413\u043B\u0443\u0431\u043E\u043A\u0438\u0435 \u0444\u0430\u0441\u0446\u0438\u0438,
+    \u043A\u0430\u043A \u043F\u0440\u0430\u0432\u0438\u043B\u043E, \u0438\u043C\u0435\u044E\u0442
+    \u0434\u0432\u0443\u043B\u0438\u0441\u0442\u043A\u043E\u0432\u043E\u0435 \u0441\u0442\u0440\u043E\u0435\u043D\u0438\u0435
+    \u0438 \u043E\u043A\u0440\u0443\u0436\u0430\u044E\u0442 \u043E\u0442\u0434\u0435\u043B\u044C\u043D\u044B\u0435
+    \u0433\u0440\u0443\u043F\u043F\u044B \u043C\u044B\u0448\u0446-\u0441\u0438\u043D\u0435\u0440\u0433\u0438\u0441\u0442\u043E\u0432,
+    \u043E\u0431\u0440\u0430\u0437\u0443\u044F \u0432\u043E\u043A\u0440\u0443\u0433
+    \u043D\u0438\u0445 \u043C\u043E\u0449\u043D\u044B\u0435 \u0444\u0438\u0431\u0440\u043E\u0437\u043D\u044B\u0435
+    \u0444\u0443\u0442\u043B\u044F\u0440\u044B. \u041C\u0435\u0436\u043C\u044B\u0448\u0435\u0447\u043D\u044B\u0435
+    \u043F\u0435\u0440\u0435\u0433\u043E\u0440\u043E\u0434\u043A\u0438, \u043E\u0442\u0445\u043E\u0434\u044F\u0449\u0438\u0435
+    \u043E\u0442 \u0432\u043D\u0443\u0442\u0440\u0435\u043D\u043D\u0435\u0433\u043E
+    \u043B\u0438\u0441\u0442\u043A\u0430 \u0433\u043B\u0443\u0431\u043E\u043A\u043E\u0439
+    \u0444\u0430\u0441\u0446\u0438\u0438, \u043E\u0431\u0440\u0430\u0437\u0443\u044E\u0442
+    \u0441\u043E\u0431\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0435 \u0444\u0430\u0441\u0446\u0438\u0438
+    \u043C\u044B\u0448\u0446, \u043A\u043E\u0442\u043E\u0440\u044B\u0435, \u043F\u0435\u0440\u0435\u0445\u043E\u0434\u044F
+    \u043D\u0430 \u0438\u0445 \u0434\u043B\u0438\u043D\u043D\u044B\u0435 \u0441\u0443\u0445\u043E\u0436\u0438\u043B\u0438\u044F,
+    \u0441\u043E\u0441\u0442\u0430\u0432\u043B\u044F\u044E\u0442 \u0444\u0438\u0431\u0440\u043E\u0437\u043D\u0443\u044E
+    \u043E\u0441\u043D\u043E\u0432\u0443 \u0441\u0443\u0445\u043E\u0436\u0438\u043B\u044C\u043D\u043E\u0433\u043E
+    \u0432\u043B\u0430\u0433\u0430\u043B\u0438\u0449\u0430"
   partGroupListButton: {fileID: 0}
   parentBodyPartGroup: {fileID: 0}
 --- !u!1 &679908829
@@ -1721,6 +2453,71 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2982802557735381418, guid: b7e4997e1ed7df249accd04367fe706e, type: 3}
   m_PrefabInstance: {fileID: 4695207408641993185}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &699953902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 699953903}
+  - component: {fileID: 699953904}
+  m_Layer: 0
+  m_Name: "\u0413\u043B\u0430\u0437\u043D\u043E\u0433\u043E \u044F\u0431\u043B\u043E\u043A\u0430"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &699953903
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699953902}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1948402596}
+  m_Father: {fileID: 1673766958}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &699953904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699953902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u0433\u043B\u0430\u0437\u043D\u043E\u0433\u043E
+    \u044F\u0431\u043B\u043E\u043A\u0430"
+  groupScientificName: musculi bulbi oculi
+  description: "\u0420\u0430\u0437\u0432\u0438\u0432\u0430\u044E\u0442\u0441\u044F
+    \u0438\u0437 \u0433\u043E\u043B\u043E\u0432\u043D\u044B\u0445 \u0441\u043E\u043C\u0438\u0442\u043E\u0432,
+    \u0438\u043B\u0438 \u0438\u0437 \u0442\u0430\u043A \u043D\u0430\u0437\u044B\u0432\u0430\u0435\u043C\u044B\u0445
+    \u043F\u0440\u0435\u0434\u0443\u0448\u043D\u044B\u0445 \u043C\u0438\u043E\u0442\u043E\u043C\u043E\u0432.
+    \u041A \u043D\u0438\u043C \u043E\u0442\u043D\u043E\u0441\u044F\u0442\u0441\u044F
+    \u043C\u044B\u0448\u0446\u044B, \u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0438\u0432\u0430\u044E\u0449\u0438\u0435
+    \u0441\u0438\u043D\u0445\u0440\u043E\u043D\u043D\u044B\u0435 \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u044F
+    \u0433\u043B\u0430\u0437\u043D\u044B\u043C\u0438 \u044F\u0431\u043B\u043E\u043A\u0430\u043C\u0438,
+    \u0432 \u0447\u0438\u0441\u043B\u0435 \u043A\u043E\u0442\u043E\u0440\u044B\u0445
+    \u0447\u0435\u0442\u044B\u0440\u0435 \u043F\u0440\u044F\u043C\u044B\u0445, \u0434\u0432\u0435
+    \u043A\u043E\u0441\u044B\u0445 \u0438 \u043E\u0434\u0438\u043D \u043E\u0442\u0442\u044F\u0433\u0438\u0432\u0430\u0442\u0435\u043B\u044C"
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &708917211 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2365167858002102667, guid: be0a502364b73c04cbdf906342eca557, type: 3}
@@ -1776,6 +2573,90 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 142137636251027003, guid: 4f7093cec08329740ae8276e5ad8b422, type: 3}
   m_PrefabInstance: {fileID: 2442633378566228374}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &741943816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 741943817}
+  - component: {fileID: 741943818}
+  m_Layer: 0
+  m_Name: "\u041B \u041C\u044B\u0448\u0446\u044B \u0433\u0440\u0443\u0434\u043D\u043E\u0439
+    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &741943817
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741943816}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1250920674}
+  - {fileID: 781887252}
+  - {fileID: 557864215}
+  - {fileID: 125699836}
+  - {fileID: 883563371}
+  m_Father: {fileID: 671376092}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &741943818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741943816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u0433\u0440\u0443\u0434\u043D\u043E\u0439
+    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438 (\u043B\u0435\u0432\u044B\u0435)"
+  groupScientificName: musculi membri thoracici
+  description: "\u041F\u043E\u0434\u0440\u0430\u0437\u0434\u0435\u043B\u044F\u044E\u0442\u0441\u044F
+    \u043D\u0430 \u0434\u0432\u0435 \u0433\u0440\u0443\u043F\u043F\u044B, \u0438\u0437
+    \u043A\u043E\u0442\u043E\u0440\u044B\u0445 \u043E\u0434\u043D\u0430 \u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0438\u0432\u0430\u0435\u0442
+    \u0441\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u0435 \u0433\u0440\u0443\u0434\u043D\u043E\u0439
+    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438 \u0441 \u0442\u0443\u043B\u043E\u0432\u0438\u0449\u0435\u043C
+    (\u043C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
+    \u043F\u043E\u044F\u0441\u0430), \u0430 \u0432\u0442\u043E\u0440\u0430\u044F
+    \u2013 \u0441\u043E\u0431\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0435 \u043C\u044B\u0448\u0446\u044B,
+    \u0440\u0430\u0441\u043F\u043E\u043B\u0430\u0433\u0430\u044E\u0449\u0438\u0435\u0441\u044F
+    \u043D\u0430 \u043B\u043E\u043F\u0430\u0442\u043A\u0435 \u0438 \u0437\u0432\u0435\u043D\u044C\u044F\u0445
+    \u0441\u0432\u043E\u0431\u043E\u0434\u043D\u043E\u0433\u043E \u043E\u0442\u0434\u0435\u043B\u0430,
+    \u043E\u043A\u0430\u0437\u044B\u0432\u0430\u044F \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435
+    \u043D\u0430 \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0439, \u043B\u043E\u043A\u0442\u0435\u0432\u043E\u0439,
+    \u0437\u0430\u043F\u044F\u0441\u0442\u043D\u044B\u0439 \u0438 \u043F\u0430\u043B\u044C\u0446\u0435\u0432\u044B\u0435
+    \u0441\u0443\u0441\u0442\u0430\u0432\u044B. \u0423 \u0440\u0430\u0437\u043B\u0438\u0447\u043D\u044B\u0445
+    \u0432\u0438\u0434\u043E\u0432 \u0434\u043E\u043C\u0430\u0448\u043D\u0438\u0445
+    \u0436\u0438\u0432\u043E\u0442\u043D\u044B\u0445 \u043C\u043E\u0440\u0444\u043E\u043B\u043E\u0433\u0438\u0447\u0435\u0441\u043A\u0438\u0435
+    \u043E\u0441\u043E\u0431\u0435\u043D\u043D\u043E\u0441\u0442\u0438 \u043C\u044B\u0448\u0446
+    \u0433\u0440\u0443\u0434\u043D\u044B\u0445 \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439
+    \u043D\u0430\u0445\u043E\u0434\u044F\u0442\u0441\u044F \u0432 \u043F\u0440\u044F\u043C\u043E\u0439
+    \u0437\u0430\u0432\u0438\u0441\u0438\u043C\u043E\u0441\u0442\u0438 \u043E\u0442
+    \u0444\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0445
+    \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E\u0441\u0442\u0435\u0439 \u0442\u0435\u0445
+    \u0441\u0443\u0441\u0442\u0430\u0432\u043E\u0432, \u043D\u0430 \u043A\u043E\u0442\u043E\u0440\u044B\u0435
+    \u043E\u043D\u0438 \u0432\u043E\u0437\u0434\u0435\u0439\u0441\u0442\u0432\u0443\u044E\u0442"
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &743084746 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 38800301489437347, guid: 35bb2f9598a72d04e8a7ae2700736a6d, type: 3}
@@ -1904,11 +2785,6 @@ MonoBehaviour:
     \u0434\u0443\u0433\u0438 (arcus hemales)"
   partGroupListButton: {fileID: 0}
   parentBodyPartGroup: {fileID: 0}
---- !u!4 &753887352 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6539220192739249454, guid: 3361cb59e7b2f2b4abeeb69400c2a791, type: 3}
-  m_PrefabInstance: {fileID: 2642090090038651185}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &759055087 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6248384002282472301, guid: e4a85742fcc9ce0409e3a52dabc80af6, type: 3}
@@ -1929,6 +2805,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7953787656859904938, guid: 1194d30bc938bf245b4f2d255d8c11f5, type: 3}
   m_PrefabInstance: {fileID: 5658714415215123845}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &781887251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 781887252}
+  - component: {fileID: 781887253}
+  m_Layer: 0
+  m_Name: "\u041B \u041C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &781887252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781887251}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 741943817}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &781887253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781887251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043B\u0435\u0432\u044B\u0435)"
+  groupScientificName: 
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &787306596 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4200373706005097579, guid: c89cd9940a321b24eb0703f916c3c81e, type: 3}
@@ -1954,11 +2885,172 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4911148362535097531, guid: 59ff1122858755548b84eca43b3ef712, type: 3}
   m_PrefabInstance: {fileID: 5297533137699815870}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &810935543
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 810935544}
+  - component: {fileID: 810935545}
+  m_Layer: 0
+  m_Name: "\u041F \u041C\u044B\u0448\u0446\u044B \u043A\u0438\u0441\u0442\u0438"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &810935544
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810935543}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 542781380}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &810935545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810935543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u043A\u0438\u0441\u0442\u0438 (\u043F\u0440\u0430\u0432\u044B\u0435)"
+  groupScientificName: 
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
+--- !u!1 &813885211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 813885212}
+  - component: {fileID: 813885213}
+  m_Layer: 0
+  m_Name: "\u041F \u041C\u044B\u0448\u0446\u044B \u0437\u0430\u043F\u043B\u044E\u0441\u043D\u0435\u0432\u043E\u0433\u043E
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &813885212
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813885211}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 399012651}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &813885213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813885211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u0437\u0430\u043F\u043B\u044E\u0441\u043D\u0435\u0432\u043E\u0433\u043E
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043F\u0440\u0430\u0432\u044B\u0435)"
+  groupScientificName: 
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &823307945 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1578433629128895602, guid: d42a92ee924f854458ffa00ac95c1819, type: 3}
   m_PrefabInstance: {fileID: 7984632152865177303}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &824541443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 824541444}
+  - component: {fileID: 824541445}
+  m_Layer: 0
+  m_Name: "\u041B \u041C\u044B\u0448\u0446\u044B \u0441\u0442\u043E\u043F\u044B"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &824541444
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824541443}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 947928097}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &824541445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824541443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u0441\u0442\u043E\u043F\u044B (\u043B\u0435\u0432\u044B\u0435)"
+  groupScientificName: 
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &839900249 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5787637913037589665, guid: aa6ef9f82a4216441b2b27fd935308a1, type: 3}
@@ -2067,6 +3159,59 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8601183413892864138, guid: 97357bfe44cdbe74d9a84b636e6ac718, type: 3}
   m_PrefabInstance: {fileID: 5833706375907787326}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &883563370
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 883563371}
+  - component: {fileID: 883563372}
+  m_Layer: 0
+  m_Name: "\u041B \u041C\u044B\u0448\u0446\u044B \u043A\u0438\u0441\u0442\u0438"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &883563371
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883563370}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 741943817}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &883563372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883563370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u043A\u0438\u0441\u0442\u0438 (\u043B\u0435\u0432\u044B\u0435)"
+  groupScientificName: 
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &895046782 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1347497858506178295, guid: b2e669e9f5f1f6d4aa4b06504ae4acef, type: 3}
@@ -2183,6 +3328,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6083567907799800689, guid: ba46fa129bc22b642a5a3246832cf9ce, type: 3}
   m_PrefabInstance: {fileID: 6758579307975715572}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &937574434
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 937574435}
+  - component: {fileID: 937574436}
+  m_Layer: 0
+  m_Name: "\u041F \u041C\u044B\u0448\u0446\u044B \u043B\u043E\u043A\u0442\u0435\u0432\u043E\u0433\u043E
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &937574435
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937574434}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 542781380}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &937574436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937574434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u043B\u043E\u043A\u0442\u0435\u0432\u043E\u0433\u043E
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043F\u0440\u0430\u0432\u044B\u0435)"
+  groupScientificName: 
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &939537044 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7614160327802139025, guid: 7e14fbd9486889244b214e5b1eab7d18, type: 3}
@@ -2203,6 +3403,65 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7695907139775919725, guid: eb678497a995b5045b22a1fca0252cf2, type: 3}
   m_PrefabInstance: {fileID: 137261339375435601}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &947928096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 947928097}
+  - component: {fileID: 947928098}
+  m_Layer: 0
+  m_Name: "\u041B \u041C\u044B\u0448\u0446\u044B \u0442\u0430\u0437\u043E\u0432\u043E\u0439
+    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &947928097
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947928096}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 632331277}
+  - {fileID: 1078620293}
+  - {fileID: 507748052}
+  - {fileID: 824541444}
+  m_Father: {fileID: 671376092}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &947928098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947928096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u0442\u0430\u0437\u043E\u0432\u043E\u0439
+    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438 (\u043B\u0435\u0432\u044B\u0435)"
+  groupScientificName: 
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &948142778 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1474392311590091752, guid: 2f1b65918b86b4c4b8104b1226204b63, type: 3}
@@ -2223,6 +3482,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2949232344342795790, guid: ed442a9f5e9842343bba5d7d659aca19, type: 3}
   m_PrefabInstance: {fileID: 4454924595690271338}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &974463364
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 974463365}
+  - component: {fileID: 974463366}
+  m_Layer: 0
+  m_Name: "\u041F \u041C\u044B\u0448\u0446\u044B \u043A\u043E\u043B\u0435\u043D\u043D\u043E\u0433\u043E
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &974463365
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974463364}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 399012651}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &974463366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974463364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u043A\u043E\u043B\u0435\u043D\u043D\u043E\u0433\u043E
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043F\u0440\u0430\u0432\u044B\u0435)"
+  groupScientificName: 
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &974532574 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2056893120975234187, guid: 7aed14faa6ecf774aa497050d7e1dc64, type: 3}
@@ -2459,6 +3773,61 @@ MonoBehaviour:
     \u0432\u044B\u0440\u0435\u0437\u043A\u0438 \u0433\u043B\u0443\u0431\u043E\u043A\u0438\u0435"
   partGroupListButton: {fileID: 0}
   parentBodyPartGroup: {fileID: 0}
+--- !u!1 &1078620292
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1078620293}
+  - component: {fileID: 1078620294}
+  m_Layer: 0
+  m_Name: "\u041B \u041C\u044B\u0448\u0446\u044B \u043A\u043E\u043B\u0435\u043D\u043D\u043E\u0433\u043E
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1078620293
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078620292}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 947928097}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1078620294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078620292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u043A\u043E\u043B\u0435\u043D\u043D\u043E\u0433\u043E
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043B\u0435\u0432\u044B\u0435)"
+  groupScientificName: 
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1087758717 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3340279543445452488, guid: 3343c8b16f4cf3f45aed52c2e90c2b0b, type: 3}
@@ -2579,6 +3948,90 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7662126970870233529, guid: a86d853a790054a4f956868236ef69ae, type: 3}
   m_PrefabInstance: {fileID: 853245756464413823}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1117909835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1117909836}
+  - component: {fileID: 1117909837}
+  m_Layer: 0
+  m_Name: "\u041A\u043E\u0436\u043D\u044B\u0435"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1117909836
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117909835}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 85006202}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1117909837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117909835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u041A\u043E\u0436\u043D\u044B\u0435 \u043C\u044B\u0448\u0446\u044B"
+  groupScientificName: musculi cutanei
+  description: "\u0420\u0430\u0437\u0432\u0438\u0432\u0430\u044E\u0442\u0441\u044F
+    \u0438\u0437 \u043F\u043E\u0432\u0435\u0440\u0445\u043D\u043E\u0441\u0442\u043D\u044B\u0445
+    \u0441\u043B\u043E\u0451\u0432 \u043C\u044B\u0448\u0446 \u0442\u0435\u043B\u0430
+    \u0438 \u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0438\u0432\u0430\u044E\u0442
+    \u0432\u0442\u043E\u0440\u0438\u0447\u043D\u0443\u044E \u0441\u0432\u044F\u0437\u044C
+    \u0441\u043A\u0435\u043B\u0435\u0442\u043D\u044B\u0445 \u043C\u044B\u0448\u0446
+    \u0441 \u043A\u043E\u0436\u0435\u0439 \u0438 \u0435\u0451 \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u043D\u044B\u043C\u0438.
+    \u041E\u0431\u0435\u0441\u043F\u0435\u0447\u0438\u0432\u0430\u044E\u0442 \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u044F
+    \u043A\u043E\u0436\u043D\u043E\u0433\u043E \u043F\u043E\u043A\u0440\u043E\u0432\u0430,
+    \u0441\u0432\u0451\u0440\u0442\u044B\u0432\u0430\u043D\u0438\u0435 \u0442\u0435\u043B\u0430
+    \u0432 \u0448\u0430\u0440 \u0438 \u0434\u0430\u0436\u0435 \u0443\u043F\u0440\u0430\u0432\u043B\u044F\u044E\u0442
+    \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u044F\u043C\u0438 \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u043D\u044B\u0445
+    \u043A\u043E\u0436\u043D\u043E\u0433\u043E \u043F\u043E\u043A\u0440\u043E\u0432\u0430.\n\u0412
+    \u043F\u0440\u043E\u0446\u0435\u0441\u0441\u0435 \u0434\u0438\u0444\u0444\u0435\u0440\u0435\u043D\u0446\u0438\u0430\u0446\u0438\u0438
+    \u043C\u044B\u0448\u0435\u0447\u043D\u043E\u0439 \u0441\u0438\u0441\u0442\u0435\u043C\u044B
+    \u043A\u043E\u0436\u043D\u0430\u044F \u043C\u0443\u0441\u043A\u0443\u043B\u0430\u0442\u0443\u0440\u0430
+    \u043F\u043E\u0434\u0440\u0430\u0437\u0434\u0435\u043B\u0438\u043B\u0430\u0441\u044C
+    \u043D\u0430 \u043F\u043E\u0432\u0435\u0440\u0445\u043D\u043E\u0441\u0442\u043D\u044B\u0435
+    \u0438 \u0433\u043B\u0443\u0431\u043E\u043A\u0438\u0435 \u0441\u043B\u043E\u0438.
+    \u041F\u0435\u0440\u0432\u044B\u0435 \u043F\u043E\u043B\u0443\u0447\u0438\u043B\u0438
+    \u043F\u0440\u0438\u043A\u0440\u0435\u043F\u043B\u0435\u043D\u0438\u0435 \u043A
+    \u043C\u044F\u0433\u043A\u043E\u043C\u0443 \u043E\u0441\u0442\u043E\u0432\u0443
+    \u0442\u0435\u043B\u0430 \u0438 \u043A \u043A\u043E\u0436\u0435, \u0430 \u0432\u0442\u043E\u0440\u044B\u0435
+    \u0447\u0430\u0441\u0442\u0438\u0447\u043D\u043E \u0438 \u043D\u0430 \u043A\u043E\u0441\u0442\u044F\u0445
+    \u0441\u043A\u0435\u043B\u0435\u0442\u0430. \u0421 \u0443\u0442\u0440\u0430\u0442\u043E\u0439
+    \u043A\u043E\u0436\u043D\u044B\u043C\u0438 \u043C\u044B\u0448\u0446\u0430\u043C\u0438
+    \u043F\u0435\u0440\u0432\u043E\u043D\u0430\u0447\u0430\u043B\u044C\u043D\u043E\u0433\u043E
+    \u043D\u0430\u0437\u043D\u0430\u0447\u0435\u043D\u0438\u044F \u043F\u0440\u043E\u0438\u0437\u043E\u0448\u043B\u0430
+    \u0438\u043B\u0438 \u0438\u0445 \u0447\u0430\u0441\u0442\u0438\u0447\u043D\u0430\u044F
+    \u0440\u0435\u0434\u0443\u043A\u0446\u0438\u044F, \u0438\u043B\u0438 \u043E\u043D\u0438
+    \u0432\u043E\u0448\u043B\u0438 \u0432 \u0441\u043E\u0441\u0442\u0430\u0432 \u0441\u043A\u0435\u043B\u0435\u0442\u043D\u044B\u0445
+    \u043C\u044B\u0448\u0446"
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1119966884 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4072609965836812707, guid: 93d5c6641ee767541880a530a5db1dda, type: 3}
@@ -2964,6 +4417,114 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4542285085843778850, guid: 18846234d33135f46a27f8fe71aa808e, type: 3}
   m_PrefabInstance: {fileID: 8398535932329896225}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1250920673
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1250920674}
+  - component: {fileID: 1250920675}
+  m_Layer: 0
+  m_Name: "\u041B \u041C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
+    \u043F\u043E\u044F\u0441\u0430"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1250920674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250920673}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 17514724}
+  m_Father: {fileID: 741943817}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1250920675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250920673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
+    \u043F\u043E\u044F\u0441\u0430 (\u043B\u0435\u0432\u044B\u0435)"
+  groupScientificName: 
+  description: "\u0414\u043E\u0440\u0441\u0430\u043B\u044C\u043D\u044B\u0435 \u043C\u044B\u0448\u0446\u044B
+    \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E \u043F\u043E\u044F\u0441\u0430
+    \u0431\u0435\u0440\u0443\u0442 \u043D\u0430\u0447\u0430\u043B\u043E \u0438\u043B\u0438
+    \u043D\u0430 \u0448\u0435\u0435 \u0438 \u0442\u0443\u043B\u043E\u0432\u0438\u0449\u0435
+    \u0438 \u043A\u043E\u043D\u0432\u0435\u0440\u0433\u0438\u0440\u0443\u044E\u0442
+    \u043A \u043B\u043E\u043F\u0430\u0442\u043A\u0435 \u0438\u043B\u0438 \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0439
+    \u043A\u043E\u0441\u0442\u0438 (\u0442\u0440\u0430\u043F\u0435\u0446\u0438\u0435\u0432\u0438\u0434\u043D\u0430\u044F,
+    \u0440\u043E\u043C\u0431\u043E\u0432\u0438\u0434\u043D\u0430\u044F, \u0433\u0440\u0443\u0434\u0438\u043D\u043E\u043F\u043B\u0435\u0447\u0435\u0433\u043E\u043B\u043E\u0432\u043D\u0430\u044F,
+    \u043F\u043B\u0435\u0447\u0435\u0430\u0442\u043B\u0430\u043D\u0442\u043D\u0430\u044F,
+    \u0448\u0438\u0440\u043E\u0447\u0430\u0439\u0448\u0430\u044F \u043C\u044B\u0448\u0446\u0430
+    \u0441\u043F\u0438\u043D\u044B), \u0438\u043B\u0438 \u043D\u0430 \u043C\u0435\u0434\u0438\u0430\u043B\u044C\u043D\u043E\u0439
+    \u043F\u043E\u0432\u0435\u0440\u0445\u043D\u043E\u0441\u0442\u0438 \u043B\u043E\u043F\u0430\u0442\u043A\u0438
+    \u0438 \u0434\u0438\u0432\u0435\u0440\u0433\u0438\u0440\u0443\u044E\u0442 \u043D\u0430
+    \u0448\u0435\u0439\u043D\u044B\u0439 \u043E\u0442\u0434\u0435\u043B \u043F\u043E\u0437\u0432\u043E\u043D\u043E\u0447\u043D\u043E\u0433\u043E
+    \u0441\u0442\u043E\u043B\u0431\u0430 \u0438 \u0433\u0440\u0443\u0434\u043D\u0443\u044E
+    \u0441\u0442\u0435\u043D\u043A\u0443 (\u0437\u0443\u0431\u0447\u0430\u0442\u0430\u044F
+    \u0432\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u0430\u044F).\n\u0412\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u044B\u0435
+    \u043C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
+    \u043F\u043E\u044F\u0441\u0430 \u043D\u0430\u0447\u0438\u043D\u0430\u044E\u0442\u0441\u044F
+    \u043D\u0430 \u0433\u0440\u0443\u0434\u0438\u043D\u0435, \u0430 \u0437\u0430\u043A\u0430\u043D\u0447\u0438\u0432\u0430\u044E\u0442\u0441\u044F
+    \u043D\u0430 \u043B\u043E\u043F\u0430\u0442\u043A\u0435, \u043F\u043B\u0435\u0447\u0435
+    \u0438 \u043F\u0440\u0435\u0434\u043F\u043B\u0435\u0447\u044C\u0435 (\u043F\u043E\u0432\u0435\u0440\u0445\u043D\u043E\u0441\u0442\u043D\u044B\u0435
+    \u0438 \u0433\u043B\u0443\u0431\u043E\u043A\u0430\u044F \u0433\u0440\u0443\u0434\u043D\u044B\u0435
+    \u043C\u044B\u0448\u0446\u044B).\n\u0414\u043E\u0440\u0441\u0430\u043B\u044C\u043D\u044B\u0435
+    \u043C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
+    \u043F\u043E\u044F\u0441\u0430 \u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0438\u0432\u0430\u044E\u0442
+    \u0443\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u0435 \u0442\u0435\u043B\u0430
+    \u0436\u0438\u0432\u043E\u0442\u043D\u043E\u0433\u043E \u0432 \u043F\u043E\u0434\u0432\u0435\u0448\u0435\u043D\u043D\u043E\u043C
+    \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0438 \u043C\u0435\u0436\u0434\u0443
+    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u044F\u043C\u0438, \u0443\u0447\u0430\u0441\u0442\u0432\u0443\u044E\u0442
+    \u0432 \u0432\u044B\u043D\u043E\u0441\u0435 \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439
+    \u0432\u043F\u0435\u0440\u0451\u0434 \u0438 \u043E\u0442\u0432\u0435\u0434\u0435\u043D\u0438\u0438
+    \u0438\u0445 \u043D\u0430\u0437\u0430\u0434.\n\u0412\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u044B\u0435
+    \u043C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
+    \u043F\u043E\u044F\u0441\u0430 \u043F\u0440\u043E\u0442\u0438\u0432\u043E\u0434\u0435\u0439\u0441\u0442\u0432\u0443\u044E\u0442
+    \u043E\u0442\u0432\u0435\u0434\u0435\u043D\u0438\u044E \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439
+    \u0432 \u0441\u0442\u043E\u0440\u043E\u043D\u044B (\u043E\u0441\u043E\u0431\u0435\u043D\u043D\u043E
+    \u0443 \u043A\u043E\u043F\u044B\u0442\u043D\u044B\u0445). \u041A\u0440\u043E\u043C\u0435
+    \u0442\u043E\u0433\u043E, \u0447\u0430\u0441\u0442\u044C \u043F\u0435\u0440\u0435\u0447\u0438\u0441\u043B\u0435\u043D\u043D\u044B\u0445
+    \u043C\u044B\u0448\u0446, \u0438\u043C\u0435\u044E\u0449\u0438\u0445 \u043F\u0440\u0438\u043A\u0440\u0435\u043F\u043B\u0435\u043D\u0438\u0435
+    \u043D\u0430 \u043F\u043E\u0437\u0432\u043E\u043D\u043E\u0447\u043D\u043E\u043C
+    \u0441\u0442\u043E\u043B\u0431\u0435 \u0438 \u0440\u0451\u0431\u0440\u0430\u0445,
+    \u043D\u0435 \u0442\u043E\u043B\u044C\u043A\u043E \u0443\u0447\u0430\u0441\u0442\u0432\u0443\u044E\u0442
+    \u0432 \u043F\u0435\u0440\u0435\u0434\u0432\u0438\u0436\u0435\u043D\u0438\u0438
+    \u0436\u0438\u0432\u043E\u0442\u043D\u043E\u0433\u043E \u0438 \u0433\u0430\u0448\u0435\u043D\u0438\u0438
+    \u0441\u043E\u0442\u0440\u044F\u0441\u0435\u043D\u0438\u0439 \u0442\u0435\u043B\u0430
+    \u043F\u0440\u0438 \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u0438, \u043D\u043E
+    \u0438 \u0441\u043F\u043E\u0441\u043E\u0431\u0441\u0442\u0432\u0443\u044E\u0442
+    \u0434\u044B\u0445\u0430\u0442\u0435\u043B\u044C\u043D\u043E\u0439 \u0444\u0443\u043D\u043A\u0446\u0438\u0438,
+    \u043E\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043B\u044F\u044F \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u0435
+    \u0440\u0451\u0431\u0435\u0440 \u0438 \u0433\u0440\u0443\u0434\u043D\u043E\u0439
+    \u043A\u043B\u0435\u0442\u043A\u0438 \u0432 \u0446\u0435\u043B\u043E\u043C \u043F\u0440\u0438
+    \u0432\u0434\u043E\u0445\u0435 \u0438 \u0432\u044B\u0434\u043E\u0445\u0435"
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1280778629 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1472346790747336252, guid: 911db544c84f9214d983f2350fafe985, type: 3}
@@ -3055,6 +4616,89 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2074762148533494153, guid: 01efe7ceaaac8e9419300179557aa6a9, type: 3}
   m_PrefabInstance: {fileID: 4235548506218123193}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1298979466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1298979467}
+  - component: {fileID: 1298979468}
+  m_Layer: 0
+  m_Name: "\u041C\u0438\u043C\u0438\u0447\u0435\u0441\u043A\u0438\u0435"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1298979467
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298979466}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 463863522}
+  - {fileID: 839900249}
+  - {fileID: 1730805802}
+  - {fileID: 895046782}
+  - {fileID: 1175335574}
+  - {fileID: 1144345970}
+  - {fileID: 170904337}
+  - {fileID: 1014973078}
+  - {fileID: 499468764}
+  - {fileID: 739893545}
+  m_Father: {fileID: 1673766958}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1298979468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298979466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u041C\u0438\u043C\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u043C\u044B\u0448\u0446\u044B"
+  groupScientificName: 
+  description: "\u041F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043B\u044F\u044E\u0442
+    \u0441\u043E\u0431\u043E\u0439 \u043A\u043E\u043C\u043F\u043B\u0435\u043A\u0441
+    \u043F\u043B\u0430\u0441\u0442\u0438\u043D\u0447\u0430\u0442\u044B\u0445 \u043C\u044B\u0448\u0446,
+    \u0431\u0435\u0440\u0443\u0449\u0438\u0445 \u043D\u0430\u0447\u0430\u043B\u043E
+    \u043D\u0430 \u043A\u043E\u0441\u0442\u043D\u043E\u0439 \u043E\u0441\u043D\u043E\u0432\u0435,
+    \u0430 \u0437\u0430\u043A\u0430\u043D\u0447\u0438\u0432\u0430\u044E\u0449\u0438\u0445\u0441\u044F
+    \u0432\u043E\u043A\u0440\u0443\u0433 \u0432\u0445\u043E\u0434\u043D\u044B\u0445
+    \u043E\u0442\u0432\u0435\u0440\u0441\u0442\u0438\u0439 (\u0440\u043E\u0442\u043E\u0432\u043E\u0433\u043E,
+    \u043D\u043E\u0441\u043E\u0432\u044B\u0445, \u0433\u043B\u0430\u0437\u043D\u044B\u0445
+    \u0438 \u043D\u0430\u0440\u0443\u0436\u043D\u044B\u0445 \u0441\u043B\u0443\u0445\u043E\u0432\u044B\u0445
+    \u043F\u0440\u043E\u0445\u043E\u0434\u043E\u0432). \u042D\u0442\u0438 \u043C\u044B\u0448\u0446\u044B
+    \u0440\u0430\u0441\u043F\u043E\u043B\u0430\u0433\u0430\u044E\u0442\u0441\u044F
+    \u0442\u0430\u043A\u0438\u043C \u043E\u0431\u0440\u0430\u0437\u043E\u043C, \u0447\u0442\u043E
+    \u043E\u0434\u043D\u0438 \u0438\u0437 \u043D\u0438\u0445 \u0437\u0430\u043A\u0440\u044B\u0432\u0430\u044E\u0442
+    \u0438\u043B\u0438 \u0441\u0443\u0436\u0438\u0432\u0430\u044E\u0442 \u043E\u0442\u0432\u0435\u0440\u0441\u0442\u0438\u044F,
+    \u0442\u043E \u0435\u0441\u0442\u044C \u0434\u0435\u0439\u0441\u0442\u0432\u0443\u044E\u0442
+    \u043A\u0430\u043A \u0441\u0444\u0438\u043D\u043A\u0442\u0435\u0440\u044B, \u0434\u0440\u0443\u0433\u0438\u0435,
+    \u0440\u0430\u0441\u0445\u043E\u0434\u044F\u0449\u0438\u0435\u0441\u044F \u0440\u0430\u0434\u0438\u0430\u043B\u044C\u043D\u043E
+    \u043E\u0442 \u043E\u0442\u0432\u0435\u0440\u0441\u0442\u0438\u0439, \u043D\u0430\u043E\u0431\u043E\u0440\u043E\u0442,
+    \u0440\u0430\u0441\u0448\u0438\u0440\u044F\u044E\u0442 \u0438\u0445 \u0438 \u0434\u0435\u0439\u0441\u0442\u0432\u0443\u044E\u0442
+    \u043A\u0430\u043A \u0434\u0438\u043B\u044F\u0442\u0430\u0442\u043E\u0440\u044B"
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1304183186 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3294099126829456329, guid: 01eb3958a61cbf440885a6c220bb556d, type: 3}
@@ -3913,6 +5557,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8274659204717692808, guid: d3d758a0252e58a4eace475579ed5222, type: 3}
   m_PrefabInstance: {fileID: 3189541135330939203}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1667704023
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1667704024}
+  - component: {fileID: 1667704025}
+  m_Layer: 0
+  m_Name: "\u041F \u041C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1667704024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667704023}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 542781380}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1667704025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667704023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043F\u0440\u0430\u0432\u044B\u0435)"
+  groupScientificName: 
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1669195703 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6390643816374305967, guid: 2f1121297a69632448d6ce0dc215ec78, type: 3}
@@ -3929,7 +5628,7 @@ GameObject:
   - component: {fileID: 1673766958}
   - component: {fileID: 1673766959}
   m_Layer: 0
-  m_Name: Muscles Head
+  m_Name: "\u041C\u044B\u0448\u0446\u044B \u0433\u043E\u043B\u043E\u0432\u044B"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3948,28 +5647,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 463863522}
-  - {fileID: 739893545}
-  - {fileID: 1932855760}
-  - {fileID: 499468764}
-  - {fileID: 1144345970}
-  - {fileID: 170904337}
-  - {fileID: 1175335574}
-  - {fileID: 550978168}
-  - {fileID: 390800384}
-  - {fileID: 1948402596}
-  - {fileID: 839900249}
-  - {fileID: 1730805802}
-  - {fileID: 1014973078}
-  - {fileID: 895046782}
-  - {fileID: 1592488827}
-  - {fileID: 1766221993}
-  - {fileID: 1556461333}
-  - {fileID: 1140464684}
-  - {fileID: 1992348785}
-  - {fileID: 912603304}
-  - {fileID: 436604587}
-  - {fileID: 371620079}
+  - {fileID: 1298979467}
+  - {fileID: 175917217}
+  - {fileID: 699953903}
+  - {fileID: 1960892764}
+  - {fileID: 89610116}
   m_Father: {fileID: 1915068702}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1673766959
@@ -3989,8 +5671,21 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0433\u043E\u043B\u043E\u0432\u044B"
-  groupScientificName: 
-  description: 
+  groupScientificName: musculi capitis
+  description: "\u0414\u0435\u043B\u044F\u0442\u0441\u044F \u043D\u0430 \u043C\u0438\u043C\u0438\u0447\u0435\u0441\u043A\u0443\u044E,
+    \u0440\u0430\u0441\u043F\u043E\u043B\u043E\u0436\u0435\u043D\u043D\u0443\u044E
+    \u0432 \u043E\u0431\u043B\u0430\u0441\u0442\u0438 \u043B\u0438\u0446\u0435\u0432\u043E\u0433\u043E
+    \u043E\u0442\u0434\u0435\u043B\u0430 \u0433\u043E\u043B\u043E\u0432\u044B \u0438
+    \u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0438\u0432\u0430\u044E\u0449\u0443\u044E
+    \u0437\u0430\u0445\u0432\u0430\u0442 \u043A\u043E\u0440\u043C\u0430 \u0438 \u0443\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u0435
+    \u0435\u0433\u043E \u0432 \u0440\u043E\u0442\u043E\u0432\u043E\u0439 \u043F\u043E\u043B\u043E\u0441\u0442\u0438,
+    \u0438 \u0436\u0435\u0432\u0430\u0442\u0435\u043B\u044C\u043D\u0443\u044E \u043C\u0443\u0441\u043A\u0443\u043B\u0430\u0442\u0443\u0440\u0443.
+    \u041F\u043E\u0441\u043B\u0435\u0434\u043D\u044F\u044F \u0440\u0430\u0441\u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0430
+    \u043A\u0430\u043A \u0432 \u043B\u0438\u0446\u0435\u0432\u043E\u043C, \u0442\u0430\u043A
+    \u0438 \u043C\u043E\u0437\u0433\u043E\u0432\u043E\u043C \u043E\u0442\u0434\u0435\u043B\u0430\u0445
+    \u0433\u043E\u043B\u043E\u0432\u044B \u0438 \u0434\u0435\u0439\u0441\u0442\u0432\u0443\u0435\u0442
+    \u043D\u0430 \u043D\u0438\u0436\u043D\u0435\u0447\u0435\u043B\u044E\u0441\u0442\u043D\u043E\u0439
+    \u0441\u0443\u0441\u0442\u0430\u0432"
   partGroupListButton: {fileID: 0}
   parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1694748823 stripped
@@ -4187,19 +5882,16 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 753887352}
+  - {fileID: 464853869}
   - {fileID: 305957526}
   - {fileID: 19920827}
   - {fileID: 843528541}
   - {fileID: 939580857}
   - {fileID: 1773094392}
-  - {fileID: 545422142}
   - {fileID: 1975516747}
   - {fileID: 1189278594}
   - {fileID: 1846869509}
   - {fileID: 2058742708}
-  - {fileID: 464853869}
-  - {fileID: 1559139866}
   - {fileID: 1783619407}
   m_Father: {fileID: 1915068702}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4348,6 +6040,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 9158434973525315186, guid: 61d1fdebf1a9a28498ea4978304da493, type: 3}
   m_PrefabInstance: {fileID: 1690837943936630328}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1818938771 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3685899490647054336, guid: a9fc22822c3238549afc26570fbe8193, type: 3}
+  m_PrefabInstance: {fileID: 2727585597756748559}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1819775351 stripped
 Transform:
@@ -4607,7 +6304,8 @@ GameObject:
   - component: {fileID: 1915068702}
   - component: {fileID: 1915068703}
   m_Layer: 0
-  m_Name: Muscles
+  m_Name: "\u041C\u044B\u0448\u0435\u0447\u043D\u0430\u044F \u0441\u0438\u0441\u0442\u0435\u043C\u0430
+    \u2013 systema musculorum"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4627,10 +6325,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1673766958}
-  - {fileID: 1734044109}
   - {fileID: 85006202}
-  - {fileID: 671376092}
+  - {fileID: 1734044109}
   - {fileID: 1868061869}
+  - {fileID: 671376092}
   m_Father: {fileID: 1288319924}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1915068703
@@ -4649,9 +6347,55 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  groupName: "\u041C\u044B\u0448\u0446\u044B"
-  groupScientificName: 
-  description: 
+  groupName: "\u041C\u044B\u0448\u0435\u0447\u043D\u0430\u044F \u0441\u0438\u0441\u0442\u0435\u043C\u0430"
+  groupScientificName: systema musculorum
+  description: "\u042F\u0432\u043B\u044F\u044F\u0441\u044C \u0430\u043A\u0442\u0438\u0432\u043D\u044B\u043C\u0438
+    \u043E\u0440\u0433\u0430\u043D\u0430\u043C\u0438 \u0430\u043F\u043F\u0430\u0440\u0430\u0442\u0430
+    \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u044F, \u0432 \u0437\u0430\u0432\u0438\u0441\u0438\u043C\u043E\u0441\u0442\u0438
+    \u043E\u0442 \u0444\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0445
+    \u043F\u043E\u0442\u0440\u0435\u0431\u043D\u043E\u0441\u0442\u0435\u0439 \u043E\u0440\u0433\u0430\u043D\u0438\u0437\u043C\u0430
+    \u043C\u043E\u0433\u0443\u0442 \u0438\u0437\u043C\u0435\u043D\u044F\u0442\u044C
+    \u0432\u0437\u0430\u0438\u043C\u043E\u043E\u0442\u043D\u043E\u0448\u0435\u043D\u0438\u044F
+    \u043C\u0435\u0436\u0434\u0443 \u043A\u043E\u0441\u0442\u043D\u044B\u043C\u0438
+    \u0440\u044B\u0447\u0430\u0433\u0430\u043C\u0438 (\u0434\u0438\u043D\u0430\u043C\u0438\u0447\u0435\u0441\u043A\u0430\u044F
+    \u0444\u0443\u043D\u043A\u0446\u0438\u044F) \u0438\u043B\u0438 \u0443\u043A\u0440\u0435\u043F\u043B\u044F\u0442\u044C
+    \u0438\u0445 \u0432 \u043E\u043F\u0440\u0435\u0434\u0435\u043B\u0451\u043D\u043D\u043E\u043C
+    \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0438 (\u0441\u0442\u0430\u0442\u0438\u0447\u0435\u0441\u043A\u0430\u044F
+    \u0444\u0443\u043D\u043A\u0446\u0438\u044F). \u0412\u044B\u043F\u043E\u043B\u043D\u044F\u044F
+    \u0441\u043E\u043A\u0440\u0430\u0442\u0438\u0442\u0435\u043B\u044C\u043D\u0443\u044E
+    \u0444\u0443\u043D\u043A\u0446\u0438\u044E, \u0441\u043A\u0435\u043B\u0435\u0442\u043D\u044B\u0435
+    \u043C\u044B\u0448\u0446\u044B \u0437\u043D\u0430\u0447\u0438\u0442\u0435\u043B\u044C\u043D\u0443\u044E
+    \u0447\u0430\u0441\u0442\u044C \u0445\u0438\u043C\u0438\u0447\u0435\u0441\u043A\u043E\u0439
+    \u044D\u043D\u0435\u0440\u0433\u0438\u0438, \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u043D\u0443\u044E
+    \u0441 \u043F\u0438\u0449\u0435\u0439, \u0442\u0440\u0430\u043D\u0441\u0444\u043E\u0440\u043C\u0438\u0440\u0443\u044E\u0442
+    \u0432 \u0442\u0435\u043F\u043B\u043E\u0432\u0443\u044E \u044D\u043D\u0435\u0440\u0433\u0438\u044E
+    (\u0434\u043E 70%) \u0438 \u0432 \u043C\u0435\u043D\u044C\u0448\u0435\u0439 \u0441\u0442\u0435\u043F\u0435\u043D\u0438
+    \u0432 \u043C\u0435\u0445\u0430\u043D\u0438\u0447\u0435\u0441\u043A\u0443\u044E
+    \u0440\u0430\u0431\u043E\u0442\u0443 (\u043E\u043A\u043E\u043B\u043E 30%). \u041F\u043E\u044D\u0442\u043E\u043C\u0443
+    \u0440\u0430\u0431\u043E\u0442\u0430\u044E\u0449\u0430\u044F \u043C\u044B\u0448\u0446\u0430
+    \u0432\u044B\u043F\u043E\u043B\u043D\u044F\u0435\u0442 \u043D\u0435 \u0442\u043E\u043B\u044C\u043A\u043E
+    \u043C\u0435\u0445\u0430\u043D\u0438\u0447\u0435\u0441\u043A\u0443\u044E \u0440\u0430\u0431\u043E\u0442\u0443,
+    \u043D\u043E \u0438 \u0441\u043B\u0443\u0436\u0438\u0442 \u043E\u0441\u043D\u043E\u0432\u043D\u044B\u043C
+    \u0438\u0441\u0442\u043E\u0447\u043D\u0438\u043A\u043E\u043C \u0442\u0435\u043F\u043B\u0430
+    \u0432 \u043E\u0440\u0433\u0430\u043D\u0438\u0437\u043C\u0435. \u0412\u043C\u0435\u0441\u0442\u0435
+    \u0441 \u0441\u0435\u0440\u0434\u0435\u0447\u043D\u043E-\u0441\u043E\u0441\u0443\u0434\u0438\u0441\u0442\u043E\u0439
+    \u0441\u0438\u0441\u0442\u0435\u043C\u043E\u0439 \u0441\u043A\u0435\u043B\u0435\u0442\u043D\u044B\u0435
+    \u043C\u044B\u0448\u0446\u044B \u0430\u043A\u0442\u0438\u0432\u043D\u043E \u0443\u0447\u0430\u0441\u0442\u0432\u0443\u044E\u0442
+    \u0432 \u043E\u0431\u043C\u0435\u043D\u043D\u044B\u0445 \u043F\u0440\u043E\u0446\u0435\u0441\u0441\u0430\u0445
+    \u0438 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u0438
+    \u044D\u043D\u0435\u0440\u0433\u0435\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0445
+    \u0440\u0435\u0441\u0443\u0440\u0441\u043E\u0432 \u043E\u0440\u0433\u0430\u043D\u0438\u0437\u043C\u0430.
+    \u0411\u043B\u0430\u0433\u043E\u0434\u0430\u0440\u044F \u043D\u0430\u043B\u0438\u0447\u0438\u044E
+    \u0432 \u043C\u044B\u0448\u0446\u0430\u0445 \u0431\u043E\u043B\u044C\u0448\u043E\u0433\u043E
+    \u0447\u0438\u0441\u043B\u0430 \u0440\u0435\u0446\u0435\u043F\u0442\u043E\u0440\u043E\u0432
+    \u043E\u043D\u0438 \u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0438\u0432\u0430\u044E\u0442
+    \u043F\u0440\u043E\u044F\u0432\u043B\u0435\u043D\u0438\u0435 \u043C\u044B\u0448\u0435\u0447\u043D\u043E-\u0441\u0443\u0441\u0442\u0430\u0432\u043D\u043E\u0433\u043E
+    \u0447\u0443\u0432\u0441\u0442\u0432\u0430, \u043A\u043E\u0442\u043E\u0440\u043E\u0435
+    \u0441\u043E\u0432\u043C\u0435\u0441\u0442\u043D\u043E \u0441 \u043E\u0440\u0433\u0430\u043D\u0430\u043C\u0438
+    \u0440\u0430\u0432\u043D\u043E\u0432\u0435\u0441\u0438\u044F \u0438 \u043E\u0440\u0433\u0430\u043D\u0430\u043C\u0438
+    \u0437\u0440\u0435\u043D\u0438\u044F \u0441\u043F\u043E\u0441\u043E\u0431\u0441\u0442\u0432\u0443\u0435\u0442
+    \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u0438\u044E \u0442\u043E\u0447\u043D\u044B\u0445
+    \u043C\u044B\u0448\u0435\u0447\u043D\u044B\u0445 \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u0439"
   partGroupListButton: {fileID: 0}
   parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1925779574 stripped
@@ -4748,6 +6492,75 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4323821489340583258, guid: 65fcb9f115fa8f64cb932584d9ce0810, type: 3}
   m_PrefabInstance: {fileID: 549144077662021466}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1960892763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1960892764}
+  - component: {fileID: 1960892765}
+  m_Layer: 0
+  m_Name: "\u0423\u0448\u043D\u043E\u0439 \u0440\u0430\u043A\u043E\u0432\u0438\u043D\u044B"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1960892764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960892763}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1592488827}
+  - {fileID: 1766221993}
+  - {fileID: 1556461333}
+  - {fileID: 1140464684}
+  - {fileID: 1992348785}
+  - {fileID: 912603304}
+  - {fileID: 436604587}
+  - {fileID: 371620079}
+  m_Father: {fileID: 1673766958}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1960892765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960892763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u0443\u0448\u043D\u043E\u0439 \u0440\u0430\u043A\u043E\u0432\u0438\u043D\u044B"
+  groupScientificName: musculi auriculares
+  description: "\u041F\u043E \u043C\u0435\u0441\u0442\u0443 \u0441\u0432\u043E\u0435\u0433\u043E
+    \u0440\u0430\u0441\u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F \u0434\u0435\u043B\u044F\u0442\u0441\u044F
+    \u043D\u0430 \u0440\u043E\u0441\u0442\u0440\u0430\u043B\u044C\u043D\u044B\u0435,
+    \u0434\u043E\u0440\u0441\u0430\u043B\u044C\u043D\u044B\u0435, \u043A\u0430\u0443\u0434\u0430\u043B\u044C\u043D\u044B\u0435
+    \u0438 \u0432\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u044B\u0435, \u043A\u043E\u0442\u043E\u0440\u044B\u0435
+    \u0432 \u0441\u0432\u043E\u044E \u043E\u0447\u0435\u0440\u0435\u0434\u044C \u043F\u043E\u0434\u0440\u0430\u0437\u0434\u0435\u043B\u044F\u044E\u0442\u0441\u044F
+    \u043D\u0430 \u043C\u044B\u0448\u0446\u044B, \u043D\u043E\u0441\u044F\u0449\u0438\u0435
+    \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F \u043F\u043E \u0442\u043E\u0447\u043A\u0430\u043C
+    \u0438\u0445 \u043F\u0440\u0438\u043A\u0440\u0435\u043F\u043B\u0435\u043D\u0438\u044F"
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1967762562 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 30971728877007047, guid: 446ebea9e4fb04e4d813a60337d1ce1c, type: 3}
@@ -4798,6 +6611,59 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5083007551508455289, guid: 1b0e65cadc704c443b1bfaae14803d37, type: 3}
   m_PrefabInstance: {fileID: 1959286097065716537}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2050952354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2050952355}
+  - component: {fileID: 2050952356}
+  m_Layer: 0
+  m_Name: "\u041F \u041C\u044B\u0448\u0446\u044B \u0441\u0442\u043E\u043F\u044B"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2050952355
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050952354}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 399012651}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2050952356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050952354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u0441\u0442\u043E\u043F\u044B (\u043F\u0440\u0430\u0432\u044B\u0435)"
+  groupScientificName: 
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &2058742708 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6619458444409468895, guid: 0a863583cca654741aac16f8fa2c1830, type: 3}
@@ -4818,6 +6684,114 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6537615142857735229, guid: 7188f3b1728719a4586ced13ed583337, type: 3}
   m_PrefabInstance: {fileID: 6315754246545001642}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2081031696
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2081031697}
+  - component: {fileID: 2081031698}
+  m_Layer: 0
+  m_Name: "\u041F \u041C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
+    \u043F\u043E\u044F\u0441\u0430"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2081031697
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081031696}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1818938771}
+  m_Father: {fileID: 542781380}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2081031698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081031696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
+    \u043F\u043E\u044F\u0441\u0430 (\u043F\u0440\u0430\u0432\u044B\u0435)"
+  groupScientificName: 
+  description: "\u0414\u043E\u0440\u0441\u0430\u043B\u044C\u043D\u044B\u0435 \u043C\u044B\u0448\u0446\u044B
+    \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E \u043F\u043E\u044F\u0441\u0430
+    \u0431\u0435\u0440\u0443\u0442 \u043D\u0430\u0447\u0430\u043B\u043E \u0438\u043B\u0438
+    \u043D\u0430 \u0448\u0435\u0435 \u0438 \u0442\u0443\u043B\u043E\u0432\u0438\u0449\u0435
+    \u0438 \u043A\u043E\u043D\u0432\u0435\u0440\u0433\u0438\u0440\u0443\u044E\u0442
+    \u043A \u043B\u043E\u043F\u0430\u0442\u043A\u0435 \u0438\u043B\u0438 \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0439
+    \u043A\u043E\u0441\u0442\u0438 (\u0442\u0440\u0430\u043F\u0435\u0446\u0438\u0435\u0432\u0438\u0434\u043D\u0430\u044F,
+    \u0440\u043E\u043C\u0431\u043E\u0432\u0438\u0434\u043D\u0430\u044F, \u0433\u0440\u0443\u0434\u0438\u043D\u043E\u043F\u043B\u0435\u0447\u0435\u0433\u043E\u043B\u043E\u0432\u043D\u0430\u044F,
+    \u043F\u043B\u0435\u0447\u0435\u0430\u0442\u043B\u0430\u043D\u0442\u043D\u0430\u044F,
+    \u0448\u0438\u0440\u043E\u0447\u0430\u0439\u0448\u0430\u044F \u043C\u044B\u0448\u0446\u0430
+    \u0441\u043F\u0438\u043D\u044B), \u0438\u043B\u0438 \u043D\u0430 \u043C\u0435\u0434\u0438\u0430\u043B\u044C\u043D\u043E\u0439
+    \u043F\u043E\u0432\u0435\u0440\u0445\u043D\u043E\u0441\u0442\u0438 \u043B\u043E\u043F\u0430\u0442\u043A\u0438
+    \u0438 \u0434\u0438\u0432\u0435\u0440\u0433\u0438\u0440\u0443\u044E\u0442 \u043D\u0430
+    \u0448\u0435\u0439\u043D\u044B\u0439 \u043E\u0442\u0434\u0435\u043B \u043F\u043E\u0437\u0432\u043E\u043D\u043E\u0447\u043D\u043E\u0433\u043E
+    \u0441\u0442\u043E\u043B\u0431\u0430 \u0438 \u0433\u0440\u0443\u0434\u043D\u0443\u044E
+    \u0441\u0442\u0435\u043D\u043A\u0443 (\u0437\u0443\u0431\u0447\u0430\u0442\u0430\u044F
+    \u0432\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u0430\u044F).\n\u0412\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u044B\u0435
+    \u043C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
+    \u043F\u043E\u044F\u0441\u0430 \u043D\u0430\u0447\u0438\u043D\u0430\u044E\u0442\u0441\u044F
+    \u043D\u0430 \u0433\u0440\u0443\u0434\u0438\u043D\u0435, \u0430 \u0437\u0430\u043A\u0430\u043D\u0447\u0438\u0432\u0430\u044E\u0442\u0441\u044F
+    \u043D\u0430 \u043B\u043E\u043F\u0430\u0442\u043A\u0435, \u043F\u043B\u0435\u0447\u0435
+    \u0438 \u043F\u0440\u0435\u0434\u043F\u043B\u0435\u0447\u044C\u0435 (\u043F\u043E\u0432\u0435\u0440\u0445\u043D\u043E\u0441\u0442\u043D\u044B\u0435
+    \u0438 \u0433\u043B\u0443\u0431\u043E\u043A\u0430\u044F \u0433\u0440\u0443\u0434\u043D\u044B\u0435
+    \u043C\u044B\u0448\u0446\u044B).\n\u0414\u043E\u0440\u0441\u0430\u043B\u044C\u043D\u044B\u0435
+    \u043C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
+    \u043F\u043E\u044F\u0441\u0430 \u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0438\u0432\u0430\u044E\u0442
+    \u0443\u0434\u0435\u0440\u0436\u0430\u043D\u0438\u0435 \u0442\u0435\u043B\u0430
+    \u0436\u0438\u0432\u043E\u0442\u043D\u043E\u0433\u043E \u0432 \u043F\u043E\u0434\u0432\u0435\u0448\u0435\u043D\u043D\u043E\u043C
+    \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0438 \u043C\u0435\u0436\u0434\u0443
+    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u044F\u043C\u0438, \u0443\u0447\u0430\u0441\u0442\u0432\u0443\u044E\u0442
+    \u0432 \u0432\u044B\u043D\u043E\u0441\u0435 \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439
+    \u0432\u043F\u0435\u0440\u0451\u0434 \u0438 \u043E\u0442\u0432\u0435\u0434\u0435\u043D\u0438\u0438
+    \u0438\u0445 \u043D\u0430\u0437\u0430\u0434.\n\u0412\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u044B\u0435
+    \u043C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
+    \u043F\u043E\u044F\u0441\u0430 \u043F\u0440\u043E\u0442\u0438\u0432\u043E\u0434\u0435\u0439\u0441\u0442\u0432\u0443\u044E\u0442
+    \u043E\u0442\u0432\u0435\u0434\u0435\u043D\u0438\u044E \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439
+    \u0432 \u0441\u0442\u043E\u0440\u043E\u043D\u044B (\u043E\u0441\u043E\u0431\u0435\u043D\u043D\u043E
+    \u0443 \u043A\u043E\u043F\u044B\u0442\u043D\u044B\u0445). \u041A\u0440\u043E\u043C\u0435
+    \u0442\u043E\u0433\u043E, \u0447\u0430\u0441\u0442\u044C \u043F\u0435\u0440\u0435\u0447\u0438\u0441\u043B\u0435\u043D\u043D\u044B\u0445
+    \u043C\u044B\u0448\u0446, \u0438\u043C\u0435\u044E\u0449\u0438\u0445 \u043F\u0440\u0438\u043A\u0440\u0435\u043F\u043B\u0435\u043D\u0438\u0435
+    \u043D\u0430 \u043F\u043E\u0437\u0432\u043E\u043D\u043E\u0447\u043D\u043E\u043C
+    \u0441\u0442\u043E\u043B\u0431\u0435 \u0438 \u0440\u0451\u0431\u0440\u0430\u0445,
+    \u043D\u0435 \u0442\u043E\u043B\u044C\u043A\u043E \u0443\u0447\u0430\u0441\u0442\u0432\u0443\u044E\u0442
+    \u0432 \u043F\u0435\u0440\u0435\u0434\u0432\u0438\u0436\u0435\u043D\u0438\u0438
+    \u0436\u0438\u0432\u043E\u0442\u043D\u043E\u0433\u043E \u0438 \u0433\u0430\u0448\u0435\u043D\u0438\u0438
+    \u0441\u043E\u0442\u0440\u044F\u0441\u0435\u043D\u0438\u0439 \u0442\u0435\u043B\u0430
+    \u043F\u0440\u0438 \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u0438, \u043D\u043E
+    \u0438 \u0441\u043F\u043E\u0441\u043E\u0431\u0441\u0442\u0432\u0443\u044E\u0442
+    \u0434\u044B\u0445\u0430\u0442\u0435\u043B\u044C\u043D\u043E\u0439 \u0444\u0443\u043D\u043A\u0446\u0438\u0438,
+    \u043E\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043B\u044F\u044F \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u0435
+    \u0440\u0451\u0431\u0435\u0440 \u0438 \u0433\u0440\u0443\u0434\u043D\u043E\u0439
+    \u043A\u043B\u0435\u0442\u043A\u0438 \u0432 \u0446\u0435\u043B\u043E\u043C \u043F\u0440\u0438
+    \u0432\u0434\u043E\u0445\u0435 \u0438 \u0432\u044B\u0434\u043E\u0445\u0435"
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &2085327498 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9091436019311930356, guid: 2497ff69c9ded4d4babdbe365db8d5cf, type: 3}
@@ -6003,7 +7977,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1673766958}
+    m_TransformParent: {fileID: 1960892764}
     m_Modifications:
     - target: {fileID: 3548310182149282503, guid: 71dc6a15a3b91ad4a9d2f020bac25617, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7319,7 +9293,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1673766958}
+    m_TransformParent: {fileID: 1960892764}
     m_Modifications:
     - target: {fileID: 4807484104846174228, guid: dcee28b048458844f802dec662d36e2c, type: 3}
       propertyPath: m_Name
@@ -9484,6 +11458,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9561f1b6d8f9434da8426ecab8f37d8, type: 3}
+--- !u!1001 &2305299026463100087
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1250920674}
+    m_Modifications:
+    - target: {fileID: 7378872013540395449, guid: 20618a13f8eb9794c9faca38d210bcd3, type: 3}
+      propertyPath: m_Name
+      value: L Brachiocephalicus
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866897587051549443, guid: 20618a13f8eb9794c9faca38d210bcd3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.12228461
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866897587051549443, guid: 20618a13f8eb9794c9faca38d210bcd3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4625804
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866897587051549443, guid: 20618a13f8eb9794c9faca38d210bcd3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.2097418
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866897587051549443, guid: 20618a13f8eb9794c9faca38d210bcd3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866897587051549443, guid: 20618a13f8eb9794c9faca38d210bcd3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866897587051549443, guid: 20618a13f8eb9794c9faca38d210bcd3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866897587051549443, guid: 20618a13f8eb9794c9faca38d210bcd3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866897587051549443, guid: 20618a13f8eb9794c9faca38d210bcd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866897587051549443, guid: 20618a13f8eb9794c9faca38d210bcd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866897587051549443, guid: 20618a13f8eb9794c9faca38d210bcd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 20618a13f8eb9794c9faca38d210bcd3, type: 3}
 --- !u!1001 &2338589153590544979
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9604,7 +11635,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1673766958}
+    m_TransformParent: {fileID: 1298979467}
     m_Modifications:
     - target: {fileID: 1552166173090230807, guid: 5a6373c55d9139b44950c4e7abaeec91, type: 3}
       propertyPath: m_Name
@@ -9775,7 +11806,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1673766958}
+    m_TransformParent: {fileID: 1298979467}
     m_Modifications:
     - target: {fileID: 142137636251027003, guid: 4f7093cec08329740ae8276e5ad8b422, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9946,7 +11977,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1673766958}
+    m_TransformParent: {fileID: 1960892764}
     m_Modifications:
     - target: {fileID: 7313510608834830502, guid: 7df3fc7c43668cf4e84b351cc2875c27, type: 3}
       propertyPath: m_Name
@@ -10111,63 +12142,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21ff7f587d3b9114596a54de2c31a2fe, type: 3}
---- !u!1001 &2642090090038651185
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1734044109}
-    m_Modifications:
-    - target: {fileID: 5905391959190050708, guid: 3361cb59e7b2f2b4abeeb69400c2a791, type: 3}
-      propertyPath: m_Name
-      value: Brachiocephalicus
-      objectReference: {fileID: 0}
-    - target: {fileID: 6539220192739249454, guid: 3361cb59e7b2f2b4abeeb69400c2a791, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6539220192739249454, guid: 3361cb59e7b2f2b4abeeb69400c2a791, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.4639292
-      objectReference: {fileID: 0}
-    - target: {fileID: 6539220192739249454, guid: 3361cb59e7b2f2b4abeeb69400c2a791, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.2089328
-      objectReference: {fileID: 0}
-    - target: {fileID: 6539220192739249454, guid: 3361cb59e7b2f2b4abeeb69400c2a791, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6539220192739249454, guid: 3361cb59e7b2f2b4abeeb69400c2a791, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.000000021855694
-      objectReference: {fileID: 0}
-    - target: {fileID: 6539220192739249454, guid: 3361cb59e7b2f2b4abeeb69400c2a791, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6539220192739249454, guid: 3361cb59e7b2f2b4abeeb69400c2a791, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6539220192739249454, guid: 3361cb59e7b2f2b4abeeb69400c2a791, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6539220192739249454, guid: 3361cb59e7b2f2b4abeeb69400c2a791, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6539220192739249454, guid: 3361cb59e7b2f2b4abeeb69400c2a791, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3361cb59e7b2f2b4abeeb69400c2a791, type: 3}
 --- !u!1001 &2667064786099475922
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10580,6 +12554,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1856700522048589656, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856700522048589656, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856700522048589656, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856700522048589656, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856700522048589656, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856700522048589656, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2342711939244790791, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -10669,6 +12667,30 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3346091651048590408, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479941635157143583, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479941635157143583, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479941635157143583, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479941635157143583, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479941635157143583, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479941635157143583, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -10729,6 +12751,30 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3593133691553626452, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605558167508274379, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605558167508274379, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605558167508274379, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605558167508274379, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605558167508274379, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605558167508274379, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -10821,6 +12867,30 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4380788247476642293, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403437612230082536, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403437612230082536, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403437612230082536, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403437612230082536, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403437612230082536, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403437612230082536, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -11108,6 +13178,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6938241048874912913, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938241048874912913, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938241048874912913, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938241048874912913, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938241048874912913, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938241048874912913, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6993621872549600184, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -11129,6 +13223,78 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6993621872549600184, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7015397025563567975, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7015397025563567975, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7015397025563567975, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7015397025563567975, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7015397025563567975, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7015397025563567975, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7285614428713219959, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7285614428713219959, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7285614428713219959, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7285614428713219959, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7285614428713219959, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7285614428713219959, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7401056135433356300, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7401056135433356300, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7401056135433356300, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7401056135433356300, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7401056135433356300, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7401056135433356300, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -11148,6 +13314,30 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8090575297343142142, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8090575297343142142, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8090575297343142142, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8090575297343142142, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8090575297343142142, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8090575297343142142, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8633691556757224955, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -11189,6 +13379,30 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8752055992750232299, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798372707912086977, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798372707912086977, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798372707912086977, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798372707912086977, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798372707912086977, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798372707912086977, guid: 8565f5fd6eac6c646aa0ebbe57e22dfb, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -11551,6 +13765,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e58556c3764df4547b9c9ef089c49c33, type: 3}
+--- !u!1001 &2727585597756748559
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2081031697}
+    m_Modifications:
+    - target: {fileID: 3685899490647054336, guid: a9fc22822c3238549afc26570fbe8193, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.12228463
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685899490647054336, guid: a9fc22822c3238549afc26570fbe8193, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4625804
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685899490647054336, guid: a9fc22822c3238549afc26570fbe8193, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.2097418
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685899490647054336, guid: a9fc22822c3238549afc26570fbe8193, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685899490647054336, guid: a9fc22822c3238549afc26570fbe8193, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685899490647054336, guid: a9fc22822c3238549afc26570fbe8193, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685899490647054336, guid: a9fc22822c3238549afc26570fbe8193, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685899490647054336, guid: a9fc22822c3238549afc26570fbe8193, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685899490647054336, guid: a9fc22822c3238549afc26570fbe8193, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685899490647054336, guid: a9fc22822c3238549afc26570fbe8193, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065944118897918650, guid: a9fc22822c3238549afc26570fbe8193, type: 3}
+      propertyPath: m_Name
+      value: R Brachiocephalicus
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a9fc22822c3238549afc26570fbe8193, type: 3}
 --- !u!1001 &2733146543203916179
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11671,7 +13942,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1673766958}
+    m_TransformParent: {fileID: 1960892764}
     m_Modifications:
     - target: {fileID: 7442768478490680518, guid: fa97800bcebd56d4d859f2b351098f8b, type: 3}
       propertyPath: m_Name
@@ -12127,7 +14398,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1673766958}
+    m_TransformParent: {fileID: 1960892764}
     m_Modifications:
     - target: {fileID: 1403681272879515532, guid: 49cf268ea9f56c14ab0221882d7ea5df, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13153,7 +15424,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1734044109}
+    m_TransformParent: {fileID: 89610116}
     m_Modifications:
     - target: {fileID: 168060667395313558, guid: b50359215b62e1f4e8cc3776761be1e1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13609,7 +15880,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1673766958}
+    m_TransformParent: {fileID: 1298979467}
     m_Modifications:
     - target: {fileID: 8070785410766007185, guid: bc64051358499f1499cad7637c35879b, type: 3}
       propertyPath: m_Name
@@ -13728,7 +15999,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1673766958}
+    m_TransformParent: {fileID: 1960892764}
     m_Modifications:
     - target: {fileID: 286518860496028890, guid: b72f48bc68a402141aa7b444b9377a0c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14070,7 +16341,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1673766958}
+    m_TransformParent: {fileID: 1298979467}
     m_Modifications:
     - target: {fileID: 2618616858270533518, guid: 7f87cb03d74db8042bead605091f8d50, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15272,7 +17543,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1673766958}
+    m_TransformParent: {fileID: 175917217}
     m_Modifications:
     - target: {fileID: 120955310511021301, guid: 6cf71b54bb16dfd4ba79b1255abcd330, type: 3}
       propertyPath: m_Name
@@ -15676,7 +17947,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1673766958}
+    m_TransformParent: {fileID: 175917217}
     m_Modifications:
     - target: {fileID: 2375552515793727870, guid: bb3e0bc7019d9644cacab156c895d016, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17453,7 +19724,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1673766958}
+    m_TransformParent: {fileID: 1298979467}
     m_Modifications:
     - target: {fileID: 6250460314009513642, guid: 08a39330aad8b0048bb255c3f0c09f45, type: 3}
       propertyPath: m_Name
@@ -18256,7 +20527,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1673766958}
+    m_TransformParent: {fileID: 1298979467}
     m_Modifications:
     - target: {fileID: 556486118859486712, guid: da5ad88575e1227489263b6f1c034779, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20888,7 +23159,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1673766958}
+    m_TransformParent: {fileID: 1298979467}
     m_Modifications:
     - target: {fileID: 5787637913037589665, guid: aa6ef9f82a4216441b2b27fd935308a1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21121,7 +23392,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1734044109}
+    m_TransformParent: {fileID: 89610116}
     m_Modifications:
     - target: {fileID: 4821846985544169465, guid: 7c07511246d378342a84aec362717744, type: 3}
       propertyPath: m_Name
@@ -21582,7 +23853,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1673766958}
+    m_TransformParent: {fileID: 89610116}
     m_Modifications:
     - target: {fileID: 6063906487627959002, guid: 9f6b87edd3edff442b054e3afee1c84d, type: 3}
       propertyPath: m_Name
@@ -21867,7 +24138,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1673766958}
+    m_TransformParent: {fileID: 1960892764}
     m_Modifications:
     - target: {fileID: 8098263640977718711, guid: 2c8a32ba0f16041498715f183c1686ef, type: 3}
       propertyPath: m_Name
@@ -22496,6 +24767,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1734044109}
     m_Modifications:
+    - target: {fileID: -1833341498682420721, guid: 2768b6a5a4529e0489f8c81d53a05307, type: 3}
+      propertyPath: partName
+      value: "\u0413\u0440\u0443\u0434\u0438\u043D\u043E\u043D\u0438\u0436\u043D\u0435\u0447\u0435\u043B\u044E\u0441\u0442\u043D\u0430\u044F
+        (\u0433\u0440\u0443\u0434\u0438\u043D\u043E\u0433\u043E\u043B\u043E\u0432\u043D\u0430\u044F)
+        \u043C\u044B\u0448\u0446\u0430"
+      objectReference: {fileID: 0}
+    - target: {fileID: -1833341498682420721, guid: 2768b6a5a4529e0489f8c81d53a05307, type: 3}
+      propertyPath: partDescription
+      value: "\u0418\u043C\u0435\u0435\u0442 \u043B\u0435\u043D\u0442\u043E\u0432\u0438\u0434\u043D\u0443\u044E
+        \u0444\u043E\u0440\u043C\u0443, \u0431\u0435\u0440\u0451\u0442 \u043D\u0430\u0447\u0430\u043B\u043E
+        \u043E\u0442 \u0440\u0443\u043A\u043E\u044F\u0442\u043A\u0438 \u0433\u0440\u0443\u0434\u0438\u043D\u044B,
+        \u0430 \u0437\u0430\u043A\u0430\u043D\u0447\u0438\u0432\u0430\u0435\u0442\u0441\u044F
+        \u0440\u0430\u0437\u043B\u0438\u0447\u043D\u043E \u0443 \u0440\u0430\u0437\u043D\u044B\u0445
+        \u0436\u0438\u0432\u043E\u0442\u043D\u044B\u0445.\n\u0424\u0443\u043D\u043A\u0446\u0438\u044F
+        \u2013 \u043F\u0440\u0438 \u043E\u0434\u043D\u043E\u0441\u0442\u043E\u0440\u043E\u043D\u043D\u0435\u043C
+        \u0441\u043E\u043A\u0440\u0430\u0449\u0435\u043D\u0438\u0438 \u0441\u0433\u0438\u0431\u0430\u0435\u0442
+        \u0448\u0435\u044E, \u043F\u0440\u0438 \u0434\u0432\u0443\u0441\u0442\u043E\u0440\u043E\u043D\u043D\u0435\u043C
+        \u0441\u043F\u043E\u0441\u043E\u0431\u0441\u0442\u0432\u0443\u0435\u0442
+        \u043E\u043F\u0443\u0441\u043A\u0430\u043D\u0438\u044E \u0448\u0435\u0438,
+        \u0432\u044B\u0442\u044F\u0433\u0438\u0432\u0430\u043D\u0438\u044E \u0433\u043E\u043B\u043E\u0432\u044B"
+      objectReference: {fileID: 0}
+    - target: {fileID: -1833341498682420721, guid: 2768b6a5a4529e0489f8c81d53a05307, type: 3}
+      propertyPath: partScientificName
+      value: musculus sternomandibularis (sternocephalicus)
+      objectReference: {fileID: 0}
     - target: {fileID: 1505219178575928904, guid: 2768b6a5a4529e0489f8c81d53a05307, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -22551,7 +24847,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1673766958}
+    m_TransformParent: {fileID: 1298979467}
     m_Modifications:
     - target: {fileID: 3766092194221796279, guid: c9eb6f3fff8efd249a16726afb7ac752, type: 3}
       propertyPath: m_Name
@@ -23240,7 +25536,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1673766958}
+    m_TransformParent: {fileID: 1960892764}
     m_Modifications:
     - target: {fileID: 7320928339114550450, guid: 032d8e4bb1241d24bb61ae62a7707c03, type: 3}
       propertyPath: m_Name
@@ -23468,7 +25764,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1673766958}
+    m_TransformParent: {fileID: 699953903}
     m_Modifications:
     - target: {fileID: 3559063118068742467, guid: 839a1f16f730082438d4a3b3d0954e28, type: 3}
       propertyPath: m_Name
@@ -23639,7 +25935,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1673766958}
+    m_TransformParent: {fileID: 1298979467}
     m_Modifications:
     - target: {fileID: 2646247955376625585, guid: d0f7be2b88cf22447a3fa12da9a67334, type: 3}
       propertyPath: m_Name
@@ -24152,7 +26448,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1673766958}
+    m_TransformParent: {fileID: 1298979467}
     m_Modifications:
     - target: {fileID: 1347497858506178295, guid: b2e669e9f5f1f6d4aa4b06504ae4acef, type: 3}
       propertyPath: m_LocalPosition.x
