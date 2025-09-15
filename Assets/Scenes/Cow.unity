@@ -366,20 +366,6 @@ Transform:
   - {fileID: 1117909836}
   - {fileID: 229495979}
   - {fileID: 1532676813}
-  - {fileID: 1981646163}
-  - {fileID: 934464103}
-  - {fileID: 687655604}
-  - {fileID: 1762991990}
-  - {fileID: 776485753}
-  - {fileID: 329753493}
-  - {fileID: 1499212709}
-  - {fileID: 1058031697}
-  - {fileID: 1018530220}
-  - {fileID: 1863756780}
-  - {fileID: 576228953}
-  - {fileID: 870713358}
-  - {fileID: 172701566}
-  - {fileID: 1116856907}
   - {fileID: 231972743}
   - {fileID: 939537044}
   - {fileID: 275455787}
@@ -1027,6 +1013,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 63937176}
+  - {fileID: 1058031697}
+  - {fileID: 1018530220}
+  - {fileID: 776485753}
   m_Father: {fileID: 85006202}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &229495980
@@ -2025,7 +2014,7 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  info: {fileID: 0}
+  info: {fileID: 11400000, guid: ec8aed6894965524ab903d7b5b18e882, type: 2}
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0433\u0440\u0443\u0434\u043D\u043E\u0439
     \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438 (\u043F\u0440\u0430\u0432\u044B\u0435)"
   groupScientificName: musculi membri thoracici
@@ -2370,7 +2359,7 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  info: {fileID: 0}
+  info: {fileID: 11400000, guid: b72f2814686c6a9459a7c32971b9019d, type: 2}
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439"
   groupScientificName: musculi membri
   description: "\u0418\u043C\u0435\u044E\u0442 \u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u043D\u044B\u0435
@@ -2713,7 +2702,7 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  info: {fileID: 0}
+  info: {fileID: 11400000, guid: 28edf589f0ecc8e4cb2fa0d50b890391, type: 2}
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0433\u0440\u0443\u0434\u043D\u043E\u0439
     \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438 (\u043B\u0435\u0432\u044B\u0435)"
   groupScientificName: musculi membri thoracici
@@ -2923,7 +2912,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1760981676}
   m_Father: {fileID: 741943817}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &781887253
@@ -2942,7 +2932,7 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  info: {fileID: 0}
+  info: {fileID: 11400000, guid: aa7b5f9f04642e14fbf1e14db8ed46e2, type: 2}
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
     \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043B\u0435\u0432\u044B\u0435)"
   groupScientificName: 
@@ -4507,6 +4497,11 @@ Transform:
   m_Children:
   - {fileID: 17514724}
   - {fileID: 1598189741}
+  - {fileID: 934464103}
+  - {fileID: 687655604}
+  - {fileID: 329753493}
+  - {fileID: 576228953}
+  - {fileID: 870713358}
   m_Father: {fileID: 741943817}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1250920675
@@ -4525,7 +4520,7 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  info: {fileID: 0}
+  info: {fileID: 11400000, guid: 59bf06f82121ca84fa120682f263bcab, type: 2}
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
     \u043F\u043E\u044F\u0441\u0430 (\u043B\u0435\u0432\u044B\u0435)"
   groupScientificName: 
@@ -5286,6 +5281,11 @@ Transform:
   m_Children:
   - {fileID: 1199618753}
   - {fileID: 384902175}
+  - {fileID: 1762991990}
+  - {fileID: 1499212709}
+  - {fileID: 1863756780}
+  - {fileID: 172701566}
+  - {fileID: 1116856907}
   m_Father: {fileID: 85006202}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1532676814
@@ -5727,7 +5727,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1804111529}
   m_Father: {fileID: 542781380}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1667704025
@@ -5746,7 +5747,7 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  info: {fileID: 0}
+  info: {fileID: 11400000, guid: 90ad9b9b1046b22418f278c3404f9b60, type: 2}
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
     \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043F\u0440\u0430\u0432\u044B\u0435)"
   groupScientificName: 
@@ -6093,6 +6094,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 611116769314932879, guid: 0c3137383ce96d14ab21c3458115f984, type: 3}
   m_PrefabInstance: {fileID: 1607976596751638734}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1760981676 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7513843256737148363, guid: dbec1b7e46c90d44d8f51aba4d920093, type: 3}
+  m_PrefabInstance: {fileID: 6829228498453718266}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1762991990 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1234082341794611219, guid: 34f94c7493766dc458c927f72d2d7caf, type: 3}
@@ -6194,6 +6200,11 @@ MonoBehaviour:
   description: 
   partGroupListButton: {fileID: 0}
   parentBodyPartGroup: {fileID: 0}
+--- !u!4 &1804111529 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 415420684097875883, guid: fe184580594b283448b5857ee0b8e9ae, type: 3}
+  m_PrefabInstance: {fileID: 3019346914024271347}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1804971884 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6282362212069728472, guid: a233fedc6c17f26458a74fc0b83443d4, type: 3}
@@ -6490,9 +6501,9 @@ Transform:
   m_Children:
   - {fileID: 1673766958}
   - {fileID: 85006202}
+  - {fileID: 671376092}
   - {fileID: 1734044109}
   - {fileID: 1868061869}
-  - {fileID: 671376092}
   m_Father: {fileID: 1288319924}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1915068703
@@ -6748,11 +6759,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4001618729609586047, guid: d7c3ba7d7471f6644a042544dfeff2c7, type: 3}
   m_PrefabInstance: {fileID: 4866227412535735743}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1981646163 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2918102310255132561, guid: 6f6bbc48adf2f8d47823a7250baf2107, type: 3}
-  m_PrefabInstance: {fileID: 5731274421828733488}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1992348785 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7941288199632386588, guid: 7df3fc7c43668cf4e84b351cc2875c27, type: 3}
@@ -6903,7 +6909,7 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  info: {fileID: 0}
+  info: {fileID: 11400000, guid: d5bf1c7065a4f1f40aadac196d8323ad, type: 2}
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
     \u043F\u043E\u044F\u0441\u0430 (\u043F\u0440\u0430\u0432\u044B\u0435)"
   groupScientificName: 
@@ -7292,7 +7298,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1243326120080350618, guid: daf1bc1e0eeecd24ab2b187f64b8a648, type: 3}
       propertyPath: m_Name
-      value: R Sternocephalicus
+      value: "\u0413\u0440\u0443\u0434\u0438\u043D\u043E\u043D\u0438\u0436\u043D\u0435\u0447\u0435\u043B\u044E\u0441\u0442\u043D\u0430\u044F
+        - R Sternocephalicus"
       objectReference: {fileID: 0}
     - target: {fileID: 1876591643946829600, guid: daf1bc1e0eeecd24ab2b187f64b8a648, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9757,7 +9764,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 85006202}
+    m_TransformParent: {fileID: 1532676813}
     m_Modifications:
     - target: {fileID: 1234082341794611219, guid: 34f94c7493766dc458c927f72d2d7caf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9801,7 +9808,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1903764755658594985, guid: 34f94c7493766dc458c927f72d2d7caf, type: 3}
       propertyPath: m_Name
-      value: Intercostales Externi
+      value: "\u041D\u0430\u0440\u0443\u0436\u043D\u044B\u0435 \u043C\u0435\u0436\u0440\u0451\u0431\u0435\u0440\u043D\u044B\u0435
+        \u043C\u044B\u0448\u0446\u044B - Intercostales Externi"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10446,8 +10454,32 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 85006202}
+    m_TransformParent: {fileID: 1250920674}
     m_Modifications:
+    - target: {fileID: -3394219035165759630, guid: f8a70fd2c3ae554408ef6a04fb6e3cc3, type: 3}
+      propertyPath: partName
+      value: "\u041D\u0438\u0441\u0445\u043E\u0434\u044F\u0449\u0430\u044F \u0433\u0440\u0443\u0434\u043D\u0430\u044F
+        \u043C\u044B\u0448\u0446\u0430"
+      objectReference: {fileID: 0}
+    - target: {fileID: -3394219035165759630, guid: f8a70fd2c3ae554408ef6a04fb6e3cc3, type: 3}
+      propertyPath: partDescription
+      value: "\u041C\u043E\u0449\u043D\u0430\u044F, \u0431\u0435\u0440\u0451\u0442
+        \u043D\u0430\u0447\u0430\u043B\u043E \u043D\u0430 \u0440\u0443\u043A\u043E\u044F\u0442\u043A\u0435
+        \u0433\u0440\u0443\u0434\u0438\u043D\u044B \u0438 \u0437\u0430\u043A\u0430\u043D\u0447\u0438\u0432\u0430\u0435\u0442\u0441\u044F
+        \u043D\u0430 \u0433\u0440\u0435\u0431\u043D\u0435 \u0431\u043E\u043B\u044C\u0448\u043E\u0433\u043E
+        \u0431\u0443\u0433\u0440\u0430 \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0439
+        \u043A\u043E\u0441\u0442\u0438. \u0421\u043E\u043F\u0440\u0438\u043A\u0430\u0441\u0430\u044F\u0441\u044C
+        \u043C\u0435\u0434\u0438\u0430\u043B\u044C\u043D\u043E \u0441 \u043E\u0434\u043D\u043E\u0438\u043C\u0451\u043D\u043D\u043E\u0439
+        \u043C\u044B\u0448\u0446\u0435\u0439 \u043F\u0440\u043E\u0442\u0438\u0432\u043E\u043F\u043E\u043B\u043E\u0436\u043D\u043E\u0439
+        \u0441\u0442\u043E\u0440\u043E\u043D\u044B, \u043E\u043D\u0430 \u0443\u0447\u0430\u0441\u0442\u0432\u0443\u0435\u0442
+        \u0432 \u043E\u0431\u0440\u0430\u0437\u043E\u0432\u0430\u043D\u0438\u0438
+        \u0432\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u043E\u0439 \u043C\u0435\u0434\u0438\u0430\u043B\u044C\u043D\u043E\u0439
+        \u043B\u0438\u043D\u0438\u0438 (linea mediana ventralis)"
+      objectReference: {fileID: 0}
+    - target: {fileID: -3394219035165759630, guid: f8a70fd2c3ae554408ef6a04fb6e3cc3, type: 3}
+      propertyPath: partScientificName
+      value: musculus pectoralis descendens
+      objectReference: {fileID: 0}
     - target: {fileID: 3590617273739933607, guid: f8a70fd2c3ae554408ef6a04fb6e3cc3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -10490,7 +10522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4224305868844707101, guid: f8a70fd2c3ae554408ef6a04fb6e3cc3, type: 3}
       propertyPath: m_Name
-      value: Descending Pectoral
+      value: '! Descending Pectoral'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11704,7 +11736,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7378872013540395449, guid: 20618a13f8eb9794c9faca38d210bcd3, type: 3}
       propertyPath: m_Name
-      value: L Brachiocephalicus
+      value: "\u041F\u043B\u0435\u0447\u0435\u0433\u043E\u043B\u043E\u0432\u043D\u0430\u044F
+        \u043C\u044B\u0448\u0446\u0430 - L Brachiocephalicus"
       objectReference: {fileID: 0}
     - target: {fileID: 7866897587051549443, guid: 20618a13f8eb9794c9faca38d210bcd3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14054,7 +14087,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4065944118897918650, guid: a9fc22822c3238549afc26570fbe8193, type: 3}
       propertyPath: m_Name
-      value: R Brachiocephalicus
+      value: "\u041F\u043B\u0435\u0447\u0435\u0433\u043E\u043B\u043E\u0432\u043D\u0430\u044F
+        \u043C\u044B\u0448\u0446\u0430 - R Brachiocephalicus"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14633,6 +14667,64 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09c7ea12c62dac24c8ee87ad4a17461e, type: 3}
+--- !u!1001 &3019346914024271347
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1667704024}
+    m_Modifications:
+    - target: {fileID: 415420684097875883, guid: fe184580594b283448b5857ee0b8e9ae, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.21431482
+      objectReference: {fileID: 0}
+    - target: {fileID: 415420684097875883, guid: fe184580594b283448b5857ee0b8e9ae, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1884538
+      objectReference: {fileID: 0}
+    - target: {fileID: 415420684097875883, guid: fe184580594b283448b5857ee0b8e9ae, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.86596215
+      objectReference: {fileID: 0}
+    - target: {fileID: 415420684097875883, guid: fe184580594b283448b5857ee0b8e9ae, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 415420684097875883, guid: fe184580594b283448b5857ee0b8e9ae, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415420684097875883, guid: fe184580594b283448b5857ee0b8e9ae, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415420684097875883, guid: fe184580594b283448b5857ee0b8e9ae, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415420684097875883, guid: fe184580594b283448b5857ee0b8e9ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415420684097875883, guid: fe184580594b283448b5857ee0b8e9ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415420684097875883, guid: fe184580594b283448b5857ee0b8e9ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047102606615295249, guid: fe184580594b283448b5857ee0b8e9ae, type: 3}
+      propertyPath: m_Name
+      value: "\u041A\u043E\u0440\u0430\u043A\u043E\u0438\u0434\u043D\u043E-\u043F\u043B\u0435\u0447\u0435\u0432\u0430\u044F
+        \u043C\u044B\u0448\u0446\u0430 - R Coracobrachialis"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe184580594b283448b5857ee0b8e9ae, type: 3}
 --- !u!1001 &3048428358985728456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17789,7 +17881,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 85006202}
+    m_TransformParent: {fileID: 1532676813}
     m_Modifications:
     - target: {fileID: 7115601196285894741, guid: d915b939b5c4c6d4c9bd4489f515bce5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17833,7 +17925,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7634834170459945711, guid: d915b939b5c4c6d4c9bd4489f515bce5, type: 3}
       propertyPath: m_Name
-      value: Sarretus Dorsalis
+      value: "\u041A\u0440\u0430\u043D\u0438\u0430\u043B\u044C\u043D\u0430\u044F
+        \u0434\u043E\u0440\u0441\u0430\u043B\u044C\u043D\u0430\u044F \u0437\u0443\u0431\u0447\u0430\u0442\u0430\u044F
+        \u043C\u044B\u0448\u0446\u0430 - Sarretus Dorsalis"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19003,8 +19097,44 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 85006202}
+    m_TransformParent: {fileID: 1250920674}
     m_Modifications:
+    - target: {fileID: -6906235282800601537, guid: cb0930ae05d4b614482031a4ef9d4589, type: 3}
+      propertyPath: partName
+      value: "\u0420\u043E\u043C\u0431\u043E\u0432\u0438\u0434\u043D\u0430\u044F
+        \u043C\u044B\u0448\u0446\u0430 \u0433\u0440\u0443\u0434\u0438"
+      objectReference: {fileID: 0}
+    - target: {fileID: -6906235282800601537, guid: cb0930ae05d4b614482031a4ef9d4589, type: 3}
+      propertyPath: partDescription
+      value: "\u0420\u0430\u0441\u043F\u043E\u043B\u0430\u0433\u0430\u0435\u0442\u0441\u044F
+        \u043F\u043E\u0434 \u043D\u0430\u0447\u0430\u043B\u044C\u043D\u043E\u0439
+        \u0447\u0430\u0441\u0442\u044C\u044E \u043F\u043E\u043B\u0443\u043E\u0441\u0442\u0438\u0441\u0442\u043E\u0439
+        \u043C\u044B\u0448\u0446\u044B \u0433\u043E\u043B\u043E\u0432\u044B \u0438
+        \u0447\u0430\u0441\u0442\u0438\u0447\u043D\u043E \u043D\u0430\u0434 \u043A\u0440\u0430\u043D\u0438\u0430\u043B\u044C\u043D\u043E\u0439
+        \u0434\u043E\u0440\u0441\u0430\u043B\u044C\u043D\u043E\u0439 \u0437\u0443\u0431\u0447\u0430\u0442\u043E\u0439
+        \u043C\u044B\u0448\u0446\u0435\u0439. \u0415\u0451 \u043C\u044B\u0448\u0435\u0447\u043D\u044B\u0435
+        \u043F\u0443\u0447\u043A\u0438, \u0438\u043C\u0435\u044F \u043E\u0442\u0432\u0435\u0441\u043D\u043E\u0435
+        \u043D\u0430\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u043F\u043E
+        \u043E\u0442\u043D\u043E\u0448\u0435\u043D\u0438\u044E \u043A \u043B\u043E\u043F\u0430\u0442\u043A\u0435,
+        \u0431\u0435\u0440\u0443\u0442 \u043D\u0430\u0447\u0430\u043B\u043E \u043E\u0442
+        \u043D\u0430\u0434\u043E\u0441\u0442\u0438\u0441\u0442\u043E\u0439 \u0441\u0432\u044F\u0437\u043A\u0438
+        \u0432 \u043F\u0440\u0435\u0434\u0435\u043B\u0430\u0445 \u043E\u0442 3-\u0433\u043E
+        \u0438 \u0434\u043E 7-\u0433\u043E \u0433\u0440\u0443\u0434\u043D\u044B\u0445
+        \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u043E\u0432. \u0417\u0430\u043A\u0430\u043D\u0447\u0438\u0432\u0430\u0435\u0442\u0441\u044F
+        \u043C\u044B\u0448\u0446\u0430 \u043D\u0430 \u043C\u0435\u0434\u0438\u0430\u043B\u044C\u043D\u043E\u0439
+        \u043F\u043E\u0432\u0435\u0440\u0445\u043D\u043E\u0441\u0442\u0438 \u043B\u043E\u043F\u0430\u0442\u043E\u0447\u043D\u043E\u0433\u043E
+        \u0445\u0440\u044F\u0449\u0430 \u0438, \u043E\u043F\u0443\u0441\u043A\u0430\u044F\u0441\u044C
+        \u0447\u0430\u0441\u0442\u0438\u0447\u043D\u043E \u043D\u0430 \u0434\u043E\u0440\u0441\u0430\u043B\u044C\u043D\u044B\u0439
+        \u043A\u0440\u0430\u0439 \u043B\u043E\u043F\u0430\u0442\u043A\u0438, \u043F\u0440\u0438\u043A\u0440\u044B\u0432\u0430\u0435\u0442
+        \u0434\u043E\u0440\u0441\u0430\u043B\u044C\u043D\u044B\u0435 \u0443\u0447\u0430\u0441\u0442\u043A\u0438
+        \u043F\u043E\u0434\u043B\u043E\u043F\u0430\u0442\u043E\u0447\u043D\u043E\u0439
+        \u0438 \u0432\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u043E\u0439
+        \u0437\u0443\u0431\u0447\u0430\u0442\u043E\u0439 \u043C\u044B\u0448\u0446"
+      objectReference: {fileID: 0}
+    - target: {fileID: -6906235282800601537, guid: cb0930ae05d4b614482031a4ef9d4589, type: 3}
+      propertyPath: partScientificName
+      value: musculus rhomboideus thoracicus
+      objectReference: {fileID: 0}
     - target: {fileID: 375094861403917018, guid: cb0930ae05d4b614482031a4ef9d4589, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -19047,7 +19177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1044635443099750496, guid: cb0930ae05d4b614482031a4ef9d4589, type: 3}
       propertyPath: m_Name
-      value: Rhomboideus Thoracis
+      value: '! Rhomboideus Thoracis'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20315,11 +20445,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 85006202}
+    m_TransformParent: {fileID: 229495979}
     m_Modifications:
     - target: {fileID: 7289734704099832080, guid: 1194d30bc938bf245b4f2d255d8c11f5, type: 3}
       propertyPath: m_Name
-      value: Intertransverarii Intermesialis
+      value: "\u041C\u0435\u0436\u043F\u043E\u043F\u0435\u0440\u0435\u0447\u043D\u044B\u0435
+        \u043C\u044B\u0448\u0446\u044B - Intertransverarii Intermesialis"
       objectReference: {fileID: 0}
     - target: {fileID: 7953787656859904938, guid: 1194d30bc938bf245b4f2d255d8c11f5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20485,63 +20616,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99a1454d144007a468216be63f75a2d2, type: 3}
---- !u!1001 &5731274421828733488
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 85006202}
-    m_Modifications:
-    - target: {fileID: 2536932022688982315, guid: 6f6bbc48adf2f8d47823a7250baf2107, type: 3}
-      propertyPath: m_Name
-      value: Coracobrachialis
-      objectReference: {fileID: 0}
-    - target: {fileID: 2918102310255132561, guid: 6f6bbc48adf2f8d47823a7250baf2107, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2918102310255132561, guid: 6f6bbc48adf2f8d47823a7250baf2107, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.1883937
-      objectReference: {fileID: 0}
-    - target: {fileID: 2918102310255132561, guid: 6f6bbc48adf2f8d47823a7250baf2107, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.8657359
-      objectReference: {fileID: 0}
-    - target: {fileID: 2918102310255132561, guid: 6f6bbc48adf2f8d47823a7250baf2107, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2918102310255132561, guid: 6f6bbc48adf2f8d47823a7250baf2107, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.000000021855694
-      objectReference: {fileID: 0}
-    - target: {fileID: 2918102310255132561, guid: 6f6bbc48adf2f8d47823a7250baf2107, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2918102310255132561, guid: 6f6bbc48adf2f8d47823a7250baf2107, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2918102310255132561, guid: 6f6bbc48adf2f8d47823a7250baf2107, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2918102310255132561, guid: 6f6bbc48adf2f8d47823a7250baf2107, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2918102310255132561, guid: 6f6bbc48adf2f8d47823a7250baf2107, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6f6bbc48adf2f8d47823a7250baf2107, type: 3}
 --- !u!1001 &5805704439737991759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21803,7 +21877,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 85006202}
+    m_TransformParent: {fileID: 1532676813}
     m_Modifications:
     - target: {fileID: 2610326125713790242, guid: 2d6103fd1982c0b42a5d4f84189482e9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21847,7 +21921,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3418915375162052504, guid: 2d6103fd1982c0b42a5d4f84189482e9, type: 3}
       propertyPath: m_Name
-      value: Rectus Abdominis
+      value: "\u041F\u0440\u044F\u043C\u0430\u044F \u043C\u044B\u0448\u0446\u0430
+        \u0436\u0438\u0432\u043E\u0442\u0430 - Rectus Abdominis"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22948,6 +23023,64 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cb7f66f157029440bbb01061a319d56, type: 3}
+--- !u!1001 &6829228498453718266
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 781887252}
+    m_Modifications:
+    - target: {fileID: 7137457798878099313, guid: dbec1b7e46c90d44d8f51aba4d920093, type: 3}
+      propertyPath: m_Name
+      value: "\u041A\u043E\u0440\u0430\u043A\u043E\u0438\u0434\u043D\u043E-\u043F\u043B\u0435\u0447\u0435\u0432\u0430\u044F
+        \u043C\u044B\u0448\u0446\u0430 - L Coracobrachialis"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7513843256737148363, guid: dbec1b7e46c90d44d8f51aba4d920093, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.21431482
+      objectReference: {fileID: 0}
+    - target: {fileID: 7513843256737148363, guid: dbec1b7e46c90d44d8f51aba4d920093, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1884538
+      objectReference: {fileID: 0}
+    - target: {fileID: 7513843256737148363, guid: dbec1b7e46c90d44d8f51aba4d920093, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.86596215
+      objectReference: {fileID: 0}
+    - target: {fileID: 7513843256737148363, guid: dbec1b7e46c90d44d8f51aba4d920093, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7513843256737148363, guid: dbec1b7e46c90d44d8f51aba4d920093, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7513843256737148363, guid: dbec1b7e46c90d44d8f51aba4d920093, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7513843256737148363, guid: dbec1b7e46c90d44d8f51aba4d920093, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7513843256737148363, guid: dbec1b7e46c90d44d8f51aba4d920093, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7513843256737148363, guid: dbec1b7e46c90d44d8f51aba4d920093, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7513843256737148363, guid: dbec1b7e46c90d44d8f51aba4d920093, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dbec1b7e46c90d44d8f51aba4d920093, type: 3}
 --- !u!1001 &6839480460910494559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23930,7 +24063,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 85006202}
+    m_TransformParent: {fileID: 1250920674}
     m_Modifications:
     - target: {fileID: 4756054838145202089, guid: c7e4ecf7fd6989d4c83089645f202d2b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23974,7 +24107,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5281374368853421331, guid: c7e4ecf7fd6989d4c83089645f202d2b, type: 3}
       propertyPath: m_Name
-      value: Deep Pectoral
+      value: '! Deep Pectoral'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624478250484341089, guid: c7e4ecf7fd6989d4c83089645f202d2b, type: 3}
+      propertyPath: partName
+      value: "\u0433\u043B\u0443\u0431\u043E\u043A\u0430\u044F (\u0432\u043E\u0441\u0445\u043E\u0434\u044F\u0449\u0430\u044F)
+        \u0433\u0440\u0443\u0434\u043D\u0430\u044F \u043C\u044B\u0448\u0446\u0430"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624478250484341089, guid: c7e4ecf7fd6989d4c83089645f202d2b, type: 3}
+      propertyPath: partDescription
+      value: "\u041D\u0430\u0447\u0438\u043D\u0430\u0435\u0442\u0441\u044F \u043E\u0442
+        \u0442\u0435\u043B\u0430 \u0433\u0440\u0443\u0434\u0438\u043D\u044B, \u0431\u0440\u044E\u0448\u043D\u043E\u0439
+        \u0444\u0430\u0441\u0446\u0438\u0438 \u0438 \u0445\u0440\u044F\u0449\u0435\u0439
+        \u0438\u0441\u0442\u0438\u043D\u043D\u044B\u0445 \u0440\u0451\u0431\u0435\u0440,
+        \u0430 \u0437\u0430\u043A\u0430\u043D\u0447\u0438\u0432\u0430\u0435\u0442\u0441\u044F
+        \u043D\u0430 \u0431\u043E\u043B\u044C\u0448\u043E\u043C \u0438 \u043C\u0430\u043B\u043E\u043C
+        \u0431\u0443\u0433\u043E\u0440\u043A\u0430\u0445 \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0439
+        \u043A\u043E\u0441\u0442\u0438, \u0447\u0430\u0441\u0442\u0438\u0447\u043D\u043E
+        \u043D\u0430 \u0444\u0438\u0431\u0440\u043E\u0437\u043D\u043E\u043C \u0432\u043B\u0430\u0433\u0430\u043B\u0438\u0449\u0435
+        \u043F\u0440\u043E\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u043E\u0433\u043E
+        \u0441\u0443\u0445\u043E\u0436\u0438\u043B\u0438\u044F \u0434\u0432\u0443\u0433\u043B\u0430\u0432\u043E\u0439
+        \u043C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0430.\n\u0424\u0443\u043D\u043A\u0446\u0438\u044F
+        \u2013 \u043F\u043E\u043C\u043E\u0433\u0430\u0435\u0442 \u043F\u043E\u0432\u0435\u0440\u0445\u043D\u043E\u0441\u0442\u043D\u044B\u043C
+        \u0433\u0440\u0443\u0434\u043D\u044B\u043C \u043C\u044B\u0448\u0446\u0430\u043C"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624478250484341089, guid: c7e4ecf7fd6989d4c83089645f202d2b, type: 3}
+      propertyPath: partScientificName
+      value: musculus pectoralis profundus (ascendens)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24044,11 +24203,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 85006202}
+    m_TransformParent: {fileID: 1250920674}
     m_Modifications:
     - target: {fileID: 5979952076202164646, guid: 1642b930b88acbf4095ae176aedc014f, type: 3}
       propertyPath: m_Name
-      value: Rhomboideus Cervicis
+      value: '! Rhomboideus Cervicis'
       objectReference: {fileID: 0}
     - target: {fileID: 6464598503108877084, guid: 1642b930b88acbf4095ae176aedc014f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24089,6 +24248,37 @@ PrefabInstance:
     - target: {fileID: 6464598503108877084, guid: 1642b930b88acbf4095ae176aedc014f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8389103967029827160, guid: 1642b930b88acbf4095ae176aedc014f, type: 3}
+      propertyPath: partName
+      value: "\u0420\u043E\u043C\u0431\u043E\u0432\u0438\u0434\u043D\u0430\u044F
+        \u043C\u044B\u0448\u0446\u0430 \u0448\u0435\u0438"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8389103967029827160, guid: 1642b930b88acbf4095ae176aedc014f, type: 3}
+      propertyPath: partDescription
+      value: "\u0420\u0430\u0441\u043F\u043E\u043B\u0430\u0433\u0430\u0435\u0442\u0441\u044F
+        \u043D\u0430\u0434 \u043F\u043B\u0430\u0441\u0442\u044B\u0440\u0435\u0432\u0438\u0434\u043D\u043E\u0439
+        \u043C\u044B\u0448\u0446\u0435\u0439. \u041E\u043D\u0430 \u0431\u0435\u0440\u0451\u0442
+        \u043D\u0430\u0447\u0430\u043B\u043E \u0443 \u0432\u0441\u0435\u0445 \u0436\u0438\u0432\u043E\u0442\u043D\u044B\u0445
+        \u043E\u0442 \u043A\u0430\u043D\u0430\u0442\u0438\u043A\u0430 \u0432\u044B\u0439\u043D\u043E\u0439
+        \u0441\u0432\u044F\u0437\u043A\u0438 \u043D\u0430 \u043F\u0440\u043E\u0442\u044F\u0436\u0435\u043D\u0438\u0438
+        \u043E\u0442 2 \u2013 3-\u0433\u043E \u0448\u0435\u0439\u043D\u043E\u0433\u043E
+        \u0434\u043E 2 \u2013 3-\u0433\u043E \u0433\u0440\u0443\u0434\u043D\u043E\u0433\u043E
+        \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u0430 \u0438 \u0437\u0430\u043A\u0430\u043D\u0447\u0438\u0432\u0430\u0435\u0442\u0441\u044F
+        \u043D\u0430 \u043C\u0435\u0434\u0438\u0430\u043B\u044C\u043D\u043E\u0439
+        \u043F\u043E\u0432\u0435\u0440\u0445\u043D\u043E\u0441\u0442\u0438 \u043A\u0440\u0430\u043D\u0438\u0430\u043B\u044C\u043D\u043E\u0433\u043E
+        \u0443\u0433\u043B\u0430 \u043B\u043E\u043F\u0430\u0442\u043E\u0447\u043D\u043E\u0433\u043E
+        \u0445\u0440\u044F\u0449\u0430. \u041F\u043E \u0441\u0432\u043E\u0435\u043C\u0443
+        \u0445\u043E\u0434\u0443 \u043C\u044B\u0448\u0435\u0447\u043D\u044B\u0435
+        \u043F\u0443\u0447\u043A\u0438 \u043F\u0440\u0438\u043D\u0438\u043C\u0430\u044E\u0442
+        \u043A\u0430\u0443\u0434\u043E\u0432\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u043E\u0435
+        \u043D\u0430\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0438
+        \u043F\u043E\u0447\u0442\u0438 \u0433\u043E\u0440\u0438\u0437\u043E\u043D\u0442\u0430\u043B\u044C\u043D\u043E\u0435
+        \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8389103967029827160, guid: 1642b930b88acbf4095ae176aedc014f, type: 3}
+      propertyPath: partScientificName
+      value: musculus rhomboideus cervicis
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24735,7 +24925,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 85006202}
+    m_TransformParent: {fileID: 1532676813}
     m_Modifications:
     - target: {fileID: 5938823857744642666, guid: 8dc89b6510365c04d84dc83468117f15, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24779,7 +24969,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6422450250938341584, guid: 8dc89b6510365c04d84dc83468117f15, type: 3}
       propertyPath: m_Name
-      value: Obliquus Externus Abdominis
+      value: "\u041D\u0430\u0440\u0443\u0436\u043D\u0430\u044F \u043A\u043E\u0441\u0430\u044F
+        \u043C\u044B\u0448\u0446\u0430 \u0436\u0438\u0432\u043E\u0442\u0430 - Obliquus
+        Externus Abdominis"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26059,7 +26251,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 67138752077634060, guid: c5dd65a3c39bf3f49af6cd7954b29af7, type: 3}
       propertyPath: m_Name
-      value: Internal Oblique Abd
+      value: "\u0412\u043D\u0443\u0442\u0440\u0435\u043D\u043D\u044F\u044F \u043A\u043E\u0441\u0430\u044F
+        \u043C\u044B\u0448\u0446\u0430 \u0436\u0438\u0432\u043E\u0442\u0430 - Internal
+        Oblique Abd"
       objectReference: {fileID: 0}
     - target: {fileID: 839172538506428598, guid: c5dd65a3c39bf3f49af6cd7954b29af7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26341,8 +26535,60 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 85006202}
+    m_TransformParent: {fileID: 1250920674}
     m_Modifications:
+    - target: {fileID: -1598941596292998169, guid: ec94a840cde08e347839baa250d32778, type: 3}
+      propertyPath: partName
+      value: "\u0428\u0438\u0440\u043E\u0447\u0430\u0439\u0448\u0430\u044F \u043C\u044B\u0448\u0446\u0430
+        \u0441\u043F\u0438\u043D\u044B"
+      objectReference: {fileID: 0}
+    - target: {fileID: -1598941596292998169, guid: ec94a840cde08e347839baa250d32778, type: 3}
+      propertyPath: partDescription
+      value: "\u0428\u0438\u0440\u043E\u043A\u0430\u044F, \u0442\u0440\u0435\u0443\u0433\u043E\u043B\u044C\u043D\u043E\u0439
+        \u0444\u043E\u0440\u043C\u044B, \u0441\u0432\u043E\u0438\u043C \u0448\u0438\u0440\u043E\u043A\u0438\u043C
+        \u043E\u0441\u043D\u043E\u0432\u0430\u043D\u0438\u0435\u043C \u0431\u0435\u0440\u0451\u0442
+        \u043D\u0430\u0447\u0430\u043B\u043E \u043E\u0442 \u0433\u0440\u0443\u0434\u0438\u043D\u043E\u043F\u043E\u044F\u0441\u043D\u0438\u0447\u043D\u043E\u0439
+        \u0444\u0430\u0441\u0446\u0438\u0438 \u0432 \u043F\u0440\u0435\u0434\u0435\u043B\u0430\u0445
+        \u043E\u0442 5-\u0433\u043E \u0433\u0440\u0443\u0434\u043D\u043E\u0433\u043E
+        \u0438 \u0434\u043E \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u0435\u0433\u043E
+        \u043F\u043E\u044F\u0441\u043D\u0438\u0447\u043D\u043E\u0433\u043E \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u0430.
+        \u0418\u043C\u0435\u0435\u0442\u0441\u044F \u0435\u0449\u0451 \u043F\u0440\u0438\u043A\u0440\u0435\u043F\u043B\u0435\u043D\u0438\u0435
+        \u0438 \u043D\u0430 \u0434\u0432\u0443\u0445 \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u0438\u0445
+        \u0440\u0451\u0431\u0440\u0430\u0445.\n\u041A\u0430\u0443\u0434\u043E\u0434\u043E\u0440\u0441\u0430\u043B\u044C\u043D\u043E
+        \u043C\u044B\u0448\u0446\u0430 \u0447\u0430\u0441\u0442\u0438\u0447\u043D\u043E
+        \u043F\u0440\u0438\u043A\u0440\u044B\u0442\u0430 \u043A\u043E\u0436\u043D\u043E\u0439
+        \u043C\u044B\u0448\u0446\u0435\u0439 \u0442\u0443\u043B\u043E\u0432\u0438\u0449\u0430,
+        \u0430 \u0434\u043E\u0440\u0441\u043E\u0432\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u043E
+        \u2013 \u0433\u0440\u0443\u0434\u043D\u043E\u0439 \u0447\u0430\u0441\u0442\u044C\u044E
+        \u0442\u0440\u0430\u043F\u0435\u0446\u0438\u0435\u0432\u0438\u0434\u043D\u043E\u0439
+        \u043C\u044B\u0448\u0446\u044B. \u041F\u0435\u0440\u0435\u043A\u0438\u0434\u044B\u0432\u0430\u044F\u0441\u044C
+        \u0447\u0435\u0440\u0435\u0437 \u043A\u0430\u0443\u0434\u0430\u043B\u044C\u043D\u044B\u0439
+        \u043A\u0440\u0430\u0439 \u043B\u043E\u043F\u0430\u0442\u043E\u0447\u043D\u043E\u0433\u043E
+        \u0445\u0440\u044F\u0449\u0430, \u0448\u0438\u0440\u043E\u0447\u0430\u0439\u0448\u0430\u044F
+        \u043C\u044B\u0448\u0446\u0430 \u0441\u043F\u0438\u043D\u044B, \u0441\u0443\u0436\u0438\u0432\u0430\u044F\u0441\u044C
+        \u0432 \u043A\u0440\u0430\u043D\u0438\u043E\u0432\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u043E\u043C
+        \u043D\u0430\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0438, \u0437\u0430\u0445\u043E\u0434\u0438\u0442
+        \u043F\u043E\u0434 \u043B\u043E\u043F\u0430\u0442\u043A\u0443, \u0441\u043E\u0435\u0434\u0438\u043D\u044F\u0435\u0442\u0441\u044F
+        \u0441 \u043A\u0430\u0443\u0434\u043E\u0432\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u044B\u043C
+        \u043A\u0440\u0430\u0435\u043C \u0431\u043E\u043B\u044C\u0448\u043E\u0439
+        \u043A\u0440\u0443\u0433\u043B\u043E\u0439 \u043C\u044B\u0448\u0446\u044B
+        \u0438 \u0435\u0451 \u0434\u0438\u0441\u0442\u0430\u043B\u044C\u043D\u044B\u043C
+        \u0441\u0443\u0445\u043E\u0436\u0438\u043B\u0438\u0435\u043C, \u0430 \u0437\u0430\u0442\u0435\u043C
+        \u0437\u0430\u043A\u0430\u043D\u0447\u0438\u0432\u0430\u0435\u0442\u0441\u044F
+        \u043D\u0430 \u0431\u043E\u043B\u044C\u0448\u043E\u0439 \u043A\u0440\u0443\u0433\u043B\u043E\u0439
+        \u0448\u0435\u0440\u043E\u0445\u043E\u0432\u0430\u0442\u043E\u0441\u0442\u0438
+        \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0439 \u043A\u043E\u0441\u0442\u0438.\n\u0424\u0443\u043D\u043A\u0446\u0438\u044F
+        \u2013 \u043E\u0442\u0442\u044F\u0433\u0438\u0432\u0430\u0435\u0442 \u0441\u0432\u043E\u0431\u043E\u0434\u043D\u044B\u0439
+        \u043E\u0442\u0434\u0435\u043B \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438
+        \u043D\u0430\u0437\u0430\u0434, \u0430 \u043F\u0440\u0438 \u043E\u043F\u043E\u0440\u043D\u043E\u0439
+        \u043F\u043E\u0437\u0438\u0446\u0438\u0438 \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439
+        \u043F\u043E\u0434\u0442\u044F\u0433\u0438\u0432\u0430\u0435\u0442 \u0442\u0435\u043B\u043E
+        \u0432\u043F\u0435\u0440\u0451\u0434"
+      objectReference: {fileID: 0}
+    - target: {fileID: -1598941596292998169, guid: ec94a840cde08e347839baa250d32778, type: 3}
+      propertyPath: partScientificName
+      value: musculus latissimus dorsi
+      objectReference: {fileID: 0}
     - target: {fileID: 2597251241583681695, guid: ec94a840cde08e347839baa250d32778, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -26385,7 +26631,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3404891273733732901, guid: ec94a840cde08e347839baa250d32778, type: 3}
       propertyPath: m_Name
-      value: Latissimus Dorsi
+      value: '! Latissimus Dorsi'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26455,7 +26701,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 85006202}
+    m_TransformParent: {fileID: 229495979}
     m_Modifications:
     - target: {fileID: 7376482117919667385, guid: 4f3d797fa6186f246bdc1cc1bdd753ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26499,7 +26745,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7860285258064670211, guid: 4f3d797fa6186f246bdc1cc1bdd753ea, type: 3}
       propertyPath: m_Name
-      value: Psoas Minor
+      value: "\u041C\u0430\u043B\u0430\u044F \u043F\u043E\u044F\u0441\u043D\u0438\u0447\u043D\u0430\u044F
+        \u043C\u044B\u0448\u0446\u0430 - Psoas Minor"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27653,11 +27900,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 85006202}
+    m_TransformParent: {fileID: 229495979}
     m_Modifications:
     - target: {fileID: 5121918641365880769, guid: 993d064551e20ba418109dae832f60e9, type: 3}
       propertyPath: m_Name
-      value: Psoas Major
+      value: "\u0411\u043E\u043B\u044C\u0448\u0430\u044F \u043F\u043E\u044F\u0441\u043D\u0438\u0447\u043D\u0430\u044F
+        \u043C\u044B\u0448\u0446\u0430 - Psoas Major"
       objectReference: {fileID: 0}
     - target: {fileID: 5503228812548167035, guid: 993d064551e20ba418109dae832f60e9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27868,7 +28116,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3127316975283874836, guid: 219e8ee5544657745b19812a3fcf3399, type: 3}
       propertyPath: m_Name
-      value: L Sternocephalicus
+      value: "\u0413\u0440\u0443\u0434\u0438\u043D\u043E\u043D\u0438\u0436\u043D\u0435\u0447\u0435\u043B\u044E\u0441\u0442\u043D\u0430\u044F
+        - L Sternocephalicus"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27881,7 +28130,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 85006202}
+    m_TransformParent: {fileID: 1532676813}
     m_Modifications:
     - target: {fileID: 8276281519387476355, guid: a08e72817c1f4e747b45f09e700e998c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27925,7 +28174,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8759662480970013497, guid: a08e72817c1f4e747b45f09e700e998c, type: 3}
       propertyPath: m_Name
-      value: Scalenus
+      value: "\u041B\u0435\u0441\u0442\u043D\u0438\u0447\u043D\u044B\u0435 \u043C\u044B\u0448\u0446\u044B
+        - Scalenus"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
