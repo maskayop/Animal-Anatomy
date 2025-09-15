@@ -11,6 +11,9 @@ namespace AnimalAnatomy
 
         public float cameraDistanceLimitsMultiplier = 1.0f;
 
+        [Header("Info")]
+        public Data_Info info;
+
         [Header("Texts")]
         public string partName;
         public string partScientificName;

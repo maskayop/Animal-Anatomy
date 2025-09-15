@@ -11,6 +11,9 @@ namespace AnimalAnatomy
         public List<BodyPartInfo> bodyParts = new List<BodyPartInfo>();
         public List<BodyPartInfo> allChildrenBodyParts = new List<BodyPartInfo>();
 
+        [Header("Info")]
+        public Data_Info info;
+
         [Header("Texts")]
         public string groupName;
         public string groupScientificName;
