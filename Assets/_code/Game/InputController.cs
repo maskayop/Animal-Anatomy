@@ -20,6 +20,12 @@ namespace AnimalAnatomy
 
         void Update()
         {
+            if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.LeftAlt) &&
+                Input.GetKey(KeyCode.F) && Input.GetKey(KeyCode.Alpha0))
+                UIMainCanvas.Instance.ShowVopere(true);
+            else
+                UIMainCanvas.Instance.ShowVopere(false);
+
             if (UIMainCanvas.Instance.isLoading)
                 return;
 

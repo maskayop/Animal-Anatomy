@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static AnimalAnatomy.BodyPartInfo;
 
 namespace AnimalAnatomy
 { 
@@ -13,6 +14,7 @@ namespace AnimalAnatomy
 
         [Header("Info")]
         public Data_Info info;
+        public SagittalType sagittalType;
 
         [Header("Texts")]
         public string groupName;

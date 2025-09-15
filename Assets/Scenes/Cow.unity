@@ -187,6 +187,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u0413\u0440\u0443\u0434\u043D\u043E\u0439 \u043E\u0442\u0434\u0435\u043B
     (\u0433\u0440\u0443\u0434\u043D\u044B\u0435 \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u0438)"
   groupScientificName: vertebrae thoracicae
@@ -385,6 +386,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 11400000, guid: a990af6f940a10f4ba5199619d0d6ce4, type: 2}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0442\u0443\u043B\u043E\u0432\u0438\u0449\u0430"
   groupScientificName: musculi trunci
   description: "\u0414\u0435\u043B\u044F\u0442\u0441\u044F \u043D\u0430 \u043A\u043E\u0436\u043D\u044B\u0435
@@ -450,6 +452,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 11400000, guid: d3cb71e849f400145bc2571857719665, type: 2}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043F\u043E\u0434\u044A\u044F\u0437\u044B\u0447\u043D\u043E\u0433\u043E
     \u0430\u043F\u043F\u0430\u0440\u0430\u0442\u0430"
   groupScientificName: musculi hyoidei
@@ -573,6 +576,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043F\u0435\u0440\u0435\u0434\u043D\u0438\u0445
     \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439 (\u043F\u0440\u0430\u0432\u044B\u0435)"
   groupScientificName: 
@@ -629,6 +633,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0437\u0430\u043F\u044F\u0441\u0442\u043D\u043E\u0433\u043E
     \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043B\u0435\u0432\u044B\u0435)"
   groupScientificName: 
@@ -729,6 +734,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u0421\u043A\u0435\u043B\u0435\u0442 \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439"
   groupScientificName: 
   description: 
@@ -790,6 +796,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 11400000, guid: daf4444f277b193459209d4e2a297419, type: 2}
+  sagittalType: 0
   groupName: "\u041B\u0438\u043C\u0444\u0430\u0442\u0438\u0447\u0435\u0441\u043A\u0430\u044F
     \u0441\u0438\u0441\u0442\u0435\u043C\u0430"
   groupScientificName: systema lymphaticum
@@ -857,6 +864,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 11400000, guid: 782731fb3532eef489bba404c31d15f2, type: 2}
+  sagittalType: 0
   groupName: "\u0416\u0435\u0432\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0435
     \u043C\u044B\u0448\u0446\u044B"
   groupScientificName: 
@@ -946,6 +954,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u0421\u043A\u0435\u043B\u0435\u0442 \u043F\u0435\u0440\u0435\u0434\u043D\u0438\u0445
     \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439 (\u043B\u0435\u0432\u044B\u0439)"
   groupScientificName: 
@@ -1006,12 +1015,15 @@ Transform:
   - {fileID: 63937176}
   - {fileID: 1058031697}
   - {fileID: 1018530220}
-  - {fileID: 776485753}
-  - {fileID: 843528541}
   - {fileID: 939580857}
   - {fileID: 275455787}
   - {fileID: 1773094392}
   - {fileID: 1189278594}
+  - {fileID: 2058742708}
+  - {fileID: 776485753}
+  - {fileID: 19920827}
+  - {fileID: 843528541}
+  - {fileID: 305957526}
   m_Father: {fileID: 85006202}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &229495980
@@ -1031,6 +1043,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 11400000, guid: 7b0a27a37b0897e45bdf17f2cd77fea4, type: 2}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043F\u043E\u0437\u0432\u043E\u043D\u043E\u0447\u043D\u043E\u0433\u043E
     \u0441\u0442\u043E\u043B\u0431\u0430"
   groupScientificName: 
@@ -1149,6 +1162,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043F\u0435\u0440\u0435\u0434\u043D\u0438\u0445
     \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439 (\u043B\u0435\u0432\u044B\u0435)"
   groupScientificName: 
@@ -1217,6 +1231,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041A\u0440\u0435\u0441\u0442\u0446\u043E\u0432\u044B\u0439 \u043E\u0442\u0434\u0435\u043B
     (\u043A\u0440\u0435\u0441\u0442\u0446\u043E\u0432\u044B\u0435 \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u0438)"
   groupScientificName: vertebrae sacrales
@@ -1305,6 +1320,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u0428\u0435\u0439\u043D\u044B\u0439 \u043E\u0442\u0434\u0435\u043B
     (\u0448\u0435\u0439\u043D\u044B\u0435 \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u0438)"
   groupScientificName: "vert\u0435brae cervicales"
@@ -1406,6 +1422,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041F\u0438\u0449\u0435\u0432\u0430\u0440\u0438\u0442\u0435\u043B\u044C\u043D\u0430\u044F
     \u0441\u0438\u0441\u0442\u0435\u043C\u0430"
   groupScientificName: 
@@ -1492,6 +1509,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0442\u0430\u0437\u043E\u0431\u0435\u0434\u0440\u0435\u043D\u043D\u043E\u0433\u043E
     \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043F\u0440\u0430\u0432\u044B\u0435)"
   groupScientificName: 
@@ -1577,6 +1595,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0442\u0430\u0437\u043E\u0432\u043E\u0439
     \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438 (\u043F\u0440\u0430\u0432\u044B\u0435)"
   groupScientificName: 
@@ -1646,6 +1665,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u0421\u043A\u0435\u043B\u0435\u0442"
   groupScientificName: skeleton
   description: "\u041A\u043E\u0441\u0442\u0438, \u0437\u0430\u043A\u043E\u043D\u043E\u043C\u0435\u0440\u043D\u043E
@@ -1799,6 +1819,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u0421\u043A\u0435\u043B\u0435\u0442 \u043F\u0435\u0440\u0435\u0434\u043D\u0438\u0445
     \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439 (\u043F\u0440\u0430\u0432\u044B\u0439)"
   groupScientificName: 
@@ -1880,6 +1901,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0437\u0430\u043F\u043B\u044E\u0441\u043D\u0435\u0432\u043E\u0433\u043E
     \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043B\u0435\u0432\u044B\u0435)"
   groupScientificName: 
@@ -1950,6 +1972,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u0421\u043A\u0435\u043B\u0435\u0442 \u0437\u0430\u0434\u043D\u0438\u0445
     \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439 (\u043F\u0440\u0430\u0432\u044B\u0439)"
   groupScientificName: 
@@ -2011,6 +2034,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 11400000, guid: ec8aed6894965524ab903d7b5b18e882, type: 2}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0433\u0440\u0443\u0434\u043D\u043E\u0439
     \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438 (\u043F\u0440\u0430\u0432\u044B\u0435)"
   groupScientificName: musculi membri thoracici
@@ -2106,6 +2130,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043B\u043E\u043A\u0442\u0435\u0432\u043E\u0433\u043E
     \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043B\u0435\u0432\u044B\u0435)"
   groupScientificName: 
@@ -2187,6 +2212,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0437\u0430\u043F\u044F\u0441\u0442\u043D\u043E\u0433\u043E
     \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043F\u0440\u0430\u0432\u044B\u0435)"
   groupScientificName: 
@@ -2263,6 +2289,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0442\u0430\u0437\u043E\u0431\u0435\u0434\u0440\u0435\u043D\u043D\u043E\u0433\u043E
     \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043B\u0435\u0432\u044B\u0435)"
   groupScientificName: 
@@ -2333,10 +2360,10 @@ Transform:
   - {fileID: 542781380}
   - {fileID: 947928097}
   - {fileID: 399012651}
-  - {fileID: 1179461231}
-  - {fileID: 1651076912}
   - {fileID: 255882747}
   - {fileID: 108499894}
+  - {fileID: 1179461231}
+  - {fileID: 1651076912}
   m_Father: {fileID: 1915068702}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &671376093
@@ -2356,6 +2383,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 11400000, guid: b72f2814686c6a9459a7c32971b9019d, type: 2}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439"
   groupScientificName: musculi membri
   description: "\u0418\u043C\u0435\u044E\u0442 \u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u043D\u044B\u0435
@@ -2497,6 +2525,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u0421\u043A\u0435\u043B\u0435\u0442 \u0433\u0440\u0443\u0434\u043D\u043E\u0433\u043E
     \u043E\u0442\u0434\u0435\u043B\u0430"
   groupScientificName: 
@@ -2573,6 +2602,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 11400000, guid: 816eead7762019c418553497ad3ff81f, type: 2}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0433\u043B\u0430\u0437\u043D\u043E\u0433\u043E
     \u044F\u0431\u043B\u043E\u043A\u0430"
   groupScientificName: musculi bulbi oculi
@@ -2699,6 +2729,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 11400000, guid: 28edf589f0ecc8e4cb2fa0d50b890391, type: 2}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0433\u0440\u0443\u0434\u043D\u043E\u0439
     \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438 (\u043B\u0435\u0432\u044B\u0435)"
   groupScientificName: musculi membri thoracici
@@ -2811,6 +2842,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u0425\u0432\u043E\u0441\u0442\u043E\u0432\u043E\u0439 \u043E\u0442\u0434\u0435\u043B
     (\u0445\u0432\u043E\u0441\u0442\u043E\u0432\u044B\u0435 \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u0438)"
   groupScientificName: vertebrae caudales
@@ -2932,6 +2964,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 11400000, guid: aa7b5f9f04642e14fbf1e14db8ed46e2, type: 2}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
     \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043B\u0435\u0432\u044B\u0435)"
   groupScientificName: 
@@ -3012,6 +3045,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043A\u0438\u0441\u0442\u0438 (\u043F\u0440\u0430\u0432\u044B\u0435)"
   groupScientificName: 
   description: 
@@ -3067,6 +3101,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0437\u0430\u043F\u043B\u044E\u0441\u043D\u0435\u0432\u043E\u0433\u043E
     \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043F\u0440\u0430\u0432\u044B\u0435)"
   groupScientificName: 
@@ -3127,6 +3162,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0441\u0442\u043E\u043F\u044B (\u043B\u0435\u0432\u044B\u0435)"
   groupScientificName: 
   description: 
@@ -3289,6 +3325,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043A\u0438\u0441\u0442\u0438 (\u043B\u0435\u0432\u044B\u0435)"
   groupScientificName: 
   description: 
@@ -3365,6 +3402,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u0414\u044B\u0445\u0430\u0442\u0435\u043B\u044C\u043D\u0430\u044F
     \u0441\u0438\u0441\u0442\u0435\u043C\u0430"
   groupScientificName: 
@@ -3461,6 +3499,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043B\u043E\u043A\u0442\u0435\u0432\u043E\u0433\u043E
     \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043F\u0440\u0430\u0432\u044B\u0435)"
   groupScientificName: 
@@ -3541,6 +3580,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0442\u0430\u0437\u043E\u0432\u043E\u0439
     \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438 (\u043B\u0435\u0432\u044B\u0435)"
   groupScientificName: 
@@ -3617,6 +3657,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043A\u043E\u043B\u0435\u043D\u043D\u043E\u0433\u043E
     \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043F\u0440\u0430\u0432\u044B\u0435)"
   groupScientificName: 
@@ -3679,6 +3720,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u0412\u044B\u0434\u0435\u043B\u0438\u0442\u0435\u043B\u044C\u043D\u0430\u044F
     \u0441\u0438\u0441\u0442\u0435\u043C\u0430"
   groupScientificName: 
@@ -3826,6 +3868,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041F\u043E\u044F\u0441\u043D\u0438\u0447\u043D\u044B\u0439 \u043E\u0442\u0434\u0435\u043B
     (\u043F\u043E\u044F\u0441\u043D\u0438\u0447\u043D\u044B\u0435 \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u0438)"
   groupScientificName: vertebrae lumbales
@@ -3916,6 +3959,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043A\u043E\u043B\u0435\u043D\u043D\u043E\u0433\u043E
     \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043B\u0435\u0432\u044B\u0435)"
   groupScientificName: 
@@ -4018,6 +4062,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 11400000, guid: 357cdc825cb66344484283998f380022, type: 2}
+  sagittalType: 0
   groupName: "\u0421\u0435\u0440\u0434\u0435\u0447\u043D\u043E-\u0441\u043E\u0441\u0443\u0434\u0438\u0441\u0442\u0430\u044F
     \u0441\u0438\u0441\u0442\u0435\u043C\u0430"
   groupScientificName: 
@@ -4055,7 +4100,7 @@ GameObject:
   - component: {fileID: 1117909836}
   - component: {fileID: 1117909837}
   m_Layer: 0
-  m_Name: "\u041A\u043E\u0436\u043D\u044B\u0435"
+  m_Name: "? \u041A\u043E\u0436\u043D\u044B\u0435"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4093,6 +4138,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 11400000, guid: a018023dbdd61214eba9c3bfbc77deb0, type: 2}
+  sagittalType: 0
   groupName: "\u041A\u043E\u0436\u043D\u044B\u0435 \u043C\u044B\u0448\u0446\u044B"
   groupScientificName: musculi cutanei
   description: "\u0420\u0430\u0437\u0432\u0438\u0432\u0430\u044E\u0442\u0441\u044F
@@ -4257,6 +4303,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0437\u0430\u0434\u043D\u0438\u0445
     \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439 (\u043B\u0435\u0432\u044B\u0435)"
   groupScientificName: 
@@ -4371,6 +4418,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 11400000, guid: 55af53efd692de548814067dd3cfd5ad, type: 2}
+  sagittalType: 0
   groupName: "\u041E\u0431\u0449\u0438\u0439 \u043F\u043E\u043A\u0440\u043E\u0432"
   groupScientificName: integumentum commune (cutis)
   description: "\u0421\u043B\u0443\u0436\u0438\u0442 \u043D\u0430\u0440\u0443\u0436\u043D\u043E\u0439
@@ -4506,6 +4554,7 @@ Transform:
   - {fileID: 1975516747}
   - {fileID: 1846869509}
   - {fileID: 231972743}
+  - {fileID: 1783619407}
   m_Father: {fileID: 741943817}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1250920675
@@ -4525,6 +4574,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 11400000, guid: 59bf06f82121ca84fa120682f263bcab, type: 2}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
     \u043F\u043E\u044F\u0441\u0430 (\u043B\u0435\u0432\u044B\u0435)"
   groupScientificName: 
@@ -4653,6 +4703,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 11400000, guid: 49e37807cb09d5140bf61d5184343c5e, type: 2}
+  sagittalType: 0
   groupName: "\u041A\u043E\u0440\u043E\u0432\u0430"
   groupScientificName: Bos Taurus
   description: "\u041A\u0440\u0443\u043F\u043D\u043E\u0435 \u0434\u043E\u043C\u0430\u0448\u043D\u0435\u0435
@@ -4734,6 +4785,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 11400000, guid: 948ab1aad2731114997fc41324369230, type: 2}
+  sagittalType: 0
   groupName: "\u041C\u0438\u043C\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u043C\u044B\u0448\u0446\u044B"
   groupScientificName: 
   description: "\u041F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043B\u044F\u044E\u0442
@@ -4852,6 +4904,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041F\u043E\u043B\u043E\u0432\u0430\u044F \u0441\u0438\u0441\u0442\u0435\u043C\u0430"
   groupScientificName: 
   description: 
@@ -4932,6 +4985,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041F\u043E\u0437\u0432\u043E\u043D\u043E\u0447\u043D\u044B\u0439
     \u0441\u0442\u043E\u043B\u0431"
   groupScientificName: columna vertebralis
@@ -5049,6 +5103,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041A\u043E\u0441\u0442\u0438 \u0437\u0430\u043F\u044F\u0441\u0442\u044C\u044F
     (\u043F\u0440\u0430\u0432\u044B\u0435)"
   groupScientificName: 
@@ -5136,6 +5191,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u0421\u043A\u0435\u043B\u0435\u0442 \u0433\u043E\u043B\u043E\u0432\u044B"
   groupScientificName: skeleton capitis
   description: "\u0421\u043B\u0443\u0436\u0438\u0442 \u0432\u043C\u0435\u0441\u0442\u0438\u043B\u0438\u0449\u0435\u043C
@@ -5311,6 +5367,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 11400000, guid: 3b742955a7c23564c8be8f2af92fe254, type: 2}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0433\u0440\u0443\u0434\u043D\u043E\u0439
     \u043A\u043B\u0435\u0442\u043A\u0438"
   groupScientificName: musculi thoracis
@@ -5401,6 +5458,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u0421\u043A\u0435\u043B\u0435\u0442 \u0437\u0430\u0434\u043D\u0438\u0445
     \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439 (\u043B\u0435\u0432\u044B\u0439)"
   groupScientificName: 
@@ -5473,6 +5531,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041A\u043E\u0441\u0442\u0438 \u0437\u0430\u043F\u043B\u044E\u0441\u043D\u044B
     (\u043B\u0435\u0432\u044B\u0435)"
   groupScientificName: 
@@ -5612,6 +5671,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0437\u0430\u0434\u043D\u0438\u0445
     \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439 (\u043F\u0440\u0430\u0432\u044B\u0435)"
   groupScientificName: 
@@ -5754,6 +5814,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 11400000, guid: 90ad9b9b1046b22418f278c3404f9b60, type: 2}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
     \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043F\u0440\u0430\u0432\u044B\u0435)"
   groupScientificName: 
@@ -5819,6 +5880,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 11400000, guid: a41508c56f120f84cb3601ddf8b4973e, type: 2}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0433\u043E\u043B\u043E\u0432\u044B"
   groupScientificName: musculi capitis
   description: "\u0414\u0435\u043B\u044F\u0442\u0441\u044F \u043D\u0430 \u043C\u0438\u043C\u0438\u0447\u0435\u0441\u043A\u0443\u044E,
@@ -5945,6 +6007,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u0420\u0451\u0431\u0440\u0430"
   groupScientificName: costae
   description: 
@@ -6006,6 +6069,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041D\u0435\u0440\u0432\u043D\u0430\u044F \u0441\u0438\u0441\u0442\u0435\u043C\u0430"
   groupScientificName: 
   description: 
@@ -6021,64 +6085,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 556486118859486712, guid: da5ad88575e1227489263b6f1c034779, type: 3}
   m_PrefabInstance: {fileID: 5887691611554317293}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1734044108
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1734044109}
-  - component: {fileID: 1734044110}
-  m_Layer: 0
-  m_Name: Muscles Neck
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1734044109
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1734044108}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2058742708}
-  - {fileID: 1783619407}
-  - {fileID: 305957526}
-  - {fileID: 19920827}
-  m_Father: {fileID: 1915068702}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1734044110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1734044108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
-  cameraDistanceLimitsMultiplier: 1
-  bodyPartsGroups: []
-  bodyParts: []
-  allChildrenBodyParts: []
-  info: {fileID: 0}
-  groupName: "\u041C\u044B\u0448\u0446\u044B \u0448\u0435\u0438"
-  groupScientificName: 
-  description: 
-  partGroupListButton: {fileID: 0}
-  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1741068697 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8246601394446940399, guid: 1e0b106cdf1aaef478083117335c408f, type: 3}
@@ -6194,6 +6200,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041A\u043E\u0441\u0442\u0438 \u0437\u0430\u043F\u044F\u0441\u0442\u044C\u044F
     (\u043B\u0435\u0432\u044B\u0435)"
   groupScientificName: 
@@ -6369,6 +6376,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u0430 \u043F\u043E\u044F\u0441\u043D\u0438\u0446\u044B"
   groupScientificName: 
   description: 
@@ -6500,7 +6508,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1673766958}
-  - {fileID: 1734044109}
   - {fileID: 85006202}
   - {fileID: 671376092}
   - {fileID: 1868061869}
@@ -6523,6 +6530,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 11400000, guid: 619318266ac871e4f992f6127e3ab9de, type: 2}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0435\u0447\u043D\u0430\u044F \u0441\u0438\u0441\u0442\u0435\u043C\u0430"
   groupScientificName: systema musculorum
   description: "\u042F\u0432\u043B\u044F\u044F\u0441\u044C \u0430\u043A\u0442\u0438\u0432\u043D\u044B\u043C\u0438
@@ -6629,6 +6637,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u042D\u043D\u0434\u043E\u043A\u0440\u0438\u043D\u043D\u0430\u044F"
   groupScientificName: 
   description: 
@@ -6726,6 +6735,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 11400000, guid: 271650ce2a6443840a743cb672242680, type: 2}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0443\u0448\u043D\u043E\u0439 \u0440\u0430\u043A\u043E\u0432\u0438\u043D\u044B"
   groupScientificName: musculi auriculares
   description: "\u041F\u043E \u043C\u0435\u0441\u0442\u0443 \u0441\u0432\u043E\u0435\u0433\u043E
@@ -6833,6 +6843,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0441\u0442\u043E\u043F\u044B (\u043F\u0440\u0430\u0432\u044B\u0435)"
   groupScientificName: 
   description: 
@@ -6910,6 +6921,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 11400000, guid: d5bf1c7065a4f1f40aadac196d8323ad, type: 2}
+  sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
     \u043F\u043E\u044F\u0441\u0430 (\u043F\u0440\u0430\u0432\u044B\u0435)"
   groupScientificName: 
@@ -7029,6 +7041,7 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 0}
+  sagittalType: 0
   groupName: "\u041A\u043E\u0441\u0442\u0438 \u0437\u0430\u043F\u043B\u044E\u0441\u043D\u044B
     (\u043F\u0440\u0430\u0432\u044B\u0435)"
   groupScientificName: 
@@ -13759,8 +13772,72 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1734044109}
+    m_TransformParent: {fileID: 1250920674}
     m_Modifications:
+    - target: {fileID: 2571566913931922271, guid: cd74a40d820264141b40a89428bfe778, type: 3}
+      propertyPath: partName
+      value: "\u0422\u0440\u0430\u043F\u0435\u0446\u0438\u0435\u0432\u0438\u0434\u043D\u0430\u044F
+        \u043C\u044B\u0448\u0446\u0430"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571566913931922271, guid: cd74a40d820264141b40a89428bfe778, type: 3}
+      propertyPath: partDescription
+      value: "\u0420\u0430\u0441\u043F\u043E\u043B\u0430\u0433\u0430\u0435\u0442\u0441\u044F
+        \u043D\u0435\u043F\u043E\u0441\u0440\u0435\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u043E
+        \u043F\u043E\u0434 \u043A\u043E\u0436\u0435\u0439 \u0432 \u043E\u0431\u043B\u0430\u0441\u0442\u0438
+        \u0448\u0435\u0438 \u0438 \u0445\u043E\u043B\u043A\u0438. \u041E\u043D\u0430
+        \u0442\u043E\u043D\u043A\u0430\u044F, \u043F\u043B\u0430\u0441\u0442\u0438\u043D\u0447\u0430\u0442\u0430\u044F
+        \u0438 \u0438\u043C\u0435\u0435\u0442 \u0444\u043E\u0440\u043C\u0443 \u0440\u0430\u0437\u043D\u043E\u0441\u0442\u043E\u0440\u043E\u043D\u043D\u0435\u0433\u043E
+        \u0442\u0440\u0435\u0443\u0433\u043E\u043B\u044C\u043D\u0438\u043A\u0430,
+        \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u0441\u0432\u043E\u0438\u043C
+        \u043E\u0441\u043D\u043E\u0432\u0430\u043D\u0438\u0435\u043C \u043D\u0430\u043F\u0440\u0430\u0432\u043B\u0435\u043D
+        \u043A \u0434\u043E\u0440\u0441\u0430\u043B\u044C\u043D\u043E\u0439 \u0441\u0440\u0435\u0434\u0438\u043D\u043D\u043E\u0439
+        \u043B\u0438\u043D\u0438\u0438, \u0430 \u0432\u0435\u0440\u0448\u0438\u043D\u043E\u0439
+        \u2013 \u043A \u043E\u0441\u0442\u0438 \u043B\u043E\u043F\u0430\u0442\u043A\u0438.
+        \u0412 \u043C\u044B\u0448\u0446\u0435 \u0440\u0430\u0437\u043B\u0438\u0447\u0430\u044E\u0442
+        \u0448\u0435\u0439\u043D\u0443\u044E \u0438 \u0433\u0440\u0443\u0434\u043D\u0443\u044E
+        \u0447\u0430\u0441\u0442\u0438.\n\u0428\u0435\u0439\u043D\u0430\u044F \u0447\u0430\u0441\u0442\u044C
+        \u2013 pars cervicalis \u2013 \u0441\u0432\u043E\u0438\u043C \u0448\u0438\u0440\u043E\u043A\u0438\u043C
+        \u0441\u0443\u0445\u043E\u0436\u0438\u043B\u044C\u043D\u044B\u043C \u043A\u0440\u0430\u0435\u043C
+        \u0431\u0435\u0440\u0451\u0442 \u043D\u0430\u0447\u0430\u043B\u043E \u043E\u0442
+        \u043A\u0430\u043D\u0430\u0442\u0438\u043A\u0430 \u0432\u044B\u0439\u043D\u043E\u0439
+        \u0441\u0432\u044F\u0437\u043A\u0438 \u0438 \u043E\u0442 \u0443\u0440\u043E\u0432\u043D\u044F
+        2-\u0433\u043E \u0448\u0435\u0439\u043D\u043E\u0433\u043E \u0438 \u0434\u043E
+        3-\u0433\u043E \u0433\u0440\u0443\u0434\u043D\u043E\u0433\u043E \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u0430.
+        \u041C\u044B\u0448\u0435\u0447\u043D\u044B\u0435 \u043F\u0443\u0447\u043A\u0438,
+        \u043A\u043E\u043D\u0432\u0435\u0440\u0433\u0438\u0440\u0443\u044F \u0432\u0435\u043D\u0442\u0440\u043E\u043A\u0430\u0443\u0434\u0430\u043B\u044C\u043D\u043E,
+        \u0437\u0430\u043A\u0430\u043D\u0447\u0438\u0432\u0430\u044E\u0442\u0441\u044F
+        \u0432\u0434\u043E\u043B\u044C \u0432\u0441\u0435\u0433\u043E \u043A\u0440\u0430\u043D\u0438\u0430\u043B\u044C\u043D\u043E\u0433\u043E
+        \u043A\u0440\u0430\u044F \u043E\u0441\u0442\u0438 \u043B\u043E\u043F\u0430\u0442\u043A\u0438.\n\u0413\u0440\u0443\u0434\u043D\u0430\u044F
+        \u0447\u0430\u0441\u0442\u044C \u2013 pars thoracica \u2013 \u0431\u043E\u043B\u0435\u0435
+        \u043C\u044F\u0441\u0438\u0441\u0442\u0430, \u043A\u043E\u0440\u043E\u0447\u0435
+        \u0438 \u0443\u0436\u0435 \u043F\u0440\u0435\u0434\u044B\u0434\u0443\u0449\u0435\u0439.
+        \u041E\u043D\u0430 \u043F\u0440\u0438\u043A\u0440\u0435\u043F\u043B\u044F\u0435\u0442\u0441\u044F
+        \u043D\u0430 \u043D\u0430\u0434\u043E\u0441\u0442\u0438\u0441\u0442\u043E\u0439
+        \u0441\u0432\u044F\u0437\u043A\u0435 \u0432 \u043F\u0440\u0435\u0434\u0435\u043B\u0430\u0445
+        \u043E\u0442 3-\u0433\u043E \u0434\u043E 10-\u0433\u043E \u0433\u0440\u0443\u0434\u043D\u044B\u0445
+        \u043F\u043E\u0437\u0432\u043E\u043D\u043A\u043E\u0432.\n\u041C\u044B\u0448\u0435\u0447\u043D\u044B\u0435
+        \u043F\u0443\u0447\u043A\u0438, \u043A\u043E\u043D\u0432\u0435\u0440\u0433\u0438\u0440\u0443\u044F
+        \u0432 \u0432\u0435\u043D\u0442\u0440\u043E\u043A\u0440\u0430\u043D\u0438\u0430\u043B\u044C\u043D\u043E\u043C
+        \u043D\u0430\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0438, \u0437\u0430\u043A\u0430\u043D\u0447\u0438\u0432\u0430\u044E\u0442\u0441\u044F
+        \u043D\u0430 \u043A\u0430\u0443\u0434\u0430\u043B\u044C\u043D\u043E\u043C
+        \u043A\u0440\u0430\u0435 \u0434\u043E\u0440\u0441\u0430\u043B\u044C\u043D\u043E\u0439
+        \u0442\u0440\u0435\u0442\u0438 \u043E\u0441\u0442\u0438 \u043B\u043E\u043F\u0430\u0442\u043A\u0438.\n\u0424\u0443\u043D\u043A\u0446\u0438\u044F
+        \u2013 \u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0438\u0432\u0430\u0435\u0442
+        \u0443\u043A\u0440\u0435\u043F\u043B\u0435\u043D\u0438\u0435 \u043B\u043E\u043F\u0430\u0442\u043A\u0438
+        \u043D\u0430 \u0442\u0443\u043B\u043E\u0432\u0438\u0449\u0435. \u041F\u0440\u0438
+        \u043E\u0434\u043D\u043E\u0441\u0442\u043E\u0440\u043E\u043D\u043D\u0435\u043C
+        \u0441\u043E\u043A\u0440\u0430\u0449\u0435\u043D\u0438\u0438 \u0441\u043F\u043E\u0441\u043E\u0431\u0441\u0442\u0432\u0443\u0435\u0442
+        \u0438\u0437\u0433\u0438\u0431\u0430\u043C \u0448\u0435\u0438 \u0438 \u0432\u044B\u043D\u043E\u0441\u0443
+        \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438 \u0432\u043F\u0435\u0440\u0451\u0434;
+        \u043F\u0440\u0438 \u0434\u0432\u0443\u0441\u0442\u043E\u0440\u043E\u043D\u043D\u0435\u043C
+        \u0441\u043E\u043A\u0440\u0430\u0449\u0435\u043D\u0438\u0438 \u043E\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043B\u044F\u0435\u0442
+        \u043E\u043F\u0443\u0441\u043A\u0430\u043D\u0438\u0435 \u0442\u0443\u043B\u043E\u0432\u0438\u0449\u0430
+        \u043C\u0435\u0436\u0434\u0443 \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u044F\u043C\u0438"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571566913931922271, guid: cd74a40d820264141b40a89428bfe778, type: 3}
+      propertyPath: partScientificName
+      value: musculus trapezius
+      objectReference: {fileID: 0}
     - target: {fileID: 7406016564353426776, guid: cd74a40d820264141b40a89428bfe778, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -13803,7 +13880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7893865112447074274, guid: cd74a40d820264141b40a89428bfe778, type: 3}
       propertyPath: m_Name
-      value: Trapezius Cervical Part
+      value: '! Trapezius Cervical Part'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14504,7 +14581,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1734044109}
+    m_TransformParent: {fileID: 229495979}
     m_Modifications:
     - target: {fileID: 1319147155420594045, guid: 0787737ba732a9c409d6580dc5b0a5b9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14548,7 +14625,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1802950536438212039, guid: 0787737ba732a9c409d6580dc5b0a5b9, type: 3}
       propertyPath: m_Name
-      value: Intertransverarii Ventrales
+      value: "\u0414\u043B\u0438\u043D\u043D\u0435\u0439\u0448\u0430\u044F \u043C\u044B\u0448\u0446\u0430
+        \u0430\u0442\u043B\u0430\u043D\u0442\u0430 - Intertransverarii Ventrales"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20536,7 +20614,8 @@ PrefabInstance:
     - target: {fileID: 7289734704099832080, guid: 1194d30bc938bf245b4f2d255d8c11f5, type: 3}
       propertyPath: m_Name
       value: "\u041C\u0435\u0436\u043F\u043E\u043F\u0435\u0440\u0435\u0447\u043D\u044B\u0435
-        \u043C\u044B\u0448\u0446\u044B - Intertransverarii Intermesialis"
+        \u0441\u0440\u0435\u0434\u043D\u0438\u0435 \u043C\u044B\u0448\u0446\u044B
+        - Intertransverarii Intermesialis"
       objectReference: {fileID: 0}
     - target: {fileID: 7953787656859904938, guid: 1194d30bc938bf245b4f2d255d8c11f5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20879,11 +20958,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1734044109}
+    m_TransformParent: {fileID: 229495979}
     m_Modifications:
     - target: {fileID: 6007549229451657418, guid: 50f6f4a3eb2a9dd4f802ebe9d32a1c51, type: 3}
       propertyPath: m_Name
-      value: Intertransverasrii Dorsales Cervicis
+      value: "\u0414\u043E\u0440\u0441\u0430\u043B\u044C\u043D\u044B\u0435 \u043C\u0435\u0436\u043F\u043E\u043F\u0435\u0440\u0435\u0447\u043D\u044B\u0435
+        \u043C\u044B\u0448\u0446\u044B - Intertransverasrii Dorsales Cervicis"
       objectReference: {fileID: 0}
     - target: {fileID: 6346920552587008624, guid: 50f6f4a3eb2a9dd4f802ebe9d32a1c51, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21678,11 +21758,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1734044109}
+    m_TransformParent: {fileID: 229495979}
     m_Modifications:
     - target: {fileID: 5807069351509765477, guid: 0a863583cca654741aac16f8fa2c1830, type: 3}
       propertyPath: m_Name
-      value: Splenius
+      value: "\u041F\u043B\u0430\u0441\u0442\u044B\u0440\u0435\u0432\u0438\u0434\u043D\u0430\u044F
+        \u043C\u044B\u0448\u0446\u0430 - Splenius"
       objectReference: {fileID: 0}
     - target: {fileID: 6619458444409468895, guid: 0a863583cca654741aac16f8fa2c1830, type: 3}
       propertyPath: m_LocalPosition.x

@@ -10,7 +10,7 @@ namespace AnimalAnatomy
     {
         public static UIMainCanvas Instance;
 
-        [Header("Loadning Screen")]
+        [Header("Loading Screen")]
         [SerializeField] GameObject loadingScreen;
         [SerializeField] float loadingTime = 1.0f;
 
@@ -50,6 +50,9 @@ namespace AnimalAnatomy
 
         UIButtonSystemActivating[] systemActivatingButtons;
         List<UIPartsListButton> partsListButtons = new List<UIPartsListButton>();
+
+        [Header("Vopere")]
+        [SerializeField] GameObject vopere;
 
         [HideInInspector]
         public bool isLoading = false;
@@ -305,6 +308,11 @@ namespace AnimalAnatomy
             GameController.Instance.SetTransparentMode(false);
 
             ExaminationController.Instance.StopExamination();
+        }
+
+        public void ShowVopere(bool state)
+        {
+            vopere.SetActive(state);
         }
     }
 }

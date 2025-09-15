@@ -1,13 +1,28 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace AnimalAnatomy
 {
+    [Serializable]
+    public class TermVariation
+    {
+        public string russianName;
+        public string scientificName;
+    }
+
+    [Serializable]
+    public class Term
+    {
+        public string name;
+        public List<TermVariation> termVariations = new List<TermVariation>();
+    }
+
     public class TermsDictionary : MonoBehaviour
     {
         public static TermsDictionary Instance;
 
-        public List<Data_Info> data = new List<Data_Info>();
+        public List<Term> terms = new List<Term>();
 
         void Awake()
         {

@@ -11,9 +11,7 @@ namespace AnimalAnatomy
         [TextArea(1, 20)]
         public string description;
 
-        public enum SagittalType { none, left, right };
         [Space(20)]
-        public SagittalType sagittalType;
         public int sagittalTypeTermId;
 
         [Header("Audio")]
