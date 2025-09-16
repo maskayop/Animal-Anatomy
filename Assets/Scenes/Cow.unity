@@ -1345,7 +1345,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1511603177}
   m_Father: {fileID: 399012651}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &361768744
@@ -1364,7 +1365,7 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  info: {fileID: 0}
+  info: {fileID: 11400000, guid: 5ea40ca052f08974a9cabb9af4430b1f, type: 2}
   sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0442\u0430\u0437\u043E\u0431\u0435\u0434\u0440\u0435\u043D\u043D\u043E\u0433\u043E
     \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043F\u0440\u0430\u0432\u044B\u0435)"
@@ -1450,7 +1451,7 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  info: {fileID: 0}
+  info: {fileID: 11400000, guid: 99af48d277673f24fbbbcca0f6afda87, type: 2}
   sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0442\u0430\u0437\u043E\u0432\u043E\u0439
     \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438 (\u043F\u0440\u0430\u0432\u044B\u0435)"
@@ -1737,7 +1738,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 275988474}
+  - {fileID: 1402227036}
+  - {fileID: 127341476}
+  - {fileID: 1425044904}
   m_Father: {fileID: 947928097}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &507748053
@@ -1756,7 +1761,7 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  info: {fileID: 0}
+  info: {fileID: 11400000, guid: 62d2fa1b80332db45b78c369c48ee8da, type: 2}
   sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0437\u0430\u043F\u043B\u044E\u0441\u043D\u0435\u0432\u043E\u0433\u043E
     \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043B\u0435\u0432\u044B\u0435)"
@@ -2139,6 +2144,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 236240104}
   - {fileID: 324482309}
   - {fileID: 1050303786}
   - {fileID: 1463756087}
@@ -2165,7 +2171,7 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  info: {fileID: 0}
+  info: {fileID: 11400000, guid: 5ea40ca052f08974a9cabb9af4430b1f, type: 2}
   sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0442\u0430\u0437\u043E\u0431\u0435\u0434\u0440\u0435\u043D\u043D\u043E\u0433\u043E
     \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043B\u0435\u0432\u044B\u0435)"
@@ -3028,7 +3034,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 307523010}
+  - {fileID: 148574598}
+  - {fileID: 639270831}
+  - {fileID: 99560312}
   m_Father: {fileID: 399012651}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &813885213
@@ -3047,7 +3057,7 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  info: {fileID: 0}
+  info: {fileID: 11400000, guid: 62d2fa1b80332db45b78c369c48ee8da, type: 2}
   sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0437\u0430\u043F\u043B\u044E\u0441\u043D\u0435\u0432\u043E\u0433\u043E
     \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043F\u0440\u0430\u0432\u044B\u0435)"
@@ -3071,7 +3081,8 @@ GameObject:
   - component: {fileID: 824541444}
   - component: {fileID: 824541445}
   m_Layer: 0
-  m_Name: "\u041B \u041C\u044B\u0448\u0446\u044B \u0441\u0442\u043E\u043F\u044B"
+  m_Name: "\u041B \u041C\u044B\u0448\u0446\u044B \u0441\u0443\u0441\u0442\u0430\u0432\u043E\u0432
+    \u043F\u0430\u043B\u044C\u0446\u0435\u0432"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3108,7 +3119,7 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  info: {fileID: 0}
+  info: {fileID: 11400000, guid: f41ddff7b9d17254cafb450d724d8626, type: 2}
   sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0441\u0442\u043E\u043F\u044B (\u043B\u0435\u0432\u044B\u0435)"
   groupScientificName: 
@@ -3479,7 +3490,7 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  info: {fileID: 0}
+  info: {fileID: 11400000, guid: 99af48d277673f24fbbbcca0f6afda87, type: 2}
   sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0442\u0430\u0437\u043E\u0432\u043E\u0439
     \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438 (\u043B\u0435\u0432\u044B\u0435)"
@@ -3537,7 +3548,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1741068697}
   m_Father: {fileID: 399012651}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &974463366
@@ -3556,7 +3568,7 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  info: {fileID: 0}
+  info: {fileID: 11400000, guid: af8b4c6ae3bff68449b86a6795f198a1, type: 2}
   sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043A\u043E\u043B\u0435\u043D\u043D\u043E\u0433\u043E
     \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043F\u0440\u0430\u0432\u044B\u0435)"
@@ -3840,6 +3852,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 793131962}
   - {fileID: 902071321}
   - {fileID: 1826584466}
   - {fileID: 512109713}
@@ -3862,7 +3875,7 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  info: {fileID: 0}
+  info: {fileID: 11400000, guid: af8b4c6ae3bff68449b86a6795f198a1, type: 2}
   sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043A\u043E\u043B\u0435\u043D\u043D\u043E\u0433\u043E
     \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043B\u0435\u0432\u044B\u0435)"
@@ -4088,20 +4101,14 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 275988474}
-  - {fileID: 793131962}
-  - {fileID: 2026648651}
-  - {fileID: 1402227036}
-  - {fileID: 127341476}
-  - {fileID: 1425044904}
-  - {fileID: 236240104}
+  - {fileID: 744209062}
   - {fileID: 234562968}
   - {fileID: 1710671939}
   - {fileID: 336189173}
   - {fileID: 1317645500}
   - {fileID: 2139290864}
-  - {fileID: 744209062}
   - {fileID: 1112740152}
+  - {fileID: 2026648651}
   m_Father: {fileID: 671376092}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1179461232
@@ -5456,20 +5463,14 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 307523010}
-  - {fileID: 1741068697}
-  - {fileID: 462339342}
-  - {fileID: 148574598}
-  - {fileID: 639270831}
-  - {fileID: 99560312}
-  - {fileID: 1511603177}
+  - {fileID: 1354980322}
   - {fileID: 218398078}
   - {fileID: 717300471}
   - {fileID: 759055087}
   - {fileID: 480739138}
   - {fileID: 1503080067}
-  - {fileID: 1354980322}
   - {fileID: 2065070716}
+  - {fileID: 462339342}
   m_Father: {fileID: 671376092}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1651076913
@@ -6552,7 +6553,8 @@ GameObject:
   - component: {fileID: 2050952355}
   - component: {fileID: 2050952356}
   m_Layer: 0
-  m_Name: "\u041F \u041C\u044B\u0448\u0446\u044B \u0441\u0442\u043E\u043F\u044B"
+  m_Name: "\u041F \u041C\u044B\u0448\u0446\u044B \u0441\u0443\u0441\u0442\u0430\u0432\u043E\u0432
+    \u043F\u0430\u043B\u044C\u0446\u0435\u0432"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6589,7 +6591,7 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  info: {fileID: 0}
+  info: {fileID: 11400000, guid: f41ddff7b9d17254cafb450d724d8626, type: 2}
   sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0441\u0442\u043E\u043F\u044B (\u043F\u0440\u0430\u0432\u044B\u0435)"
   groupScientificName: 
@@ -8901,7 +8903,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1651076912}
+    m_TransformParent: {fileID: 813885212}
     m_Modifications:
     - target: {fileID: 2650034722639668887, guid: 8ee4510f69511ed459320e3e6b8a29c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8945,7 +8947,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3426395057791646765, guid: 8ee4510f69511ed459320e3e6b8a29c4, type: 3}
       propertyPath: m_Name
-      value: R Anterios Tibialis
+      value: "\u041F\u0435\u0440\u0435\u0434\u043D\u044F\u044F \u0431\u043E\u043B\u044C\u0448\u0435\u0431\u0435\u0440\u0446\u043E\u0432\u0430\u044F
+        \u043C\u044B\u0448\u0446\u0430 - R Anterios Tibialis"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11112,7 +11115,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1651076912}
+    m_TransformParent: {fileID: 813885212}
     m_Modifications:
     - target: {fileID: 1354486697146047145, guid: 1991c8b006b6e3944ba60f4865f85be1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11156,7 +11159,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1839661989498028051, guid: 1991c8b006b6e3944ba60f4865f85be1, type: 3}
       propertyPath: m_Name
-      value: R Gastrocnemius
+      value: "\u0418\u043A\u0440\u043E\u043D\u043E\u0436\u043D\u0430\u044F \u043C\u044B\u0448\u0446\u0430
+        - R Gastrocnemius"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11169,7 +11173,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1179461231}
+    m_TransformParent: {fileID: 507748052}
     m_Modifications:
     - target: {fileID: 1308542715890186408, guid: aefccb10d11ee1f4a9c4d7da43d183f5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11213,7 +11217,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1829358677325210130, guid: aefccb10d11ee1f4a9c4d7da43d183f5, type: 3}
       propertyPath: m_Name
-      value: L Anterios Tibialis
+      value: "\u041F\u0435\u0440\u0435\u0434\u043D\u044F\u044F \u0431\u043E\u043B\u044C\u0448\u0435\u0431\u0435\u0440\u0446\u043E\u0432\u0430\u044F
+        \u043C\u044B\u0448\u0446\u0430 - L Anterios Tibialis"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14122,11 +14127,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1179461231}
+    m_TransformParent: {fileID: 507748052}
     m_Modifications:
     - target: {fileID: 1728499742188495970, guid: 6494e23bfd5090240809ed92a98444fb, type: 3}
       propertyPath: m_Name
-      value: L Fibularis Longus
+      value: "\u0414\u043B\u0438\u043D\u043D\u0430\u044F \u043C\u0430\u043B\u043E\u0431\u0435\u0440\u0446\u043E\u0432\u0430\u044F
+        \u043C\u044B\u0448\u0446\u0430 - L Fibularis Longus"
       objectReference: {fileID: 0}
     - target: {fileID: 2069137908808269528, guid: 6494e23bfd5090240809ed92a98444fb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15763,7 +15769,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1179461231}
+    m_TransformParent: {fileID: 507748052}
     m_Modifications:
     - target: {fileID: 6997603031193445556, guid: 2a7e99716b3c49d458e38c625df374bc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15807,7 +15813,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7662780540089220622, guid: 2a7e99716b3c49d458e38c625df374bc, type: 3}
       propertyPath: m_Name
-      value: L Fibularis Tertius
+      value: "\u041C\u0430\u043B\u043E\u0431\u0435\u0440\u0446\u043E\u0432\u0430\u044F
+        \u0442\u0440\u0435\u0442\u044C\u044F \u043C\u044B\u0448\u0446\u0430 - L Fibularis
+        Tertius"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15820,11 +15828,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1179461231}
+    m_TransformParent: {fileID: 1078620293}
     m_Modifications:
     - target: {fileID: 6187731207179613621, guid: 48fd82c7ecabc8744863f26fd5eb754b, type: 3}
       propertyPath: m_Name
-      value: L Biceps Femoris
+      value: "\u0414\u0432\u0443\u0433\u043B\u0430\u0432\u0430\u044F \u043C\u044B\u0448\u0446\u0430
+        \u0431\u0435\u0434\u0440\u0430 - L Biceps Femoris"
       objectReference: {fileID: 0}
     - target: {fileID: 6815331703057968911, guid: 48fd82c7ecabc8744863f26fd5eb754b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17322,11 +17331,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1651076912}
+    m_TransformParent: {fileID: 813885212}
     m_Modifications:
     - target: {fileID: 5187559533924562740, guid: 78ab04b205a8e1148b9ab1094cab7e0c, type: 3}
       propertyPath: m_Name
-      value: R Fibularis Longus
+      value: "\u0414\u043B\u0438\u043D\u043D\u0430\u044F \u043C\u0430\u043B\u043E\u0431\u0435\u0440\u0446\u043E\u0432\u0430\u044F
+        \u043C\u044B\u0448\u0446\u0430 - R Fibularis Longus"
       objectReference: {fileID: 0}
     - target: {fileID: 5527668564857974158, guid: 78ab04b205a8e1148b9ab1094cab7e0c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18769,7 +18779,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1179461231}
+    m_TransformParent: {fileID: 507748052}
     m_Modifications:
     - target: {fileID: 6052483120426510449, guid: 1642f33a0f5a24644a52aaa173a11574, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18813,7 +18823,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6392136158991725259, guid: 1642f33a0f5a24644a52aaa173a11574, type: 3}
       propertyPath: m_Name
-      value: L Gastrocnemius
+      value: "\u0418\u043A\u0440\u043E\u043D\u043E\u0436\u043D\u0430\u044F \u043C\u044B\u0448\u0446\u0430
+        - L Gastrocnemius"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19770,7 +19781,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1651076912}
+    m_TransformParent: {fileID: 974463365}
     m_Modifications:
     - target: {fileID: 8246601394446940399, guid: 1e0b106cdf1aaef478083117335c408f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19814,7 +19825,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8735295433249677909, guid: 1e0b106cdf1aaef478083117335c408f, type: 3}
       propertyPath: m_Name
-      value: R Biceps Femoris
+      value: "\u0414\u0432\u0443\u0433\u043B\u0430\u0432\u0430\u044F \u043C\u044B\u0448\u0446\u0430
+        \u0431\u0435\u0434\u0440\u0430 - R Biceps Femoris"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19998,11 +20010,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1651076912}
+    m_TransformParent: {fileID: 361768743}
     m_Modifications:
     - target: {fileID: 3831374858988561037, guid: 26c8c1da98f8c124ea5d22894b6ba5a3, type: 3}
       propertyPath: m_Name
-      value: R Gracillis
+      value: "\u0421\u0442\u0440\u043E\u0439\u043D\u0430\u044F \u043C\u044B\u0448\u0446\u0430
+        - R Gracillis"
       objectReference: {fileID: 0}
     - target: {fileID: 4494618330624194615, guid: 26c8c1da98f8c124ea5d22894b6ba5a3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23979,11 +23992,13 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1651076912}
+    m_TransformParent: {fileID: 813885212}
     m_Modifications:
     - target: {fileID: 1685258517035807704, guid: 203b654230f307947a4c0071815dc192, type: 3}
       propertyPath: m_Name
-      value: R Fibularis Tertius
+      value: "\u041C\u0430\u043B\u043E\u0431\u0435\u0440\u0446\u043E\u0432\u0430\u044F
+        \u0442\u0440\u0435\u0442\u044C\u044F \u043C\u044B\u0448\u0446\u0430 - R Fibularis
+        Tertius"
       objectReference: {fileID: 0}
     - target: {fileID: 2029132343694764386, guid: 203b654230f307947a4c0071815dc192, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26744,7 +26759,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1179461231}
+    m_TransformParent: {fileID: 632331277}
     m_Modifications:
     - target: {fileID: 381927908965082236, guid: e60a2994fdfbb1e49abcf8bc286e5907, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26788,7 +26803,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1010831360410762950, guid: e60a2994fdfbb1e49abcf8bc286e5907, type: 3}
       propertyPath: m_Name
-      value: L Gracillis
+      value: "\u0421\u0442\u0440\u043E\u0439\u043D\u0430\u044F \u043C\u044B\u0448\u0446\u0430
+        - L Gracillis"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
