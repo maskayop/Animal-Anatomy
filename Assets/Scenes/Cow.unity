@@ -505,83 +505,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1354486697146047145, guid: 1991c8b006b6e3944ba60f4865f85be1, type: 3}
   m_PrefabInstance: {fileID: 2064092738686807732}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &108499893
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 108499894}
-  - component: {fileID: 108499895}
-  m_Layer: 0
-  m_Name: Muscles Leg Front Right
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &108499894
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 108499893}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1016251342}
-  - {fileID: 1131657615}
-  - {fileID: 973621353}
-  - {fileID: 641917811}
-  - {fileID: 1010332882}
-  - {fileID: 2128673860}
-  - {fileID: 1171988908}
-  - {fileID: 149045317}
-  - {fileID: 1647576532}
-  - {fileID: 1546446215}
-  - {fileID: 1947679864}
-  - {fileID: 1620137381}
-  - {fileID: 1326327070}
-  - {fileID: 469138616}
-  - {fileID: 1319847735}
-  - {fileID: 1304183186}
-  - {fileID: 463074995}
-  - {fileID: 736086767}
-  - {fileID: 1091064732}
-  - {fileID: 151781144}
-  - {fileID: 1477250921}
-  m_Father: {fileID: 671376092}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &108499895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 108499893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
-  cameraDistanceLimitsMultiplier: 1
-  bodyPartsGroups: []
-  bodyParts: []
-  allChildrenBodyParts: []
-  info: {fileID: 0}
-  sagittalType: 0
-  groupName: "\u041C\u044B\u0448\u0446\u044B \u043F\u0435\u0440\u0435\u0434\u043D\u0438\u0445
-    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439 (\u043F\u0440\u0430\u0432\u044B\u0435)"
-  groupScientificName: 
-  description: 
-  partGroupListButton: {fileID: 0}
-  parentBodyPartGroup: {fileID: 0}
 --- !u!1 &125699835
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,7 +535,12 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1365370962}
+  - {fileID: 1925779574}
+  - {fileID: 1203950362}
+  - {fileID: 484965761}
+  - {fileID: 234552927}
   m_Father: {fileID: 741943817}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &125699837
@@ -631,10 +559,10 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  info: {fileID: 0}
+  info: {fileID: 11400000, guid: b8dd7721e0dc07e4bb68c3640c52ed5c, type: 2}
   sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0437\u0430\u043F\u044F\u0441\u0442\u043D\u043E\u0433\u043E
-    \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043B\u0435\u0432\u044B\u0435)"
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430"
   groupScientificName: 
   description: 
   partGroupListButton: {fileID: 0}
@@ -1097,83 +1025,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7838787970691358570, guid: cdf8033ec29af174d8bdb8939d254667, type: 3}
   m_PrefabInstance: {fileID: 3048428358985728456}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &255882746
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 255882747}
-  - component: {fileID: 255882748}
-  m_Layer: 0
-  m_Name: Muscles Leg Front Left
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &255882747
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 255882746}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1891746735}
-  - {fileID: 1029813564}
-  - {fileID: 1749389832}
-  - {fileID: 918083554}
-  - {fileID: 214443190}
-  - {fileID: 15381376}
-  - {fileID: 1365370962}
-  - {fileID: 1925779574}
-  - {fileID: 577096047}
-  - {fileID: 1203950362}
-  - {fileID: 484965761}
-  - {fileID: 1819775351}
-  - {fileID: 1149515984}
-  - {fileID: 2028237639}
-  - {fileID: 238017002}
-  - {fileID: 1665757764}
-  - {fileID: 1532817422}
-  - {fileID: 17757821}
-  - {fileID: 732484720}
-  - {fileID: 1967762562}
-  - {fileID: 234552927}
-  m_Father: {fileID: 671376092}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &255882748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 255882746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
-  cameraDistanceLimitsMultiplier: 1
-  bodyPartsGroups: []
-  bodyParts: []
-  allChildrenBodyParts: []
-  info: {fileID: 0}
-  sagittalType: 0
-  groupName: "\u041C\u044B\u0448\u0446\u044B \u043F\u0435\u0440\u0435\u0434\u043D\u0438\u0445
-    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439 (\u043B\u0435\u0432\u044B\u0435)"
-  groupScientificName: 
-  description: 
-  partGroupListButton: {fileID: 0}
-  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &264994215 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5820403164896829702, guid: 9ab0706fa8be6fd4c8808b4c8d4b3854, type: 3}
@@ -2019,7 +1870,7 @@ Transform:
   - {fileID: 1667704024}
   - {fileID: 937574435}
   - {fileID: 593488505}
-  - {fileID: 810935544}
+  - {fileID: 785023042}
   m_Father: {fileID: 671376092}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &542781381
@@ -2038,7 +1889,7 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  info: {fileID: 11400000, guid: ec8aed6894965524ab903d7b5b18e882, type: 2}
+  info: {fileID: 11400000, guid: 28edf589f0ecc8e4cb2fa0d50b890391, type: 2}
   sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0433\u0440\u0443\u0434\u043D\u043E\u0439
     \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438 (\u043F\u0440\u0430\u0432\u044B\u0435)"
@@ -2115,7 +1966,15 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1891746735}
+  - {fileID: 1029813564}
+  - {fileID: 1749389832}
+  - {fileID: 238017002}
+  - {fileID: 1532817422}
+  - {fileID: 732484720}
+  - {fileID: 17757821}
+  - {fileID: 1967762562}
   m_Father: {fileID: 741943817}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &557864216
@@ -2134,10 +1993,10 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  info: {fileID: 0}
+  info: {fileID: 11400000, guid: a17bd51e5aa4d0249b3d6fd8080350b3, type: 2}
   sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043B\u043E\u043A\u0442\u0435\u0432\u043E\u0433\u043E
-    \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043B\u0435\u0432\u044B\u0435)"
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430"
   groupScientificName: 
   description: 
   partGroupListButton: {fileID: 0}
@@ -2197,7 +2056,12 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1171988908}
+  - {fileID: 149045317}
+  - {fileID: 1546446215}
+  - {fileID: 1947679864}
+  - {fileID: 1477250921}
   m_Father: {fileID: 542781380}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &593488506
@@ -2216,7 +2080,7 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  info: {fileID: 0}
+  info: {fileID: 11400000, guid: b8dd7721e0dc07e4bb68c3640c52ed5c, type: 2}
   sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0437\u0430\u043F\u044F\u0441\u0442\u043D\u043E\u0433\u043E
     \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043F\u0440\u0430\u0432\u044B\u0435)"
@@ -2373,8 +2237,6 @@ Transform:
   - {fileID: 542781380}
   - {fileID: 947928097}
   - {fileID: 399012651}
-  - {fileID: 255882747}
-  - {fileID: 108499894}
   - {fileID: 1179461231}
   - {fileID: 1651076912}
   m_Father: {fileID: 1915068702}
@@ -2722,7 +2584,7 @@ Transform:
   - {fileID: 781887252}
   - {fileID: 557864215}
   - {fileID: 125699836}
-  - {fileID: 883563371}
+  - {fileID: 767337208}
   m_Father: {fileID: 671376092}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &741943818
@@ -2744,7 +2606,7 @@ MonoBehaviour:
   info: {fileID: 11400000, guid: 28edf589f0ecc8e4cb2fa0d50b890391, type: 2}
   sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0433\u0440\u0443\u0434\u043D\u043E\u0439
-    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438 (\u043B\u0435\u0432\u044B\u0435)"
+    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438"
   groupScientificName: musculi membri thoracici
   description: "\u041F\u043E\u0434\u0440\u0430\u0437\u0434\u0435\u043B\u044F\u044E\u0442\u0441\u044F
     \u043D\u0430 \u0434\u0432\u0435 \u0433\u0440\u0443\u043F\u043F\u044B, \u0438\u0437
@@ -2918,6 +2780,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8420816636450269189, guid: 77571dcfc9c00354784b657e0745e28c, type: 3}
   m_PrefabInstance: {fileID: 2338589153590544979}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &767337207
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 767337208}
+  - component: {fileID: 767337209}
+  m_Layer: 0
+  m_Name: "\u041B \u041C\u044B\u0448\u0446\u044B \u0441\u0443\u0441\u0442\u0430\u0432\u043E\u0432
+    \u043F\u0430\u043B\u044C\u0446\u0435\u0432"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &767337208
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767337207}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 918083554}
+  - {fileID: 214443190}
+  - {fileID: 577096047}
+  - {fileID: 2028237639}
+  - {fileID: 1665757764}
+  m_Father: {fileID: 741943817}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &767337209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767337207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  info: {fileID: 11400000, guid: a98ffe53e99c27c4ab91c74905ccd564, type: 2}
+  sagittalType: 0
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u0441\u0443\u0441\u0442\u0430\u0432\u043E\u0432
+    \u043F\u0430\u043B\u044C\u0446\u0435\u0432"
+  groupScientificName: 
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &776485753 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7953787656859904938, guid: 1194d30bc938bf245b4f2d255d8c11f5, type: 3}
@@ -2955,6 +2879,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1760981676}
+  - {fileID: 15381376}
+  - {fileID: 1819775351}
+  - {fileID: 1149515984}
   - {fileID: 939537044}
   - {fileID: 1699039496}
   - {fileID: 298091610}
@@ -2979,7 +2906,69 @@ MonoBehaviour:
   info: {fileID: 11400000, guid: aa7b5f9f04642e14fbf1e14db8ed46e2, type: 2}
   sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
-    \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043B\u0435\u0432\u044B\u0435)"
+    \u0441\u0443\u0441\u0442\u0430\u0432\u0430"
+  groupScientificName: 
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
+--- !u!1 &785023041
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 785023042}
+  - component: {fileID: 785023043}
+  m_Layer: 0
+  m_Name: "\u041F \u041C\u044B\u0448\u0446\u044B \u0441\u0443\u0441\u0442\u0430\u0432\u043E\u0432
+    \u043F\u0430\u043B\u044C\u0446\u0435\u0432"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &785023042
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785023041}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 641917811}
+  - {fileID: 1010332882}
+  - {fileID: 1647576532}
+  - {fileID: 469138616}
+  - {fileID: 1304183186}
+  m_Father: {fileID: 542781380}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &785023043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785023041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  info: {fileID: 11400000, guid: a98ffe53e99c27c4ab91c74905ccd564, type: 2}
+  sagittalType: 0
+  groupName: "\u041C\u044B\u0448\u0446\u044B \u0441\u0443\u0441\u0442\u0430\u0432\u043E\u0432
+    \u043F\u0430\u043B\u044C\u0446\u0435\u0432"
   groupScientificName: 
   description: 
   partGroupListButton: {fileID: 0}
@@ -3009,61 +2998,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4911148362535097531, guid: 59ff1122858755548b84eca43b3ef712, type: 3}
   m_PrefabInstance: {fileID: 5297533137699815870}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &810935543
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 810935544}
-  - component: {fileID: 810935545}
-  m_Layer: 0
-  m_Name: "\u041F \u041C\u044B\u0448\u0446\u044B \u043A\u0438\u0441\u0442\u0438"
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &810935544
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 810935543}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 542781380}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &810935545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 810935543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
-  cameraDistanceLimitsMultiplier: 1
-  bodyPartsGroups: []
-  bodyParts: []
-  allChildrenBodyParts: []
-  info: {fileID: 0}
-  sagittalType: 0
-  groupName: "\u041C\u044B\u0448\u0446\u044B \u043A\u0438\u0441\u0442\u0438 (\u043F\u0440\u0430\u0432\u044B\u0435)"
-  groupScientificName: 
-  description: 
-  partGroupListButton: {fileID: 0}
-  parentBodyPartGroup: {fileID: 0}
 --- !u!1 &813885211
 GameObject:
   m_ObjectHideFlags: 0
@@ -3289,61 +3223,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8601183413892864138, guid: 97357bfe44cdbe74d9a84b636e6ac718, type: 3}
   m_PrefabInstance: {fileID: 5833706375907787326}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &883563370
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 883563371}
-  - component: {fileID: 883563372}
-  m_Layer: 0
-  m_Name: "\u041B \u041C\u044B\u0448\u0446\u044B \u043A\u0438\u0441\u0442\u0438"
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &883563371
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 883563370}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 741943817}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &883563372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 883563370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
-  cameraDistanceLimitsMultiplier: 1
-  bodyPartsGroups: []
-  bodyParts: []
-  allChildrenBodyParts: []
-  info: {fileID: 0}
-  sagittalType: 0
-  groupName: "\u041C\u044B\u0448\u0446\u044B \u043A\u0438\u0441\u0442\u0438 (\u043B\u0435\u0432\u044B\u0435)"
-  groupScientificName: 
-  description: 
-  partGroupListButton: {fileID: 0}
-  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &895046782 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1347497858506178295, guid: b2e669e9f5f1f6d4aa4b06504ae4acef, type: 3}
@@ -3492,7 +3371,15 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1016251342}
+  - {fileID: 1131657615}
+  - {fileID: 973621353}
+  - {fileID: 1319847735}
+  - {fileID: 463074995}
+  - {fileID: 1091064732}
+  - {fileID: 736086767}
+  - {fileID: 151781144}
   m_Father: {fileID: 542781380}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &937574436
@@ -3511,7 +3398,7 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  info: {fileID: 0}
+  info: {fileID: 11400000, guid: a17bd51e5aa4d0249b3d6fd8080350b3, type: 2}
   sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043B\u043E\u043A\u0442\u0435\u0432\u043E\u0433\u043E
     \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043F\u0440\u0430\u0432\u044B\u0435)"
@@ -4507,7 +4394,7 @@ MonoBehaviour:
   info: {fileID: 11400000, guid: 59bf06f82121ca84fa120682f263bcab, type: 2}
   sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
-    \u043F\u043E\u044F\u0441\u0430 (\u043B\u0435\u0432\u044B\u0435)"
+    \u043F\u043E\u044F\u0441\u0430"
   groupScientificName: 
   description: "\u0414\u043E\u0440\u0441\u0430\u043B\u044C\u043D\u044B\u0435 \u043C\u044B\u0448\u0446\u044B
     \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E \u043F\u043E\u044F\u0441\u0430
@@ -5726,6 +5613,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1804111529}
+  - {fileID: 2128673860}
+  - {fileID: 1620137381}
+  - {fileID: 1326327070}
   m_Father: {fileID: 542781380}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1667704025
@@ -5744,7 +5634,7 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  info: {fileID: 11400000, guid: 90ad9b9b1046b22418f278c3404f9b60, type: 2}
+  info: {fileID: 11400000, guid: aa7b5f9f04642e14fbf1e14db8ed46e2, type: 2}
   sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
     \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043F\u0440\u0430\u0432\u044B\u0435)"
@@ -6240,61 +6130,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2610326125713790242, guid: 2d6103fd1982c0b42a5d4f84189482e9, type: 3}
   m_PrefabInstance: {fileID: 6425969409087897615}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1868061868
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1868061869}
-  - component: {fileID: 1868061870}
-  m_Layer: 0
-  m_Name: Muscles Back
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1868061869
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1868061868}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1915068702}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1868061870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1868061868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
-  cameraDistanceLimitsMultiplier: 1
-  bodyPartsGroups: []
-  bodyParts: []
-  allChildrenBodyParts: []
-  info: {fileID: 0}
-  sagittalType: 0
-  groupName: "\u041C\u044B\u0448\u0446\u0430 \u043F\u043E\u044F\u0441\u043D\u0438\u0446\u044B"
-  groupScientificName: 
-  description: 
-  partGroupListButton: {fileID: 0}
-  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1869324327 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2494691393215162481, guid: f5702606b7d79aa448abae803d6faf64, type: 3}
@@ -6423,7 +6258,6 @@ Transform:
   - {fileID: 1673766958}
   - {fileID: 85006202}
   - {fileID: 671376092}
-  - {fileID: 1868061869}
   m_Father: {fileID: 1288319924}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1915068703
@@ -6833,7 +6667,7 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  info: {fileID: 11400000, guid: d5bf1c7065a4f1f40aadac196d8323ad, type: 2}
+  info: {fileID: 11400000, guid: 59bf06f82121ca84fa120682f263bcab, type: 2}
   sagittalType: 0
   groupName: "\u041C\u044B\u0448\u0446\u044B \u043F\u043B\u0435\u0447\u0435\u0432\u043E\u0433\u043E
     \u043F\u043E\u044F\u0441\u0430 (\u043F\u0440\u0430\u0432\u044B\u0435)"
@@ -7165,11 +6999,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 108499894}
+    m_TransformParent: {fileID: 1667704024}
     m_Modifications:
     - target: {fileID: 8559639587272330553, guid: c445c92c4120670448ee1ef8910cc137, type: 3}
       propertyPath: m_Name
-      value: R Deltoid
+      value: "\u0414\u0435\u043B\u044C\u0442\u043E\u0432\u0438\u0434\u043D\u0430\u044F
+        \u043C\u044B\u0448\u0446\u0430 - R Deltoid"
       objectReference: {fileID: 0}
     - target: {fileID: 9043828892284835715, guid: c445c92c4120670448ee1ef8910cc137, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7451,7 +7286,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 108499894}
+    m_TransformParent: {fileID: 593488505}
     m_Modifications:
     - target: {fileID: 8442731434438015213, guid: ec9ba7551e4c89b4eb482c6733e22aa7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7495,7 +7330,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9106642584759165527, guid: ec9ba7551e4c89b4eb482c6733e22aa7, type: 3}
       propertyPath: m_Name
-      value: R Extensor Carpi Radialis
+      value: "\u041B\u0443\u0447\u0435\u0432\u043E\u0439 \u0440\u0430\u0437\u0433\u0438\u0431\u0430\u0442\u0435\u043B\u044C
+        \u0437\u0430\u043F\u044F\u0441\u0442\u044C\u044F - R Extensor Carpi Radialis"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8836,7 +8672,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 255882747}
+    m_TransformParent: {fileID: 767337208}
     m_Modifications:
     - target: {fileID: 6012912889153421446, guid: c7e83af78d9a0f14e8f1879dbd38d85d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8880,7 +8716,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6357385881215294012, guid: c7e83af78d9a0f14e8f1879dbd38d85d, type: 3}
       propertyPath: m_Name
-      value: L Deep Digital Flexor
+      value: "\u0413\u043B\u0443\u0431\u043E\u043A\u0438\u0439 \u0441\u0433\u0438\u0431\u0430\u0442\u0435\u043B\u044C
+        \u043F\u0430\u043B\u044C\u0446\u0435\u0432 - L Deep Digital Flexor"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9523,7 +9360,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 108499894}
+    m_TransformParent: {fileID: 1667704024}
     m_Modifications:
     - target: {fileID: 502912164916810843, guid: 1a43d2b95776b2f44afff5cc53c73d0a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9567,7 +9404,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 986679055554612961, guid: 1a43d2b95776b2f44afff5cc53c73d0a, type: 3}
       propertyPath: m_Name
-      value: R Infaspinatus Front
+      value: "\u041F\u0440\u0435\u0434\u043E\u0441\u0442\u043D\u0430\u044F \u043C\u044B\u0448\u0446\u0430
+        - R Infaspinatus Front"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9871,7 +9709,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 108499894}
+    m_TransformParent: {fileID: 785023042}
     m_Modifications:
     - target: {fileID: 42860470201110874, guid: 56bb71fb64cada14e83669e8019dbc95, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9915,7 +9753,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 852189622318271456, guid: 56bb71fb64cada14e83669e8019dbc95, type: 3}
       propertyPath: m_Name
-      value: R Extensor Retinaculum Manus
+      value: "\u0423\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0442\u0435\u043B\u044C
+        \u0441\u0443\u0445\u043E\u0436\u0438\u043B\u0438\u0439 - R Extensor Retinaculum
+        Manus"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10099,11 +9939,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 255882747}
+    m_TransformParent: {fileID: 557864215}
     m_Modifications:
     - target: {fileID: 229912116843074101, guid: 0c3137383ce96d14ab21c3458115f984, type: 3}
       propertyPath: m_Name
-      value: L Brachialis
+      value: "\u041F\u043B\u0435\u0447\u0435\u0432\u0430\u044F \u043C\u044B\u0448\u0446\u0430
+        - L Brachialis"
       objectReference: {fileID: 0}
     - target: {fileID: 611116769314932879, guid: 0c3137383ce96d14ab21c3458115f984, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10156,11 +9997,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 108499894}
+    m_TransformParent: {fileID: 593488505}
     m_Modifications:
     - target: {fileID: 1234901189919239140, guid: 04e56896530fdd840ac23cc10b1afe08, type: 3}
       propertyPath: m_Name
-      value: R Extensor Carpi Obliquus
+      value: "\u041B\u043E\u043A\u0442\u0435\u0432\u043E\u0439 \u0440\u0430\u0437\u0433\u0438\u0431\u0430\u0442\u0435\u043B\u044C
+        \u0437\u0430\u043F\u044F\u0441\u0442\u044C\u044F - R Extensor Carpi Obliquus"
       objectReference: {fileID: 0}
     - target: {fileID: 1902929973239853406, guid: 04e56896530fdd840ac23cc10b1afe08, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10522,7 +10364,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 255882747}
+    m_TransformParent: {fileID: 557864215}
     m_Modifications:
     - target: {fileID: 4626991824297028601, guid: 859822ce25d542440ac08e0ab5862142, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10566,7 +10408,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5439697577415815491, guid: 859822ce25d542440ac08e0ab5862142, type: 3}
       propertyPath: m_Name
-      value: L Biceps Brachii
+      value: "\u0414\u0432\u0443\u0433\u043B\u0430\u0432\u0430\u044F \u043C\u044B\u0448\u0446\u0430
+        \u043F\u043B\u0435\u0447\u0430 - L Biceps Brachii"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10807,7 +10650,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 255882747}
+    m_TransformParent: {fileID: 767337208}
     m_Modifications:
     - target: {fileID: 5083007551508455289, guid: 1b0e65cadc704c443b1bfaae14803d37, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10851,7 +10694,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5602944968793146819, guid: 1b0e65cadc704c443b1bfaae14803d37, type: 3}
       propertyPath: m_Name
-      value: L Lateral Digital Extensor
+      value: "\u0411\u043E\u043A\u043E\u0432\u043E\u0439 \u0440\u0430\u0437\u0433\u0438\u0431\u0430\u0442\u0435\u043B\u044C
+        \u043F\u0430\u043B\u044C\u0446\u0435\u0432 - L Lateral Digital Extensor"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10921,7 +10765,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 255882747}
+    m_TransformParent: {fileID: 125699836}
     m_Modifications:
     - target: {fileID: 45016414512151964, guid: dd3620be832cb764991279a0ce8ee6b5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10965,7 +10809,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 852375070805239590, guid: dd3620be832cb764991279a0ce8ee6b5, type: 3}
       propertyPath: m_Name
-      value: L Flexor Arpi Radialis
+      value: "\u041B\u0443\u0447\u0435\u0432\u043E\u0439 \u0441\u0433\u0438\u0431\u0430\u0442\u0435\u043B\u044C
+        \u0437\u0430\u043F\u044F\u0441\u0442\u044C\u044F - L Flexor Arpi Radialis"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11092,11 +10937,13 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 255882747}
+    m_TransformParent: {fileID: 125699836}
     m_Modifications:
     - target: {fileID: 1313935701242706071, guid: 938e435ecfafa2943b0e4bd5ecfdbd83, type: 3}
       propertyPath: m_Name
-      value: L Flexor Carpi Ulnaris
+      value: "\u041B\u043E\u043A\u0442\u0435\u0432\u043E\u0439 \u0441\u0433\u0438\u0431\u0430\u0442\u0435\u043B\u044C
+        \u0437\u0430\u043F\u044F\u0441\u0442\u044C\u044F (\u043B\u043E\u043A\u0442\u0435\u0432\u0430\u044F)
+        - L Flexor Carpi Ulnaris"
       objectReference: {fileID: 0}
     - target: {fileID: 1835174119955898925, guid: 938e435ecfafa2943b0e4bd5ecfdbd83, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11207,11 +11054,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 255882747}
+    m_TransformParent: {fileID: 767337208}
     m_Modifications:
     - target: {fileID: 4788554412724054730, guid: d3a2bbd024c8f414c93d18c19aa0d52c, type: 3}
       propertyPath: m_Name
-      value: L Common Digital Extensor
+      value: "\u041E\u0431\u0449\u0438\u0439 \u0440\u0430\u0437\u0433\u0438\u0431\u0430\u0442\u0435\u043B\u044C
+        \u043F\u0430\u043B\u044C\u0446\u0435\u0432 - L Common Digital Extensor"
       objectReference: {fileID: 0}
     - target: {fileID: 5278091711916781680, guid: d3a2bbd024c8f414c93d18c19aa0d52c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11378,7 +11226,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 255882747}
+    m_TransformParent: {fileID: 557864215}
     m_Modifications:
     - target: {fileID: 4800697467039056469, guid: 14b9bd1c21978354da211e0d6316e6d0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11422,7 +11270,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5319965319904319727, guid: 14b9bd1c21978354da211e0d6316e6d0, type: 3}
       propertyPath: m_Name
-      value: L Pronator Teres
+      value: "\u041A\u0440\u0443\u0433\u043B\u044B\u0439 \u043F\u0440\u043E\u043D\u0430\u0442\u043E\u0440
+        - L Pronator Teres"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13632,7 +13481,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 108499894}
+    m_TransformParent: {fileID: 937574435}
     m_Modifications:
     - target: {fileID: 2845055226519907935, guid: 5b56552c826298547935d0484263dc4c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13676,7 +13525,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3184179124308948197, guid: 5b56552c826298547935d0484263dc4c, type: 3}
       propertyPath: m_Name
-      value: R Biceps Brachii
+      value: "\u0414\u0432\u0443\u0433\u043B\u0430\u0432\u0430\u044F \u043C\u044B\u0448\u0446\u0430
+        \u043F\u043B\u0435\u0447\u0430 - R Biceps Brachii"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13925,7 +13775,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 255882747}
+    m_TransformParent: {fileID: 557864215}
     m_Modifications:
     - target: {fileID: 1161636866202212403, guid: 1c7802ad3bea06d48888634cee9dea6b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13969,7 +13819,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1969522466842428041, guid: 1c7802ad3bea06d48888634cee9dea6b, type: 3}
       propertyPath: m_Name
-      value: L Anconeus
+      value: "\u041B\u043E\u043A\u0442\u0435\u0432\u0430\u044F \u043C\u044B\u0448\u0446\u0430
+        - L Anconeus"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13982,15 +13833,16 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 255882747}
+    m_TransformParent: {fileID: 125699836}
     m_Modifications:
     - target: {fileID: 5773484972672504213, guid: e58556c3764df4547b9c9ef089c49c33, type: 3}
       propertyPath: m_Name
-      value: L Extensor Carpi Obliquus
+      value: "\u041B\u043E\u043A\u0442\u0435\u0432\u043E\u0439 \u0440\u0430\u0437\u0433\u0438\u0431\u0430\u0442\u0435\u043B\u044C
+        \u0437\u0430\u043F\u044F\u0441\u0442\u044C\u044F - L Extensor Carpi Obliquus"
       objectReference: {fileID: 0}
     - target: {fileID: 6580983167614913327, guid: e58556c3764df4547b9c9ef089c49c33, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.2065364
+      value: -0.215
       objectReference: {fileID: 0}
     - target: {fileID: 6580983167614913327, guid: e58556c3764df4547b9c9ef089c49c33, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14441,7 +14293,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 108499894}
+    m_TransformParent: {fileID: 785023042}
     m_Modifications:
     - target: {fileID: 6290053196054961677, guid: 90fb3431682e55e4f9d93c232b156a28, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14485,7 +14337,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6629600617144435895, guid: 90fb3431682e55e4f9d93c232b156a28, type: 3}
       propertyPath: m_Name
-      value: R Common Digital Extensor
+      value: "\u041E\u0431\u0449\u0438\u0439 \u0440\u0430\u0437\u0433\u0438\u0431\u0430\u0442\u0435\u043B\u044C
+        \u043F\u0430\u043B\u044C\u0446\u0435\u0432 - R Common Digital Extensor"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14613,11 +14466,13 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 255882747}
+    m_TransformParent: {fileID: 557864215}
     m_Modifications:
     - target: {fileID: 2403856809750592423, guid: 09c7ea12c62dac24c8ee87ad4a17461e, type: 3}
       propertyPath: m_Name
-      value: L Tensor Fasciae Antebrachii
+      value: "\u041D\u0430\u043F\u0440\u044F\u0433\u0430\u0442\u0435\u043B\u044C
+        \u0444\u0430\u0441\u0446\u0438\u0438 \u043F\u0440\u0435\u0434\u043F\u043B\u0435\u0447\u044C\u044F
+        - L Tensor Fasciae Antebrachii"
       objectReference: {fileID: 0}
     - target: {fileID: 3033147569353400605, guid: 09c7ea12c62dac24c8ee87ad4a17461e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14843,7 +14698,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 108499894}
+    m_TransformParent: {fileID: 937574435}
     m_Modifications:
     - target: {fileID: 2569557488052252793, guid: f6e0c61e9a1c9c7488f9d60fcce8b4e5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14887,7 +14742,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2946258260941662915, guid: f6e0c61e9a1c9c7488f9d60fcce8b4e5, type: 3}
       propertyPath: m_Name
-      value: R Anconeus
+      value: "\u041B\u043E\u043A\u0442\u0435\u0432\u0430\u044F \u043C\u044B\u0448\u0446\u0430
+        - R Anconeus"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15101,7 +14957,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 255882747}
+    m_TransformParent: {fileID: 767337208}
     m_Modifications:
     - target: {fileID: 8274659204717692808, guid: d3d758a0252e58a4eace475579ed5222, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15145,7 +15001,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8763633344021601586, guid: d3d758a0252e58a4eace475579ed5222, type: 3}
       propertyPath: m_Name
-      value: L Superficial Digital Flexor
+      value: "\u041F\u043E\u0432\u0435\u0440\u0445\u043D\u043E\u0441\u0442\u043D\u044B\u0439
+        \u0441\u0433\u0438\u0431\u0430\u0442\u0435\u043B\u044C \u043F\u0430\u043B\u044C\u0446\u0435\u0432
+        - L Superficial Digital Flexor"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15387,11 +15245,13 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 108499894}
+    m_TransformParent: {fileID: 937574435}
     m_Modifications:
     - target: {fileID: 6921065131887215268, guid: 9d55dc4ee15d8754faf0d5ca5691a16d, type: 3}
       propertyPath: m_Name
-      value: R Triceps Brachii Long Head
+      value: "\u0414\u043B\u0438\u043D\u043D\u0430\u044F \u0433\u043E\u043B\u043E\u0432\u043A\u0430
+        \u0442\u0440\u0451\u0445\u0433\u043B\u0430\u0432\u043E\u0439 - R Triceps
+        Brachii Long Head"
       objectReference: {fileID: 0}
     - target: {fileID: 7730218470054991902, guid: 9d55dc4ee15d8754faf0d5ca5691a16d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15501,7 +15361,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 108499894}
+    m_TransformParent: {fileID: 593488505}
     m_Modifications:
     - target: {fileID: 1671929592386974536, guid: 39b196d60fe055f48821bcecf9dbef9e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15545,7 +15405,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2051446494443088370, guid: 39b196d60fe055f48821bcecf9dbef9e, type: 3}
       propertyPath: m_Name
-      value: R Ulnaris Lateralis
+      value: "\u041B\u043E\u043A\u0442\u0435\u0432\u043E\u0439 \u0441\u0433\u0438\u0431\u0430\u0442\u0435\u043B\u044C
+        \u0437\u0430\u043F\u044F\u0441\u0442\u044C\u044F (\u043F\u043B\u0435\u0447\u0435\u0432\u0430\u044F)
+        - R Ulnaris Lateralis"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16129,11 +15991,13 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 108499894}
+    m_TransformParent: {fileID: 937574435}
     m_Modifications:
     - target: {fileID: 4940251766332310932, guid: c2aae663144bb594cb06537caaa0d0be, type: 3}
       propertyPath: m_Name
-      value: R Tensor Fasciae Antebrachii
+      value: "\u041D\u0430\u043F\u0440\u044F\u0433\u0430\u0442\u0435\u043B\u044C
+        \u0444\u0430\u0441\u0446\u0438\u0438 \u043F\u0440\u0435\u0434\u043F\u043B\u0435\u0447\u044C\u044F
+        - R Tensor Fasciae Antebrachii"
       objectReference: {fileID: 0}
     - target: {fileID: 5747890969346023214, guid: c2aae663144bb594cb06537caaa0d0be, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16186,11 +16050,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 108499894}
+    m_TransformParent: {fileID: 785023042}
     m_Modifications:
     - target: {fileID: 7060977496140301224, guid: 5759a33499b672044a53a865122e3562, type: 3}
       propertyPath: m_Name
-      value: R Lateral Digital Extensor
+      value: "\u0411\u043E\u043A\u043E\u0432\u043E\u0439 \u0440\u0430\u0437\u0433\u0438\u0431\u0430\u0442\u0435\u043B\u044C
+        \u043F\u0430\u043B\u044C\u0446\u0435\u0432 - R Lateral Digital Extensor"
       objectReference: {fileID: 0}
     - target: {fileID: 7689457881309518098, guid: 5759a33499b672044a53a865122e3562, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16478,7 +16343,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 108499894}
+    m_TransformParent: {fileID: 1667704024}
     m_Modifications:
     - target: {fileID: 2707578334730597727, guid: 928cc880c4486724dad8ae9468790bb1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16522,7 +16387,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3375606847147438053, guid: 928cc880c4486724dad8ae9468790bb1, type: 3}
       propertyPath: m_Name
-      value: R Infaspinatus
+      value: "\u0417\u0430\u043E\u0441\u0442\u043D\u0430\u044F \u043C\u044B\u0448\u0446\u0430
+        - R Infaspinatus"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16706,7 +16572,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 108499894}
+    m_TransformParent: {fileID: 593488505}
     m_Modifications:
     - target: {fileID: 6005129239845388052, guid: fe17147894a53ef44bd8230f0da20fac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16750,7 +16616,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6349320757469504942, guid: fe17147894a53ef44bd8230f0da20fac, type: 3}
       propertyPath: m_Name
-      value: R Flexor Carpi Ulnaris
+      value: "\u041B\u043E\u043A\u0442\u0435\u0432\u043E\u0439 \u0441\u0433\u0438\u0431\u0430\u0442\u0435\u043B\u044C
+        \u0437\u0430\u043F\u044F\u0441\u0442\u044C\u044F (\u043B\u043E\u043A\u0442\u0435\u0432\u0430\u044F)
+        - R Flexor Carpi Ulnaris"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17625,11 +17493,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 108499894}
+    m_TransformParent: {fileID: 937574435}
     m_Modifications:
     - target: {fileID: 2568766603190946996, guid: ed442a9f5e9842343bba5d7d659aca19, type: 3}
       propertyPath: m_Name
-      value: R Brachialis
+      value: "\u041F\u043B\u0435\u0447\u0435\u0432\u0430\u044F \u043C\u044B\u0448\u0446\u0430
+        - R Brachialis"
       objectReference: {fileID: 0}
     - target: {fileID: 2949232344342795790, guid: ed442a9f5e9842343bba5d7d659aca19, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19221,7 +19090,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 255882747}
+    m_TransformParent: {fileID: 125699836}
     m_Modifications:
     - target: {fileID: 125315006621398653, guid: eea4cc01277a72c4c898dfc1d1f97c7d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19265,7 +19134,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 790071643266477255, guid: eea4cc01277a72c4c898dfc1d1f97c7d, type: 3}
       propertyPath: m_Name
-      value: L Extensor Carpi Radialis
+      value: "\u041B\u0443\u0447\u0435\u0432\u043E\u0439 \u0440\u0430\u0437\u0433\u0438\u0431\u0430\u0442\u0435\u043B\u044C
+        \u0437\u0430\u043F\u044F\u0441\u0442\u044C\u044F - L Extensor Carpi Radialis"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19525,7 +19395,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 255882747}
+    m_TransformParent: {fileID: 781887252}
     m_Modifications:
     - target: {fileID: 1381931151727867890, guid: 70eb62f4a51fbd4478e1348a78e64e51, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19569,7 +19439,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1758175868262903112, guid: 70eb62f4a51fbd4478e1348a78e64e51, type: 3}
       propertyPath: m_Name
-      value: L Infaspinatus Front
+      value: "\u041F\u0440\u0435\u0434\u043E\u0441\u0442\u043D\u0430\u044F \u043C\u044B\u0448\u0446\u0430
+        - L Infaspinatus Front"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20648,7 +20519,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 108499894}
+    m_TransformParent: {fileID: 593488505}
     m_Modifications:
     - target: {fileID: 4651050894323259567, guid: 99a1454d144007a468216be63f75a2d2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20692,7 +20563,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5458374336175325717, guid: 99a1454d144007a468216be63f75a2d2, type: 3}
       propertyPath: m_Name
-      value: R Flexor Arpi Radialis
+      value: "\u041B\u0443\u0447\u0435\u0432\u043E\u0439 \u0441\u0433\u0438\u0431\u0430\u0442\u0435\u043B\u044C
+        \u0437\u0430\u043F\u044F\u0441\u0442\u044C\u044F - R Flexor Arpi Radialis"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21277,7 +21149,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 255882747}
+    m_TransformParent: {fileID: 557864215}
     m_Modifications:
     - target: {fileID: 30971728877007047, guid: 446ebea9e4fb04e4d813a60337d1ce1c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21321,7 +21193,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 803285822303070845, guid: 446ebea9e4fb04e4d813a60337d1ce1c, type: 3}
       propertyPath: m_Name
-      value: L Triceps Brachii Medial Head
+      value: "\u041C\u0435\u0434\u0438\u0430\u043B\u044C\u043D\u0430\u044F \u0433\u043E\u043B\u043E\u0432\u043A\u0430
+        \u0442\u0440\u0451\u0445\u0433\u043B\u0430\u0432\u043E\u0439 - L Triceps
+        Brachii Medial Head"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21905,11 +21779,13 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 255882747}
+    m_TransformParent: {fileID: 767337208}
     m_Modifications:
     - target: {fileID: 1358624721509332891, guid: 9cb5fde814bb1794fbc9d320d8dccf42, type: 3}
       propertyPath: m_Name
-      value: L Extensor Retinaculum Manus
+      value: "\u0423\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0442\u0435\u043B\u044C
+        \u0441\u0443\u0445\u043E\u0436\u0438\u043B\u0438\u0439 - L Extensor Retinaculum
+        Manus"
       objectReference: {fileID: 0}
     - target: {fileID: 1842285956268354849, guid: 9cb5fde814bb1794fbc9d320d8dccf42, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23236,7 +23112,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 108499894}
+    m_TransformParent: {fileID: 785023042}
     m_Modifications:
     - target: {fileID: 6129557245737594778, guid: a1df9a702fda0da4f812fe152c9fe7d8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23280,7 +23156,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6799133041314510112, guid: a1df9a702fda0da4f812fe152c9fe7d8, type: 3}
       propertyPath: m_Name
-      value: R Deep Digital Flexor
+      value: "\u0413\u043B\u0443\u0431\u043E\u043A\u0438\u0439 \u0441\u0433\u0438\u0431\u0430\u0442\u0435\u043B\u044C
+        \u043F\u0430\u043B\u044C\u0446\u0435\u0432 - R Deep Digital Flexor"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23350,7 +23227,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 108499894}
+    m_TransformParent: {fileID: 937574435}
     m_Modifications:
     - target: {fileID: 1697733709564880183, guid: 62c138533eb82e34ca71e8ac6f214636, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23394,7 +23271,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2072886717955866509, guid: 62c138533eb82e34ca71e8ac6f214636, type: 3}
       propertyPath: m_Name
-      value: R Triceps Brachii Medial Head
+      value: "\u041C\u0435\u0434\u0438\u0430\u043B\u044C\u043D\u0430\u044F \u0433\u043E\u043B\u043E\u0432\u043A\u0430
+        \u0442\u0440\u0451\u0445\u0433\u043B\u0430\u0432\u043E\u0439 - R Triceps
+        Brachii Medial Head"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24157,11 +24036,13 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 255882747}
+    m_TransformParent: {fileID: 557864215}
     m_Modifications:
     - target: {fileID: 98496467273984416, guid: 294d8bca74a877446ac4ea40b84ff319, type: 3}
       propertyPath: m_Name
-      value: L Triceps Brachii Long Head
+      value: "\u0414\u043B\u0438\u043D\u043D\u0430\u044F \u0433\u043E\u043B\u043E\u0432\u043A\u0430
+        \u0442\u0440\u0451\u0445\u0433\u043B\u0430\u0432\u043E\u0439 - L Triceps
+        Brachii Long Head"
       objectReference: {fileID: 0}
     - target: {fileID: 726837312378336026, guid: 294d8bca74a877446ac4ea40b84ff319, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25364,11 +25245,13 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 255882747}
+    m_TransformParent: {fileID: 557864215}
     m_Modifications:
     - target: {fileID: 3979835770529552713, guid: a46d34f6d5fd5f4448fb323718d610ba, type: 3}
       propertyPath: m_Name
-      value: L Triceps Brachii Lateral Head
+      value: "\u041B\u0430\u0442\u0435\u0440\u0430\u043B\u044C\u043D\u0430\u044F
+        \u0433\u043E\u043B\u043E\u0432\u043A\u0430 \u0442\u0440\u0451\u0445\u0433\u043B\u0430\u0432\u043E\u0439
+        - L Triceps Brachii Lateral Head"
       objectReference: {fileID: 0}
     - target: {fileID: 4355234966649357299, guid: a46d34f6d5fd5f4448fb323718d610ba, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26636,11 +26519,13 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 108499894}
+    m_TransformParent: {fileID: 785023042}
     m_Modifications:
     - target: {fileID: 2809451355581202803, guid: 01eb3958a61cbf440885a6c220bb556d, type: 3}
       propertyPath: m_Name
-      value: R Superficial Digital Flexor
+      value: "\u041F\u043E\u0432\u0435\u0440\u0445\u043D\u043E\u0441\u0442\u043D\u044B\u0439
+        \u0441\u0433\u0438\u0431\u0430\u0442\u0435\u043B\u044C \u043F\u0430\u043B\u044C\u0446\u0435\u0432
+        - R Superficial Digital Flexor"
       objectReference: {fileID: 0}
     - target: {fileID: 3294099126829456329, guid: 01eb3958a61cbf440885a6c220bb556d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26974,11 +26859,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 255882747}
+    m_TransformParent: {fileID: 781887252}
     m_Modifications:
     - target: {fileID: 550864825113723083, guid: 080fec800d8274e459ad4a28430880f5, type: 3}
       propertyPath: m_Name
-      value: L Deltoid
+      value: "\u0414\u0435\u043B\u044C\u0442\u043E\u0432\u0438\u0434\u043D\u0430\u044F
+        \u043C\u044B\u0448\u0446\u0430 - L Deltoid"
       objectReference: {fileID: 0}
     - target: {fileID: 931893345022188145, guid: 080fec800d8274e459ad4a28430880f5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27317,11 +27203,13 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 108499894}
+    m_TransformParent: {fileID: 937574435}
     m_Modifications:
     - target: {fileID: 2429034919721908682, guid: aac44d9694de2cc4f9f0f8dcc754c295, type: 3}
       propertyPath: m_Name
-      value: R Triceps Brachii Lateral Head
+      value: "\u041B\u0430\u0442\u0435\u0440\u0430\u043B\u044C\u043D\u0430\u044F
+        \u0433\u043E\u043B\u043E\u0432\u043A\u0430 \u0442\u0440\u0451\u0445\u0433\u043B\u0430\u0432\u043E\u0439
+        - R Triceps Brachii Lateral Head"
       objectReference: {fileID: 0}
     - target: {fileID: 3098048624424870768, guid: aac44d9694de2cc4f9f0f8dcc754c295, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27374,11 +27262,13 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 255882747}
+    m_TransformParent: {fileID: 125699836}
     m_Modifications:
     - target: {fileID: 2675270952494590841, guid: 751dce9457492b84e928a328847f73f0, type: 3}
       propertyPath: m_Name
-      value: L Ulnaris Lateralis
+      value: "\u041B\u043E\u043A\u0442\u0435\u0432\u043E\u0439 \u0441\u0433\u0438\u0431\u0430\u0442\u0435\u043B\u044C
+        \u0437\u0430\u043F\u044F\u0441\u0442\u044C\u044F (\u043F\u043B\u0435\u0447\u0435\u0432\u0430\u044F)
+        - L Ulnaris Lateralis"
       objectReference: {fileID: 0}
     - target: {fileID: 3344952335631397315, guid: 751dce9457492b84e928a328847f73f0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27716,11 +27606,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 108499894}
+    m_TransformParent: {fileID: 937574435}
     m_Modifications:
     - target: {fileID: 5075779889973669355, guid: 26e023f9ff0aa8a4fa79278fef34d7e7, type: 3}
       propertyPath: m_Name
-      value: R Pronator Teres
+      value: "\u041A\u0440\u0443\u0433\u043B\u044B\u0439 \u043F\u0440\u043E\u043D\u0430\u0442\u043E\u0440
+        - R Pronator Teres"
       objectReference: {fileID: 0}
     - target: {fileID: 5565070653725603665, guid: 26e023f9ff0aa8a4fa79278fef34d7e7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28173,7 +28064,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 255882747}
+    m_TransformParent: {fileID: 781887252}
     m_Modifications:
     - target: {fileID: 3621945228212762499, guid: 7d70cf5528ae8d3409d641b9ce8c2f94, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28217,7 +28108,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4109652661404085561, guid: 7d70cf5528ae8d3409d641b9ce8c2f94, type: 3}
       propertyPath: m_Name
-      value: L Infaspinatus
+      value: "\u0417\u0430\u043E\u0441\u0442\u043D\u0430\u044F \u043C\u044B\u0448\u0446\u0430
+        - L Infaspinatus"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
