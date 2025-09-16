@@ -364,7 +364,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1117909836}
   - {fileID: 229495979}
   - {fileID: 1532676813}
   m_Father: {fileID: 1915068702}
@@ -1024,6 +1023,12 @@ Transform:
   - {fileID: 19920827}
   - {fileID: 843528541}
   - {fileID: 305957526}
+  - {fileID: 743084746}
+  - {fileID: 445241718}
+  - {fileID: 1955109519}
+  - {fileID: 1187679668}
+  - {fileID: 713715115}
+  - {fileID: 581967567}
   m_Father: {fileID: 85006202}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &229495980
@@ -2269,7 +2274,15 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 324482309}
+  - {fileID: 1050303786}
+  - {fileID: 1463756087}
+  - {fileID: 43478651}
+  - {fileID: 1977288562}
+  - {fileID: 270716047}
+  - {fileID: 308063485}
+  - {fileID: 1087758717}
   m_Father: {fileID: 947928097}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &632331278
@@ -3939,7 +3952,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 902071321}
+  - {fileID: 1826584466}
+  - {fileID: 512109713}
+  - {fileID: 33419865}
   m_Father: {fileID: 947928097}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1078620294
@@ -4089,92 +4106,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7662126970870233529, guid: a86d853a790054a4f956868236ef69ae, type: 3}
   m_PrefabInstance: {fileID: 853245756464413823}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1117909835
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1117909836}
-  - component: {fileID: 1117909837}
-  m_Layer: 0
-  m_Name: "? \u041A\u043E\u0436\u043D\u044B\u0435"
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1117909836
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1117909835}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 85006202}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1117909837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1117909835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
-  cameraDistanceLimitsMultiplier: 1
-  bodyPartsGroups: []
-  bodyParts: []
-  allChildrenBodyParts: []
-  info: {fileID: 11400000, guid: a018023dbdd61214eba9c3bfbc77deb0, type: 2}
-  sagittalType: 0
-  groupName: "\u041A\u043E\u0436\u043D\u044B\u0435 \u043C\u044B\u0448\u0446\u044B"
-  groupScientificName: musculi cutanei
-  description: "\u0420\u0430\u0437\u0432\u0438\u0432\u0430\u044E\u0442\u0441\u044F
-    \u0438\u0437 \u043F\u043E\u0432\u0435\u0440\u0445\u043D\u043E\u0441\u0442\u043D\u044B\u0445
-    \u0441\u043B\u043E\u0451\u0432 \u043C\u044B\u0448\u0446 \u0442\u0435\u043B\u0430
-    \u0438 \u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0438\u0432\u0430\u044E\u0442
-    \u0432\u0442\u043E\u0440\u0438\u0447\u043D\u0443\u044E \u0441\u0432\u044F\u0437\u044C
-    \u0441\u043A\u0435\u043B\u0435\u0442\u043D\u044B\u0445 \u043C\u044B\u0448\u0446
-    \u0441 \u043A\u043E\u0436\u0435\u0439 \u0438 \u0435\u0451 \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u043D\u044B\u043C\u0438.
-    \u041E\u0431\u0435\u0441\u043F\u0435\u0447\u0438\u0432\u0430\u044E\u0442 \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u044F
-    \u043A\u043E\u0436\u043D\u043E\u0433\u043E \u043F\u043E\u043A\u0440\u043E\u0432\u0430,
-    \u0441\u0432\u0451\u0440\u0442\u044B\u0432\u0430\u043D\u0438\u0435 \u0442\u0435\u043B\u0430
-    \u0432 \u0448\u0430\u0440 \u0438 \u0434\u0430\u0436\u0435 \u0443\u043F\u0440\u0430\u0432\u043B\u044F\u044E\u0442
-    \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u044F\u043C\u0438 \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u043D\u044B\u0445
-    \u043A\u043E\u0436\u043D\u043E\u0433\u043E \u043F\u043E\u043A\u0440\u043E\u0432\u0430.\n\u0412
-    \u043F\u0440\u043E\u0446\u0435\u0441\u0441\u0435 \u0434\u0438\u0444\u0444\u0435\u0440\u0435\u043D\u0446\u0438\u0430\u0446\u0438\u0438
-    \u043C\u044B\u0448\u0435\u0447\u043D\u043E\u0439 \u0441\u0438\u0441\u0442\u0435\u043C\u044B
-    \u043A\u043E\u0436\u043D\u0430\u044F \u043C\u0443\u0441\u043A\u0443\u043B\u0430\u0442\u0443\u0440\u0430
-    \u043F\u043E\u0434\u0440\u0430\u0437\u0434\u0435\u043B\u0438\u043B\u0430\u0441\u044C
-    \u043D\u0430 \u043F\u043E\u0432\u0435\u0440\u0445\u043D\u043E\u0441\u0442\u043D\u044B\u0435
-    \u0438 \u0433\u043B\u0443\u0431\u043E\u043A\u0438\u0435 \u0441\u043B\u043E\u0438.
-    \u041F\u0435\u0440\u0432\u044B\u0435 \u043F\u043E\u043B\u0443\u0447\u0438\u043B\u0438
-    \u043F\u0440\u0438\u043A\u0440\u0435\u043F\u043B\u0435\u043D\u0438\u0435 \u043A
-    \u043C\u044F\u0433\u043A\u043E\u043C\u0443 \u043E\u0441\u0442\u043E\u0432\u0443
-    \u0442\u0435\u043B\u0430 \u0438 \u043A \u043A\u043E\u0436\u0435, \u0430 \u0432\u0442\u043E\u0440\u044B\u0435
-    \u0447\u0430\u0441\u0442\u0438\u0447\u043D\u043E \u0438 \u043D\u0430 \u043A\u043E\u0441\u0442\u044F\u0445
-    \u0441\u043A\u0435\u043B\u0435\u0442\u0430. \u0421 \u0443\u0442\u0440\u0430\u0442\u043E\u0439
-    \u043A\u043E\u0436\u043D\u044B\u043C\u0438 \u043C\u044B\u0448\u0446\u0430\u043C\u0438
-    \u043F\u0435\u0440\u0432\u043E\u043D\u0430\u0447\u0430\u043B\u044C\u043D\u043E\u0433\u043E
-    \u043D\u0430\u0437\u043D\u0430\u0447\u0435\u043D\u0438\u044F \u043F\u0440\u043E\u0438\u0437\u043E\u0448\u043B\u0430
-    \u0438\u043B\u0438 \u0438\u0445 \u0447\u0430\u0441\u0442\u0438\u0447\u043D\u0430\u044F
-    \u0440\u0435\u0434\u0443\u043A\u0446\u0438\u044F, \u0438\u043B\u0438 \u043E\u043D\u0438
-    \u0432\u043E\u0448\u043B\u0438 \u0432 \u0441\u043E\u0441\u0442\u0430\u0432 \u0441\u043A\u0435\u043B\u0435\u0442\u043D\u044B\u0445
-    \u043C\u044B\u0448\u0446"
-  partGroupListButton: {fileID: 0}
-  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1119966884 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4072609965836812707, guid: 93d5c6641ee767541880a530a5db1dda, type: 3}
@@ -6338,25 +6269,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1087758717}
-  - {fileID: 743084746}
-  - {fileID: 324482309}
-  - {fileID: 1050303786}
-  - {fileID: 270716047}
-  - {fileID: 43478651}
-  - {fileID: 1977288562}
-  - {fileID: 1463756087}
-  - {fileID: 1187679668}
-  - {fileID: 713715115}
-  - {fileID: 445241718}
-  - {fileID: 581967567}
-  - {fileID: 308063485}
-  - {fileID: 902071321}
-  - {fileID: 1955109519}
-  - {fileID: 1826584466}
-  - {fileID: 512109713}
-  - {fileID: 33419865}
+  m_Children: []
   m_Father: {fileID: 1915068702}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1868061870
@@ -7136,11 +7049,13 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1868061869}
+    m_TransformParent: {fileID: 229495979}
     m_Modifications:
     - target: {fileID: 2633827968453452465, guid: f7c8f6f5ac35fe9419874e8fcacc36c0, type: 3}
       propertyPath: m_Name
-      value: Sacrocaudalis
+      value: "\u0412\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u0430\u044F
+        \u043A\u0440\u0435\u0441\u0442\u0446\u043E\u0432\u043E-\u0445\u0432\u043E\u0441\u0442\u043E\u0432\u0430\u044F
+        \u043C\u044B\u0448\u0446\u0430 - Sacrocaudalis"
       objectReference: {fileID: 0}
     - target: {fileID: 3442698697708173323, guid: f7c8f6f5ac35fe9419874e8fcacc36c0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7821,7 +7736,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1868061869}
+    m_TransformParent: {fileID: 1078620293}
     m_Modifications:
     - target: {fileID: 7221115529173237059, guid: 169af10307e6fe24b849586b5cc6c14f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7865,7 +7780,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8033681747073640441, guid: 169af10307e6fe24b849586b5cc6c14f, type: 3}
       propertyPath: m_Name
-      value: Rectus Femoris
+      value: '! Rectus Femoris'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8288,7 +8203,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1868061869}
+    m_TransformParent: {fileID: 229495979}
     m_Modifications:
     - target: {fileID: 4744014011147528080, guid: 8560b86bf772edc4f91d376d77d1ee9d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8332,7 +8247,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5376681366041460010, guid: 8560b86bf772edc4f91d376d77d1ee9d, type: 3}
       propertyPath: m_Name
-      value: Constrictor Vulvae
+      value: "\u0421\u0436\u0438\u043C\u0430\u0442\u0435\u043B\u044C \u043F\u043E\u043B\u043E\u0432\u043E\u0439
+        \u0449\u0435\u043B\u0438 - Constrictor Vulvae"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11233,7 +11149,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1868061869}
+    m_TransformParent: {fileID: 229495979}
     m_Modifications:
     - target: {fileID: 38800301489437347, guid: 35bb2f9598a72d04e8a7ae2700736a6d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11277,7 +11193,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 847248509039337497, guid: 35bb2f9598a72d04e8a7ae2700736a6d, type: 3}
       propertyPath: m_Name
-      value: Coccygeus
+      value: "\u0425\u0432\u043E\u0441\u0442\u043E\u0432\u0430\u044F (\u043A\u043E\u043F\u0447\u0438\u043A\u043E\u0432\u0430\u044F)
+        \u043C\u044B\u0448\u0446\u0430 - Coccygeus"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11689,7 +11606,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1868061869}
+    m_TransformParent: {fileID: 1078620293}
     m_Modifications:
     - target: {fileID: 5016385001199557344, guid: f9561f1b6d8f9434da8426ecab8f37d8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11733,7 +11650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5680753510328074330, guid: f9561f1b6d8f9434da8426ecab8f37d8, type: 3}
       propertyPath: m_Name
-      value: Vastus Medialis
+      value: '! Vastus Medialis'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11861,7 +11778,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1868061869}
+    m_TransformParent: {fileID: 632331277}
     m_Modifications:
     - target: {fileID: 1666434580158449374, guid: 8a1a256f5ded7b64fbf4cb7ade8259c1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11905,7 +11822,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2047886343512906852, guid: 8a1a256f5ded7b64fbf4cb7ade8259c1, type: 3}
       propertyPath: m_Name
-      value: External Obturator
+      value: '! External Obturator'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12377,7 +12294,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1868061869}
+    m_TransformParent: {fileID: 632331277}
     m_Modifications:
     - target: {fileID: 2834293547626334262, guid: 21ff7f587d3b9114596a54de2c31a2fe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12421,7 +12338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3179187682433782412, guid: 21ff7f587d3b9114596a54de2c31a2fe, type: 3}
       propertyPath: m_Name
-      value: Gemelli
+      value: '! Gemelli'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15412,11 +15329,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1868061869}
+    m_TransformParent: {fileID: 229495979}
     m_Modifications:
     - target: {fileID: 1204257665896783936, guid: 4785333af5c254743aaff4bfa01f00c2, type: 3}
       propertyPath: m_Name
-      value: Levator Ani
+      value: "\u041F\u043E\u0434\u043D\u0438\u043C\u0430\u0442\u0435\u043B\u044C
+        \u0430\u043D\u0443\u0441\u0430 - Levator Ani"
       objectReference: {fileID: 0}
     - target: {fileID: 2016963216346839802, guid: 4785333af5c254743aaff4bfa01f00c2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17246,11 +17164,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1868061869}
+    m_TransformParent: {fileID: 1078620293}
     m_Modifications:
     - target: {fileID: 8571478170370402037, guid: f68ac5254febafa469618f7718decace, type: 3}
       propertyPath: m_Name
-      value: Semimembranosus
+      value: '! Semimembranosus'
       objectReference: {fileID: 0}
     - target: {fileID: 9061191150681013327, guid: f68ac5254febafa469618f7718decace, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19039,11 +18957,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1868061869}
+    m_TransformParent: {fileID: 632331277}
     m_Modifications:
     - target: {fileID: 4659649427094417474, guid: 1dcecf769698dbd4da0fc96a66cd1a5e, type: 3}
       propertyPath: m_Name
-      value: Quadratus Femoris
+      value: '! Quadratus Femoris'
       objectReference: {fileID: 0}
     - target: {fileID: 5467852477898484472, guid: 1dcecf769698dbd4da0fc96a66cd1a5e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19664,7 +19582,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1868061869}
+    m_TransformParent: {fileID: 1078620293}
     m_Modifications:
     - target: {fileID: 344141674709518372, guid: 9864e3f4097532947bf3070db4c1b583, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19708,7 +19626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1120679061564707486, guid: 9864e3f4097532947bf3070db4c1b583, type: 3}
       propertyPath: m_Name
-      value: Vastus Intermedium
+      value: '! Vastus Intermedium'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20381,11 +20299,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1868061869}
+    m_TransformParent: {fileID: 632331277}
     m_Modifications:
     - target: {fileID: 3755612270431706013, guid: 248310bd955bd674d8aaf6612761d43c, type: 3}
       propertyPath: m_Name
-      value: Gluteus Profundus
+      value: '! Gluteus Profundus'
       objectReference: {fileID: 0}
     - target: {fileID: 4563639398920241447, guid: 248310bd955bd674d8aaf6612761d43c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20552,7 +20470,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1868061869}
+    m_TransformParent: {fileID: 632331277}
     m_Modifications:
     - target: {fileID: 259203736586957094, guid: 35d5dc44d7b13324696b6b7d74cc47be, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20596,7 +20514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 635905574806514588, guid: 35d5dc44d7b13324696b6b7d74cc47be, type: 3}
       propertyPath: m_Name
-      value: Gluteus Medius
+      value: '! Gluteus Medius'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24009,11 +23927,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1868061869}
+    m_TransformParent: {fileID: 229495979}
     m_Modifications:
     - target: {fileID: 8251474492569855354, guid: d99391d3bef4f73419209f374beca11f, type: 3}
       propertyPath: m_Name
-      value: Rectator Clitoridis
+      value: "\u041E\u0442\u0442\u044F\u0433\u0438\u0432\u0430\u0442\u0435\u043B\u044C
+        \u043A\u043B\u0438\u0442\u043E\u0440\u0430 - Rectator Clitoridis"
       objectReference: {fileID: 0}
     - target: {fileID: 8775528828993994688, guid: d99391d3bef4f73419209f374beca11f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24378,11 +24297,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1868061869}
+    m_TransformParent: {fileID: 632331277}
     m_Modifications:
     - target: {fileID: 2670878810452372594, guid: 3343c8b16f4cf3f45aed52c2e90c2b0b, type: 3}
       propertyPath: m_Name
-      value: Adductor
+      value: '! Adductor'
       objectReference: {fileID: 0}
     - target: {fileID: 3340279543445452488, guid: 3343c8b16f4cf3f45aed52c2e90c2b0b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25217,7 +25136,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1868061869}
+    m_TransformParent: {fileID: 632331277}
     m_Modifications:
     - target: {fileID: 2600090854347605499, guid: a7d4e493ad4226248bbec6a185bd5570, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25261,7 +25180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3413359595820801857, guid: a7d4e493ad4226248bbec6a185bd5570, type: 3}
       propertyPath: m_Name
-      value: Gluteus Superficialis
+      value: '! Gluteus Superficialis'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25732,11 +25651,13 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1868061869}
+    m_TransformParent: {fileID: 229495979}
     m_Modifications:
     - target: {fileID: 4790505255969113480, guid: 4aa29e9ee152017498c8a337640b2129, type: 3}
       propertyPath: m_Name
-      value: Sacrocaudalis Dorsalis Medialis
+      value: "\u041A\u0440\u0435\u0441\u0442\u0446\u043E\u0432\u043E-\u0445\u0432\u043E\u0441\u0442\u043E\u0432\u0430\u044F
+        \u0434\u043E\u0440\u0441\u0430\u043B\u044C\u043D\u0430\u044F \u043C\u0435\u0434\u0438\u0430\u043B\u044C\u043D\u0430\u044F
+        \u043C\u044B\u0448\u0446\u0430 - Sacrocaudalis Dorsalis Medialis"
       objectReference: {fileID: 0}
     - target: {fileID: 5273886183714070322, guid: 4aa29e9ee152017498c8a337640b2129, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25846,7 +25767,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1868061869}
+    m_TransformParent: {fileID: 632331277}
     m_Modifications:
     - target: {fileID: 8632767084747378681, guid: 65927f7499a9a7544956caa6cbe09269, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25890,7 +25811,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8972981629353792835, guid: 65927f7499a9a7544956caa6cbe09269, type: 3}
       propertyPath: m_Name
-      value: Gluteus Accessorius
+      value: '! Gluteus Accessorius'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
