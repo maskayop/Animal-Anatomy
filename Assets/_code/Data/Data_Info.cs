@@ -8,7 +8,7 @@ namespace AnimalAnatomy
         [Header("Texts")]
         public string russianName;
         public string scientificName;
-        [TextArea(1, 20)]
+        [TextArea(1, 50)]
         public string description;
 
         [Space(20)]
