@@ -716,8 +716,8 @@ Transform:
   m_Children:
   - {fileID: 1765478085}
   - {fileID: 816992817}
-  - {fileID: 1547144753}
-  - {fileID: 517386144}
+  - {fileID: 1177274645}
+  - {fileID: 1692991952}
   m_Father: {fileID: 425755815}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &158036051
@@ -1471,6 +1471,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2375552515793727870, guid: bb3e0bc7019d9644cacab156c895d016, type: 3}
   m_PrefabInstance: {fileID: 4717270239565128577}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &391241776
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 391241777}
+  - component: {fileID: 391241778}
+  m_Layer: 0
+  m_Name: "\u041F \u041A\u043E\u0441\u0442\u0438 \u043F\u0430\u043B\u044C\u0446\u0435\u0432
+    \u0441\u0442\u043E\u043F\u044B"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &391241777
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391241776}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1111573716}
+  - {fileID: 1373676355}
+  - {fileID: 2102563708}
+  - {fileID: 759159040}
+  - {fileID: 1232975961}
+  m_Father: {fileID: 1097269727}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &391241778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391241776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  info: {fileID: 11400000, guid: ed8c73232b802354aa3d21327156f6ad, type: 2}
+  sagittalType: 2
+  suffix: {fileID: 0}
+  groupName: "\u041A\u043E\u0441\u0442\u0438 \u043F\u0430\u043B\u044C\u0446\u0435\u0432
+    \u0441\u0442\u043E\u043F\u044B"
+  groupScientificName: ossa digitorum pedis
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &398325466 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3568931153189857014, guid: 7a255e4c99145cb47a466faf0da55151, type: 3}
@@ -1799,6 +1862,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7623743148115928314, guid: bd689b5689558994e9adfd79def8d91e, type: 3}
   m_PrefabInstance: {fileID: 2423864739733097657}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &507053155
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 507053156}
+  - component: {fileID: 507053157}
+  m_Layer: 0
+  m_Name: "\u041B \u041A\u043E\u0441\u0442\u0438 \u043F\u0430\u043B\u044C\u0446\u0435\u0432
+    \u0441\u0442\u043E\u043F\u044B"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &507053156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507053155}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 688360784}
+  - {fileID: 660505301}
+  - {fileID: 1209583838}
+  - {fileID: 1530895432}
+  - {fileID: 351069738}
+  m_Father: {fileID: 1235477995}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &507053157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507053155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  info: {fileID: 11400000, guid: ed8c73232b802354aa3d21327156f6ad, type: 2}
+  sagittalType: 1
+  suffix: {fileID: 0}
+  groupName: "\u041A\u043E\u0441\u0442\u0438 \u043F\u0430\u043B\u044C\u0446\u0435\u0432
+    \u0441\u0442\u043E\u043F\u044B"
+  groupScientificName: ossa digitorum pedis
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!1 &507748051
 GameObject:
   m_ObjectHideFlags: 0
@@ -1858,73 +1984,6 @@ MonoBehaviour:
   suffix: {fileID: 11400000, guid: 5d7cfc495d61ae846a052c7f3148b8a0, type: 2}
   groupName: "\u041C\u044B\u0448\u0446\u044B \u0437\u0430\u043F\u043B\u044E\u0441\u043D\u0435\u0432\u043E\u0433\u043E
     \u0441\u0443\u0441\u0442\u0430\u0432\u0430 (\u043B\u0435\u0432\u044B\u0435)"
-  groupScientificName: 
-  description: 
-  partGroupListButton: {fileID: 0}
-  parentBodyPartGroup: {fileID: 0}
---- !u!1 &517386143
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 517386144}
-  - component: {fileID: 517386145}
-  m_Layer: 0
-  m_Name: Bones Leg Back Right
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &517386144
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 517386143}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1497976691}
-  - {fileID: 1787019323}
-  - {fileID: 1628458120}
-  - {fileID: 2087085952}
-  - {fileID: 720023941}
-  - {fileID: 1111573716}
-  - {fileID: 1373676355}
-  - {fileID: 2102563708}
-  - {fileID: 759159040}
-  - {fileID: 1232975961}
-  m_Father: {fileID: 158036050}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &517386145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 517386143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
-  cameraDistanceLimitsMultiplier: 1
-  bodyPartsGroups: []
-  bodyParts: []
-  allChildrenBodyParts: []
-  info: {fileID: 0}
-  sagittalType: 0
-  suffix: {fileID: 0}
-  groupName: "\u0421\u043A\u0435\u043B\u0435\u0442 \u0437\u0430\u0434\u043D\u0438\u0445
-    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439 (\u043F\u0440\u0430\u0432\u044B\u0439)"
   groupScientificName: 
   description: 
   partGroupListButton: {fileID: 0}
@@ -4304,6 +4363,66 @@ Transform:
   - {fileID: 879016899}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1097269726
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1097269727}
+  - component: {fileID: 1097269728}
+  m_Layer: 0
+  m_Name: "\u041F \u0421\u043A\u0435\u043B\u0435\u0442 \u0437\u0430\u0434\u043D\u0435\u0439
+    \u043B\u0430\u043F\u044B"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1097269727
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097269726}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2087085952}
+  - {fileID: 720023941}
+  - {fileID: 391241777}
+  m_Father: {fileID: 1692991952}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1097269728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097269726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  info: {fileID: 11400000, guid: 913e17be32987c04b947aaee7fe312a0, type: 2}
+  sagittalType: 2
+  suffix: {fileID: 0}
+  groupName: "\u0421\u043A\u0435\u043B\u0435\u0442 \u0431\u0435\u0434\u0440\u0430"
+  groupScientificName: skeleton femoris
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!1 &1109141410
 GameObject:
   m_ObjectHideFlags: 0
@@ -4510,6 +4629,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7675640122485307517, guid: f1830c80f7a6ddd4a8ecdb942fe898e8, type: 3}
   m_PrefabInstance: {fileID: 6289901738071620783}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1177274644
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1177274645}
+  - component: {fileID: 1177274646}
+  m_Layer: 0
+  m_Name: "\u041B \u041A\u043E\u0441\u0442\u0438 \u0442\u0430\u0437\u043E\u0432\u043E\u0439
+    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1177274645
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177274644}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1506817864}
+  - {fileID: 1647505090}
+  - {fileID: 1235477995}
+  m_Father: {fileID: 158036050}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1177274646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177274644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  info: {fileID: 11400000, guid: aef49d22fac5a7a408711cf63eb0719d, type: 2}
+  sagittalType: 1
+  suffix: {fileID: 0}
+  groupName: "\u041A\u043E\u0441\u0442\u0438 \u0442\u0430\u0437\u043E\u0432\u043E\u0439
+    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438"
+  groupScientificName: ossa membri pelvini
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1179993752 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8537105232947200109, guid: 8129e540f2bb0d549a59b1ec78199a86, type: 3}
@@ -4755,6 +4935,66 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7361391831197789611, guid: 82eca96897e0dd748b78224b23bf8069, type: 3}
   m_PrefabInstance: {fileID: 1541011036282670216}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1235477994
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1235477995}
+  - component: {fileID: 1235477996}
+  m_Layer: 0
+  m_Name: "\u041B \u0421\u043A\u0435\u043B\u0435\u0442 \u0437\u0430\u0434\u043D\u0435\u0439
+    \u043B\u0430\u043F\u044B"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1235477995
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235477994}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1561016892}
+  - {fileID: 1119966884}
+  - {fileID: 507053156}
+  m_Father: {fileID: 1177274645}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1235477996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235477994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  info: {fileID: 11400000, guid: 913e17be32987c04b947aaee7fe312a0, type: 2}
+  sagittalType: 1
+  suffix: {fileID: 0}
+  groupName: "\u0421\u043A\u0435\u043B\u0435\u0442 \u0431\u0435\u0434\u0440\u0430"
+  groupScientificName: skeleton femoris
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1235743786 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6259506749263519072, guid: b9bd71d31f4955540986b1ee63ebabde, type: 3}
@@ -5093,6 +5333,64 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5565070653725603665, guid: 26e023f9ff0aa8a4fa79278fef34d7e7, type: 3}
   m_PrefabInstance: {fileID: 9029554328108884957}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1323256435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1323256436}
+  - component: {fileID: 1323256437}
+  m_Layer: 0
+  m_Name: "\u041F \u041A\u043E\u0441\u0442\u0438 \u0433\u043E\u043B\u0435\u043D\u0438"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1323256436
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323256435}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1628458120}
+  - {fileID: 1059624779}
+  m_Father: {fileID: 1692991952}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1323256437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323256435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  info: {fileID: 11400000, guid: bcadc816b5eddaf4c8f54d33397f6fbf, type: 2}
+  sagittalType: 2
+  suffix: {fileID: 0}
+  groupName: "\u0421\u043A\u0435\u043B\u0435\u0442 \u0431\u0435\u0434\u0440\u0430"
+  groupScientificName: skeleton femoris
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1326327070 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 502912164916810843, guid: 1a43d2b95776b2f44afff5cc53c73d0a, type: 3}
@@ -5647,6 +5945,64 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8637903669576065491, guid: bcd2ceb600f9c5044b554fadd4cff6bc, type: 3}
   m_PrefabInstance: {fileID: 3636963474414026666}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1506817863
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1506817864}
+  - component: {fileID: 1506817865}
+  m_Layer: 0
+  m_Name: "\u041B \u0421\u043A\u0435\u043B\u0435\u0442 \u0431\u0435\u0434\u0440\u0430"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1506817864
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506817863}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 993438781}
+  - {fileID: 503292623}
+  m_Father: {fileID: 1177274645}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1506817865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506817863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  info: {fileID: 11400000, guid: 76078c9f66e7e6a4e8c3db696b1af748, type: 2}
+  sagittalType: 1
+  suffix: {fileID: 0}
+  groupName: "\u0421\u043A\u0435\u043B\u0435\u0442 \u0431\u0435\u0434\u0440\u0430"
+  groupScientificName: skeleton femoris
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1510628215 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8471172382752960635, guid: d6a4e537634698847950a4e3372a490a, type: 3}
@@ -5758,73 +6114,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4651050894323259567, guid: 99a1454d144007a468216be63f75a2d2, type: 3}
   m_PrefabInstance: {fileID: 5685035262588162727}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1547144752
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1547144753}
-  - component: {fileID: 1547144754}
-  m_Layer: 0
-  m_Name: Bones Leg Back Left
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1547144753
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1547144752}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 993438781}
-  - {fileID: 503292623}
-  - {fileID: 1605445967}
-  - {fileID: 1561016892}
-  - {fileID: 1119966884}
-  - {fileID: 688360784}
-  - {fileID: 660505301}
-  - {fileID: 1209583838}
-  - {fileID: 1530895432}
-  - {fileID: 351069738}
-  m_Father: {fileID: 158036050}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1547144754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1547144752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
-  cameraDistanceLimitsMultiplier: 1
-  bodyPartsGroups: []
-  bodyParts: []
-  allChildrenBodyParts: []
-  info: {fileID: 0}
-  sagittalType: 0
-  suffix: {fileID: 0}
-  groupName: "\u0421\u043A\u0435\u043B\u0435\u0442 \u0437\u0430\u0434\u043D\u0438\u0445
-    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439 (\u043B\u0435\u0432\u044B\u0439)"
-  groupScientificName: 
-  description: 
-  partGroupListButton: {fileID: 0}
-  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1556461333 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7782737836882069116, guid: fa97800bcebd56d4d859f2b351098f8b, type: 3}
@@ -5851,7 +6140,7 @@ GameObject:
   - component: {fileID: 1561016892}
   - component: {fileID: 1561016893}
   m_Layer: 0
-  m_Name: BL Tarsus
+  m_Name: "\u041B \u0417\u0430\u043F\u043B\u044E\u0441\u043D\u0430"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5865,19 +6154,18 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1561016891}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2423604}
-  - {fileID: 82752986}
-  - {fileID: 708917211}
   - {fileID: 1051474683}
-  - {fileID: 1162176480}
+  - {fileID: 2423604}
   - {fileID: 293072590}
+  - {fileID: 708917211}
+  - {fileID: 1162176480}
   - {fileID: 451003143}
-  m_Father: {fileID: 1547144753}
+  m_Father: {fileID: 1235477995}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1561016893
 MonoBehaviour:
@@ -5895,11 +6183,10 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  info: {fileID: 0}
-  sagittalType: 0
+  info: {fileID: 11400000, guid: af786ff6da81fd7418462344e46da5c7, type: 2}
+  sagittalType: 1
   suffix: {fileID: 0}
-  groupName: "\u041A\u043E\u0441\u0442\u0438 \u0437\u0430\u043F\u043B\u044E\u0441\u043D\u044B
-    (\u043B\u0435\u0432\u044B\u0435)"
+  groupName: "\u0417\u0430\u043F\u043B\u044E\u0441\u043D\u0430"
   groupScientificName: 
   description: 
   partGroupListButton: {fileID: 0}
@@ -5984,6 +6271,64 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1615719836596867541, guid: af8ec2e2db759ac4388a35e7c067d4bd, type: 3}
   m_PrefabInstance: {fileID: 1991548373230714734}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1647505089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1647505090}
+  - component: {fileID: 1647505091}
+  m_Layer: 0
+  m_Name: "\u041B \u041A\u043E\u0441\u0442\u0438 \u0433\u043E\u043B\u0435\u043D\u0438"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1647505090
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647505089}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1605445967}
+  - {fileID: 82752986}
+  m_Father: {fileID: 1177274645}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1647505091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647505089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  info: {fileID: 11400000, guid: bcadc816b5eddaf4c8f54d33397f6fbf, type: 2}
+  sagittalType: 1
+  suffix: {fileID: 0}
+  groupName: "\u0421\u043A\u0435\u043B\u0435\u0442 \u0431\u0435\u0434\u0440\u0430"
+  groupScientificName: skeleton femoris
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1647576532 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 42860470201110874, guid: 56bb71fb64cada14e83669e8019dbc95, type: 3}
@@ -6291,6 +6636,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7739698221249544487, guid: 798c9ac1fa7da6a4490ee773e73a9733, type: 3}
   m_PrefabInstance: {fileID: 6171887380272378376}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1692991951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1692991952}
+  - component: {fileID: 1692991953}
+  m_Layer: 0
+  m_Name: "\u041F \u041A\u043E\u0441\u0442\u0438 \u0442\u0430\u0437\u043E\u0432\u043E\u0439
+    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1692991952
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692991951}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1921093139}
+  - {fileID: 1323256436}
+  - {fileID: 1097269727}
+  m_Father: {fileID: 158036050}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1692991953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692991951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  info: {fileID: 11400000, guid: aef49d22fac5a7a408711cf63eb0719d, type: 2}
+  sagittalType: 2
+  suffix: {fileID: 0}
+  groupName: "\u041A\u043E\u0441\u0442\u0438 \u0442\u0430\u0437\u043E\u0432\u043E\u0439
+    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0438"
+  groupScientificName: ossa membri pelvini
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1694748823 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8457033193990767319, guid: 496d68b496de80647a566d3275645eb8, type: 3}
@@ -6344,6 +6750,15 @@ Transform:
   - {fileID: 1880761340}
   - {fileID: 1466270128}
   - {fileID: 73992804}
+  - {fileID: 558704635}
+  - {fileID: 1910848234}
+  - {fileID: 745802703}
+  - {fileID: 1175751524}
+  - {fileID: 1646681045}
+  - {fileID: 718200898}
+  - {fileID: 31292158}
+  - {fileID: 948142778}
+  - {fileID: 601835147}
   - {fileID: 1456802383}
   - {fileID: 1449013449}
   - {fileID: 683633670}
@@ -6357,14 +6772,6 @@ Transform:
   - {fileID: 1454572513}
   - {fileID: 1669195703}
   - {fileID: 897180700}
-  - {fileID: 558704635}
-  - {fileID: 1910848234}
-  - {fileID: 745802703}
-  - {fileID: 1175751524}
-  - {fileID: 1646681045}
-  - {fileID: 718200898}
-  - {fileID: 31292158}
-  - {fileID: 948142778}
   - {fileID: 2094436051}
   - {fileID: 1198365366}
   - {fileID: 841050333}
@@ -6373,7 +6780,6 @@ Transform:
   - {fileID: 1741835617}
   - {fileID: 871246191}
   - {fileID: 1957120497}
-  - {fileID: 601835147}
   - {fileID: 175882874}
   m_Father: {fileID: 679908830}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7027,6 +7433,64 @@ MonoBehaviour:
     \u043C\u044B\u0448\u0435\u0447\u043D\u044B\u0445 \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u0439"
   partGroupListButton: {fileID: 0}
   parentBodyPartGroup: {fileID: 0}
+--- !u!1 &1921093138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1921093139}
+  - component: {fileID: 1921093140}
+  m_Layer: 0
+  m_Name: "\u041F \u0421\u043A\u0435\u043B\u0435\u0442 \u0431\u0435\u0434\u0440\u0430"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1921093139
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921093138}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1497976691}
+  - {fileID: 1787019323}
+  m_Father: {fileID: 1692991952}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1921093140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921093138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  info: {fileID: 11400000, guid: 76078c9f66e7e6a4e8c3db696b1af748, type: 2}
+  sagittalType: 2
+  suffix: {fileID: 0}
+  groupName: "\u0421\u043A\u0435\u043B\u0435\u0442 \u0431\u0435\u0434\u0440\u0430"
+  groupScientificName: skeleton femoris
+  description: 
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1925306349 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 960318958976400654, guid: 6baa172e67b7b9d4d80e889807b4d17a, type: 3}
@@ -7554,7 +8018,7 @@ GameObject:
   - component: {fileID: 2087085952}
   - component: {fileID: 2087085953}
   m_Layer: 0
-  m_Name: BR Tarsus
+  m_Name: "\u041F \u0417\u0430\u043F\u043B\u044E\u0441\u043D\u0430"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7568,19 +8032,18 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2087085951}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 46885829}
-  - {fileID: 1059624779}
-  - {fileID: 390620626}
   - {fileID: 788828965}
-  - {fileID: 93589271}
+  - {fileID: 46885829}
   - {fileID: 1594812619}
+  - {fileID: 390620626}
+  - {fileID: 93589271}
   - {fileID: 2026379155}
-  m_Father: {fileID: 517386144}
+  m_Father: {fileID: 1097269727}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2087085953
 MonoBehaviour:
@@ -7598,11 +8061,10 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  info: {fileID: 0}
-  sagittalType: 0
+  info: {fileID: 11400000, guid: af786ff6da81fd7418462344e46da5c7, type: 2}
+  sagittalType: 2
   suffix: {fileID: 0}
-  groupName: "\u041A\u043E\u0441\u0442\u0438 \u0437\u0430\u043F\u043B\u044E\u0441\u043D\u044B
-    (\u043F\u0440\u0430\u0432\u044B\u0435)"
+  groupName: "\u0417\u0430\u043F\u043B\u044E\u0441\u043D\u0430"
   groupScientificName: 
   description: 
   partGroupListButton: {fileID: 0}
@@ -7701,11 +8163,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1547144753}
+    m_TransformParent: {fileID: 507053156}
     m_Modifications:
     - target: {fileID: 1494890050513262907, guid: f923545875cb84a4c8af8299c19c34ce, type: 3}
       propertyPath: m_Name
-      value: BL Coffin Bone
+      value: "\u0414\u0438\u0441\u0442\u0430\u043B\u044C\u043D\u0430\u044F \u0444\u0430\u043B\u0430\u043D\u0433\u0430
+        - BL Coffin Bone"
       objectReference: {fileID: 0}
     - target: {fileID: 2302810797697106817, guid: f923545875cb84a4c8af8299c19c34ce, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7861,7 +8324,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7932037199583418376, guid: d9814d5269f28e54fba81cc1dca2c69a, type: 3}
       propertyPath: m_Name
-      value: BL Tarsi P
+      value: "\u041F\u0435\u0440\u0432\u0430\u044F \u0437\u0430\u043F\u043B\u044E\u0441\u043D\u0435\u0432\u0430\u044F
+        \u043A\u043E\u0441\u0442\u044C - BL Tarsi P"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8278,7 +8742,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 517386144}
+    m_TransformParent: {fileID: 1921093139}
     m_Modifications:
     - target: {fileID: 6027512477683740142, guid: f83815b6e6560be4e833c04abcc6a515, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8322,7 +8786,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6408013163209602900, guid: f83815b6e6560be4e833c04abcc6a515, type: 3}
       propertyPath: m_Name
-      value: BR Femur
+      value: "\u0411\u0435\u0434\u0440\u0435\u043D\u043D\u0430\u044F \u043A\u043E\u0441\u0442\u044C
+        - BR Femur"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8449,11 +8914,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 517386144}
+    m_TransformParent: {fileID: 1921093139}
     m_Modifications:
     - target: {fileID: 5816302922706841490, guid: 4eecb1a5a5388eb4fa4349ca51567d1a, type: 3}
       propertyPath: m_Name
-      value: BR Patella
+      value: "\u041A\u043E\u043B\u0435\u043D\u043D\u0430\u044F \u0447\u0430\u0448\u0435\u0447\u043A\u0430
+        - BR Patella"
       objectReference: {fileID: 0}
     - target: {fileID: 6628304820563457320, guid: 4eecb1a5a5388eb4fa4349ca51567d1a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8665,7 +9131,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1001774037736337709, guid: 7fe504f131847a34ebeb6c2507d32b52, type: 3}
       propertyPath: m_Name
-      value: FR Carp 4
+      value: "\u0421\u0440\u043E\u0441\u0448\u0438\u0435\u0441\u044F \u0447\u0435\u0442\u0432\u0451\u0440\u0442\u0430\u044F
+        \u0438 \u043F\u044F\u0442\u0430\u044F \u043A\u043E\u0441\u0442\u044C - FR
+        Carp 4"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8784,7 +9252,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4579361515715826524, guid: 673e7854fc1ad6b4c8bddfb8d0963e39, type: 3}
       propertyPath: m_Name
-      value: FL Carp 5
+      value: "\u0421\u0440\u043E\u0441\u0448\u0438\u0435\u0441\u044F \u0432\u0442\u043E\u0440\u0430\u044F
+        \u0438 \u0442\u0440\u0435\u0442\u044C\u044F \u043A\u043E\u0441\u0442\u044C
+        - FL Carp 5"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8979,7 +9449,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6186500507775229339, guid: 490e2452136b51c47aa4bb2e9ce59c49, type: 3}
       propertyPath: m_Name
-      value: BR Metatarsi S
+      value: "\u0412\u0442\u043E\u0440\u0430\u044F \u0437\u0430\u043F\u043B\u044E\u0441\u043D\u0435\u0432\u0430\u044F
+        \u043A\u043E\u0441\u0442\u044C - BR Metatarsi S"
       objectReference: {fileID: 0}
     - target: {fileID: 6814242845210642209, guid: 490e2452136b51c47aa4bb2e9ce59c49, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9308,7 +9779,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 773729910892701807, guid: 32c2edd5269156249b2721e2d2f9c502, type: 3}
       propertyPath: m_Name
-      value: BR Tarsi ST
+      value: "\u0421\u0440\u043E\u0441\u0448\u0438\u0435\u0441\u044F \u0432\u0442\u043E\u0440\u0430\u044F
+        \u0438 \u0442\u0440\u0435\u0442\u044C\u044F - BR Tarsi ST"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9671,7 +10143,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6215344064281259940, guid: f5129d189b6e9154bbad57dd102958a8, type: 3}
       propertyPath: m_Name
-      value: FR Pisiform
+      value: "\u0414\u043E\u0431\u0430\u0432\u043E\u0447\u043D\u0430\u044F \u043A\u043E\u0441\u0442\u044C
+        - FR Pisiform"
       objectReference: {fileID: 0}
     - target: {fileID: 6704319238756201758, guid: f5129d189b6e9154bbad57dd102958a8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10710,11 +11183,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1547144753}
+    m_TransformParent: {fileID: 1235477995}
     m_Modifications:
     - target: {fileID: 3733204278951222041, guid: 93d5c6641ee767541880a530a5db1dda, type: 3}
       propertyPath: m_Name
-      value: BL Metatarsus
+      value: "\u041F\u043B\u044E\u0441\u043D\u0430 - BL Metatarsus"
       objectReference: {fileID: 0}
     - target: {fileID: 4072609965836812707, guid: 93d5c6641ee767541880a530a5db1dda, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11236,7 +11709,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 517386144}
+    m_TransformParent: {fileID: 391241777}
     m_Modifications:
     - target: {fileID: 7361391831197789611, guid: 82eca96897e0dd748b78224b23bf8069, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11280,7 +11753,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7882208036909086481, guid: 82eca96897e0dd748b78224b23bf8069, type: 3}
       propertyPath: m_Name
-      value: BR Pastern Joint
+      value: "\u0414\u0438\u0441\u0442\u0430\u043B\u044C\u043D\u044B\u0435 \u0441\u0435\u0441\u0430\u043C\u043E\u0432\u0438\u0434\u043D\u044B\u0435
+        - BR Pastern Joint"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11569,7 +12043,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6482801863694125923, guid: 30d5d62bdc5702c46b3130a41711fcd4, type: 3}
       propertyPath: m_Name
-      value: BL Tarsi ST
+      value: "\u0421\u0440\u043E\u0441\u0448\u0438\u0435\u0441\u044F \u0432\u0442\u043E\u0440\u0430\u044F
+        \u0438 \u0442\u0440\u0435\u0442\u044C\u044F - BL Tarsi ST"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12042,7 +12517,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 517386144}
+    m_TransformParent: {fileID: 1097269727}
     m_Modifications:
     - target: {fileID: 449227704960134355, guid: 224f8d5fb07ba334d8292ac36b6701f0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12086,7 +12561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 968320765828658793, guid: 224f8d5fb07ba334d8292ac36b6701f0, type: 3}
       propertyPath: m_Name
-      value: BR Metatarsus
+      value: "\u041F\u043B\u044E\u0441\u043D\u0430 - BR Metatarsus"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12916,7 +13391,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 557662316499701434, guid: 26f11655a8507174cb244e24215b498e, type: 3}
       propertyPath: m_Name
-      value: BR Tarsi P
+      value: "\u041F\u0435\u0440\u0432\u0430\u044F \u0437\u0430\u043F\u043B\u044E\u0441\u043D\u0435\u0432\u0430\u044F
+        \u043A\u043E\u0441\u0442\u044C - BR Tarsi P"
       objectReference: {fileID: 0}
     - target: {fileID: 934187137646351360, guid: 26f11655a8507174cb244e24215b498e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13372,11 +13848,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1547144753}
+    m_TransformParent: {fileID: 1506817864}
     m_Modifications:
     - target: {fileID: 7099690258496028224, guid: bd689b5689558994e9adfd79def8d91e, type: 3}
       propertyPath: m_Name
-      value: BL Patella
+      value: "\u041A\u043E\u043B\u0435\u043D\u043D\u0430\u044F \u0447\u0430\u0448\u0435\u0447\u043A\u0430
+        - BL Patella"
       objectReference: {fileID: 0}
     - target: {fileID: 7623743148115928314, guid: bd689b5689558994e9adfd79def8d91e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18052,7 +18529,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 762768993897495616, guid: 108d452f8cff58343b2aa6138a94a1b7, type: 3}
       propertyPath: m_Name
-      value: FR Carp 1
+      value: "\u041B\u043E\u043A\u0442\u0435\u0432\u0430\u044F \u043A\u043E\u0441\u0442\u044C
+        - FR Carp 1"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18825,7 +19303,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2672632363096062596, guid: b1c6358f48947da42b06a7a40fdfbad3, type: 3}
       propertyPath: m_Name
-      value: Sacral Vertebrae
+      value: "\u041A\u0440\u0435\u0441\u0442\u0446\u043E\u0432\u0430\u044F \u043A\u043E\u0441\u0442\u044C
+        - Sacral Vertebrae"
       objectReference: {fileID: 0}
     - target: {fileID: 3340765294275452990, guid: b1c6358f48947da42b06a7a40fdfbad3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19039,7 +19518,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5360729875380627366, guid: 0ab67551f60c1d24190c188ce173187a, type: 3}
       propertyPath: m_Name
-      value: Pelvis Ischium Ilium
+      value: "\u0421\u0435\u0434\u0430\u043B\u0438\u0449\u043D\u0430\u044F \u043A\u043E\u0441\u0442\u044C
+        - Pelvis Ischium Ilium"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19405,7 +19885,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6263240784231038759, guid: 8541bc6cce8ca384599d96787771174e, type: 3}
       propertyPath: m_Name
-      value: BR Talus
+      value: "\u0422\u0430\u0440\u0430\u043D\u043D\u0430\u044F \u043A\u043E\u0441\u0442\u044C
+        - BR Talus"
       objectReference: {fileID: 0}
     - target: {fileID: 6746481180849481117, guid: 8541bc6cce8ca384599d96787771174e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19573,11 +20054,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1547144753}
+    m_TransformParent: {fileID: 1506817864}
     m_Modifications:
     - target: {fileID: 3580578353508461403, guid: cb5bbaa26f7cc06468c4f3b8decee3b4, type: 3}
       propertyPath: m_Name
-      value: BL Femur
+      value: "\u0411\u0435\u0434\u0440\u0435\u043D\u043D\u0430\u044F \u043A\u043E\u0441\u0442\u044C
+        - BL Femur"
       objectReference: {fileID: 0}
     - target: {fileID: 4250014476765721057, guid: cb5bbaa26f7cc06468c4f3b8decee3b4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20099,11 +20581,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1547144753}
+    m_TransformParent: {fileID: 507053156}
     m_Modifications:
     - target: {fileID: 2463147612128277264, guid: b7e4997e1ed7df249accd04367fe706e, type: 3}
       propertyPath: m_Name
-      value: BL 1st Phalanx
+      value: "\u041F\u0440\u043E\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u0430\u044F
+        \u0444\u0430\u043B\u0430\u043D\u0433\u0430 - BL 1st Phalanx"
       objectReference: {fileID: 0}
     - target: {fileID: 2982802557735381418, guid: b7e4997e1ed7df249accd04367fe706e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20156,11 +20639,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1547144753}
+    m_TransformParent: {fileID: 1647505090}
     m_Modifications:
     - target: {fileID: 2814260581423996459, guid: 7c7181647e495c546b579ba2f6838a00, type: 3}
       propertyPath: m_Name
-      value: BL Tibia
+      value: "\u0411\u043E\u043B\u044C\u0448\u0430\u044F \u0431\u0435\u0440\u0446\u043E\u0432\u0430\u044F
+        \u043A\u043E\u0441\u0442\u044C - BL Tibia"
       objectReference: {fileID: 0}
     - target: {fileID: 3190118338396750993, guid: 7c7181647e495c546b579ba2f6838a00, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20487,7 +20971,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1107195171515999480, guid: f7acbedc0c545454fbaabc599ca278bf, type: 3}
       propertyPath: m_Name
-      value: FR Carp 2
+      value: "\u041F\u0440\u043E\u043C\u0435\u0436\u0443\u0442\u043E\u0447\u043D\u0430\u044F
+        \u043A\u043E\u0441\u0442\u044C - FR Carp 2"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20607,7 +21092,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6567476916416507699, guid: 472d597440c76334fad8c4dd0c3c0416, type: 3}
       propertyPath: m_Name
-      value: FR Carp 3
+      value: "\u041B\u0443\u0447\u0435\u0432\u0430\u044F \u043A\u043E\u0441\u0442\u044C
+        - FR Carp 3"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21723,11 +22209,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2087085952}
+    m_TransformParent: {fileID: 1323256436}
     m_Modifications:
     - target: {fileID: 6289776956208711727, guid: 9d3253b934156074890ad7ac8c6579b5, type: 3}
       propertyPath: m_Name
-      value: BR Malleolare
+      value: "\u041B\u043E\u0434\u044B\u0436\u043A\u043E\u0432\u0430\u044F \u043A\u043E\u0441\u0442\u044C
+        - BR Malleolare"
       objectReference: {fileID: 0}
     - target: {fileID: 6629886330756289173, guid: 9d3253b934156074890ad7ac8c6579b5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21842,7 +22329,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6321512779957225685, guid: 501eae6286c08b54288b063b195f4d9a, type: 3}
       propertyPath: m_Name
-      value: BL Tarsi CQ
+      value: "\u0421\u0440\u043E\u0441\u0448\u0438\u0435\u0441\u044F \u0446\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u0430\u044F
+        \u0438 \u0447\u0435\u0442\u0432\u0451\u0440\u0442\u0430\u044F - BL Tarsi
+        CQ"
       objectReference: {fileID: 0}
     - target: {fileID: 6697229563484770927, guid: 501eae6286c08b54288b063b195f4d9a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22131,7 +22620,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7262801105368962299, guid: ca8a3bbf1332bf6418fdc39a7e05cbfb, type: 3}
       propertyPath: m_Name
-      value: FL Carp 3
+      value: "\u041B\u0443\u0447\u0435\u0432\u0430\u044F \u043A\u043E\u0441\u0442\u044C
+        - FL Carp 3"
       objectReference: {fileID: 0}
     - target: {fileID: 8034834655756979777, guid: ca8a3bbf1332bf6418fdc39a7e05cbfb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22348,7 +22838,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6370106797343789364, guid: 6a7b121584556eb48a8e5106e71ad0ab, type: 3}
       propertyPath: m_Name
-      value: BL Calcaneus
+      value: "\u041F\u044F\u0442\u043E\u0447\u043D\u0430\u044F \u043A\u043E\u0441\u0442\u044C
+        - BL Calcaneus"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24211,7 +24702,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5130790732259229366, guid: dfac2caf7edd49149800db058b633c72, type: 3}
       propertyPath: m_Name
-      value: FL Carp 4
+      value: "\u0421\u0440\u043E\u0441\u0448\u0438\u0435\u0441\u044F \u0447\u0435\u0442\u0432\u0451\u0440\u0442\u0430\u044F
+        \u0438 \u043F\u044F\u0442\u0430\u044F \u043A\u043E\u0441\u0442\u044C - FL
+        Carp 4"
       objectReference: {fileID: 0}
     - target: {fileID: 5512382099310322700, guid: dfac2caf7edd49149800db058b633c72, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24326,11 +24819,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 517386144}
+    m_TransformParent: {fileID: 391241777}
     m_Modifications:
     - target: {fileID: 1420983527266666903, guid: 10549487e31c50547a4bb2288dfc9d56, type: 3}
       propertyPath: m_Name
-      value: BR 1st Phalanx
+      value: "\u041F\u0440\u043E\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u0430\u044F
+        \u0444\u0430\u043B\u0430\u043D\u0433\u0430 - BR 1st Phalanx"
       objectReference: {fileID: 0}
     - target: {fileID: 1797930561429902125, guid: 10549487e31c50547a4bb2288dfc9d56, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24558,7 +25052,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7058469092785758209, guid: b794480b24ed1db4093f5f4f47bdf01f, type: 3}
       propertyPath: m_Name
-      value: FL Pisiform
+      value: "\u0414\u043E\u0431\u0430\u0432\u043E\u0447\u043D\u0430\u044F \u043A\u043E\u0441\u0442\u044C
+        - FL Pisiform"
       objectReference: {fileID: 0}
     - target: {fileID: 7691981667247979195, guid: b794480b24ed1db4093f5f4f47bdf01f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24668,11 +25163,13 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 517386144}
+    m_TransformParent: {fileID: 391241777}
     m_Modifications:
     - target: {fileID: 8483748010144750595, guid: 62e9c0facc7dffc4da4587328fbb82dd, type: 3}
       propertyPath: m_Name
-      value: BR Fetlock Joint
+      value: "\u041F\u0440\u043E\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u044B\u0435
+        \u0441\u0435\u0441\u0430\u043C\u043E\u0432\u0438\u0434\u043D\u044B\u0435
+        - BR Fetlock Joint"
       objectReference: {fileID: 0}
     - target: {fileID: 9148925690826622649, guid: 62e9c0facc7dffc4da4587328fbb82dd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24786,7 +25283,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 350038500166388328, guid: 1cb36a3defe5dd249ae66929ff92ce45, type: 3}
       propertyPath: m_Name
-      value: FL Carp 2
+      value: "\u041F\u0440\u043E\u043C\u0435\u0436\u0443\u0442\u043E\u0447\u043D\u0430\u044F
+        \u043A\u043E\u0441\u0442\u044C - FL Carp 2"
       objectReference: {fileID: 0}
     - target: {fileID: 1121473847859646674, guid: 1cb36a3defe5dd249ae66929ff92ce45, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24844,7 +25342,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1547144753}
+    m_TransformParent: {fileID: 507053156}
     m_Modifications:
     - target: {fileID: 1677918890836937371, guid: f687879702129ad4a9a431085b77197c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24888,7 +25386,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2018451542196129825, guid: f687879702129ad4a9a431085b77197c, type: 3}
       propertyPath: m_Name
-      value: BL 2nd Phalanx
+      value: "\u0421\u0440\u0435\u0434\u043D\u044F\u044F \u0444\u0430\u043B\u0430\u043D\u0433\u0430
+        - BL 2nd Phalanx"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25427,7 +25926,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3936656611422556194, guid: b6b86efef9b6de84a8b354b919c113f4, type: 3}
       propertyPath: m_Name
-      value: BL Talus
+      value: "\u0422\u0430\u0440\u0430\u043D\u043D\u0430\u044F \u043A\u043E\u0441\u0442\u044C
+        - BL Talus"
       objectReference: {fileID: 0}
     - target: {fileID: 4461379446891907736, guid: b6b86efef9b6de84a8b354b919c113f4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25715,7 +26215,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6046770285693347100, guid: bbfa1424363e8fe4abc190bb426b7f5e, type: 3}
       propertyPath: m_Name
-      value: FR Carp 5
+      value: "\u0421\u0440\u043E\u0441\u0448\u0438\u0435\u0441\u044F \u0432\u0442\u043E\u0440\u0430\u044F
+        \u0438 \u0442\u0440\u0435\u0442\u044C\u044F \u043A\u043E\u0441\u0442\u044C
+        - FR Carp 5"
       objectReference: {fileID: 0}
     - target: {fileID: 6386562927940599718, guid: bbfa1424363e8fe4abc190bb426b7f5e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26283,7 +26785,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 632178404196856756, guid: 2725917fa9aab7b4d9f80dae5aa7f3ed, type: 3}
       propertyPath: m_Name
-      value: FL Carp 1
+      value: "\u041B\u043E\u043A\u0442\u0435\u0432\u0430\u044F \u043A\u043E\u0441\u0442\u044C
+        - FL Carp 1"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27115,7 +27618,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8387580366340237631, guid: 367af170733b0ad4584a8fd9fcc18410, type: 3}
       propertyPath: m_Name
-      value: BR Tarsi CQ
+      value: "\u0421\u0440\u043E\u0441\u0448\u0438\u0435\u0441\u044F \u0446\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u0430\u044F
+        \u0438 \u0447\u0435\u0442\u0432\u0451\u0440\u0442\u0430\u044F - BR Tarsi
+        CQ"
       objectReference: {fileID: 0}
     - target: {fileID: 9164116383090373509, guid: 367af170733b0ad4584a8fd9fcc18410, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27168,7 +27673,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 517386144}
+    m_TransformParent: {fileID: 391241777}
     m_Modifications:
     - target: {fileID: 2335046373675179538, guid: 56fc3dcb2d300504eb7c66d2495c486b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27212,7 +27717,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3110880008647296168, guid: 56fc3dcb2d300504eb7c66d2495c486b, type: 3}
       propertyPath: m_Name
-      value: BR Coffin Bone
+      value: "\u0414\u0438\u0441\u0442\u0430\u043B\u044C\u043D\u0430\u044F \u0444\u0430\u043B\u0430\u043D\u0433\u0430
+        - BR Coffin Bone"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27575,7 +28081,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 517386144}
+    m_TransformParent: {fileID: 1323256436}
     m_Modifications:
     - target: {fileID: 3670531577367109992, guid: de8721e0cca8b2847b9d8e65a96658e5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27619,7 +28125,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4160070040544246738, guid: de8721e0cca8b2847b9d8e65a96658e5, type: 3}
       propertyPath: m_Name
-      value: BR Tibia
+      value: "\u0411\u043E\u043B\u044C\u0448\u0430\u044F \u0431\u0435\u0440\u0446\u043E\u0432\u0430\u044F
+        \u043A\u043E\u0441\u0442\u044C - BR Tibia"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27690,7 +28197,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 517386144}
+    m_TransformParent: {fileID: 391241777}
     m_Modifications:
     - target: {fileID: 3552585069516125882, guid: c4ddf08745b8ae245b912cbffc4fd056, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27734,7 +28241,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4181172106428230656, guid: c4ddf08745b8ae245b912cbffc4fd056, type: 3}
       propertyPath: m_Name
-      value: BR 2nd Phalanx
+      value: "\u0421\u0440\u0435\u0434\u043D\u044F\u044F \u0444\u0430\u043B\u0430\u043D\u0433\u0430
+        - BR 2nd Phalanx"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27747,7 +28255,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1561016892}
+    m_TransformParent: {fileID: 1647505090}
     m_Modifications:
     - target: {fileID: 283005873041229969, guid: c59d47a2c746d974d9ae4cbd14c591ec, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27791,7 +28299,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 623362598490378795, guid: c59d47a2c746d974d9ae4cbd14c591ec, type: 3}
       propertyPath: m_Name
-      value: BL Malleolare
+      value: "\u041B\u043E\u0434\u044B\u0436\u043A\u043E\u0432\u0430\u044F \u043A\u043E\u0441\u0442\u044C
+        - BL Malleolare"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28272,11 +28781,13 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1547144753}
+    m_TransformParent: {fileID: 507053156}
     m_Modifications:
     - target: {fileID: 6107727321738609550, guid: cc5395aac477e344695ac39872361cc9, type: 3}
       propertyPath: m_Name
-      value: BL Fetlock Joint
+      value: "\u041F\u0440\u043E\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u044B\u0435
+        \u0441\u0435\u0441\u0430\u043C\u043E\u0432\u0438\u0434\u043D\u044B\u0435
+        - BL Fetlock Joint"
       objectReference: {fileID: 0}
     - target: {fileID: 6883981893052520756, guid: cc5395aac477e344695ac39872361cc9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28548,7 +29059,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4522446082371608044, guid: 603c3e01de128cc4fab9e276ccc73540, type: 3}
       propertyPath: m_Name
-      value: Costal Cartilage Left
+      value: "\u0420\u0451\u0431\u0435\u0440\u043D\u0430\u044F \u0434\u0443\u0433\u0430
+        - Costal Cartilage Left"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28739,7 +29251,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3706221541371808414, guid: 258ca30310f3e8a4f9b41d9314c471c7, type: 3}
       propertyPath: m_Name
-      value: BR Calcaneus
+      value: "\u041F\u044F\u0442\u043E\u0447\u043D\u0430\u044F \u043A\u043E\u0441\u0442\u044C
+        - BR Calcaneus"
       objectReference: {fileID: 0}
     - target: {fileID: 4045627159823142948, guid: 258ca30310f3e8a4f9b41d9314c471c7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29357,7 +29870,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2285164122846917073, guid: f88b78b556e4bc24a8dafad9c1401085, type: 3}
       propertyPath: m_Name
-      value: Costal Cartilage Right
+      value: "\u0420\u0451\u0431\u0435\u0440\u043D\u0430\u044F \u0434\u0443\u0433\u0430
+        - Costal Cartilage Right"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29543,7 +30057,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1547144753}
+    m_TransformParent: {fileID: 507053156}
     m_Modifications:
     - target: {fileID: 8228967737448186238, guid: d02c831b636d3ca41b259a2b233a6405, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29587,7 +30101,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8753020901610462148, guid: d02c831b636d3ca41b259a2b233a6405, type: 3}
       propertyPath: m_Name
-      value: BL Pastern Joint
+      value: "\u0414\u0438\u0441\u0442\u0430\u043B\u044C\u043D\u044B\u0435 \u0441\u0435\u0441\u0430\u043C\u043E\u0432\u0438\u0434\u043D\u044B\u0435
+        - BL Pastern Joint"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29759,7 +30274,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3141563166468821809, guid: be0a502364b73c04cbdf906342eca557, type: 3}
       propertyPath: m_Name
-      value: BL Metatarsi S
+      value: "\u0412\u0442\u043E\u0440\u0430\u044F \u0437\u0430\u043F\u043B\u044E\u0441\u043D\u0435\u0432\u0430\u044F
+        \u043A\u043E\u0441\u0442\u044C - BL Metatarsi S"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
