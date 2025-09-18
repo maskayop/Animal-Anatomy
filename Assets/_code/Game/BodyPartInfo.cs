@@ -13,15 +13,8 @@ namespace AnimalAnatomy
 
         [Header("Info")]
         public Data_Info info;
-        public enum SagittalType { none, left, right };
-        public SagittalType sagittalType;
+        public Data_Info suffixSaggital;
         public Data_Info suffix;
-
-        [Header("Texts")]
-        public string partName;
-        public string partScientificName;
-        [TextArea(1, 20)]
-        public string partDescription;
 
         [HideInInspector]
         public UIPartsListButton partListButton;
@@ -52,11 +45,8 @@ namespace AnimalAnatomy
         {
             GameController.Instance.allBodyParts.Add(this);
 
-            if (partName == "")
-                partName = gameObject.name;
-            
-            if (partDescription == "")
-                partDescription = partName + ": Description";
+            if (!info)
+                Debug.LogWarning("Нет data_info для " + name);
 
             if (meshRenderers.Count == 0)
             {
@@ -133,6 +123,36 @@ namespace AnimalAnatomy
 
                 meshRenderers[i].materials = materials;
             }
+        }
+
+        public string GetFullRussianName()
+        {
+            string saggital = "";
+
+            if (suffixSaggital)
+                saggital = " (" + suffixSaggital.russianName + ")";
+
+            string suffixAdditional = "";
+
+            if (suffix)
+                suffixAdditional = " (" + suffix.russianName + ")";
+
+            return info.russianName + suffixAdditional + saggital;
+        }
+
+        public string GetFullScientificName()
+        {
+            string saggital = "";
+
+            if (suffixSaggital)
+                saggital = " (" + suffixSaggital.scientificName + ")";
+
+            string suffixAdditional = "";
+
+            if (suffix)
+                suffixAdditional = " (" + suffix.scientificName + ")";
+
+            return info.scientificName + suffixAdditional + saggital;
         }
     }
 }

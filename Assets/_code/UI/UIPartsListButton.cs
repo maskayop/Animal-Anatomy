@@ -24,8 +24,8 @@ namespace AnimalAnatomy
         public void Init(BodyPartInfo info)
         {
             bodyPartInfo = info;
-            nameText.text = info.partName;
-            scientificNameText.text = info.partScientificName;
+            nameText.text = info.GetFullRussianName();
+            scientificNameText.text = info.GetFullScientificName();
         }
 
         public void Init(SystemType systemType)
@@ -60,8 +60,8 @@ namespace AnimalAnatomy
 
         void CopyTextsToClipboard()
         {
-            textToCopy = "Название части тела: " + bodyPartInfo.partName + "\n" + "Научное название: " + bodyPartInfo.partScientificName +
-                "\n" + "Описание: " + bodyPartInfo.partDescription;
+            textToCopy = "Название части тела: " + bodyPartInfo.GetFullRussianName() + "\n" + "Научное название: " + bodyPartInfo.GetFullScientificName() +
+                "\n" + "Описание: " + bodyPartInfo.info.description;
 
             GUIUtility.systemCopyBuffer = textToCopy;
         }

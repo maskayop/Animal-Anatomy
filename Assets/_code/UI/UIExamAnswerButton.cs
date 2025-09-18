@@ -19,9 +19,9 @@ namespace AnimalAnatomy
             SetInteractable(true);
 
             if (ExaminationController.Instance.examDifficulty == 0)
-                nameText.text = info.partName;
+                nameText.text = info.GetFullRussianName();
             else if (ExaminationController.Instance.examDifficulty == 1)
-                nameText.text = info.partScientificName;
+                nameText.text = info.GetFullScientificName();
             
             isCorrectAnswer = isCorrect;
             ShowSelection(false);

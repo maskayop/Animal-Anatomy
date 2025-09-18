@@ -114,7 +114,7 @@ namespace AnimalAnatomy
             {
                 for (int l = 0; l < bodyPartsLists.Count; l++)
                 {
-                    bodyPartsLists[l].bodyParts.Sort((x, y) => { return x.partName.CompareTo(y.partName); });
+                    bodyPartsLists[l].bodyParts.Sort((x, y) => { return x.info.russianName.CompareTo(y.info.russianName); });
                 }
             }
         }

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static AnimalAnatomy.BodyPartInfo;
 
 namespace AnimalAnatomy
 { 
@@ -14,14 +13,7 @@ namespace AnimalAnatomy
 
         [Header("Info")]
         public Data_Info info;
-        public SagittalType sagittalType;
         public Data_Info suffix;
-
-        [Header("Texts")]
-        public string groupName;
-        public string groupScientificName;
-        [TextArea(1, 20)]
-        public string description;
 
         [HideInInspector]
         public UIPartsGroupListButton partGroupListButton;
@@ -36,6 +28,9 @@ namespace AnimalAnatomy
 
         public void Init()
         {
+            if (!info)
+                Debug.LogWarning("Нет data_info для " + name);
+
             foreach (Transform t in transform)
             {
                 BodyPartInfo info = t.GetComponent<BodyPartInfo>();
@@ -124,6 +119,26 @@ namespace AnimalAnatomy
             position /= allChildrenBodyParts.Count;
 
             return position;
+        }
+
+        public string GetFullRussianName()
+        {
+            string suffixAdditional = "";
+
+            if (suffix)
+                suffixAdditional = " (" + suffix.russianName + ")";
+
+            return info.russianName + suffixAdditional;
+        }
+
+        public string GetFullScientificName()
+        {
+            string suffixAdditional = "";
+
+            if (suffix)
+                suffixAdditional = " (" + suffix.scientificName + ")";
+
+            return info.scientificName + suffixAdditional;
         }
     }
 }

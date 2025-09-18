@@ -19,8 +19,8 @@ namespace AnimalAnatomy
         public void Init(BodyPartGroup info)
         {
             bodyPartGroup = info;
-            nameText.text = info.groupName;
-            scientificNameText.text = info.groupScientificName;
+            nameText.text = info.GetFullRussianName();
+            scientificNameText.text = info.GetFullScientificName();
         }
 
         public void SelectBodyPartGroup()
@@ -113,8 +113,8 @@ namespace AnimalAnatomy
 
         void CopyTextsToClipboard()
         {
-            textToCopy = "Название группы: " + bodyPartGroup.groupName + "\n" + "Научное название: " + bodyPartGroup.groupScientificName +
-                "\n" + "Описание: " + bodyPartGroup.description;
+            textToCopy = "Название группы: " + bodyPartGroup.GetFullRussianName() + "\n" + "Научное название: " + bodyPartGroup.GetFullScientificName() +
+                "\n" + "Описание: " + bodyPartGroup.info.description;
 
             GUIUtility.systemCopyBuffer = textToCopy;
         }

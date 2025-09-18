@@ -201,9 +201,9 @@ namespace AnimalAnatomy
         {
             bodyPartInfoPanel.gameObject.SetActive(true);
             isolatedModeButtonsContainer.gameObject.SetActive(true);
-            bodyPartNameText.text = info.partName;
-            bodyPartScientificNameText.text = info.partScientificName;
-            bodyPartDescriptionText.text = info.partDescription;
+            bodyPartNameText.text = info.GetFullRussianName();
+            bodyPartScientificNameText.text = info.GetFullScientificName();
+            bodyPartDescriptionText.text = info.info.description;
 
             if (info.bodyPartGroup)
             {
@@ -225,9 +225,9 @@ namespace AnimalAnatomy
         {
             bodyPartInfoPanel.gameObject.SetActive(true);
             isolatedModeButtonsContainer.gameObject.SetActive(true);
-            bodyPartNameText.text = info.groupName;
-            bodyPartScientificNameText.text = info.groupScientificName;
-            bodyPartDescriptionText.text = info.description;
+            bodyPartNameText.text = info.GetFullRussianName();
+            bodyPartScientificNameText.text = info.GetFullScientificName();
+            bodyPartDescriptionText.text = info.info.description;
 
             if (info.parentBodyPartGroup)
             {
