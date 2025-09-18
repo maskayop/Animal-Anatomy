@@ -11,9 +11,6 @@ namespace AnimalAnatomy
         [TextArea(1, 50)]
         public string description;
 
-        [Space(20)]
-        public int sagittalTypeTermId;
-
         [Header("Audio")]
         public AudioClip clip;
     }

@@ -15,6 +15,7 @@ namespace AnimalAnatomy
         [Header("Info")]
         public Data_Info info;
         public SagittalType sagittalType;
+        public Data_Info suffix;
 
         [Header("Texts")]
         public string groupName;

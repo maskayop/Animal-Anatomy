@@ -15,6 +15,7 @@ namespace AnimalAnatomy
         public Data_Info info;
         public enum SagittalType { none, left, right };
         public SagittalType sagittalType;
+        public Data_Info suffix;
 
         [Header("Texts")]
         public string partName;
