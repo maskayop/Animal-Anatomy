@@ -130,7 +130,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: -6460896147574684271, guid: 64fdd8cdc4913e74081ab837905a0a00, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 64fdd8cdc4913e74081ab837905a0a00, type: 3}
@@ -189,11 +190,7 @@ LODGroup:
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.32
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 8843230330861097768}
-  - screenRelativeHeight: 0.16
+  - screenRelativeHeight: 0.26
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 3438066622198181185}
@@ -217,7 +214,7 @@ MonoBehaviour:
   systemType: 3
   meshRenderers:
   - {fileID: 3438066622198181185}
-  - {fileID: 8843230330861097768}
+  - {fileID: 0}
   - {fileID: 7767618419044479729}
   cameraDistanceLimitsMultiplier: 1
   info: {fileID: 11400000, guid: e23453c6758c12647969aa9db50810cc, type: 2}
@@ -228,10 +225,5 @@ MonoBehaviour:
 --- !u!23 &7767618419044479729 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 3132388966071181409, guid: 64fdd8cdc4913e74081ab837905a0a00, type: 3}
-  m_PrefabInstance: {fileID: 4662462457752310416}
-  m_PrefabAsset: {fileID: 0}
---- !u!23 &8843230330861097768 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 4183021373863772600, guid: 64fdd8cdc4913e74081ab837905a0a00, type: 3}
   m_PrefabInstance: {fileID: 4662462457752310416}
   m_PrefabAsset: {fileID: 0}

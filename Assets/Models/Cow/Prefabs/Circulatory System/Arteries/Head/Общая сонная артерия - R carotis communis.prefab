@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9575736bc952ba64f8b0fb3888b4b756, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.061517913
+      value: 0.03294668
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9575736bc952ba64f8b0fb3888b4b756, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7376517
+      value: 1.7334205
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9575736bc952ba64f8b0fb3888b4b756, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.3223293
+      value: 1.3228111
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9575736bc952ba64f8b0fb3888b4b756, type: 3}
       propertyPath: m_LocalRotation.w
@@ -130,7 +130,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: -8976293502288638680, guid: 9575736bc952ba64f8b0fb3888b4b756, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9575736bc952ba64f8b0fb3888b4b756, type: 3}
@@ -188,17 +189,13 @@ LODGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5321441538881874512}
   serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0.000000059604645}
-  m_Size: 0.6768702
+  m_LocalReferencePoint: {x: 0.0000000018626451, y: 0, z: 0}
+  m_Size: 0.67262775
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
   - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 6541349438322363366}
-  - screenRelativeHeight: 0.3
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 443877799931928661}
@@ -222,7 +219,7 @@ MonoBehaviour:
   systemType: 3
   meshRenderers:
   - {fileID: 443877799931928661}
-  - {fileID: 6541349438322363366}
+  - {fileID: 0}
   - {fileID: 2014420270157773722}
   cameraDistanceLimitsMultiplier: 1
   info: {fileID: 11400000, guid: aa24d4ef4ae2c1148b55b931b2838f36, type: 2}
@@ -230,8 +227,3 @@ MonoBehaviour:
   suffix: {fileID: 0}
   partListButton: {fileID: 0}
   bodyPartGroup: {fileID: 0}
---- !u!23 &6541349438322363366 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 2296674848961010919, guid: 9575736bc952ba64f8b0fb3888b4b756, type: 3}
-  m_PrefabInstance: {fileID: 4978983595596240641}
-  m_PrefabAsset: {fileID: 0}

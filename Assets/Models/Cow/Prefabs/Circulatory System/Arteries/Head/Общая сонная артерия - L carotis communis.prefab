@@ -14,15 +14,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 6cc7faabd3ba0534f8ebe55216bbadbf, type: 2}
     - target: {fileID: -8679921383154817045, guid: da68579950f7e60449465a734ca38199, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.03294668
+      value: -0.061517913
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: da68579950f7e60449465a734ca38199, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7334205
+      value: 1.7376517
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: da68579950f7e60449465a734ca38199, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.3228111
+      value: 1.3223293
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: da68579950f7e60449465a734ca38199, type: 3}
       propertyPath: m_LocalRotation.w
@@ -130,7 +130,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: -4992323412521227438, guid: da68579950f7e60449465a734ca38199, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: da68579950f7e60449465a734ca38199, type: 3}
@@ -143,11 +144,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8346786765598695600}
   m_SourcePrefab: {fileID: 100100000, guid: da68579950f7e60449465a734ca38199, type: 3}
---- !u!23 &2378293722545676030 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: -2086222643369267029, guid: da68579950f7e60449465a734ca38199, type: 3}
-  m_PrefabInstance: {fileID: 4759559359065321045}
-  m_PrefabAsset: {fileID: 0}
 --- !u!23 &4908517123675085000 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -8785444989234956643, guid: da68579950f7e60449465a734ca38199, type: 3}
@@ -188,17 +184,13 @@ LODGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5677970219867591428}
   serializedVersion: 2
-  m_LocalReferencePoint: {x: 0.0000000018626451, y: 0, z: 0}
-  m_Size: 0.67262775
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0.000000059604645}
+  m_Size: 0.6768702
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
   - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 2378293722545676030}
-  - screenRelativeHeight: 0.3
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 9053454307765096281}
@@ -222,7 +214,7 @@ MonoBehaviour:
   systemType: 3
   meshRenderers:
   - {fileID: 9053454307765096281}
-  - {fileID: 2378293722545676030}
+  - {fileID: 0}
   - {fileID: 4908517123675085000}
   cameraDistanceLimitsMultiplier: 1
   info: {fileID: 11400000, guid: aa24d4ef4ae2c1148b55b931b2838f36, type: 2}

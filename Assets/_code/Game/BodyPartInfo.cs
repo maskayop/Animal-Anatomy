@@ -56,6 +56,8 @@ namespace AnimalAnatomy
             
             if (meshRenderers.Count != 0)
                 defaultMaterial = meshRenderers[0].material;
+
+            CalculateCameraDistanceLimitsMultiplier();
         }
 
         public void Select(bool isGroupSelection)
@@ -153,6 +155,16 @@ namespace AnimalAnatomy
                 suffixAdditional = " (" + suffix.scientificName + ")";
 
             return info.scientificName + suffixAdditional + saggital;
+        }
+
+        void CalculateCameraDistanceLimitsMultiplier()
+        {
+            float[] floats = new float[3];
+            floats[0] = meshRenderers[0].bounds.size.x;
+            floats[1] = meshRenderers[0].bounds.size.y;
+            floats[2] = meshRenderers[0].bounds.size.z;
+
+            cameraDistanceLimitsMultiplier = Mathf.Clamp(Mathf.Pow(Mathf.Max(floats), 0.6f), 0.25f, 1.0f);
         }
     }
 }
