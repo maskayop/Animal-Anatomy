@@ -60,7 +60,7 @@ namespace AnimalAnatomy
 
         void CopyTextsToClipboard()
         {
-            textToCopy = "Название части тела: " + bodyPartInfo.GetFullRussianName() + "\n" + "Научное название: " + bodyPartInfo.GetFullScientificName() +
+            textToCopy = "Название части тела: " + bodyPartInfo.GetFullRussianName() + "\n" + "Латинское название: " + bodyPartInfo.GetFullScientificName() +
                 "\n" + "Описание: " + bodyPartInfo.info.description;
 
             GUIUtility.systemCopyBuffer = textToCopy;
