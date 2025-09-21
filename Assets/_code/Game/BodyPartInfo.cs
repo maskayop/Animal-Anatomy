@@ -50,6 +50,8 @@ namespace AnimalAnatomy
 
             if (meshRenderers.Count == 0)
             {
+                Debug.LogWarning("Нет meshRenderers для " + name);
+
                 if (GetComponent<MeshRenderer>())
                     meshRenderers.Add(GetComponent<MeshRenderer>());
             }
