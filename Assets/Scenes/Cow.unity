@@ -711,6 +711,59 @@ MonoBehaviour:
   suffix: {fileID: 0}
   partGroupListButton: {fileID: 0}
   parentBodyPartGroup: {fileID: 0}
+--- !u!1 &172226582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 172226583}
+  - component: {fileID: 172226584}
+  m_Layer: 0
+  m_Name: "\u041A\u0430\u0443\u0434\u0430\u043B\u044C\u043D\u0430\u044F \u043F\u043E\u043B\u0430\u044F
+    \u0432\u0435\u043D\u0430"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &172226583
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172226582}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 828789476}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &172226584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172226582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  info: {fileID: 11400000, guid: 13bd0b638e994d449a38ae47e11b2e5c, type: 2}
+  suffix: {fileID: 0}
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &172701566 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7115601196285894741, guid: d915b939b5c4c6d4c9bd4489f515bce5, type: 3}
@@ -2170,6 +2223,59 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2487340569875422591, guid: 9fd8ccdc1a180ea408646ce4e7f333bf, type: 3}
   m_PrefabInstance: {fileID: 5596639790108443627}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &567104910
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 567104911}
+  - component: {fileID: 567104912}
+  m_Layer: 0
+  m_Name: "\u041B\u0435\u0432\u0430\u044F \u0433\u0440\u0443\u0434\u043D\u0430\u044F
+    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u044C"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &567104911
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567104910}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 881474695}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &567104912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567104910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  info: {fileID: 11400000, guid: f415534b93582db4eb0d7fea0fa70f48, type: 2}
+  suffix: {fileID: 0}
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &567359813 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6821875572806314223, guid: d33eb4d089e24f94fa7ba630176a09a1, type: 3}
@@ -2650,6 +2756,59 @@ MonoBehaviour:
   bodyParts: []
   allChildrenBodyParts: []
   info: {fileID: 11400000, guid: 816eead7762019c418553497ad3ff81f, type: 2}
+  suffix: {fileID: 0}
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
+--- !u!1 &700610494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 700610495}
+  - component: {fileID: 700610496}
+  m_Layer: 0
+  m_Name: "\u041F\u0440\u0430\u0432\u0430\u044F \u0433\u0440\u0443\u0434\u043D\u0430\u044F
+    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u044C"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &700610495
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700610494}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 881474695}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &700610496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700610494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  info: {fileID: 11400000, guid: f2b16e274cb004640a9f7127015d39b7, type: 2}
   suffix: {fileID: 0}
   partGroupListButton: {fileID: 0}
   parentBodyPartGroup: {fileID: 0}
@@ -3396,7 +3555,12 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2028311859}
+  - {fileID: 1307145382}
+  - {fileID: 172226583}
+  - {fileID: 881474695}
+  - {fileID: 2043625282}
   m_Father: {fileID: 1269270832}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &828789477
@@ -3532,6 +3696,60 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8601183413892864138, guid: 97357bfe44cdbe74d9a84b636e6ac718, type: 3}
   m_PrefabInstance: {fileID: 5833706375907787326}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &881474694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 881474695}
+  - component: {fileID: 881474696}
+  m_Layer: 0
+  m_Name: "\u0412\u0435\u043D\u044B \u0433\u0440\u0443\u0434\u043D\u044B\u0445 \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &881474695
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881474694}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 567104911}
+  - {fileID: 700610495}
+  m_Father: {fileID: 828789476}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &881474696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881474694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  info: {fileID: 11400000, guid: 548ab50200a60e24696561eb79e58f7b, type: 2}
+  suffix: {fileID: 0}
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &895046782 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1347497858506178295, guid: b2e669e9f5f1f6d4aa4b06504ae4acef, type: 3}
@@ -5393,6 +5611,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1653888876731418392, guid: 244738a93a63d6e4b86a3a674e390c27, type: 3}
   m_PrefabInstance: {fileID: 1827273418802968255}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1307145381
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1307145382}
+  - component: {fileID: 1307145383}
+  m_Layer: 0
+  m_Name: "\u0412\u0435\u043D\u044B \u0433\u043E\u043B\u043E\u0432\u044B"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1307145382
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307145381}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 828789476}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1307145383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307145381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  info: {fileID: 11400000, guid: 97159af0c2af4ca4aaf3c639a9f7183a, type: 2}
+  suffix: {fileID: 0}
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1307869797 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3414816103003116498, guid: 94fcdfe6832f22c4993ee9176f9b0560, type: 3}
@@ -5901,6 +6171,59 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1671929592386974536, guid: 39b196d60fe055f48821bcecf9dbef9e, type: 3}
   m_PrefabInstance: {fileID: 3402080088598993407}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1479658358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1479658359}
+  - component: {fileID: 1479658360}
+  m_Layer: 0
+  m_Name: "\u041B\u0435\u0432\u0430\u044F \u0442\u0430\u0437\u043E\u0432\u0430\u044F
+    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u044C"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1479658359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479658358}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2043625282}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1479658360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479658358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  info: {fileID: 11400000, guid: 951ce233d7669d04fac7a7f28a123a09, type: 2}
+  suffix: {fileID: 0}
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1481118350 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 115286034098347724, guid: 03944dd3f3bd93345b8ef8f4e0fa903d, type: 3}
@@ -6333,6 +6656,59 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5947321291478869463, guid: e5a30896fc6cde94d92eba9f8a9b0edc, type: 3}
   m_PrefabInstance: {fileID: 9183977255159435905}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1655532813
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1655532814}
+  - component: {fileID: 1655532815}
+  m_Layer: 0
+  m_Name: "\u041F\u0440\u0430\u0432\u0430\u044F \u0442\u0430\u0437\u043E\u0432\u0430\u044F
+    \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u044C"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1655532814
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655532813}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2043625282}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1655532815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655532813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  info: {fileID: 11400000, guid: 2b0595412196e0f4aae4d026128c35ff, type: 2}
+  suffix: {fileID: 0}
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &1656291641 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7197518544849133874, guid: 036c03c32e649b84888fc24ecbcde9a4, type: 3}
@@ -7817,6 +8193,59 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5083007551508455289, guid: 1b0e65cadc704c443b1bfaae14803d37, type: 3}
   m_PrefabInstance: {fileID: 1959286097065716537}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2028311858
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2028311859}
+  - component: {fileID: 2028311860}
+  m_Layer: 0
+  m_Name: "\u041A\u0440\u0430\u043D\u0438\u0430\u043B\u044C\u043D\u0430\u044F \u043F\u043E\u043B\u0430\u044F
+    \u0432\u0435\u043D\u0430"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2028311859
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028311858}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 828789476}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2028311860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028311858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  info: {fileID: 11400000, guid: 78acbe150536e4648a74cccb6b0955e9, type: 2}
+  suffix: {fileID: 0}
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &2034226754 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 794648677825650934, guid: a862f153672187b4fb616ce17528d170, type: 3}
@@ -7832,6 +8261,60 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4770589217207221959, guid: e1bf9fa0d025f834e9b7b32f50e416c8, type: 3}
   m_PrefabInstance: {fileID: 1953699231845095660}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2043625281
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2043625282}
+  - component: {fileID: 2043625283}
+  m_Layer: 0
+  m_Name: "\u0412\u0435\u043D\u044B \u0442\u0430\u0437\u043E\u0432\u044B\u0445 \u043A\u043E\u043D\u0435\u0447\u043D\u043E\u0441\u0442\u0435\u0439"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2043625282
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043625281}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1479658359}
+  - {fileID: 1655532814}
+  m_Father: {fileID: 828789476}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2043625283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043625281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
+  cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
+  info: {fileID: 11400000, guid: b89578f5bfa65374ebf9b4cda48e7e61, type: 2}
+  suffix: {fileID: 0}
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!4 &2046706910 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1581046466301196807, guid: 2bceacee7bb3e5b47a51fb32f76f10cb, type: 3}
