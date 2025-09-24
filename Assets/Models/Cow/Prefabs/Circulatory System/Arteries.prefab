@@ -71,6 +71,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: -5143715239260428196}
   m_SourcePrefab: {fileID: 100100000, guid: af45d3e1f186cc044b728ee0430d46e9, type: 3}
+--- !u!23 &2958695673602506812 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: af45d3e1f186cc044b728ee0430d46e9, type: 3}
+  m_PrefabInstance: {fileID: 4525822595029966008}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3607271676284215785 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: af45d3e1f186cc044b728ee0430d46e9, type: 3}
@@ -111,11 +116,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartInfo
   systemType: 3
-  meshRenderers: []
+  meshRenderers:
+  - {fileID: 2958695673602506812}
   cameraDistanceLimitsMultiplier: 1
-  info: {fileID: 11400000, guid: 357cdc825cb66344484283998f380022, type: 2}
-  partName: 
-  partScientificName: 
-  partDescription: 
+  info: {fileID: 11400000, guid: 188cf5fbf8dd98f44b274537eef6b11a, type: 2}
+  suffixSaggital: {fileID: 0}
+  suffix: {fileID: 0}
   partListButton: {fileID: 0}
   bodyPartGroup: {fileID: 0}
