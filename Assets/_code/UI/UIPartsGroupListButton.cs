@@ -21,6 +21,7 @@ namespace AnimalAnatomy
             bodyPartGroup = info;
             nameText.text = info.GetFullRussianName();
             scientificNameText.text = info.GetFullScientificName();
+            systemTypeColorImage.color = ColorsManager.Instance.GetSystemColor(info.systemType);
         }
 
         public void SelectBodyPartGroup()

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4744033071781961499}
   - component: {fileID: 8348161921302091938}
   - component: {fileID: 4241067815494528954}
+  - component: {fileID: 7103219120739161968}
   m_Layer: 0
   m_Name: Game Controller
   m_TagString: Untagged
@@ -107,3 +108,42 @@ MonoBehaviour:
   wrongAnswers: 0
   totalAnswers: 0
   currentTime: 0
+--- !u!114 &7103219120739161968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7477548313674678754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91537d850984c74fb0f5d0329260c88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.ColorsManager
+  systemsColors:
+  - systemType: 0
+    color: {r: 0.865, g: 0.8249449, b: 0.589065, a: 1}
+  - systemType: 1
+    color: {r: 0.83699995, g: 0.3568263, b: 0.10713601, a: 1}
+  - systemType: 2
+    color: {r: 0.281473, g: 0.709, b: 0.37801138, a: 1}
+  - systemType: 3
+    color: {r: 0.894, g: 0.10102203, b: 0.5251728, a: 1}
+  - systemType: 4
+    color: {r: 0.16470587, g: 0.307451, b: 0.8235294, a: 1}
+  - systemType: 5
+    color: {r: 0.3137255, g: 0.74065375, b: 0.87058824, a: 1}
+  - systemType: 6
+    color: {r: 0.6465865, g: 0.8745098, b: 0.18627064, a: 1}
+  - systemType: 7
+    color: {r: 0.69411767, g: 0.3756565, b: 0.11314121, a: 1}
+  - systemType: 8
+    color: {r: 0.6289713, g: 0.27742597, b: 0.851, a: 1}
+  - systemType: 9
+    color: {r: 0.809, g: 0.6138132, b: 0.510479, a: 1}
+  - systemType: 10
+    color: {r: 0.90099996, g: 0.90099996, b: 0.3430586, a: 1}
+  - systemType: 11
+    color: {r: 0.462672, g: 0.816, b: 0.64651746, a: 1}
+  - systemType: 12
+    color: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 1}

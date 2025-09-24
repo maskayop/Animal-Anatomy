@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 namespace AnimalAnatomy
@@ -12,6 +13,7 @@ namespace AnimalAnatomy
         [SerializeField] GameObject keyCodePanel;
         [SerializeField] TextMeshProUGUI keyCodeText;
         [SerializeField] string customKeyCodeName;
+        [SerializeField] Image systemTypeColorImage;
 
         [Header("Tumbler")]
         [SerializeField] GameObject tumblerOn;
@@ -47,6 +49,9 @@ namespace AnimalAnatomy
             isActive = false;
             SwitchActiveState();
 
+            if (!keyCodePanel)
+                return;
+
             if (keyCode == KeyCode.None)
             {
                 keyCodePanel.SetActive(false);
@@ -60,6 +65,8 @@ namespace AnimalAnatomy
                 else
                     keyCodeText.text = customKeyCodeName;
             }
+
+            systemTypeColorImage.color = ColorsManager.Instance.GetSystemColor(systemType);
         }
 
         public void SwitchActiveState()

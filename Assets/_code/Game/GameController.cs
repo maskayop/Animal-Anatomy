@@ -18,7 +18,7 @@ namespace AnimalAnatomy
     {
         public static GameController Instance;
 
-        public enum SystemType { skeleton, muscles, nervous, circulatory, sensory, respiratory, digestive, excretory, reproductive, skin, lymphatic, endocrine }
+        public enum SystemType { skeleton, muscles, nervous, circulatory, sensory, respiratory, digestive, excretory, reproductive, skin, lymphatic, endocrine, none }
         public SystemType systemType;
 
         public List<BodyPartInfo> allBodyParts = new List<BodyPartInfo>();
@@ -92,6 +92,8 @@ namespace AnimalAnatomy
                     newBodyPartsList.systemType = SystemType.lymphatic;
                 else if (i == 11)
                     newBodyPartsList.systemType = SystemType.endocrine;
+                else if (i == 12)
+                    newBodyPartsList.systemType = SystemType.none;
 
                 bodyPartsLists.Add(newBodyPartsList);
             }

@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using static AnimalAnatomy.GameController;
 
 namespace AnimalAnatomy
@@ -11,9 +12,11 @@ namespace AnimalAnatomy
         public TextMeshProUGUI scientificNameText;
         public RectTransform containerTransform;
         public GameObject selectionImage;
-        
+        public Image systemTypeColorImage;
+
         BodyPartInfo bodyPartInfo;
 
+        [HideInInspector]
         public string textToCopy;
 
         void Start()
@@ -26,6 +29,7 @@ namespace AnimalAnatomy
             bodyPartInfo = info;
             nameText.text = info.GetFullRussianName();
             scientificNameText.text = info.GetFullScientificName();
+            systemTypeColorImage.color = ColorsManager.Instance.GetSystemColor(info.systemType);
         }
 
         public void Init(SystemType systemType)

@@ -6,6 +6,8 @@ namespace AnimalAnatomy
 { 
     public class BodyPartGroup : MonoBehaviour
     {
+        public GameController.SystemType systemType;
+
         public float cameraDistanceLimitsMultiplier = 1.0f;
         public List<BodyPartGroup> bodyPartsGroups = new List<BodyPartGroup>();
         public List<BodyPartInfo> bodyParts = new List<BodyPartInfo>();
