@@ -29,15 +29,11 @@ namespace AnimalAnatomy
 
             Instance = this;
         }
-        
-        void Start()
-        {
-            Init();
-        }
 
         public void Init()
         {
             videoLength = (float)videoPlayer.clip.length;
+            videoPlayer.Play();
             StartCoroutine(StartAnimationAfterVideo());
         }
 
