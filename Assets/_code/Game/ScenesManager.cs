@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,7 +8,9 @@ namespace AnimalAnatomy
 	{
 		public static ScenesManager Instance { get; private set; }
 
-		string currentLoadedScene;
+        [SerializeField] List<string> scenes = new List<string>();
+
+        string currentLoadedScene;
 
 		void Awake()
 		{
@@ -46,5 +49,12 @@ namespace AnimalAnatomy
 		{
 			return currentLoadedScene;
 		}
-	}
+
+        public void LoadSceneByName(string sceneName)
+        {
+			for (int i = 0;  i < scenes.Count; i++)
+				if (scenes[i] ==  sceneName)
+					LoadScene(scenes[i]);
+        }
+    }
 }
