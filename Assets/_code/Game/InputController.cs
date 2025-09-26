@@ -26,6 +26,9 @@ namespace AnimalAnatomy
             else
                 UIMainCanvas.Instance.ShowVopere(false);
 
+            if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.D))
+                PlayerPrefs.DeleteAll();
+
             if (UIMainCanvas.Instance.isLoading)
                 return;
 
