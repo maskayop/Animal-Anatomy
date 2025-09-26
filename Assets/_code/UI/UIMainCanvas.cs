@@ -104,6 +104,7 @@ namespace AnimalAnatomy
             systemActivatingButtons = FindObjectsByType<UIButtonSystemActivating>(FindObjectsSortMode.None);
             examWindow.SetActive(false);
             CreateBodyPartsGroupsListButtons();
+            CollapseSystemActivatingButtons(true);
         }
 
         public void SetIsolatedMode(bool state)
@@ -313,6 +314,17 @@ namespace AnimalAnatomy
         public void ShowVopere(bool state)
         {
             vopere.SetActive(state);
+        }
+
+        public void CollapseSystemActivatingButtons(bool state)
+        {
+            for (int i = 0; i < systemActivatingButtons.Length; i++)
+            {
+                if (state)
+                    systemActivatingButtons[i].Collapse();
+                else
+                    systemActivatingButtons[i].Expand();
+            }
         }
     }
 }

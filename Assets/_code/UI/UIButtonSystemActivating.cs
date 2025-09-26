@@ -15,6 +15,9 @@ namespace AnimalAnatomy
         [SerializeField] string customKeyCodeName;
         [SerializeField] Image systemTypeColorImage;
 
+        [Header("Text")]
+        [SerializeField] TextMeshProUGUI systemNameText;
+
         [Header("Tumbler")]
         [SerializeField] GameObject tumblerOn;
         [SerializeField] GameObject tumblerOff;
@@ -85,6 +88,18 @@ namespace AnimalAnatomy
 
             tumblerOn.SetActive(isActive);
             tumblerOff.SetActive(!isActive);
+        }
+
+        public void Collapse()
+        {
+            keyCodePanel.SetActive(false);
+            systemNameText.gameObject.SetActive(false);
+        }
+
+        public void Expand()
+        {
+            keyCodePanel.SetActive(true);
+            systemNameText.gameObject.SetActive(true);
         }
     }
 }
