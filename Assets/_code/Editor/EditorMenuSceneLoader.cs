@@ -27,10 +27,16 @@ namespace Vopere.Editor
             LoadScene("_Protection");
         }
 
-        [MenuItem("Animal Anatomy/Открыть сцену/Животные/Cow")]
+        [MenuItem("Animal Anatomy/Открыть сцену/Животные/Корова")]
         static void LoadSceneCow()
         {
             LoadScene("Cow");
+        }
+
+        [MenuItem("Animal Anatomy/Открыть сцену/Животные/Конь")]
+        static void LoadSceneHorse()
+        {
+            LoadScene("Horse");
         }
     }
 }
