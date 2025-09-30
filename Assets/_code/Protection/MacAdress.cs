@@ -60,6 +60,7 @@ namespace Vopere.Protection
 
 			//Debug.Log(MyMacAdress);
 		}
+
 		public void Quit()
 		{
 #if UNITY_EDITOR

@@ -8,14 +8,23 @@ namespace Vopere.Protection
 {
     public class ProtectionKey : MonoBehaviour
     {
+        [Header("Canvases")]
+        public GameObject clientCanvas;
+        public GameObject generatorCanvas;
+
+        [Header("Check and Activation")]
         public MacAdress macAdress;
+        public string checkKey;
+        public TMP_InputField checkInputField;
         public string key;
         public TMP_InputField activationInputField;
 
         [Header("Generating")]
         public bool useForGenerator = false;
         public TMP_InputField generatingInputField;
+        public TMP_InputField activatingInputField;
 
+        [Space(20)]
         public UnityEvent onFirstTime;
         public UnityEvent onSucceed;
         public UnityEvent onFailed;
@@ -24,16 +33,20 @@ namespace Vopere.Protection
 
         void Start()
         {
+            if (useForGenerator)
+                Destroy(clientCanvas);
+            else
+                Destroy(generatorCanvas);
+            
             GenerateKey();
             LoadKey();
         }
 
         void GenerateKey()
         {
-            key = ComputeHash(macAdress.MyMacAdress);
-
-            if (useForGenerator)
-                generatingInputField.text = key;
+            checkKey = ComputeHash(macAdress.MyMacAdress);
+            checkInputField.text = checkKey;
+            key = GetEditedKey(checkKey);
         }
 
         public void CheckKey()
@@ -90,11 +103,123 @@ namespace Vopere.Protection
             return stringBuilder.ToString();
         }
 
-        public void CopyTextToClipboard()
+        public string GetEditedKey(string INkey)
         {
-            string textToCopy = key;
+            string value = ComputeHash(INkey);
+            char[] chars = value.ToCharArray();
+            value = "";
 
-            GUIUtility.systemCopyBuffer = textToCopy;
+            //            A B   C D   E F   G H   I J   K L   M N   O P   Q R   S T   U V   W X   Y Z
+            if (char.IsNumber(chars[0]))
+            {
+                for (int i = 0; i < chars.Length; i++)
+                {
+                    if (chars[i].ToString() == "1")
+                        value += "A";
+                    else if (chars[i].ToString() == "2")
+                        value += "B";
+                    else if (chars[i].ToString() == "3")
+                        value += "C";
+                    else if (chars[i].ToString() == "4")
+                        value += "D";
+                    else if (chars[i].ToString() == "5")
+                        value += "E";
+                    else if (chars[i].ToString() == "6")
+                        value += "F";
+                    else if (chars[i].ToString() == "7")
+                        value += "G";
+                    else if (chars[i].ToString() == "8")
+                        value += "H";
+                    else if (chars[i].ToString() == "9")
+                        value += "I";
+                    else if (chars[i].ToString() == "0")
+                        value += "J";
+                    else if (chars[i].ToString() == "A")
+                        value += "1";
+                    else if (chars[i].ToString() == "B")
+                        value += "2";
+                    else if (chars[i].ToString() == "C")
+                        value += "3";
+                    else if (chars[i].ToString() == "D")
+                        value += "4";
+                    else if (chars[i].ToString() == "E")
+                        value += "5";
+                    else if (chars[i].ToString() == "F")
+                        value += "6";
+                    else if (chars[i].ToString() == "G")
+                        value += "7";
+                    else if (chars[i].ToString() == "H")
+                        value += "8";
+                    else if (chars[i].ToString() == "I")
+                        value += "9";
+                    else
+                        value += "0";
+                }
+            }
+            //            A B   C D   E F   G H   I J   K L   M N   O P   Q R   S T   U V   W X   Y Z
+            else
+            {
+                for (int i = 0; i < chars.Length; i++)
+                {
+                    if (chars[i].ToString() == "1")
+                        value += "Z";
+                    else if (chars[i].ToString() == "2")
+                        value += "Y";
+                    else if (chars[i].ToString() == "3")
+                        value += "X";
+                    else if (chars[i].ToString() == "4")
+                        value += "W";
+                    else if (chars[i].ToString() == "5")
+                        value += "V";
+                    else if (chars[i].ToString() == "6")
+                        value += "U";
+                    else if (chars[i].ToString() == "7")
+                        value += "T";
+                    else if (chars[i].ToString() == "8")
+                        value += "S";
+                    else if (chars[i].ToString() == "9")
+                        value += "R";
+                    else if (chars[i].ToString() == "0")
+                        value += "Q";
+                    else if (chars[i].ToString() == "A")
+                        value += "9";
+                    else if (chars[i].ToString() == "B")
+                        value += "8";
+                    else if (chars[i].ToString() == "C")
+                        value += "7";
+                    else if (chars[i].ToString() == "D")
+                        value += "6";
+                    else if (chars[i].ToString() == "E")
+                        value += "5";
+                    else if (chars[i].ToString() == "F")
+                        value += "4";
+                    else if (chars[i].ToString() == "G")
+                        value += "3";
+                    else if (chars[i].ToString() == "H")
+                        value += "2";
+                    else if (chars[i].ToString() == "I")
+                        value += "1";
+                    else
+                        value += "0";
+                }
+            }
+
+            return value;
+        }
+
+        public void CopyActivationKeyToClipboard()
+        {
+            GUIUtility.systemCopyBuffer = activatingInputField.text;
+        }
+
+        public void CopyCheckKeyToClipboard()
+        {
+            GUIUtility.systemCopyBuffer = checkInputField.text;
+        }
+
+        public void ShowGeneratedKey()
+        {
+            activatingInputField.text = GetEditedKey(generatingInputField.text);
         }
     }
 }
