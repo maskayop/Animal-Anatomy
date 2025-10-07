@@ -993,6 +993,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u041B\u0451\u0433\u043A\u0438\u0435 - Lungs"
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 77499844537a98f46871e96a2154e842, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2713111011595548732, guid: 77499844537a98f46871e96a2154e842, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1465,6 +1469,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f72e1071ba08511489cde26bba8c374d, type: 3}
       propertyPath: m_Name
       value: "\u0422\u0440\u0430\u0445\u0435\u044F - Trachea"
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f72e1071ba08511489cde26bba8c374d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1864409090359342600, guid: f72e1071ba08511489cde26bba8c374d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6876,6 +6884,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 787306596}
+  - {fileID: 2082833868}
   m_Father: {fileID: 1288319924}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1927197057
@@ -7210,6 +7219,81 @@ MonoBehaviour:
   suffix: {fileID: 11400000, guid: cf43324412d169c4d84dfdb33dcbd5b6, type: 2}
   partGroupListButton: {fileID: 0}
   parentBodyPartGroup: {fileID: 0}
+--- !u!1001 &2082833867
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1927197056}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 6d1ed583f8560b341b8ac05948ce663e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d1ed583f8560b341b8ac05948ce663e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d1ed583f8560b341b8ac05948ce663e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d1ed583f8560b341b8ac05948ce663e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d1ed583f8560b341b8ac05948ce663e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d1ed583f8560b341b8ac05948ce663e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d1ed583f8560b341b8ac05948ce663e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d1ed583f8560b341b8ac05948ce663e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d1ed583f8560b341b8ac05948ce663e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6d1ed583f8560b341b8ac05948ce663e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5717508412553210838, guid: 6d1ed583f8560b341b8ac05948ce663e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 064027c012ace924ea483eb41074f7ea, type: 2}
+    - target: {fileID: -2758283860794302465, guid: 6d1ed583f8560b341b8ac05948ce663e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 064027c012ace924ea483eb41074f7ea, type: 2}
+    - target: {fileID: 919132149155446097, guid: 6d1ed583f8560b341b8ac05948ce663e, type: 3}
+      propertyPath: m_Name
+      value: "\u0429\u0438\u0442\u043E\u0432\u0438\u0434\u043D\u0430\u044F \u0436\u0435\u043B\u0435\u0437\u0430
+        - Thyroid Gland"
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6d1ed583f8560b341b8ac05948ce663e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6d1ed583f8560b341b8ac05948ce663e, type: 3}
+--- !u!4 &2082833868 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6d1ed583f8560b341b8ac05948ce663e, type: 3}
+  m_PrefabInstance: {fileID: 2082833867}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2085327498 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9091436019311930356, guid: 2497ff69c9ded4d4babdbe365db8d5cf, type: 3}
