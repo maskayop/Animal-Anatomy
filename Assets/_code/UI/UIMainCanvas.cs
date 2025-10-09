@@ -10,6 +10,8 @@ namespace AnimalAnatomy
     {
         public static UIMainCanvas Instance;
 
+        [SerializeField] string mainMenuSceneName;
+
         [Header("Loading Screen")]
         [SerializeField] GameObject loadingScreen;
         [SerializeField] float loadingTime = 1.0f;
@@ -146,6 +148,11 @@ namespace AnimalAnatomy
         public void ExitApp()
         {
             App.Instance.ExitGame();
+        }
+
+        public void ExitToMainMenu()
+        {
+            ScenesManager.Instance.LoadSceneByName(mainMenuSceneName);
         }
 
         void CreateBodyPartsGroupsListButtons()

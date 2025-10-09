@@ -10,11 +10,13 @@ namespace AnimalAnatomy
 
         [SerializeField] string sceneToLoadFirst;
 
+
         [Header("Start Video")]
         [SerializeField] VideoPlayer videoPlayer;
         [SerializeField] Animator videoPlayerAnimator;
         [SerializeField] string videoFadeOutState;
         [SerializeField] float fadeOutAnimationLenght = 1.0f;
+        [SerializeField] float editorVideoSpeed = 1.0f;
 
         float videoLength;
 
@@ -33,6 +35,14 @@ namespace AnimalAnatomy
         public void Init()
         {
             videoLength = (float)videoPlayer.clip.length;
+
+#if UNITY_EDITOR
+            videoPlayer.playbackSpeed = editorVideoSpeed;
+            videoLength /= editorVideoSpeed;
+#else
+            videoPlayer.playbackSpeed = 1.0f;
+#endif
+
             videoPlayer.Play();
             StartCoroutine(StartAnimationAfterVideo());
         }

@@ -1,9 +1,6 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
 namespace AnimalAnatomy
 {
@@ -51,9 +48,19 @@ namespace AnimalAnatomy
             currentGame = id;
 
             if (currentGame < 0)
+            {
                 startButtonPanel.SetActive(false);
+            }
             else
+            {
                 startButtonPanel.SetActive(true);
+                MainMenuAnimalSelection.Instance.SelectAnimal(id);
+            }
+        }
+
+        public void StartGame()
+        {
+            ScenesManager.Instance.LoadSceneByName(games[currentGame].sceneName);
         }
     }
 }
