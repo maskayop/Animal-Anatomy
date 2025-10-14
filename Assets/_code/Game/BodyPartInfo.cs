@@ -31,9 +31,6 @@ namespace AnimalAnatomy
                 if (child.GetComponent<MeshRenderer>())
                     meshRenderers.Add(child.GetComponent<MeshRenderer>());
             }
-
-            if (!GetComponent<LODGroup>())
-                transform.gameObject.AddComponent<LODGroup>();
         }
 
         void Start()
