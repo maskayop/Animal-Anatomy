@@ -1,8 +1,10 @@
-﻿using System.Security.Cryptography;
+﻿using System;
 using System.Text;
+using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using Vopere.Common;
 
 namespace Vopere.Protection
 {
@@ -44,7 +46,7 @@ namespace Vopere.Protection
 
         void GenerateKey()
         {
-            checkKey = ComputeHash(macAdress.MyMacAdress);
+            checkKey = ComputeHash(GetUserName() + GetGPUInfo() + GetCPUInfo());
             checkInputField.text = checkKey;
             key = GetEditedKey(checkKey);
         }
@@ -61,6 +63,7 @@ namespace Vopere.Protection
             {
                 onFailed.Invoke();
                 Debug.LogWarning("Неверный ключ защиты! Выход");
+                App.Instance.ExitGame();
             }
         }
 
@@ -96,9 +99,9 @@ namespace Vopere.Protection
             var stringBuilder = new StringBuilder();
 
             for (var i = 0; i < hash.Length; i++)
-            {
                 stringBuilder.Append(hash[i].ToString("X2"));
-            }
+
+            //Debug.Log(stringBuilder.ToString());
 
             return stringBuilder.ToString();
         }
@@ -109,7 +112,7 @@ namespace Vopere.Protection
             char[] chars = value.ToCharArray();
             value = "";
 
-            //            A B   C D   E F   G H   I J   K L   M N   O P   Q R   S T   U V   W X   Y Z
+            //  A B   C D   E F   G H   I J   K L   M N   O P   Q R   S T   U V   W X   Y Z
             if (char.IsNumber(chars[0]))
             {
                 for (int i = 0; i < chars.Length; i++)
@@ -156,7 +159,7 @@ namespace Vopere.Protection
                         value += "0";
                 }
             }
-            //            A B   C D   E F   G H   I J   K L   M N   O P   Q R   S T   U V   W X   Y Z
+            //  A B   C D   E F   G H   I J   K L   M N   O P   Q R   S T   U V   W X   Y Z
             else
             {
                 for (int i = 0; i < chars.Length; i++)
@@ -220,6 +223,51 @@ namespace Vopere.Protection
         public void ShowGeneratedKey()
         {
             activatingInputField.text = GetEditedKey(generatingInputField.text);
+        }
+
+        string GetUserName()
+        {
+            string userName = Environment.UserName;
+
+#if UNITY_STANDALONE_WIN
+            Debug.Log($"Windows пользователь: {userName}");
+#elif UNITY_STANDALONE_OSX
+            Debug.Log($"macOS пользователь: {userName}");
+#elif UNITY_STANDALONE_LINUX
+            Debug.Log($"Linux пользователь: {userName}");
+#else
+            Debug.Log($"Пользователь ({Application.platform}): {userName}");
+#endif
+
+            return userName;
+        }
+
+        string GetGPUInfo()
+        {
+            string gpuName = SystemInfo.graphicsDeviceName;
+            string gpuVendor = SystemInfo.graphicsDeviceVendor;
+            int gpuMemory = SystemInfo.graphicsMemorySize;
+            string gpuVersion = SystemInfo.graphicsDeviceVersion;
+
+            Debug.Log($"Видеокарта: {gpuName}");
+            Debug.Log($"Производитель: {gpuVendor}");
+            Debug.Log($"Видеопамять: {gpuMemory} MB");
+            Debug.Log($"Драйвер: {gpuVersion}");
+
+            return gpuName + "_" + gpuVendor + "_" + gpuMemory;
+        }
+
+        string GetCPUInfo()
+        {
+            string processorName = SystemInfo.processorType;
+            int processorCount = SystemInfo.processorCount;
+            int processorFrequency = SystemInfo.processorFrequency;
+
+            Debug.Log($"Процессор: {processorName}");
+            Debug.Log($"Количество ядер: {processorCount}");
+            Debug.Log($"Частота: {processorFrequency} MHz");
+
+            return processorName;
         }
     }
 }

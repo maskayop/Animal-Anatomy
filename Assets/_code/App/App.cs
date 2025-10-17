@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace AnimalAnatomy
+namespace Vopere.Common
 {
-	public class App : MonoBehaviour
+    public class App : MonoBehaviour
 	{
 		public static App Instance;
 
@@ -27,10 +27,16 @@ namespace AnimalAnatomy
 
         public void ExitGame()
 		{
-			Application.Quit();
-		}
+			Debug.Log("Выход из программы" + "\n");
 
-		public void SetTargetFPS(bool value)
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+			Application.Quit();
+#endif
+        }
+
+        public void SetTargetFPS(bool value)
 		{
 			if (value)
 				Application.targetFrameRate = 60;

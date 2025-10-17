@@ -24,7 +24,7 @@ MonoBehaviour:
     m_path: Assets/Scenes/_Init.unity
   - m_enabled: 1
     m_path: Assets/Scenes/_Main Menu.unity
-  - m_enabled: 1
+  - m_enabled: 0
     m_path: Assets/Scenes/Cow.unity
   - m_enabled: 1
     m_path: Assets/Scenes/Horse.unity
@@ -86,7 +86,7 @@ MonoBehaviour:
     - line: '|   mipStripping: 0'
     - line: '|   numberOfMipsStripped: 0'
     - line: '|   numberOfMipsStrippedPerMipmapLimitGroup: {}'
-    - line: '|   m_StackTraceTypes: 010000000100000001000000010000000100000001000000'
+    - line: '|   m_StackTraceTypes: 020000000200000002000000020000000200000001000000'
     - line: '|   iosShowActivityIndicatorOnLoading: -1'
     - line: '|   androidShowActivityIndicatorOnLoading: -1'
     - line: '|   iosUseCustomAppBackgroundBehavior: 0'
@@ -173,7 +173,7 @@ MonoBehaviour:
     - line: '|   loadStoreDebugModeEnabled: 0'
     - line: '|   visionOSBundleVersion: 1.0'
     - line: '|   tvOSBundleVersion: 1.0'
-    - line: '|   bundleVersion: 1.3'
+    - line: '|   bundleVersion: 1.5'
     - line: '|   preloadedAssets: []'
     - line: '|   metroInputSource: 0'
     - line: '|   wsaTransparentSwapchain: 0'
@@ -830,7 +830,8 @@ MonoBehaviour:
     - line: '|   hmiLogStartupTiming: 0'
     - line: '|   qnxGraphicConfPath: '
     - line: '|   apiCompatibilityLevel: 6'
-    - line: '|   captureStartupLogs: {}'
+    - line: '|   captureStartupLogs:'
+    - line: '|     Standalone: 1'
     - line: '|   activeInputHandler: 0'
     - line: '|   windowsGamepadBackendHint: 0'
     - line: '|   cloudProjectId: '

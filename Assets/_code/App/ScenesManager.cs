@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace AnimalAnatomy
+namespace Vopere.Common
 {
 	public class ScenesManager : MonoBehaviour
 	{
