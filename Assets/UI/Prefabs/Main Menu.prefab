@@ -2319,16 +2319,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 852930209240142870, guid: c2106ea1ae1baaf4c9d9e8248587aa35, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 64224950986626587}
+    - target: {fileID: 852930209240142870, guid: c2106ea1ae1baaf4c9d9e8248587aa35, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 852930209240142870, guid: c2106ea1ae1baaf4c9d9e8248587aa35, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ExitApp
+      value: ExitGame
       objectReference: {fileID: 0}
     - target: {fileID: 852930209240142870, guid: c2106ea1ae1baaf4c9d9e8248587aa35, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: AnimalAnatomy.UIMainCanvas, Assembly-CSharp
+      value: AnimalAnatomy.UIMainMenuCanvas, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 852930209240142870, guid: c2106ea1ae1baaf4c9d9e8248587aa35, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

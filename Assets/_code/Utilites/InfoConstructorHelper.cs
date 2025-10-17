@@ -5,6 +5,6 @@ namespace AnimalAnatomy
     public class InfoConstructorHelper : MonoBehaviour
     {
         public Material material;
-        public int layer;
+        public int layer = 6;
     }
 }
