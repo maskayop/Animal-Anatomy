@@ -1,3 +1,4 @@
+using AnimalAnatomy;
 using UnityEditor;
 using UnityEngine;
 
@@ -14,6 +15,16 @@ namespace Vopere.Editor
         static void DeletePlayerPrefsButton()
         {
             DeletePlayerPrefs();
+        }
+
+        [MenuItem("Utilites/Добавить конструктор части тела")]
+        static void AddInfoConstructorButton()
+        {
+            foreach (GameObject selectedObject in Selection.gameObjects)
+            {
+                if (selectedObject.GetComponent<InfoConstructor>() == null)
+                    selectedObject.AddComponent<InfoConstructor>();
+            }
         }
     }
 }
