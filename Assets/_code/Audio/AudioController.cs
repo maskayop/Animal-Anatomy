@@ -19,6 +19,7 @@ namespace AnimalAnatomy
         [Header("Music")]
         public AudioSource musicSource;
         public AudioMixerGroup musicMixer;
+        public float fadeTime = 1.0f;
         public List<MusicSample> musicSamples = new List<MusicSample>();
 
         [Header("UI")]
@@ -32,6 +33,13 @@ namespace AnimalAnatomy
         [Header("Music")]
         public AudioSource voiceSource;
         public AudioMixerGroup voiceMixer;
+
+        int currentMusic = -1;
+        int prevMusicId;
+
+        float currentMusicFadeValue;
+
+        bool isRandomPlaying = true;
 
         void Awake()
         {
@@ -50,13 +58,97 @@ namespace AnimalAnatomy
             Init();
         }
 
+        void Update()
+        {
+            if (musicSource.clip != null)
+            {
+                if (musicSource.isPlaying && musicSource.timeSamples >= musicSource.clip.samples - 1)
+                {
+                    if (musicSource.loop)
+                        return;
+                
+                    if (isRandomPlaying)
+                        PlayRandomMusicClip();
+                    else
+                        PlayNextMusicClip();
+                }
+            }
+        }
+
         public void Init()
         {
             if (musicSource.volume > 0)
+                PlayRandomMusicClip();
+        }
+
+        void PlayMusicClip()
+        {
+            if (currentMusic < 0)
+                currentMusic = musicSamples.Count - 1;
+            else if (currentMusic >= musicSamples.Count)
+                currentMusic = 0;
+
+            musicSource.Stop();
+            musicSource.clip = musicSamples[currentMusic].clip;
+            musicSource.Play();
+        }
+
+        public void PlayNextMusicClip()
+        {
+            prevMusicId = currentMusic;
+
+            if (isRandomPlaying)
+                PlayRandomMusicClip();
+            else
             {
-                musicSource.loop = true;
-                musicSource.Play();
+                currentMusic++;
+                PlayMusicClip();
             }
+        }
+
+        public void PlayPrevMusicClip()
+        {
+            prevMusicId = currentMusic;
+            currentMusic--;
+            PlayMusicClip();
+        }
+
+        void PlayRandomMusicClip()
+        {
+            int randomValue = UnityEngine.Random.Range(0, musicSamples.Count);
+
+            if (randomValue == currentMusic)
+                PlayNextMusicClip();
+            else
+            {
+                currentMusic = randomValue;
+                PlayMusicClip();
+            }
+        }
+
+        public void SetMusicLoopPlaying(bool state)
+        {
+            musicSource.loop = state;
+        }
+
+        public void PlayCurrentMusic()
+        {
+            musicSource.UnPause();
+        }
+
+        public void PauseCurrentMusic()
+        {
+            musicSource.Pause();
+        }
+
+        public int GetCurrentMusicId()
+        {
+            return currentMusic;
+        }
+
+        public void SetRandomPlaying(bool state)
+        {
+            isRandomPlaying = state;
         }
     }
 }

@@ -98,6 +98,10 @@ namespace AnimalAnatomy
 
         IEnumerator DisableLoadingScreen()
         {
+#if UNITY_EDITOR
+            loadingTime = 0;
+#endif
+
             yield return new WaitForSeconds(loadingTime);
 
             loadingScreen.SetActive(false);

@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace AnimalAnatomy
 {
@@ -28,6 +27,11 @@ namespace AnimalAnatomy
         [SerializeField] GameObject inTurnButton;
         [SerializeField] GameObject randomButton;
 
+        AudioController controller;
+
+        int currentMusicId;
+        int prevMusicId;
+
         void Awake()
         {
             if (Instance != null)
@@ -45,8 +49,15 @@ namespace AnimalAnatomy
             Init();
         }
 
+        void Update()
+        {
+            SetMusicName();
+        }
+
         public void Init()
         {
+            controller = AudioController.Instance;
+
             bigPanel.SetActive(false);
             smallPanel.SetActive(true);
 
@@ -62,17 +73,21 @@ namespace AnimalAnatomy
             repeatButton.SetActive(false);
             inTurnButton.SetActive(false);
             randomButton.SetActive(true);
+
+            OnRandomButtonClicked();
         }
 
         public void OnPrevButtonClicked()
         {
-
+            controller.PlayPrevMusicClip();
         }
 
         public void OnPlayButtonClicked()
         {
             playButton.SetActive(false);
             pauseButton.SetActive(true);
+
+            controller.PlayCurrentMusic();
         }
 
         public void OnStopButtonClicked()
@@ -84,11 +99,13 @@ namespace AnimalAnatomy
         {
             playButton.SetActive(true);
             pauseButton.SetActive(false);
+
+            controller.PauseCurrentMusic();
         }
 
         public void OnNextButtonClicked()
         {
-
+            controller.PlayNextMusicClip();
         }
 
         public void OnRepeatButtonClicked()
@@ -100,6 +117,8 @@ namespace AnimalAnatomy
             repeatButton.SetActive(false);
             inTurnButton.SetActive(true);
             randomButton.SetActive(false);
+
+            controller.SetMusicLoopPlaying(true);
         }
 
         public void OnInTurnButtonClicked()
@@ -111,6 +130,9 @@ namespace AnimalAnatomy
             repeatButton.SetActive(false);
             inTurnButton.SetActive(false);
             randomButton.SetActive(true);
+
+            controller.SetMusicLoopPlaying(false);
+            controller.SetRandomPlaying(false);
         }
 
         public void OnRandomButtonClicked()
@@ -122,6 +144,14 @@ namespace AnimalAnatomy
             repeatButton.SetActive(true);
             inTurnButton.SetActive(false);
             randomButton.SetActive(false);
+
+            controller.SetMusicLoopPlaying(false);
+            controller.SetRandomPlaying(true);
+        }
+
+        void SetMusicName()
+        {
+            musicNameText.text = controller.musicSamples[controller.GetCurrentMusicId()].name;
         }
     }
 }
