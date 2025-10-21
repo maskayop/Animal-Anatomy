@@ -297,6 +297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6296013623662014135}
   - component: {fileID: 8151837826335977498}
+  - component: {fileID: 1577320862690443407}
   m_Layer: 5
   m_Name: _Toggle base
   m_TagString: Untagged
@@ -373,6 +374,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 1
+--- !u!114 &1577320862690443407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7206541459063213807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf13f456e3558b4894c9aa8afab357b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.UIToggleClickAudio
+  clip: {fileID: 8300000, guid: a7941845864e0ed41a493dfeab429310, type: 3}
 --- !u!1 &8134118838183641208
 GameObject:
   m_ObjectHideFlags: 0

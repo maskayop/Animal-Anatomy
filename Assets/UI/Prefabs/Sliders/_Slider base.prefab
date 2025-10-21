@@ -477,6 +477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4304545159592833637}
   - component: {fileID: 6230219723418233618}
+  - component: {fileID: 7331183122491985289}
   m_Layer: 5
   m_Name: _Slider base
   m_TagString: Untagged
@@ -557,6 +558,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7331183122491985289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6354344538888732019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad7a828f4021850438bcdec6839076a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.UISliderAudio
+  clip: {fileID: 8300000, guid: 532e5fa77b23add4384e6e4160f33ef5, type: 3}
 --- !u!1 &8963078338560738782
 GameObject:
   m_ObjectHideFlags: 0

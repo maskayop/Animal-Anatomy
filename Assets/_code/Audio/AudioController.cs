@@ -154,5 +154,10 @@ namespace AnimalAnatomy
         {
             isRandomPlaying = state;
         }
+
+        public void PlayUIAudioClip(AudioClip clip)
+        {
+            UISource.PlayOneShot(clip);
+        }
     }
 }

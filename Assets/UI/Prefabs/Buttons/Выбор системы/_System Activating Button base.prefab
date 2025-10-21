@@ -455,6 +455,7 @@ GameObject:
   - component: {fileID: 2472895067754171697}
   - component: {fileID: 1814405474177342150}
   - component: {fileID: 8385257214499166866}
+  - component: {fileID: 6961656373823109168}
   m_Layer: 5
   m_Name: _System Activating Button base
   m_TagString: Untagged
@@ -655,6 +656,19 @@ MonoBehaviour:
   tumblerOn: {fileID: 4027651969363973453}
   tumblerOff: {fileID: 464224450550956898}
   isActive: 0
+--- !u!114 &6961656373823109168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4367908240815411546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d8b23b58e42784bb5aeadfdde30416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.UIButtonClickAudio
+  clip: {fileID: 8300000, guid: c6f666d2496efc44faf12e7cef8cf413, type: 3}
 --- !u!1 &5306814929798803292
 GameObject:
   m_ObjectHideFlags: 0

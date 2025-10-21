@@ -360,6 +360,7 @@ GameObject:
   - component: {fileID: 4509642088245966893}
   - component: {fileID: 3549856666150549830}
   - component: {fileID: 1820418818319285202}
+  - component: {fileID: 6226599087802941444}
   m_Layer: 5
   m_Name: Parts List Button
   m_TagString: Untagged
@@ -500,6 +501,19 @@ MonoBehaviour:
   selectionImage: {fileID: 1781818388288360433}
   systemTypeColorImage: {fileID: 3392051108149409449}
   textToCopy: 
+--- !u!114 &6226599087802941444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4367908240815411546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d8b23b58e42784bb5aeadfdde30416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.UIButtonClickAudio
+  clip: {fileID: 8300000, guid: c6f666d2496efc44faf12e7cef8cf413, type: 3}
 --- !u!1 &7995825182319962659
 GameObject:
   m_ObjectHideFlags: 0
