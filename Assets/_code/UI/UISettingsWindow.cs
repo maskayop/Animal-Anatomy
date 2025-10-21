@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Vopere.Common;
@@ -12,14 +13,16 @@ namespace AnimalAnatomy
         [SerializeField] GameObject window;
 
         [Header("Audio")]
+        [SerializeField] Slider musicSlider;
+        [SerializeField] TextMeshProUGUI musicValueText;
+        [SerializeField] Slider UIAudioSlider;
+        [SerializeField] TextMeshProUGUI UIAudioValueText;
 
         [Header("Color Scheme")]
         [SerializeField] List<Toggle> backgroundColorSchemeToggles = new List<Toggle>();
         
         bool isOpen = false;
         public bool IsOpen { get { return isOpen; } set { isOpen = value; } }
-
-        int backgroundColorSchemeId;
 
         void Awake()
         {
@@ -37,7 +40,25 @@ namespace AnimalAnatomy
 
         public void Init()
         {
-            backgroundColorSchemeId = DataSaveLoad.Instance.GetSavedInt("BackgroundColorScheme");
+            float musicVolume = DataSaveLoad.Instance.GetSavedFloat("MusicVolume");
+
+            if (musicVolume != -1)
+                musicSlider.value = musicVolume;
+            else
+                musicSlider.value = 100;
+            
+            musicValueText.text = musicSlider.value.ToString();
+
+            float UIVolume = DataSaveLoad.Instance.GetSavedFloat("UIVolume");
+
+            if (UIVolume != -1)
+                UIAudioSlider.value = UIVolume;
+            else
+                UIAudioSlider.value = 100;
+            
+            UIAudioValueText.text = UIAudioSlider.value.ToString();
+
+            int backgroundColorSchemeId = DataSaveLoad.Instance.GetSavedInt("BackgroundColorScheme");
 
             if (backgroundColorSchemeId != -1)
                 backgroundColorSchemeToggles[backgroundColorSchemeId].isOn = true;
@@ -73,6 +94,34 @@ namespace AnimalAnatomy
         {
             if (LightController.Instance)
                 LightController.Instance.SetSkyboxColors(id);
+        }
+
+        public void ChangeMusicVolume()
+        {
+            musicValueText.text = musicSlider.value.ToString();
+
+            if (AudioController.Instance)
+                AudioController.Instance.ChangeVolume(0, musicSlider.value);
+        }
+
+        public void ChangeUIVolume()
+        {
+            UIAudioValueText.text = UIAudioSlider.value.ToString();
+
+            if (AudioController.Instance)
+                AudioController.Instance.ChangeVolume(1, UIAudioSlider.value);
+        }
+
+        public void ChangeSFXVolume()
+        {
+            if (AudioController.Instance)
+                AudioController.Instance.ChangeVolume(1, UIAudioSlider.value);
+        }
+
+        public void ChangeVoiceVolume()
+        {
+            if (AudioController.Instance)
+                AudioController.Instance.ChangeVolume(1, UIAudioSlider.value);
         }
     }
 }

@@ -64,6 +64,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UISettingsWindow
   window: {fileID: 3028008565782113597}
+  musicSlider: {fileID: 5423313660989630718}
+  musicValueText: {fileID: 5307010771668421766}
+  UIAudioSlider: {fileID: 7228388030670422484}
+  UIAudioValueText: {fileID: 7400915821992830380}
   backgroundColorSchemeToggles:
   - {fileID: 7707773598333995215}
   - {fileID: 3141371044166977131}
@@ -2009,6 +2013,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Settings Music Slider
       objectReference: {fileID: 0}
+    - target: {fileID: 6618746742555631251, guid: 19369e84d48adda4b973aeccb052a81d, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618746742555631251, guid: 19369e84d48adda4b973aeccb052a81d, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618746742555631251, guid: 19369e84d48adda4b973aeccb052a81d, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2711906506080412277}
+    - target: {fileID: 6618746742555631251, guid: 19369e84d48adda4b973aeccb052a81d, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618746742555631251, guid: 19369e84d48adda4b973aeccb052a81d, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeMusicVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618746742555631251, guid: 19369e84d48adda4b973aeccb052a81d, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AnimalAnatomy.UISettingsWindow, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618746742555631251, guid: 19369e84d48adda4b973aeccb052a81d, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6820680388218191550, guid: 19369e84d48adda4b973aeccb052a81d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2031,6 +2063,28 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3895751976354105316, guid: 19369e84d48adda4b973aeccb052a81d, type: 3}
   m_PrefabInstance: {fileID: 1196259932983408237}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5307010771668421766 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6431054780670802667, guid: 19369e84d48adda4b973aeccb052a81d, type: 3}
+  m_PrefabInstance: {fileID: 1196259932983408237}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5423313660989630718 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6618746742555631251, guid: 19369e84d48adda4b973aeccb052a81d, type: 3}
+  m_PrefabInstance: {fileID: 1196259932983408237}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!1001 &4066837424779706338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2288,6 +2342,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Settings UI Audio Slider
       objectReference: {fileID: 0}
+    - target: {fileID: 6618746742555631251, guid: 73fa102eacf95eb4d8096198bf658a02, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618746742555631251, guid: 73fa102eacf95eb4d8096198bf658a02, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618746742555631251, guid: 73fa102eacf95eb4d8096198bf658a02, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2711906506080412277}
+    - target: {fileID: 6618746742555631251, guid: 73fa102eacf95eb4d8096198bf658a02, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618746742555631251, guid: 73fa102eacf95eb4d8096198bf658a02, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeUIVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618746742555631251, guid: 73fa102eacf95eb4d8096198bf658a02, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AnimalAnatomy.UISettingsWindow, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618746742555631251, guid: 73fa102eacf95eb4d8096198bf658a02, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6820680388218191550, guid: 73fa102eacf95eb4d8096198bf658a02, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2310,6 +2392,28 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3895751976354105316, guid: 73fa102eacf95eb4d8096198bf658a02, type: 3}
   m_PrefabInstance: {fileID: 4578726531782057799}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7228388030670422484 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6618746742555631251, guid: 73fa102eacf95eb4d8096198bf658a02, type: 3}
+  m_PrefabInstance: {fileID: 4578726531782057799}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!114 &7400915821992830380 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6431054780670802667, guid: 73fa102eacf95eb4d8096198bf658a02, type: 3}
+  m_PrefabInstance: {fileID: 4578726531782057799}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4684692976511602973
 PrefabInstance:
   m_ObjectHideFlags: 0

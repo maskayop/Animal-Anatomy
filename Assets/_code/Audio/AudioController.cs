@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using Vopere.Common;
+using static UnityEngine.Rendering.DebugUI;
 
 namespace AnimalAnatomy
 {
@@ -19,7 +21,6 @@ namespace AnimalAnatomy
         [Header("Music")]
         public AudioSource musicSource;
         public AudioMixerGroup musicMixer;
-        public float fadeTime = 1.0f;
         public List<MusicSample> musicSamples = new List<MusicSample>();
 
         [Header("UI")]
@@ -81,6 +82,16 @@ namespace AnimalAnatomy
         {
             if (musicSource.volume > 0)
                 PlayRandomMusicClip();
+
+            float musicVolume = DataSaveLoad.Instance.GetSavedFloat("MusicVolume");
+
+            if (musicVolume != -1)
+                ChangeVolume(0, musicVolume);
+
+            float UIVolume = DataSaveLoad.Instance.GetSavedFloat("UIVolume");
+
+            if (UIVolume != -1)
+                ChangeVolume(1, UIVolume);
         }
 
         void PlayMusicClip()
@@ -159,5 +170,25 @@ namespace AnimalAnatomy
         {
             UISource.PlayOneShot(clip);
         }
+
+        public void ChangeVolume(int group, float INvalue)
+        {
+            float value = (INvalue - 100) / 2.5f;
+
+            if (group == 0)
+                SetVolume(musicMixer, INvalue, value);
+            else if (group == 1)
+                SetVolume(UIMixer, INvalue, value);
+            else if (group == 2)
+                SetVolume(SFXMixer, INvalue, value);
+            else if (group == 3)
+                SetVolume(voiceMixer, INvalue, value);
+        }
+
+        void SetVolume(AudioMixerGroup mixerGroup, float INvalue, float value)
+        {
+            mixerGroup.audioMixer.SetFloat(mixerGroup.name + "Volume", value);
+            DataSaveLoad.Instance.Save(mixerGroup.name + "Volume", INvalue);
+        }
     }
-}
+ }
