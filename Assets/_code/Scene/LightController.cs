@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Vopere.Common;
 
 namespace AnimalAnatomy
 {
@@ -18,6 +19,8 @@ namespace AnimalAnatomy
         [SerializeField] Color colorBottom;
 
         Vector2 lastMousePosition;
+
+        int backgroundColorSchemeId;
 
         void Awake()
         {
@@ -38,7 +41,10 @@ namespace AnimalAnatomy
 
         public void Init()
         {
-            
+            backgroundColorSchemeId = DataSaveLoad.Instance.GetSavedInt("BackgroundColorScheme");
+
+            if (backgroundColorSchemeId != -1)
+                SetSkyboxColors(backgroundColorSchemeId);
         }
 
         void Update()
@@ -56,7 +62,8 @@ namespace AnimalAnatomy
 
         public void SetSkyboxColors(int id)
         {
-            skyboxRenderer.material = skyboxMaterials[id];
+            if (skyboxRenderer)
+                skyboxRenderer.material = skyboxMaterials[id];
         }
     }
 }

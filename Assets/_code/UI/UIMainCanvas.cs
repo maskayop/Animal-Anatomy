@@ -50,9 +50,6 @@ namespace AnimalAnatomy
         [Header("Examination")]
         [SerializeField] GameObject examinationSettingsWindow;
 
-        [Header("Settings")]
-        [SerializeField] GameObject settingsWindow;
-
         UIButtonSystemActivating[] systemActivatingButtons;
         List<UIPartsListButton> partsListButtons = new List<UIPartsListButton>();
 
@@ -343,16 +340,12 @@ namespace AnimalAnatomy
 
         public void OpenSettingsWindow()
         {
-            settingsWindow.SetActive(true);
-            UISettingsWindow.Instance.IsOpen = true;
-            CameraController.Instance.Freeze(true);
+            UISettingsWindow.Instance.Open();
         }
 
         public void CloseSettingsWindow()
         {
-            settingsWindow.SetActive(false);
-            UISettingsWindow.Instance.IsOpen = false;
-            CameraController.Instance.Freeze(false);
+            UISettingsWindow.Instance.Close();            
         }
     }
 }
