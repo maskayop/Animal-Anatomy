@@ -35,11 +35,11 @@ namespace AnimalAnatomy
         public AudioMixerGroup voiceMixer;
 
         int currentMusic = -1;
-        int prevMusicId;
 
-        float currentMusicFadeValue;
+        float currentMusicTime;
 
         bool isRandomPlaying = true;
+        bool isPaused = false;
 
         void Awake()
         {
@@ -60,9 +60,11 @@ namespace AnimalAnatomy
 
         void Update()
         {
-            if (musicSource.clip != null)
+            if (musicSource.clip != null && !isPaused)
             {
-                if (musicSource.isPlaying && musicSource.timeSamples >= musicSource.clip.samples - 1)
+                currentMusicTime -= Time.deltaTime;
+
+                if (currentMusicTime <= 0)
                 {
                     if (musicSource.loop)
                         return;
@@ -91,12 +93,13 @@ namespace AnimalAnatomy
             musicSource.Stop();
             musicSource.clip = musicSamples[currentMusic].clip;
             musicSource.Play();
+
+            currentMusicTime = musicSource.clip.length;
+            isPaused = false;
         }
 
         public void PlayNextMusicClip()
         {
-            prevMusicId = currentMusic;
-
             if (isRandomPlaying)
                 PlayRandomMusicClip();
             else
@@ -108,7 +111,6 @@ namespace AnimalAnatomy
 
         public void PlayPrevMusicClip()
         {
-            prevMusicId = currentMusic;
             currentMusic--;
             PlayMusicClip();
         }
@@ -134,11 +136,13 @@ namespace AnimalAnatomy
         public void PlayCurrentMusic()
         {
             musicSource.UnPause();
+            isPaused = false;
         }
 
         public void PauseCurrentMusic()
         {
             musicSource.Pause();
+            isPaused = true;
         }
 
         public int GetCurrentMusicId()

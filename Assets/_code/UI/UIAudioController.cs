@@ -79,6 +79,9 @@ namespace AnimalAnatomy
 
         public void OnPrevButtonClicked()
         {
+            playButton.SetActive(false);
+            pauseButton.SetActive(true);
+
             controller.PlayPrevMusicClip();
         }
 
@@ -105,6 +108,9 @@ namespace AnimalAnatomy
 
         public void OnNextButtonClicked()
         {
+            playButton.SetActive(false);
+            pauseButton.SetActive(true);
+
             controller.PlayNextMusicClip();
         }
 
