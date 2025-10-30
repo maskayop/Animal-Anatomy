@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEditor.SceneManagement;
 
-namespace Vopere.Editor
+namespace AnimalAnatomy.Editor
 {
 	public class EditorMenuSceneLoader : EditorWindow
 	{
@@ -43,6 +43,12 @@ namespace Vopere.Editor
         static void LoadSceneHorse()
         {
             LoadScene("Horse");
+        }
+
+        [MenuItem("Animal Anatomy/Открыть сцену/Животные/Свинья")]
+        static void LoadScenePig()
+        {
+            LoadScene("Pig");
         }
     }
 }

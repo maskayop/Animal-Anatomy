@@ -1,8 +1,7 @@
-using AnimalAnatomy;
 using UnityEditor;
 using UnityEngine;
 
-namespace Vopere.Editor
+namespace AnimalAnatomy.Editor
 {
     public class EditorMenuUtilites : EditorWindow
     {
@@ -30,7 +29,7 @@ namespace Vopere.Editor
             }
         }
 
-        [MenuItem("Utilites/Добавить UIButtonClickAudio")]
+        [MenuItem("Utilites/UI Audio/Добавить UIButtonClickAudio")]
         static void AddUIButtonClickAudio()
         {
             foreach (GameObject selectedObject in Selection.gameObjects)
@@ -43,7 +42,7 @@ namespace Vopere.Editor
             }
         }
 
-        [MenuItem("Utilites/Добавить UIToggleClickAudio")]
+        [MenuItem("Utilites/UI Audio/Добавить UIToggleClickAudio")]
         static void AddUIToggleClickAudio()
         {
             foreach (GameObject selectedObject in Selection.gameObjects)
@@ -56,7 +55,7 @@ namespace Vopere.Editor
             }
         }
 
-        [MenuItem("Utilites/Добавить UISliderAudio")]
+        [MenuItem("Utilites/UI Audio/Добавить UISliderAudio")]
         static void AddUISliderAudio()
         {
             foreach (GameObject selectedObject in Selection.gameObjects)
