@@ -18,7 +18,8 @@ namespace AnimalAnatomy
 
         void OnButtonClick()
         {
-            AudioController.Instance.PlayUIAudioClip(clip);
+            if (AudioController.Instance)
+                AudioController.Instance.PlayUIAudioClip(clip);
         }
 
         void OnDestroy()
