@@ -220,6 +220,11 @@ namespace Vopere.Protection
             GUIUtility.systemCopyBuffer = checkInputField.text;
         }
 
+        public void CopyActivationKeyFromClipboard()
+        {
+            activationInputField.text = GUIUtility.systemCopyBuffer;
+        }
+
         public void ShowGeneratedKey()
         {
             activatingInputField.text = GetEditedKey(generatingInputField.text);

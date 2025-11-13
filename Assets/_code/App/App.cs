@@ -6,6 +6,7 @@ namespace Vopere.Common
 	{
 		public static App Instance;
 
+		[SerializeField] int defaultGraphicsLevel = 0;
 		[SerializeField] bool useTargetFPS = true;
 		[SerializeField] bool initialize = false;
 
@@ -23,7 +24,9 @@ namespace Vopere.Common
 			Instance = this;
 
 			SetTargetFPS(useTargetFPS);
-		}
+            SetGraphicsLevel(defaultGraphicsLevel);
+
+        }
 
         public void ExitGame()
 		{
