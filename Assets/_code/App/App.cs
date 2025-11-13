@@ -7,13 +7,14 @@ namespace Vopere.Common
 		public static App Instance;
 
 		[SerializeField] int defaultGraphicsLevel = 0;
+		[SerializeField] int screenResolutionLevel = 1;
+
 		[SerializeField] bool useTargetFPS = true;
 		[SerializeField] bool initialize = false;
 
 		public bool IsInitialized {  get { return initialize; } }
 
 		int graphicsLevel = 0;
-
 
         void Awake()
 		{
@@ -39,6 +40,8 @@ namespace Vopere.Common
                 SetGraphicsLevel(graphicsLevel);
 			else
 				SetGraphicsLevel(defaultGraphicsLevel);
+
+			SetResolution(screenResolutionLevel);
         }
 
         public void ExitGame()
@@ -64,5 +67,17 @@ namespace Vopere.Common
 		{
 			QualitySettings.SetQualityLevel(level, true);
 		}
+
+		public void SetResolution(int level)
+		{
+			if (level == 0)
+				Screen.SetResolution(1280, 720, FullScreenMode.FullScreenWindow);
+			else if (level == 1)
+                Screen.SetResolution(1920, 1080, FullScreenMode.FullScreenWindow);
+            else if (level == 2)
+                Screen.SetResolution(2560, 1440, FullScreenMode.FullScreenWindow);
+			else
+                Screen.SetResolution(1920, 1080, FullScreenMode.FullScreenWindow);
+        }
 	}
 }

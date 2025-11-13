@@ -37,14 +37,7 @@ namespace AnimalAnatomy
 
             SelectBodyPart();
             UpdateView();
-
-            if (!GameController.Instance.isolatedMode && !GameController.Instance.transparentMode)
-            {
-                if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
-                    UIMainCanvas.Instance.SetExclusionMode(true);
-                else
-                    UIMainCanvas.Instance.SetExclusionMode(false);
-            }
+            SetExclusionMode();
         }
 
         void SelectBodyPart()
@@ -89,18 +82,23 @@ namespace AnimalAnatomy
         void UpdateView()
         {
             if (Input.GetKeyDown(KeyCode.F))
-            {
                 CameraController.Instance.UpdatePosition();
-            }
 
             if (Input.GetKeyDown(KeyCode.Q) && !GameController.Instance.transparentMode)
-            {
                 GameController.Instance.SetIsolatedMode(!GameController.Instance.isolatedMode);
-            }
 
             if (Input.GetKeyDown(KeyCode.W) && !GameController.Instance.isolatedMode)
-            {
                 GameController.Instance.SetTransparentMode(!GameController.Instance.transparentMode);
+        }
+
+        void SetExclusionMode()
+        {
+            if (!GameController.Instance.isolatedMode && !GameController.Instance.transparentMode)
+            {
+                if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
+                    UIMainCanvas.Instance.SetExclusionMode(true);
+                else
+                    UIMainCanvas.Instance.SetExclusionMode(false);
             }
         }
     }

@@ -14,6 +14,7 @@ namespace AnimalAnatomy
 
         [Header("Graphics")]
         [SerializeField] List<Toggle> graphicsLevelToggles = new List<Toggle>();
+        [SerializeField] List<Toggle> screenResolutionToggles = new List<Toggle>();
 
         [Header("Audio")]
         [SerializeField] Slider musicSlider;
@@ -47,6 +48,11 @@ namespace AnimalAnatomy
 
             if (graphicsLeveId != -1)
                 graphicsLevelToggles[graphicsLeveId].isOn = true;
+
+            int screenResolution = DataSaveLoad.Instance.GetSavedInt("ScreenResolution");
+
+            if (screenResolution != -1)
+                screenResolutionToggles[screenResolution].isOn = true;
 
             float musicVolume = DataSaveLoad.Instance.GetSavedFloat("MusicVolume");
 
@@ -142,6 +148,18 @@ namespace AnimalAnatomy
         {
             if (App.Instance)
                 App.Instance.SetGraphicsLevel(id);
+        }
+
+        public void ChangeResolutionLevel(int id)
+        {
+            SetResolutionLevel(id);
+            DataSaveLoad.Instance.Save("ScreenResolution", id);
+        }
+
+        void SetResolutionLevel(int id)
+        {
+            if (App.Instance)
+                App.Instance.SetResolution(id);
         }
     }
 }
