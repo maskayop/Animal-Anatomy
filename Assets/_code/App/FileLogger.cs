@@ -1,10 +1,13 @@
 using System.IO;
+using System.Linq;
 using UnityEngine;
 
 namespace Vopere.Common
 {
     public class FileLogger : MonoBehaviour
     {
+        [SerializeField] int maxLines = 1000;
+
         string logFilePath;
 
         void Awake()
@@ -19,6 +22,16 @@ namespace Vopere.Common
 
             // Подписываемся на события логирования
             Application.logMessageReceived += HandleLog;
+        }
+
+        void Start()
+        {
+            Init();
+        }
+
+        public void Init()
+        {
+            CheckAndTrimFile();
         }
 
         void HandleLog(string logString, string stackTrace, LogType type)
@@ -42,6 +55,26 @@ namespace Vopere.Common
         void OnDestroy()
         {
             Application.logMessageReceived -= HandleLog;
+        }
+
+        public void CheckAndTrimFile()
+        {
+            if (!File.Exists(logFilePath))
+            {
+                Debug.Log("Файл не существует: " + logFilePath);
+                return;
+            }
+
+            string[] lines = File.ReadAllLines(logFilePath);
+
+            if (lines.Length > maxLines)
+            {
+                // Оставляем только последние maxLines строк
+                string[] newLines = lines.Skip(lines.Length - maxLines).ToArray();
+                File.WriteAllLines(logFilePath, newLines);
+
+                Debug.Log($"Удалено {lines.Length - maxLines} строк. Осталось: {newLines.Length}");
+            }
         }
     }
 }

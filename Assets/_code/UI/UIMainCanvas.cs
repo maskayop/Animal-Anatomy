@@ -96,7 +96,7 @@ namespace AnimalAnatomy
         IEnumerator DisableLoadingScreen()
         {
 #if UNITY_EDITOR
-            loadingTime = 0;
+            loadingTime = loadingTime / 2;
 #endif
 
             yield return new WaitForSeconds(loadingTime);

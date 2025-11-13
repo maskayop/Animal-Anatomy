@@ -114,10 +114,14 @@ namespace AnimalAnatomy
 
         void CopyTextsToClipboard()
         {
+            #if !PLATFORM_ANDROID
+
             textToCopy = "Название группы: " + bodyPartGroup.GetFullRussianName() + "\n" + "Латинское название: " + bodyPartGroup.GetFullScientificName() +
                 "\n" + "Описание: " + bodyPartGroup.info.description;
 
             GUIUtility.systemCopyBuffer = textToCopy;
+            
+            #endif
         }
     }
 }

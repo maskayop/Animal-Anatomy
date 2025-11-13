@@ -50,5 +50,11 @@ namespace AnimalAnatomy.Editor
         {
             LoadScene("Pig");
         }
+
+        [MenuItem("Animal Anatomy/Открыть сцену/Тест/Андроид")]
+        static void LoadSceneAndroidTest()
+        {
+            LoadScene("Android Test");
+        }
     }
 }

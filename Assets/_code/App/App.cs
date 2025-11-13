@@ -12,7 +12,10 @@ namespace Vopere.Common
 
 		public bool IsInitialized {  get { return initialize; } }
 
-		void Awake()
+		int graphicsLevel = 0;
+
+
+        void Awake()
 		{
 			if (Instance != null)
 			{
@@ -23,9 +26,19 @@ namespace Vopere.Common
 
 			Instance = this;
 
-			SetTargetFPS(useTargetFPS);
-            SetGraphicsLevel(defaultGraphicsLevel);
+			Init();
+        }
 
+        public void Init()
+        {
+			SetTargetFPS(useTargetFPS);
+
+            graphicsLevel = DataSaveLoad.Instance.GetSavedInt("GraphicsLevel");
+
+            if (graphicsLevel != -1)
+                SetGraphicsLevel(graphicsLevel);
+			else
+				SetGraphicsLevel(defaultGraphicsLevel);
         }
 
         public void ExitGame()

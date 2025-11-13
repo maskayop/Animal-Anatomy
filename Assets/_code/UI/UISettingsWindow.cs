@@ -12,6 +12,9 @@ namespace AnimalAnatomy
 
         [SerializeField] GameObject window;
 
+        [Header("Graphics")]
+        [SerializeField] List<Toggle> graphicsLevelToggles = new List<Toggle>();
+
         [Header("Audio")]
         [SerializeField] Slider musicSlider;
         [SerializeField] TextMeshProUGUI musicValueText;
@@ -20,7 +23,7 @@ namespace AnimalAnatomy
 
         [Header("Color Scheme")]
         [SerializeField] List<Toggle> backgroundColorSchemeToggles = new List<Toggle>();
-        
+
         bool isOpen = false;
         public bool IsOpen { get { return isOpen; } set { isOpen = value; } }
 
@@ -40,6 +43,11 @@ namespace AnimalAnatomy
 
         public void Init()
         {
+            int graphicsLeveId = DataSaveLoad.Instance.GetSavedInt("GraphicsLevel");
+
+            if (graphicsLeveId != -1)
+                graphicsLevelToggles[graphicsLeveId].isOn = true;
+
             float musicVolume = DataSaveLoad.Instance.GetSavedFloat("MusicVolume");
 
             if (musicVolume != -1)
@@ -122,6 +130,18 @@ namespace AnimalAnatomy
         {
             if (AudioController.Instance)
                 AudioController.Instance.ChangeVolume(1, UIAudioSlider.value);
+        }
+
+        public void ChangeGraphicsLevel(int id)
+        {
+            SetGraphicsLevel(id);
+            DataSaveLoad.Instance.Save("GraphicsLevel", id);
+        }
+
+        void SetGraphicsLevel(int id)
+        {
+            if (App.Instance)
+                App.Instance.SetGraphicsLevel(id);
         }
     }
 }

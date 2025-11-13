@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2552070e7aefd14ebff43852b878996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultGraphicsLevel: 1
+  defaultGraphicsLevel: 2
   useTargetFPS: 1
   initialize: 0
 --- !u!114 &3906105558497098724
@@ -67,6 +67,7 @@ MonoBehaviour:
   - Cow
   - Horse
   - Pig
+  - Android Test
 --- !u!114 &8050399639720174858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,6 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36f2b92e6aa630241b2971a3a24060be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FileLogger
+  maxLines: 10000
 --- !u!114 &267795397663618798
 MonoBehaviour:
   m_ObjectHideFlags: 0

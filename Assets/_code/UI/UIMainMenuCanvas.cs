@@ -64,6 +64,11 @@ namespace AnimalAnatomy
             ScenesManager.Instance.LoadSceneByName(games[currentGame].sceneName);
         }
 
+        public void StartGameByName(string gameName)
+        {
+            ScenesManager.Instance.LoadSceneByName(gameName);
+        }
+
         public void ExitGame()
         {
             App.Instance.ExitGame();
