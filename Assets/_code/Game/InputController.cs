@@ -42,7 +42,7 @@ namespace AnimalAnatomy
 
         void SelectBodyPart()
         {
-            if (Input.GetMouseButtonDown(1) || Input.touchCount != 0)
+            if (Input.GetMouseButtonDown(1))
             {
                 if (!GameController.Instance.isolatedMode && !GameController.Instance.transparentMode)
                 {

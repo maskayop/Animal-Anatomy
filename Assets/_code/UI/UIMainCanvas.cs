@@ -264,6 +264,10 @@ namespace AnimalAnatomy
 
         public void FreezeCamera(bool state)
         {
+#if PLATFORM_ANDROID
+            return;
+#endif
+
             CameraController.Instance.Freeze(state);
         }
 
