@@ -16,6 +16,7 @@ namespace AnimalAnatomy
         public Vector3 cameraDistanceLimits = new Vector3(1f, 5f, 10f);
         public float scrollSpeed = 1.0f;
         public float distanceLimitsMultiplier = 1.0f;
+        public float doubleTouchZoomSpeed = 1.0f;
 
         Vector2 lastMousePosition;
         float xRotation = 0f;
@@ -52,6 +53,10 @@ namespace AnimalAnatomy
 
             UpdateViewRotation();
             UpdateViewZoom();
+
+#if PLATFORM_ANDROID
+            HandleZoom();
+#endif
         }
 
         public void Init()
@@ -108,6 +113,24 @@ namespace AnimalAnatomy
             currentZoom = Mathf.Clamp(currentZoom, cameraDistanceLimits.x * distanceLimitsMultiplier, cameraDistanceLimits.z * distanceLimitsMultiplier);
             
             mainCamera.transform.localPosition = new Vector3(0, 0, -currentZoom);            
+        }
+
+        void HandleZoom()
+        {
+            if (Input.touchCount == 2)
+            {
+                Touch touch1 = Input.GetTouch(0);
+                Touch touch2 = Input.GetTouch(1);
+
+                Vector2 touch1PrevPos = touch1.position - touch1.deltaPosition;
+                Vector2 touch2PrevPos = touch2.position - touch2.deltaPosition;
+
+                float prevDistance = Vector2.Distance(touch1PrevPos, touch2PrevPos);
+                float currentDistance = Vector2.Distance(touch1.position, touch2.position);
+
+                float difference = currentDistance - prevDistance;
+                currentZoom -= difference * doubleTouchZoomSpeed * scrollSpeed;
+            }
         }
 
         public void UpdatePosition()
