@@ -1,4 +1,5 @@
 using UnityEngine;
+using Vopere.Common;
 
 namespace AnimalAnatomy
 {
@@ -58,6 +59,16 @@ namespace AnimalAnatomy
             currentZoom = cameraDistanceLimits.y;
             mainCamera.transform.localPosition = new Vector3(0, 0, cameraDistanceLimits.y);
             defaultPosition = transform.position;
+
+            float rotationSensitivity = DataSaveLoad.Instance.GetSavedFloat("RotationSensitivity");
+
+            if (rotationSensitivity != -1)
+                ChangeRotationSensitivity(rotationSensitivity);
+
+            float zoomSensitivity = DataSaveLoad.Instance.GetSavedFloat("ZoomSensitivity");
+
+            if (zoomSensitivity != -1)
+                ChangeZoomSensitivity(zoomSensitivity);
         }
 
         void UpdateViewRotation()
@@ -125,6 +136,18 @@ namespace AnimalAnatomy
         public void Freeze(bool state)
         {
             isFreezed = state;
+        }
+
+        public void ChangeRotationSensitivity(float INvalue)
+        {
+            rotationSpeed = INvalue;
+            DataSaveLoad.Instance.Save("RotationSensitivity", INvalue);
+        }
+
+        public void ChangeZoomSensitivity(float INvalue)
+        {
+            scrollSpeed = INvalue / 10;
+            DataSaveLoad.Instance.Save("ZoomSensitivity", INvalue);
         }
     }
 }

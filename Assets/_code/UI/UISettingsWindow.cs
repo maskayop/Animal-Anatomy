@@ -16,14 +16,20 @@ namespace AnimalAnatomy
         [SerializeField] List<Toggle> graphicsLevelToggles = new List<Toggle>();
         [SerializeField] List<Toggle> screenResolutionToggles = new List<Toggle>();
 
+        [Header("Color Scheme")]
+        [SerializeField] List<Toggle> backgroundColorSchemeToggles = new List<Toggle>();
+
         [Header("Audio")]
         [SerializeField] Slider musicSlider;
         [SerializeField] TextMeshProUGUI musicValueText;
         [SerializeField] Slider UIAudioSlider;
         [SerializeField] TextMeshProUGUI UIAudioValueText;
 
-        [Header("Color Scheme")]
-        [SerializeField] List<Toggle> backgroundColorSchemeToggles = new List<Toggle>();
+        [Header("Sensitivity")]
+        [SerializeField] Slider rotationSensitivitySlider;
+        [SerializeField] TextMeshProUGUI rotationSensitivityValueText;
+        [SerializeField] Slider zoomSensitivitySlider;
+        [SerializeField] TextMeshProUGUI zoomSensitivityValueText;
 
         bool isOpen = false;
         public bool IsOpen { get { return isOpen; } set { isOpen = value; } }
@@ -54,28 +60,16 @@ namespace AnimalAnatomy
             if (screenResolution != -1)
                 screenResolutionToggles[screenResolution].isOn = true;
 
-            float musicVolume = DataSaveLoad.Instance.GetSavedFloat("MusicVolume");
-
-            if (musicVolume != -1)
-                musicSlider.value = musicVolume;
-            else
-                musicSlider.value = 100;
-            
-            musicValueText.text = musicSlider.value.ToString();
-
-            float UIVolume = DataSaveLoad.Instance.GetSavedFloat("UIVolume");
-
-            if (UIVolume != -1)
-                UIAudioSlider.value = UIVolume;
-            else
-                UIAudioSlider.value = 100;
-            
-            UIAudioValueText.text = UIAudioSlider.value.ToString();
-
             int backgroundColorSchemeId = DataSaveLoad.Instance.GetSavedInt("BackgroundColorScheme");
 
             if (backgroundColorSchemeId != -1)
                 backgroundColorSchemeToggles[backgroundColorSchemeId].isOn = true;
+
+            SetSliderLoadedValue("MusicVolume", musicSlider, musicValueText, 100);
+            SetSliderLoadedValue("UIVolume", UIAudioSlider, UIAudioValueText, 100);
+
+            SetSliderLoadedValue("RotationSensitivity", rotationSensitivitySlider, rotationSensitivityValueText, 5);
+            SetSliderLoadedValue("ZoomSensitivity", zoomSensitivitySlider, zoomSensitivityValueText, 7);
 
             Close();
         }
@@ -96,6 +90,18 @@ namespace AnimalAnatomy
 
             if (CameraController.Instance)
                 CameraController.Instance.Freeze(false);
+        }
+
+        void SetSliderLoadedValue(string key, Slider slider, TextMeshProUGUI valueText, float defaultValue)
+        {
+            float value = DataSaveLoad.Instance.GetSavedFloat(key);
+
+            if (value != -1)
+                slider.value = value;
+            else
+                slider.value = defaultValue;
+
+            valueText.text = slider.value.ToString();
         }
 
         public void ChangeBackgroundColorScheme(int id)
@@ -160,6 +166,22 @@ namespace AnimalAnatomy
         {
             if (App.Instance)
                 App.Instance.SetResolution(id);
+        }
+
+        public void ChangeRotationSensitivity()
+        {
+            rotationSensitivityValueText.text = rotationSensitivitySlider.value.ToString();
+
+            if (CameraController.Instance)
+                CameraController.Instance.ChangeRotationSensitivity(rotationSensitivitySlider.value);
+        }
+
+        public void ChangeZoomSensitivity()
+        {
+            zoomSensitivityValueText.text = zoomSensitivitySlider.value.ToString();
+
+            if (CameraController.Instance)
+                CameraController.Instance.ChangeZoomSensitivity(zoomSensitivitySlider.value);
         }
     }
 }
