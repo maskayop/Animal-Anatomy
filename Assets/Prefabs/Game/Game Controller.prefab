@@ -56,6 +56,7 @@ MonoBehaviour:
   selectedBodyPartsGroup: {fileID: 0}
   isolatedMode: 0
   transparentMode: 0
+  exclusionMode: 0
   baseBodyPartGroup: {fileID: 0}
 --- !u!114 &4744033071781961499
 MonoBehaviour:
@@ -69,11 +70,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4579012f1a64f3343bda652475ce8eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectionTimeout: 0.15
+  selectionTimeout: 0.12
   currentTime: 0
   isFirstClick: 1
-  mousePosition: {x: 0, y: 0}
-  screenSize: {x: 0, y: 0}
 --- !u!114 &8348161921302091938
 MonoBehaviour:
   m_ObjectHideFlags: 0

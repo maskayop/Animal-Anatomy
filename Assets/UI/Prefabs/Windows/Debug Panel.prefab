@@ -199,6 +199,7 @@ GameObject:
   - component: {fileID: 6262333107804510926}
   - component: {fileID: 640923366139158118}
   - component: {fileID: 3233976363804733351}
+  - component: {fileID: 5175346520729379003}
   m_Layer: 5
   m_Name: Debug Panel
   m_TagString: Untagged
@@ -264,3 +265,16 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 1
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5175346520729379003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9059570453910615674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a0c1956b3ac3934f892dc38f0357e28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Vopere.Common.DisableOnAwake
+  disableOnAwake: 1

@@ -9,9 +9,10 @@ namespace AnimalAnatomy
         [Header("Android")]
         [SerializeField] float selectionTimeout = 1.0f;
 
-        public float currentTime = 0;
-        public bool isFirstClick = true;
+        float currentTime = 0;
+        bool isFirstClick = true;
 
+        GameController gameController;
         UIMainCanvas mainCanvas;
 
         void Awake()
@@ -52,17 +53,18 @@ namespace AnimalAnatomy
 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                if (GameController.Instance.isolatedMode)
-                    GameController.Instance.SetIsolatedMode(false);
-                if (GameController.Instance.transparentMode)
-                    GameController.Instance.SetTransparentMode(false);
+                if (gameController.isolatedMode)
+                    gameController.SetIsolatedMode(false);
+                if (gameController.transparentMode)
+                    gameController.SetTransparentMode(false);
                 else
-                    GameController.Instance.UnSelectBodyPart();
+                    gameController.UnSelectBodyPart();
             }
         }
 
         public void Init()
         {
+            gameController = GameController.Instance;
             mainCanvas = UIMainCanvas.Instance;
             currentTime = selectionTimeout;
         }
@@ -98,7 +100,7 @@ namespace AnimalAnatomy
 
         void SelectBodyPart()
         {
-            if (!GameController.Instance.isolatedMode && !GameController.Instance.transparentMode)
+            if (!gameController.isolatedMode && !gameController.transparentMode)
             {
                 Ray ray = CameraController.Instance.mainCamera.ScreenPointToRay(Input.mousePosition);
 
@@ -108,16 +110,16 @@ namespace AnimalAnatomy
 
                     if (info)
                     {
-                        GameController.Instance.SelectBodyPart(info);
+                        gameController.SelectBodyPart(info);
 
-                        if (GameController.Instance.exclusionMode)
-                            GameController.Instance.HideSelectedBodyPart();
+                        if (gameController.exclusionMode)
+                            gameController.HideSelectedBodyPart();
                     }
                 }
                 else
                 {
-                    GameController.Instance.UnSelectBodyPart();
-                    GameController.Instance.UnSelectBodyPartGroup();
+                    gameController.UnSelectBodyPart();
+                    gameController.UnSelectBodyPartGroup();
                 }
             }
         }
@@ -127,22 +129,22 @@ namespace AnimalAnatomy
             if (Input.GetKeyDown(KeyCode.F))
                 CameraController.Instance.UpdatePosition();
 
-            if (Input.GetKeyDown(KeyCode.Q) && !GameController.Instance.transparentMode)
-                GameController.Instance.SetIsolatedMode(!GameController.Instance.isolatedMode);
+            if (Input.GetKeyDown(KeyCode.Q) && !gameController.transparentMode)
+                gameController.SetIsolatedMode(!gameController.isolatedMode);
 
-            if (Input.GetKeyDown(KeyCode.W) && !GameController.Instance.isolatedMode)
-                GameController.Instance.SetTransparentMode(!GameController.Instance.transparentMode);
+            if (Input.GetKeyDown(KeyCode.W) && !gameController.isolatedMode)
+                gameController.SetTransparentMode(!gameController.transparentMode);
         }
 
         void SetExclusionMode()
         {
-            if (!GameController.Instance.isolatedMode && !GameController.Instance.transparentMode)
+            if (!gameController.isolatedMode && !gameController.transparentMode)
             {
 #if !PLATFORM_ANDROID
                 if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
-                    GameController.Instance.SetExclusionMode(true);
+                    gameController.SetExclusionMode(true);
                 else
-                    GameController.Instance.SetExclusionMode(false);
+                    gameController.SetExclusionMode(false);
 #endif
             }
         }
