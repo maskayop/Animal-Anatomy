@@ -43,6 +43,9 @@ namespace AnimalAnatomy
         [SerializeField] GameObject partsGroupListButtonPrefab;
         [SerializeField] int listButtonsContainerOffset = 5;
 
+        bool bodyPartsListIsOpen = false;
+        public bool BodyPartsListIsOpen { get { return bodyPartsListIsOpen; } }
+
         [Header("Body Parts Group")]
         [SerializeField] GameObject bodyPartsGroupPanel;
         [SerializeField] UIPartsGroupListButton bodyPartsGroupButton;
@@ -51,10 +54,7 @@ namespace AnimalAnatomy
         [SerializeField] GameObject examinationSettingsWindow;
 
         UIButtonSystemActivating[] systemActivatingButtons;
-        List<UIPartsListButton> partsListButtons = new List<UIPartsListButton>();
-
-        [Header("Vopere")]
-        [SerializeField] GameObject vopere;
+        List<UIPartsListButton> partsListButtons = new List<UIPartsListButton>();        
 
         [HideInInspector]
         public bool isLoading = false;
@@ -266,20 +266,22 @@ namespace AnimalAnatomy
         {
 #if PLATFORM_ANDROID
             return;
-#endif
-
+#else
             CameraController.Instance.Freeze(state);
+#endif
         }
 
         public void OpenPartsListPanel()
         {
             bodyPartsListPanel.SetActive(true);
+            bodyPartsListIsOpen = true;
         }
 
         public void ClosePartsListPanel()
         {
             bodyPartsListPanel.SetActive(false);
             CameraController.Instance.Freeze(false);
+            bodyPartsListIsOpen = false;
         }
 
         public void OpenExamWindow()
@@ -326,11 +328,6 @@ namespace AnimalAnatomy
             ExaminationController.Instance.StopExamination();
         }
 
-        public void ShowVopere(bool state)
-        {
-            vopere.SetActive(state);
-        }
-
         public void CollapseSystemActivatingButtons(bool state)
         {
             for (int i = 0; i < systemActivatingButtons.Length; i++)
@@ -350,6 +347,22 @@ namespace AnimalAnatomy
         public void CloseSettingsWindow()
         {
             UISettingsWindow.Instance.Close();            
+        }
+
+        public float GetBodyPartsListPanelMaxAnchor()
+        {
+            if (bodyPartsListPanel)
+            {
+                RectTransform rt = bodyPartsListPanel.GetComponent<RectTransform>();
+                return rt.anchorMax.x;
+            }
+            else
+                return 0;
+        }
+
+        public void CallBodyPartSelection()
+        {
+            InputController.Instance.CallBodyPartSelection();
         }
     }
 }
