@@ -12,9 +12,6 @@ namespace AnimalAnatomy
         public float currentTime = 0;
         public bool isFirstClick = true;
 
-        public Vector2 mousePosition;
-        public Vector2 screenSize;
-
         UIMainCanvas mainCanvas;
 
         void Awake()
@@ -62,9 +59,6 @@ namespace AnimalAnatomy
                 else
                     GameController.Instance.UnSelectBodyPart();
             }
-
-            mousePosition = Input.mousePosition;
-            screenSize = new Vector2(Screen.width, Screen.height);
         }
 
         public void Init()
@@ -116,7 +110,7 @@ namespace AnimalAnatomy
                     {
                         GameController.Instance.SelectBodyPart(info);
 
-                        if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
+                        if (GameController.Instance.exclusionMode)
                             GameController.Instance.HideSelectedBodyPart();
                     }
                 }
@@ -144,10 +138,12 @@ namespace AnimalAnatomy
         {
             if (!GameController.Instance.isolatedMode && !GameController.Instance.transparentMode)
             {
+#if !PLATFORM_ANDROID
                 if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
-                    mainCanvas.SetExclusionMode(true);
+                    GameController.Instance.SetExclusionMode(true);
                 else
-                    mainCanvas.SetExclusionMode(false);
+                    GameController.Instance.SetExclusionMode(false);
+#endif
             }
         }
     }

@@ -34,7 +34,12 @@ namespace AnimalAnatomy
         [SerializeField] GameObject isolatedModeButtonsContainer;
         [SerializeField] UIButtonIsolatedMode isolatedModeButton;
         [SerializeField] UIButtonIsolatedMode transparentModeButton;
-        [SerializeField] GameObject exclusionModeButton;
+
+        [Header("Widgets")]
+        [SerializeField] GameObject exclusionModeWidget;
+
+        [Header("Camera")]
+        [SerializeField] GameObject fitToCenterCameraButton;
 
         [Header("Body Parts List")]
         [SerializeField] GameObject bodyPartsListPanel;
@@ -84,6 +89,11 @@ namespace AnimalAnatomy
         {
             if (GameController.Instance.isolatedMode || GameController.Instance.transparentMode)
                 SetExclusionMode(false);
+
+            if (GameController.Instance.selectedBodyPart != null || GameController.Instance.selectedBodyPartsGroup != null)
+                fitToCenterCameraButton.SetActive(true);
+            else
+                fitToCenterCameraButton.SetActive(false);
         }
 
         IEnumerator InitializeDelayed()
@@ -143,7 +153,7 @@ namespace AnimalAnatomy
 
         public void SetExclusionMode(bool state)
         {
-            exclusionModeButton.SetActive(state);
+            exclusionModeWidget.SetActive(state);
         }
 
         public void ExitApp()
@@ -363,6 +373,11 @@ namespace AnimalAnatomy
         public void CallBodyPartSelection()
         {
             InputController.Instance.CallBodyPartSelection();
+        }
+
+        public void CameraFitToCenter()
+        {
+            CameraController.Instance.UpdatePosition();
         }
     }
 }

@@ -30,6 +30,7 @@ namespace AnimalAnatomy
         public BodyPartGroup selectedBodyPartsGroup;
         public bool isolatedMode = false;
         public bool transparentMode = false;
+        public bool exclusionMode = false;
 
         [HideInInspector]
         public BodyPartGroup baseBodyPartGroup;
@@ -366,6 +367,12 @@ namespace AnimalAnatomy
             }
 
             UnSelectBodyPart();
-        }        
+        }
+
+        public void SetExclusionMode(bool state)
+        {
+            exclusionMode = state;
+            UIMainCanvas.Instance.SetExclusionMode(state);
+        }
     }
 }
