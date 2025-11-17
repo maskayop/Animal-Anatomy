@@ -7,7 +7,6 @@ namespace Vopere.Common
 		public static App Instance;
 
 		[SerializeField] int defaultGraphicsLevel = 0;
-		[SerializeField] int screenResolutionLevel = 1;
 
 		[SerializeField] bool useTargetFPS = true;
 		[SerializeField] bool initialize = false;
@@ -15,6 +14,7 @@ namespace Vopere.Common
 		public bool IsInitialized {  get { return initialize; } }
 
 		int graphicsLevel = 0;
+        Vector2Int defaultScreenResolution = Vector2Int.zero;
 
         void Awake()
 		{
@@ -32,7 +32,17 @@ namespace Vopere.Common
 
         public void Init()
         {
-			SetTargetFPS(useTargetFPS);
+            defaultScreenResolution.x = DataSaveLoad.Instance.GetSavedInt("DefaultScreenResolutionWidth");
+
+			if (defaultScreenResolution.x == -1)
+                defaultScreenResolution.x = Screen.width;
+
+            defaultScreenResolution.y = DataSaveLoad.Instance.GetSavedInt("DefaultScreenResolutionHeight");
+
+            if (defaultScreenResolution.y == -1)
+                defaultScreenResolution.y = Screen.height;
+
+            SetTargetFPS(useTargetFPS);
 
             graphicsLevel = DataSaveLoad.Instance.GetSavedInt("GraphicsLevel");
 
@@ -41,7 +51,8 @@ namespace Vopere.Common
 			else
 				SetGraphicsLevel(defaultGraphicsLevel);
 
-			SetResolution(screenResolutionLevel);
+            int screenResolution = DataSaveLoad.Instance.GetSavedInt("ScreenResolution");			
+			SetResolution(screenResolution);
         }
 
         public void ExitGame()
@@ -71,13 +82,18 @@ namespace Vopere.Common
 		public void SetResolution(int level)
 		{
 			if (level == 0)
-				Screen.SetResolution(1280, 720, FullScreenMode.FullScreenWindow);
-			else if (level == 1)
-                Screen.SetResolution(1920, 1080, FullScreenMode.FullScreenWindow);
+                Screen.SetResolution(defaultScreenResolution.x * 3 / 8, defaultScreenResolution.y * 3 / 8, FullScreenMode.FullScreenWindow);
+            else if (level == 1)
+                Screen.SetResolution(defaultScreenResolution.x / 2, defaultScreenResolution.y / 2, FullScreenMode.FullScreenWindow);
             else if (level == 2)
-                Screen.SetResolution(2560, 1440, FullScreenMode.FullScreenWindow);
-			else
-                Screen.SetResolution(1920, 1080, FullScreenMode.FullScreenWindow);
+                Screen.SetResolution(defaultScreenResolution.x * 3 / 4, defaultScreenResolution.y * 3 / 4, FullScreenMode.FullScreenWindow);
+            else
+                Screen.SetResolution(defaultScreenResolution.x, defaultScreenResolution.y, FullScreenMode.FullScreenWindow);
         }
-	}
+
+		public Vector2Int GetDefaultScreenResolution()
+		{
+			return defaultScreenResolution;
+		}
+    }
 }

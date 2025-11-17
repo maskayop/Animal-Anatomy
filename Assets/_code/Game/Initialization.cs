@@ -22,6 +22,8 @@ namespace AnimalAnatomy
         float videoLength;
         ProtectionKey protection;
 
+        Vector2Int defaultScreenResolution = Vector2Int.zero;
+
         void Awake()
         {
             if (Instance != null)
@@ -32,6 +34,8 @@ namespace AnimalAnatomy
             }
 
             Instance = this;
+
+            GetDefaultScreenResolution();
 
             Debug.Log("\n" + "--- Инициализация ---");
         }
@@ -80,6 +84,25 @@ namespace AnimalAnatomy
             yield return new WaitForSeconds(fadeOutAnimationLenght * 2);
 
             LoadGameScene();
+        }
+
+        void GetDefaultScreenResolution()
+        {
+            defaultScreenResolution.x = DataSaveLoad.Instance.GetSavedInt("DefaultScreenResolutionWidth");
+
+            if (defaultScreenResolution.x == -1)
+            {
+                defaultScreenResolution.x = Screen.width;
+                DataSaveLoad.Instance.Save("DefaultScreenResolutionWidth", defaultScreenResolution.x);
+            }
+
+            defaultScreenResolution.y = DataSaveLoad.Instance.GetSavedInt("DefaultScreenResolutionHeight");
+
+            if (defaultScreenResolution.y == -1)
+            {
+                defaultScreenResolution.y = Screen.height;
+                DataSaveLoad.Instance.Save("DefaultScreenResolutionHeight", defaultScreenResolution.y);
+            }
         }
     }
 }

@@ -12,9 +12,13 @@ namespace AnimalAnatomy
 
         [SerializeField] GameObject window;
 
-        [Header("Graphics")]
-        [SerializeField] List<Toggle> graphicsLevelToggles = new List<Toggle>();
+        [Header("Screen Resolution")]
+        [SerializeField] GameObject screenResolutionContainer;
         [SerializeField] List<Toggle> screenResolutionToggles = new List<Toggle>();
+        [SerializeField] List<TextMeshProUGUI> screenResolutionTexts = new List<TextMeshProUGUI>();
+
+        [Header("Graphics Level")]
+        [SerializeField] List<Toggle> graphicsLevelToggles = new List<Toggle>();
 
         [Header("Color Scheme")]
         [SerializeField] List<Toggle> backgroundColorSchemeToggles = new List<Toggle>();
@@ -55,11 +59,6 @@ namespace AnimalAnatomy
             if (graphicsLeveId != -1)
                 graphicsLevelToggles[graphicsLeveId].isOn = true;
 
-            int screenResolution = DataSaveLoad.Instance.GetSavedInt("ScreenResolution");
-
-            if (screenResolution != -1)
-                screenResolutionToggles[screenResolution].isOn = true;
-
             int backgroundColorSchemeId = DataSaveLoad.Instance.GetSavedInt("BackgroundColorScheme");
 
             if (backgroundColorSchemeId != -1)
@@ -70,6 +69,8 @@ namespace AnimalAnatomy
 
             SetSliderLoadedValue("RotationSensitivity", rotationSensitivitySlider, rotationSensitivityValueText, 5);
             SetSliderLoadedValue("ZoomSensitivity", zoomSensitivitySlider, zoomSensitivityValueText, 7);
+
+            SetScreenResolutionProperties();
 
             Close();
         }
@@ -166,6 +167,28 @@ namespace AnimalAnatomy
         {
             if (App.Instance)
                 App.Instance.SetResolution(id);
+        }
+
+        void SetScreenResolutionProperties()
+        {
+            int screenResolution = DataSaveLoad.Instance.GetSavedInt("ScreenResolution");
+
+            if (screenResolution != -1)
+                screenResolutionToggles[screenResolution].isOn = true;
+
+            Vector2Int defaultScreenResolution = App.Instance.GetDefaultScreenResolution();
+
+            for (int i = 0; i < screenResolutionTexts.Count; i++)
+            {
+                if (i == 0)
+                    screenResolutionTexts[i].text = defaultScreenResolution.x * 3 / 8 + " x " + defaultScreenResolution.y * 3 / 8;
+                else if (i == 1)
+                    screenResolutionTexts[i].text = defaultScreenResolution.x / 2 + " x " + defaultScreenResolution.y / 2;
+                else if (i == 2)
+                    screenResolutionTexts[i].text = defaultScreenResolution.x * 3 / 4 + " x " + defaultScreenResolution.y * 3 / 4;
+                else
+                    screenResolutionTexts[i].text = defaultScreenResolution.x + " x " + defaultScreenResolution.y;
+            }
         }
 
         public void ChangeRotationSensitivity()

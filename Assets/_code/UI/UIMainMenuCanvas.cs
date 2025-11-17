@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Vopere.Common;
 
@@ -14,6 +15,8 @@ namespace AnimalAnatomy
     public class UIMainMenuCanvas : MonoBehaviour
     {
         public static UIMainMenuCanvas Instance;
+        
+        [SerializeField] TextMeshProUGUI debugText;
 
         [SerializeField] GameObject startButtonPanel;
 
@@ -37,6 +40,14 @@ namespace AnimalAnatomy
         void Start()
         {
             Init();
+        }
+
+        void Update()
+        {
+            if (debugText.gameObject.activeInHierarchy)
+                debugText.text = DataSaveLoad.Instance.GetSavedInt("DefaultScreenResolutionWidth") +
+                    " x " + DataSaveLoad.Instance.GetSavedInt("DefaultScreenResolutionHeight");
+            
         }
 
         public void Init()
