@@ -8,9 +8,12 @@ namespace AnimalAnatomy
 
         [Header("Android")]
         [SerializeField] float selectionTimeout = 1.0f;
-
+        
         float currentTime = 0;
+
+#if PLATFORM_ANDROID
         bool isFirstClick = true;
+#endif
 
         GameController gameController;
         UIMainCanvas mainCanvas;
@@ -138,15 +141,17 @@ namespace AnimalAnatomy
 
         void SetExclusionMode()
         {
+#if PLATFORM_ANDROID
+            return;
+#else
             if (!gameController.isolatedMode && !gameController.transparentMode)
             {
-#if !PLATFORM_ANDROID
                 if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
                     gameController.SetExclusionMode(true);
                 else
                     gameController.SetExclusionMode(false);
-#endif
             }
+#endif
         }
     }
 }

@@ -30,13 +30,16 @@ namespace AnimalAnatomy
         [SerializeField] TextMeshProUGUI bodyPartScientificNameText;
         [SerializeField] TextMeshProUGUI bodyPartDescriptionText;
 
-        [Header("Isolated Mode Buttons")]
+        [Header("Modes")]
         [SerializeField] GameObject isolatedModeButtonsContainer;
         [SerializeField] UIButtonIsolatedMode isolatedModeButton;
         [SerializeField] UIButtonIsolatedMode transparentModeButton;
+        [SerializeField] UIButtonExclusionMode exclusionModeButton;
+        [SerializeField] UIButtonLightingMode lightingModeButton;
 
         [Header("Widgets")]
         [SerializeField] GameObject exclusionModeWidget;
+        [SerializeField] GameObject lightingModeWidget;
 
         [Header("Camera")]
         [SerializeField] GameObject fitToCenterCameraButton;
@@ -94,6 +97,28 @@ namespace AnimalAnatomy
                 fitToCenterCameraButton.SetActive(true);
             else
                 fitToCenterCameraButton.SetActive(false);
+
+#if PLATFORM_ANDROID            
+
+            if (GameController.Instance.exclusionMode)
+            {
+                exclusionModeButton.gameObject.SetActive(true);
+                lightingModeButton.gameObject.SetActive(false);
+            }
+            else if (LightController.Instance.lightRotationMode)
+            {
+                exclusionModeButton.gameObject.SetActive(false);
+                lightingModeButton.gameObject.SetActive(true);
+            }
+            else
+            {
+                exclusionModeButton.gameObject.SetActive(true);
+                lightingModeButton.gameObject.SetActive(true);
+            }
+#else
+            exclusionModeButton.gameObject.SetActive(false);
+            lightingModeButton.gameObject.SetActive(false);
+#endif
         }
 
         IEnumerator InitializeDelayed()
@@ -106,7 +131,7 @@ namespace AnimalAnatomy
         IEnumerator DisableLoadingScreen()
         {
 #if UNITY_EDITOR
-            loadingTime = loadingTime / 2;
+            loadingTime /= 2;
 #endif
 
             yield return new WaitForSeconds(loadingTime);
@@ -121,6 +146,14 @@ namespace AnimalAnatomy
             examWindow.SetActive(false);
             CreateBodyPartsGroupsListButtons();
             CollapseSystemActivatingButtons(true);
+
+#if PLATFORM_ANDROID
+            exclusionModeButton.gameObject.SetActive(true);
+            lightingModeButton.gameObject.SetActive(true);
+#else
+            exclusionModeButton.gameObject.SetActive(false);
+            lightingModeButton.gameObject.SetActive(false);
+#endif
         }
 
         public void SetIsolatedMode(bool state)
@@ -154,6 +187,11 @@ namespace AnimalAnatomy
         public void SetExclusionMode(bool state)
         {
             exclusionModeWidget.SetActive(state);
+        }
+
+        public void SetLightingMode(bool state)
+        {
+            lightingModeWidget.SetActive(state);
         }
 
         public void ExitApp()

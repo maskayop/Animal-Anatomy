@@ -78,6 +78,9 @@ namespace AnimalAnatomy
 
         void UpdateViewRotation()
         {
+            if (LightController.Instance.lightRotationMode)
+                return;
+
             if (Input.GetMouseButton(0))
             {
                 Vector3 currentMousePosition = Input.mousePosition;
