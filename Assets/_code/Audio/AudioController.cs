@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using Vopere.Common;
-using static UnityEngine.Rendering.DebugUI;
 
 namespace AnimalAnatomy
 {
@@ -173,7 +172,10 @@ namespace AnimalAnatomy
 
         public void ChangeVolume(int group, float INvalue)
         {
-            float value = (INvalue - 100) / 2.5f;
+            float value = (INvalue - 100) / 4.0f;
+
+            if (INvalue <= 0)
+                value = -80;
 
             if (group == 0)
                 SetVolume(musicMixer, INvalue, value);
