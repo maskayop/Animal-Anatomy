@@ -48,6 +48,7 @@ namespace AnimalAnatomy
 
                 for (int i = 0; i < allBodyPartsGroups.Length; i++)
                 {
+                    File.AppendAllText(filePath, i + 1 + "\n");
                     File.AppendAllText(filePath, allBodyPartsGroups[i].info.russianName + "\n");
                     File.AppendAllText(filePath, allBodyPartsGroups[i].info.scientificName + "\n");
                     File.AppendAllText(filePath, allBodyPartsGroups[i].info.description + "\n");
@@ -58,8 +59,9 @@ namespace AnimalAnatomy
                 File.AppendAllText(filePath, "Части тела" + "\n");
                 File.AppendAllText(filePath, "------------------------------------" + "\n");
 
-                for (int i = 0; i < allBodyPartsGroups.Length; i++)
+                for (int i = 0; i < allBodyPartsInfos.Length; i++)
                 {
+                    File.AppendAllText(filePath, i + 1 + "\n");
                     File.AppendAllText(filePath, allBodyPartsInfos[i].info.russianName + "\n");
                     File.AppendAllText(filePath, allBodyPartsInfos[i].info.scientificName + "\n");
                     File.AppendAllText(filePath, allBodyPartsInfos[i].info.description + "\n");
