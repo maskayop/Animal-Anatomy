@@ -129,14 +129,20 @@ namespace AnimalAnatomy
 
         void UpdateView()
         {
-            if (Input.GetKeyDown(KeyCode.F))
-                CameraController.Instance.UpdatePosition();
+            if (CameraController.Instance)
+            {
+                if (Input.GetKeyDown(KeyCode.F))
+                    CameraController.Instance.UpdatePosition();
+            }
 
-            if (Input.GetKeyDown(KeyCode.Q) && !gameController.transparentMode)
-                gameController.SetIsolatedMode(!gameController.isolatedMode);
+            if (gameController)
+            {
+                if (Input.GetKeyDown(KeyCode.Q) && !gameController.transparentMode)
+                    gameController.SetIsolatedMode(!gameController.isolatedMode);
 
-            if (Input.GetKeyDown(KeyCode.W) && !gameController.isolatedMode)
-                gameController.SetTransparentMode(!gameController.transparentMode);
+                if (Input.GetKeyDown(KeyCode.W) && !gameController.isolatedMode)
+                    gameController.SetTransparentMode(!gameController.transparentMode);
+            }
         }
 
         void SetExclusionMode()
