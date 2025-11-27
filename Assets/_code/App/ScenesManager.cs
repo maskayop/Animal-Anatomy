@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.VFX;
 
 namespace Vopere.Common
 {
@@ -9,6 +10,9 @@ namespace Vopere.Common
 		public static ScenesManager Instance { get; private set; }
 
         [SerializeField] List<string> scenes = new List<string>();
+
+		[Header("Info")]
+		public string[] scenesInBuild;
 
         string currentLoadedScene;
 
@@ -24,20 +28,58 @@ namespace Vopere.Common
 			Instance = this;
 		}
 
-		public void LoadScene(string name)
+        void Start()
+        {
+			Init();
+        }
+
+		public void Init()
 		{
-			SceneManager.LoadScene(name, LoadSceneMode.Single);
+			GetAllScenesInBuild();
+        }
+
+        public string[] GetAllScenesInBuild()
+        {
+            int sceneCount = SceneManager.sceneCountInBuildSettings;
+            scenesInBuild = new string[sceneCount];
+
+            for (int i = 0; i < sceneCount; i++)
+            {
+                string scenePath = SceneUtility.GetScenePathByBuildIndex(i);
+                scenesInBuild[i] = System.IO.Path.GetFileNameWithoutExtension(scenePath);
+            }
+
+            return scenesInBuild;
+        }
+
+        public bool IsSceneAddedToBuild(string sceneName)
+		{
+			bool value = false;
+
+			for (int i = 0; i < scenesInBuild.Length; i++)
+				if (scenesInBuild[i] == sceneName)
+				{
+					value = true;
+					break;
+				}
+
+			return value;
 		}
 
-		public void LoadSceneAdditive(string name)
+		public void LoadScene(string sceneName)
 		{
-			SceneManager.LoadScene(name, LoadSceneMode.Additive);
-			currentLoadedScene = name;
+			SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
 		}
 
-		public void UnloadScene(string name)
+		public void LoadSceneAdditive(string sceneName)
 		{
-			SceneManager.UnloadSceneAsync(name);
+			SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+			currentLoadedScene = sceneName;
+		}
+
+		public void UnloadScene(string sceneName)
+		{
+			SceneManager.UnloadSceneAsync(sceneName);
 		}
 
 		public void UnloadCurrentLoadedScene()

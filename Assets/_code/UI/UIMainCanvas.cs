@@ -201,7 +201,10 @@ namespace AnimalAnatomy
 
         public void ExitToMainMenu()
         {
-            ScenesManager.Instance.LoadSceneByName(mainMenuSceneName);
+            if (ScenesManager.Instance.IsSceneAddedToBuild(mainMenuSceneName))
+                ScenesManager.Instance.LoadSceneByName(mainMenuSceneName);
+            else
+                ExitApp();
         }
 
         void CreateBodyPartsGroupsListButtons()

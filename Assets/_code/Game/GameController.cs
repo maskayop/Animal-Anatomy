@@ -177,7 +177,7 @@ namespace AnimalAnatomy
             UIMainCanvas.Instance.SelectBodyPart(info);
             info.Select(false);
 
-            SetCameraDistanceLimitsMultiplier(selectedBodyPart.cameraDistanceLimitsMultiplier);
+            CameraController.Instance.distanceLimitsMultiplier = selectedBodyPart.cameraDistanceLimitsMultiplier;
         }
 
         public void UnSelectBodyPart()
@@ -190,7 +190,7 @@ namespace AnimalAnatomy
                 allBodyParts[i].UnSelect();
             }
 
-            SetCameraDistanceLimitsMultiplier(1.0f);
+            CameraController.Instance.distanceLimitsMultiplier = 1.0f;
         }
 
         public void SelectBodyPartGroup(BodyPartGroup info)
@@ -202,7 +202,7 @@ namespace AnimalAnatomy
             UIMainCanvas.Instance.SelectBodyPartGroup(info);
             info.Select();
 
-            SetCameraDistanceLimitsMultiplier(selectedBodyPartsGroup.cameraDistanceLimitsMultiplier);
+            CameraController.Instance.distanceLimitsMultiplier = selectedBodyPartsGroup.cameraDistanceLimitsMultiplier;
         }
 
         public void UnSelectBodyPartGroup()
@@ -220,7 +220,7 @@ namespace AnimalAnatomy
                 allBodyParts[i].UnSelect();
             }
 
-            SetCameraDistanceLimitsMultiplier(1.0f);
+            CameraController.Instance.distanceLimitsMultiplier = 1.0f;
         }
 
         public void SetIsolatedMode(bool state)
@@ -263,7 +263,7 @@ namespace AnimalAnatomy
                 }
             }
 
-            UpdateCameraPosition();
+            CameraController.Instance.UpdatePosition();
         }
 
         void IsolateBodyPartGroup(bool state)
@@ -300,7 +300,7 @@ namespace AnimalAnatomy
                 }
             }
 
-            UpdateCameraPosition();
+            CameraController.Instance.UpdatePosition();
         }
 
         public void SetTransparentMode(bool state)
@@ -328,7 +328,7 @@ namespace AnimalAnatomy
                     allBodyParts[i].SetAsTransparent(state);
             }
 
-            UpdateCameraPosition();
+            CameraController.Instance.UpdatePosition();
         }
 
         void IsolateBodyPartGroupTransparent(bool state)
@@ -353,7 +353,7 @@ namespace AnimalAnatomy
             else
                 selectedBodyPartsGroup.Select();
 
-            UpdateCameraPosition();
+            CameraController.Instance.UpdatePosition();
         }
 
         public void HideSelectedBodyPart()
@@ -373,18 +373,6 @@ namespace AnimalAnatomy
         {
             exclusionMode = state;
             UIMainCanvas.Instance.SetExclusionMode(state);
-        }
-
-        void UpdateCameraPosition()
-        {
-            if (CameraController.Instance)
-                CameraController.Instance.UpdatePosition();
-        }
-
-        void SetCameraDistanceLimitsMultiplier(float value)
-        {
-            if (CameraController.Instance)
-                CameraController.Instance.distanceLimitsMultiplier = value;
         }
     }
 }
