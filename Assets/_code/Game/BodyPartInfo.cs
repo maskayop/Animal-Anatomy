@@ -74,7 +74,8 @@ namespace AnimalAnatomy
                 meshRenderers[i].materials = materials;
             }
             
-            partListButton.SetAsSelected(true);
+            if (partListButton)
+                partListButton.SetAsSelected(true);
         }
 
         public void UnSelect()
@@ -87,7 +88,8 @@ namespace AnimalAnatomy
                 meshRenderers[i].materials = materials;
             }
 
-            partListButton.SetAsSelected(false);
+            if (partListButton)
+                partListButton.SetAsSelected(false);
         }
 
         public void SetAsTransparent(bool state)

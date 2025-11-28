@@ -103,6 +103,9 @@ namespace AnimalAnatomy
 
         void SelectBodyPart()
         {
+            if (!CameraController.Instance)
+                return;
+
             if (!gameController.isolatedMode && !gameController.transparentMode)
             {
                 Ray ray = CameraController.Instance.mainCamera.ScreenPointToRay(Input.mousePosition);
