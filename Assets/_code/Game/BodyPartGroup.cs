@@ -79,31 +79,25 @@ namespace AnimalAnatomy
         public void Select()
         {
             for (int g = 0; g < bodyPartsGroups.Count; g++)
-            {
                 bodyPartsGroups[g].Select();
-            }
 
             for (int p = 0; p < bodyParts.Count; p++)
-            {
                 bodyParts[p].Select(true);
-            }
 
-            partGroupListButton.SetAsSelected(true);
+            if (partGroupListButton)
+                partGroupListButton.SetAsSelected(true);
         }
 
         public void UnSelect()
         {
             for (int g = 0; g < bodyPartsGroups.Count; g++)
-            {
                 bodyPartsGroups[g].UnSelect();
-            }
 
             for (int p = 0; p < bodyParts.Count; p++)
-            {
                 bodyParts[p].UnSelect();
-            }
 
-            partGroupListButton.SetAsSelected(false);
+            if (partGroupListButton)
+                partGroupListButton.SetAsSelected(false);
         }
 
         public Vector3 GetCenterOfGroup()
@@ -114,9 +108,7 @@ namespace AnimalAnatomy
             Vector3 position = Vector3.zero;
 
             for (int i = 0; i < allChildrenBodyParts.Count; i++)
-            {
                 position += allChildrenBodyParts[i].GetCenterOfObject();
-            }
 
             position /= allChildrenBodyParts.Count;
 

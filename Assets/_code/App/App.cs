@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.XR.Management;
 
 namespace Vopere.Common
 {
@@ -10,6 +11,8 @@ namespace Vopere.Common
 
 		[SerializeField] bool useTargetFPS = true;
 		[SerializeField] bool initialize = false;
+
+        public bool isXR;
 
 		public bool IsInitialized {  get { return initialize; } }
 
@@ -30,26 +33,18 @@ namespace Vopere.Common
 			Init();
         }
 
+        void Start()
+        {
+            isXR =  XRGeneralSettings.Instance != null &&
+                    XRGeneralSettings.Instance.Manager != null &&
+                    XRGeneralSettings.Instance.Manager.activeLoader != null;
+        }
+
         public void Init()
         {
-            defaultScreenResolution.x = DataSaveLoad.Instance.GetSavedInt("DefaultScreenResolutionWidth");
-
-			if (defaultScreenResolution.x == -1)
-                defaultScreenResolution.x = Screen.width;
-
-            defaultScreenResolution.y = DataSaveLoad.Instance.GetSavedInt("DefaultScreenResolutionHeight");
-
-            if (defaultScreenResolution.y == -1)
-                defaultScreenResolution.y = Screen.height;
-
+            TryGetSavedDefaultScreenResolution();
             SetTargetFPS(useTargetFPS);
-
-            graphicsLevel = DataSaveLoad.Instance.GetSavedInt("GraphicsLevel");
-
-            if (graphicsLevel != -1)
-                SetGraphicsLevel(graphicsLevel);
-			else
-				SetGraphicsLevel(defaultGraphicsLevel);
+            TryGetSetSavedGraphicsLevel();
 
             int screenResolution = DataSaveLoad.Instance.GetSavedInt("ScreenResolution");			
 			SetResolution(screenResolution);
@@ -74,12 +69,35 @@ namespace Vopere.Common
 				Application.targetFrameRate = 30;
 		}
 
-		public void SetGraphicsLevel(int level)
+		void TryGetSetSavedGraphicsLevel()
+		{
+            graphicsLevel = DataSaveLoad.Instance.GetSavedInt("GraphicsLevel");
+
+            if (graphicsLevel != -1)
+                SetGraphicsLevel(graphicsLevel);
+            else
+                SetGraphicsLevel(defaultGraphicsLevel);
+        }
+
+        public void SetGraphicsLevel(int level)
 		{
 			QualitySettings.SetQualityLevel(level, true);
 		}
 
-		public void SetResolution(int level)
+		void TryGetSavedDefaultScreenResolution()
+		{
+            defaultScreenResolution.x = DataSaveLoad.Instance.GetSavedInt("DefaultScreenResolutionWidth");
+
+            if (defaultScreenResolution.x == -1)
+                defaultScreenResolution.x = Screen.width;
+
+            defaultScreenResolution.y = DataSaveLoad.Instance.GetSavedInt("DefaultScreenResolutionHeight");
+
+            if (defaultScreenResolution.y == -1)
+                defaultScreenResolution.y = Screen.height;
+        }
+
+        public void SetResolution(int level)
 		{
 			if (level == 0)
                 Screen.SetResolution(defaultScreenResolution.x * 3 / 8, defaultScreenResolution.y * 3 / 8, FullScreenMode.FullScreenWindow);
