@@ -45,7 +45,7 @@ namespace AnimalAnatomy
 
         void Update()
         {
-            if (UIMainCanvas.Instance.isLoading)
+            if (UIMainCanvas.Instance && UIMainCanvas.Instance.isLoading)
                 return;
 
             if (isFreezed)

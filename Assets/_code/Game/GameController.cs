@@ -177,20 +177,21 @@ namespace AnimalAnatomy
             UIMainCanvas.Instance.SelectBodyPart(info);
             info.Select(false);
 
-            CameraController.Instance.distanceLimitsMultiplier = selectedBodyPart.cameraDistanceLimitsMultiplier;
+            SetCameraDistanceLimitsMultiplier(selectedBodyPart.cameraDistanceLimitsMultiplier);
+
         }
 
         public void UnSelectBodyPart()
         {
             selectedBodyPart = null;
-            UIMainCanvas.Instance.UnSelectBodyPart();
+            
+            if (UIMainCanvas.Instance)
+                UIMainCanvas.Instance.UnSelectBodyPart();
 
             for (int i = 0; i < allBodyParts.Count; i++)
-            {
                 allBodyParts[i].UnSelect();
-            }
 
-            CameraController.Instance.distanceLimitsMultiplier = 1.0f;
+            SetCameraDistanceLimitsMultiplier(1.0f);
         }
 
         public void SelectBodyPartGroup(BodyPartGroup info)
@@ -202,7 +203,7 @@ namespace AnimalAnatomy
             UIMainCanvas.Instance.SelectBodyPartGroup(info);
             info.Select();
 
-            CameraController.Instance.distanceLimitsMultiplier = selectedBodyPartsGroup.cameraDistanceLimitsMultiplier;
+            SetCameraDistanceLimitsMultiplier(selectedBodyPartsGroup.cameraDistanceLimitsMultiplier);
         }
 
         public void UnSelectBodyPartGroup()
@@ -220,7 +221,7 @@ namespace AnimalAnatomy
                 allBodyParts[i].UnSelect();
             }
 
-            CameraController.Instance.distanceLimitsMultiplier = 1.0f;
+            SetCameraDistanceLimitsMultiplier(1.0f);
         }
 
         public void SetIsolatedMode(bool state)
@@ -373,6 +374,12 @@ namespace AnimalAnatomy
         {
             exclusionMode = state;
             UIMainCanvas.Instance.SetExclusionMode(state);
+        }
+
+        void SetCameraDistanceLimitsMultiplier(float value)
+        {
+            if (CameraController.Instance)
+                CameraController.Instance.distanceLimitsMultiplier = value;
         }
     }
 }

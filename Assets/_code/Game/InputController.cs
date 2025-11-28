@@ -40,7 +40,7 @@ namespace AnimalAnatomy
             if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.D))
                 PlayerPrefs.DeleteAll();
 
-            if (mainCanvas.isLoading)
+            if (mainCanvas && mainCanvas.isLoading)
                 return;
 
             if (ExaminationController.Instance.isExamination)
