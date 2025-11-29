@@ -61,7 +61,7 @@ namespace AnimalAnatomy
                 if (gameController.transparentMode)
                     gameController.SetTransparentMode(false);
                 else
-                    gameController.UnSelectBodyPart();
+                    gameController.UnSelectBodyPart(false);
             }
         }
 
@@ -124,7 +124,7 @@ namespace AnimalAnatomy
                 }
                 else
                 {
-                    gameController.UnSelectBodyPart();
+                    gameController.UnSelectBodyPart(false);
                     gameController.UnSelectBodyPartGroup();
                 }
             }

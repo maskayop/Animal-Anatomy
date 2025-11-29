@@ -56,7 +56,7 @@ namespace AnimalAnatomy
         {
             CreateBodyPartsLists();
             StartCoroutine(UpdateBodyPartsLists());
-            UnSelectBodyPart();
+            UnSelectBodyPart(true);
 
             baseBodyPartGroup = GameObject.FindGameObjectWithTag("Player").GetComponent<BodyPartGroup>();
         }
@@ -170,7 +170,7 @@ namespace AnimalAnatomy
 
         public void SelectBodyPart(BodyPartInfo info)
         {
-            UnSelectBodyPart();
+            UnSelectBodyPart(true);
             UnSelectBodyPartGroup();
 
             selectedBodyPart = info;
@@ -183,9 +183,11 @@ namespace AnimalAnatomy
 
             SetCameraDistanceLimitsMultiplier(selectedBodyPart.cameraDistanceLimitsMultiplier);
 
+            if (GameplayAudioPlayer.Instance)
+                GameplayAudioPlayer.Instance.PlayBodyPartSelectionAudio();
         }
 
-        public void UnSelectBodyPart()
+        public void UnSelectBodyPart(bool playAudioClip)
         {
             selectedBodyPart = null;
             
@@ -196,6 +198,10 @@ namespace AnimalAnatomy
                 allBodyParts[i].UnSelect();
 
             SetCameraDistanceLimitsMultiplier(1.0f);
+
+            if (!playAudioClip)
+                if (GameplayAudioPlayer.Instance)
+                    GameplayAudioPlayer.Instance.PlayBodyPartUnSelectionAudio();
         }
 
         public void SelectBodyPartGroup(BodyPartGroup info)
@@ -383,7 +389,7 @@ namespace AnimalAnatomy
                     selectedBodyPart.gameObject.SetActive(false);
             }
 
-            UnSelectBodyPart();
+            UnSelectBodyPart(true);
         }
 
         public void SetExclusionMode(bool state)

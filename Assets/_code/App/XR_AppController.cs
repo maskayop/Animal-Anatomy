@@ -38,6 +38,9 @@ namespace AnimalAnatomy
             if (!App.Instance)
                 return;
 
+            if (GetComponent<AudioListener>())
+                GetComponent<AudioListener>().enabled = true;
+
             StartCoroutine(InitDelayed());
         }
 
@@ -64,6 +67,9 @@ namespace AnimalAnatomy
 
                 CameraController.Instance.Init();
             }
+
+            if (GetComponent<AudioListener>())
+                GetComponent<AudioListener>().enabled = false;
         }
     }
 }

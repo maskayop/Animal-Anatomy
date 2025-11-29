@@ -526,6 +526,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2763907515012352022}
   - component: {fileID: 7639705289458219647}
+  - component: {fileID: 2201010563734902340}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -601,10 +602,24 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 440d4f55598974348ac86f81b257b32e, type: 3}
   - name: "\u0422\u0430\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F
       \u043F\u0435\u0449\u0435\u0440\u0430"
-    clip: {fileID: 8300000, guid: 440d4f55598974348ac86f81b257b32e, type: 3}
+    clip: {fileID: 8300000, guid: 39541cd4e2f9e7c428e4b517aa1fa1e6, type: 3}
   UISource: {fileID: 2118019015863251886}
   UIMixer: {fileID: -3943094602109605090, guid: 1993f228958937d45a317fa3d60135e6, type: 2}
   SFXSource: {fileID: 4357081712548094026}
   SFXMixer: {fileID: 6973557550548021979, guid: 1993f228958937d45a317fa3d60135e6, type: 2}
   voiceSource: {fileID: 2076056320348035453}
   voiceMixer: {fileID: 4425757388303351632, guid: 1993f228958937d45a317fa3d60135e6, type: 2}
+--- !u!114 &2201010563734902340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6463078715349689705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f94c0c1b3d04334295e8389a699a043, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.GameplayAudioPlayer
+  bodyPartSelectionClip: {fileID: 8300000, guid: 7ccfd5c62140a3044929dbef175cd5ac, type: 3}
+  bodyPartUnSelectionClip: {fileID: 8300000, guid: 80ad7d66c2bb5494d92ffef37ff038ed, type: 3}
