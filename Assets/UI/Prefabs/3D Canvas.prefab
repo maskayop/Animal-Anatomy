@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 809181086421381468}
   - component: {fileID: 7930173081511945437}
   - component: {fileID: 525386142792584397}
+  - component: {fileID: 2809901451218967154}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -145,6 +146,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &2809901451218967154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4457609757172822889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d8b23b58e42784bb5aeadfdde30416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.UIButtonClickAudio
+  clip: {fileID: 8300000, guid: c6f666d2496efc44faf12e7cef8cf413, type: 3}
 --- !u!1 &4638017793512821846
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,6 +171,7 @@ GameObject:
   - component: {fileID: 2836506023495257322}
   - component: {fileID: 840598997974647621}
   - component: {fileID: 945136620319901290}
+  - component: {fileID: 1820648036293934552}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -290,6 +305,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1820648036293934552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4638017793512821846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d8b23b58e42784bb5aeadfdde30416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.UIButtonClickAudio
+  clip: {fileID: 8300000, guid: c6f666d2496efc44faf12e7cef8cf413, type: 3}
 --- !u!1 &5191833824077563915
 GameObject:
   m_ObjectHideFlags: 0

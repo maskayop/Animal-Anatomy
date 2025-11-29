@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Vopere.Common;
 
 namespace AnimalAnatomy
 {
@@ -23,6 +24,7 @@ namespace AnimalAnatomy
         public BodyPartGroup bodyPartGroup;
 
         Material defaultMaterial;
+        GameObject transformCenterGameObject;
 
         void Reset()
         {
@@ -57,6 +59,9 @@ namespace AnimalAnatomy
                 defaultMaterial = meshRenderers[0].material;
 
             CalculateCameraDistanceLimitsMultiplier();
+
+            if (App.Instance && App.Instance.isXR)
+                CreateTransformCenterGameObject();
         }
 
         public void Select(bool isGroupSelection)
@@ -166,6 +171,18 @@ namespace AnimalAnatomy
             floats[2] = meshRenderers[0].bounds.size.z;
 
             cameraDistanceLimitsMultiplier = Mathf.Clamp(Mathf.Pow(Mathf.Max(floats), 0.6f), 0.25f, 1.0f);
+        }
+
+        void CreateTransformCenterGameObject()
+        {
+            transformCenterGameObject = new GameObject(name + " - Center");
+            transformCenterGameObject.transform.position = GetCenterOfObject();
+            transformCenterGameObject.transform.parent = transform;
+        }
+
+        public Transform GetCenterTransform()
+        {
+            return transformCenterGameObject.transform;
         }
     }
 }

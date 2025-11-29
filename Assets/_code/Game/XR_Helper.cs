@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using Vopere.Common;
 
 namespace AnimalAnatomy
 {
@@ -12,10 +13,23 @@ namespace AnimalAnatomy
 
         void Start()
         {
+            if (!App.Instance.isXR)
+            {
+                Destroy(this);
+                return;
+            }
+
             gameController = GameController.Instance;
+
             grabInteractable = GetComponent<XRGrabInteractable>();
-            grabInteractable.selectEntered.AddListener(OnSelectEntered);
+
+            if (grabInteractable)
+                grabInteractable.selectEntered.AddListener(OnSelectEntered);
+
             bodyPartInfo = GetComponent<BodyPartInfo>();
+
+            if (bodyPartInfo && grabInteractable)
+                grabInteractable.attachTransform = bodyPartInfo.GetCenterTransform();
         }
 
         void OnSelectEntered(SelectEnterEventArgs args)
@@ -31,7 +45,8 @@ namespace AnimalAnatomy
 
         void OnDestroy()
         {
-            grabInteractable.selectEntered.RemoveListener(OnSelectEntered);
+            if (grabInteractable)
+                grabInteractable.selectEntered.RemoveListener(OnSelectEntered);
         }
     }
 }

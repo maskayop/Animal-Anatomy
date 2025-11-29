@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 6329937298511418629}
   rotationSpeed: 5
+  defaultFOV: 30
   cameraDistanceLimits: {x: 3, y: 8, z: 15}
   scrollSpeed: 0.7
   distanceLimitsMultiplier: 1
@@ -117,7 +118,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 100000
+  far clip plane: 10000
   field of view: 30
   orthographic: 0
   orthographic size: 5

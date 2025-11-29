@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using Vopere.Common;
 
@@ -10,6 +11,7 @@ namespace AnimalAnatomy
         public Camera mainCamera;
 
         [SerializeField] float rotationSpeed = 5f;
+        [SerializeField] float defaultFOV = 60;
 
         [Header("Camera Zoom")]
         //Минимальное, базовое, максимальное расстояние камеры
@@ -74,6 +76,8 @@ namespace AnimalAnatomy
 
             if (zoomSensitivity != -1)
                 ChangeZoomSensitivity(zoomSensitivity);
+
+            SetDefaultCameraFOV();
         }
 
         void UpdateViewRotation()
@@ -174,6 +178,11 @@ namespace AnimalAnatomy
         {
             scrollSpeed = INvalue / 10;
             DataSaveLoad.Instance.Save("ZoomSensitivity", INvalue);
+        }
+
+        public void SetDefaultCameraFOV()
+        {
+            mainCamera.fieldOfView = defaultFOV;
         }
     }
 }
