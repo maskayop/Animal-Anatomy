@@ -16,6 +16,7 @@ namespace AnimalAnatomy
         [Header("UI")]
         [SerializeField] GameObject displayUI;
         [SerializeField] GameObject XR_UI;
+        [SerializeField] GameObject eventSystemGameObject;
 
         XROrigin XR_Origin;
 
@@ -59,6 +60,9 @@ namespace AnimalAnatomy
                     if (XR_Origin.Camera)
                         if (XR_Origin.Camera.GetComponent<AudioListener>())
                             XR_Origin.Camera.GetComponent<AudioListener>().enabled = true;
+
+                if (eventSystemGameObject)
+                    eventSystemGameObject.SetActive(false);
             }
             else
             {
@@ -66,10 +70,13 @@ namespace AnimalAnatomy
                 DestroyImmediate(XR_UI);
 
                 CameraController.Instance.Init();
+
+                if (eventSystemGameObject)
+                    eventSystemGameObject.SetActive(true);
             }
 
             if (GetComponent<AudioListener>())
-                GetComponent<AudioListener>().enabled = false;
+                GetComponent<AudioListener>().enabled = false;            
         }
     }
 }

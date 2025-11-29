@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using Vopere.Common;
 
@@ -38,11 +37,6 @@ namespace AnimalAnatomy
             }
 
             Instance = this;
-        }
-
-        void Start()
-        {
-            //Init();
         }
 
         void Update()

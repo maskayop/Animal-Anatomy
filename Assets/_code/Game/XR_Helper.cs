@@ -18,7 +18,10 @@ namespace AnimalAnatomy
                 Destroy(this);
                 return;
             }
+        }
 
+        public void Init()
+        {
             gameController = GameController.Instance;
 
             grabInteractable = GetComponent<XRGrabInteractable>();

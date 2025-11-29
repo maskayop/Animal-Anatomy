@@ -550,7 +550,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 753273706}
-  - {fileID: 2066316240}
   m_Father: {fileID: 1103009313}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &836412724
@@ -683,6 +682,7 @@ Transform:
   m_Children:
   - {fileID: 1095070935}
   - {fileID: 815803353}
+  - {fileID: 2066316240}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1176107407 stripped
@@ -1050,6 +1050,7 @@ MonoBehaviour:
   PICO_XR_Camera: {fileID: 1579120920}
   displayUI: {fileID: 1095070934}
   XR_UI: {fileID: 815803352}
+  eventSystemGameObject: {fileID: 0}
 --- !u!81 &2021530109
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1175,7 +1176,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 815803353}
+  m_Father: {fileID: 1103009313}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &603891369028501446
 PrefabInstance:

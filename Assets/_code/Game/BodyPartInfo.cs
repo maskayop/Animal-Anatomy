@@ -1,5 +1,8 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Transformers;
 using Vopere.Common;
 
 namespace AnimalAnatomy
@@ -60,8 +63,35 @@ namespace AnimalAnatomy
 
             CalculateCameraDistanceLimitsMultiplier();
 
-            if (App.Instance && App.Instance.isXR)
+            if (App.Instance)
+                StartCoroutine(InitDelayed());
+        }
+
+        IEnumerator InitDelayed()
+        {
+            yield return new WaitForSeconds(1.0f);
+
+            if (App.Instance.isXR)
+            {
                 CreateTransformCenterGameObject();
+
+                if (GetComponent<XR_Helper>())
+                    GetComponent<XR_Helper>().Init();
+            }
+            else
+            {
+                if (GetComponent<XRGrabInteractable>())
+                    Destroy(GetComponent<XRGrabInteractable>());
+
+                if (GetComponent<XR_Helper>())
+                    Destroy(GetComponent<XR_Helper>());
+
+                if (GetComponent<XRGeneralGrabTransformer>())
+                    Destroy(GetComponent<XRGeneralGrabTransformer>());
+
+                if (GetComponent<Rigidbody>())
+                    Destroy(GetComponent<Rigidbody>());
+            }
         }
 
         public void Select(bool isGroupSelection)
@@ -182,7 +212,10 @@ namespace AnimalAnatomy
 
         public Transform GetCenterTransform()
         {
-            return transformCenterGameObject.transform;
+            if (transformCenterGameObject)
+                return transformCenterGameObject.transform;
+            else
+                return null;
         }
     }
 }
