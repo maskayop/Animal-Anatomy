@@ -22,10 +22,10 @@ namespace AnimalAnatomy
         [SerializeField] GameObject examWindow;
 
         [Header("System Activating")]
-        [SerializeField] GameObject systemActivatingButtonsPanel;
+        [SerializeField] UISystemActivatingButtonsPanel systemActivatingButtonsPanel;
 
         [Header("Body Part Info")]
-        [SerializeField] RectTransform bodyPartInfoPanel;
+        [SerializeField] RectTransform bodyPartDescriptionPanel;
         [SerializeField] TextMeshProUGUI bodyPartNameText;
         [SerializeField] TextMeshProUGUI bodyPartScientificNameText;
         [SerializeField] TextMeshProUGUI bodyPartDescriptionText;
@@ -61,7 +61,6 @@ namespace AnimalAnatomy
         [Header("Examination")]
         [SerializeField] GameObject examinationSettingsWindow;
 
-        UIButtonSystemActivating[] systemActivatingButtons;
         List<UIPartsListButton> partsListButtons = new List<UIPartsListButton>();        
 
         [HideInInspector]
@@ -142,10 +141,8 @@ namespace AnimalAnatomy
 
         public void Init()
         {
-            systemActivatingButtons = FindObjectsByType<UIButtonSystemActivating>(FindObjectsSortMode.None);
             examWindow.SetActive(false);
-            CreateBodyPartsGroupsListButtons();
-            CollapseSystemActivatingButtons(true);
+            CreateBodyPartsGroupsListButtons();            
 
 #if PLATFORM_ANDROID
             exclusionModeButton.gameObject.SetActive(true);
@@ -162,7 +159,7 @@ namespace AnimalAnatomy
             {
                 isolatedModeButton.SetActiveState(state);
                 transparentModeButton.gameObject.SetActive(!state);
-                systemActivatingButtonsPanel.SetActive(!state);
+                systemActivatingButtonsPanel.gameObject.SetActive(!state);
             }
         }
 
@@ -172,16 +169,13 @@ namespace AnimalAnatomy
             {
                 transparentModeButton.SetActiveState(state);
                 isolatedModeButton.gameObject.SetActive(!state);
-                systemActivatingButtonsPanel.SetActive(!state);
+                systemActivatingButtonsPanel.gameObject.SetActive(!state);
             }
         }
 
         public void ActivateAllSystems(bool state)
         {
-            for (int i = 0; i < systemActivatingButtons.Length; i++)
-            {
-                systemActivatingButtons[i].SetActiveState(state);
-            }
+            systemActivatingButtonsPanel.ActivateAllSystems(state);
         }
 
         public void SetExclusionMode(bool state)
@@ -262,7 +256,7 @@ namespace AnimalAnatomy
 
         public void SelectBodyPart(BodyPartInfo info)
         {
-            bodyPartInfoPanel.gameObject.SetActive(true);
+            bodyPartDescriptionPanel.gameObject.SetActive(true);
             isolatedModeButtonsContainer.gameObject.SetActive(true);
             bodyPartNameText.text = info.GetFullRussianName();
             bodyPartScientificNameText.text = info.GetFullScientificName();
@@ -279,14 +273,14 @@ namespace AnimalAnatomy
 
         public void UnSelectBodyPart()
         {
-            bodyPartInfoPanel.gameObject.SetActive(false);
+            bodyPartDescriptionPanel.gameObject.SetActive(false);
             isolatedModeButtonsContainer.gameObject.SetActive(false);
             bodyPartsGroupPanel.gameObject.SetActive(false);
         }
 
         public void SelectBodyPartGroup(BodyPartGroup info)
         {
-            bodyPartInfoPanel.gameObject.SetActive(true);
+            bodyPartDescriptionPanel.gameObject.SetActive(true);
             isolatedModeButtonsContainer.gameObject.SetActive(true);
             bodyPartNameText.text = info.GetFullRussianName();
             bodyPartScientificNameText.text = info.GetFullScientificName();
@@ -303,7 +297,7 @@ namespace AnimalAnatomy
 
         public void UnSelectBodyPartGroup()
         {
-            bodyPartInfoPanel.gameObject.SetActive(false);
+            bodyPartDescriptionPanel.gameObject.SetActive(false);
             isolatedModeButtonsContainer.gameObject.SetActive(false);
             bodyPartsGroupPanel.gameObject.SetActive(false);
         }
@@ -377,17 +371,6 @@ namespace AnimalAnatomy
             GameController.Instance.SetTransparentMode(false);
 
             ExaminationController.Instance.StopExamination();
-        }
-
-        public void CollapseSystemActivatingButtons(bool state)
-        {
-            for (int i = 0; i < systemActivatingButtons.Length; i++)
-            {
-                if (state)
-                    systemActivatingButtons[i].Collapse();
-                else
-                    systemActivatingButtons[i].Expand();
-            }
         }
 
         public void OpenSettingsWindow()

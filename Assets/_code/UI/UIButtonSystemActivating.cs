@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Vopere.Common;
 
 namespace AnimalAnatomy
 {
@@ -25,13 +26,11 @@ namespace AnimalAnatomy
         [Header("Info")]
         public bool isActive;
 
-        void Start()
-        {
-            Init();
-        }
-
         void Update()
         {
+            if (App.Instance && App.Instance.isXR)
+                return;
+
             if (keyCode != KeyCode.None)
             {
                 if (Input.GetKeyDown(keyCode))
