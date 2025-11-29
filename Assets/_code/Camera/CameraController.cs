@@ -42,7 +42,7 @@ namespace AnimalAnatomy
 
         void Start()
         {
-            Init();
+            //Init();
         }
 
         void Update()
@@ -78,6 +78,7 @@ namespace AnimalAnatomy
                 ChangeZoomSensitivity(zoomSensitivity);
 
             SetDefaultCameraFOV();
+            EnableAudioListener(true);
         }
 
         void UpdateViewRotation()
@@ -183,6 +184,12 @@ namespace AnimalAnatomy
         public void SetDefaultCameraFOV()
         {
             mainCamera.fieldOfView = defaultFOV;
+        }
+
+        void EnableAudioListener(bool state)
+        {
+            if (mainCamera.GetComponent<AudioListener>())
+                mainCamera.GetComponent<AudioListener>().enabled = state;
         }
     }
 }

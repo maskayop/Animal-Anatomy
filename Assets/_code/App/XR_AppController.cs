@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using Vopere.Common;
+using Unity.XR.CoreUtils;
 
 namespace AnimalAnatomy
 {
@@ -15,6 +16,8 @@ namespace AnimalAnatomy
         [Header("UI")]
         [SerializeField] GameObject displayUI;
         [SerializeField] GameObject XR_UI;
+
+        XROrigin XR_Origin;
 
         void Awake()
         {
@@ -46,11 +49,20 @@ namespace AnimalAnatomy
             {
                 DestroyImmediate(cameraController);
                 DestroyImmediate(displayUI);
+
+                XR_Origin = FindAnyObjectByType<XROrigin>();
+
+                if (XR_Origin)
+                    if (XR_Origin.Camera)
+                        if (XR_Origin.Camera.GetComponent<AudioListener>())
+                            XR_Origin.Camera.GetComponent<AudioListener>().enabled = true;
             }
             else
             {
                 DestroyImmediate(PICO_XR_Camera);
                 DestroyImmediate(XR_UI);
+
+                CameraController.Instance.Init();
             }
         }
     }
