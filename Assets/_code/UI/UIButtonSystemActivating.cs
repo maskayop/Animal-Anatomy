@@ -26,6 +26,9 @@ namespace AnimalAnatomy
         [Header("Info")]
         public bool isActive;
 
+        [Header("Info")]
+        [SerializeField] bool isXR;
+
         void Update()
         {
             if (App.Instance && App.Instance.isXR)
@@ -51,6 +54,8 @@ namespace AnimalAnatomy
             isActive = false;
             SwitchActiveState();
 
+            systemTypeColorImage.color = ColorsManager.Instance.GetSystemColor(systemType);
+
             if (!keyCodePanel)
                 return;
 
@@ -67,8 +72,6 @@ namespace AnimalAnatomy
                 else
                     keyCodeText.text = customKeyCodeName;
             }
-
-            systemTypeColorImage.color = ColorsManager.Instance.GetSystemColor(systemType);
         }
 
         public void SwitchActiveState()
@@ -91,14 +94,20 @@ namespace AnimalAnatomy
 
         public void Collapse()
         {
-            keyCodePanel.SetActive(false);
-            systemNameText.gameObject.SetActive(false);
+            if (keyCodePanel)
+                keyCodePanel.SetActive(false);
+
+            if (!isXR)
+                systemNameText.gameObject.SetActive(false);
         }
 
         public void Expand()
         {
-            keyCodePanel.SetActive(true);
-            systemNameText.gameObject.SetActive(true);
+            if (keyCodePanel)
+                keyCodePanel.SetActive(true);
+
+            if (!isXR)
+                systemNameText.gameObject.SetActive(true);
         }
     }
 }
