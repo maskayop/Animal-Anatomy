@@ -45,6 +45,7 @@ namespace AnimalAnatomy
                 return;
 
             canvasGroup.interactable = state;
+            canvasGroup.blocksRaycasts = state;
 
             if (state)
                 canvasGroup.alpha = 1.0f;

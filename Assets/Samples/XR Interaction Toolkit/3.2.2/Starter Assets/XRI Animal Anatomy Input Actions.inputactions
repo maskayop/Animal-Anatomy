@@ -3446,6 +3446,54 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "AA XR Right Controller",
+            "id": "e6062701-31ed-4f00-987b-22c84240f394",
+            "actions": [
+                {
+                    "name": "A Button",
+                    "type": "Button",
+                    "id": "dfb93c35-4d05-400b-b5ce-a4da9d715078",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "B Button",
+                    "type": "Button",
+                    "id": "1df9b533-2908-4dd6-bce2-239cf3795dc4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "66ea7cd8-7669-4bc3-8ce0-4630a30b0b8e",
+                    "path": "<XRController>{RightHand}/{PrimaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "A Button",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "81bb06a1-d163-40d1-8636-56f97d19b283",
+                    "path": "<XRController>{RightHand}/{SecondaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "B Button",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

@@ -1,0 +1,38 @@
+using UnityEngine;
+
+namespace AnimalAnatomy
+{
+    public class UIWidgetsController : MonoBehaviour
+    {
+        [Header("Widgets")]
+        [SerializeField] GameObject isolatedModeWidget;
+        [SerializeField] GameObject transparentModeWidget;
+        [SerializeField] GameObject exclusionModeWidget;
+        [SerializeField] GameObject lightingModeWidget;
+
+        GameController gameController;
+
+        void Start()
+        {
+            Init();
+        }
+
+        void Update()
+        {
+            UpdateWidgets();
+        }
+
+        public void Init()
+        {
+            gameController = GameController.Instance;
+        }
+
+        void UpdateWidgets()
+        {
+            isolatedModeWidget.SetActive(gameController.isolatedMode);
+            transparentModeWidget.SetActive(gameController.transparentMode);
+            exclusionModeWidget.SetActive(gameController.exclusionMode);
+            lightingModeWidget.SetActive(gameController.lightingMode);
+        }
+    }
+}
