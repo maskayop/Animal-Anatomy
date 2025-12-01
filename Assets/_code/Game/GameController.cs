@@ -28,9 +28,12 @@ namespace AnimalAnatomy
         [Header("Info")]
         public BodyPartInfo selectedBodyPart;
         public BodyPartGroup selectedBodyPartsGroup;
+
+        [Header("Modes")]
         public bool isolatedMode = false;
         public bool transparentMode = false;
         public bool exclusionMode = false;
+        public bool lightingMode = false;
 
         [HideInInspector]
         public BodyPartGroup baseBodyPartGroup;
@@ -244,16 +247,13 @@ namespace AnimalAnatomy
             IsolateBodyPart(state);
             IsolateBodyPartGroup(state);
 
-            if (UIMainCanvas.Instance)
-                UIMainCanvas.Instance.SetIsolatedMode(state);
+            isolatedMode = state;
         }
 
         void IsolateBodyPart(bool state)
         {
             if (selectedBodyPart == null)
                 return;
-
-            isolatedMode = state;
 
             if (state)
             {
@@ -288,8 +288,6 @@ namespace AnimalAnatomy
         {
             if (selectedBodyPartsGroup == null)
                 return;
-
-            isolatedMode = state;
 
             if (state)
             {
@@ -327,16 +325,13 @@ namespace AnimalAnatomy
             IsolateBodyPartTransparent(state);
             IsolateBodyPartGroupTransparent(state);
 
-            if (UIMainCanvas.Instance)
-                UIMainCanvas.Instance.SetTransparentMode(state);
+            transparentMode = state;
         }
 
         void IsolateBodyPartTransparent(bool state)
         {
             if (selectedBodyPart == null)
                 return;
-
-            transparentMode = state;
 
             if (state)
                 selectedBodyPart.UnSelect();
@@ -357,8 +352,6 @@ namespace AnimalAnatomy
         {
             if (selectedBodyPartsGroup == null)
                 return;
-
-            transparentMode = state;
 
             for (int i = 0; i < allBodyParts.Count; i++)
             {
@@ -395,9 +388,11 @@ namespace AnimalAnatomy
         public void SetExclusionMode(bool state)
         {
             exclusionMode = state;
+        }
 
-            if (UIMainCanvas.Instance)
-                UIMainCanvas.Instance.SetExclusionMode(state);
+        public void SetLightingMode(bool state)
+        {
+            lightingMode = state;
         }
 
         void SetCameraDistanceLimitsMultiplier(float value)

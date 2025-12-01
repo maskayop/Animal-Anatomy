@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 3194107953404770217}
   - component: {fileID: 9046775079216297695}
   - component: {fileID: 359412699269622463}
+  - component: {fileID: -351944626697834209}
   m_Layer: 5
   m_Name: Lighting Mode Button
   m_TagString: Untagged
@@ -225,6 +226,18 @@ MonoBehaviour:
   tumblerOn: {fileID: 3095459168938875810}
   tumblerOff: {fileID: 1972891352037346701}
   isActive: 0
+--- !u!225 &-351944626697834209
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2417785326963105717}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3095459168938875810
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.8127451, b: 0.25098038, a: 0.7490196}
+  m_Color: {r: 0.9, g: 0.71905756, b: 0.17999998, a: 0.8}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -434,7 +447,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 95744348623d16a4fbf6699867fe4ca4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3441d148727001e44b413b2e733eabfa, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -525,7 +538,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 95744348623d16a4fbf6699867fe4ca4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3441d148727001e44b413b2e733eabfa, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

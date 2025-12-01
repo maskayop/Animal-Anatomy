@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.25098038, g: 0.7503267, b: 1, a: 0.7490196}
+  m_Color: {r: 0.17999998, g: 0.6587436, b: 0.9, a: 0.8}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -337,9 +337,9 @@ GameObject:
   - component: {fileID: 7951152943178692525}
   - component: {fileID: 3736872747233903821}
   - component: {fileID: 3549856666150549830}
-  - component: {fileID: 884629461491680544}
-  - component: {fileID: -79819694084381702}
   - component: {fileID: 3370193863091329521}
+  - component: {fileID: -79819694084381702}
+  - component: {fileID: -5976203187742619246}
   m_Layer: 5
   m_Name: _Isolated Mode Button
   m_TagString: Untagged
@@ -365,8 +365,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 55}
+  m_AnchoredPosition: {x: -25, y: 0}
+  m_SizeDelta: {x: -50, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &3736872747233903821
 CanvasRenderer:
@@ -432,7 +432,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &884629461491680544
+--- !u!114 &3370193863091329521
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -441,12 +441,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4367908240815411546}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Script: {fileID: 11500000, guid: 52d8b23b58e42784bb5aeadfdde30416, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5019608}
-  m_EffectDistance: {x: 1.5, y: -1.5}
-  m_UseGraphicAlpha: 1
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.UIButtonClickAudio
+  clip: {fileID: 8300000, guid: c6f666d2496efc44faf12e7cef8cf413, type: 3}
 --- !u!114 &-79819694084381702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -463,19 +461,18 @@ MonoBehaviour:
   tumblerOn: {fileID: 4027651969363973453}
   tumblerOff: {fileID: 464224450550956898}
   isActive: 0
---- !u!114 &3370193863091329521
-MonoBehaviour:
+--- !u!225 &-5976203187742619246
+CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4367908240815411546}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52d8b23b58e42784bb5aeadfdde30416, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.UIButtonClickAudio
-  clip: {fileID: 8300000, guid: c6f666d2496efc44faf12e7cef8cf413, type: 3}
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &6736411523491607267
 GameObject:
   m_ObjectHideFlags: 0

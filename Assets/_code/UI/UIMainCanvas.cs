@@ -37,6 +37,8 @@ namespace AnimalAnatomy
         [SerializeField] UIButtonLightingMode lightingModeButton;
 
         [Header("Widgets")]
+        [SerializeField] GameObject isolatedModeWidget;
+        [SerializeField] GameObject transparentModeWidget;
         [SerializeField] GameObject exclusionModeWidget;
         [SerializeField] GameObject lightingModeWidget;
 
@@ -65,6 +67,8 @@ namespace AnimalAnatomy
         [HideInInspector]
         public bool isLoading = false;
 
+        GameController gameController;
+
         void Awake()
         {
             if (Instance != null)
@@ -88,35 +92,16 @@ namespace AnimalAnatomy
         
         void Update()
         {
-            if (GameController.Instance.isolatedMode || GameController.Instance.transparentMode)
-                SetExclusionMode(false);
-
-            if (GameController.Instance.selectedBodyPart != null || GameController.Instance.selectedBodyPartsGroup != null)
+            if (!gameController)
+                return;
+            
+            if (gameController.selectedBodyPart != null || gameController.selectedBodyPartsGroup != null)
                 fitToCenterCameraButton.SetActive(true);
             else
                 fitToCenterCameraButton.SetActive(false);
 
-#if PLATFORM_ANDROID            
-
-            if (GameController.Instance.exclusionMode)
-            {
-                exclusionModeButton.gameObject.SetActive(true);
-                lightingModeButton.gameObject.SetActive(false);
-            }
-            else if (LightController.Instance.lightRotationMode)
-            {
-                exclusionModeButton.gameObject.SetActive(false);
-                lightingModeButton.gameObject.SetActive(true);
-            }
-            else
-            {
-                exclusionModeButton.gameObject.SetActive(true);
-                lightingModeButton.gameObject.SetActive(true);
-            }
-#else
-            exclusionModeButton.gameObject.SetActive(false);
-            lightingModeButton.gameObject.SetActive(false);
-#endif
+            SetIsolatedMode();
+            UpdateWidgets();
         }
 
         IEnumerator InitializeDelayed()
@@ -140,51 +125,53 @@ namespace AnimalAnatomy
 
         public void Init()
         {
+            gameController = GameController.Instance;
+
             examWindow.SetActive(false);
-            CreateBodyPartsGroupsListButtons();            
+            CreateBodyPartsGroupsListButtons();
+            EnableIsolatedModeButtons(false);
 
 #if PLATFORM_ANDROID
-            exclusionModeButton.gameObject.SetActive(true);
-            lightingModeButton.gameObject.SetActive(true);
+            exclusionModeButton.SetInteractable(true);
+            lightingModeButton.SetInteractable(true);
 #else
-            exclusionModeButton.gameObject.SetActive(false);
-            lightingModeButton.gameObject.SetActive(false);
+            exclusionModeButton.SetInteractable(false);
+            lightingModeButton.SetInteractable(false);
 #endif
         }
 
-        public void SetIsolatedMode(bool state)
+        void SetIsolatedMode()
         {
-            if (GameController.Instance.selectedBodyPart || GameController.Instance.selectedBodyPartsGroup)
+            if (gameController.selectedBodyPart || gameController.selectedBodyPartsGroup)
             {
-                isolatedModeButton.SetActiveState(state);
-                transparentModeButton.gameObject.SetActive(!state);
-                systemActivatingButtonsPanel.gameObject.SetActive(!state);
-            }
-        }
+                isolatedModeButton.SetActiveState(gameController.isolatedMode);
+                transparentModeButton.SetActiveState(gameController.transparentMode);
+                exclusionModeButton.SetInteractable(true);
 
-        public void SetTransparentMode(bool state)
-        {
-            if (GameController.Instance.selectedBodyPart || GameController.Instance.selectedBodyPartsGroup)
+                if (gameController.isolatedMode)
+                {
+                    transparentModeButton.SetInteractable(false);
+                    exclusionModeButton.SetInteractable(false);
+                    systemActivatingButtonsPanel.gameObject.SetActive(false);
+                }
+                else if (gameController.transparentMode)
+                {
+                    isolatedModeButton.SetInteractable(false);
+                    exclusionModeButton.SetInteractable(false);
+                    systemActivatingButtonsPanel.gameObject.SetActive(true);
+                }
+            }
+            else
             {
-                transparentModeButton.SetActiveState(state);
-                isolatedModeButton.gameObject.SetActive(!state);
-                systemActivatingButtonsPanel.gameObject.SetActive(!state);
+                isolatedModeButton.SetInteractable(false);
+                transparentModeButton.SetInteractable(false);
+                exclusionModeButton.SetInteractable(true);
             }
         }
 
         public void ActivateAllSystems(bool state)
         {
             systemActivatingButtonsPanel.ActivateAllSystems(state);
-        }
-
-        public void SetExclusionMode(bool state)
-        {
-            exclusionModeWidget.SetActive(state);
-        }
-
-        public void SetLightingMode(bool state)
-        {
-            lightingModeWidget.SetActive(state);
         }
 
         public void ExitApp()
@@ -207,11 +194,11 @@ namespace AnimalAnatomy
             foreach (Transform t in bodyPartsListContainer)
                 Destroy(t.gameObject);
 
-            if (!GameController.Instance.baseBodyPartGroup)
+            if (!gameController.baseBodyPartGroup)
                 return;
 
-            CreateBodyPartsSingleGroupListButtons(GameController.Instance.baseBodyPartGroup);
-            CreateBodyPartsListButtons(GameController.Instance.baseBodyPartGroup);
+            CreateBodyPartsSingleGroupListButtons(gameController.baseBodyPartGroup);
+            CreateBodyPartsListButtons(gameController.baseBodyPartGroup);
         }
 
         void CreateBodyPartsSingleGroupListButtons(BodyPartGroup group)
@@ -353,8 +340,8 @@ namespace AnimalAnatomy
             menuWindow.SetActive(false);
             examWindow.SetActive(true);
 
-            GameController.Instance.SetIsolatedMode(false);
-            GameController.Instance.SetTransparentMode(false);
+            gameController.SetIsolatedMode(false);
+            gameController.SetTransparentMode(false);
 
             ExaminationController.Instance.StartExamination();
         }
@@ -370,8 +357,8 @@ namespace AnimalAnatomy
             menuWindow.SetActive(true);
             examWindow.SetActive(false);
 
-            GameController.Instance.SetIsolatedMode(false);
-            GameController.Instance.SetTransparentMode(false);
+            gameController.SetIsolatedMode(false);
+            gameController.SetTransparentMode(false);
 
             ExaminationController.Instance.StopExamination();
         }
@@ -409,8 +396,16 @@ namespace AnimalAnatomy
 
         void EnableIsolatedModeButtons(bool state)
         {
-            isolatedModeButton.gameObject.SetActive(state);
-            transparentModeButton.gameObject.SetActive(state);
+            isolatedModeButton.SetInteractable(state);
+            transparentModeButton.SetInteractable(state);
+        }
+
+        void UpdateWidgets()
+        {
+            isolatedModeWidget.SetActive(gameController.isolatedMode);
+            transparentModeWidget.SetActive(gameController.transparentMode);
+            exclusionModeWidget.SetActive(gameController.exclusionMode);
+            lightingModeWidget.SetActive(gameController.lightingMode);
         }
     }
 }
