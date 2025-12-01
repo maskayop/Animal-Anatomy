@@ -31,7 +31,6 @@ namespace AnimalAnatomy
         [SerializeField] TextMeshProUGUI bodyPartDescriptionText;
 
         [Header("Modes")]
-        [SerializeField] GameObject isolatedModeButtonsContainer;
         [SerializeField] UIButtonIsolatedMode isolatedModeButton;
         [SerializeField] UIButtonIsolatedMode transparentModeButton;
         [SerializeField] UIButtonExclusionMode exclusionModeButton;
@@ -256,8 +255,9 @@ namespace AnimalAnatomy
 
         public void SelectBodyPart(BodyPartInfo info)
         {
+            EnableIsolatedModeButtons(true);
+
             bodyPartDescriptionPanel.gameObject.SetActive(true);
-            isolatedModeButtonsContainer.gameObject.SetActive(true);
             bodyPartNameText.text = info.GetFullRussianName();
             bodyPartScientificNameText.text = info.GetFullScientificName();
             bodyPartDescriptionText.text = info.info.description;
@@ -273,15 +273,17 @@ namespace AnimalAnatomy
 
         public void UnSelectBodyPart()
         {
+            EnableIsolatedModeButtons(false);
+
             bodyPartDescriptionPanel.gameObject.SetActive(false);
-            isolatedModeButtonsContainer.gameObject.SetActive(false);
             bodyPartsGroupPanel.gameObject.SetActive(false);
         }
 
         public void SelectBodyPartGroup(BodyPartGroup info)
         {
+            EnableIsolatedModeButtons(true);
+
             bodyPartDescriptionPanel.gameObject.SetActive(true);
-            isolatedModeButtonsContainer.gameObject.SetActive(true);
             bodyPartNameText.text = info.GetFullRussianName();
             bodyPartScientificNameText.text = info.GetFullScientificName();
             bodyPartDescriptionText.text = info.info.description;
@@ -297,8 +299,9 @@ namespace AnimalAnatomy
 
         public void UnSelectBodyPartGroup()
         {
+            EnableIsolatedModeButtons(false);
+
             bodyPartDescriptionPanel.gameObject.SetActive(false);
-            isolatedModeButtonsContainer.gameObject.SetActive(false);
             bodyPartsGroupPanel.gameObject.SetActive(false);
         }
 
@@ -402,6 +405,12 @@ namespace AnimalAnatomy
         public void CameraFitToCenter()
         {
             CameraController.Instance.UpdatePosition();
+        }
+
+        void EnableIsolatedModeButtons(bool state)
+        {
+            isolatedModeButton.gameObject.SetActive(state);
+            transparentModeButton.gameObject.SetActive(state);
         }
     }
 }

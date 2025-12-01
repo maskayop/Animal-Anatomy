@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3735209407879794694}
   - component: {fileID: 3651010845918168013}
   - component: {fileID: 4382189729553781419}
+  - component: {fileID: 7654375292914478597}
   m_Layer: 5
   m_Name: 3D Left Controller Canvas
   m_TagString: Untagged
@@ -122,6 +123,29 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
+--- !u!114 &7654375292914478597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8936203456563286470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 762b1392ce0020242911195b0341ad85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.UI3D_LeftControllerCanvas
+  inputActionsAsset: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  inputActionMapName: AA XR Left Controller
+  X_ButtonName: X Button
+  Y_ButtonName: Y Button
+  actionMap:
+    m_Name: Action Map
+    m_Id: 91937167-ab12-4305-8063-67e445deee72
+    m_Asset: {fileID: 0}
+    m_Actions: []
+    m_Bindings: []
+  systemActivatingButtonsPanel: {fileID: 7490921643164366367}
 --- !u!1001 &6889271386564597158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130,14 +154,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8685694375092054933}
     m_Modifications:
-    - target: {fileID: 2704129802487595713, guid: e3a6be1784dad074ba58da9da32c2b93, type: 3}
-      propertyPath: m_fontSize
-      value: 7.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000684868965774756, guid: e3a6be1784dad074ba58da9da32c2b93, type: 3}
-      propertyPath: m_fontSize
-      value: 7.75
-      objectReference: {fileID: 0}
     - target: {fileID: 4586961066606491994, guid: e3a6be1784dad074ba58da9da32c2b93, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -232,3 +248,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4586961066606491994, guid: e3a6be1784dad074ba58da9da32c2b93, type: 3}
   m_PrefabInstance: {fileID: 6889271386564597158}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7490921643164366367 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4066330830185358265, guid: e3a6be1784dad074ba58da9da32c2b93, type: 3}
+  m_PrefabInstance: {fileID: 6889271386564597158}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb0912aa4010ff499dab60aa52a9e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.UISystemActivatingButtonsPanel
