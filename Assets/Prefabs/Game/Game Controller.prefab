@@ -57,6 +57,7 @@ MonoBehaviour:
   isolatedMode: 0
   transparentMode: 0
   exclusionMode: 0
+  lightingMode: 0
   baseBodyPartGroup: {fileID: 0}
 --- !u!114 &4744033071781961499
 MonoBehaviour:
@@ -71,8 +72,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectionTimeout: 0.12
-  currentTime: 0
-  isFirstClick: 1
 --- !u!114 &8348161921302091938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,11 +127,11 @@ MonoBehaviour:
   - systemType: 0
     color: {r: 0.865, g: 0.8249449, b: 0.589065, a: 1}
   - systemType: 1
-    color: {r: 0.90099996, g: 0.34784412, b: 0.057664007, a: 1}
+    color: {r: 0.9, g: 0.27, b: 0, a: 1}
   - systemType: 2
     color: {r: 0.477572, g: 0.667, b: 0.5192809, a: 1}
   - systemType: 3
-    color: {r: 0.922, g: 0.05900801, b: 0.5624197, a: 1}
+    color: {r: 0.9019608, g: 0.18039215, b: 0.72156864, a: 1}
   - systemType: 4
     color: {r: 0.16470587, g: 0.307451, b: 0.8235294, a: 1}
   - systemType: 5
@@ -144,7 +143,7 @@ MonoBehaviour:
   - systemType: 8
     color: {r: 0.6289713, g: 0.27742597, b: 0.851, a: 1}
   - systemType: 9
-    color: {r: 0.8207547, g: 0.7783212, b: 0.7549395, a: 1}
+    color: {r: 0.85, g: 0.77987504, b: 0.748, a: 1}
   - systemType: 10
     color: {r: 0.90099996, g: 0.90099996, b: 0.3430586, a: 1}
   - systemType: 11
