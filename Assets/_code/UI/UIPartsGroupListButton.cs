@@ -29,8 +29,12 @@ namespace AnimalAnatomy
             if (!bodyPartGroup)
                 return;
 
-            GameController.Instance.SelectBodyPartGroup(bodyPartGroup);
-            CameraController.Instance.UpdatePosition();
+            if (GameController.Instance)
+                GameController.Instance.SelectBodyPartGroup(bodyPartGroup);
+
+            if (CameraController.Instance)
+                CameraController.Instance.UpdatePosition();
+
             SetAsSelected(true);
 
             CopyTextsToClipboard();

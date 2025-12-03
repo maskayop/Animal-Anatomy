@@ -2,7 +2,6 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static AnimalAnatomy.GameController;
 
 namespace AnimalAnatomy
 {
@@ -32,9 +31,9 @@ namespace AnimalAnatomy
             systemTypeColorImage.color = ColorsManager.Instance.GetSystemColor(info.systemType);
         }
 
-        public void Init(SystemType systemType)
+        public void Init(GameController.SystemType systemType)
         {
-            string name = Enum.GetName(typeof(SystemType), systemType);
+            string name = Enum.GetName(typeof(GameController.SystemType), systemType);
             nameText.text = "<b>- " + name + " -</b>";
             Destroy(scientificNameText.gameObject);
         }
@@ -44,8 +43,12 @@ namespace AnimalAnatomy
             if (!bodyPartInfo)
                 return;
             
-            GameController.Instance.SelectBodyPart(bodyPartInfo);
-            CameraController.Instance.UpdatePosition();
+            if (GameController.Instance)
+                GameController.Instance.SelectBodyPart(bodyPartInfo);
+
+            if (CameraController.Instance)
+                CameraController.Instance.UpdatePosition();
+
             SetAsSelected(true);
 
             CopyTextsToClipboard();

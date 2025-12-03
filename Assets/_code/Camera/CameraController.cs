@@ -152,7 +152,8 @@ namespace AnimalAnatomy
 
         public void UpdatePositionOnBodyGroup(BodyPartGroup info)
         {
-            transform.position = GameController.Instance.selectedBodyPartsGroup.GetCenterOfGroup();
+            if (GameController.Instance)
+                transform.position = GameController.Instance.selectedBodyPartsGroup.GetCenterOfGroup();
             
             if (transform.position == Vector3.zero)
                 transform.position = defaultPosition;

@@ -4,33 +4,32 @@ using Vopere.Common;
 
 namespace AnimalAnatomy
 {
-    public class UI3D_LeftControllerCanvas : MonoBehaviour
+    public class UI3D_RightControllerCanvas : MonoBehaviour
     {
-        public static UI3D_LeftControllerCanvas Instance;
+        public static UI3D_RightControllerCanvas Instance;
 
         [Header("Input Actions")]
         [SerializeField] InputActionAsset inputActionsAsset;
         [SerializeField] string inputActionMapName;
-        [SerializeField] string X_ButtonName;
-        [SerializeField] string Y_ButtonName;
+        [SerializeField] string A_ButtonName;
+        [SerializeField] string B_ButtonName;
 
         InputActionMap actionMap;
-        InputAction on_X_ButtonPressed;
-        InputAction on_Y_ButtonPressed;
-
-        [Header("UI")]
-        [SerializeField] UISystemActivatingButtonsPanel systemActivatingButtonsPanel;
+        InputAction on_A_ButtonPressed;
+        InputAction on_B_ButtonPressed;
 
         [Header("Audio")]
         [SerializeField] AudioClip buttonClickAudioClip;
 
         bool isInitialized = false;
 
+        GameController gameController;
+
         void Awake()
         {
             if (Instance != null)
             {
-                Debug.LogWarning("Cannot create UI3D_LeftControllerCanvas");
+                Debug.LogWarning("Cannot create UI3D_RightControllerCanvas");
                 Destroy(gameObject);
                 return;
             }
@@ -40,6 +39,8 @@ namespace AnimalAnatomy
 
         void Start()
         {
+            gameController = GameController.Instance;
+
             InitializeInputActions();
         }
 
@@ -56,8 +57,8 @@ namespace AnimalAnatomy
             if (actionMap == null)
                 return;
 
-            on_X_ButtonPressed = actionMap.FindAction(X_ButtonName);
-            on_Y_ButtonPressed = actionMap.FindAction(Y_ButtonName);
+            on_A_ButtonPressed = actionMap.FindAction(A_ButtonName);
+            on_B_ButtonPressed = actionMap.FindAction(B_ButtonName);
 
             isInitialized = true;
 
@@ -77,20 +78,20 @@ namespace AnimalAnatomy
             if (actionMap != null)
                 actionMap.Enable();
 
-            if (on_X_ButtonPressed != null)
-                on_X_ButtonPressed.performed += OnXButton;
+            if (on_A_ButtonPressed != null)
+                on_A_ButtonPressed.performed += OnAButton;
 
-            if (on_Y_ButtonPressed != null)
-                on_Y_ButtonPressed.performed += OnYButton;
+            if (on_B_ButtonPressed != null)
+                on_B_ButtonPressed.performed += OnBButton;
         }
 
         void DisableInputActions()
         {
-            if (on_X_ButtonPressed != null)
-                on_X_ButtonPressed.performed -= OnXButton;
+            if (on_A_ButtonPressed != null)
+                on_A_ButtonPressed.performed -= OnAButton;
 
-            if (on_Y_ButtonPressed != null)
-                on_Y_ButtonPressed.performed -= OnYButton;
+            if (on_B_ButtonPressed != null)
+                on_B_ButtonPressed.performed -= OnBButton;
 
             if (actionMap != null)
                 actionMap.Disable();
@@ -109,16 +110,19 @@ namespace AnimalAnatomy
             DisableInputActions();
         }
 
-        void OnXButton(InputAction.CallbackContext context)
+        void OnAButton(InputAction.CallbackContext context)
         {
-            if (systemActivatingButtonsPanel)
-                systemActivatingButtonsPanel.gameObject.SetActive(!systemActivatingButtonsPanel.gameObject.activeInHierarchy);
+            if (gameController && !gameController.isolatedMode)
+                gameController.SetTransparentMode(!gameController.transparentMode);
 
             AudioController.Instance.PlayUIAudioClip(buttonClickAudioClip);
         }
 
-        void OnYButton(InputAction.CallbackContext context)
+        void OnBButton(InputAction.CallbackContext context)
         {
+            if (gameController && !gameController.transparentMode)
+                gameController.SetIsolatedMode(!gameController.isolatedMode);
+
             AudioController.Instance.PlayUIAudioClip(buttonClickAudioClip);
         }
     }

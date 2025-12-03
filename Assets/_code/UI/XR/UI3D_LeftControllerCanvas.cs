@@ -4,32 +4,33 @@ using Vopere.Common;
 
 namespace AnimalAnatomy
 {
-    public class UI3D_RightControllerCanvas : MonoBehaviour
+    public class UI3D_LeftControllerCanvas : MonoBehaviour
     {
-        public static UI3D_RightControllerCanvas Instance;
+        public static UI3D_LeftControllerCanvas Instance;
 
         [Header("Input Actions")]
         [SerializeField] InputActionAsset inputActionsAsset;
         [SerializeField] string inputActionMapName;
-        [SerializeField] string A_ButtonName;
-        [SerializeField] string B_ButtonName;
+        [SerializeField] string X_ButtonName;
+        [SerializeField] string Y_ButtonName;
 
         InputActionMap actionMap;
-        InputAction on_A_ButtonPressed;
-        InputAction on_B_ButtonPressed;
+        InputAction on_X_ButtonPressed;
+        InputAction on_Y_ButtonPressed;
+
+        [Header("UI")]
+        [SerializeField] UISystemActivatingButtonsPanel systemActivatingButtonsPanel;
 
         [Header("Audio")]
         [SerializeField] AudioClip buttonClickAudioClip;
 
         bool isInitialized = false;
 
-        GameController gameController;
-
         void Awake()
         {
             if (Instance != null)
             {
-                Debug.LogWarning("Cannot create UI3D_RightControllerCanvas");
+                Debug.LogWarning("Cannot create UI3D_LeftControllerCanvas");
                 Destroy(gameObject);
                 return;
             }
@@ -39,8 +40,6 @@ namespace AnimalAnatomy
 
         void Start()
         {
-            gameController = GameController.Instance;
-
             InitializeInputActions();
         }
 
@@ -57,8 +56,8 @@ namespace AnimalAnatomy
             if (actionMap == null)
                 return;
 
-            on_A_ButtonPressed = actionMap.FindAction(A_ButtonName);
-            on_B_ButtonPressed = actionMap.FindAction(B_ButtonName);
+            on_X_ButtonPressed = actionMap.FindAction(X_ButtonName);
+            on_Y_ButtonPressed = actionMap.FindAction(Y_ButtonName);
 
             isInitialized = true;
 
@@ -78,20 +77,20 @@ namespace AnimalAnatomy
             if (actionMap != null)
                 actionMap.Enable();
 
-            if (on_A_ButtonPressed != null)
-                on_A_ButtonPressed.performed += OnAButton;
+            if (on_X_ButtonPressed != null)
+                on_X_ButtonPressed.performed += OnXButton;
 
-            if (on_B_ButtonPressed != null)
-                on_B_ButtonPressed.performed += OnBButton;
+            if (on_Y_ButtonPressed != null)
+                on_Y_ButtonPressed.performed += OnYButton;
         }
 
         void DisableInputActions()
         {
-            if (on_A_ButtonPressed != null)
-                on_A_ButtonPressed.performed -= OnAButton;
+            if (on_X_ButtonPressed != null)
+                on_X_ButtonPressed.performed -= OnXButton;
 
-            if (on_B_ButtonPressed != null)
-                on_B_ButtonPressed.performed -= OnBButton;
+            if (on_Y_ButtonPressed != null)
+                on_Y_ButtonPressed.performed -= OnYButton;
 
             if (actionMap != null)
                 actionMap.Disable();
@@ -110,18 +109,23 @@ namespace AnimalAnatomy
             DisableInputActions();
         }
 
-        void OnAButton(InputAction.CallbackContext context)
+        void OnXButton(InputAction.CallbackContext context)
         {
-            if (gameController)
-                gameController.SetTransparentMode(!gameController.transparentMode);
+            if (systemActivatingButtonsPanel)
+                systemActivatingButtonsPanel.gameObject.SetActive(!systemActivatingButtonsPanel.gameObject.activeInHierarchy);
 
             AudioController.Instance.PlayUIAudioClip(buttonClickAudioClip);
         }
 
-        void OnBButton(InputAction.CallbackContext context)
+        void OnYButton(InputAction.CallbackContext context)
         {
-            if (gameController)
-                gameController.SetIsolatedMode(!gameController.isolatedMode);
+            if (UI3D_BodyPartsListCanvas.Instance)
+            {
+                if (UI3D_BodyPartsListCanvas.Instance.IsBodyPartsListPanelActive())
+                    UI3D_BodyPartsListCanvas.Instance.ClosePartsListPanel();
+                else
+                    UI3D_BodyPartsListCanvas.Instance.OpenPartsListPanel();
+            }
 
             AudioController.Instance.PlayUIAudioClip(buttonClickAudioClip);
         }
