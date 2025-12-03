@@ -10,6 +10,8 @@ namespace AnimalAnatomy
         [Header("UI")]
         [SerializeField] UIBodyPartsListPanel bodyPartsListPanel;
 
+        Canvas canvas;
+
         void Awake()
         {
             if (Instance != null)
@@ -24,7 +26,14 @@ namespace AnimalAnatomy
 
         void Start()
         {
+            canvas = GetComponent<Canvas>();
             StartCoroutine(InitializeDelayed());
+        }
+
+        void Update()
+        {
+            if (canvas)
+                transform.LookAt(canvas.worldCamera.transform);
         }
 
         IEnumerator InitializeDelayed()

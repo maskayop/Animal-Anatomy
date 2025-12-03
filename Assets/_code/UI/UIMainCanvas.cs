@@ -1,5 +1,4 @@
 using System.Collections;
-using TMPro;
 using UnityEngine;
 using Vopere.Common;
 
@@ -24,10 +23,7 @@ namespace AnimalAnatomy
         [SerializeField] UISystemActivatingButtonsPanel systemActivatingButtonsPanel;
 
         [Header("Body Part Info")]
-        [SerializeField] RectTransform bodyPartDescriptionPanel;
-        [SerializeField] TextMeshProUGUI bodyPartNameText;
-        [SerializeField] TextMeshProUGUI bodyPartScientificNameText;
-        [SerializeField] TextMeshProUGUI bodyPartDescriptionText;
+        [SerializeField] UIBodyPartDescriptionPanel bodyPartDescriptionPanel;
 
         [Header("Modes")]
         [SerializeField] UIButtonIsolatedMode isolatedModeButton;
@@ -181,9 +177,7 @@ namespace AnimalAnatomy
             EnableIsolatedModeButtons(true);
 
             bodyPartDescriptionPanel.gameObject.SetActive(true);
-            bodyPartNameText.text = info.GetFullRussianName();
-            bodyPartScientificNameText.text = info.GetFullScientificName();
-            bodyPartDescriptionText.text = info.info.description;
+            bodyPartDescriptionPanel.ShowInfo(info);
 
             if (info.bodyPartGroup)
             {
@@ -207,9 +201,7 @@ namespace AnimalAnatomy
             EnableIsolatedModeButtons(true);
 
             bodyPartDescriptionPanel.gameObject.SetActive(true);
-            bodyPartNameText.text = info.GetFullRussianName();
-            bodyPartScientificNameText.text = info.GetFullScientificName();
-            bodyPartDescriptionText.text = info.info.description;
+            bodyPartDescriptionPanel.ShowInfo(info);
 
             if (info.parentBodyPartGroup)
             {
@@ -226,11 +218,6 @@ namespace AnimalAnatomy
 
             bodyPartDescriptionPanel.gameObject.SetActive(false);
             bodyPartsGroupPanel.gameObject.SetActive(false);
-        }
-
-        public void ShowBodyPartDescription(bool state)
-        {
-            bodyPartDescriptionText.gameObject.SetActive(state);
         }
 
         public void FreezeCamera(bool state)
