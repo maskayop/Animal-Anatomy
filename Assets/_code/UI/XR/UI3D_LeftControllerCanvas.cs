@@ -13,10 +13,18 @@ namespace AnimalAnatomy
         [SerializeField] string inputActionMapName;
         [SerializeField] string X_ButtonName;
         [SerializeField] string Y_ButtonName;
+        [SerializeField] string stickAction;
+        [SerializeField] string triggerAction;
+
+        [Header("Dead Zones")]
+        [SerializeField] float stickDeadZone = 0.5f;
+        [SerializeField] float triggerDeadZone = 0.2f;
 
         InputActionMap actionMap;
         InputAction on_X_ButtonPressed;
         InputAction on_Y_ButtonPressed;
+        InputAction on_StickAction;
+        InputAction on_TriggerAction;
 
         [Header("UI")]
         [SerializeField] UISystemActivatingButtonsPanel systemActivatingButtonsPanel;
@@ -25,6 +33,11 @@ namespace AnimalAnatomy
         [SerializeField] AudioClip buttonClickAudioClip;
 
         bool isInitialized = false;
+
+        GameController gameController;
+
+        Vector2 stickValue = Vector2.zero;
+        float triggerValue = 0;
 
         void Awake()
         {
@@ -40,7 +53,27 @@ namespace AnimalAnatomy
 
         void Start()
         {
+            gameController = GameController.Instance;
             InitializeInputActions();
+        }
+
+        void Update()
+        {
+            if (!gameController)
+                return;
+
+            if (isInitialized)
+            {
+                triggerValue = on_TriggerAction.ReadValue<float>();
+
+                if (triggerValue < triggerDeadZone)
+                    gameController.leftTriggerPushed = false;
+                else
+                    gameController.leftTriggerPushed = true;
+
+                stickValue = on_StickAction.ReadValue<Vector2>();
+                OnStickAction();
+            }
         }
 
         void InitializeInputActions()
@@ -58,6 +91,8 @@ namespace AnimalAnatomy
 
             on_X_ButtonPressed = actionMap.FindAction(X_ButtonName);
             on_Y_ButtonPressed = actionMap.FindAction(Y_ButtonName);
+            on_StickAction = actionMap.FindAction(stickAction);
+            on_TriggerAction = actionMap.FindAction(triggerAction);
 
             isInitialized = true;
 
@@ -82,6 +117,12 @@ namespace AnimalAnatomy
 
             if (on_Y_ButtonPressed != null)
                 on_Y_ButtonPressed.performed += OnYButton;
+
+            if (on_StickAction != null)
+                on_StickAction.Enable();
+
+            if (on_TriggerAction != null)
+                on_TriggerAction.Enable();
         }
 
         void DisableInputActions()
@@ -91,6 +132,12 @@ namespace AnimalAnatomy
 
             if (on_Y_ButtonPressed != null)
                 on_Y_ButtonPressed.performed -= OnYButton;
+
+            if (on_StickAction != null)
+                on_StickAction.Disable();
+
+            if (on_TriggerAction != null)
+                on_TriggerAction.Disable();
 
             if (actionMap != null)
                 actionMap.Disable();
@@ -128,6 +175,14 @@ namespace AnimalAnatomy
             }
 
             AudioController.Instance.PlayUIAudioClip(buttonClickAudioClip);
+        }
+
+        void OnStickAction()
+        {
+            if (stickValue.x < -stickDeadZone || stickValue.x > stickDeadZone)
+            {
+                
+            }
         }
     }
 }

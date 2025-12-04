@@ -14,14 +14,17 @@ namespace AnimalAnatomy
         [SerializeField] string A_ButtonName;
         [SerializeField] string B_ButtonName;
         [SerializeField] string stickAction;
+        [SerializeField] string triggerAction;
 
-        [Header("Stick")]
+        [Header("Dead Zones")]
         [SerializeField] float stickDeadZone = 0.5f;
+        [SerializeField] float triggerDeadZone = 0.2f;
 
         InputActionMap actionMap;
         InputAction on_A_ButtonPressed;
         InputAction on_B_ButtonPressed;
         InputAction on_StickAction;
+        InputAction on_TriggerAction;
 
         [Header("Audio")]
         [SerializeField] AudioClip buttonClickAudioClip;
@@ -34,6 +37,8 @@ namespace AnimalAnatomy
         GameObject baseObject;
         ObjectRotator rotator;
         ObjectScaler scaler;
+
+        float triggerValue = 0;
 
         void Awake()
         {
@@ -59,8 +64,18 @@ namespace AnimalAnatomy
 
         void Update()
         {
+            if (!gameController)
+                return;
+
             if (isInitialized)
             {
+                triggerValue = on_TriggerAction.ReadValue<float>();
+
+                if (triggerValue < triggerDeadZone)
+                    gameController.rightTriggerPushed = false;
+                else
+                    gameController.rightTriggerPushed = true;
+                
                 stickValue = on_StickAction.ReadValue<Vector2>();
                 OnStickAction();
             }
@@ -82,6 +97,7 @@ namespace AnimalAnatomy
             on_A_ButtonPressed = actionMap.FindAction(A_ButtonName);
             on_B_ButtonPressed = actionMap.FindAction(B_ButtonName);
             on_StickAction = actionMap.FindAction(stickAction);
+            on_TriggerAction = actionMap.FindAction(triggerAction);
 
             if (gameObject.activeInHierarchy && enabled)
                 EnableInputActions();
@@ -109,6 +125,9 @@ namespace AnimalAnatomy
 
             if (on_StickAction != null)
                 on_StickAction.Enable();
+
+            if (on_TriggerAction != null)
+                on_TriggerAction.Enable();
         }
 
         void DisableInputActions()
@@ -121,6 +140,9 @@ namespace AnimalAnatomy
 
             if (on_StickAction != null)
                 on_StickAction.Disable();
+
+            if (on_TriggerAction != null)
+                on_TriggerAction.Disable();
 
             if (actionMap != null)
                 actionMap.Disable();
@@ -157,6 +179,9 @@ namespace AnimalAnatomy
 
         void OnStickAction()
         {
+            if (gameController.leftTriggerPushed || gameController.rightTriggerPushed)
+                return;
+
             if (stickValue.x < -stickDeadZone || stickValue.x > stickDeadZone)
             {
                 rotator.sensitivity = stickValue.x;

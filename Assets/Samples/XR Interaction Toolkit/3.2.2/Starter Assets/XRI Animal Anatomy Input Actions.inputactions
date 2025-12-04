@@ -3422,13 +3422,22 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Menu Button",
-                    "type": "Button",
-                    "id": "104990bc-0525-4f25-96b6-ddedfc7844b2",
-                    "expectedControlType": "",
+                    "name": "Stick",
+                    "type": "Value",
+                    "id": "c61bb446-4e7e-487c-a6cc-281247bcfdd3",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Trigger",
+                    "type": "Value",
+                    "id": "1df8a531-c935-43ac-8315-f51b96d11993",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -3445,6 +3454,17 @@
                 },
                 {
                     "name": "",
+                    "id": "dff1e86c-4a7c-4a36-a5df-0fb71503e78c",
+                    "path": "<XRController>{LeftHand}/{Primary2DAxis}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Stick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "b7f09b16-e5ac-4e4f-a3c3-fb8a7db89bce",
                     "path": "<XRController>{LeftHand}/{SecondaryButton}",
                     "interactions": "",
@@ -3456,12 +3476,12 @@
                 },
                 {
                     "name": "",
-                    "id": "1ff2e410-a6dd-4df6-925c-dafea9ed7c0c",
-                    "path": "<XRController>{LeftHand}/{MenuButton}",
+                    "id": "03aaf385-4e4f-4127-9904-cd49b9bbcf9e",
+                    "path": "<XRController>{LeftHand}/{Trigger}",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Menu Button",
+                    "action": "Trigger",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -3494,6 +3514,15 @@
                     "type": "Value",
                     "id": "58baa24c-2712-4169-93c1-33775b25b5f8",
                     "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Trigger",
+                    "type": "Value",
+                    "id": "5a2fd9e9-0d00-4915-8e60-7a46a4dfb133",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -3530,6 +3559,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Stick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b52525ba-7f2d-4244-9901-77307fafa0b0",
+                    "path": "<XRController>{RightHand}/{Trigger}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Trigger",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -37,10 +37,14 @@ namespace AnimalAnatomy
 
         [HideInInspector]
         public GameObject baseGameObject;
-
         [HideInInspector]
         public BodyPartGroup baseBodyPartGroup;
 
+        [HideInInspector]
+        public bool leftTriggerPushed = false;
+        [HideInInspector]
+        public bool rightTriggerPushed = false;
+        
         void Awake()
         {
             if (Instance != null)
