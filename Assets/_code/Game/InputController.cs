@@ -74,6 +74,9 @@ namespace AnimalAnatomy
 
         public void CallBodyPartSelection()
         {
+            if (ExaminationController.Instance.isExamination)
+                return;
+
 #if PLATFORM_ANDROID
             if (!mainCanvas.BodyPartsListIsOpen ||
                 mainCanvas.BodyPartsListIsOpen &&

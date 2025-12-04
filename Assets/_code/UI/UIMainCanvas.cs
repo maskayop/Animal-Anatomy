@@ -8,16 +8,18 @@ namespace AnimalAnatomy
     {
         public static UIMainCanvas Instance;
 
-        [SerializeField] string mainMenuSceneName;
-
         [Header("Loading Screen")]
         [SerializeField] GameObject loadingScreen;
         [SerializeField] float loadingTime = 1.0f;
 
         [Header("Windows")]
         [SerializeField] GameObject mainWindow;
-        [SerializeField] GameObject menuWindow;
         [SerializeField] GameObject examWindow;
+        [SerializeField] UIAudioController musicPlayerWindow;
+
+        [Header("Menu")]
+        [SerializeField] UIMenuWindow menuWindow;
+        [SerializeField] GameObject menuButton;
 
         [Header("System Activating")]
         [SerializeField] UISystemActivatingButtonsPanel systemActivatingButtonsPanel;
@@ -44,9 +46,6 @@ namespace AnimalAnatomy
         [Header("Body Parts Group")]
         [SerializeField] GameObject bodyPartsGroupPanel;
         [SerializeField] UIPartsGroupListButton bodyPartsGroupButton;
-
-        [Header("Examination")]
-        [SerializeField] GameObject examinationSettingsWindow;
 
         [HideInInspector]
         public bool isLoading = false;
@@ -159,19 +158,6 @@ namespace AnimalAnatomy
             systemActivatingButtonsPanel.ActivateAllSystems(state);
         }
 
-        public void ExitApp()
-        {
-            App.Instance.ExitGame();
-        }
-
-        public void ExitToMainMenu()
-        {
-            if (ScenesManager.Instance.IsSceneAddedToBuild(mainMenuSceneName))
-                ScenesManager.Instance.LoadSceneByName(mainMenuSceneName);
-            else
-                ExitApp();
-        }
-
         public void SelectBodyPart(BodyPartInfo info)
         {
             EnableIsolatedModeButtons(true);
@@ -245,25 +231,12 @@ namespace AnimalAnatomy
             bodyPartsListIsOpen = false;
         }
 
-        public void OpenExamWindow()
-        {
-            examinationSettingsWindow.SetActive(true);
-            UIExaminationWindow.Instance.IsOpen = true;
-            CameraController.Instance.Freeze(true);
-        }
-
-        public void CloseExamWindow()
-        {
-            examinationSettingsWindow.SetActive(false);
-            UIExaminationWindow.Instance.IsOpen = false;
-            CameraController.Instance.Freeze(false);
-        }
-
         public void StartExamination()
         {
-            CloseExamWindow();
+            CloseMenuWindow();
+            menuWindow.CloseExamSettingsWindow();
+
             mainWindow.SetActive(false);
-            menuWindow.SetActive(false);
             examWindow.SetActive(true);
 
             gameController.SetIsolatedMode(false);
@@ -279,24 +252,15 @@ namespace AnimalAnatomy
 
         public void StopExamination()
         {
+            OpenMenuWindow();
+
             mainWindow.SetActive(true);
-            menuWindow.SetActive(true);
             examWindow.SetActive(false);
 
             gameController.SetIsolatedMode(false);
             gameController.SetTransparentMode(false);
 
             ExaminationController.Instance.StopExamination();
-        }
-
-        public void OpenSettingsWindow()
-        {
-            UISettingsWindow.Instance.Open();
-        }
-
-        public void CloseSettingsWindow()
-        {
-            UISettingsWindow.Instance.Close();            
         }
 
         public float GetBodyPartsListPanelMaxAnchor()
@@ -324,6 +288,20 @@ namespace AnimalAnatomy
         {
             isolatedModeButton.SetInteractable(state);
             transparentModeButton.SetInteractable(state);
+        }
+
+        public void OpenMenuWindow()
+        {
+            menuWindow.gameObject.SetActive(true);
+            musicPlayerWindow.gameObject.SetActive(false);
+            menuButton.SetActive(false);
+        }
+
+        public void CloseMenuWindow()
+        {
+            menuWindow.gameObject.SetActive(false);
+            musicPlayerWindow.gameObject.SetActive(true);
+            menuButton.SetActive(true);
         }
     }
 }

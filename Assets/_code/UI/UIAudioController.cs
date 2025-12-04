@@ -29,9 +29,6 @@ namespace AnimalAnatomy
 
         AudioController controller;
 
-        int currentMusicId;
-        int prevMusicId;
-
         void Awake()
         {
             if (Instance != null)
@@ -157,6 +154,9 @@ namespace AnimalAnatomy
 
         void SetMusicName()
         {
+            if (!controller)
+                return;
+
             musicNameText.text = controller.musicSamples[controller.GetCurrentMusicId()].name;
         }
     }

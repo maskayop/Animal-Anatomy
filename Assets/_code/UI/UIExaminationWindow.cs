@@ -10,14 +10,6 @@ namespace AnimalAnatomy
     {
         public static UIExaminationWindow Instance;
 
-        [Header("Questions Amount")]
-        [SerializeField] Slider questionsAmountSlider;
-        [SerializeField] TextMeshProUGUI questionsAmountText;
-
-        [Header("Timeout Settings")]
-        [SerializeField] Slider timeoutSlider;
-        [SerializeField] TextMeshProUGUI timeoutValueText;
-
         [Header("Timeout Panel")]
         [SerializeField] GameObject currentTimeoutPanel;
         [SerializeField] TextMeshProUGUI currentTimeText;
@@ -71,7 +63,7 @@ namespace AnimalAnatomy
 
         void Update()
         {
-            if (examinationController.isExamination)
+            if (examinationController && examinationController.isExamination)
             {
                 currentTimeText.text = Mathf.FloorToInt(examinationController.currentTime).ToString();
                 currentAnswersAmountText.text = examinationController.totalAnswers.ToString() + " / " +
@@ -79,51 +71,11 @@ namespace AnimalAnatomy
                 clockImage.fillAmount = examinationController.currentTime / (examinationController.timeout * 60);
                 clockImage.color = Color.Lerp(clockStartColor, clockEndColor, 1 - clockImage.fillAmount);
             }
-
-            if (!isOpen)
-                return;
-
-            questionsAmountText.text = questionsAmountSlider.value.ToString();
-            timeoutValueText.text = timeoutSlider.value.ToString();            
         }
 
         public void Init()
         {
             examinationController = ExaminationController.Instance;
-
-            questionsAmountText.text = questionsAmountSlider.value.ToString();
-            timeoutValueText.text = timeoutSlider.value.ToString();
-
-            SetExamMode(0);
-            SetExamDifficulty(0);
-            SetExamSystemType(0);
-            SetExamQuestionsAmount();
-            SetExamTimeOut();
-        }
-
-        public void SetExamMode(int value)
-        {
-            examinationController.examMode = value;
-        }
-
-        public void SetExamDifficulty(int value)
-        {
-            examinationController.examDifficulty = value;
-        }
-
-        public void SetExamSystemType(int value)
-        {
-            examinationController.examSystemType = value;
-        }
-
-        public void SetExamQuestionsAmount()
-        {
-            examinationController.questionsAmount = Mathf.FloorToInt(questionsAmountSlider.value);
-        }
-
-        public void SetExamTimeOut()
-        {
-            examinationController.timeout = Mathf.FloorToInt(timeoutSlider.value);
         }
 
         public void StartExamination()

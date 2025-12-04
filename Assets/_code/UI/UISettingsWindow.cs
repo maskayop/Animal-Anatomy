@@ -8,7 +8,8 @@ namespace AnimalAnatomy
 {
     public class UISettingsWindow : MonoBehaviour
     {
-        public static UISettingsWindow Instance;
+        [HideInInspector]
+        public UIMenuWindow menuWindow;
 
         [SerializeField] GameObject window;
 
@@ -38,20 +39,6 @@ namespace AnimalAnatomy
         bool isOpen = false;
         public bool IsOpen { get { return isOpen; } set { isOpen = value; } }
 
-        void Awake()
-        {
-            if (Instance != null)
-            {
-                Debug.LogWarning("Cannot create UISettingsWindow");
-                Destroy(gameObject);
-                return;
-            }
-
-            Instance = this;
-
-            Init();
-        }
-
         public void Init()
         {
             int graphicsLeveId = DataSaveLoad.Instance.GetSavedInt("GraphicsLevel");
@@ -77,6 +64,8 @@ namespace AnimalAnatomy
 
         public void Open()
         {
+            Init();
+
             isOpen = true;
             window.SetActive(true);
 
