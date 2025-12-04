@@ -13,10 +13,15 @@ namespace AnimalAnatomy
         [SerializeField] string inputActionMapName;
         [SerializeField] string A_ButtonName;
         [SerializeField] string B_ButtonName;
+        [SerializeField] string stickAction;
+
+        [Header("Stick")]
+        [SerializeField] float stickDeadZone = 0.5f;
 
         InputActionMap actionMap;
         InputAction on_A_ButtonPressed;
         InputAction on_B_ButtonPressed;
+        InputAction on_StickAction;
 
         [Header("Audio")]
         [SerializeField] AudioClip buttonClickAudioClip;
@@ -24,6 +29,10 @@ namespace AnimalAnatomy
         bool isInitialized = false;
 
         GameController gameController;
+
+        Vector2 stickValue = Vector2.zero;
+        GameObject baseObject;
+        ObjectRotator rotator;
 
         void Awake()
         {
@@ -40,8 +49,21 @@ namespace AnimalAnatomy
         void Start()
         {
             gameController = GameController.Instance;
+            baseObject = GameObject.FindGameObjectWithTag("Player");
+            rotator = baseObject.GetComponent<ObjectRotator>();
 
             InitializeInputActions();
+        }
+
+        void Update()
+        {
+            if (isInitialized)
+            {
+                stickValue = on_StickAction.ReadValue<Vector2>();
+
+                if (stickValue.x < -stickDeadZone || stickValue.x > stickDeadZone)
+                    OnStickAction();
+            }
         }
 
         void InitializeInputActions()
@@ -59,11 +81,12 @@ namespace AnimalAnatomy
 
             on_A_ButtonPressed = actionMap.FindAction(A_ButtonName);
             on_B_ButtonPressed = actionMap.FindAction(B_ButtonName);
-
-            isInitialized = true;
+            on_StickAction = actionMap.FindAction(stickAction);
 
             if (gameObject.activeInHierarchy && enabled)
                 EnableInputActions();
+
+            isInitialized = true;
         }
 
         public void Reinitialize()
@@ -83,6 +106,9 @@ namespace AnimalAnatomy
 
             if (on_B_ButtonPressed != null)
                 on_B_ButtonPressed.performed += OnBButton;
+
+            if (on_StickAction != null)
+                on_StickAction.Enable();
         }
 
         void DisableInputActions()
@@ -92,6 +118,9 @@ namespace AnimalAnatomy
 
             if (on_B_ButtonPressed != null)
                 on_B_ButtonPressed.performed -= OnBButton;
+
+            if (on_StickAction != null)
+                on_StickAction.Disable();
 
             if (actionMap != null)
                 actionMap.Disable();
@@ -124,6 +153,12 @@ namespace AnimalAnatomy
                 gameController.SetIsolatedMode(!gameController.isolatedMode);
 
             AudioController.Instance.PlayUIAudioClip(buttonClickAudioClip);
+        }
+
+        void OnStickAction()
+        {
+            rotator.sensitivity = stickValue.x;
+            rotator.RotateObject();
         }
     }
 }
