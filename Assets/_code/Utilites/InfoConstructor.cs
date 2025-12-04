@@ -57,7 +57,7 @@ namespace AnimalAnatomy
                 {
                     Renderer[] newRenderers = new Renderer[1];
                     newRenderers[0] = children[0].GetComponent<Renderer>();
-                    lods[0] = new LOD(0.01f, newRenderers);
+                    lods[0] = new LOD(0.001f, newRenderers);
                 }
                 else if (children.Count == 2)
                 {
@@ -66,7 +66,7 @@ namespace AnimalAnatomy
                     lods[0] = new LOD(0.5f, newRenderers1);
                     Renderer[] newRenderers2 = new Renderer[1];
                     newRenderers2[0] = children[1].GetComponent<Renderer>();
-                    lods[1] = new LOD(0.01f, newRenderers2);
+                    lods[1] = new LOD(0.001f, newRenderers2);
                 }
                 else if (children.Count == 3)
                 {
@@ -78,7 +78,7 @@ namespace AnimalAnatomy
                     lods[1] = new LOD(0.3f, newRenderers2);
                     Renderer[] newRenderers3 = new Renderer[1];
                     newRenderers3[0] = children[2].GetComponent<Renderer>();
-                    lods[2] = new LOD(0.01f, newRenderers3);
+                    lods[2] = new LOD(0.001f, newRenderers3);
                 }
                 else
                 {
@@ -88,7 +88,7 @@ namespace AnimalAnatomy
                         newRenderers[0] = children[i].GetComponent<Renderer>();
 
                         if (i == children.Count - 1)
-                            lods[i] = new LOD(0.01f, newRenderers);
+                            lods[i] = new LOD(0.001f, newRenderers);
                         else
                             lods[i] = new LOD((1 - (float)i / (float)children.Count) * 0.5f, newRenderers);
                     }
