@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2074762148533494153}
   - component: {fileID: 4523792563238856679}
   - component: {fileID: 405628103332295176}
+  - component: {fileID: -1636665747587742242}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -128,6 +129,22 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!114 &-1636665747587742242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416690024487881331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97919913c86b01c4a8aefa9519cddaf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Vopere.Common.ObjectRotator
+  axis: 1
+  angle: 3
+  sensitivity: 0
+  canBeRotated: 1
 --- !u!1 &7036626317361644886
 GameObject:
   m_ObjectHideFlags: 0

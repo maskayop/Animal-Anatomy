@@ -35,6 +35,7 @@ namespace AnimalAnatomy
         bool isInitialized = false;
 
         GameController gameController;
+        LightController lightController;
 
         Vector2 stickValue = Vector2.zero;
         float triggerValue = 0;
@@ -54,6 +55,8 @@ namespace AnimalAnatomy
         void Start()
         {
             gameController = GameController.Instance;
+            lightController = LightController.Instance;
+
             InitializeInputActions();
         }
 
@@ -181,7 +184,8 @@ namespace AnimalAnatomy
         {
             if (stickValue.x < -stickDeadZone || stickValue.x > stickDeadZone)
             {
-                
+                lightController.GetLightRotator().sensitivity = stickValue.x;
+                lightController.GetLightRotator().RotateObject();
             }
         }
     }

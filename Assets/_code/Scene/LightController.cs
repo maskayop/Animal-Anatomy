@@ -24,6 +24,8 @@ namespace AnimalAnatomy
         Vector2 lastMousePosition;
         int backgroundColorSchemeId;
 
+        ObjectRotator lightRotator;
+
         void Awake()
         {
             if (Instance != null)
@@ -47,6 +49,8 @@ namespace AnimalAnatomy
 
             if (backgroundColorSchemeId != -1)
                 SetSkyboxColors(backgroundColorSchemeId);
+
+            lightRotator = mainLight.GetComponent<ObjectRotator>();
         }
 
         void Update()
@@ -54,8 +58,9 @@ namespace AnimalAnatomy
             currentMousePosition = Input.mousePosition;
 
 #if PLATFORM_ANDROID
-            if (Input.GetMouseButton(0))
-                RotateLight();
+            if (App.Instance && !App.Instance.isXR)
+                if (Input.GetMouseButton(0))
+                    RotateLight();
 #else
             lightRotationMode = false;
 
@@ -86,6 +91,11 @@ namespace AnimalAnatomy
         public void SetLightingMode(bool state)
         {
             lightRotationMode = state;
+        }
+
+        public ObjectRotator GetLightRotator()
+        {
+            return lightRotator;
         }
     }
 }

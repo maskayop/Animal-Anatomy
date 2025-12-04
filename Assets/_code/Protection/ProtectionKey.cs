@@ -101,9 +101,8 @@ namespace Vopere.Protection
             for (var i = 0; i < hash.Length; i++)
                 stringBuilder.Append(hash[i].ToString("X2"));
 
-            //Debug.Log(stringBuilder.ToString());
-
             return stringBuilder.ToString();
+
         }
 
         public string GetEditedKey(string INkey)
@@ -232,6 +231,8 @@ namespace Vopere.Protection
 
         string GetUserName()
         {
+            Debug.Log("------");
+            
             string userName = Environment.UserName;
 
 #if UNITY_STANDALONE_WIN
