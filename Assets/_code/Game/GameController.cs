@@ -36,6 +36,9 @@ namespace AnimalAnatomy
         public bool lightingMode = false;
 
         [HideInInspector]
+        public GameObject baseGameObject;
+
+        [HideInInspector]
         public BodyPartGroup baseBodyPartGroup;
 
         void Awake()
@@ -61,7 +64,8 @@ namespace AnimalAnatomy
             StartCoroutine(UpdateBodyPartsLists());
             UnSelectBodyPart(true);
 
-            baseBodyPartGroup = GameObject.FindGameObjectWithTag("Player").GetComponent<BodyPartGroup>();
+            baseGameObject = GameObject.FindGameObjectWithTag("Player");
+            baseBodyPartGroup = baseGameObject.GetComponent<BodyPartGroup>();
         }
 
         void CreateBodyPartsLists()

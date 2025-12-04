@@ -33,6 +33,7 @@ namespace AnimalAnatomy
         Vector2 stickValue = Vector2.zero;
         GameObject baseObject;
         ObjectRotator rotator;
+        ObjectScaler scaler;
 
         void Awake()
         {
@@ -49,8 +50,9 @@ namespace AnimalAnatomy
         void Start()
         {
             gameController = GameController.Instance;
-            baseObject = GameObject.FindGameObjectWithTag("Player");
+            baseObject = GameController.Instance.baseGameObject;
             rotator = baseObject.GetComponent<ObjectRotator>();
+            scaler = baseObject.GetComponent<ObjectScaler>();
 
             InitializeInputActions();
         }
@@ -60,9 +62,7 @@ namespace AnimalAnatomy
             if (isInitialized)
             {
                 stickValue = on_StickAction.ReadValue<Vector2>();
-
-                if (stickValue.x < -stickDeadZone || stickValue.x > stickDeadZone)
-                    OnStickAction();
+                OnStickAction();
             }
         }
 
@@ -157,8 +157,17 @@ namespace AnimalAnatomy
 
         void OnStickAction()
         {
-            rotator.sensitivity = stickValue.x;
-            rotator.RotateObject();
+            if (stickValue.x < -stickDeadZone || stickValue.x > stickDeadZone)
+            {
+                rotator.sensitivity = stickValue.x;
+                rotator.RotateObject();
+            }
+
+            if (stickValue.y < -stickDeadZone || stickValue.y > stickDeadZone)
+            {
+                scaler.sensitivity = stickValue.y;
+                scaler.ScaleObject();
+            }
         }
     }
 }
