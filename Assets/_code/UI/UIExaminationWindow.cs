@@ -8,8 +8,6 @@ namespace AnimalAnatomy
 {
     public class UIExaminationWindow : MonoBehaviour
     {
-        public static UIExaminationWindow Instance;
-
         [Header("Timeout Panel")]
         [SerializeField] GameObject currentTimeoutPanel;
         [SerializeField] TextMeshProUGUI currentTimeText;
@@ -37,24 +35,15 @@ namespace AnimalAnatomy
         [SerializeField] GameObject imageNormal;
         [SerializeField] GameObject imageBad;
 
+        [Header("Buttons")]
+        [SerializeField] GameObject exitButton;
+        [SerializeField] GameObject exitExamWindow;
+
         bool isOpen = false;
         public bool IsOpen { get { return isOpen; } set { isOpen = value; } }
 
         List<UIExamAnswerButton> examAnswerButtons = new List<UIExamAnswerButton>();
-
         ExaminationController examinationController;
-
-        void Awake()
-        {
-            if (Instance != null)
-            {
-                Debug.LogWarning("Cannot create UIExaminationWindow");
-                Destroy(gameObject);
-                return;
-            }
-
-            Instance = this;
-        }
 
         void Start()
         {
@@ -81,8 +70,10 @@ namespace AnimalAnatomy
         public void StartExamination()
         {
             answersPanel.SetActive(false);
-            finishExamPanel.SetActive(false);
             currentTimeoutPanel.SetActive(true);
+            finishExamPanel.SetActive(false);
+            exitButton.SetActive(true);
+            exitExamWindow.SetActive(false);
         }
 
         public void StartNextQuestion(List<BodyPartInfo> info)
@@ -150,8 +141,9 @@ namespace AnimalAnatomy
         {
             answersPanel.SetActive(false);
             finishQuestionPanel.SetActive(false);
-            finishExamPanel.SetActive(true);
             currentTimeoutPanel.SetActive(false);
+            finishExamPanel.SetActive(true);
+            exitButton.SetActive(false);
 
             answersAmountText.text = examinationController.correctAnswers.ToString() + " / " +
                 examinationController.questionsAmount.ToString();
@@ -169,6 +161,12 @@ namespace AnimalAnatomy
                 imageNormal.SetActive(true);
             else
                 imageBad.SetActive(true);
+        }
+
+        public void CallFinishExamination()
+        {
+            if (UIMainCanvas.Instance)
+                UIMainCanvas.Instance.StopExamination();
         }
     }
 }

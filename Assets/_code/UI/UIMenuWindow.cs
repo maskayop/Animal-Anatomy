@@ -43,13 +43,17 @@ namespace AnimalAnatomy
         public void OpenExamSettingsWindow()
         {
             examinationSettingsWindow.Open();
-            UIExaminationWindow.Instance.IsOpen = true;
+
+            if (UIMainCanvas.Instance)
+                UIMainCanvas.Instance.GetExaminationWindow().IsOpen = true;
         }
 
         public void CloseExamSettingsWindow()
         {            
             examinationSettingsWindow.Close();
-            UIExaminationWindow.Instance.IsOpen = false;
+
+            if (UIMainCanvas.Instance)
+                UIMainCanvas.Instance.GetExaminationWindow().IsOpen = false;
         }
 
         public void OpenExitWindow()

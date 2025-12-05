@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using Vopere.Common;
 
 namespace AnimalAnatomy
 {
@@ -14,7 +13,6 @@ namespace AnimalAnatomy
 
         [Header("Windows")]
         [SerializeField] GameObject mainWindow;
-        [SerializeField] GameObject examWindow;
         [SerializeField] UIAudioController musicPlayerWindow;
 
         [Header("Menu")]
@@ -46,6 +44,9 @@ namespace AnimalAnatomy
         [Header("Body Parts Group")]
         [SerializeField] GameObject bodyPartsGroupPanel;
         [SerializeField] UIPartsGroupListButton bodyPartsGroupButton;
+
+        [Header("Examination")]
+        [SerializeField] UIExaminationWindow examinationWindow;
 
         [HideInInspector]
         public bool isLoading = false;
@@ -110,7 +111,7 @@ namespace AnimalAnatomy
             gameController = GameController.Instance;
 
             EnableIsolatedModeButtons(false);
-            examWindow.SetActive(false);
+            examinationWindow.gameObject.SetActive(false);
 
             bodyPartsListPanel.Init();
         }
@@ -237,7 +238,7 @@ namespace AnimalAnatomy
             menuWindow.CloseExamSettingsWindow();
 
             mainWindow.SetActive(false);
-            examWindow.SetActive(true);
+            examinationWindow.gameObject.SetActive(true);
 
             gameController.SetIsolatedMode(false);
             gameController.SetTransparentMode(false);
@@ -245,17 +246,12 @@ namespace AnimalAnatomy
             ExaminationController.Instance.StartExamination();
         }
 
-        public void FinishExamination()
-        {
-            StopExamination();
-        }
-
         public void StopExamination()
         {
             OpenMenuWindow();
 
             mainWindow.SetActive(true);
-            examWindow.SetActive(false);
+            examinationWindow.gameObject.SetActive(false);
 
             gameController.SetIsolatedMode(false);
             gameController.SetTransparentMode(false);
@@ -302,6 +298,11 @@ namespace AnimalAnatomy
             menuWindow.gameObject.SetActive(false);
             musicPlayerWindow.gameObject.SetActive(true);
             menuButton.SetActive(true);
+        }
+
+        public UIExaminationWindow GetExaminationWindow()
+        {
+            return examinationWindow;
         }
     }
 }
