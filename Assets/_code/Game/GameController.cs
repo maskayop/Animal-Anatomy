@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
+using Vopere.Common;
 
 namespace AnimalAnatomy
 {
@@ -40,6 +42,9 @@ namespace AnimalAnatomy
         [HideInInspector]
         public BodyPartGroup baseBodyPartGroup;
 
+        ObjectRotator baseObjectRotator;
+        ObjectScaler baseObjectScaler;
+
         [HideInInspector]
         public bool leftTriggerPushed = false;
         [HideInInspector]
@@ -70,6 +75,8 @@ namespace AnimalAnatomy
 
             baseGameObject = GameObject.FindGameObjectWithTag("Player");
             baseBodyPartGroup = baseGameObject.GetComponent<BodyPartGroup>();
+            baseObjectRotator = baseGameObject.GetComponent<ObjectRotator>();
+            baseObjectScaler = baseGameObject.GetComponent<ObjectScaler>();
         }
 
         void CreateBodyPartsLists()
@@ -419,6 +426,18 @@ namespace AnimalAnatomy
         {
             if (CameraController.Instance)
                 CameraController.Instance.distanceLimitsMultiplier = value;
+        }
+
+        public void ChangeBaseObjectRotationAngle(float INvalue)
+        {
+            baseObjectRotator.angle = INvalue / 2;
+            DataSaveLoad.Instance.Save("XR_RotationSensitivity", INvalue);
+        }
+
+        public void ChangeBaseObjectScalingDelta(float INvalue)
+        {
+            baseObjectScaler.scaleDelta = INvalue / 200;
+            DataSaveLoad.Instance.Save("XR_ScalingSensitivity", INvalue);
         }
     }
 }

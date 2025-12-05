@@ -4,9 +4,8 @@ namespace Vopere.Common
 {
     public class ObjectScaler : MonoBehaviour
     {
-        [SerializeField] float scaleDelta = 0;
-        [SerializeField] Vector2 scaleLimits = Vector2.one;
-
+        public float scaleDelta = 0;
+        public Vector2 scaleLimits = Vector2.one;
         public float sensitivity = 1;
         public bool canBeScaled = true;
 

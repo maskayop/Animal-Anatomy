@@ -30,6 +30,12 @@ namespace AnimalAnatomy
         [SerializeField] Slider zoomSensitivitySlider;
         [SerializeField] TextMeshProUGUI zoomSensitivityValueText;
 
+        [Header("XR Sensitivity")]
+        [SerializeField] Slider XR_RotationSensitivitySlider;
+        [SerializeField] TextMeshProUGUI XR_RotationSensitivityValueText;
+        [SerializeField] Slider XR_ScalingSensitivitySlider;
+        [SerializeField] TextMeshProUGUI XR_ScalingSensitivityValueText;
+
         protected override void OnInit()
         {
             SetTogglesLoadedValue("GraphicsLevel", graphicsLevelToggles);
@@ -40,6 +46,9 @@ namespace AnimalAnatomy
 
             SetSliderLoadedValue("RotationSensitivity", rotationSensitivitySlider, rotationSensitivityValueText, 5);
             SetSliderLoadedValue("ZoomSensitivity", zoomSensitivitySlider, zoomSensitivityValueText, 7);
+
+            SetSliderLoadedValue("XR_RotationSensitivity", XR_RotationSensitivitySlider, XR_RotationSensitivityValueText, 5);
+            SetSliderLoadedValue("XR_ScalingSensitivity", XR_ScalingSensitivitySlider, XR_ScalingSensitivityValueText, 7);
 
             SetScreenResolutionProperties();
         }
@@ -166,6 +175,22 @@ namespace AnimalAnatomy
 
             if (cameraController)
                 cameraController.ChangeZoomSensitivity(zoomSensitivitySlider.value);
+        }
+
+        public void ChangeXRRotationSensitivity()
+        {
+            XR_RotationSensitivityValueText.text = XR_RotationSensitivitySlider.value.ToString();
+
+            if (gameController)
+                gameController.ChangeBaseObjectRotationAngle(XR_RotationSensitivitySlider.value);
+        }
+
+        public void ChangeXRScalingSensitivity()
+        {
+            XR_ScalingSensitivityValueText.text = XR_ScalingSensitivitySlider.value.ToString();
+
+            if (gameController)
+                gameController.ChangeBaseObjectScalingDelta(XR_ScalingSensitivitySlider.value);
         }
     }
 }

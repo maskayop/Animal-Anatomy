@@ -3,10 +3,8 @@ using UnityEngine;
 
 namespace AnimalAnatomy
 {
-    public class UIAudioController : MonoBehaviour
+    public class UIMusicPlayerWindow : MonoBehaviour
     {
-        public static UIAudioController Instance;
-
         [Header("Panels")]
         [SerializeField] GameObject bigPanel;
         [SerializeField] GameObject smallPanel;        
@@ -28,18 +26,6 @@ namespace AnimalAnatomy
         [SerializeField] GameObject randomButton;
 
         AudioController controller;
-
-        void Awake()
-        {
-            if (Instance != null)
-            {
-                Debug.LogWarning("Cannot create UIAudioController");
-                Destroy(gameObject);
-                return;
-            }
-
-            Instance = this;
-        }
 
         void Start()
         {

@@ -34,6 +34,7 @@ namespace AnimalAnatomy
         bool isInitialized = false;
 
         GameController gameController;
+        InputController inputController;
 
         Vector2 stickValue = Vector2.zero;
         GameObject baseObject;
@@ -57,6 +58,7 @@ namespace AnimalAnatomy
         void Start()
         {
             gameController = GameController.Instance;
+            inputController = InputController.Instance;
             baseObject = GameController.Instance.baseGameObject;
             rotator = baseObject.GetComponent<ObjectRotator>();
             scaler = baseObject.GetComponent<ObjectScaler>();
@@ -172,16 +174,32 @@ namespace AnimalAnatomy
 
         void OnAButton(InputAction.CallbackContext context)
         {
-            if (gameController && !gameController.isolatedMode)
-                gameController.SetTransparentMode(!gameController.transparentMode);
+            if (gameController && inputController)
+            {
+                if (inputController.isAlternativeInput)
+                {                    
+                    if (!gameController.transparentMode)
+                        gameController.SetIsolatedMode(!gameController.isolatedMode);
+                }
+                else
+                {
+                    if (!gameController.isolatedMode)
+                        gameController.SetTransparentMode(!gameController.transparentMode);
+                }
+            }
 
             AudioController.Instance.PlayUIAudioClip(buttonClickAudioClip);
         }
 
         void OnBButton(InputAction.CallbackContext context)
         {
-            if (gameController && !gameController.transparentMode)
-                gameController.SetIsolatedMode(!gameController.isolatedMode);
+            if (UI3D_MenuCanvas.Instance)
+            {
+                if (UI3D_MenuCanvas.Instance.IsMenuWindowActive())
+                    UI3D_MenuCanvas.Instance.CloseMenuWindow();
+                else
+                    UI3D_MenuCanvas.Instance.OpenMenuWindow();
+            }
 
             AudioController.Instance.PlayUIAudioClip(buttonClickAudioClip);
         }
@@ -193,7 +211,7 @@ namespace AnimalAnatomy
 
             if (stickValue.x < -stickDeadZone || stickValue.x > stickDeadZone)
             {
-                rotator.sensitivity = stickValue.x;
+                rotator.sensitivity = -stickValue.x;
                 rotator.RotateObject();
             }
 

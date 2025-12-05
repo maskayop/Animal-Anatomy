@@ -7,8 +7,7 @@ namespace Vopere.Common
         public enum Axis { x, y, z }
         public Axis axis = Axis.x;
 
-        [SerializeField] float angle = 0;
-
+        public float angle = 0;
         public float sensitivity = 1;
         public bool canBeRotated = true;
 

@@ -13,7 +13,7 @@ namespace AnimalAnatomy
 
         [Header("Windows")]
         [SerializeField] GameObject mainWindow;
-        [SerializeField] UIAudioController musicPlayerWindow;
+        [SerializeField] UIMusicPlayerWindow musicPlayerWindow;
 
         [Header("Menu")]
         [SerializeField] UIMenuWindow menuWindow;

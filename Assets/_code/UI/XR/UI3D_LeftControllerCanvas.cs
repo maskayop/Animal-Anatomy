@@ -193,7 +193,7 @@ namespace AnimalAnatomy
         {
             if (stickValue.x < -stickDeadZone || stickValue.x > stickDeadZone)
             {
-                lightController.GetLightRotator().sensitivity = stickValue.x;
+                lightController.GetLightRotator().sensitivity = -stickValue.x;
                 lightController.GetLightRotator().RotateObject();
             }
         }
