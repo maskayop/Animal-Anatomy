@@ -7,16 +7,6 @@ namespace AnimalAnatomy
         [HideInInspector]
         public UIMenuWindow menuWindow;
 
-        void Start()
-        {
-            Init();
-        }
-
-        public void Init()
-        {
-
-        }
-
         public void CloseMenuWindow()
         {
             if (UIMainCanvas.Instance)

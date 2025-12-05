@@ -4,11 +4,8 @@ using TMPro;
 
 namespace AnimalAnatomy
 {
-    public class UIExaminationSettingsWindow : MonoBehaviour
+    public class UIExaminationSettingsWindow : UI_SettingsWindowBase
     {
-        [HideInInspector]
-        public UIMenuWindow menuWindow;
-
         [Header("Questions Amount")]
         [SerializeField] Slider questionsAmountSlider;
         [SerializeField] TextMeshProUGUI questionsAmountText;
@@ -19,24 +16,16 @@ namespace AnimalAnatomy
 
         ExaminationController examinationController;
 
-        bool isOpen = false;
-        public bool IsOpen { get { return isOpen; } set { isOpen = value; } }
-
-        void Start()
-        {
-            Init();
-        }
-
         void Update()
         {
-            if (!isOpen)
+            if (!IsOpen)
                 return;
 
             questionsAmountText.text = questionsAmountSlider.value.ToString();
             timeoutValueText.text = timeoutSlider.value.ToString();
         }
 
-        public void Init()
+        protected override void OnInit()
         {
             examinationController = ExaminationController.Instance;
 
@@ -48,18 +37,6 @@ namespace AnimalAnatomy
 
             questionsAmountText.text = questionsAmountSlider.value.ToString();
             timeoutValueText.text = timeoutSlider.value.ToString();
-        }
-
-        public void Open()
-        {
-            gameObject.SetActive(true);
-            isOpen = true;
-        }
-
-        public void Close()
-        {
-            gameObject.SetActive(false);
-            isOpen = false;
         }
 
         public void StartExamination()

@@ -2,17 +2,11 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Vopere.Common;
 
 namespace AnimalAnatomy
 {
-    public class UISettingsWindow : MonoBehaviour
+    public class UISettingsWindow : UI_SettingsWindowBase
     {
-        [HideInInspector]
-        public UIMenuWindow menuWindow;
-
-        [SerializeField] GameObject window;
-
         [Header("Screen Resolution")]
         [SerializeField] GameObject screenResolutionContainer;
         [SerializeField] List<Toggle> screenResolutionToggles = new List<Toggle>();
@@ -36,20 +30,10 @@ namespace AnimalAnatomy
         [SerializeField] Slider zoomSensitivitySlider;
         [SerializeField] TextMeshProUGUI zoomSensitivityValueText;
 
-        bool isOpen = false;
-        public bool IsOpen { get { return isOpen; } set { isOpen = value; } }
-
-        public void Init()
+        protected override void OnInit()
         {
-            int graphicsLeveId = DataSaveLoad.Instance.GetSavedInt("GraphicsLevel");
-
-            if (graphicsLeveId != -1)
-                graphicsLevelToggles[graphicsLeveId].isOn = true;
-
-            int backgroundColorSchemeId = DataSaveLoad.Instance.GetSavedInt("BackgroundColorScheme");
-
-            if (backgroundColorSchemeId != -1)
-                backgroundColorSchemeToggles[backgroundColorSchemeId].isOn = true;
+            SetTogglesLoadedValue("GraphicsLevel", graphicsLevelToggles);
+            SetTogglesLoadedValue("BackgroundColorScheme", backgroundColorSchemeToggles);
 
             SetSliderLoadedValue("MusicVolume", musicSlider, musicValueText, 100);
             SetSliderLoadedValue("UIVolume", UIAudioSlider, UIAudioValueText, 100);
@@ -58,33 +42,16 @@ namespace AnimalAnatomy
             SetSliderLoadedValue("ZoomSensitivity", zoomSensitivitySlider, zoomSensitivityValueText, 7);
 
             SetScreenResolutionProperties();
-
-            Close();
         }
 
-        public void Open()
+        protected override void OnOpen()
         {
-            Init();
-
-            isOpen = true;
-            window.SetActive(true);
-
-            if (CameraController.Instance)
-                CameraController.Instance.Freeze(true);
-        }
-
-        public void Close()
-        {
-            isOpen = false;
-            window.SetActive(false);
-
-            if (CameraController.Instance)
-                CameraController.Instance.Freeze(false);
+            OnInit();
         }
 
         void SetSliderLoadedValue(string key, Slider slider, TextMeshProUGUI valueText, float defaultValue)
         {
-            float value = DataSaveLoad.Instance.GetSavedFloat(key);
+            float value = dataSaveLoad.GetSavedFloat(key);
 
             if (value != -1)
                 slider.value = value;
@@ -94,78 +61,83 @@ namespace AnimalAnatomy
             valueText.text = slider.value.ToString();
         }
 
+        void SetTogglesLoadedValue(string key, List<Toggle> togglesList)
+        {
+            int id = dataSaveLoad.GetSavedInt(key);
+
+            if (id != -1 && id < togglesList.Count)
+                togglesList[id].isOn = true;
+        }
+
         public void ChangeBackgroundColorScheme(int id)
         {
-            SetBackgroundColorScheme(id);            
-            DataSaveLoad.Instance.Save("BackgroundColorScheme", id);
+            SetBackgroundColorScheme(id);
+            dataSaveLoad.Save("BackgroundColorScheme", id);
         }
 
         void SetBackgroundColorScheme(int id)
         {
-            if (LightController.Instance)
-                LightController.Instance.SetSkyboxColors(id);
+            if (lightController)
+                lightController.SetSkyboxColors(id);
         }
 
         public void ChangeMusicVolume()
         {
             musicValueText.text = musicSlider.value.ToString();
 
-            if (AudioController.Instance)
-                AudioController.Instance.ChangeVolume(0, musicSlider.value);
+            if (audioController)
+                audioController.ChangeVolume(0, musicSlider.value);
         }
 
         public void ChangeUIVolume()
         {
             UIAudioValueText.text = UIAudioSlider.value.ToString();
 
-            if (AudioController.Instance)
-                AudioController.Instance.ChangeVolume(1, UIAudioSlider.value);
+            if (audioController)
+                audioController.ChangeVolume(1, UIAudioSlider.value);
         }
 
         public void ChangeSFXVolume()
         {
-            if (AudioController.Instance)
-                AudioController.Instance.ChangeVolume(1, UIAudioSlider.value);
+            if (audioController)
+                audioController.ChangeVolume(1, UIAudioSlider.value);
         }
 
         public void ChangeVoiceVolume()
         {
-            if (AudioController.Instance)
-                AudioController.Instance.ChangeVolume(1, UIAudioSlider.value);
+            if (audioController)
+                audioController.ChangeVolume(1, UIAudioSlider.value);
         }
 
         public void ChangeGraphicsLevel(int id)
         {
             SetGraphicsLevel(id);
-            DataSaveLoad.Instance.Save("GraphicsLevel", id);
+            dataSaveLoad.Save("GraphicsLevel", id);
         }
 
         void SetGraphicsLevel(int id)
         {
-            if (App.Instance)
-                App.Instance.SetGraphicsLevel(id);
+            if (app)
+                app.SetGraphicsLevel(id);
         }
 
         public void ChangeResolutionLevel(int id)
         {
             SetResolutionLevel(id);
-            DataSaveLoad.Instance.Save("ScreenResolution", id);
+            dataSaveLoad.Save("ScreenResolution", id);
         }
 
         void SetResolutionLevel(int id)
         {
-            if (App.Instance)
-                App.Instance.SetResolution(id);
+            if (app)
+                app.SetResolution(id);
         }
 
         void SetScreenResolutionProperties()
         {
-            int screenResolution = DataSaveLoad.Instance.GetSavedInt("ScreenResolution");
+            SetTogglesLoadedValue("ScreenResolution", screenResolutionToggles);
 
-            if (screenResolution != -1)
-                screenResolutionToggles[screenResolution].isOn = true;
-
-            Vector2Int defaultScreenResolution = App.Instance.GetDefaultScreenResolution();
+            Vector2Int defaultScreenResolution = app.GetDefaultScreenResolution();
 
             for (int i = 0; i < screenResolutionTexts.Count; i++)
             {
@@ -184,16 +156,16 @@ namespace AnimalAnatomy
         {
             rotationSensitivityValueText.text = rotationSensitivitySlider.value.ToString();
 
-            if (CameraController.Instance)
-                CameraController.Instance.ChangeRotationSensitivity(rotationSensitivitySlider.value);
+            if (cameraController)
+                cameraController.ChangeRotationSensitivity(rotationSensitivitySlider.value);
         }
 
         public void ChangeZoomSensitivity()
         {
             zoomSensitivityValueText.text = zoomSensitivitySlider.value.ToString();
 
-            if (CameraController.Instance)
-                CameraController.Instance.ChangeZoomSensitivity(zoomSensitivitySlider.value);
+            if (cameraController)
+                cameraController.ChangeZoomSensitivity(zoomSensitivitySlider.value);
         }
     }
 }

@@ -33,7 +33,7 @@ RectTransform:
   m_Children:
   - {fileID: 6102968449600375235}
   - {fileID: 2016411914444428598}
-  m_Father: {fileID: 4843352019319007607}
+  m_Father: {fileID: 5596367826670268851}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &8293423715131156227
+--- !u!1 &7201500224086808614
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -302,54 +302,51 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4843352019319007607}
-  - component: {fileID: 2611576152442586784}
-  - component: {fileID: 8237551214978943348}
-  - component: {fileID: 6452329680181796104}
-  - component: {fileID: 8135998653060743644}
-  - component: {fileID: 9022108541984779445}
+  - component: {fileID: 5596367826670268851}
+  - component: {fileID: 5835693020386750451}
+  - component: {fileID: 360924649321163956}
   m_Layer: 5
-  m_Name: Exit Window
+  m_Name: Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &4843352019319007607
+--- !u!224 &5596367826670268851
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8293423715131156227}
+  m_GameObject: {fileID: 7201500224086808614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1447603599525425797}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 4843352019319007607}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -5048}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &2611576152442586784
+--- !u!222 &5835693020386750451
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8293423715131156227}
+  m_GameObject: {fileID: 7201500224086808614}
   m_CullTransparentMesh: 1
---- !u!114 &8237551214978943348
+--- !u!114 &360924649321163956
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8293423715131156227}
+  m_GameObject: {fileID: 7201500224086808614}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -373,6 +370,44 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &8293423715131156227
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4843352019319007607}
+  - component: {fileID: 6452329680181796104}
+  - component: {fileID: 9022108541984779445}
+  m_Layer: 5
+  m_Name: Exit Window
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4843352019319007607
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8293423715131156227}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5596367826670268851}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -5048}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6452329680181796104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,19 +421,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.MoveToZeroOnAwake
   rectTransform: {fileID: 4843352019319007607}
---- !u!114 &8135998653060743644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8293423715131156227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a0c1956b3ac3934f892dc38f0357e28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DisableOnAwake
-  disableOnAwake: 1
 --- !u!114 &9022108541984779445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,8 +433,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026dccd070267bd4aa3442750216909b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIExitWindow
-  mainMenuSceneName: _Main Menu
+  window: {fileID: 7201500224086808614}
   menuWindow: {fileID: 0}
+  mainMenuSceneName: _Main Menu
 --- !u!1001 &3695294494140981012
 PrefabInstance:
   m_ObjectHideFlags: 0

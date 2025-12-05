@@ -18,62 +18,48 @@ namespace AnimalAnatomy
         public void Init()
         {
             menuPanel.menuWindow = this;
-            settingsWindow.menuWindow = this;
-            controlsWindow.menuWindow = this;
-            examinationSettingsWindow.menuWindow = this;
-            exitWindow.menuWindow = this;
-
-            CloseSettingsWindow();
         }
 
         public void OpenSettingsWindow()
         {
             settingsWindow.Open();
-            CameraController.Instance.Freeze(true);
         }
 
         public void CloseSettingsWindow()
         {
             settingsWindow.Close();
-            CameraController.Instance.Freeze(false);
         }
 
         public void OpenControlsWindow()
         {
-            controlsWindow.gameObject.SetActive(true);
-            CameraController.Instance.Freeze(true);
+            controlsWindow.Open();
         }
 
         public void CloseControlsWindow()
         {
-            controlsWindow.gameObject.SetActive(false);
-            CameraController.Instance.Freeze(false);
+            controlsWindow.Close();
         }
 
         public void OpenExamSettingsWindow()
         {
             examinationSettingsWindow.Open();
             UIExaminationWindow.Instance.IsOpen = true;
-            CameraController.Instance.Freeze(true);
         }
 
         public void CloseExamSettingsWindow()
         {            
             examinationSettingsWindow.Close();
             UIExaminationWindow.Instance.IsOpen = false;
-            CameraController.Instance.Freeze(false);
         }
 
         public void OpenExitWindow()
         {
-            exitWindow.gameObject.SetActive(true);
-            CameraController.Instance.Freeze(true);
+            exitWindow.Open();
         }
 
         public void CloseExitWindow()
         {
-            exitWindow.gameObject.SetActive(false);
-            CameraController.Instance.Freeze(false);
+            exitWindow.Close();
         }
     }
 }
