@@ -38,6 +38,7 @@ namespace AnimalAnatomy
             {
                 if (Input.GetKeyDown(keyCode))
                 {
+                    /*
                     if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
                     {
                         GameController.Instance.DisableAllSystemsExceptSystem(systemType);
@@ -45,6 +46,9 @@ namespace AnimalAnatomy
                     }
                     else
                         SwitchActiveState();
+                    */
+                    
+                    SwitchActiveState();
                 }
             }
         }

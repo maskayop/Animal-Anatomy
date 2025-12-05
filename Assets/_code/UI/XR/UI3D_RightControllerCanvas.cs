@@ -13,6 +13,7 @@ namespace AnimalAnatomy
         [SerializeField] string inputActionMapName;
         [SerializeField] string A_ButtonName;
         [SerializeField] string B_ButtonName;
+        [SerializeField] string grip_ButtonName;
         [SerializeField] string stickAction;
         [SerializeField] string triggerAction;
 
@@ -23,6 +24,7 @@ namespace AnimalAnatomy
         InputActionMap actionMap;
         InputAction on_A_ButtonPressed;
         InputAction on_B_ButtonPressed;
+        InputAction on_Grip_ButtonPressed;
         InputAction on_StickAction;
         InputAction on_TriggerAction;
 
@@ -96,6 +98,7 @@ namespace AnimalAnatomy
 
             on_A_ButtonPressed = actionMap.FindAction(A_ButtonName);
             on_B_ButtonPressed = actionMap.FindAction(B_ButtonName);
+            on_Grip_ButtonPressed = actionMap.FindAction(grip_ButtonName);
             on_StickAction = actionMap.FindAction(stickAction);
             on_TriggerAction = actionMap.FindAction(triggerAction);
 
@@ -123,6 +126,9 @@ namespace AnimalAnatomy
             if (on_B_ButtonPressed != null)
                 on_B_ButtonPressed.performed += OnBButton;
 
+            if (on_Grip_ButtonPressed != null)
+                on_Grip_ButtonPressed.performed += OnGripButton;
+
             if (on_StickAction != null)
                 on_StickAction.Enable();
 
@@ -137,6 +143,9 @@ namespace AnimalAnatomy
 
             if (on_B_ButtonPressed != null)
                 on_B_ButtonPressed.performed -= OnBButton;
+
+            if (on_Grip_ButtonPressed != null)
+                on_Grip_ButtonPressed.performed -= OnGripButton;
 
             if (on_StickAction != null)
                 on_StickAction.Disable();
@@ -193,6 +202,14 @@ namespace AnimalAnatomy
                 scaler.sensitivity = stickValue.y;
                 scaler.ScaleObject();
             }
+        }
+
+        void OnGripButton(InputAction.CallbackContext context)
+        {
+            if (InputController.Instance)
+                InputController.Instance.isAlternativeInput = !InputController.Instance.isAlternativeInput;
+
+            AudioController.Instance.PlayUIAudioClip(buttonClickAudioClip);
         }
     }
 }

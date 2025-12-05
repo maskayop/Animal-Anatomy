@@ -6,6 +6,8 @@ namespace AnimalAnatomy
     {
         public static InputController Instance;
 
+        public bool isAlternativeInput = false;
+
         [Header("Android")]
         [SerializeField] float selectionTimeout = 1.0f;
         
@@ -37,8 +39,7 @@ namespace AnimalAnatomy
 
         void Update()
         {
-            if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.D))
-                PlayerPrefs.DeleteAll();
+            DeletePlayerPrefs();
 
             if (mainCanvas && mainCanvas.isLoading)
                 return;
@@ -145,8 +146,11 @@ namespace AnimalAnatomy
                 gameController.SetTransparentMode(!gameController.transparentMode);
         }
 
+
         void SetExclusionMode()
         {
+            return;
+
 #if PLATFORM_ANDROID
             return;
 #else
@@ -158,6 +162,12 @@ namespace AnimalAnatomy
                     gameController.SetExclusionMode(false);
             }
 #endif
+        }
+
+        void DeletePlayerPrefs()
+        {
+            if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.D))
+                PlayerPrefs.DeleteAll();
         }
     }
 }

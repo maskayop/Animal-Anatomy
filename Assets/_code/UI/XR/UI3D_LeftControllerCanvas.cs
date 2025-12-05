@@ -13,6 +13,7 @@ namespace AnimalAnatomy
         [SerializeField] string inputActionMapName;
         [SerializeField] string X_ButtonName;
         [SerializeField] string Y_ButtonName;
+        [SerializeField] string grip_ButtonName;
         [SerializeField] string stickAction;
         [SerializeField] string triggerAction;
 
@@ -23,6 +24,7 @@ namespace AnimalAnatomy
         InputActionMap actionMap;
         InputAction on_X_ButtonPressed;
         InputAction on_Y_ButtonPressed;
+        InputAction on_Grip_ButtonPressed;
         InputAction on_StickAction;
         InputAction on_TriggerAction;
 
@@ -94,6 +96,7 @@ namespace AnimalAnatomy
 
             on_X_ButtonPressed = actionMap.FindAction(X_ButtonName);
             on_Y_ButtonPressed = actionMap.FindAction(Y_ButtonName);
+            on_Grip_ButtonPressed = actionMap.FindAction(grip_ButtonName);
             on_StickAction = actionMap.FindAction(stickAction);
             on_TriggerAction = actionMap.FindAction(triggerAction);
 
@@ -121,6 +124,9 @@ namespace AnimalAnatomy
             if (on_Y_ButtonPressed != null)
                 on_Y_ButtonPressed.performed += OnYButton;
 
+            if (on_Grip_ButtonPressed != null)
+                on_Grip_ButtonPressed.performed += OnGripButton;
+
             if (on_StickAction != null)
                 on_StickAction.Enable();
 
@@ -135,6 +141,9 @@ namespace AnimalAnatomy
 
             if (on_Y_ButtonPressed != null)
                 on_Y_ButtonPressed.performed -= OnYButton;
+
+            if (on_Grip_ButtonPressed != null)
+                on_Grip_ButtonPressed.performed -= OnGripButton;
 
             if (on_StickAction != null)
                 on_StickAction.Disable();
@@ -187,6 +196,14 @@ namespace AnimalAnatomy
                 lightController.GetLightRotator().sensitivity = stickValue.x;
                 lightController.GetLightRotator().RotateObject();
             }
+        }
+
+        void OnGripButton(InputAction.CallbackContext context)
+        {
+            if (InputController.Instance)
+                InputController.Instance.isAlternativeInput = !InputController.Instance.isAlternativeInput;
+
+            AudioController.Instance.PlayUIAudioClip(buttonClickAudioClip);
         }
     }
 }
