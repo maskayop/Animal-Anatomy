@@ -2,20 +2,22 @@ using UnityEngine;
 
 namespace AnimalAnatomy
 {
-    public class UI3D_BodyPartDescriptionCanvas : MonoBehaviour
+    public class UI3D_CentralCanvas : MonoBehaviour
     {
-        public static UI3D_BodyPartDescriptionCanvas Instance;
+        public static UI3D_CentralCanvas Instance;
 
         [Header("UI")]
         [SerializeField] UIBodyPartDescriptionPanel bodyPartDescriptionPanel;
+        [SerializeField] UIExaminationWindow examinationWindow;
 
         Canvas canvas;
+        GameController gameController;
 
         void Awake()
         {
             if (Instance != null)
             {
-                Debug.LogWarning("Cannot create UI3D_BodyPartDescriptionCanvas");
+                Debug.LogWarning("Cannot create UI3D_CentralCanvas");
                 Destroy(gameObject);
                 return;
             }
@@ -25,13 +27,20 @@ namespace AnimalAnatomy
 
         void Start()
         {
-            canvas = GetComponent<Canvas>();
+            Init();
         }
 
         void Update()
         {
             if (canvas)
                 transform.LookAt(canvas.worldCamera.transform);
+        }
+
+        public void Init()
+        {
+            gameController = GameController.Instance;
+            canvas = GetComponent<Canvas>();
+            examinationWindow.gameObject.SetActive(false);
         }
 
         public void OpenBodyPartDescriptionPanel()
@@ -64,6 +73,42 @@ namespace AnimalAnatomy
         public void UnSelectBodyPartGroup()
         {
             bodyPartDescriptionPanel.gameObject.SetActive(false);
+        }
+
+        public void StartExamination()
+        {
+            /*
+            CloseMenuWindow();
+            menuWindow.CloseExamSettingsWindow();
+
+            mainWindow.SetActive(false);
+            */
+
+            gameController.SetIsolatedMode(false);
+            gameController.SetTransparentMode(false);            
+
+            examinationWindow.gameObject.SetActive(true);
+            ExaminationController.Instance.StartExamination();
+        }
+
+        public void StopExamination()
+        {
+            /*
+            OpenMenuWindow();
+
+            mainWindow.SetActive(true);
+            */
+
+            gameController.SetIsolatedMode(false);
+            gameController.SetTransparentMode(false);
+
+            examinationWindow.gameObject.SetActive(false);
+            ExaminationController.Instance.StopExamination();
+        }
+
+        public UIExaminationWindow GetExaminationWindow()
+        {
+            return examinationWindow;
         }
     }
 }

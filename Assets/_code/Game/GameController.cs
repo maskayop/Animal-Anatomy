@@ -190,8 +190,8 @@ namespace AnimalAnatomy
             if (UIMainCanvas.Instance)
                 UIMainCanvas.Instance.SelectBodyPart(info);
 
-            if (UI3D_BodyPartDescriptionCanvas.Instance)
-                UI3D_BodyPartDescriptionCanvas.Instance.SelectBodyPart(info);
+            if (UI3D_CentralCanvas.Instance)
+                UI3D_CentralCanvas.Instance.SelectBodyPart(info);
 
             info.Select(false);
 
@@ -208,8 +208,8 @@ namespace AnimalAnatomy
             if (UIMainCanvas.Instance)
                 UIMainCanvas.Instance.UnSelectBodyPart();
 
-            if (UI3D_BodyPartDescriptionCanvas.Instance)
-                UI3D_BodyPartDescriptionCanvas.Instance.UnSelectBodyPart();
+            if (UI3D_CentralCanvas.Instance)
+                UI3D_CentralCanvas.Instance.UnSelectBodyPart();
 
             for (int i = 0; i < allBodyParts.Count; i++)
                 allBodyParts[i].UnSelect();
@@ -231,8 +231,8 @@ namespace AnimalAnatomy
             if (UIMainCanvas.Instance)
                 UIMainCanvas.Instance.SelectBodyPartGroup(info);
 
-            if (UI3D_BodyPartDescriptionCanvas.Instance)
-                UI3D_BodyPartDescriptionCanvas.Instance.SelectBodyPartGroup(info);
+            if (UI3D_CentralCanvas.Instance)
+                UI3D_CentralCanvas.Instance.SelectBodyPartGroup(info);
 
             info.Select();
 
@@ -246,8 +246,8 @@ namespace AnimalAnatomy
             if (UIMainCanvas.Instance)
                 UIMainCanvas.Instance.UnSelectBodyPartGroup();
 
-            if (UI3D_BodyPartDescriptionCanvas.Instance)
-                UI3D_BodyPartDescriptionCanvas.Instance.UnSelectBodyPartGroup();
+            if (UI3D_CentralCanvas.Instance)
+                UI3D_CentralCanvas.Instance.UnSelectBodyPartGroup();
 
             for (int i = 0; i < allBodyPartsGroups.Count; i++)
             {
