@@ -86,10 +86,13 @@ namespace AnimalAnatomy
                 UI3D_MenuCanvas.Instance.gameObject.SetActive(false);
 
             if (UI3D_LeftControllerCanvas.Instance)
-                UI3D_LeftControllerCanvas.Instance.gameObject.SetActive(false);
+                UI3D_LeftControllerCanvas.Instance.SetExaminationMode();
 
             if (UI3D_RightControllerCanvas.Instance)
-                UI3D_RightControllerCanvas.Instance.gameObject.SetActive(false);
+                UI3D_RightControllerCanvas.Instance.SetExaminationMode();
+
+            if (InputController.Instance)
+                InputController.Instance.isAlternativeInput = false;
         }
 
         public void StopExamination()
@@ -104,11 +107,8 @@ namespace AnimalAnatomy
             if (UI3D_MenuCanvas.Instance)
                 UI3D_MenuCanvas.Instance.gameObject.SetActive(true);
 
-            if (UI3D_LeftControllerCanvas.Instance)
-                UI3D_LeftControllerCanvas.Instance.gameObject.SetActive(true);
-
-            if (UI3D_RightControllerCanvas.Instance)
-                UI3D_RightControllerCanvas.Instance.gameObject.SetActive(true);
+            if (InputController.Instance)
+                InputController.Instance.isAlternativeInput = false;
         }
 
         public UIExaminationWindow GetExaminationWindow()

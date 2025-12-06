@@ -38,6 +38,7 @@ namespace AnimalAnatomy
 
         GameController gameController;
         LightController lightController;
+        ExaminationController examinationController;
 
         Vector2 stickValue = Vector2.zero;
         float triggerValue = 0;
@@ -58,6 +59,7 @@ namespace AnimalAnatomy
         {
             gameController = GameController.Instance;
             lightController = LightController.Instance;
+            examinationController = ExaminationController.Instance;
 
             InitializeInputActions();
         }
@@ -170,6 +172,9 @@ namespace AnimalAnatomy
 
         void OnXButton(InputAction.CallbackContext context)
         {
+            if (examinationController && examinationController.isExamination)
+                return;
+
             if (systemActivatingButtonsPanel)
                 systemActivatingButtonsPanel.gameObject.SetActive(!systemActivatingButtonsPanel.gameObject.activeInHierarchy);
 
@@ -178,6 +183,9 @@ namespace AnimalAnatomy
 
         void OnYButton(InputAction.CallbackContext context)
         {
+            if (examinationController && examinationController.isExamination)
+                return;
+
             if (UI3D_BodyPartsListCanvas.Instance)
             {
                 if (UI3D_BodyPartsListCanvas.Instance.IsBodyPartsListPanelActive())
@@ -200,10 +208,22 @@ namespace AnimalAnatomy
 
         void OnGripButton(InputAction.CallbackContext context)
         {
+            if (examinationController && examinationController.isExamination)
+                return;
+
             if (InputController.Instance)
                 InputController.Instance.isAlternativeInput = !InputController.Instance.isAlternativeInput;
 
             AudioController.Instance.PlayUIAudioClip(buttonClickAudioClip);
+        }
+
+        public void SetExaminationMode()
+        {
+            if (systemActivatingButtonsPanel)
+                systemActivatingButtonsPanel.gameObject.SetActive(false);
+
+            if (UI3D_BodyPartsListCanvas.Instance)
+                UI3D_BodyPartsListCanvas.Instance.ClosePartsListPanel();
         }
     }
 }

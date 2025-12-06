@@ -35,6 +35,7 @@ namespace AnimalAnatomy
 
         GameController gameController;
         InputController inputController;
+        ExaminationController examinationController;
 
         Vector2 stickValue = Vector2.zero;
         GameObject baseObject;
@@ -59,6 +60,7 @@ namespace AnimalAnatomy
         {
             gameController = GameController.Instance;
             inputController = InputController.Instance;
+            examinationController = ExaminationController.Instance;
             baseObject = GameController.Instance.baseGameObject;
             rotator = baseObject.GetComponent<ObjectRotator>();
             scaler = baseObject.GetComponent<ObjectScaler>();
@@ -174,6 +176,9 @@ namespace AnimalAnatomy
 
         void OnAButton(InputAction.CallbackContext context)
         {
+            if (examinationController && examinationController.isExamination)
+                return;
+
             if (gameController && inputController)
             {
                 if (inputController.isAlternativeInput)
@@ -193,6 +198,9 @@ namespace AnimalAnatomy
 
         void OnBButton(InputAction.CallbackContext context)
         {
+            if (examinationController && examinationController.isExamination)
+                return;
+
             if (UI3D_MenuCanvas.Instance)
             {
                 if (UI3D_MenuCanvas.Instance.IsMenuWindowActive())
@@ -224,10 +232,19 @@ namespace AnimalAnatomy
 
         void OnGripButton(InputAction.CallbackContext context)
         {
+            if (examinationController && examinationController.isExamination)
+                return;
+
             if (InputController.Instance)
                 InputController.Instance.isAlternativeInput = !InputController.Instance.isAlternativeInput;
 
             AudioController.Instance.PlayUIAudioClip(buttonClickAudioClip);
+        }
+
+        public void SetExaminationMode()
+        {
+            if (UI3D_MenuCanvas.Instance)
+                UI3D_MenuCanvas.Instance.CloseMenuWindow();
         }
     }
 }

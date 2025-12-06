@@ -45,8 +45,10 @@ namespace AnimalAnatomy
 
             gameController.SelectBodyPart(bodyPartInfo);
 
+            /*
             if (gameController.exclusionMode)
                 gameController.HideSelectedBodyPart();
+            */
         }
 
         void OnDestroy()
