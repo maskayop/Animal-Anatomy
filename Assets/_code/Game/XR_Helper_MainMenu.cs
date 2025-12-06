@@ -5,11 +5,11 @@ using Vopere.Common;
 
 namespace AnimalAnatomy
 {
-    public class XR_Helper : MonoBehaviour
+    public class XR_Helper_MainMenu : MonoBehaviour
     {
-        GameController gameController;
+        [SerializeField] int gameId = -1;
+
         XRGrabInteractable grabInteractable;
-        BodyPartInfo bodyPartInfo;
 
         void Start()
         {
@@ -18,12 +18,12 @@ namespace AnimalAnatomy
                 Destroy(this);
                 return;
             }
+
+            Init();
         }
 
         public void Init()
-        {
-            gameController = GameController.Instance;
-
+        {            
             grabInteractable = GetComponent<XRGrabInteractable>();
 
             if (grabInteractable)
@@ -31,34 +31,16 @@ namespace AnimalAnatomy
 
             if (grabInteractable)
                 grabInteractable.selectExited.AddListener(OnSelectExited);
-
-            bodyPartInfo = GetComponent<BodyPartInfo>();
-
-            if (bodyPartInfo && grabInteractable)
-                grabInteractable.attachTransform = bodyPartInfo.GetCenterTransform();
         }
 
         void OnSelectEntered(SelectEnterEventArgs args)
         {
-            if (!grabInteractable || !bodyPartInfo)
-                return;
-
-            if (ExaminationController.Instance.isExamination)
-                return;
-
-            gameController.SelectBodyPart(bodyPartInfo);
+            SelectGame();
         }
 
         void OnSelectExited(SelectExitEventArgs args)
         {
-            if (!grabInteractable || !bodyPartInfo)
-                return;
-
-            if (ExaminationController.Instance.isExamination)
-                return;
-
-            if (gameController.exclusionMode)
-                gameController.HideSelectedBodyPart();
+            
         }
 
         void OnDestroy()
@@ -68,6 +50,15 @@ namespace AnimalAnatomy
                 grabInteractable.selectEntered.RemoveListener(OnSelectEntered);
                 grabInteractable.selectExited.RemoveListener(OnSelectExited);
             }
+        }
+
+        void SelectGame()
+        {
+            if (XR_MainMenu.Instance)
+                XR_MainMenu.Instance.SelectGame(gameId);
+
+            if (GameplayAudioPlayer.Instance)
+                GameplayAudioPlayer.Instance.PlayBodyPartSelectionAudio();
         }
     }
 }

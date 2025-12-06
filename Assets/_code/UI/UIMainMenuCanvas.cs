@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -18,11 +19,18 @@ namespace AnimalAnatomy
         
         [SerializeField] GameObject startButtonPanel;
 
+        [Header("Loading Screen")]
+        [SerializeField] GameObject loadingScreen;
+        [SerializeField] float loadingTime = 1.0f;
+
         [Header("Debug")]
         [SerializeField] TextMeshProUGUI debugText;
 
         [Space(20)]
         [SerializeField] List<UIGameSelection> games = new List<UIGameSelection>();
+
+        [HideInInspector]
+        public bool isLoading = false;
 
         int currentGame = 0;
 
@@ -40,7 +48,12 @@ namespace AnimalAnatomy
 
         void Start()
         {
+            loadingScreen.SetActive(true);
+            isLoading = true;
+
             Init();
+
+            StartCoroutine(DisableLoadingScreen());
         }
 
         void Update()
@@ -54,6 +67,18 @@ namespace AnimalAnatomy
         public void Init()
         {
             SelectGame(-1);
+        }
+
+        IEnumerator DisableLoadingScreen()
+        {
+#if UNITY_EDITOR
+            loadingTime /= 2;
+#endif
+
+            yield return new WaitForSeconds(loadingTime);
+
+            loadingScreen.SetActive(false);
+            isLoading = false;
         }
 
         public void SelectGame(int id)

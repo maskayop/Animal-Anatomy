@@ -50,6 +50,7 @@ MonoBehaviour:
   defaultGraphicsLevel: 2
   useTargetFPS: 1
   initialize: 0
+  isXR: 0
 --- !u!114 &3906105558497098724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,6 +69,7 @@ MonoBehaviour:
   - Horse
   - Pig
   - Android Test
+  scenesInBuild: []
 --- !u!114 &8050399639720174858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,7 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36f2b92e6aa630241b2971a3a24060be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FileLogger
-  maxLines: 10000
+  maxLines: 100000
 --- !u!114 &267795397663618798
 MonoBehaviour:
   m_ObjectHideFlags: 0

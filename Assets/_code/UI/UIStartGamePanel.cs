@@ -8,6 +8,9 @@ namespace AnimalAnatomy
         {
             if (UIMainMenuCanvas.Instance)
                 UIMainMenuCanvas.Instance.StartGame();
+
+            if (XR_MainMenu.Instance)
+                XR_MainMenu.Instance.StartGame();
         }
     }
 }
