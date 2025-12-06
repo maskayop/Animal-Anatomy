@@ -69,11 +69,9 @@ namespace AnimalAnatomy
 
         void Update()
         {
-            /*
             if (App.Instance && App.Instance.isXR)
                 if (InputController.Instance)
                     exclusionMode = InputController.Instance.isAlternativeInput;
-            */            
         }
 
         public void Init()
@@ -416,6 +414,16 @@ namespace AnimalAnatomy
             {
                 if (allBodyParts[i] == selectedBodyPart)
                     selectedBodyPart.gameObject.SetActive(false);
+
+                /*
+                if (allBodyParts[i] == selectedBodyPart)
+                {
+                    if (App.Instance && App.Instance.isXR)
+                        selectedBodyPart.transform.localScale = Vector3.zero;
+                    else
+                        selectedBodyPart.gameObject.SetActive(false);
+                }
+                */
             }
 
             UnSelectBodyPart(true);

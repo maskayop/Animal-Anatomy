@@ -97,6 +97,9 @@ namespace AnimalAnatomy
             if (UI3D_CentralCanvas.Instance)
                 UI3D_CentralCanvas.Instance.GetExaminationWindow().StartExamination();
 
+            if (InputController.Instance)
+                InputController.Instance.isAlternativeInput = false;
+
             StartNextQuestion();
         }
 

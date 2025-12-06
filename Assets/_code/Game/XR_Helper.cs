@@ -29,6 +29,9 @@ namespace AnimalAnatomy
             if (grabInteractable)
                 grabInteractable.selectEntered.AddListener(OnSelectEntered);
 
+            if (grabInteractable)
+                grabInteractable.selectExited.AddListener(OnSelectExited);
+
             bodyPartInfo = GetComponent<BodyPartInfo>();
 
             if (bodyPartInfo && grabInteractable)
@@ -44,11 +47,18 @@ namespace AnimalAnatomy
                 return;
 
             gameController.SelectBodyPart(bodyPartInfo);
+        }
 
-            /*
+        void OnSelectExited(SelectExitEventArgs args)
+        {
+            if (!grabInteractable || !bodyPartInfo)
+                return;
+
+            if (ExaminationController.Instance.isExamination)
+                return;
+
             if (gameController.exclusionMode)
                 gameController.HideSelectedBodyPart();
-            */
         }
 
         void OnDestroy()

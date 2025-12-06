@@ -29,6 +29,16 @@ namespace AnimalAnatomy
 
         void UpdateWidgets()
         {
+            if (ExaminationController.Instance && ExaminationController.Instance.isExamination)
+            {
+                isolatedModeWidget.SetActive(false);
+                transparentModeWidget.SetActive(false);
+                exclusionModeWidget.SetActive(false);
+                lightingModeWidget.SetActive(false);
+
+                return;
+            }
+            
             isolatedModeWidget.SetActive(gameController.isolatedMode);
             transparentModeWidget.SetActive(gameController.transparentMode);
             exclusionModeWidget.SetActive(gameController.exclusionMode);
