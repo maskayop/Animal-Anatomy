@@ -40,6 +40,9 @@ namespace AnimalAnatomy
             if (!grabInteractable || !bodyPartInfo)
                 return;
 
+            if (ExaminationController.Instance.isExamination)
+                return;
+
             gameController.SelectBodyPart(bodyPartInfo);
 
             if (gameController.exclusionMode)

@@ -43,6 +43,9 @@ namespace AnimalAnatomy
         {
             if (UIMainCanvas.Instance)
                 UIMainCanvas.Instance.StartExamination();
+
+            if (UI3D_CentralCanvas.Instance)
+                UI3D_CentralCanvas.Instance.StartExamination();
         }
 
         public void SetExamMode(int value)

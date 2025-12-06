@@ -240,9 +240,6 @@ namespace AnimalAnatomy
             mainWindow.SetActive(false);
             examinationWindow.gameObject.SetActive(true);
 
-            gameController.SetIsolatedMode(false);
-            gameController.SetTransparentMode(false);
-
             ExaminationController.Instance.StartExamination();
         }
 
@@ -252,9 +249,6 @@ namespace AnimalAnatomy
 
             mainWindow.SetActive(true);
             examinationWindow.gameObject.SetActive(false);
-
-            gameController.SetIsolatedMode(false);
-            gameController.SetTransparentMode(false);
 
             ExaminationController.Instance.StopExamination();
         }

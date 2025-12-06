@@ -810,8 +810,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7606428634752274331}
   - {fileID: 6815306122645007782}
+  - {fileID: 7606428634752274331}
   - {fileID: 9046882674213407762}
   - {fileID: 3923288729876403044}
   - {fileID: 5095920600522040378}
@@ -2597,23 +2597,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 852930209240142870, guid: c2106ea1ae1baaf4c9d9e8248587aa35, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 852930209240142870, guid: c2106ea1ae1baaf4c9d9e8248587aa35, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2254107252804622337}
+      objectReference: {fileID: 6714094440427379272}
     - target: {fileID: 852930209240142870, guid: c2106ea1ae1baaf4c9d9e8248587aa35, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 852930209240142870, guid: c2106ea1ae1baaf4c9d9e8248587aa35, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
+      value: OpenExitExamWindow
       objectReference: {fileID: 0}
     - target: {fileID: 852930209240142870, guid: c2106ea1ae1baaf4c9d9e8248587aa35, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: AnimalAnatomy.UIExaminationWindow, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 852930209240142870, guid: c2106ea1ae1baaf4c9d9e8248587aa35, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
@@ -3349,6 +3349,22 @@ PrefabInstance:
     - target: {fileID: 8293423715131156227, guid: a7102f4faf178de4c96fcc9d33c99671, type: 3}
       propertyPath: m_Name
       value: Exit Exam Window
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308047586447818413, guid: a7102f4faf178de4c96fcc9d33c99671, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308047586447818413, guid: a7102f4faf178de4c96fcc9d33c99671, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6714094440427379272}
+    - target: {fileID: 8308047586447818413, guid: a7102f4faf178de4c96fcc9d33c99671, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseExitExamWindow
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308047586447818413, guid: a7102f4faf178de4c96fcc9d33c99671, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AnimalAnatomy.UIExaminationWindow, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

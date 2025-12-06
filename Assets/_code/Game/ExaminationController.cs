@@ -27,6 +27,8 @@ namespace AnimalAnatomy
 
         public float currentTime;
 
+        GameController gameController;
+
         void Awake()
         {
             if (Instance != null)
@@ -57,6 +59,7 @@ namespace AnimalAnatomy
 
         public void Init()
         {
+            gameController = GameController.Instance;
             currentQuestionBodyPartInfos.Clear();
         }
 
@@ -65,7 +68,10 @@ namespace AnimalAnatomy
             isExamination = true;
             examSystemTypeBodyPartInfos.Clear();
             currentQuestionBodyPartInfos.Clear();
-            GameController.Instance.DisableAllSystemsExceptSystem(GameController.SystemType.skin);
+
+            gameController.DisableAllSystemsExceptSystem(GameController.SystemType.skin);
+            gameController.SetIsolatedMode(false);
+            gameController.SetTransparentMode(false);
 
             if (examSystemType == 0)
                 UpdateExamSystemTypeBodyPartInfos(GameController.SystemType.skeleton);
@@ -88,6 +94,9 @@ namespace AnimalAnatomy
             if (UIMainCanvas.Instance)
                 UIMainCanvas.Instance.GetExaminationWindow().StartExamination();
 
+            if (UI3D_CentralCanvas.Instance)
+                UI3D_CentralCanvas.Instance.GetExaminationWindow().StartExamination();
+
             StartNextQuestion();
         }
 
@@ -97,6 +106,9 @@ namespace AnimalAnatomy
 
             if (UIMainCanvas.Instance)
                 UIMainCanvas.Instance.GetExaminationWindow().FinishExamination();
+
+            if (UI3D_CentralCanvas.Instance)
+                UI3D_CentralCanvas.Instance.GetExaminationWindow().FinishExamination();
         }
 
         public void StopExamination()
@@ -105,11 +117,16 @@ namespace AnimalAnatomy
             examSystemTypeBodyPartInfos.Clear();
             currentQuestionBodyPartInfos.Clear();
 
-            for (int i = 0; i < GameController.Instance.allBodyParts.Count; i++)
-                GameController.Instance.allBodyParts[i].SetAsTransparent(false);
+            gameController.SetIsolatedMode(false);
+            gameController.SetTransparentMode(false);
 
-            GameController.Instance.ActivateAllSystems(true);
-            CameraController.Instance.UpdatePosition();
+            for (int i = 0; i < gameController.allBodyParts.Count; i++)
+                gameController.allBodyParts[i].SetAsTransparent(false);
+
+            gameController.ActivateAllSystems(true);
+
+            if (CameraController.Instance)
+                CameraController.Instance.UpdatePosition();
         }
 
         public void StartNextQuestion()
@@ -122,8 +139,8 @@ namespace AnimalAnatomy
 
             examSystemTypeBodyPartInfos.Shuffle();
 
-            for (int i = 0; i < GameController.Instance.allBodyParts.Count; i++)
-                GameController.Instance.allBodyParts[i].SetAsTransparent(true);
+            for (int i = 0; i < gameController.allBodyParts.Count; i++)
+                gameController.allBodyParts[i].SetAsTransparent(true);
 
             currentQuestionBodyPartInfos.Clear();
 
@@ -131,22 +148,27 @@ namespace AnimalAnatomy
                 currentQuestionBodyPartInfos.Add(examSystemTypeBodyPartInfos[i]);
 
             currentQuestionBodyPartInfos[0].SetAsTransparent(false);
-            CameraController.Instance.UpdatePositionOnBodyPart(currentQuestionBodyPartInfos[0]);
+
+            if (CameraController.Instance)
+                CameraController.Instance.UpdatePositionOnBodyPart(currentQuestionBodyPartInfos[0]);
 
             if (UIMainCanvas.Instance)
                 UIMainCanvas.Instance.GetExaminationWindow().StartNextQuestion(currentQuestionBodyPartInfos);
+
+            if (UI3D_CentralCanvas.Instance)
+                UI3D_CentralCanvas.Instance.GetExaminationWindow().StartNextQuestion(currentQuestionBodyPartInfos);
         }
 
         void UpdateExamSystemTypeBodyPartInfos(GameController.SystemType systemType)
         {
-            GameController.Instance.EnableSystem(systemType);
+            gameController.EnableSystem(systemType);
 
-            for (int i = 0; i < GameController.Instance.bodyPartsLists.Count; i++)
+            for (int i = 0; i < gameController.bodyPartsLists.Count; i++)
             {
-                if (GameController.Instance.bodyPartsLists[i].systemType == systemType)
+                if (gameController.bodyPartsLists[i].systemType == systemType)
                 {
-                    for (int p = 0; p < GameController.Instance.bodyPartsLists[i].bodyParts.Count; p++)
-                        examSystemTypeBodyPartInfos.Add(GameController.Instance.bodyPartsLists[i].bodyParts[p]);
+                    for (int p = 0; p < gameController.bodyPartsLists[i].bodyParts.Count; p++)
+                        examSystemTypeBodyPartInfos.Add(gameController.bodyPartsLists[i].bodyParts[p]);
                 }
             }
         }
@@ -162,6 +184,9 @@ namespace AnimalAnatomy
 
             if (UIMainCanvas.Instance)
                 UIMainCanvas.Instance.GetExaminationWindow().FinishQuestion(isCorrect);
+
+            if (UI3D_CentralCanvas.Instance)
+                UI3D_CentralCanvas.Instance.GetExaminationWindow().FinishQuestion(isCorrect);
         }
     }
 }

@@ -67,6 +67,15 @@ namespace AnimalAnatomy
             Init();
         }
 
+        void Update()
+        {
+            /*
+            if (App.Instance && App.Instance.isXR)
+                if (InputController.Instance)
+                    exclusionMode = InputController.Instance.isAlternativeInput;
+            */            
+        }
+
         public void Init()
         {
             CreateBodyPartsLists();

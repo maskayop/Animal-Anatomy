@@ -11,7 +11,6 @@ namespace AnimalAnatomy
         [SerializeField] UIExaminationWindow examinationWindow;
 
         Canvas canvas;
-        GameController gameController;
 
         void Awake()
         {
@@ -38,7 +37,6 @@ namespace AnimalAnatomy
 
         public void Init()
         {
-            gameController = GameController.Instance;
             canvas = GetComponent<Canvas>();
             examinationWindow.gameObject.SetActive(false);
         }
@@ -55,55 +53,62 @@ namespace AnimalAnatomy
 
         public void SelectBodyPart(BodyPartInfo info)
         {
-            bodyPartDescriptionPanel.gameObject.SetActive(true);
+            OpenBodyPartDescriptionPanel();
             bodyPartDescriptionPanel.ShowInfo(info);
         }
 
         public void UnSelectBodyPart()
         {
-            bodyPartDescriptionPanel.gameObject.SetActive(false);
+            CloseBodyPartDescriptionPanel();
         }
 
         public void SelectBodyPartGroup(BodyPartGroup info)
         {
-            bodyPartDescriptionPanel.gameObject.SetActive(true);
+            OpenBodyPartDescriptionPanel();
             bodyPartDescriptionPanel.ShowInfo(info);
         }
 
         public void UnSelectBodyPartGroup()
         {
-            bodyPartDescriptionPanel.gameObject.SetActive(false);
+            CloseBodyPartDescriptionPanel();
         }
 
         public void StartExamination()
         {
-            /*
-            CloseMenuWindow();
-            menuWindow.CloseExamSettingsWindow();
-
-            mainWindow.SetActive(false);
-            */
-
-            gameController.SetIsolatedMode(false);
-            gameController.SetTransparentMode(false);            
-
             examinationWindow.gameObject.SetActive(true);
             ExaminationController.Instance.StartExamination();
+            CloseBodyPartDescriptionPanel();
+
+            if (UI3D_BodyPartsListCanvas.Instance)
+                UI3D_BodyPartsListCanvas.Instance.gameObject.SetActive(false);
+
+            if (UI3D_MenuCanvas.Instance)
+                UI3D_MenuCanvas.Instance.gameObject.SetActive(false);
+
+            if (UI3D_LeftControllerCanvas.Instance)
+                UI3D_LeftControllerCanvas.Instance.gameObject.SetActive(false);
+
+            if (UI3D_RightControllerCanvas.Instance)
+                UI3D_RightControllerCanvas.Instance.gameObject.SetActive(false);
         }
 
         public void StopExamination()
         {
-            /*
-            OpenMenuWindow();
-
-            mainWindow.SetActive(true);
-            */
-
-            gameController.SetIsolatedMode(false);
-            gameController.SetTransparentMode(false);
-
             examinationWindow.gameObject.SetActive(false);
             ExaminationController.Instance.StopExamination();
+            CloseBodyPartDescriptionPanel();
+
+            if (UI3D_BodyPartsListCanvas.Instance)
+                UI3D_BodyPartsListCanvas.Instance.gameObject.SetActive(true);
+
+            if (UI3D_MenuCanvas.Instance)
+                UI3D_MenuCanvas.Instance.gameObject.SetActive(true);
+
+            if (UI3D_LeftControllerCanvas.Instance)
+                UI3D_LeftControllerCanvas.Instance.gameObject.SetActive(true);
+
+            if (UI3D_RightControllerCanvas.Instance)
+                UI3D_RightControllerCanvas.Instance.gameObject.SetActive(true);
         }
 
         public UIExaminationWindow GetExaminationWindow()

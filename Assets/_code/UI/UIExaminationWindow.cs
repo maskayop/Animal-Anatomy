@@ -80,6 +80,7 @@ namespace AnimalAnatomy
         {
             answersPanel.SetActive(true);
             finishQuestionPanel.SetActive(false);
+            exitButton.SetActive(true);
             examAnswerButtons.Clear();
 
             foreach (Transform t in answersContainer.transform)
@@ -128,6 +129,7 @@ namespace AnimalAnatomy
             }
 
             finishQuestionPanel.SetActive(true);
+            exitButton.SetActive(false);
             correctAnswerPanel.SetActive(isCorrect);
             wrongAnswerPanel.SetActive(!isCorrect);
         }
@@ -167,6 +169,23 @@ namespace AnimalAnatomy
         {
             if (UIMainCanvas.Instance)
                 UIMainCanvas.Instance.StopExamination();
+
+            if (UI3D_CentralCanvas.Instance)
+                UI3D_CentralCanvas.Instance.StopExamination();
+        }
+
+        public void OpenExitExamWindow()
+        {
+            exitExamWindow.gameObject.SetActive(true);
+            answersPanel.gameObject.SetActive(false);
+            exitButton.gameObject.SetActive(false);
+        }
+
+        public void CloseExitExamWindow()
+        {
+            exitExamWindow.gameObject.SetActive(false);
+            answersPanel.gameObject.SetActive(true);
+            exitButton.gameObject.SetActive(true);
         }
     }
 }
