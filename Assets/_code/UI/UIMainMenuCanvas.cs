@@ -16,9 +16,10 @@ namespace AnimalAnatomy
     {
         public static UIMainMenuCanvas Instance;
         
-        [SerializeField] TextMeshProUGUI debugText;
-
         [SerializeField] GameObject startButtonPanel;
+
+        [Header("Debug")]
+        [SerializeField] TextMeshProUGUI debugText;
 
         [Space(20)]
         [SerializeField] List<UIGameSelection> games = new List<UIGameSelection>();

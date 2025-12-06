@@ -69,7 +69,8 @@ namespace AnimalAnatomy
                 DestroyImmediate(PICO_XR_Camera);
                 DestroyImmediate(XR_UI);
 
-                CameraController.Instance.Init();
+                if (CameraController.Instance)
+                    CameraController.Instance.Init();
 
                 if (eventSystemGameObject)
                     eventSystemGameObject.SetActive(true);

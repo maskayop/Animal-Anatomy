@@ -53,7 +53,6 @@ namespace AnimalAnatomy
 #endif
 
             UpdateView();
-            SetExclusionMode();
 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -144,24 +143,6 @@ namespace AnimalAnatomy
 
             if (Input.GetKeyDown(KeyCode.W) && !gameController.isolatedMode)
                 gameController.SetTransparentMode(!gameController.transparentMode);
-        }
-
-
-        void SetExclusionMode()
-        {
-            return;
-
-#if PLATFORM_ANDROID
-            return;
-#else
-            if (!gameController.isolatedMode && !gameController.transparentMode)
-            {
-                if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
-                    gameController.SetExclusionMode(true);
-                else
-                    gameController.SetExclusionMode(false);
-            }
-#endif
         }
 
         void DeletePlayerPrefs()
