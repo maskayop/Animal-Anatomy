@@ -61,9 +61,13 @@ namespace AnimalAnatomy
             gameController = GameController.Instance;
             inputController = InputController.Instance;
             examinationController = ExaminationController.Instance;
-            baseObject = GameController.Instance.baseGameObject;
-            rotator = baseObject.GetComponent<ObjectRotator>();
-            scaler = baseObject.GetComponent<ObjectScaler>();
+
+            if (gameController)
+            {
+                baseObject = GameController.Instance.baseGameObject;
+                rotator = baseObject.GetComponent<ObjectRotator>();
+                scaler = baseObject.GetComponent<ObjectScaler>();
+            }
 
             InitializeInputActions();
         }

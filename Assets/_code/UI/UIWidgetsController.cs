@@ -29,6 +29,9 @@ namespace AnimalAnatomy
 
         void UpdateWidgets()
         {
+            if (!GameController.Instance)
+                return;
+
             if (ExaminationController.Instance && ExaminationController.Instance.isExamination)
             {
                 isolatedModeWidget.SetActive(false);
