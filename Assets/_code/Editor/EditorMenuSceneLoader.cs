@@ -21,6 +21,12 @@ namespace AnimalAnatomy.Editor
 			LoadScene("_Init");
 		}
 
+        [MenuItem("Animal Anatomy/Открыть сцену/Init XR")]
+        static void LoadSceneInitXR()
+        {
+            LoadScene("_Init XR");
+        }
+
         [MenuItem("Animal Anatomy/Открыть сцену/Main Menu")]
         static void LoadSceneMainMenu()
         {

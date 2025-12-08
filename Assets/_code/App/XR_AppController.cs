@@ -72,7 +72,7 @@ namespace AnimalAnatomy
                 if (CameraController.Instance)
                     CameraController.Instance.Init();
 
-                if (cameraController.GetComponent<AudioListener>())
+                if (cameraController && cameraController.GetComponent<AudioListener>())
                     cameraController.GetComponent<AudioListener>().enabled = true;
 
                 if (eventSystemGameObject)

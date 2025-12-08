@@ -23,6 +23,9 @@ namespace AnimalAnatomy
         [SerializeField] GameObject loadingScreen;
         [SerializeField] float loadingTime = 1.0f;
 
+        [Header("Version")]
+        [SerializeField] TextMeshProUGUI versionText;
+
         [Header("Debug")]
         [SerializeField] TextMeshProUGUI debugText;
 
@@ -67,6 +70,9 @@ namespace AnimalAnatomy
         public void Init()
         {
             SelectGame(-1);
+
+            if (versionText != null)
+                versionText.text = Application.version;
         }
 
         IEnumerator DisableLoadingScreen()

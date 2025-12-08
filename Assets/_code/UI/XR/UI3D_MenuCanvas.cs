@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 namespace AnimalAnatomy
@@ -9,6 +10,7 @@ namespace AnimalAnatomy
 
         [Header("UI")]
         [SerializeField] UIMenuWindow menuWindow;
+        [SerializeField] TextMeshProUGUI versionText;
 
         Canvas canvas;
 
@@ -29,6 +31,9 @@ namespace AnimalAnatomy
             canvas = GetComponent<Canvas>();
             CloseMenuWindow();
             StartCoroutine(InitializeDelayed());
+
+            if (versionText != null)
+                versionText.text = Application.version;
         }
 
         void Update()

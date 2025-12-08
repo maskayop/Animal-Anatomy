@@ -75,7 +75,15 @@ namespace AnimalAnatomy
             int id = dataSaveLoad.GetSavedInt(key);
 
             if (id != -1 && id < togglesList.Count)
-                togglesList[id].isOn = true;
+            {
+                for (int i = 0; i < togglesList.Count; i++)
+                {
+                    if (i == id)
+                        togglesList[id].isOn = true;
+                    else
+                        togglesList[id].isOn = false;
+                }
+            }
         }
 
         public void ChangeBackgroundColorScheme(int id)

@@ -49,6 +49,8 @@ namespace Vopere.Protection
             checkKey = ComputeHash(GetUserName() + GetGPUInfo() + GetCPUInfo());
             checkInputField.text = checkKey;
             key = GetEditedKey(checkKey);
+
+            Debug.Log(checkKey);
         }
 
         public void CheckKey()
