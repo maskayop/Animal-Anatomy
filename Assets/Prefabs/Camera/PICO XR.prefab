@@ -2097,6 +2097,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: o_com_sparrow_left_01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b164e7767f1088a458acb6f692c01d83, type: 3}
+      propertyPath: m_TagString
+      value: EditorOnly
+      objectReference: {fileID: 0}
     - target: {fileID: 3555671689143584517, guid: b164e7767f1088a458acb6f692c01d83, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -2575,6 +2579,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: o_com_sparrow_right_01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 85013fab55cf932458682912756a4fcb, type: 3}
+      propertyPath: m_TagString
+      value: EditorOnly
+      objectReference: {fileID: 0}
     - target: {fileID: 6972209725336936091, guid: 85013fab55cf932458682912756a4fcb, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -2593,6 +2601,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 85013fab55cf932458682912756a4fcb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4336230768190878782}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 85013fab55cf932458682912756a4fcb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9132075896217288539}
     - targetCorrespondingSourceObject: {fileID: 1451128595764268142, guid: 85013fab55cf932458682912756a4fcb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4108090312361391121}
@@ -2645,6 +2656,20 @@ MonoBehaviour:
   gripTran: {fileID: 4924107643431980386}
   triggerTran: {fileID: 7103760737561390953}
   controller: 1
+--- !u!114 &9132075896217288539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5179174395340360151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 802887471a6dab34fa0070e5f722f43e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Vopere.Common.DestroyAfterTime
+  time: 0
+  destroyAtStart: 1
 --- !u!4 &5524736969134822253 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 85013fab55cf932458682912756a4fcb, type: 3}
