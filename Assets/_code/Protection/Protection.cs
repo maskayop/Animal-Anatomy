@@ -4,18 +4,16 @@ using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
-using Vopere.Common;
 
 namespace Vopere.Protection
 {
-    public class ProtectionKey : MonoBehaviour
+    public class Protection : MonoBehaviour
     {
         [Header("Canvases")]
         public GameObject clientCanvas;
         public GameObject generatorCanvas;
 
         [Header("Check and Activation")]
-        public MacAdress macAdress;
         public string checkKey;
         public TMP_InputField checkInputField;
         public string key;
@@ -65,7 +63,8 @@ namespace Vopere.Protection
             {
                 onFailed.Invoke();
                 Debug.LogWarning("Неверный ключ защиты! Выход");
-                App.Instance.ExitGame();
+
+                ExitGame();
             }
         }
 
@@ -104,7 +103,6 @@ namespace Vopere.Protection
                 stringBuilder.Append(hash[i].ToString("X2"));
 
             return stringBuilder.ToString();
-
         }
 
         public string GetEditedKey(string INkey)
@@ -221,7 +219,7 @@ namespace Vopere.Protection
             GUIUtility.systemCopyBuffer = checkInputField.text;
         }
 
-        public void CopyActivationKeyFromClipboard()
+        public void PasteActivationKeyFromClipboard()
         {
             activationInputField.text = GUIUtility.systemCopyBuffer;
         }
@@ -276,6 +274,17 @@ namespace Vopere.Protection
             Debug.Log($"Частота: {processorFrequency} MHz");
 
             return processorName;
+        }
+
+        public void ExitGame()
+        {
+            Debug.Log("Выход из программы" + "\n");
+
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+			Application.Quit();
+#endif
         }
     }
 }

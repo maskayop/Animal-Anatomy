@@ -20,7 +20,7 @@ namespace AnimalAnatomy
         [SerializeField] float editorVideoSpeed = 1.0f;
 
         float videoLength;
-        ProtectionKey protection;
+        Protection protection;
 
         Vector2Int defaultScreenResolution = Vector2Int.zero;
 
@@ -42,7 +42,7 @@ namespace AnimalAnatomy
 
         void Start()
         {
-            protection = FindFirstObjectByType<ProtectionKey>();
+            protection = FindFirstObjectByType<Protection>();
 
             if (!protection)
                 Init();

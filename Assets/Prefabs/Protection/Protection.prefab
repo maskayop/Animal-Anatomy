@@ -93,7 +93,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5197264942806826252}
   - component: {fileID: 7025757281717279543}
-  - component: {fileID: 5013439927032495022}
   - component: {fileID: 2098608423555424743}
   m_Layer: 0
   m_Name: Protection
@@ -134,7 +133,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Vopere.Protection.ProtectionKey
   clientCanvas: {fileID: 773801620372591222}
   generatorCanvas: {fileID: 8971738874878419882}
-  macAdress: {fileID: 5013439927032495022}
   checkKey: 
   checkInputField: {fileID: 8690147229549136538}
   key: 
@@ -163,21 +161,6 @@ MonoBehaviour:
   onFailed:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5013439927032495022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6439301626242522855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b425b5beb799614bb8e170abd67fc80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Vopere.Protection.MacAdress
-  MyMacAdress: 
-  ControlMacAdress: D4-5D-64-24-F9-B500-FF-09-6F-AA-E5
-  closeAppOnFailed: 0
 --- !u!114 &2098608423555424743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,11 +393,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6490333716421836974, guid: de642da5058a4c346a134ae96251163b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CopyActivationKeyFromClipboard
+      value: PasteActivationKeyFromClipboard
       objectReference: {fileID: 0}
     - target: {fileID: 6490333716421836974, guid: de642da5058a4c346a134ae96251163b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Vopere.Protection.ProtectionKey, Assembly-CSharp
+      value: Vopere.Protection.Protection, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6490333716421836974, guid: de642da5058a4c346a134ae96251163b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -692,18 +675,18 @@ PrefabInstance:
     - target: {fileID: 5916955919038139885, guid: 845ac6001ae6af14abc72240012f2ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5013439927032495022}
+      objectReference: {fileID: 7025757281717279543}
     - target: {fileID: 5916955919038139885, guid: 845ac6001ae6af14abc72240012f2ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5916955919038139885, guid: 845ac6001ae6af14abc72240012f2ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Quit
+      value: ExitGame
       objectReference: {fileID: 0}
     - target: {fileID: 5916955919038139885, guid: 845ac6001ae6af14abc72240012f2ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Vopere.Protection.MacAdress, Assembly-CSharp
+      value: Vopere.Protection.Protection, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5916955919038139885, guid: 845ac6001ae6af14abc72240012f2ae1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
