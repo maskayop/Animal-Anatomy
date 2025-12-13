@@ -57,6 +57,18 @@ namespace AnimalAnatomy.Editor
             LoadScene("Pig");
         }
 
+        [MenuItem("Animal Anatomy/Открыть сцену/Животные/Пёс")]
+        static void LoadSceneDog()
+        {
+            LoadScene("Dog");
+        }
+
+        [MenuItem("Animal Anatomy/Открыть сцену/Животные/Кот")]
+        static void LoadSceneCat()
+        {
+            LoadScene("Cat");
+        }
+
         [MenuItem("Animal Anatomy/Открыть сцену/Тест/_TEST_")]
         static void LoadScene_TEST_()
         {
