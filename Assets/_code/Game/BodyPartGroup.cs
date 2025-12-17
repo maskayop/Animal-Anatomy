@@ -98,6 +98,9 @@ namespace AnimalAnatomy
 
             if (partGroupListButton)
                 partGroupListButton.SetAsSelected(false);
+
+            if (AudioController.Instance)
+                AudioController.Instance.OnUnSelectBodyPart();
         }
 
         public Vector3 GetCenterOfGroup()

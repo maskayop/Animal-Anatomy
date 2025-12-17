@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using Vopere.Common;
+using static UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics.HapticsUtility;
 
 namespace AnimalAnatomy
 {
@@ -38,8 +39,10 @@ namespace AnimalAnatomy
 
         float currentMusicTime;
 
-        bool isRandomPlaying = true;
-        bool isPaused = false;
+        bool isRandomMusicPlaying = true;
+        bool isMusicPaused = false;
+
+        bool isVoicePaused = false;
 
         void Awake()
         {
@@ -60,7 +63,7 @@ namespace AnimalAnatomy
 
         void Update()
         {
-            if (musicSource.clip != null && !isPaused)
+            if (musicSource.clip != null && !isMusicPaused)
             {
                 currentMusicTime -= Time.deltaTime;
 
@@ -68,8 +71,8 @@ namespace AnimalAnatomy
                 {
                     if (musicSource.loop)
                         return;
-                
-                    if (isRandomPlaying)
+
+                    if (isRandomMusicPlaying)
                         PlayRandomMusicClip();
                     else
                         PlayNextMusicClip();
@@ -91,6 +94,16 @@ namespace AnimalAnatomy
 
             if (UIVolume != -1)
                 ChangeVolume(1, UIVolume);
+
+            float sfxVolume = DataSaveLoad.Instance.GetSavedFloat("SFXVolume");
+
+            if (sfxVolume != -1)
+                ChangeVolume(2, sfxVolume);
+
+            float voiceVolume = DataSaveLoad.Instance.GetSavedFloat("VoiceVolume");
+
+            if (voiceVolume != -1)
+                ChangeVolume(3, voiceVolume);
         }
 
         void PlayMusicClip()
@@ -105,12 +118,12 @@ namespace AnimalAnatomy
             musicSource.Play();
 
             currentMusicTime = musicSource.clip.length;
-            isPaused = false;
+            isMusicPaused = false;
         }
 
         public void PlayNextMusicClip()
         {
-            if (isRandomPlaying)
+            if (isRandomMusicPlaying)
                 PlayRandomMusicClip();
             else
             {
@@ -146,13 +159,13 @@ namespace AnimalAnatomy
         public void PlayCurrentMusic()
         {
             musicSource.UnPause();
-            isPaused = false;
+            isMusicPaused = false;
         }
 
         public void PauseCurrentMusic()
         {
             musicSource.Pause();
-            isPaused = true;
+            isMusicPaused = true;
         }
 
         public int GetCurrentMusicId()
@@ -162,7 +175,7 @@ namespace AnimalAnatomy
 
         public void SetRandomPlaying(bool state)
         {
-            isRandomPlaying = state;
+            isRandomMusicPlaying = state;
         }
 
         public void PlayUIAudioClip(AudioClip clip)
@@ -192,5 +205,31 @@ namespace AnimalAnatomy
             mixerGroup.audioMixer.SetFloat(mixerGroup.name + "Volume", value);
             DataSaveLoad.Instance.Save(mixerGroup.name + "Volume", INvalue);
         }
+
+        public void PlayCurrentVoice()
+        {
+            if (isVoicePaused)
+                voiceSource.UnPause();
+            else
+                voiceSource.Play();
+        }
+
+        public void PauseCurrentVoice()
+        {
+            voiceSource.Pause();
+            isVoicePaused = true;
+        }
+
+        public void StopCurrentVoice()
+        {
+            voiceSource.Stop();
+            isVoicePaused = false;
+        }
+
+        public void OnUnSelectBodyPart()
+        {
+            StopCurrentVoice();
+            voiceSource.clip = null;
+        }
     }
- }
+}

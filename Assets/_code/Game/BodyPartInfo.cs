@@ -125,6 +125,9 @@ namespace AnimalAnatomy
 
             if (partListButton)
                 partListButton.SetAsSelected(false);
+
+            if (AudioController.Instance)
+                AudioController.Instance.OnUnSelectBodyPart();
         }
 
         public void SetAsTransparent(bool state)

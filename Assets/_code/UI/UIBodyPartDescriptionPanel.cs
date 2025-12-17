@@ -9,11 +9,17 @@ namespace AnimalAnatomy
         [SerializeField] TextMeshProUGUI bodyPartScientificNameText;
         [SerializeField] TextMeshProUGUI bodyPartDescriptionText;
 
+        [Header("Audio")]
+        [SerializeField] UIAudioDescriptionPlayerPanel audioDescriptionPlayerPanel;
+
         public void ShowInfo(BodyPartInfo bodyPartInfo)
         {
             bodyPartNameText.text = bodyPartInfo.GetFullRussianName();
             bodyPartScientificNameText.text = bodyPartInfo.GetFullScientificName();
             bodyPartDescriptionText.text = bodyPartInfo.info.description;
+
+            if (bodyPartInfo.info.clip != null)
+                audioDescriptionPlayerPanel.SetCurrentDescriptionAudio(bodyPartInfo.info.clip);
         }
 
         public void ShowInfo(BodyPartGroup bodyPartGroupInfo)
@@ -21,6 +27,9 @@ namespace AnimalAnatomy
             bodyPartNameText.text = bodyPartGroupInfo.GetFullRussianName();
             bodyPartScientificNameText.text = bodyPartGroupInfo.GetFullScientificName();
             bodyPartDescriptionText.text = bodyPartGroupInfo.info.description;
+
+            if (bodyPartGroupInfo.info.clip != null)
+                audioDescriptionPlayerPanel.SetCurrentDescriptionAudio(bodyPartGroupInfo.info.clip);
         }
 
         public void CollapseBodyPartDescription(bool state)
