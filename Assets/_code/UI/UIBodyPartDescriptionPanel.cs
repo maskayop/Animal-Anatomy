@@ -20,6 +20,8 @@ namespace AnimalAnatomy
 
             if (bodyPartInfo.info.clip != null)
                 audioDescriptionPlayerPanel.SetCurrentDescriptionAudio(bodyPartInfo.info.clip);
+            else
+                audioDescriptionPlayerPanel.SetCurrentDescriptionAudio(null);
         }
 
         public void ShowInfo(BodyPartGroup bodyPartGroupInfo)
@@ -30,6 +32,8 @@ namespace AnimalAnatomy
 
             if (bodyPartGroupInfo.info.clip != null)
                 audioDescriptionPlayerPanel.SetCurrentDescriptionAudio(bodyPartGroupInfo.info.clip);
+            else
+                audioDescriptionPlayerPanel.SetCurrentDescriptionAudio(null);
         }
 
         public void CollapseBodyPartDescription(bool state)

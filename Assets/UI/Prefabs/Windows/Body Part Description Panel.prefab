@@ -202,9 +202,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feccdca42cf5bad4a962e5b60ce8bc0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.UIAudioDescriptionPlayerPanel
+  audioPlayerPanel: {fileID: 2304919214652678748}
   playButton: {fileID: 227010009533934541}
   stopButton: {fileID: 4093387271398069869}
   pauseButton: {fileID: 1804996827009897618}
+  slider: {fileID: 8834813895437353949}
 --- !u!1 &2304919214652678748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1892,3 +1894,14 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &8834813895437353949 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 736257456716886786, guid: 4a7eac244afacae409ae7f776380fd21, type: 3}
+  m_PrefabInstance: {fileID: 8118906200221626591}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8413450921448871356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider

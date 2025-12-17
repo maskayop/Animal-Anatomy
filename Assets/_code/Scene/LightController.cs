@@ -57,18 +57,9 @@ namespace AnimalAnatomy
         {
             currentMousePosition = Input.mousePosition;
 
-#if PLATFORM_ANDROID
             if (App.Instance && !App.Instance.isXR)
                 if (Input.GetMouseButton(0))
                     RotateLight();
-#else
-            lightRotationMode = false;
-
-            if (Input.GetKey(KeyCode.C))
-                lightRotationMode = true;
-
-            RotateLight();
-#endif
 
             lastMousePosition = currentMousePosition;
         }
