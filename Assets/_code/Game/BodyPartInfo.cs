@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.HID;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Transformers;
 using Vopere.Common;
@@ -36,6 +37,9 @@ namespace AnimalAnatomy
                 if (child.GetComponent<MeshRenderer>())
                     meshRenderers.Add(child.GetComponent<MeshRenderer>());
             }
+
+            if (GetComponent<MeshRenderer>())
+                meshRenderers.Add(GetComponent<MeshRenderer>());
         }
 
         void Start()

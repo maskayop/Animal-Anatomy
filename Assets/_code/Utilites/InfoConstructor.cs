@@ -37,6 +37,9 @@ namespace AnimalAnatomy
                         }
                     }
                 }
+
+                if (GetComponent<MeshRenderer>())
+                    gameObject.AddComponent<MeshCollider>();
             }
 
             if (infoConstructorHelper.material)
@@ -95,6 +98,14 @@ namespace AnimalAnatomy
                     }
                 }
 
+                if (GetComponent<MeshRenderer>())
+                {
+                    Renderer[] newRenderers = new Renderer[1];
+                    newRenderers[0] = GetComponent<Renderer>();
+                    lods = new LOD[1];
+                    lods[0] = new LOD(0.001f, newRenderers);
+                }
+                
                 LODComponent.SetLODs(lods);
             }
 
