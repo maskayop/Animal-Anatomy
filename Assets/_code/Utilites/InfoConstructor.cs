@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 namespace AnimalAnatomy
 {
@@ -18,7 +19,7 @@ namespace AnimalAnatomy
             gameObject.layer = infoConstructorHelper.layer;
 
             foreach (Transform child in transform)
-                children.Add(child.gameObject);            
+                children.Add(child.gameObject);
 
             if (!GetComponent<MeshCollider>())
             {
@@ -33,7 +34,7 @@ namespace AnimalAnatomy
                         {
                             gameObject.AddComponent<MeshCollider>();
                             gameObject.GetComponent<MeshCollider>().sharedMesh = children[i].GetComponent<MeshFilter>().sharedMesh;
-                        }                    
+                        }
                     }
                 }
             }
@@ -93,12 +94,31 @@ namespace AnimalAnatomy
                             lods[i] = new LOD((1 - (float)i / (float)children.Count) * 0.5f, newRenderers);
                     }
                 }
-                
+
                 LODComponent.SetLODs(lods);
             }
 
             if (!GetComponent<BodyPartInfo>())
                 gameObject.AddComponent<BodyPartInfo>();
+
+            if (!GetComponent<Rigidbody>())
+            {
+                Rigidbody rigidbody = gameObject.AddComponent<Rigidbody>();
+                rigidbody.isKinematic = true;
+                rigidbody.useGravity = false;
+            }
+
+            if (!GetComponent<XRGrabInteractable>())
+            {
+                XRGrabInteractable grabInteractable = gameObject.AddComponent<XRGrabInteractable>();
+                grabInteractable.trackPosition = false;
+                grabInteractable.trackRotation = false;
+                grabInteractable.trackScale = false;
+                grabInteractable.throwOnDetach = false;
+            }
+
+            if (!GetComponent<XR_Helper>())
+                gameObject.AddComponent<XR_Helper>();
         }
     }
 }
