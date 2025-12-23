@@ -1976,6 +1976,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4697821132860240543, guid: 91e308740ed3f804c8003b60e6770abc, type: 3}
   m_PrefabInstance: {fileID: 8378757413375656549}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &540659459 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6802199925275326422, guid: 6e4721fa3c0ea5443b8ec6a41a7713c5, type: 3}
+  m_PrefabInstance: {fileID: 2644774307952224183}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &541718955 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 188762268896430188, guid: 3c8faa7c7f857294db9dd2242bb2f9c4, type: 3}
@@ -8842,6 +8847,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 540659459}
   - {fileID: 468085538}
   - {fileID: 2070066188}
   - {fileID: 587740180}
@@ -8866,7 +8872,7 @@ MonoBehaviour:
   bodyPartsGroups: []
   bodyParts: []
   allChildrenBodyParts: []
-  info: {fileID: 11400000, guid: 3990f7015b514bf4287246bbe53445c6, type: 2}
+  info: {fileID: 11400000, guid: 0ee099ba38465d2439b9112c1b9a7bb1, type: 2}
   suffix: {fileID: 0}
   partGroupListButton: {fileID: 0}
   parentBodyPartGroup: {fileID: 0}
@@ -13894,6 +13900,10 @@ PrefabInstance:
     - target: {fileID: 2999743014503558342, guid: 5b63984b11b22be478c7e7b23b3f996b, type: 3}
       propertyPath: m_Name
       value: "\u042F\u0439\u0446\u0435\u0432\u043E\u0434 - Oviducts"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2999743014503558342, guid: 5b63984b11b22be478c7e7b23b3f996b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19349,6 +19359,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efa01fa31474dc149ad8fc87cbfbf0aa, type: 3}
+--- !u!1001 &2644774307952224183
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1357722160}
+    m_Modifications:
+    - target: {fileID: 6137725034183601516, guid: 6e4721fa3c0ea5443b8ec6a41a7713c5, type: 3}
+      propertyPath: m_Name
+      value: Reproductive System
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802199925275326422, guid: 6e4721fa3c0ea5443b8ec6a41a7713c5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802199925275326422, guid: 6e4721fa3c0ea5443b8ec6a41a7713c5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802199925275326422, guid: 6e4721fa3c0ea5443b8ec6a41a7713c5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802199925275326422, guid: 6e4721fa3c0ea5443b8ec6a41a7713c5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802199925275326422, guid: 6e4721fa3c0ea5443b8ec6a41a7713c5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802199925275326422, guid: 6e4721fa3c0ea5443b8ec6a41a7713c5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802199925275326422, guid: 6e4721fa3c0ea5443b8ec6a41a7713c5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802199925275326422, guid: 6e4721fa3c0ea5443b8ec6a41a7713c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802199925275326422, guid: 6e4721fa3c0ea5443b8ec6a41a7713c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802199925275326422, guid: 6e4721fa3c0ea5443b8ec6a41a7713c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e4721fa3c0ea5443b8ec6a41a7713c5, type: 3}
 --- !u!1001 &2645997016325386140
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21276,6 +21343,10 @@ PrefabInstance:
     - target: {fileID: 4701289709906659424, guid: 39139bed35c49c44897ca9a8f60ebea0, type: 3}
       propertyPath: m_Name
       value: "\u0412\u043B\u0430\u0433\u0430\u043B\u0438\u0449\u0435 - Vagina"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4701289709906659424, guid: 39139bed35c49c44897ca9a8f60ebea0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5365342663222481626, guid: 39139bed35c49c44897ca9a8f60ebea0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26314,6 +26385,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u041C\u0430\u0442\u043A\u0430 - Uterus"
       objectReference: {fileID: 0}
+    - target: {fileID: 1573172570708983091, guid: a13ae94879b636347a5d8b27401a83d9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2206439129389950857, guid: a13ae94879b636347a5d8b27401a83d9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -27130,6 +27205,10 @@ PrefabInstance:
     - target: {fileID: 1308382903401309855, guid: 380fc3578090c2b499d0dabe2b2d1a94, type: 3}
       propertyPath: m_Name
       value: "\u042F\u0438\u0447\u043D\u0438\u043A\u0438 - Ovarium"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1308382903401309855, guid: 380fc3578090c2b499d0dabe2b2d1a94, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1829481782917839909, guid: 380fc3578090c2b499d0dabe2b2d1a94, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29049,6 +29128,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u041C\u043E\u043B\u043E\u0447\u043D\u044B\u0435 \u0436\u0435\u043B\u0435\u0437\u044B
         - Mammary Glands"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6280907601318025745, guid: 2d45987942a9fea49bda963759c99fd3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6656765014880075947, guid: 2d45987942a9fea49bda963759c99fd3, type: 3}
       propertyPath: m_LocalPosition.x
