@@ -16,7 +16,7 @@ namespace AnimalAnatomy
     public class UIMainMenuCanvas : MonoBehaviour
     {
         public static UIMainMenuCanvas Instance;
-        
+
         [SerializeField] GameObject startButtonPanel;
 
         [Header("Loading Screen")]
@@ -64,7 +64,7 @@ namespace AnimalAnatomy
             if (debugText.gameObject.activeInHierarchy)
                 debugText.text = DataSaveLoad.Instance.GetSavedInt("DefaultScreenResolutionWidth") +
                     " x " + DataSaveLoad.Instance.GetSavedInt("DefaultScreenResolutionHeight");
-            
+
         }
 
         public void Init()
@@ -91,15 +91,18 @@ namespace AnimalAnatomy
         {
             currentGame = id;
 
+            startButtonPanel.SetActive(true);
+
             if (currentGame < 0)
             {
                 startButtonPanel.SetActive(false);
+                return;
             }
             else
-            {
-                startButtonPanel.SetActive(true);
                 MainMenuAnimalSelection.Instance.SelectAnimal(id);
-            }
+
+            if (!IsGameSceneAddedToBuild(id))
+                startButtonPanel.SetActive(false);
         }
 
         public void StartGame()
@@ -115,6 +118,11 @@ namespace AnimalAnatomy
         public void ExitGame()
         {
             App.Instance.ExitGame();
+        }
+
+        bool IsGameSceneAddedToBuild(int sceneId)
+        {
+            return ScenesManager.Instance.IsSceneAddedToBuild(games[sceneId].sceneName);
         }
     }
 }
