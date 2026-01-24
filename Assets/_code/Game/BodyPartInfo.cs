@@ -54,6 +54,9 @@ namespace AnimalAnatomy
             if (!info)
                 Debug.LogWarning("Нет data_info для " + name);
 
+            if (info && !info.clip)
+                Debug.LogWarning("Нет audio clip для " + name);
+
             if (meshRenderers.Count == 0)
             {
                 Debug.LogWarning("Нет meshRenderers для " + name);
