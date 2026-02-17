@@ -33,6 +33,9 @@ namespace AnimalAnatomy
             if (!info)
                 Debug.LogWarning("Нет data_info для " + name);
 
+            if (info && !info.nameClip)
+                Debug.LogWarning("Нет name audio clip для " + name);
+
             if (info && !info.clip)
                 Debug.LogWarning("Нет audio clip для " + name);
 

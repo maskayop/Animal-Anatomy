@@ -91,7 +91,7 @@ namespace AnimalAnatomy
                 }
 
                 // ¬ычисл€ем разницу движени€ мыши по ос€м X и Y
-                float mouseDeltaX = - (currentMousePosition.x - lastMousePosition.x) * rotationSpeed * Time.deltaTime;
+                float mouseDeltaX = -(currentMousePosition.x - lastMousePosition.x) * rotationSpeed * Time.deltaTime;
                 float mouseDeltaY = (currentMousePosition.y - lastMousePosition.y) * rotationSpeed * Time.deltaTime;
 
                 // ќбновл€ем угол поворота по оси X (вертикальное вращение)
@@ -103,6 +103,9 @@ namespace AnimalAnatomy
 
                 lastMousePosition = currentMousePosition;
             }
+
+            if (Input.GetMouseButton(2))
+                UpdatePosition();
         }
 
         void UpdateViewZoom()
@@ -113,8 +116,8 @@ namespace AnimalAnatomy
                 currentZoom += scrollSpeed;
 
             currentZoom = Mathf.Clamp(currentZoom, cameraDistanceLimits.x * distanceLimitsMultiplier, cameraDistanceLimits.z * distanceLimitsMultiplier);
-            
-            mainCamera.transform.localPosition = new Vector3(0, 0, -currentZoom);            
+
+            mainCamera.transform.localPosition = new Vector3(0, 0, -currentZoom);
         }
 
         void HandleZoom()
@@ -154,7 +157,7 @@ namespace AnimalAnatomy
         {
             if (GameController.Instance)
                 transform.position = GameController.Instance.selectedBodyPartsGroup.GetCenterOfGroup();
-            
+
             if (transform.position == Vector3.zero)
                 transform.position = defaultPosition;
         }

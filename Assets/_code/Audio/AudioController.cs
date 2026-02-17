@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using Vopere.Common;
-using static UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics.HapticsUtility;
 
 namespace AnimalAnatomy
 {
@@ -209,7 +208,10 @@ namespace AnimalAnatomy
         public void PlayCurrentVoice()
         {
             if (isVoicePaused)
+            {
                 voiceSource.UnPause();
+                isVoicePaused = false;
+            }
             else
                 voiceSource.Play();
         }
@@ -223,6 +225,7 @@ namespace AnimalAnatomy
         public void StopCurrentVoice()
         {
             voiceSource.Stop();
+            voiceSource.clip = null;
             isVoicePaused = false;
         }
 

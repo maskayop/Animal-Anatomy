@@ -1,5 +1,5 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 namespace AnimalAnatomy
 {
@@ -18,10 +18,7 @@ namespace AnimalAnatomy
             bodyPartScientificNameText.text = bodyPartInfo.GetFullScientificName();
             bodyPartDescriptionText.text = bodyPartInfo.info.description;
 
-            if (bodyPartInfo.info.clip != null)
-                audioDescriptionPlayerPanel.SetCurrentDescriptionAudio(bodyPartInfo.info.clip);
-            else
-                audioDescriptionPlayerPanel.SetCurrentDescriptionAudio(null);
+            audioDescriptionPlayerPanel.SetCurrentDescriptionAudio(bodyPartInfo.info.nameClip, bodyPartInfo.info.clip);
         }
 
         public void ShowInfo(BodyPartGroup bodyPartGroupInfo)
@@ -30,10 +27,7 @@ namespace AnimalAnatomy
             bodyPartScientificNameText.text = bodyPartGroupInfo.GetFullScientificName();
             bodyPartDescriptionText.text = bodyPartGroupInfo.info.description;
 
-            if (bodyPartGroupInfo.info.clip != null)
-                audioDescriptionPlayerPanel.SetCurrentDescriptionAudio(bodyPartGroupInfo.info.clip);
-            else
-                audioDescriptionPlayerPanel.SetCurrentDescriptionAudio(null);
+            audioDescriptionPlayerPanel.SetCurrentDescriptionAudio(bodyPartGroupInfo.info.nameClip, bodyPartGroupInfo.info.clip);
         }
 
         public void CollapseBodyPartDescription(bool state)

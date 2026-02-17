@@ -14,6 +14,7 @@ namespace AnimalAnatomy
         float currentTime = 0;
         bool isPlaying = false;
 
+        AudioClip currentNameClip;
         AudioClip currentClip;
 
         void Start()
@@ -23,17 +24,15 @@ namespace AnimalAnatomy
 
         void Update()
         {
-            if (AudioController.Instance.voiceSource.isPlaying)
-            {
-                slider.value = AudioController.Instance.voiceSource.time;
-                currentTime = slider.value;
-            }
-
             if (isPlaying)
             {
                 currentTime += Time.deltaTime;
+                slider.value = currentTime;
 
-                if (currentTime >= currentClip.length)
+                if (currentNameClip && currentTime > currentNameClip.length)
+                    PlayVoiceClip(currentClip);
+
+                if (currentTime >= slider.maxValue)
                     OnStopButtonClicked();
             }
         }
@@ -45,7 +44,6 @@ namespace AnimalAnatomy
             pauseButton.SetActive(false);
 
             OnStopButtonClicked();
-            slider.onValueChanged.AddListener(OnSliderValueChanged);
         }
 
         public void OnPlayButtonClicked()
@@ -54,9 +52,18 @@ namespace AnimalAnatomy
             pauseButton.SetActive(true);
             stopButton.SetActive(true);
 
-            AudioController.Instance.PlayCurrentVoice();
-
             isPlaying = true;
+
+            if (currentTime > 0)
+            {
+                AudioController.Instance.PlayCurrentVoice();
+                return;
+            }
+
+            if (currentNameClip)
+                PlayVoiceClip(currentNameClip);
+            else if (currentClip)
+                PlayVoiceClip(currentClip);
         }
 
         public void OnStopButtonClicked()
@@ -84,9 +91,9 @@ namespace AnimalAnatomy
             isPlaying = false;
         }
 
-        public void SetCurrentDescriptionAudio(AudioClip clip)
+        public void SetCurrentDescriptionAudio(AudioClip nameClip, AudioClip clip)
         {
-            if (clip == null)
+            if (!nameClip && !clip)
             {
                 audioPlayerPanel.SetActive(false);
                 slider.gameObject.SetActive(false);
@@ -98,15 +105,25 @@ namespace AnimalAnatomy
                 audioPlayerPanel.SetActive(true);
                 slider.gameObject.SetActive(true);
             }
-            
-            AudioController.Instance.voiceSource.clip = clip;            
-            slider.maxValue = clip.length;
+
+            if (!nameClip)
+                slider.maxValue = clip.length;
+            else if (!clip)
+                slider.maxValue = nameClip.length;
+            else
+                slider.maxValue = nameClip.length + clip.length;
+
+            currentNameClip = nameClip;
             currentClip = clip;
         }
 
-        public void OnSliderValueChanged(float value)
+        void PlayVoiceClip(AudioClip INclip)
         {
+            if (AudioController.Instance.voiceSource.clip == INclip)
+                return;
 
+            AudioController.Instance.voiceSource.clip = INclip;
+            AudioController.Instance.PlayCurrentVoice();
         }
     }
 }
