@@ -42,7 +42,7 @@ namespace AnimalAnatomy
 
         void Start()
         {
-            protection = FindFirstObjectByType<Protection>();
+            protection = FindAnyObjectByType<Protection>();
 
             if (!protection)
                 Init();
@@ -59,7 +59,7 @@ namespace AnimalAnatomy
             videoPlayer.playbackSpeed = 1.0f;
 #endif
 
-            videoPlayer.Play();
+            videoPlayer?.Play();
             StartCoroutine(StartAnimationAfterVideo());
 
             Debug.Log("Запуск программы");
@@ -67,14 +67,14 @@ namespace AnimalAnatomy
 
         public void LoadGameScene()
         {
-            ScenesManager.Instance.LoadSceneByName(sceneToLoadFirst);
+            ScenesManager.Instance?.LoadSceneByName(sceneToLoadFirst);
         }
 
         IEnumerator StartAnimationAfterVideo()
         {
             yield return new WaitForSeconds(videoLength - fadeOutAnimationLenght);
 
-            videoPlayerAnimator.Play(videoFadeOutState);
+            videoPlayerAnimator?.Play(videoFadeOutState);
 
             StartCoroutine(StartGameAfterAnimation());
         }
@@ -93,7 +93,7 @@ namespace AnimalAnatomy
             if (defaultScreenResolution.x == -1)
             {
                 defaultScreenResolution.x = Screen.width;
-                DataSaveLoad.Instance.Save("DefaultScreenResolutionWidth", defaultScreenResolution.x);
+                DataSaveLoad.Instance?.Save("DefaultScreenResolutionWidth", defaultScreenResolution.x);
             }
 
             defaultScreenResolution.y = DataSaveLoad.Instance.GetSavedInt("DefaultScreenResolutionHeight");
@@ -101,7 +101,7 @@ namespace AnimalAnatomy
             if (defaultScreenResolution.y == -1)
             {
                 defaultScreenResolution.y = Screen.height;
-                DataSaveLoad.Instance.Save("DefaultScreenResolutionHeight", defaultScreenResolution.y);
+                DataSaveLoad.Instance?.Save("DefaultScreenResolutionHeight", defaultScreenResolution.y);
             }
         }
     }

@@ -33,8 +33,8 @@ namespace AnimalAnatomy
 
         public void Init()
         {
-            allBodyPartsGroups = FindObjectsByType<BodyPartGroup>(FindObjectsSortMode.None);
-            allBodyPartsInfos = FindObjectsByType<BodyPartInfo>(FindObjectsSortMode.None);
+            allBodyPartsGroups = FindObjectsByType<BodyPartGroup>();
+            allBodyPartsInfos = FindObjectsByType<BodyPartInfo>();
         }
 
         [ContextMenu("Save To File")]

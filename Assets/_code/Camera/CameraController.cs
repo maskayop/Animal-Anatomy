@@ -1,5 +1,8 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.EnhancedTouch;
 using Vopere.Common;
+using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 
 namespace AnimalAnatomy
 {
@@ -9,23 +12,30 @@ namespace AnimalAnatomy
 
         public Camera mainCamera;
 
+        [Header("Rotation")]
         [SerializeField] float rotationSpeed = 5f;
         [SerializeField] float defaultFOV = 60;
+        [SerializeField] Vector2 verticalRotationLimits = new Vector2(-89f, 89f);
 
-        [Header("Camera Zoom")]
+        [Header("Zoom")]
         //Минимальное, базовое, максимальное расстояние камеры
         public Vector3 cameraDistanceLimits = new Vector3(1f, 5f, 10f);
         public float scrollSpeed = 1.0f;
-        public float distanceLimitsMultiplier = 1.0f;
         public float doubleTouchZoomSpeed = 1.0f;
+        public bool useDistanceLimitsMultiplier = true;
+        public float distanceLimitsMultiplier = 1.0f;
 
         Vector2 lastMousePosition;
         float xRotation = 0f;
 
-        float currentZoom;
+        public float currentZoom;
         Vector3 defaultPosition;
 
         bool isFreezed = false;
+
+#if ENABLE_INPUT_SYSTEM
+        Mouse currentMouse = Mouse.current;
+#endif
 
         void Awake()
         {
@@ -39,6 +49,19 @@ namespace AnimalAnatomy
             Instance = this;
         }
 
+        void Start()
+        {
+            EnhancedTouchSupport.Enable();
+
+            Vector3 currentRotation = transform.localEulerAngles;
+
+            // Нормализуем угол в диапазон [-180, 180]
+            xRotation = currentRotation.x;
+
+            if (xRotation > 180)
+                xRotation -= 360;
+        }
+
         void Update()
         {
             if (UIMainCanvas.Instance && UIMainCanvas.Instance.isLoading)
@@ -46,6 +69,10 @@ namespace AnimalAnatomy
 
             if (isFreezed)
                 return;
+
+#if ENABLE_INPUT_SYSTEM
+            currentMouse = Mouse.current;
+#endif
 
             UpdateViewRotation();
             UpdateViewZoom();
@@ -80,6 +107,7 @@ namespace AnimalAnatomy
             if (LightController.Instance.lightRotationMode)
                 return;
 
+#if ENABLE_LEGACY_INPUT_MANAGER
             if (Input.GetMouseButton(0))
             {
                 Vector3 currentMousePosition = Input.mousePosition;
@@ -89,6 +117,22 @@ namespace AnimalAnatomy
                     lastMousePosition = currentMousePosition;
                     return;
                 }
+#endif
+
+#if ENABLE_INPUT_SYSTEM
+            if (currentMouse == null)
+                return;
+
+            if (currentMouse.leftButton.isPressed)
+            {
+                Vector3 currentMousePosition = currentMouse.position.ReadValue();
+
+                if (currentMouse.leftButton.wasPressedThisFrame)
+                {
+                    lastMousePosition = currentMousePosition;
+                    return;
+                }
+#endif
 
                 // Вычисляем разницу движения мыши по осям X и Y
                 float mouseDeltaX = -(currentMousePosition.x - lastMousePosition.x) * rotationSpeed * Time.deltaTime;
@@ -96,7 +140,7 @@ namespace AnimalAnatomy
 
                 // Обновляем угол поворота по оси X (вертикальное вращение)
                 xRotation -= mouseDeltaY; // Минус для интуитивного направления
-                xRotation = Mathf.Clamp(xRotation, -89f, 89f); // Ограничиваем угол от -89 до 89 градусов
+                xRotation = Mathf.Clamp(xRotation, verticalRotationLimits.x, verticalRotationLimits.y);
 
                 // Применяем вращение: по оси Y — горизонтально, по оси X — вертикально
                 transform.rotation = Quaternion.Euler(xRotation, transform.eulerAngles.y - mouseDeltaX, 0);
@@ -104,16 +148,37 @@ namespace AnimalAnatomy
                 lastMousePosition = currentMousePosition;
             }
 
+#if ENABLE_LEGACY_INPUT_MANAGER
             if (Input.GetMouseButton(2))
                 UpdatePosition();
+#endif
+
+#if ENABLE_INPUT_SYSTEM
+            if (currentMouse.middleButton.isPressed)
+                UpdatePosition();
+#endif
         }
 
         void UpdateViewZoom()
         {
+#if ENABLE_LEGACY_INPUT_MANAGER
             if (Input.GetAxis("Mouse ScrollWheel") > 0f)
                 currentZoom -= scrollSpeed;
             else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
                 currentZoom += scrollSpeed;
+#endif
+
+#if ENABLE_INPUT_SYSTEM
+            if (currentMouse == null)
+                return;
+
+            float scrollDelta = currentMouse.scroll.ReadValue().y;
+
+            if (scrollDelta > 0f)
+                currentZoom -= scrollSpeed;
+            else if (scrollDelta < 0f)
+                currentZoom += scrollSpeed;
+#endif
 
             currentZoom = Mathf.Clamp(currentZoom, cameraDistanceLimits.x * distanceLimitsMultiplier, cameraDistanceLimits.z * distanceLimitsMultiplier);
 
@@ -122,6 +187,7 @@ namespace AnimalAnatomy
 
         void HandleZoom()
         {
+#if ENABLE_LEGACY_INPUT_MANAGER
             if (Input.touchCount == 2)
             {
                 Touch touch1 = Input.GetTouch(0);
@@ -130,8 +196,26 @@ namespace AnimalAnatomy
                 Vector2 touch1PrevPos = touch1.position - touch1.deltaPosition;
                 Vector2 touch2PrevPos = touch2.position - touch2.deltaPosition;
 
+                // Расстояние между пальцами в прошлом кадре
                 float prevDistance = Vector2.Distance(touch1PrevPos, touch2PrevPos);
+                // Расстояние между пальцами в текущем кадре
                 float currentDistance = Vector2.Distance(touch1.position, touch2.position);
+#endif
+
+#if ENABLE_INPUT_SYSTEM
+            if (Touch.activeTouches.Count == 2)
+            {
+                Touch touch1 = Touch.activeTouches[0];
+                Touch touch2 = Touch.activeTouches[1];
+
+                Vector2 touch1PrevPos = touch1.screenPosition - touch1.delta;
+                Vector2 touch2PrevPos = touch2.screenPosition - touch2.delta;
+
+                // Расстояние между пальцами в прошлом кадре
+                float prevDistance = Vector2.Distance(touch1PrevPos, touch2PrevPos);
+                // Расстояние между пальцами в текущем кадре
+                float currentDistance = Vector2.Distance(touch1.screenPosition, touch2.screenPosition);
+#endif
 
                 float difference = currentDistance - prevDistance;
                 currentZoom -= difference * doubleTouchZoomSpeed * scrollSpeed;
@@ -140,6 +224,10 @@ namespace AnimalAnatomy
 
         public void UpdatePosition()
         {
+            if (ExaminationController.Instance)
+                if (ExaminationController.Instance.isExamination)
+                    return;
+
             if (GameController.Instance.selectedBodyPart != null)
                 UpdatePositionOnBodyPart(GameController.Instance.selectedBodyPart);
             else if (GameController.Instance.selectedBodyPartsGroup != null)
@@ -188,6 +276,30 @@ namespace AnimalAnatomy
         {
             if (mainCamera.GetComponent<AudioListener>())
                 mainCamera.GetComponent<AudioListener>().enabled = state;
+        }
+        public float GetCameraZoom()
+        {
+            return currentZoom;
+        }
+
+        public float GetNormalizedCameraZoom()
+        {
+            float divivder = cameraDistanceLimits.y - cameraDistanceLimits.x;
+
+            if (divivder == 0)
+                divivder = 1;
+
+            float value = (currentZoom - cameraDistanceLimits.x) / divivder;
+
+            return value;
+        }
+
+        public void SetCameraDistanceLimitsMultiplier(float value)
+        {
+            if (useDistanceLimitsMultiplier)
+                distanceLimitsMultiplier = value;
+            else
+                distanceLimitsMultiplier = 1;
         }
     }
 }

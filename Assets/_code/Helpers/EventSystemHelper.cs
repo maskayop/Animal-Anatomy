@@ -17,7 +17,7 @@ namespace AnimalAnatomy
 
         public void Init()
         {
-            allEventSystems = FindObjectsByType<EventSystem>(FindObjectsSortMode.None);
+            allEventSystems = FindObjectsByType<EventSystem>();
 
             if (allEventSystems.Length > 1)
             {
@@ -32,7 +32,7 @@ namespace AnimalAnatomy
         {
             yield return new WaitForSeconds(1.0f);
 
-            allEventSystems = FindObjectsByType<EventSystem>(FindObjectsSortMode.None);
+            allEventSystems = FindObjectsByType<EventSystem>();
 
             if (allEventSystems.Length == 0)
             {

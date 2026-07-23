@@ -22,18 +22,25 @@ MonoBehaviour:
   m_Scenes:
   - m_enabled: 1
     m_path: Assets/Scenes/_Init XR.unity
+    m_guid: b3c7165bbd2e41148a8e8ae0374494c1
   - m_enabled: 1
     m_path: Assets/Scenes/_Main Menu.unity
+    m_guid: fbeae2381c64d804595a7ab16f9df65d
   - m_enabled: 1
     m_path: Assets/Scenes/Cow.unity
+    m_guid: b420686117099da47a310ef808aeb3fe
   - m_enabled: 1
     m_path: Assets/Scenes/Horse.unity
+    m_guid: 2bce401835b950f489c2f56e0fdc2f4e
   - m_enabled: 1
     m_path: Assets/Scenes/Pig.unity
+    m_guid: 1179b6fb370adba4ca1f956620b9bc09
   - m_enabled: 1
     m_path: Assets/Scenes/Dog.unity
+    m_guid: 17e995deabefeac4abc9c5cecf8172b3
   - m_enabled: 1
     m_path: Assets/Scenes/Cat.unity
+    m_guid: ec8321ace9718ac4eaddaecd16ca9d6a
   m_HasScriptingDefines: 0
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
@@ -79,7 +86,6 @@ MonoBehaviour:
     - line: '|     height: 1'
     - line: '|   m_SplashScreenLogos: []'
     - line: '|   m_VirtualRealitySplashScreen: {instanceID: 0}'
-    - line: '|   m_HolographicTrackingLossScreen: {instanceID: 0}'
     - line: '|   defaultScreenWidth: 1920'
     - line: '|   defaultScreenHeight: 1080'
     - line: '|   defaultScreenWidthWeb: 960'
@@ -152,6 +158,7 @@ MonoBehaviour:
     - line: '|   xboxEnableGuest: 0'
     - line: '|   xboxEnablePIXSampling: 0'
     - line: '|   metalFramebufferOnly: 0'
+    - line: '|   metalUseMetalDisplayLink: 0'
     - line: '|   xboxOneResolution: 0'
     - line: '|   xboxOneSResolution: 0'
     - line: '|   xboxOneXResolution: 3'
@@ -181,18 +188,16 @@ MonoBehaviour:
     - line: '|   loadStoreDebugModeEnabled: 0'
     - line: '|   visionOSBundleVersion: 1.0'
     - line: '|   tvOSBundleVersion: 1.0'
-    - line: '|   bundleVersion: 1.27'
+    - line: '|   bundleVersion: 1.28'
     - line: '|   preloadedAssets:'
     - line: '|   - {fileID: -944628639613478452, guid: 5a81736d10f6e6444ac23d2835b6e3e5,
         type: 3}'
     - line: '|   metroInputSource: 0'
     - line: '|   wsaTransparentSwapchain: 0'
-    - line: '|   m_HolographicPauseOnTrackingLoss: 1'
     - line: '|   xboxOneDisableKinectGpuReservation: 1'
     - line: '|   xboxOneEnable7thCore: 1'
     - line: '|   vrSettings:'
     - line: '|     enable360StereoCapture: 0'
-    - line: '|   isWsaHolographicRemotingEnabled: 0'
     - line: '|   enableFrameTimingStats: 0'
     - line: '|   enableOpenGLProfilerGPURecorders: 1'
     - line: '|   allowHDRDisplaySupport: 0'
@@ -854,6 +859,7 @@ MonoBehaviour:
     - line: '|   captureStartupLogs: {}'
     - line: '|   activeInputHandler: 2'
     - line: '|   windowsGamepadBackendHint: 0'
+    - line: '|   enableDirectStorage: 0'
     - line: '|   cloudProjectId: '
     - line: '|   framebufferDepthMemorylessMode: 0'
     - line: '|   qualitySettingsNames: []'
