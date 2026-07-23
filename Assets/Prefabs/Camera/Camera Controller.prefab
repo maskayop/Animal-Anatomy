@@ -48,10 +48,13 @@ MonoBehaviour:
   mainCamera: {fileID: 6329937298511418629}
   rotationSpeed: 5
   defaultFOV: 30
+  verticalRotationLimits: {x: -89, y: 89}
   cameraDistanceLimits: {x: 3, y: 8, z: 12}
   scrollSpeed: 0.7
-  distanceLimitsMultiplier: 1
   doubleTouchZoomSpeed: 0.05
+  useDistanceLimitsMultiplier: 1
+  distanceLimitsMultiplier: 1
+  currentZoom: 0
 --- !u!1 &7573509225012815985
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,7 +172,7 @@ MonoBehaviour:
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
-  m_Antialiasing: 1
+  m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0

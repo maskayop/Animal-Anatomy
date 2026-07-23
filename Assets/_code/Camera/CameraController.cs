@@ -18,24 +18,22 @@ namespace AnimalAnatomy
         [SerializeField] Vector2 verticalRotationLimits = new Vector2(-89f, 89f);
 
         [Header("Zoom")]
-        //Минимальное, базовое, максимальное расстояние камеры
         public Vector3 cameraDistanceLimits = new Vector3(1f, 5f, 10f);
         public float scrollSpeed = 1.0f;
         public float doubleTouchZoomSpeed = 1.0f;
         public bool useDistanceLimitsMultiplier = true;
         public float distanceLimitsMultiplier = 1.0f;
 
+        // --- Приватные переменные ---
         Vector2 lastMousePosition;
+        Vector2 lastTouchPosition;
         float xRotation = 0f;
-
         public float currentZoom;
         Vector3 defaultPosition;
-
         bool isFreezed = false;
 
-#if ENABLE_INPUT_SYSTEM
-        Mouse currentMouse = Mouse.current;
-#endif
+        // --- Кешируем устройства ввода ---
+        Mouse currentMouse;
 
         void Awake()
         {
@@ -51,15 +49,26 @@ namespace AnimalAnatomy
 
         void Start()
         {
+            // Включаем поддержку EnhancedTouch
             EnhancedTouchSupport.Enable();
 
+            // Кешируем устройства ввода
+            currentMouse = Mouse.current;
+
+            // Нормализуем начальный угол
             Vector3 currentRotation = transform.localEulerAngles;
-
-            // Нормализуем угол в диапазон [-180, 180]
             xRotation = currentRotation.x;
-
             if (xRotation > 180)
                 xRotation -= 360;
+
+            Init();
+        }
+
+        void OnDestroy()
+        {
+            // Отключаем EnhancedTouch при выходе
+            if (EnhancedTouchSupport.enabled)
+                EnhancedTouchSupport.Disable();
         }
 
         void Update()
@@ -70,16 +79,9 @@ namespace AnimalAnatomy
             if (isFreezed)
                 return;
 
-#if ENABLE_INPUT_SYSTEM
-            currentMouse = Mouse.current;
-#endif
-
             UpdateViewRotation();
             UpdateViewZoom();
-
-#if PLATFORM_ANDROID
-            HandleZoom();
-#endif
+            HandleTouchZoom();
         }
 
         public void Init()
@@ -89,12 +91,10 @@ namespace AnimalAnatomy
             defaultPosition = transform.position;
 
             float rotationSensitivity = DataSaveLoad.Instance.GetSavedFloat("RotationSensitivity");
-
             if (rotationSensitivity != -1)
                 ChangeRotationSensitivity(rotationSensitivity);
 
             float zoomSensitivity = DataSaveLoad.Instance.GetSavedFloat("ZoomSensitivity");
-
             if (zoomSensitivity != -1)
                 ChangeZoomSensitivity(zoomSensitivity);
 
@@ -102,131 +102,146 @@ namespace AnimalAnatomy
             EnableAudioListener(true);
         }
 
+        // ==============================================
+        //  ВРАЩЕНИЕ (ПК + Android)
+        // ==============================================
         void UpdateViewRotation()
         {
             if (LightController.Instance.lightRotationMode)
                 return;
 
-#if ENABLE_LEGACY_INPUT_MANAGER
-            if (Input.GetMouseButton(0))
+            bool isDragging = false;
+            Vector2 currentPosition = Vector2.zero;
+            bool isTouch = false;
+
+            // --- Проверяем ввод с мыши (ПК) ---
+            if (currentMouse != null && currentMouse.leftButton.isPressed)
             {
-                Vector3 currentMousePosition = Input.mousePosition;
-
-                if (Input.GetMouseButtonDown(0))
-                {
-                    lastMousePosition = currentMousePosition;
-                    return;
-                }
-#endif
-
-#if ENABLE_INPUT_SYSTEM
-            if (currentMouse == null)
-                return;
-
-            if (currentMouse.leftButton.isPressed)
-            {
-                Vector3 currentMousePosition = currentMouse.position.ReadValue();
+                isDragging = true;
+                currentPosition = currentMouse.position.ReadValue();
+                isTouch = false;
 
                 if (currentMouse.leftButton.wasPressedThisFrame)
                 {
-                    lastMousePosition = currentMousePosition;
+                    lastMousePosition = currentPosition;
                     return;
                 }
-#endif
-
-                // Вычисляем разницу движения мыши по осям X и Y
-                float mouseDeltaX = -(currentMousePosition.x - lastMousePosition.x) * rotationSpeed * Time.deltaTime;
-                float mouseDeltaY = (currentMousePosition.y - lastMousePosition.y) * rotationSpeed * Time.deltaTime;
-
-                // Обновляем угол поворота по оси X (вертикальное вращение)
-                xRotation -= mouseDeltaY; // Минус для интуитивного направления
-                xRotation = Mathf.Clamp(xRotation, verticalRotationLimits.x, verticalRotationLimits.y);
-
-                // Применяем вращение: по оси Y — горизонтально, по оси X — вертикально
-                transform.rotation = Quaternion.Euler(xRotation, transform.eulerAngles.y - mouseDeltaX, 0);
-
-                lastMousePosition = currentMousePosition;
             }
 
-#if ENABLE_LEGACY_INPUT_MANAGER
-            if (Input.GetMouseButton(2))
-                UpdatePosition();
-#endif
+            // --- Проверяем ввод с тача (Android) ---
+            if (Touch.activeTouches.Count == 1 && !isDragging)
+            {
+                Touch touch = Touch.activeTouches[0];
 
-#if ENABLE_INPUT_SYSTEM
-            if (currentMouse.middleButton.isPressed)
-                UpdatePosition();
-#endif
-        }
+                // Игнорируем, если палец только начал касание
+                if (touch.phase == UnityEngine.InputSystem.TouchPhase.Began)
+                {
+                    lastTouchPosition = touch.screenPosition;
+                    return;
+                }
 
-        void UpdateViewZoom()
-        {
-#if ENABLE_LEGACY_INPUT_MANAGER
-            if (Input.GetAxis("Mouse ScrollWheel") > 0f)
-                currentZoom -= scrollSpeed;
-            else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
-                currentZoom += scrollSpeed;
-#endif
+                // Если палец двигается или стоит на месте
+                if (touch.phase == UnityEngine.InputSystem.TouchPhase.Moved ||
+                    touch.phase == UnityEngine.InputSystem.TouchPhase.Stationary)
+                {
+                    isDragging = true;
+                    currentPosition = touch.screenPosition;
+                    isTouch = true;
 
-#if ENABLE_INPUT_SYSTEM
-            if (currentMouse == null)
+                    // Для тача используем lastTouchPosition
+                    if (touch.phase == UnityEngine.InputSystem.TouchPhase.Began)
+                    {
+                        lastTouchPosition = currentPosition;
+                        return;
+                    }
+                }
+            }
+
+            // --- Если ничего не нажато - выходим ---
+            if (!isDragging)
                 return;
 
-            float scrollDelta = currentMouse.scroll.ReadValue().y;
+            // --- Вычисляем дельту ---
+            Vector2 delta;
+            if (isTouch)
+            {
+                delta = currentPosition - lastTouchPosition;
+                lastTouchPosition = currentPosition;
+            }
+            else
+            {
+                delta = currentPosition - lastMousePosition;
+                lastMousePosition = currentPosition;
+            }
 
-            if (scrollDelta > 0f)
-                currentZoom -= scrollSpeed;
-            else if (scrollDelta < 0f)
-                currentZoom += scrollSpeed;
-#endif
+            float mouseDeltaX = -delta.x * rotationSpeed * Time.deltaTime;
+            float mouseDeltaY = delta.y * rotationSpeed * Time.deltaTime;
 
-            currentZoom = Mathf.Clamp(currentZoom, cameraDistanceLimits.x * distanceLimitsMultiplier, cameraDistanceLimits.z * distanceLimitsMultiplier);
+            xRotation -= mouseDeltaY;
+            xRotation = Mathf.Clamp(xRotation, verticalRotationLimits.x, verticalRotationLimits.y);
+
+            transform.rotation = Quaternion.Euler(xRotation, transform.eulerAngles.y - mouseDeltaX, 0);
+        }
+
+        // ==============================================
+        //  ЗУМ (ПК + Android)
+        // ==============================================
+        void UpdateViewZoom()
+        {
+            // --- Зум колесиком мыши (ПК) ---
+            if (currentMouse != null)
+            {
+                float scrollDelta = currentMouse.scroll.ReadValue().y;
+                if (scrollDelta > 0f)
+                    currentZoom -= scrollSpeed;
+                else if (scrollDelta < 0f)
+                    currentZoom += scrollSpeed;
+            }
+
+            // --- Зум двумя пальцами (Android) ---
+            // Вынесен в отдельный метод HandleTouchZoom()
+
+            // Ограничиваем зум
+            currentZoom = Mathf.Clamp(
+                currentZoom,
+                cameraDistanceLimits.x * distanceLimitsMultiplier,
+                cameraDistanceLimits.z * distanceLimitsMultiplier
+            );
 
             mainCamera.transform.localPosition = new Vector3(0, 0, -currentZoom);
         }
 
-        void HandleZoom()
+        // ==============================================
+        //  ЗУМ ДВУМЯ ПАЛЬЦАМИ (Android)
+        // ==============================================
+        void HandleTouchZoom()
         {
-#if ENABLE_LEGACY_INPUT_MANAGER
-            if (Input.touchCount == 2)
-            {
-                Touch touch1 = Input.GetTouch(0);
-                Touch touch2 = Input.GetTouch(1);
+            if (Touch.activeTouches.Count != 2)
+                return;
 
-                Vector2 touch1PrevPos = touch1.position - touch1.deltaPosition;
-                Vector2 touch2PrevPos = touch2.position - touch2.deltaPosition;
+            Touch touch1 = Touch.activeTouches[0];
+            Touch touch2 = Touch.activeTouches[1];
 
-                // Расстояние между пальцами в прошлом кадре
-                float prevDistance = Vector2.Distance(touch1PrevPos, touch2PrevPos);
-                // Расстояние между пальцами в текущем кадре
-                float currentDistance = Vector2.Distance(touch1.position, touch2.position);
-#endif
+            // Предыдущие позиции
+            Vector2 touch1PrevPos = touch1.screenPosition - touch1.delta;
+            Vector2 touch2PrevPos = touch2.screenPosition - touch2.delta;
 
-#if ENABLE_INPUT_SYSTEM
-            if (Touch.activeTouches.Count == 2)
-            {
-                Touch touch1 = Touch.activeTouches[0];
-                Touch touch2 = Touch.activeTouches[1];
+            // Расстояния
+            float prevDistance = Vector2.Distance(touch1PrevPos, touch2PrevPos);
+            float currentDistance = Vector2.Distance(touch1.screenPosition, touch2.screenPosition);
 
-                Vector2 touch1PrevPos = touch1.screenPosition - touch1.delta;
-                Vector2 touch2PrevPos = touch2.screenPosition - touch2.delta;
-
-                // Расстояние между пальцами в прошлом кадре
-                float prevDistance = Vector2.Distance(touch1PrevPos, touch2PrevPos);
-                // Расстояние между пальцами в текущем кадре
-                float currentDistance = Vector2.Distance(touch1.screenPosition, touch2.screenPosition);
-#endif
-
-                float difference = currentDistance - prevDistance;
-                currentZoom -= difference * doubleTouchZoomSpeed * scrollSpeed;
-            }
+            // Разница
+            float difference = currentDistance - prevDistance;
+            currentZoom -= difference * doubleTouchZoomSpeed * scrollSpeed;
         }
 
+        // ==============================================
+        //  ПЕРЕМЕЩЕНИЕ К КОНКРЕТНОЙ ЧАСТИ
+        // ==============================================
         public void UpdatePosition()
         {
-            if (ExaminationController.Instance)
-                if (ExaminationController.Instance.isExamination)
-                    return;
+            if (ExaminationController.Instance && ExaminationController.Instance.isExamination)
+                return;
 
             if (GameController.Instance.selectedBodyPart != null)
                 UpdatePositionOnBodyPart(GameController.Instance.selectedBodyPart);
@@ -250,6 +265,9 @@ namespace AnimalAnatomy
                 transform.position = defaultPosition;
         }
 
+        // ==============================================
+        //  УПРАВЛЕНИЕ СОСТОЯНИЕМ
+        // ==============================================
         public void Freeze(bool state)
         {
             isFreezed = state;
@@ -277,6 +295,7 @@ namespace AnimalAnatomy
             if (mainCamera.GetComponent<AudioListener>())
                 mainCamera.GetComponent<AudioListener>().enabled = state;
         }
+
         public float GetCameraZoom()
         {
             return currentZoom;
@@ -284,22 +303,16 @@ namespace AnimalAnatomy
 
         public float GetNormalizedCameraZoom()
         {
-            float divivder = cameraDistanceLimits.y - cameraDistanceLimits.x;
+            float divider = cameraDistanceLimits.y - cameraDistanceLimits.x;
+            if (divider == 0)
+                divider = 1;
 
-            if (divivder == 0)
-                divivder = 1;
-
-            float value = (currentZoom - cameraDistanceLimits.x) / divivder;
-
-            return value;
+            return (currentZoom - cameraDistanceLimits.x) / divider;
         }
 
         public void SetCameraDistanceLimitsMultiplier(float value)
         {
-            if (useDistanceLimitsMultiplier)
-                distanceLimitsMultiplier = value;
-            else
-                distanceLimitsMultiplier = 1;
+            distanceLimitsMultiplier = useDistanceLimitsMultiplier ? value : 1;
         }
     }
 }

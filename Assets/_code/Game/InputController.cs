@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.EnhancedTouch;
+using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 
 namespace AnimalAnatomy
 {
@@ -14,10 +16,7 @@ namespace AnimalAnatomy
 
 #if PLATFORM_ANDROID
         float currentTime = 0;
-
-#if ENABLE_LEGACY_INPUT_MANAGER
         bool isFirstClick = true;
-#endif
 #endif
 
         GameController gameController;
@@ -104,24 +103,57 @@ namespace AnimalAnatomy
             cameraController = CameraController.Instance;
             mainCanvas = UIMainCanvas.Instance;
 
+            // Включаем поддержку EnhancedTouch
+            EnhancedTouchSupport.Enable();
+
+            // Кешируем устройства ввода
+            currentMouse = Mouse.current;
+
 #if PLATFORM_ANDROID
             currentTime = selectionTimeout;
 #endif
         }
 
+        void OnDestroy()
+        {
+            // Отключаем EnhancedTouch при выходе
+            if (EnhancedTouchSupport.enabled)
+                EnhancedTouchSupport.Disable();
+        }
+
         public void CallBodyPartSelection()
         {
-            if (ExaminationController.Instance)
-                if (ExaminationController.Instance.isExamination)
-                    return;
+            if (ExaminationController.Instance && ExaminationController.Instance.isExamination)
+                return;
 
-#if PLATFORM_ANDROID
-#if ENABLE_LEGACY_INPUT_MANAGER
-            if (!mainCanvas.BodyPartsListIsOpen ||
-                mainCanvas.BodyPartsListIsOpen &&
-                Input.mousePosition.x > Screen.width * mainCanvas.GetBodyPartsListPanelMaxAnchor())
+#if PLATFORM_ANDROID && ENABLE_INPUT_SYSTEM
+            // Проверяем, можно ли обрабатывать тап (не по UI)
+            bool canProcessTouch = false;
+
+            if (!mainCanvas.BodyPartsListIsOpen)
             {
-                if (Input.GetMouseButton(0))
+                // Список закрыт - можно обрабатывать всегда
+                canProcessTouch = true;
+            }
+            else if (Touch.activeTouches.Count > 0)
+            {
+                // Список открыт - проверяем, что тап не по панели списка
+                float touchX = Touch.activeTouches[0].screenPosition.x;
+                float maxAnchor = Screen.width * mainCanvas.GetBodyPartsListPanelMaxAnchor();
+                if (touchX > maxAnchor)
+                {
+                    canProcessTouch = true;
+                }
+            }
+
+            if (canProcessTouch && Touch.activeTouches.Count == 1)
+            {
+                Touch touch = Touch.activeTouches[0];
+
+                // Начало или удержание касания
+                if (touch.phase == UnityEngine.InputSystem.TouchPhase.Began ||
+                    touch.phase == UnityEngine.InputSystem.TouchPhase.Moved ||
+                    touch.phase == UnityEngine.InputSystem.TouchPhase.Stationary)
                 {
                     if (isFirstClick)
                     {
@@ -132,34 +164,47 @@ namespace AnimalAnatomy
                     currentTime -= Time.deltaTime;
                 }
 
-                if (Input.GetMouseButtonUp(0))
+                // Конец касания
+                if (touch.phase == UnityEngine.InputSystem.TouchPhase.Ended ||
+                    touch.phase == UnityEngine.InputSystem.TouchPhase.Canceled)
                 {
                     if (currentTime > 0)
-                        SelectBodyPart();
-                
+                    {
+                        // Передаём позицию тача в SelectBodyPart
+                        SelectBodyPart(touch.screenPosition);
+                    }
+
                     isFirstClick = true;
                 }
             }
 #endif
+        }
+
+        // Оригинальный метод (для совместимости с ПК)
+        void SelectBodyPart()
+        {
+#if ENABLE_LEGACY_INPUT_MANAGER
+    SelectBodyPart(Input.mousePosition);
+#endif
+
+#if ENABLE_INPUT_SYSTEM
+            if (currentMouse != null)
+            {
+                Vector2 mousePosition = currentMouse.position.ReadValue();
+                SelectBodyPart(mousePosition);
+            }
 #endif
         }
 
-        void SelectBodyPart()
+        // Новая перегрузка с параметром (для Android)
+        void SelectBodyPart(Vector2 screenPosition)
         {
             if (!cameraController || !gameController)
                 return;
 
             if (!gameController.isolatedMode && !gameController.transparentMode)
             {
-#if ENABLE_LEGACY_INPUT_MANAGER
-                Ray ray = cameraController.mainCamera.ScreenPointToRay(Input.mousePosition);
-#endif
-
-#if ENABLE_INPUT_SYSTEM
-                currentMouse = Mouse.current;
-                Vector2 mousePosition = currentMouse.position.ReadValue();
-                Ray ray = cameraController.mainCamera.ScreenPointToRay(mousePosition);
-#endif
+                Ray ray = cameraController.mainCamera.ScreenPointToRay(screenPosition);
 
                 if (Physics.Raycast(ray, out RaycastHit hit, 100000, 1 << 6))
                 {

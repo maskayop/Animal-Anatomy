@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem.HID;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Transformers;
 using Vopere.Common;
@@ -67,7 +66,7 @@ namespace AnimalAnatomy
                 if (GetComponent<MeshRenderer>())
                     meshRenderers.Add(GetComponent<MeshRenderer>());
             }
-            
+
             if (meshRenderers.Count != 0)
                 defaultMaterial = meshRenderers[0].material;
 
@@ -115,10 +114,10 @@ namespace AnimalAnatomy
                     materials[1] = GlobalMaterialsManager.Instance.selectedGroupMaterial;
                 else
                     materials[1] = GlobalMaterialsManager.Instance.selectedMaterial;
-                
+
                 meshRenderers[i].materials = materials;
             }
-            
+
             if (partListButton)
                 partListButton.SetAsSelected(true);
         }
@@ -150,7 +149,7 @@ namespace AnimalAnatomy
                     materials[0] = GlobalMaterialsManager.Instance.transparentModeMaterial;
                 else
                     materials[0] = defaultMaterial;
-                
+
                 meshRenderers[i].materials = materials;
             }
         }

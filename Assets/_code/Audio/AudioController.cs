@@ -112,9 +112,12 @@ namespace AnimalAnatomy
             else if (currentMusic >= musicSamples.Count)
                 currentMusic = 0;
 
-            musicSource.Stop();
-            musicSource.clip = musicSamples[currentMusic].clip;
-            musicSource.Play();
+            if (musicSource)
+            {
+                musicSource.Stop();
+                musicSource.clip = musicSamples[currentMusic].clip;
+                musicSource.Play();
+            }
 
             currentMusicTime = musicSource.clip.length;
             isMusicPaused = false;
@@ -157,13 +160,13 @@ namespace AnimalAnatomy
 
         public void PlayCurrentMusic()
         {
-            musicSource.UnPause();
+            musicSource?.UnPause();
             isMusicPaused = false;
         }
 
         public void PauseCurrentMusic()
         {
-            musicSource.Pause();
+            musicSource?.Pause();
             isMusicPaused = true;
         }
 
@@ -179,7 +182,8 @@ namespace AnimalAnatomy
 
         public void PlayUIAudioClip(AudioClip clip)
         {
-            UISource.PlayOneShot(clip);
+            if (UISource)
+                UISource.PlayOneShot(clip);
         }
 
         public void ChangeVolume(int group, float INvalue)
