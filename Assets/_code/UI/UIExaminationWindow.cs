@@ -1,7 +1,7 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 using Vopere.Common;
 
 namespace AnimalAnatomy
@@ -69,18 +69,28 @@ namespace AnimalAnatomy
 
         public void StartExamination()
         {
-            answersPanel.SetActive(false);
-            currentTimeoutPanel.SetActive(true);
-            finishExamPanel.SetActive(false);
-            exitButton.SetActive(true);
-            exitExamWindow.SetActive(false);
+            if (answersPanel)
+                answersPanel.SetActive(false);
+
+            if (currentTimeoutPanel)
+                currentTimeoutPanel.SetActive(true);
+
+            if (finishExamPanel)
+                finishExamPanel.SetActive(false);
+
+            if (exitButton)
+                exitButton.SetActive(true);
+
+            if (exitExamWindow)
+                exitExamWindow.SetActive(false);
         }
 
-        public void StartNextQuestion(List<BodyPartInfo> info)
+        public void StartNextQuestion(List<BodyPartInfo> info, int correctId)
         {
             answersPanel.SetActive(true);
             finishQuestionPanel.SetActive(false);
             exitButton.SetActive(true);
+
             examAnswerButtons.Clear();
 
             foreach (Transform t in answersContainer.transform)
@@ -89,9 +99,7 @@ namespace AnimalAnatomy
             List<int> randomIds = new List<int>();
 
             for (int i = 0; i < info.Count; i++)
-            {
                 randomIds.Add(i);
-            }
 
             randomIds.Shuffle();
 
@@ -99,11 +107,11 @@ namespace AnimalAnatomy
 
             for (int i = 0; i < info.Count; i++)
             {
-                if (randomIds[i] == 0)
+                if (randomIds[i] == correctId)
                 {
                     GameObject correctButton = Instantiate(correctAnswerButtonPrefab, answersContainer.transform);
                     UIExamAnswerButton examButton = correctButton.GetComponent<UIExamAnswerButton>();
-                    examButton.Init(info[0], true);
+                    examButton.Init(info[correctId], true);
                     examAnswerButtons.Add(examButton);
                 }
                 else
@@ -128,41 +136,76 @@ namespace AnimalAnatomy
                 examAnswerButtons[i].SetInteractable(false);
             }
 
-            finishQuestionPanel.SetActive(true);
-            exitButton.SetActive(false);
-            correctAnswerPanel.SetActive(isCorrect);
-            wrongAnswerPanel.SetActive(!isCorrect);
+            if (finishQuestionPanel)
+                finishQuestionPanel.SetActive(true);
+
+            if (exitButton)
+                exitButton.SetActive(false);
+
+            if (correctAnswerPanel)
+                correctAnswerPanel.SetActive(isCorrect);
+
+            if (wrongAnswerPanel)
+                wrongAnswerPanel.SetActive(!isCorrect);
         }
 
         public void CallStartNextQuestion()
         {
-            examinationController.StartNextQuestion();
+            examinationController?.StartNextQuestion();
         }
 
         public void FinishExamination()
         {
-            answersPanel.SetActive(false);
-            finishQuestionPanel.SetActive(false);
-            currentTimeoutPanel.SetActive(false);
-            finishExamPanel.SetActive(true);
-            exitButton.SetActive(false);
+            if (answersPanel)
+                answersPanel.SetActive(false);
+
+            if (finishQuestionPanel)
+                finishQuestionPanel.SetActive(false);
+
+            if (currentTimeoutPanel)
+                currentTimeoutPanel.SetActive(false);
+
+            if (finishExamPanel)
+                finishExamPanel.SetActive(true);
+
+            if (exitButton)
+                exitButton.SetActive(false);
 
             answersAmountText.text = examinationController.correctAnswers.ToString() + " / " +
                 examinationController.questionsAmount.ToString();
 
-            imageBest.SetActive(false);
-            imageGood.SetActive(false);
-            imageNormal.SetActive(false);
-            imageBad.SetActive(false);
+            if (imageBest)
+                imageBest.SetActive(false);
+
+            if (imageGood)
+                imageGood.SetActive(false);
+
+            if (imageNormal)
+                imageNormal.SetActive(false);
+
+            if (imageBad)
+                imageBad.SetActive(false);
 
             if (examinationController.correctAnswers / examinationController.questionsAmount >= 0.85f)
-                imageBest.SetActive(true);
+            {
+                if (imageBest)
+                    imageBest.SetActive(true);
+            }
             else if (examinationController.correctAnswers / examinationController.questionsAmount >= 0.7f)
-                imageGood.SetActive(true);
+            {
+                if (imageGood)
+                    imageGood.SetActive(true);
+            }
             else if (examinationController.correctAnswers / examinationController.questionsAmount >= 0.5f)
-                imageNormal.SetActive(true);
+            {
+                if (imageNormal)
+                    imageNormal.SetActive(true);
+            }
             else
-                imageBad.SetActive(true);
+            {
+                if (imageBad)
+                    imageBad.SetActive(true);
+            }
         }
 
         public void CallFinishExamination()
@@ -176,16 +219,26 @@ namespace AnimalAnatomy
 
         public void OpenExitExamWindow()
         {
-            exitExamWindow.gameObject.SetActive(true);
-            answersPanel.gameObject.SetActive(false);
-            exitButton.gameObject.SetActive(false);
+            if (exitExamWindow)
+                exitExamWindow.SetActive(true);
+
+            if (answersPanel)
+                answersPanel.SetActive(false);
+
+            if (exitButton)
+                exitButton.SetActive(false);
         }
 
         public void CloseExitExamWindow()
         {
-            exitExamWindow.gameObject.SetActive(false);
-            answersPanel.gameObject.SetActive(true);
-            exitButton.gameObject.SetActive(true);
+            if (exitExamWindow)
+                exitExamWindow.SetActive(false);
+
+            if (answersPanel)
+                answersPanel.SetActive(true);
+
+            if (exitButton)
+                exitButton.SetActive(true);
         }
     }
 }

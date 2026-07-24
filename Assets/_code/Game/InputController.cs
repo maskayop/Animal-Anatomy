@@ -126,6 +126,9 @@ namespace AnimalAnatomy
             if (ExaminationController.Instance && ExaminationController.Instance.isExamination)
                 return;
 
+            if (LightController.Instance && LightController.Instance.lightRotationMode)
+                return;
+
 #if PLATFORM_ANDROID && ENABLE_INPUT_SYSTEM
             // Проверяем, можно ли обрабатывать тап (не по UI)
             bool canProcessTouch = false;

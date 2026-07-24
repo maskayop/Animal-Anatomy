@@ -20,6 +20,7 @@ namespace AnimalAnatomy
         [SerializeField] GameObject menuButton;
 
         [Header("System Activating")]
+        [SerializeField] bool showSystemActivatingButtonsPanel = true;
         [SerializeField] UISystemActivatingButtonsPanel systemActivatingButtonsPanel;
 
         [Header("Body Part Info")]
@@ -32,6 +33,7 @@ namespace AnimalAnatomy
         [SerializeField] UIButtonLightingMode lightingModeButton;
 
         [Header("Camera")]
+        [SerializeField] bool showFitToCenterCameraButton = true;
         [SerializeField] GameObject fitToCenterCameraButton;
 
         [Header("Body Parts List")]
@@ -64,7 +66,7 @@ namespace AnimalAnatomy
 
             Instance = this;
         }
-        
+
         void Start()
         {
             loadingScreen.SetActive(true);
@@ -73,16 +75,21 @@ namespace AnimalAnatomy
             StartCoroutine(InitializeDelayed());
             StartCoroutine(DisableLoadingScreen());
         }
-        
+
         void Update()
         {
             if (!gameController)
                 return;
-            
+
             if (gameController.selectedBodyPart != null || gameController.selectedBodyPartsGroup != null)
-                fitToCenterCameraButton.SetActive(true);
+            {
+                if (showFitToCenterCameraButton)
+                    fitToCenterCameraButton?.SetActive(true);
+                else
+                    fitToCenterCameraButton?.SetActive(false);
+            }
             else
-                fitToCenterCameraButton.SetActive(false);
+                fitToCenterCameraButton?.SetActive(false);
 
             SetGameModes();
         }
@@ -102,7 +109,7 @@ namespace AnimalAnatomy
 
             yield return new WaitForSeconds(loadingTime);
 
-            loadingScreen.SetActive(false);
+            loadingScreen?.SetActive(false);
             isLoading = false;
         }
 
@@ -111,100 +118,111 @@ namespace AnimalAnatomy
             gameController = GameController.Instance;
 
             EnableIsolatedModeButtons(false);
-            examinationWindow.gameObject.SetActive(false);
+            examinationWindow?.gameObject.SetActive(false);
 
-            bodyPartsListPanel.Init();
+            bodyPartsListPanel?.Init();
+            ShowSystemActivatingButtonsPanel();
         }
 
         void SetGameModes()
         {
             if (gameController.exclusionMode)
             {
-                isolatedModeButton.SetInteractable(false);
-                transparentModeButton.SetInteractable(false);
-                exclusionModeButton.SetInteractable(true);
+                isolatedModeButton?.SetInteractable(false);
+                transparentModeButton?.SetInteractable(false);
+                exclusionModeButton?.SetInteractable(true);
 
                 return;
             }
 
             if (gameController.selectedBodyPart || gameController.selectedBodyPartsGroup)
             {
-                isolatedModeButton.SetInteractable(true);
-                transparentModeButton.SetInteractable(true);
-                exclusionModeButton.SetInteractable(true);
-                systemActivatingButtonsPanel.gameObject.SetActive(true);
+                isolatedModeButton?.SetInteractable(true);
+                transparentModeButton?.SetInteractable(true);
+                exclusionModeButton?.SetInteractable(true);
+
+                ShowSystemActivatingButtonsPanel();
 
                 if (gameController.isolatedMode || gameController.transparentMode)
                 {
-                    exclusionModeButton.SetInteractable(false);
-                    systemActivatingButtonsPanel.gameObject.SetActive(false);
+                    exclusionModeButton?.SetInteractable(false);
+                    systemActivatingButtonsPanel?.gameObject.SetActive(false);
                 }
-                
+
                 if (gameController.isolatedMode)
-                    transparentModeButton.SetInteractable(false);
+                    transparentModeButton?.SetInteractable(false);
 
                 if (gameController.transparentMode)
-                    isolatedModeButton.SetInteractable(false);
+                    isolatedModeButton?.SetInteractable(false);
             }
             else
             {
-                isolatedModeButton.SetInteractable(false);
-                transparentModeButton.SetInteractable(false);
-                exclusionModeButton.SetInteractable(true);
+                isolatedModeButton?.SetInteractable(false);
+                transparentModeButton?.SetInteractable(false);
+                exclusionModeButton?.SetInteractable(true);
             }
+        }
+
+        void ShowSystemActivatingButtonsPanel()
+        {
+
+            if (showSystemActivatingButtonsPanel)
+                systemActivatingButtonsPanel?.gameObject.SetActive(true);
+            else
+                systemActivatingButtonsPanel?.gameObject.SetActive(false);
         }
 
         public void ActivateAllSystems(bool state)
         {
-            systemActivatingButtonsPanel.ActivateAllSystems(state);
+            systemActivatingButtonsPanel?.ActivateAllSystems(state);
         }
 
         public void SelectBodyPart(BodyPartInfo info)
         {
             EnableIsolatedModeButtons(true);
 
-            bodyPartDescriptionPanel.gameObject.SetActive(true);
-            bodyPartDescriptionPanel.ShowInfo(info);
+            bodyPartDescriptionPanel?.gameObject.SetActive(true);
+            bodyPartDescriptionPanel?.ShowInfo(info);
 
             if (info.bodyPartGroup)
             {
-                bodyPartsGroupPanel.gameObject.SetActive(true);
-                bodyPartsGroupButton.Init(info.bodyPartGroup);
+                bodyPartsGroupPanel?.gameObject.SetActive(true);
+                bodyPartsGroupButton?.Init(info.bodyPartGroup);
             }
             else
-                bodyPartsGroupPanel.gameObject.SetActive(false);
+                bodyPartsGroupPanel?.gameObject.SetActive(false);
         }
 
         public void UnSelectBodyPart()
         {
             EnableIsolatedModeButtons(false);
 
-            bodyPartDescriptionPanel.gameObject.SetActive(false);
-            bodyPartsGroupPanel.gameObject.SetActive(false);
+            bodyPartDescriptionPanel?.gameObject.SetActive(false);
+            bodyPartsGroupPanel?.gameObject.SetActive(false);
         }
 
         public void SelectBodyPartGroup(BodyPartGroup info)
         {
             EnableIsolatedModeButtons(true);
 
-            bodyPartDescriptionPanel.gameObject.SetActive(true);
-            bodyPartDescriptionPanel.ShowInfo(info);
+            bodyPartDescriptionPanel?.gameObject.SetActive(true);
+            bodyPartDescriptionPanel?.ShowInfo(info);
 
             if (info.parentBodyPartGroup)
             {
-                bodyPartsGroupPanel.gameObject.SetActive(true);
-                bodyPartsGroupButton.Init(info.parentBodyPartGroup);
+                bodyPartsGroupPanel?.gameObject.SetActive(true);
+                bodyPartsGroupButton?.Init(info.parentBodyPartGroup);
             }
             else
-                bodyPartsGroupPanel.gameObject.SetActive(false);
+                bodyPartsGroupPanel?.gameObject.SetActive(false);
         }
 
         public void UnSelectBodyPartGroup()
         {
             EnableIsolatedModeButtons(false);
 
-            bodyPartDescriptionPanel.gameObject.SetActive(false);
-            bodyPartsGroupPanel.gameObject.SetActive(false);
+            bodyPartDescriptionPanel?.gameObject.SetActive(false);
+            bodyPartsGroupPanel?.gameObject.SetActive(false);
         }
 
         public void FreezeCamera(bool state)
@@ -212,45 +230,44 @@ namespace AnimalAnatomy
 #if PLATFORM_ANDROID
             return;
 #else
-            if (CameraController.Instance)
-                CameraController.Instance.Freeze(state);
+            CameraController.Instance?.Freeze(state);
 #endif
         }
 
         public void OpenPartsListPanel()
         {
-            bodyPartsListPanel.gameObject.SetActive(true);
-            partsListPanelButton.SetActive(false);
+            bodyPartsListPanel?.gameObject.SetActive(true);
+            partsListPanelButton?.SetActive(false);
             bodyPartsListIsOpen = true;
         }
 
         public void ClosePartsListPanel()
         {
-            bodyPartsListPanel.gameObject.SetActive(false);
-            partsListPanelButton.SetActive(true);
-            CameraController.Instance.Freeze(false);
+            bodyPartsListPanel?.gameObject.SetActive(false);
+            partsListPanelButton?.SetActive(true);
+            CameraController.Instance?.Freeze(false);
             bodyPartsListIsOpen = false;
         }
 
         public void StartExamination()
         {
             CloseMenuWindow();
-            menuWindow.CloseExamSettingsWindow();
+            menuWindow?.CloseExamSettingsWindow();
 
-            mainWindow.SetActive(false);
-            examinationWindow.gameObject.SetActive(true);
+            mainWindow?.SetActive(false);
+            examinationWindow?.gameObject.SetActive(true);
 
-            ExaminationController.Instance.StartExamination();
+            ExaminationController.Instance?.StartExamination();
         }
 
         public void StopExamination()
         {
             OpenMenuWindow();
 
-            mainWindow.SetActive(true);
-            examinationWindow.gameObject.SetActive(false);
+            mainWindow?.SetActive(true);
+            examinationWindow?.gameObject.SetActive(false);
 
-            ExaminationController.Instance.StopExamination();
+            ExaminationController.Instance?.StopExamination();
         }
 
         public float GetBodyPartsListPanelMaxAnchor()
@@ -266,32 +283,32 @@ namespace AnimalAnatomy
 
         public void CallBodyPartSelection()
         {
-            InputController.Instance.CallBodyPartSelection();
+            InputController.Instance?.CallBodyPartSelection();
         }
 
         public void CameraFitToCenter()
         {
-            CameraController.Instance.UpdatePosition();
+            CameraController.Instance?.UpdatePosition();
         }
 
         void EnableIsolatedModeButtons(bool state)
         {
-            isolatedModeButton.SetInteractable(state);
-            transparentModeButton.SetInteractable(state);
+            isolatedModeButton?.SetInteractable(state);
+            transparentModeButton?.SetInteractable(state);
         }
 
         public void OpenMenuWindow()
         {
-            menuWindow.gameObject.SetActive(true);
-            musicPlayerWindow.gameObject.SetActive(false);
-            menuButton.SetActive(false);
+            menuWindow?.gameObject.SetActive(true);
+            musicPlayerWindow?.gameObject.SetActive(false);
+            menuButton?.SetActive(false);
         }
 
         public void CloseMenuWindow()
         {
-            menuWindow.gameObject.SetActive(false);
-            musicPlayerWindow.gameObject.SetActive(true);
-            menuButton.SetActive(true);
+            menuWindow?.gameObject.SetActive(false);
+            musicPlayerWindow?.gameObject.SetActive(true);
+            menuButton?.SetActive(true);
         }
 
         public UIExaminationWindow GetExaminationWindow()

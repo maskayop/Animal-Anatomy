@@ -28,6 +28,8 @@ namespace AnimalAnatomy
         public float currentTime;
 
         GameController gameController;
+        BodyPartInfo currentInfo;
+        BodyPartInfo previousInfo;
 
         void Awake()
         {
@@ -85,17 +87,16 @@ namespace AnimalAnatomy
                 UpdateExamSystemTypeBodyPartInfos(GameController.SystemType.reproductive);
                 UpdateExamSystemTypeBodyPartInfos(GameController.SystemType.respiratory);
             }
-            
+            else
+                UpdateExamSystemTypeBodyPartInfos(GameController.SystemType.none);
+
             correctAnswers = 0;
             wrongAnswers = 0;
             totalAnswers = 0;
             currentTime = timeout * 60;
 
-            if (UIMainCanvas.Instance)
-                UIMainCanvas.Instance.GetExaminationWindow().StartExamination();
-
-            if (UI3D_CentralCanvas.Instance)
-                UI3D_CentralCanvas.Instance.GetExaminationWindow().StartExamination();
+            UIMainCanvas.Instance?.GetExaminationWindow().StartExamination();
+            UI3D_CentralCanvas.Instance?.GetExaminationWindow().StartExamination();
 
             if (InputController.Instance)
                 InputController.Instance.isAlternativeInput = false;
@@ -107,11 +108,8 @@ namespace AnimalAnatomy
         {
             StopExamination();
 
-            if (UIMainCanvas.Instance)
-                UIMainCanvas.Instance.GetExaminationWindow().FinishExamination();
-
-            if (UI3D_CentralCanvas.Instance)
-                UI3D_CentralCanvas.Instance.GetExaminationWindow().FinishExamination();
+            UIMainCanvas.Instance?.GetExaminationWindow().FinishExamination();
+            UI3D_CentralCanvas.Instance?.GetExaminationWindow().FinishExamination();
         }
 
         public void StopExamination()
@@ -128,8 +126,7 @@ namespace AnimalAnatomy
 
             gameController.ActivateAllSystems(true);
 
-            if (CameraController.Instance)
-                CameraController.Instance.UpdatePosition();
+            CameraController.Instance?.UpdatePosition();
         }
 
         public void StartNextQuestion()
@@ -150,16 +147,24 @@ namespace AnimalAnatomy
             for (int i = 0; i < 4; i++)
                 currentQuestionBodyPartInfos.Add(examSystemTypeBodyPartInfos[i]);
 
-            currentQuestionBodyPartInfos[0].SetAsTransparent(false);
+            int correctId = 0;
+
+            if (previousInfo == currentQuestionBodyPartInfos[0])
+                correctId = 1;
+
+            currentInfo = currentQuestionBodyPartInfos[correctId];
+            currentInfo.SetAsTransparent(false);
 
             if (CameraController.Instance)
-                CameraController.Instance.UpdatePositionOnBodyPart(currentQuestionBodyPartInfos[0]);
+                CameraController.Instance.UpdatePositionOnBodyPart(currentInfo);
 
             if (UIMainCanvas.Instance)
-                UIMainCanvas.Instance.GetExaminationWindow().StartNextQuestion(currentQuestionBodyPartInfos);
+                UIMainCanvas.Instance.GetExaminationWindow().StartNextQuestion(currentQuestionBodyPartInfos, correctId);
 
             if (UI3D_CentralCanvas.Instance)
-                UI3D_CentralCanvas.Instance.GetExaminationWindow().StartNextQuestion(currentQuestionBodyPartInfos);
+                UI3D_CentralCanvas.Instance.GetExaminationWindow().StartNextQuestion(currentQuestionBodyPartInfos, correctId);
+
+            previousInfo = currentInfo;
         }
 
         void UpdateExamSystemTypeBodyPartInfos(GameController.SystemType systemType)
@@ -185,11 +190,8 @@ namespace AnimalAnatomy
 
             totalAnswers++;
 
-            if (UIMainCanvas.Instance)
-                UIMainCanvas.Instance.GetExaminationWindow().FinishQuestion(isCorrect);
-
-            if (UI3D_CentralCanvas.Instance)
-                UI3D_CentralCanvas.Instance.GetExaminationWindow().FinishQuestion(isCorrect);
+            UIMainCanvas.Instance?.GetExaminationWindow().FinishQuestion(isCorrect);
+            UI3D_CentralCanvas.Instance?.GetExaminationWindow().FinishQuestion(isCorrect);
         }
     }
 }

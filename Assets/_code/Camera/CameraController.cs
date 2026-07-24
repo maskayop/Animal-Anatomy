@@ -107,7 +107,7 @@ namespace AnimalAnatomy
         // ==============================================
         void UpdateViewRotation()
         {
-            if (LightController.Instance.lightRotationMode)
+            if (LightController.Instance && LightController.Instance.lightRotationMode)
                 return;
 
             bool isDragging = false;
