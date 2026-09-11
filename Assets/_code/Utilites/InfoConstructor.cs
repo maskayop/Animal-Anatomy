@@ -15,8 +15,12 @@ namespace AnimalAnatomy
         {
             if (!GetComponent<InfoConstructorHelper>())
                 infoConstructorHelper = gameObject.AddComponent<InfoConstructorHelper>();
+            else
+                infoConstructorHelper = gameObject.GetComponent<InfoConstructorHelper>();
 
             gameObject.layer = infoConstructorHelper.layer;
+
+            children.Clear();
 
             foreach (Transform child in transform)
                 children.Add(child.gameObject);
@@ -37,9 +41,8 @@ namespace AnimalAnatomy
                         }
                     }
                 }
-
-                if (GetComponent<MeshRenderer>())
-                    gameObject.AddComponent<MeshCollider>();
+                
+                gameObject.AddComponent<MeshCollider>();
             }
 
             if (infoConstructorHelper.material)
