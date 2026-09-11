@@ -3,23 +3,23 @@ using UnityEditor.SceneManagement;
 
 namespace AnimalAnatomy.Editor
 {
-	public class EditorMenuSceneLoader : EditorWindow
-	{
-		static void LoadScene(string sceneName)
-		{
-			string path = "Assets/Scenes/";
+    public class EditorMenuSceneLoader : EditorWindow
+    {
+        static void LoadScene(string sceneName)
+        {
+            string path = "Assets/Scenes/";
 
-			if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
-			{
-				EditorSceneManager.OpenScene(path + sceneName + ".unity", OpenSceneMode.Single);
-			}
-		}
+            if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
+            {
+                EditorSceneManager.OpenScene(path + sceneName + ".unity", OpenSceneMode.Single);
+            }
+        }
 
-		[MenuItem("Animal Anatomy/Открыть сцену/Init")]
-		static void LoadSceneInit()
-		{
-			LoadScene("_Init");
-		}
+        [MenuItem("Animal Anatomy/Открыть сцену/Init")]
+        static void LoadSceneInit()
+        {
+            LoadScene("_Init");
+        }
 
         [MenuItem("Animal Anatomy/Открыть сцену/Init XR")]
         static void LoadSceneInitXR()
@@ -67,6 +67,12 @@ namespace AnimalAnatomy.Editor
         static void LoadSceneCat()
         {
             LoadScene("Cat");
+        }
+
+        [MenuItem("Animal Anatomy/Открыть сцену/Животные/Курица")]
+        static void LoadSceneChicken()
+        {
+            LoadScene("Chicken");
         }
 
         [MenuItem("Animal Anatomy/Открыть сцену/Тест/_TEST_")]

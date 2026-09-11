@@ -114,12 +114,17 @@ namespace AnimalAnatomy
 
             if (musicSource)
             {
-                musicSource.Stop();
-                musicSource.clip = musicSamples[currentMusic].clip;
-                musicSource.Play();
+                if (musicSamples.Count != 0)
+                {
+                    musicSource.Stop();
+                    musicSource.clip = musicSamples[currentMusic].clip;
+                    musicSource.Play();
+                }
             }
 
-            currentMusicTime = musicSource.clip.length;
+            if (musicSource.clip != null)
+                currentMusicTime = musicSource.clip.length;
+
             isMusicPaused = false;
         }
 

@@ -7,7 +7,7 @@ namespace AnimalAnatomy
     {
         [Header("Panels")]
         [SerializeField] GameObject bigPanel;
-        [SerializeField] GameObject smallPanel;        
+        [SerializeField] GameObject smallPanel;
 
         [Header("Indicators")]
         [SerializeField] TextMeshProUGUI musicNameText;
@@ -143,7 +143,8 @@ namespace AnimalAnatomy
             if (!controller)
                 return;
 
-            musicNameText.text = controller.musicSamples[controller.GetCurrentMusicId()].name;
+            if (controller.musicSamples.Count != 0)
+                musicNameText.text = controller.musicSamples[controller.GetCurrentMusicId()].name;
         }
     }
 }
