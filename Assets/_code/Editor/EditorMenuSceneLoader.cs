@@ -74,11 +74,5 @@ namespace AnimalAnatomy.Editor
         {
             LoadScene("Chicken");
         }
-
-        [MenuItem("Animal Anatomy/Открыть сцену/Тест/_TEST_")]
-        static void LoadScene_TEST_()
-        {
-            LoadScene("_TEST_");
-        }
     }
 }

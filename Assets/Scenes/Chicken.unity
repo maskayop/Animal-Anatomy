@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: ca7dbc3b4f6e643439f955ab2613f8dd, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 861bad6fd4f67154f916b100a939156e, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: fa90732c23f53c342a2eecced0df71bd, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -5718,17 +5718,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 476185410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27d7729a6b4a3fd4a8c08838916fac4f, type: 3}
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartInfo
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
   systemType: 0
-  meshRenderers: []
   cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
   info: {fileID: 11400000, guid: 335c3a5ed3d44db45b4e6c6b384010a7, type: 2}
-  suffixSaggital: {fileID: 0}
   suffix: {fileID: 0}
-  partListButton: {fileID: 0}
-  bodyPartGroup: {fileID: 0}
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!1 &477093836
 GameObject:
   m_ObjectHideFlags: 0
@@ -7407,17 +7408,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1025805958}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27d7729a6b4a3fd4a8c08838916fac4f, type: 3}
+  m_Script: {fileID: 11500000, guid: f37a37e4c3126744d977577d18ea895a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartInfo
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartGroup
   systemType: 0
-  meshRenderers: []
   cameraDistanceLimitsMultiplier: 1
+  bodyPartsGroups: []
+  bodyParts: []
+  allChildrenBodyParts: []
   info: {fileID: 11400000, guid: 32f1cd47e6322d241987042e87dd07b9, type: 2}
-  suffixSaggital: {fileID: 0}
   suffix: {fileID: 0}
-  partListButton: {fileID: 0}
-  bodyPartGroup: {fileID: 0}
+  partGroupListButton: {fileID: 0}
+  parentBodyPartGroup: {fileID: 0}
 --- !u!1 &1025827520
 GameObject:
   m_ObjectHideFlags: 0
