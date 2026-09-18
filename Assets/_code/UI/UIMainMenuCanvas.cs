@@ -11,12 +11,15 @@ namespace AnimalAnatomy
     public class UIGameSelection
     {
         public string sceneName;
+        public UIAnimalSelectionButton selectionButton;
     }
 
     public class UIMainMenuCanvas : MonoBehaviour
     {
         public static UIMainMenuCanvas Instance;
 
+        [SerializeField] GameObject currentAnimalPanel;
+        [SerializeField] TextMeshProUGUI currentAnimalText;
         [SerializeField] GameObject startButtonPanel;
 
         [Header("Loading Screen")]
@@ -71,7 +74,17 @@ namespace AnimalAnatomy
         {
             SelectGame(-1);
 
-            if (versionText != null)
+            currentAnimalPanel?.SetActive(false);
+
+            for (int i = 0; i < games.Count; i++)
+            {
+                if (IsGameSceneAddedToBuild(i))
+                    games[i].selectionButton.gameObject.SetActive(true);
+                else
+                    games[i].selectionButton.gameObject.SetActive(false);
+            }
+
+            if (versionText)
                 versionText.text = Application.version;
         }
 
@@ -103,6 +116,26 @@ namespace AnimalAnatomy
 
             if (!IsGameSceneAddedToBuild(id))
                 startButtonPanel.SetActive(false);
+        }
+
+        public void SelectGameBySceneName(string INname)
+        {
+            for (int i = 0; i < games.Count; i++)
+            {
+                if (games[i].sceneName == INname)
+                {
+                    SelectGame(i);
+                    games[i].selectionButton.Select(true);
+                    currentAnimalText.text = games[i].selectionButton.gameName;
+                }
+                else
+                    games[i].selectionButton.Select(false);
+            }
+
+            if (currentGame != -1)
+                currentAnimalPanel.SetActive(true);
+            else
+                currentAnimalPanel.SetActive(false);
         }
 
         public void StartGame()

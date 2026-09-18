@@ -15,7 +15,8 @@ namespace AnimalAnatomy
         public void Select(bool state)
         {
             selected.SetActive(state);
-            unselected.SetActive(!state);
+            unselected.SetActive(false);
+            //unselected.SetActive(!state);
         }
     }
 
@@ -63,7 +64,7 @@ namespace AnimalAnatomy
             else
             {
                 DestroyAnimals(XR_Animals);
-                EnableAnimals(animals, true);
+                EnableAnimals(animals, false);
             }
 
             UnselectAll();

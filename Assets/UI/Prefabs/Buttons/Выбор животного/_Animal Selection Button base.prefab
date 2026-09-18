@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3464497542521128864}
   - component: {fileID: 7533985055602463904}
   m_Layer: 5
-  m_Name: 'Border '
+  m_Name: Selected
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -178,7 +178,6 @@ GameObject:
   - component: {fileID: 8304355207091734940}
   - component: {fileID: 6808208328160547463}
   - component: {fileID: 2927294216734275762}
-  - component: {fileID: 2851440199124893215}
   m_Layer: 5
   m_Name: Glow
   m_TagString: Untagged
@@ -243,19 +242,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 1
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2851440199124893215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6070490970344073471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a0c1956b3ac3934f892dc38f0357e28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Vopere.Common.DisableOnAwake
-  disableOnAwake: 1
 --- !u!1 &6504663914782631472
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,6 +435,8 @@ GameObject:
   - component: {fileID: 3117405474336650099}
   - component: {fileID: 9097051468491519893}
   - component: {fileID: 8137570416653204072}
+  - component: {fileID: 1619306464022006225}
+  - component: {fileID: 3321041472660621274}
   m_Layer: 5
   m_Name: _Animal Selection Button base
   m_TagString: Untagged
@@ -559,4 +547,43 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9097051468491519893}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3321041472660621274}
+        m_TargetAssemblyTypeName: AnimalAnatomy.UIAnimalSelectionButton, Assembly-CSharp
+        m_MethodName: SelectGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1619306464022006225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7916360634086196726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d8b23b58e42784bb5aeadfdde30416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.UIButtonClickAudio
+  clip: {fileID: 8300000, guid: c6f666d2496efc44faf12e7cef8cf413, type: 3}
+--- !u!114 &3321041472660621274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7916360634086196726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 960086321178cf646bc3d31ef01ce00a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
+  gameName: 
+  selected: {fileID: 2216876218235765280}
