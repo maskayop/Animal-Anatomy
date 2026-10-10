@@ -48,10 +48,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -6585106670191741705, guid: 52a38a3f94e72884ab95fbd3584b84d5, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 0d03b4a0914884e4dbac29436e27d000, type: 2}
     - target: {fileID: 919132149155446097, guid: 52a38a3f94e72884ab95fbd3584b84d5, type: 3}
       propertyPath: m_Name
       value: "\u042F\u0438\u0447\u043D\u0438\u043A\u0438 - Ovaria"
@@ -60,11 +56,15 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 3475547035963775374, guid: 52a38a3f94e72884ab95fbd3584b84d5, type: 3}
+    - target: {fileID: 4637658173310769010, guid: 52a38a3f94e72884ab95fbd3584b84d5, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 0d03b4a0914884e4dbac29436e27d000, type: 2}
-    - target: {fileID: 4256069951933731634, guid: 52a38a3f94e72884ab95fbd3584b84d5, type: 3}
+    - target: {fileID: 5219925677903776952, guid: 52a38a3f94e72884ab95fbd3584b84d5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0d03b4a0914884e4dbac29436e27d000, type: 2}
+    - target: {fileID: 6582196866641994198, guid: 52a38a3f94e72884ab95fbd3584b84d5, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 0d03b4a0914884e4dbac29436e27d000, type: 2}
@@ -88,19 +88,19 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2927222654862349038}
   m_SourcePrefab: {fileID: 100100000, guid: 52a38a3f94e72884ab95fbd3584b84d5, type: 3}
---- !u!23 &5059112630506335124 stripped
+--- !u!23 &3266977329383953356 stripped
 MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 3475547035963775374, guid: 52a38a3f94e72884ab95fbd3584b84d5, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6582196866641994198, guid: 52a38a3f94e72884ab95fbd3584b84d5, type: 3}
   m_PrefabInstance: {fileID: 8506749663176421914}
   m_PrefabAsset: {fileID: 0}
---- !u!23 &5557040262535225640 stripped
+--- !u!23 &3914277024053454184 stripped
 MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 4256069951933731634, guid: 52a38a3f94e72884ab95fbd3584b84d5, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4637658173310769010, guid: 52a38a3f94e72884ab95fbd3584b84d5, type: 3}
   m_PrefabInstance: {fileID: 8506749663176421914}
   m_PrefabAsset: {fileID: 0}
---- !u!23 &5950112589553305325 stripped
+--- !u!23 &4503297262002699938 stripped
 MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: -6585106670191741705, guid: 52a38a3f94e72884ab95fbd3584b84d5, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5219925677903776952, guid: 52a38a3f94e72884ab95fbd3584b84d5, type: 3}
   m_PrefabInstance: {fileID: 8506749663176421914}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8849400020055674699 stripped
@@ -129,7 +129,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 8500146947422576817, guid: 52a38a3f94e72884ab95fbd3584b84d5, type: 3}
+  m_Mesh: {fileID: 7515318653833672521, guid: 52a38a3f94e72884ab95fbd3584b84d5, type: 3}
 --- !u!114 &8943811667734543595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,9 +144,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AnimalAnatomy.BodyPartInfo
   systemType: 8
   meshRenderers:
-  - {fileID: 5557040262535225640}
-  - {fileID: 5950112589553305325}
-  - {fileID: 5059112630506335124}
+  - {fileID: 3914277024053454184}
+  - {fileID: 3266977329383953356}
+  - {fileID: 4503297262002699938}
   cameraDistanceLimitsMultiplier: 1
   info: {fileID: 11400000, guid: 62db993170a13694c9733fb8f52f0c6a, type: 2}
   suffixSaggital: {fileID: 0}
