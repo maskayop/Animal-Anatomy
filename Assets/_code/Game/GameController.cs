@@ -41,6 +41,9 @@ namespace AnimalAnatomy
         [HideInInspector]
         public BodyPartGroup baseBodyPartGroup;
 
+        [Header("Editor")]
+        public bool showEmptyAudioClipWarnings = false;
+
         ObjectRotator baseObjectRotator;
         ObjectScaler baseObjectScaler;
 
@@ -48,7 +51,7 @@ namespace AnimalAnatomy
         public bool leftTriggerPushed = false;
         [HideInInspector]
         public bool rightTriggerPushed = false;
-        
+
         void Awake()
         {
             if (Instance != null)
@@ -217,7 +220,7 @@ namespace AnimalAnatomy
         public void UnSelectBodyPart(bool playAudioClip)
         {
             selectedBodyPart = null;
-            
+
             if (UIMainCanvas.Instance)
                 UIMainCanvas.Instance.UnSelectBodyPart();
 

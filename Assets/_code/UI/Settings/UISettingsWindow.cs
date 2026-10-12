@@ -36,6 +36,9 @@ namespace AnimalAnatomy
         [SerializeField] Slider XR_ScalingSensitivitySlider;
         [SerializeField] TextMeshProUGUI XR_ScalingSensitivityValueText;
 
+        [Header("Delete Player Prefs")]
+        [SerializeField] GameObject deletePlayerPrefsWindow;
+
         protected override void OnInit()
         {
             SetTogglesLoadedValue("GraphicsLevel", graphicsLevelToggles);
@@ -51,6 +54,7 @@ namespace AnimalAnatomy
             SetSliderLoadedValue("XR_ScalingSensitivity", XR_ScalingSensitivitySlider, XR_ScalingSensitivityValueText, 7);
 
             SetScreenResolutionProperties();
+            CloseDeletePlayerPrefsWindow();
         }
 
         protected override void OnOpen()
@@ -199,6 +203,22 @@ namespace AnimalAnatomy
 
             if (gameController)
                 gameController.ChangeBaseObjectScalingDelta(XR_ScalingSensitivitySlider.value);
+        }
+
+        public void OpenDeletePlayerPrefsWindow()
+        {
+            deletePlayerPrefsWindow?.SetActive(true);
+        }
+
+        public void CloseDeletePlayerPrefsWindow()
+        {
+            deletePlayerPrefsWindow?.SetActive(false);
+        }
+
+        public void DeletePlayerPrefs()
+        {
+            dataSaveLoad?.DeletePlayerPrefs();
+            CloseDeletePlayerPrefsWindow();
         }
     }
 }

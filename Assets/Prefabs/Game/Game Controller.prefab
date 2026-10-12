@@ -58,7 +58,11 @@ MonoBehaviour:
   transparentMode: 0
   exclusionMode: 0
   lightingMode: 0
+  baseGameObject: {fileID: 0}
   baseBodyPartGroup: {fileID: 0}
+  showEmptyAudioClipWarnings: 0
+  leftTriggerPushed: 0
+  rightTriggerPushed: 0
 --- !u!114 &4744033071781961499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,6 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4579012f1a64f3343bda652475ce8eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAlternativeInput: 0
   selectionTimeout: 0.12
 --- !u!114 &8348161921302091938
 MonoBehaviour:

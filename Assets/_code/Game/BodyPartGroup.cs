@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace AnimalAnatomy
-{ 
+{
     public class BodyPartGroup : MonoBehaviour
     {
         public GameController.SystemType systemType;
@@ -23,6 +23,8 @@ namespace AnimalAnatomy
         [HideInInspector]
         public BodyPartGroup parentBodyPartGroup;
 
+        GameController gameController;
+
         void Start()
         {
             Init();
@@ -30,14 +32,22 @@ namespace AnimalAnatomy
 
         public void Init()
         {
+            gameController = GameController.Instance;
+
+            if (!gameController)
+                return;
+
             if (!info)
                 Debug.LogWarning("Нет data_info для " + name);
 
-            if (info && !info.nameClip)
-                Debug.LogWarning("Нет name audio clip для " + name);
+            if (gameController.showEmptyAudioClipWarnings)
+            {
+                if (info && !info.nameClip)
+                    Debug.LogWarning("Нет name audio clip для " + name);
 
-            if (info && !info.clip)
-                Debug.LogWarning("Нет audio clip для " + name);
+                if (info && !info.clip)
+                    Debug.LogWarning("Нет audio clip для " + name);
+            }
 
             foreach (Transform t in transform)
             {
@@ -49,7 +59,7 @@ namespace AnimalAnatomy
                     bodyParts.Add(info);
                     info.bodyPartGroup = this;
                 }
-                
+
                 if (groupInfo)
                 {
                     groupInfo.parentBodyPartGroup = this;

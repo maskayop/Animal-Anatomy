@@ -29,6 +29,8 @@ namespace AnimalAnatomy
         Material defaultMaterial;
         GameObject transformCenterGameObject;
 
+        GameController gameController;
+
         void Reset()
         {
             foreach (Transform child in transform)
@@ -48,16 +50,24 @@ namespace AnimalAnatomy
 
         public void Init()
         {
-            GameController.Instance.allBodyParts.Add(this);
+            gameController = GameController.Instance;
+
+            if (!gameController)
+                return;
+
+            gameController.allBodyParts.Add(this);
 
             if (!info)
                 Debug.LogWarning("Нет data_info для " + name);
 
-            if (info && !info.nameClip)
-                Debug.LogWarning("Нет name audio clip для " + name);
+            if (gameController.showEmptyAudioClipWarnings)
+            {
+                if (info && !info.nameClip)
+                    Debug.LogWarning("Нет name audio clip для " + name);
 
-            if (info && !info.clip)
-                Debug.LogWarning("Нет audio clip для " + name);
+                if (info && !info.clip)
+                    Debug.LogWarning("Нет audio clip для " + name);
+            }
 
             if (meshRenderers.Count == 0)
             {
