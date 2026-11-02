@@ -43,18 +43,20 @@ namespace AnimalAnatomy
 
         public void OpenBodyPartDescriptionPanel()
         {
-            bodyPartDescriptionPanel.gameObject.SetActive(true);
+            if (bodyPartDescriptionPanel)
+                bodyPartDescriptionPanel.gameObject.SetActive(true);
         }
 
         public void CloseBodyPartDescriptionPanel()
         {
-            bodyPartDescriptionPanel.gameObject.SetActive(false);
+            if (bodyPartDescriptionPanel)
+                bodyPartDescriptionPanel.gameObject.SetActive(false);
         }
 
         public void SelectBodyPart(BodyPartInfo info)
         {
             OpenBodyPartDescriptionPanel();
-            bodyPartDescriptionPanel.ShowInfo(info);
+            bodyPartDescriptionPanel?.ShowInfo(info);
         }
 
         public void UnSelectBodyPart()
@@ -65,7 +67,7 @@ namespace AnimalAnatomy
         public void SelectBodyPartGroup(BodyPartGroup info)
         {
             OpenBodyPartDescriptionPanel();
-            bodyPartDescriptionPanel.ShowInfo(info);
+            bodyPartDescriptionPanel?.ShowInfo(info);
         }
 
         public void UnSelectBodyPartGroup()
@@ -76,7 +78,7 @@ namespace AnimalAnatomy
         public void StartExamination()
         {
             examinationWindow.gameObject.SetActive(true);
-            ExaminationController.Instance.StartExamination();
+            ExaminationController.Instance?.StartExamination();
             CloseBodyPartDescriptionPanel();
 
             if (UI3D_BodyPartsListCanvas.Instance)
@@ -85,11 +87,8 @@ namespace AnimalAnatomy
             if (UI3D_MenuCanvas.Instance)
                 UI3D_MenuCanvas.Instance.gameObject.SetActive(false);
 
-            if (UI3D_LeftControllerCanvas.Instance)
-                UI3D_LeftControllerCanvas.Instance.SetExaminationMode();
-
-            if (UI3D_RightControllerCanvas.Instance)
-                UI3D_RightControllerCanvas.Instance.SetExaminationMode();
+            UI3D_LeftControllerCanvas.Instance?.SetExaminationMode();
+            UI3D_RightControllerCanvas.Instance?.SetExaminationMode();
 
             if (InputController.Instance)
                 InputController.Instance.isAlternativeInput = false;

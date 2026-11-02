@@ -197,7 +197,10 @@ namespace AnimalAnatomy
             if (suffix)
                 suffixAdditional = " (" + suffix.russianName + ")";
 
-            return info.russianName + suffixAdditional + saggital;
+            if (info)
+                return info.russianName + suffixAdditional + saggital;
+            else
+                return "";
         }
 
         public string GetFullScientificName()
@@ -212,7 +215,10 @@ namespace AnimalAnatomy
             if (suffix)
                 suffixAdditional = " (" + suffix.scientificName + ")";
 
-            return info.scientificName + suffixAdditional + saggital;
+            if (info)
+                return info.scientificName + suffixAdditional + saggital;
+            else
+                return "";
         }
 
         void CalculateCameraDistanceLimitsMultiplier()

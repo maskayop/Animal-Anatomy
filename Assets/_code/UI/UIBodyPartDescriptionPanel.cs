@@ -12,12 +12,35 @@ namespace AnimalAnatomy
         [Header("Audio")]
         [SerializeField] UIAudioDescriptionPlayerPanel audioDescriptionPlayerPanel;
 
+        void Start()
+        {
+            Init();
+        }
+
+        public void Init()
+        {
+            if (bodyPartNameText)
+                bodyPartNameText.text = "";
+
+            if (bodyPartScientificNameText)
+                bodyPartScientificNameText.text = "";
+
+            if (bodyPartDescriptionText)
+                bodyPartDescriptionText.text = "";
+
+            if (audioDescriptionPlayerPanel)
+                audioDescriptionPlayerPanel.gameObject.SetActive(false);
+        }
+
         public void ShowInfo(BodyPartInfo bodyPartInfo)
         {
             bodyPartNameText.text = bodyPartInfo.GetFullRussianName();
             bodyPartScientificNameText.text = bodyPartInfo.GetFullScientificName();
-            bodyPartDescriptionText.text = bodyPartInfo.info.description;
 
+            if (!bodyPartInfo.info)
+                return;
+
+            bodyPartDescriptionText.text = bodyPartInfo.info.description;
             audioDescriptionPlayerPanel.SetCurrentDescriptionAudio(bodyPartInfo.info.nameClip, bodyPartInfo.info.clip);
         }
 
@@ -25,8 +48,11 @@ namespace AnimalAnatomy
         {
             bodyPartNameText.text = bodyPartGroupInfo.GetFullRussianName();
             bodyPartScientificNameText.text = bodyPartGroupInfo.GetFullScientificName();
-            bodyPartDescriptionText.text = bodyPartGroupInfo.info.description;
 
+            if (!bodyPartGroupInfo.info)
+                return;
+
+            bodyPartDescriptionText.text = bodyPartGroupInfo.info.description;
             audioDescriptionPlayerPanel.SetCurrentDescriptionAudio(bodyPartGroupInfo.info.nameClip, bodyPartGroupInfo.info.clip);
         }
 

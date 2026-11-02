@@ -144,7 +144,13 @@ namespace AnimalAnatomy
             {
                 for (int l = 0; l < bodyPartsLists.Count; l++)
                 {
-                    bodyPartsLists[l].bodyParts.Sort((x, y) => { return x.info.russianName.CompareTo(y.info.russianName); });
+                    bodyPartsLists[l].bodyParts.Sort((x, y) =>
+                    {
+                        if (x?.info?.russianName == null && y?.info?.russianName == null) return 0;
+                        if (x?.info?.russianName == null) return 1;
+                        if (y?.info?.russianName == null) return -1;
+                        return x.info.russianName.CompareTo(y.info.russianName);
+                    });
                 }
             }
         }
@@ -185,8 +191,7 @@ namespace AnimalAnatomy
                 }
             }
 
-            if (UIMainCanvas.Instance)
-                UIMainCanvas.Instance.ActivateAllSystems(state);
+            UIMainCanvas.Instance?.ActivateAllSystems(state);
         }
 
         public void DisableAllSystemsExceptSystem(SystemType systemType)
@@ -203,29 +208,21 @@ namespace AnimalAnatomy
             selectedBodyPart = info;
             selectedBodyPartsGroup = null;
 
-            if (UIMainCanvas.Instance)
-                UIMainCanvas.Instance.SelectBodyPart(info);
-
-            if (UI3D_CentralCanvas.Instance)
-                UI3D_CentralCanvas.Instance.SelectBodyPart(info);
+            UIMainCanvas.Instance?.SelectBodyPart(info);
+            UI3D_CentralCanvas.Instance?.SelectBodyPart(info);
 
             info.Select(false);
 
             SetCameraDistanceLimitsMultiplier(selectedBodyPart.cameraDistanceLimitsMultiplier);
-
-            if (GameplayAudioPlayer.Instance)
-                GameplayAudioPlayer.Instance.PlayBodyPartSelectionAudio();
+            GameplayAudioPlayer.Instance?.PlayBodyPartSelectionAudio();
         }
 
         public void UnSelectBodyPart(bool playAudioClip)
         {
             selectedBodyPart = null;
 
-            if (UIMainCanvas.Instance)
-                UIMainCanvas.Instance.UnSelectBodyPart();
-
-            if (UI3D_CentralCanvas.Instance)
-                UI3D_CentralCanvas.Instance.UnSelectBodyPart();
+            UIMainCanvas.Instance?.UnSelectBodyPart();
+            UI3D_CentralCanvas.Instance?.UnSelectBodyPart();
 
             for (int i = 0; i < allBodyParts.Count; i++)
                 allBodyParts[i].UnSelect();
@@ -233,8 +230,7 @@ namespace AnimalAnatomy
             SetCameraDistanceLimitsMultiplier(1.0f);
 
             if (!playAudioClip)
-                if (GameplayAudioPlayer.Instance)
-                    GameplayAudioPlayer.Instance.PlayBodyPartUnSelectionAudio();
+                GameplayAudioPlayer.Instance?.PlayBodyPartUnSelectionAudio();
         }
 
         public void SelectBodyPartGroup(BodyPartGroup info)
@@ -244,11 +240,8 @@ namespace AnimalAnatomy
             selectedBodyPart = null;
             selectedBodyPartsGroup = info;
 
-            if (UIMainCanvas.Instance)
-                UIMainCanvas.Instance.SelectBodyPartGroup(info);
-
-            if (UI3D_CentralCanvas.Instance)
-                UI3D_CentralCanvas.Instance.SelectBodyPartGroup(info);
+            UIMainCanvas.Instance?.SelectBodyPartGroup(info);
+            UI3D_CentralCanvas.Instance?.SelectBodyPartGroup(info);
 
             info.Select();
 
@@ -259,11 +252,8 @@ namespace AnimalAnatomy
         {
             selectedBodyPartsGroup = null;
 
-            if (UIMainCanvas.Instance)
-                UIMainCanvas.Instance.UnSelectBodyPartGroup();
-
-            if (UI3D_CentralCanvas.Instance)
-                UI3D_CentralCanvas.Instance.UnSelectBodyPartGroup();
+            UIMainCanvas.Instance?.UnSelectBodyPartGroup();
+            UI3D_CentralCanvas.Instance?.UnSelectBodyPartGroup();
 
             for (int i = 0; i < allBodyPartsGroups.Count; i++)
             {
@@ -316,8 +306,7 @@ namespace AnimalAnatomy
                 }
             }
 
-            if (CameraController.Instance)
-                CameraController.Instance.UpdatePosition();
+            CameraController.Instance?.UpdatePosition();
         }
 
         void IsolateBodyPartGroup(bool state)
@@ -352,8 +341,7 @@ namespace AnimalAnatomy
                 }
             }
 
-            if (CameraController.Instance)
-                CameraController.Instance.UpdatePosition();
+            CameraController.Instance?.UpdatePosition();
         }
 
         public void SetTransparentMode(bool state)
@@ -380,8 +368,7 @@ namespace AnimalAnatomy
                     allBodyParts[i].SetAsTransparent(state);
             }
 
-            if (CameraController.Instance)
-                CameraController.Instance.UpdatePosition();
+            CameraController.Instance?.UpdatePosition();
         }
 
         void IsolateBodyPartGroupTransparent(bool state)
@@ -404,8 +391,7 @@ namespace AnimalAnatomy
             else
                 selectedBodyPartsGroup.Select();
 
-            if (CameraController.Instance)
-                CameraController.Instance.UpdatePosition();
+            CameraController.Instance?.UpdatePosition();
         }
 
         public void HideSelectedBodyPart()

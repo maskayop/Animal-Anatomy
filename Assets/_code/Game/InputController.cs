@@ -1,7 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
+#if PLATFORM_ANDROID
 using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
+#endif
 
 namespace AnimalAnatomy
 {
@@ -57,24 +59,6 @@ namespace AnimalAnatomy
                 if (ExaminationController.Instance.isExamination)
                     return;
 
-#if ENABLE_LEGACY_INPUT_MANAGER
-            if (Input.GetMouseButtonDown(1))
-                SelectBodyPart();
-
-            UpdateView();
-
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                if (gameController.isolatedMode)
-                    gameController.SetIsolatedMode(false);
-                if (gameController.transparentMode)
-                    gameController.SetTransparentMode(false);
-                else
-                    gameController.UnSelectBodyPart(false);
-            }
-#endif
-
-#if ENABLE_INPUT_SYSTEM
             currentMouse = Mouse.current;
             keyboard = Keyboard.current;
 
@@ -92,7 +76,6 @@ namespace AnimalAnatomy
                 else
                     gameController.UnSelectBodyPart(false);
             }
-#endif
 
             ListenForDeletePlayerPrefs();
         }
@@ -186,17 +169,11 @@ namespace AnimalAnatomy
         // Оригинальный метод (для совместимости с ПК)
         void SelectBodyPart()
         {
-#if ENABLE_LEGACY_INPUT_MANAGER
-    SelectBodyPart(Input.mousePosition);
-#endif
-
-#if ENABLE_INPUT_SYSTEM
             if (currentMouse != null)
             {
                 Vector2 mousePosition = currentMouse.position.ReadValue();
                 SelectBodyPart(mousePosition);
             }
-#endif
         }
 
         // Новая перегрузка с параметром (для Android)
@@ -231,17 +208,6 @@ namespace AnimalAnatomy
 
         void UpdateView()
         {
-#if ENABLE_LEGACY_INPUT_MANAGER
-            if (Input.GetKeyDown(KeyCode.F))
-                cameraController?.UpdatePosition();
-
-            if (Input.GetKeyDown(KeyCode.Q) && !gameController.transparentMode)
-                gameController?.SetIsolatedMode(!gameController.isolatedMode);
-
-            if (Input.GetKeyDown(KeyCode.W) && !gameController.isolatedMode)
-                gameController?.SetTransparentMode(!gameController.transparentMode);
-#endif
-
 #if ENABLE_INPUT_SYSTEM
             if (keyboard.fKey.wasPressedThisFrame)
                 cameraController?.UpdatePosition();
@@ -256,15 +222,8 @@ namespace AnimalAnatomy
 
         void ListenForDeletePlayerPrefs()
         {
-#if ENABLE_LEGACY_INPUT_MANAGER
-            if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.D))
-                PlayerPrefs.DeleteAll();
-#endif
-
-#if ENABLE_INPUT_SYSTEM
             if (keyboard.leftCtrlKey.isPressed && keyboard.leftShiftKey.isPressed && keyboard.leftAltKey.isPressed && keyboard.dKey.wasPressedThisFrame)
                 PlayerPrefs.DeleteAll();
-#endif
         }
     }
 }

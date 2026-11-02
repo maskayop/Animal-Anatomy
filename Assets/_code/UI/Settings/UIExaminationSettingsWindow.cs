@@ -1,6 +1,6 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 namespace AnimalAnatomy
 {
@@ -28,6 +28,8 @@ namespace AnimalAnatomy
         protected override void OnInit()
         {
             examinationController = ExaminationController.Instance;
+
+            if (!examinationController) return;
 
             SetExamMode(0);
             SetExamDifficulty(0);
