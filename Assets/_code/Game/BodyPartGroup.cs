@@ -136,6 +136,9 @@ namespace AnimalAnatomy
 
         public string GetFullRussianName()
         {
+            if (!info)
+                return "";
+
             string suffixAdditional = "";
 
             if (suffix)
@@ -146,6 +149,9 @@ namespace AnimalAnatomy
 
         public string GetFullScientificName()
         {
+            if (!info)
+                return "";
+
             string suffixAdditional = "";
 
             if (suffix)

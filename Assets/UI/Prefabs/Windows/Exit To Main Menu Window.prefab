@@ -261,6 +261,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: -8
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -433,9 +434,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026dccd070267bd4aa3442750216909b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIExitWindow
+  closeOnAwake: 1
   window: {fileID: 7201500224086808614}
-  menuWindow: {fileID: 0}
   mainMenuSceneName: _Main Menu
+  mainMenuSceneNames:
+  - _Main Menu
+  - _Main Menu Aviculture
 --- !u!1001 &3695294494140981012
 PrefabInstance:
   m_ObjectHideFlags: 0

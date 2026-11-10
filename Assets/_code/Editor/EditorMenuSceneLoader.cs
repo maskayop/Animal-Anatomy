@@ -17,7 +17,7 @@ namespace AnimalAnatomy.Editor
 
         static void LoadScene(string sceneName, bool schemes)
         {
-            string path = "Assets/Scenes Interactive Schemes/";
+            string path = "Assets/Scenes Aviculture/";
 
             if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
             {
@@ -87,40 +87,46 @@ namespace AnimalAnatomy.Editor
             LoadScene("Chicken");
         }
 
-        // Интерактивные Схемы
+        // Птицеводство
 
-        [MenuItem("Animal Anatomy/Открыть сцену - Схемы/Main Menu")]
-        static void LoadSceneISMainMenu()
+        [MenuItem("Animal Anatomy/Открыть сцену - Птицеводство/Init Aviculture")]
+        static void LoadSceneAvicultureInit()
         {
-            LoadScene("_Main Menu Interactive Schemes", true);
+            LoadScene("_Init Aviculture", true);
         }
 
-        [MenuItem("Animal Anatomy/Открыть сцену - Схемы/Птицефабрика")]
-        static void LoadSceneISPoultryFarm()
+        [MenuItem("Animal Anatomy/Открыть сцену - Птицеводство/Main Menu Aviculture")]
+        static void LoadSceneAvicultureMainMenu()
+        {
+            LoadScene("_Main Menu Aviculture", true);
+        }
+
+        [MenuItem("Animal Anatomy/Открыть сцену - Птицеводство/Устройство птицефермы")]
+        static void LoadSceneAviculturePoultryFarm()
         {
             LoadScene("Poultry Farm", true);
         }
 
-        [MenuItem("Animal Anatomy/Открыть сцену - Схемы/Производство яиц")]
-        static void LoadSceneISEggProduction()
+        [MenuItem("Animal Anatomy/Открыть сцену - Птицеводство/Производство яиц")]
+        static void LoadSceneAvicultureEggProduction()
         {
             LoadScene("Egg Production", true);
         }
 
-        [MenuItem("Animal Anatomy/Открыть сцену - Схемы/Линия переработки птицы")]
-        static void LoadSceneISPoultryProcessingLine()
+        [MenuItem("Animal Anatomy/Открыть сцену - Птицеводство/Линия переработки птицы")]
+        static void LoadSceneAviculturePoultryProcessingLine()
         {
             LoadScene("Poultry Processing Line", true);
         }
 
-        [MenuItem("Animal Anatomy/Открыть сцену - Схемы/Технология инкубации")]
-        static void LoadSceneISIncubationTechnology()
+        [MenuItem("Animal Anatomy/Открыть сцену - Птицеводство/Технология инкубации")]
+        static void LoadSceneAvicultureIncubationTechnology()
         {
             LoadScene("Incubation Technology", true);
         }
 
-        [MenuItem("Animal Anatomy/Открыть сцену - Схемы/Теория птицеводства")]
-        static void LoadSceneISTheoryPoultryFarming()
+        [MenuItem("Animal Anatomy/Открыть сцену - Птицеводство/Теория птицеводства")]
+        static void LoadSceneAvicultureTheoryPoultryFarming()
         {
             LoadScene("Theory Poultry Farming", true);
         }

@@ -11,15 +11,15 @@ namespace AnimalAnatomy
     public class UIGameSelection
     {
         public string sceneName;
-        public UIAnimalSelectionButton selectionButton;
+        public UIGameSelectionButton selectionButton;
     }
 
     public class UIMainMenuCanvas : MonoBehaviour
     {
         public static UIMainMenuCanvas Instance;
 
-        [SerializeField] GameObject currentAnimalPanel;
-        [SerializeField] TextMeshProUGUI currentAnimalText;
+        [SerializeField] GameObject currentGamePanel;
+        [SerializeField] TextMeshProUGUI currentGameNameText;
         [SerializeField] GameObject startButtonPanel;
 
         [Header("Loading Screen")]
@@ -38,6 +38,7 @@ namespace AnimalAnatomy
         [HideInInspector]
         public bool isLoading = false;
 
+        ScenesManager scenesManager;
         MainMenuAnimalSelection mainMenuAnimalSelection;
 
         int currentGame = 0;
@@ -74,11 +75,13 @@ namespace AnimalAnatomy
 
         public void Init()
         {
+            scenesManager = ScenesManager.Instance;
             mainMenuAnimalSelection = MainMenuAnimalSelection.Instance;
 
             SelectGame(-1, "");
 
-            currentAnimalPanel?.SetActive(false);
+            if (currentGamePanel)
+                currentGamePanel.SetActive(false);
 
             for (int i = 0; i < games.Count; i++)
             {
@@ -130,16 +133,21 @@ namespace AnimalAnatomy
                 {
                     SelectGame(i, INname);
                     games[i].selectionButton.Select(true);
-                    currentAnimalText.text = games[i].selectionButton.gameName;
+
+                    if (currentGameNameText)
+                        currentGameNameText.text = games[i].selectionButton.gameName;
                 }
                 else
                     games[i].selectionButton.Select(false);
             }
 
-            if (currentGame != -1)
-                currentAnimalPanel.SetActive(true);
-            else
-                currentAnimalPanel.SetActive(false);
+            if (currentGamePanel)
+            {
+                if (currentGame != -1)
+                    currentGamePanel.SetActive(true);
+                else
+                    currentGamePanel.SetActive(false);
+            }
         }
 
         void SelectAnimalBySceneName(string INsceneName)
@@ -149,12 +157,12 @@ namespace AnimalAnatomy
 
         public void StartGame()
         {
-            ScenesManager.Instance.LoadSceneByName(games[currentGame].sceneName);
+            scenesManager?.LoadSceneByName(games[currentGame].sceneName);
         }
 
         public void StartGameByName(string gameName)
         {
-            ScenesManager.Instance.LoadSceneByName(gameName);
+            scenesManager?.LoadSceneByName(gameName);
         }
 
         public void ExitGame()
@@ -164,7 +172,8 @@ namespace AnimalAnatomy
 
         bool IsGameSceneAddedToBuild(int sceneId)
         {
-            return ScenesManager.Instance.IsSceneAddedToBuild(games[sceneId].sceneName);
+            if (!scenesManager) return false;
+            return scenesManager.IsSceneAddedToBuild(games[sceneId].sceneName);
         }
     }
 }

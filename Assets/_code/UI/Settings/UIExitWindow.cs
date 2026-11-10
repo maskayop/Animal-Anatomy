@@ -1,16 +1,26 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace AnimalAnatomy
 {
     public class UIExitWindow : UI_SettingsWindowBase
     {
-        [SerializeField] string mainMenuSceneName;
+        [SerializeField] List<string> mainMenuSceneNames = new List<string>();
 
         public void ExitToMainMenu()
         {
-            if (scenesManager && scenesManager.IsSceneAddedToBuild(mainMenuSceneName))
-                scenesManager.LoadSceneByName(mainMenuSceneName);
-            else if (app)
+            if (!scenesManager) return;
+
+            for (int i = 0; i < mainMenuSceneNames.Count; i++)
+            {
+                if (scenesManager.IsSceneAddedToBuild(mainMenuSceneNames[i]))
+                {
+                    scenesManager.LoadSceneByName(mainMenuSceneNames[i]);
+                    return;
+                }
+            }
+
+            if (app)
                 app.ExitGame();
         }
     }
