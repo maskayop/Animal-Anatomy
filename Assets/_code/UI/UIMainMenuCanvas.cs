@@ -38,6 +38,8 @@ namespace AnimalAnatomy
         [HideInInspector]
         public bool isLoading = false;
 
+        MainMenuAnimalSelection mainMenuAnimalSelection;
+
         int currentGame = 0;
 
         void Awake()
@@ -72,7 +74,9 @@ namespace AnimalAnatomy
 
         public void Init()
         {
-            SelectGame(-1);
+            mainMenuAnimalSelection = MainMenuAnimalSelection.Instance;
+
+            SelectGame(-1, "");
 
             currentAnimalPanel?.SetActive(false);
 
@@ -100,7 +104,7 @@ namespace AnimalAnatomy
             isLoading = false;
         }
 
-        public void SelectGame(int id)
+        public void SelectGame(int id, string INsceneName)
         {
             currentGame = id;
 
@@ -112,7 +116,7 @@ namespace AnimalAnatomy
                 return;
             }
             else
-                MainMenuAnimalSelection.Instance.SelectAnimal(id);
+                SelectAnimalBySceneName(INsceneName);
 
             if (!IsGameSceneAddedToBuild(id))
                 startButtonPanel.SetActive(false);
@@ -124,7 +128,7 @@ namespace AnimalAnatomy
             {
                 if (games[i].sceneName == INname)
                 {
-                    SelectGame(i);
+                    SelectGame(i, INname);
                     games[i].selectionButton.Select(true);
                     currentAnimalText.text = games[i].selectionButton.gameName;
                 }
@@ -136,6 +140,11 @@ namespace AnimalAnatomy
                 currentAnimalPanel.SetActive(true);
             else
                 currentAnimalPanel.SetActive(false);
+        }
+
+        void SelectAnimalBySceneName(string INsceneName)
+        {
+            mainMenuAnimalSelection?.SelectAnimalBySceneName(INsceneName);
         }
 
         public void StartGame()

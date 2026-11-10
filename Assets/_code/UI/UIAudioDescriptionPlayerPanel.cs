@@ -17,6 +17,8 @@ namespace AnimalAnatomy
         AudioClip currentNameClip;
         AudioClip currentClip;
 
+        AudioController audioController;
+
         void Start()
         {
             Init();
@@ -39,6 +41,8 @@ namespace AnimalAnatomy
 
         public void Init()
         {
+            audioController = AudioController.Instance;
+
             playButton.SetActive(true);
             stopButton.SetActive(false);
             pauseButton.SetActive(false);
@@ -48,6 +52,8 @@ namespace AnimalAnatomy
 
         public void OnPlayButtonClicked()
         {
+            if (!audioController) return;
+
             playButton.SetActive(false);
             pauseButton.SetActive(true);
             stopButton.SetActive(true);
@@ -56,7 +62,7 @@ namespace AnimalAnatomy
 
             if (currentTime > 0)
             {
-                AudioController.Instance.PlayCurrentVoice();
+                audioController.PlayCurrentVoice();
                 return;
             }
 
@@ -68,14 +74,19 @@ namespace AnimalAnatomy
 
         public void OnStopButtonClicked()
         {
-            playButton.SetActive(true);
-            pauseButton.SetActive(false);
-            stopButton.SetActive(false);
+            if (!audioController) return;
 
-            AudioController.Instance.StopCurrentVoice();
+            if (playButton) playButton.SetActive(true);
+            if (pauseButton) pauseButton.SetActive(false);
+            if (stopButton) stopButton.SetActive(false);
 
-            slider.minValue = 0;
-            slider.value = 0;
+            audioController.StopCurrentVoice();
+
+            if (slider)
+            {
+                slider.minValue = 0;
+                slider.value = 0;
+            }
 
             currentTime = 0;
             isPlaying = false;
@@ -83,10 +94,12 @@ namespace AnimalAnatomy
 
         public void OnPauseButtonClicked()
         {
+            if (!audioController) return;
+
             playButton.SetActive(true);
             pauseButton.SetActive(false);
 
-            AudioController.Instance.PauseCurrentVoice();
+            audioController.PauseCurrentVoice();
 
             isPlaying = false;
         }
@@ -95,23 +108,33 @@ namespace AnimalAnatomy
         {
             if (!nameClip && !clip)
             {
-                audioPlayerPanel.SetActive(false);
-                slider.gameObject.SetActive(false);
+                if (audioPlayerPanel)
+                    audioPlayerPanel.SetActive(false);
+
+                if (slider)
+                    slider.gameObject.SetActive(false);
+
                 return;
             }
-            else
-            {
-                OnStopButtonClicked();
-                audioPlayerPanel.SetActive(true);
-                slider.gameObject.SetActive(true);
-            }
 
-            if (!nameClip)
+            OnStopButtonClicked();
+
+            if (audioPlayerPanel)
+                audioPlayerPanel.SetActive(true);
+
+            if (!slider) return;
+
+            slider.gameObject.SetActive(true);
+
+            if (!nameClip && clip)
                 slider.maxValue = clip.length;
-            else if (!clip)
+
+            else if (nameClip && !clip)
                 slider.maxValue = nameClip.length;
-            else
+            else if (nameClip && clip)
                 slider.maxValue = nameClip.length + clip.length;
+            else
+                slider.maxValue = 0;
 
             currentNameClip = nameClip;
             currentClip = clip;
@@ -119,11 +142,13 @@ namespace AnimalAnatomy
 
         void PlayVoiceClip(AudioClip INclip)
         {
-            if (AudioController.Instance.voiceSource.clip == INclip)
+            if (!audioController) return;
+
+            if (audioController.voiceSource.clip == INclip)
                 return;
 
-            AudioController.Instance.voiceSource.clip = INclip;
-            AudioController.Instance.PlayCurrentVoice();
+            audioController.voiceSource.clip = INclip;
+            audioController.PlayCurrentVoice();
         }
     }
 }

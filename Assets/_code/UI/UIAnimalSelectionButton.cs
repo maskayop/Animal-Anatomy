@@ -15,7 +15,7 @@ namespace AnimalAnatomy
         {
             mainMenuCanvas = UIMainMenuCanvas.Instance;
 
-            Init();   
+            Init();
         }
 
         public void Init()
@@ -30,8 +30,7 @@ namespace AnimalAnatomy
 
         public void SelectGame()
         {
-            if (!mainMenuCanvas)
-                return;
+            if (!mainMenuCanvas) return;
 
             mainMenuCanvas.SelectGameBySceneName(sceneName);
         }

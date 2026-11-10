@@ -30,6 +30,8 @@ namespace AnimalAnatomy
         Keyboard keyboard = Keyboard.current;
 #endif
 
+        Vector2 mousePosition;
+
         void Awake()
         {
             if (Instance != null)
@@ -86,10 +88,7 @@ namespace AnimalAnatomy
             cameraController = CameraController.Instance;
             mainCanvas = UIMainCanvas.Instance;
 
-            // Включаем поддержку EnhancedTouch
             EnhancedTouchSupport.Enable();
-
-            // Кешируем устройства ввода
             currentMouse = Mouse.current;
 
 #if PLATFORM_ANDROID
@@ -166,17 +165,15 @@ namespace AnimalAnatomy
 #endif
         }
 
-        // Оригинальный метод (для совместимости с ПК)
         void SelectBodyPart()
         {
-            if (currentMouse != null)
-            {
-                Vector2 mousePosition = currentMouse.position.ReadValue();
-                SelectBodyPart(mousePosition);
-            }
+            if (currentMouse == null)
+                currentMouse = Mouse.current;
+
+            mousePosition = currentMouse.position.ReadValue();
+            SelectBodyPart(mousePosition);
         }
 
-        // Новая перегрузка с параметром (для Android)
         void SelectBodyPart(Vector2 screenPosition)
         {
             if (!cameraController || !gameController)
@@ -192,16 +189,16 @@ namespace AnimalAnatomy
 
                     if (info)
                     {
-                        gameController.SelectBodyPart(info);
+                        gameController?.SelectBodyPart(info);
 
                         if (gameController.exclusionMode)
-                            gameController.HideSelectedBodyPart();
+                            gameController?.HideSelectedBodyPart();
                     }
                 }
                 else
                 {
-                    gameController.UnSelectBodyPart(false);
-                    gameController.UnSelectBodyPartGroup();
+                    gameController?.UnSelectBodyPart(false);
+                    gameController?.UnSelectBodyPartGroup();
                 }
             }
         }

@@ -9,6 +9,8 @@ namespace AnimalAnatomy
     [Serializable]
     public class AnimalSelection
     {
+        public string sceneName;
+        public GameObject container;
         public GameObject selected;
         public GameObject unselected;
 
@@ -16,7 +18,6 @@ namespace AnimalAnatomy
         {
             selected.SetActive(state);
             unselected.SetActive(false);
-            //unselected.SetActive(!state);
         }
     }
 
@@ -26,6 +27,8 @@ namespace AnimalAnatomy
 
         [SerializeField] List<AnimalSelection> animals = new List<AnimalSelection>();
         [SerializeField] List<AnimalSelection> XR_Animals = new List<AnimalSelection>();
+
+        App app;
 
         void Awake()
         {
@@ -46,6 +49,8 @@ namespace AnimalAnatomy
 
         public void Init()
         {
+            app = App.Instance;
+
             EnableAnimals(animals, false);
             EnableAnimals(XR_Animals, false);
 
@@ -56,33 +61,62 @@ namespace AnimalAnatomy
         {
             yield return new WaitForSeconds(1.5f);
 
-            if (App.Instance.isXR)
+            if (app)
             {
-                DestroyAnimals(animals);
-                EnableAnimals(XR_Animals, true);
-            }
-            else
-            {
-                DestroyAnimals(XR_Animals);
-                EnableAnimals(animals, false);
-            }
+                if (app.isXR)
+                {
+                    DestroyAnimals(animals);
+                    EnableAnimals(XR_Animals, true);
+                }
+                else
+                {
+                    DestroyAnimals(XR_Animals);
+                    EnableAnimals(animals, false);
+                }
 
-            UnselectAll();
+                UnselectAll();
+            }
+        }
+
+        public void SelectAnimalBySceneName(string INname)
+        {
+            if (!app) return;
+
+            List<AnimalSelection> animalsSelection = new List<AnimalSelection>();
+
+            if (!app.isXR)
+                animalsSelection = animals;
+            else
+                animalsSelection = XR_Animals;
+
+            for (int i = 0; i < animalsSelection.Count; i++)
+                if (animalsSelection[i].sceneName == INname)
+                    SelectAnimal(i);
         }
 
         public void SelectAnimal(int id)
         {
+            if (!app) return;
+
             UnselectAll();
 
-            if (App.Instance && App.Instance.isXR)
-                XR_Animals[id].Select(true);
+            if (app.isXR)
+            {
+                if (XR_Animals.Count > id)
+                    XR_Animals[id].Select(true);
+            }
             else
-                animals[id].Select(true);
+            {
+                if (animals.Count > id)
+                    animals[id].Select(true);
+            }
         }
 
         void UnselectAll()
         {
-            if (App.Instance && App.Instance.isXR)
+            if (!app) return;
+
+            if (app.isXR)
                 for (int i = 0; i < XR_Animals.Count; i++)
                     XR_Animals[i].Select(false);
             else
@@ -102,10 +136,8 @@ namespace AnimalAnatomy
         void DestroyAnimals(List<AnimalSelection> list)
         {
             for (int i = 0; i < list.Count; i++)
-            {
-                DestroyImmediate(list[i].selected);
-                DestroyImmediate(list[i].unselected);
-            }
+                if (list[i].container != null)
+                    DestroyImmediate(list[i].container);
         }
     }
 }

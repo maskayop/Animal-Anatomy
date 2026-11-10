@@ -139,7 +139,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6488663805156807622, guid: 20d0a271fd6d8644ea3983f65348d5be, type: 3}
       propertyPath: m_Name
-      value: Chicken
+      value: Chicken Selected
       objectReference: {fileID: 0}
     - target: {fileID: 8554746129043892419, guid: 20d0a271fd6d8644ea3983f65348d5be, type: 3}
       propertyPath: m_LocalScale.x
@@ -999,7 +999,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4330773797311623901, guid: 5c72c5071bc4ad649af1394a6e9559f0, type: 3}
       propertyPath: m_Name
-      value: XR Horse
+      value: XR Horse Selected
       objectReference: {fileID: 0}
     - target: {fileID: 4475148044543853300, guid: 5c72c5071bc4ad649af1394a6e9559f0, type: 3}
       propertyPath: m_LocalScale.x
@@ -1497,7 +1497,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 55446731603465115, guid: c09106be585444844841d6fe1b7dd487, type: 3}
       propertyPath: m_Name
-      value: XR Cow
+      value: XR Cow Selected
       objectReference: {fileID: 0}
     - target: {fileID: 8823259345765287616, guid: c09106be585444844841d6fe1b7dd487, type: 3}
       propertyPath: m_LocalScale.x
@@ -1700,7 +1700,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4330773797311623901, guid: 8fdda5ce01f127d4896cb41cdb8a28e6, type: 3}
       propertyPath: m_Name
-      value: Pig
+      value: Pig Selected
       objectReference: {fileID: 0}
     - target: {fileID: 4475148044543853300, guid: 8fdda5ce01f127d4896cb41cdb8a28e6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2001,31 +2001,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuAnimalSelection
   animals:
-  - selected: {fileID: 2092865796}
-    unselected: {fileID: 860849478}
-  - selected: {fileID: 1981052337}
-    unselected: {fileID: 1572771533}
-  - selected: {fileID: 2557373731241557914}
-    unselected: {fileID: 1575877694}
-  - selected: {fileID: 356661925}
-    unselected: {fileID: 1331579336}
-  - selected: {fileID: 40372059}
-    unselected: {fileID: 675616800}
-  - selected: {fileID: 99907653}
+  - sceneName: Chicken
+    container: {fileID: 1118127147}
+    selected: {fileID: 99907653}
     unselected: {fileID: 1295153968}
+  - sceneName: Cat
+    container: {fileID: 433865399}
+    selected: {fileID: 40372059}
+    unselected: {fileID: 675616800}
+  - sceneName: Dog
+    container: {fileID: 872243615}
+    selected: {fileID: 2092865796}
+    unselected: {fileID: 860849478}
+  - sceneName: Pig
+    container: {fileID: 1994186991}
+    selected: {fileID: 1981052337}
+    unselected: {fileID: 1572771533}
+  - sceneName: Cow
+    container: {fileID: 1437227501}
+    selected: {fileID: 2557373731241557914}
+    unselected: {fileID: 1575877694}
+  - sceneName: Horse
+    container: {fileID: 760217698}
+    selected: {fileID: 356661925}
+    unselected: {fileID: 1331579336}
   XR_Animals:
-  - selected: {fileID: 1130537631}
-    unselected: {fileID: 1468151788}
-  - selected: {fileID: 1130537631}
-    unselected: {fileID: 1468151788}
-  - selected: {fileID: 805442994}
+  - sceneName: Cow
+    container: {fileID: 1944527043}
+    selected: {fileID: 805442994}
     unselected: {fileID: 1713517989}
-  - selected: {fileID: 551119671}
+  - sceneName: Horse
+    container: {fileID: 1407713435}
+    selected: {fileID: 551119671}
     unselected: {fileID: 495731017}
-  - selected: {fileID: 551119671}
-    unselected: {fileID: 495731017}
-  - selected: {fileID: 551119671}
-    unselected: {fileID: 495731017}
+  - sceneName: Pig
+    container: {fileID: 613459591}
+    selected: {fileID: 1130537631}
+    unselected: {fileID: 1468151788}
 --- !u!1001 &1087809132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2198,7 +2210,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4330773797311623901, guid: 8fdda5ce01f127d4896cb41cdb8a28e6, type: 3}
       propertyPath: m_Name
-      value: XR Pig
+      value: XR Pig Selected
       objectReference: {fileID: 0}
     - target: {fileID: 4475148044543853300, guid: 8fdda5ce01f127d4896cb41cdb8a28e6, type: 3}
       propertyPath: m_LocalScale.x
@@ -4756,7 +4768,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4330773797311623901, guid: c1c18b4156cb0d446ad07aceeb668132, type: 3}
       propertyPath: m_Name
-      value: Dog
+      value: Dog Selected
       objectReference: {fileID: 0}
     - target: {fileID: 4475148044543853300, guid: c1c18b4156cb0d446ad07aceeb668132, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6360,7 +6372,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 55446731603465115, guid: c09106be585444844841d6fe1b7dd487, type: 3}
       propertyPath: m_Name
-      value: Cow
+      value: Cow Selected
       objectReference: {fileID: 0}
     - target: {fileID: 8823259345765287616, guid: c09106be585444844841d6fe1b7dd487, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6422,7 +6434,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4330773797311623901, guid: 5c72c5071bc4ad649af1394a6e9559f0, type: 3}
       propertyPath: m_Name
-      value: Horse
+      value: Horse Selected
       objectReference: {fileID: 0}
     - target: {fileID: 4475148044543853300, guid: 5c72c5071bc4ad649af1394a6e9559f0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6479,7 +6491,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6488663805156807622, guid: 2998897759dc81242882052402aa6155, type: 3}
       propertyPath: m_Name
-      value: Cat
+      value: Cat Selected
       objectReference: {fileID: 0}
     - target: {fileID: 8554746129043892419, guid: 2998897759dc81242882052402aa6155, type: 3}
       propertyPath: m_LocalPosition.x

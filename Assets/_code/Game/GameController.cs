@@ -52,6 +52,10 @@ namespace AnimalAnatomy
         [HideInInspector]
         public bool rightTriggerPushed = false;
 
+        public CameraController cameraController;
+        public UIMainCanvas mainCanvas;
+        public UI3D_CentralCanvas centralCanvas3D;
+
         void Awake()
         {
             if (Instance != null)
@@ -78,6 +82,10 @@ namespace AnimalAnatomy
 
         public void Init()
         {
+            cameraController = CameraController.Instance;
+            mainCanvas = UIMainCanvas.Instance;
+            centralCanvas3D = UI3D_CentralCanvas.Instance;
+
             CreateBodyPartsLists();
             StartCoroutine(UpdateBodyPartsLists());
             UnSelectBodyPart(true);
@@ -191,7 +199,7 @@ namespace AnimalAnatomy
                 }
             }
 
-            UIMainCanvas.Instance?.ActivateAllSystems(state);
+            mainCanvas?.ActivateAllSystems(state);
         }
 
         public void DisableAllSystemsExceptSystem(SystemType systemType)
@@ -208,8 +216,8 @@ namespace AnimalAnatomy
             selectedBodyPart = info;
             selectedBodyPartsGroup = null;
 
-            UIMainCanvas.Instance?.SelectBodyPart(info);
-            UI3D_CentralCanvas.Instance?.SelectBodyPart(info);
+            mainCanvas?.SelectBodyPart(info);
+            centralCanvas3D?.SelectBodyPart(info);
 
             info.Select(false);
 
@@ -221,8 +229,8 @@ namespace AnimalAnatomy
         {
             selectedBodyPart = null;
 
-            UIMainCanvas.Instance?.UnSelectBodyPart();
-            UI3D_CentralCanvas.Instance?.UnSelectBodyPart();
+            mainCanvas?.UnSelectBodyPart();
+            centralCanvas3D?.UnSelectBodyPart();
 
             for (int i = 0; i < allBodyParts.Count; i++)
                 allBodyParts[i].UnSelect();
@@ -240,8 +248,8 @@ namespace AnimalAnatomy
             selectedBodyPart = null;
             selectedBodyPartsGroup = info;
 
-            UIMainCanvas.Instance?.SelectBodyPartGroup(info);
-            UI3D_CentralCanvas.Instance?.SelectBodyPartGroup(info);
+            mainCanvas?.SelectBodyPartGroup(info);
+            centralCanvas3D?.SelectBodyPartGroup(info);
 
             info.Select();
 
@@ -252,8 +260,8 @@ namespace AnimalAnatomy
         {
             selectedBodyPartsGroup = null;
 
-            UIMainCanvas.Instance?.UnSelectBodyPartGroup();
-            UI3D_CentralCanvas.Instance?.UnSelectBodyPartGroup();
+            mainCanvas?.UnSelectBodyPartGroup();
+            centralCanvas3D?.UnSelectBodyPartGroup();
 
             for (int i = 0; i < allBodyPartsGroups.Count; i++)
             {
@@ -306,7 +314,7 @@ namespace AnimalAnatomy
                 }
             }
 
-            CameraController.Instance?.UpdatePosition();
+            cameraController?.UpdatePosition();
         }
 
         void IsolateBodyPartGroup(bool state)
@@ -341,7 +349,7 @@ namespace AnimalAnatomy
                 }
             }
 
-            CameraController.Instance?.UpdatePosition();
+            cameraController?.UpdatePosition();
         }
 
         public void SetTransparentMode(bool state)
@@ -368,7 +376,7 @@ namespace AnimalAnatomy
                     allBodyParts[i].SetAsTransparent(state);
             }
 
-            CameraController.Instance?.UpdatePosition();
+            cameraController?.UpdatePosition();
         }
 
         void IsolateBodyPartGroupTransparent(bool state)
@@ -391,7 +399,7 @@ namespace AnimalAnatomy
             else
                 selectedBodyPartsGroup.Select();
 
-            CameraController.Instance?.UpdatePosition();
+            cameraController?.UpdatePosition();
         }
 
         public void HideSelectedBodyPart()
@@ -419,8 +427,8 @@ namespace AnimalAnatomy
 
         void SetCameraDistanceLimitsMultiplier(float value)
         {
-            if (CameraController.Instance)
-                CameraController.Instance.distanceLimitsMultiplier = value;
+            if (!cameraController) return;
+            cameraController.distanceLimitsMultiplier = value;
         }
 
         public void ChangeBaseObjectRotationAngle(float INvalue)

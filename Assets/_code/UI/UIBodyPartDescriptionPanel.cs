@@ -27,25 +27,28 @@ namespace AnimalAnatomy
 
             if (bodyPartDescriptionText)
                 bodyPartDescriptionText.text = "";
-
-            if (audioDescriptionPlayerPanel)
-                audioDescriptionPlayerPanel.gameObject.SetActive(false);
         }
 
         public void ShowInfo(BodyPartInfo bodyPartInfo)
         {
+            if (!bodyPartNameText || !bodyPartScientificNameText) return;
+
             bodyPartNameText.text = bodyPartInfo.GetFullRussianName();
             bodyPartScientificNameText.text = bodyPartInfo.GetFullScientificName();
 
-            if (!bodyPartInfo.info)
-                return;
+            if (!bodyPartInfo.info) return;
 
-            bodyPartDescriptionText.text = bodyPartInfo.info.description;
-            audioDescriptionPlayerPanel.SetCurrentDescriptionAudio(bodyPartInfo.info.nameClip, bodyPartInfo.info.clip);
+            if (bodyPartDescriptionText)
+                bodyPartDescriptionText.text = bodyPartInfo.info.description;
+
+            if (audioDescriptionPlayerPanel)
+                audioDescriptionPlayerPanel.SetCurrentDescriptionAudio(bodyPartInfo.info.nameClip, bodyPartInfo.info.clip);
         }
 
         public void ShowInfo(BodyPartGroup bodyPartGroupInfo)
         {
+            if (!bodyPartNameText || !bodyPartScientificNameText) return;
+
             bodyPartNameText.text = bodyPartGroupInfo.GetFullRussianName();
             bodyPartScientificNameText.text = bodyPartGroupInfo.GetFullScientificName();
 
