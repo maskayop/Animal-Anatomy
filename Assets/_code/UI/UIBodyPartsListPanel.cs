@@ -92,8 +92,10 @@ namespace AnimalAnatomy
                     UIPartsListButton listButton = newGO.GetComponent<UIPartsListButton>();
                     listButton.Init(group.bodyParts[b]);
                     group.bodyParts[b].partListButton = listButton;
-                    listButton.containerTransform.offsetMin =
-                        new Vector2(group.parentBodyPartGroup.partGroupListButton.containerTransform.offsetMin.x + listButtonsContainerOffset, 0);
+
+                    if (group.parentBodyPartGroup)
+                        listButton.containerTransform.offsetMin =
+                            new Vector2(group.parentBodyPartGroup.partGroupListButton.containerTransform.offsetMin.x + listButtonsContainerOffset, 0);
                 }
             }
         }
