@@ -25,11 +25,6 @@ namespace AnimalAnatomy
         CameraController cameraController;
         UIMainCanvas mainCanvas;
 
-#if ENABLE_INPUT_SYSTEM
-        Mouse currentMouse = Mouse.current;
-        Keyboard keyboard = Keyboard.current;
-#endif
-
         Vector2 mousePosition;
 
         void Awake()
@@ -51,35 +46,12 @@ namespace AnimalAnatomy
 
         void Update()
         {
-            if (!gameController)
-                return;
+            if (!gameController) return;
+            if (mainCanvas && mainCanvas.isLoading) return;
+            if (ExaminationController.Instance && ExaminationController.Instance.isExamination) return;
 
-            if (mainCanvas && mainCanvas.isLoading)
-                return;
-
-            if (ExaminationController.Instance)
-                if (ExaminationController.Instance.isExamination)
-                    return;
-
-            currentMouse = Mouse.current;
-            keyboard = Keyboard.current;
-
-            if (currentMouse.rightButton.wasPressedThisFrame)
-                SelectBodyPart();
-
-            UpdateView();
-
-            if (keyboard.escapeKey.wasPressedThisFrame)
-            {
-                if (gameController.isolatedMode)
-                    gameController.SetIsolatedMode(false);
-                if (gameController.transparentMode)
-                    gameController.SetTransparentMode(false);
-                else
-                    gameController.UnSelectBodyPart(false);
-            }
-
-            ListenForDeletePlayerPrefs();
+            HandleMouseInput();
+            HandleKeyboardInput();
         }
 
         public void Init()
@@ -89,7 +61,6 @@ namespace AnimalAnatomy
             mainCanvas = UIMainCanvas.Instance;
 
             EnhancedTouchSupport.Enable();
-            currentMouse = Mouse.current;
 
 #if PLATFORM_ANDROID
             currentTime = selectionTimeout;
@@ -98,114 +69,31 @@ namespace AnimalAnatomy
 
         void OnDestroy()
         {
-            // Отключаем EnhancedTouch при выходе
             if (EnhancedTouchSupport.enabled)
                 EnhancedTouchSupport.Disable();
         }
 
-        public void CallBodyPartSelection()
+        // ─────────────────────────── Mouse ───────────────────────────
+
+        void HandleMouseInput()
         {
-            if (ExaminationController.Instance && ExaminationController.Instance.isExamination)
-                return;
+            var mouse = Mouse.current;
+            if (mouse == null) return;
 
-            if (LightController.Instance && LightController.Instance.lightRotationMode)
-                return;
+            if (mouse.rightButton.wasPressedThisFrame)
+                SelectBodyPart(mouse.position.ReadValue());
 
-#if PLATFORM_ANDROID && ENABLE_INPUT_SYSTEM
-            // Проверяем, можно ли обрабатывать тап (не по UI)
-            bool canProcessTouch = false;
-
-            if (!mainCanvas.BodyPartsListIsOpen)
-            {
-                // Список закрыт - можно обрабатывать всегда
-                canProcessTouch = true;
-            }
-            else if (Touch.activeTouches.Count > 0)
-            {
-                // Список открыт - проверяем, что тап не по панели списка
-                float touchX = Touch.activeTouches[0].screenPosition.x;
-                float maxAnchor = Screen.width * mainCanvas.GetBodyPartsListPanelMaxAnchor();
-                if (touchX > maxAnchor)
-                {
-                    canProcessTouch = true;
-                }
-            }
-
-            if (canProcessTouch && Touch.activeTouches.Count == 1)
-            {
-                Touch touch = Touch.activeTouches[0];
-
-                // Начало или удержание касания
-                if (touch.phase == UnityEngine.InputSystem.TouchPhase.Began ||
-                    touch.phase == UnityEngine.InputSystem.TouchPhase.Moved ||
-                    touch.phase == UnityEngine.InputSystem.TouchPhase.Stationary)
-                {
-                    if (isFirstClick)
-                    {
-                        currentTime = selectionTimeout;
-                        isFirstClick = false;
-                    }
-
-                    currentTime -= Time.deltaTime;
-                }
-
-                // Конец касания
-                if (touch.phase == UnityEngine.InputSystem.TouchPhase.Ended ||
-                    touch.phase == UnityEngine.InputSystem.TouchPhase.Canceled)
-                {
-                    if (currentTime > 0)
-                    {
-                        // Передаём позицию тача в SelectBodyPart
-                        SelectBodyPart(touch.screenPosition);
-                    }
-
-                    isFirstClick = true;
-                }
-            }
-#endif
+            if (mouse.middleButton.wasPressedThisFrame)
+                cameraController?.UpdatePosition();
         }
 
-        void SelectBodyPart()
+        // ────────────────────────── Keyboard ──────────────────────────
+
+        void HandleKeyboardInput()
         {
-            if (currentMouse == null)
-                currentMouse = Mouse.current;
+            var keyboard = Keyboard.current;
+            if (keyboard == null) return;
 
-            mousePosition = currentMouse.position.ReadValue();
-            SelectBodyPart(mousePosition);
-        }
-
-        void SelectBodyPart(Vector2 screenPosition)
-        {
-            if (!cameraController || !gameController)
-                return;
-
-            if (!gameController.isolatedMode && !gameController.transparentMode)
-            {
-                Ray ray = cameraController.mainCamera.ScreenPointToRay(screenPosition);
-
-                if (Physics.Raycast(ray, out RaycastHit hit, 100000, 1 << 6))
-                {
-                    BodyPartInfo info = hit.collider.GetComponentInParent<BodyPartInfo>();
-
-                    if (info)
-                    {
-                        gameController?.SelectBodyPart(info);
-
-                        if (gameController.exclusionMode)
-                            gameController?.HideSelectedBodyPart();
-                    }
-                }
-                else
-                {
-                    gameController?.UnSelectBodyPart(false);
-                    gameController?.UnSelectBodyPartGroup();
-                }
-            }
-        }
-
-        void UpdateView()
-        {
-#if ENABLE_INPUT_SYSTEM
             if (keyboard.fKey.wasPressedThisFrame)
                 cameraController?.UpdatePosition();
 
@@ -214,13 +102,118 @@ namespace AnimalAnatomy
 
             if (keyboard.wKey.wasPressedThisFrame && !gameController.isolatedMode)
                 gameController?.SetTransparentMode(!gameController.transparentMode);
+
+            if (keyboard.escapeKey.wasPressedThisFrame)
+                HandleEscape();
+
+            ListenForDeletePlayerPrefs(keyboard);
+        }
+
+        void HandleEscape()
+        {
+            if (gameController.isolatedMode)
+                gameController.SetIsolatedMode(false);
+
+            if (gameController.transparentMode)
+                gameController.SetTransparentMode(false);
+            else
+                gameController.UnSelectBodyPart(false);
+        }
+
+        void ListenForDeletePlayerPrefs(Keyboard keyboard)
+        {
+            if (keyboard.leftCtrlKey.isPressed &&
+                keyboard.leftShiftKey.isPressed &&
+                keyboard.leftAltKey.isPressed &&
+                keyboard.dKey.wasPressedThisFrame)
+            {
+                PlayerPrefs.DeleteAll();
+            }
+        }
+
+        // ─────────────────────── Selection ───────────────────────────
+
+        void SelectBodyPart(Vector2 screenPosition)
+        {
+            if (!cameraController || !gameController) return;
+            if (gameController.isolatedMode || gameController.transparentMode) return;
+
+            Ray ray = cameraController.mainCamera.ScreenPointToRay(screenPosition);
+
+            if (Physics.Raycast(ray, out RaycastHit hit, 100000, 1 << 6))
+            {
+                BodyPartInfo info = hit.collider.GetComponentInParent<BodyPartInfo>();
+
+                if (info)
+                {
+                    gameController.SelectBodyPart(info);
+
+                    if (gameController.exclusionMode)
+                        gameController.HideSelectedBodyPart();
+                }
+            }
+            else
+            {
+                gameController.UnSelectBodyPart(false);
+                gameController.UnSelectBodyPartGroup();
+            }
+        }
+
+        // ─────────────────────── Android touch ───────────────────────
+
+        public void CallBodyPartSelection()
+        {
+            if (ExaminationController.Instance && ExaminationController.Instance.isExamination) return;
+            if (LightController.Instance && LightController.Instance.lightRotationMode) return;
+
+#if PLATFORM_ANDROID
+            HandleAndroidTouch();
 #endif
         }
 
-        void ListenForDeletePlayerPrefs()
+#if PLATFORM_ANDROID
+        void HandleAndroidTouch()
         {
-            if (keyboard.leftCtrlKey.isPressed && keyboard.leftShiftKey.isPressed && keyboard.leftAltKey.isPressed && keyboard.dKey.wasPressedThisFrame)
-                PlayerPrefs.DeleteAll();
+            if (!CanProcessTouch()) return;
+            if (Touch.activeTouches.Count != 1) return;
+
+            Touch touch = Touch.activeTouches[0];
+
+            if (touch.phase == UnityEngine.InputSystem.TouchPhase.Began ||
+                touch.phase == UnityEngine.InputSystem.TouchPhase.Moved ||
+                touch.phase == UnityEngine.InputSystem.TouchPhase.Stationary)
+            {
+                if (isFirstClick)
+                {
+                    currentTime = selectionTimeout;
+                    isFirstClick = false;
+                }
+
+                currentTime -= Time.deltaTime;
+            }
+
+            if (touch.phase == UnityEngine.InputSystem.TouchPhase.Ended ||
+                touch.phase == UnityEngine.InputSystem.TouchPhase.Canceled)
+            {
+                if (currentTime > 0)
+                    SelectBodyPart(touch.screenPosition);
+
+                isFirstClick = true;
+            }
         }
+
+        bool CanProcessTouch()
+        {
+            if (!mainCanvas.BodyPartsListIsOpen)
+                return true;
+
+            if (Touch.activeTouches.Count == 0)
+                return false;
+
+            float touchX = Touch.activeTouches[0].screenPosition.x;
+            float maxAnchor = Screen.width * mainCanvas.GetBodyPartsListPanelMaxAnchor();
+            return touchX > maxAnchor;
+        }
+#endif
     }
 }
