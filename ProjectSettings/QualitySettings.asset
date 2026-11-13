@@ -4,10 +4,10 @@
 QualitySettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_CurrentQuality: 3
+  m_CurrentQuality: 6
   m_QualitySettings:
   - serializedVersion: 5
-    name: Android Low (PQ)
+    name: Android Low PQ
     pixelLightCount: 2
     shadows: 2
     shadowResolution: 1
@@ -18,7 +18,7 @@ QualitySettings:
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
     shadowmaskMode: 0
-    skinWeights: 2
+    skinWeights: 1
     globalTextureMipmapLimit: 2
     textureMipmapLimitSettings: []
     anisotropicTextures: 0
@@ -62,7 +62,7 @@ QualitySettings:
     - Standalone
     - WebGL
   - serializedVersion: 5
-    name: Android Medium (MQ)
+    name: Android Medium MQ
     pixelLightCount: 2
     shadows: 2
     shadowResolution: 1
@@ -73,7 +73,7 @@ QualitySettings:
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
     shadowmaskMode: 0
-    skinWeights: 4
+    skinWeights: 2
     globalTextureMipmapLimit: 1
     textureMipmapLimitSettings: []
     anisotropicTextures: 1
@@ -117,7 +117,7 @@ QualitySettings:
     - Standalone
     - WebGL
   - serializedVersion: 5
-    name: Android High (HQ)
+    name: Android High HQ
     pixelLightCount: 1
     shadows: 2
     shadowResolution: 1
@@ -227,7 +227,7 @@ QualitySettings:
     - Standalone
     - WebGL
   - serializedVersion: 5
-    name: PC Low (PQ)
+    name: PC Low PQ
     pixelLightCount: 1
     shadows: 2
     shadowResolution: 1
@@ -238,7 +238,7 @@ QualitySettings:
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
     shadowmaskMode: 0
-    skinWeights: 2
+    skinWeights: 1
     globalTextureMipmapLimit: 2
     textureMipmapLimitSettings: []
     anisotropicTextures: 1
@@ -282,7 +282,7 @@ QualitySettings:
     - WebGL
     - Android
   - serializedVersion: 5
-    name: PC Medium (MQ)
+    name: PC Medium MQ
     pixelLightCount: 1
     shadows: 2
     shadowResolution: 1
@@ -293,7 +293,7 @@ QualitySettings:
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
     shadowmaskMode: 0
-    skinWeights: 4
+    skinWeights: 2
     globalTextureMipmapLimit: 1
     textureMipmapLimitSettings: []
     anisotropicTextures: 1
@@ -337,7 +337,7 @@ QualitySettings:
     - WebGL
     - Android
   - serializedVersion: 5
-    name: PC High (HQ)
+    name: PC High HQ
     pixelLightCount: 1
     shadows: 2
     shadowResolution: 1
@@ -348,7 +348,7 @@ QualitySettings:
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
     shadowmaskMode: 0
-    skinWeights: 255
+    skinWeights: 4
     globalTextureMipmapLimit: 0
     textureMipmapLimitSettings: []
     anisotropicTextures: 1

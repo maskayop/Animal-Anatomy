@@ -18,6 +18,8 @@ MonoBehaviour:
   m_PlatformId: b9b35072a6f44c2e863f17467ea3dc13
   m_PlatformBuildProfile:
     rid: 6895011312495493182
+  m_ActivePlatformGuid: 
+  m_AdditionalPlatformBuildSettings: []
   m_OverrideGlobalSceneList: 1
   m_Scenes:
   - m_enabled: 1
@@ -60,8 +62,7 @@ MonoBehaviour:
     - line: '|   productName: Animal Anatomy'
     - line: '|   defaultCursor: {instanceID: 0}'
     - line: '|   cursorHotspot: {x: 0, y: 0}'
-    - line: '|   m_SplashScreenBackgroundColor: {r: 0.12156863, g: 0.12156863, b:
-        0.1254902, a: 1}'
+    - line: '|   m_SplashScreenBackgroundColor: {r: 0.12156863, g: 0.12156863, b: 0.1254902, a: 1}'
     - line: '|   m_ShowUnitySplashScreen: 1'
     - line: '|   m_ShowUnitySplashLogo: 1'
     - line: '|   m_SplashScreenOverlayOpacity: 1'
@@ -190,8 +191,7 @@ MonoBehaviour:
     - line: '|   tvOSBundleVersion: 1.0'
     - line: '|   bundleVersion: 1.28'
     - line: '|   preloadedAssets:'
-    - line: '|   - {fileID: -944628639613478452, guid: 5a81736d10f6e6444ac23d2835b6e3e5,
-        type: 3}'
+    - line: '|   - {fileID: -944628639613478452, guid: 5a81736d10f6e6444ac23d2835b6e3e5, type: 3}'
     - line: '|   metroInputSource: 0'
     - line: '|   wsaTransparentSwapchain: 0'
     - line: '|   xboxOneDisableKinectGpuReservation: 1'
@@ -343,8 +343,7 @@ MonoBehaviour:
     - line: '|   - m_BuildTarget: '
     - line: '|     m_Icons:'
     - line: '|     - serializedVersion: 2'
-    - line: '|       m_Icon: {fileID: 2800000, guid: 20803b9adff4dec43a648cd015022009,
-        type: 3}'
+    - line: '|       m_Icon: {fileID: 2800000, guid: 20803b9adff4dec43a648cd015022009, type: 3}'
     - line: '|       m_Width: 128'
     - line: '|       m_Height: 128'
     - line: '|       m_Kind: 0'
@@ -797,10 +796,8 @@ MonoBehaviour:
     - line: '|   metroLastRequiredScene: 0'
     - line: '|   metroDefaultTileSize: 1'
     - line: '|   metroTileForegroundText: 2'
-    - line: '|   metroTileBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21568628,
-        a: 0}'
-    - line: '|   metroSplashScreenBackgroundColor: {r: 0.12941177, g: 0.17254902,
-        b: 0.21568628, a: 1}'
+    - line: '|   metroTileBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21568628, a: 0}'
+    - line: '|   metroSplashScreenBackgroundColor: {r: 0.12941177, g: 0.17254902, b: 0.21568628, a: 1}'
     - line: '|   metroSplashScreenUseBackgroundColor: 0'
     - line: '|   syncCapabilities: 0'
     - line: '|   platformCapabilities: {}'
@@ -877,6 +874,7 @@ MonoBehaviour:
     - line: '|   d3d12DeviceFilterListAsset: {instanceID: 0}'
     - line: '|   allowedHttpConnections: 3'
     - line: '| '
+  requiredComponents: []
   references:
     version: 2
     RefIds:
@@ -886,6 +884,7 @@ MonoBehaviour:
         m_Development: 0
         m_ConnectProfiler: 0
         m_BuildWithDeepProfilingSupport: 0
+        m_BuildWithCodeCoverage: 0
         m_AllowDebugging: 0
         m_WaitForManagedDebugger: 0
         m_ManagedDebuggerFixedPort: 0
@@ -906,6 +905,7 @@ MonoBehaviour:
         m_BuildType: 2
         m_LinkTimeOptimization: 0
         m_BuildAppBundle: 0
+        m_ProfileableShell: 0
         m_IPAddressToConnect: 
         m_SymlinkSources: 0
 --- !u!114 &4966311844528651921
