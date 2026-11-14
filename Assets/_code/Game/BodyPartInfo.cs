@@ -13,7 +13,9 @@ namespace AnimalAnatomy
 
         [SerializeField] List<MeshRenderer> meshRenderers = new List<MeshRenderer>();
 
+        [HideInInspector]
         public float cameraDistanceLimitsMultiplier = 1.0f;
+        public bool rotateCameraAroundPivot = false;
 
         [Header("Info")]
         public Data_Info info;
@@ -26,21 +28,21 @@ namespace AnimalAnatomy
         [HideInInspector]
         public BodyPartGroup bodyPartGroup;
 
-        Material defaultMaterial;
+        List<Material> defaultMaterials = new List<Material>();
         GameObject transformCenterGameObject;
 
         GameController gameController;
 
         void Reset()
         {
-            foreach (Transform child in transform)
+            // Оставляем для удобства в редакторе, но в рантайме всё равно пересоберётся
+            meshRenderers.Clear();
+
+            foreach (Transform child in GetComponentsInChildren<Transform>(true))
             {
                 if (child.GetComponent<MeshRenderer>())
                     meshRenderers.Add(child.GetComponent<MeshRenderer>());
             }
-
-            if (GetComponent<MeshRenderer>())
-                meshRenderers.Add(GetComponent<MeshRenderer>());
         }
 
         void Start()
@@ -69,16 +71,23 @@ namespace AnimalAnatomy
                     Debug.LogWarning("Нет audio clip для " + name);
             }
 
-            if (meshRenderers.Count == 0)
-            {
-                Debug.LogWarning("Нет meshRenderers для " + name);
+            // Автоматический сбор всех MeshRenderer во всей иерархии (включая неактивные)
+            meshRenderers.Clear();
 
-                if (GetComponent<MeshRenderer>())
-                    meshRenderers.Add(GetComponent<MeshRenderer>());
+            foreach (Transform child in GetComponentsInChildren<Transform>(true))
+            {
+                if (child.TryGetComponent(out MeshRenderer mr))
+                    meshRenderers.Add(mr);
             }
 
-            if (meshRenderers.Count != 0)
-                defaultMaterial = meshRenderers[0].material;
+            if (meshRenderers.Count == 0)
+                Debug.LogWarning("Нет meshRenderers для " + name);
+
+            // Запоминаем дефолтные материалы каждого рендерера
+            defaultMaterials.Clear();
+
+            for (int i = 0; i < meshRenderers.Count; i++)
+                defaultMaterials.Add(meshRenderers[i].material);
 
             CalculateCameraDistanceLimitsMultiplier();
 
@@ -158,7 +167,7 @@ namespace AnimalAnatomy
                 if (state)
                     materials[0] = GlobalMaterialsManager.Instance.transparentModeMaterial;
                 else
-                    materials[0] = defaultMaterial;
+                    materials[0] = defaultMaterials[i];
 
                 meshRenderers[i].materials = materials;
             }
@@ -166,7 +175,20 @@ namespace AnimalAnatomy
 
         public Vector3 GetCenterOfObject()
         {
-            return meshRenderers[0].bounds.center;
+            if (rotateCameraAroundPivot)
+                return transform.position;
+
+            if (meshRenderers.Count == 0)
+                return transform.position;
+
+            Vector3 value = Vector3.zero;
+
+            for (int i = 0; i < meshRenderers.Count; i++)
+                value += meshRenderers[i].bounds.center;
+
+            value /= meshRenderers.Count;
+
+            return value;
         }
 
         public void SelectCorrect(bool isCorrect)
@@ -213,7 +235,7 @@ namespace AnimalAnatomy
             string suffixAdditional = "";
 
             if (suffix)
-                suffixAdditional = " (" + suffix.scientificName + ")";
+                suffixAdditional = " (" + suffix.russianName + ")";
 
             if (info)
                 return info.scientificName + suffixAdditional + saggital;
@@ -223,6 +245,12 @@ namespace AnimalAnatomy
 
         void CalculateCameraDistanceLimitsMultiplier()
         {
+            if (meshRenderers.Count == 0)
+            {
+                cameraDistanceLimitsMultiplier = 1.0f;
+                return;
+            }
+
             float[] floats = new float[3];
             floats[0] = meshRenderers[0].bounds.size.x;
             floats[1] = meshRenderers[0].bounds.size.y;
