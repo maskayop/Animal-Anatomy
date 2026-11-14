@@ -101,7 +101,7 @@ namespace AnimalAnatomy.Editor
             LoadScene("_Main Menu Aviculture", true);
         }
 
-        [MenuItem("Animal Anatomy/Открыть сцену - Птицеводство/Устройство птицефермы")]
+        [MenuItem("Animal Anatomy/Открыть сцену - Птицеводство/Устройство птицефабрики")]
         static void LoadSceneAviculturePoultryFarm()
         {
             LoadScene("Poultry Farm", true);
