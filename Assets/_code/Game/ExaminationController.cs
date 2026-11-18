@@ -8,6 +8,8 @@ namespace AnimalAnatomy
     {
         public static ExaminationController Instance;
 
+        public bool allInOne = false;
+
         [Header("Settings")]
         public int examMode = 0;
         public int examDifficulty = 0;
@@ -30,6 +32,10 @@ namespace AnimalAnatomy
         GameController gameController;
         BodyPartInfo currentInfo;
         BodyPartInfo previousInfo;
+
+        CameraController cameraController;
+        UIMainCanvas mainCanvas;
+        UI3D_CentralCanvas centralCanvas_3D;
 
         void Awake()
         {
@@ -62,11 +68,17 @@ namespace AnimalAnatomy
         public void Init()
         {
             gameController = GameController.Instance;
+            cameraController = CameraController.Instance;
+            mainCanvas = UIMainCanvas.Instance;
+            centralCanvas_3D = UI3D_CentralCanvas.Instance;
+
             currentQuestionBodyPartInfos.Clear();
         }
 
         public void StartExamination()
         {
+            if (!gameController) return;
+
             isExamination = true;
             examSystemTypeBodyPartInfos.Clear();
             currentQuestionBodyPartInfos.Clear();
@@ -75,28 +87,33 @@ namespace AnimalAnatomy
             gameController.SetIsolatedMode(false);
             gameController.SetTransparentMode(false);
 
-            if (examSystemType == 0)
-                UpdateExamSystemTypeBodyPartInfos(GameController.SystemType.skeleton);
-            else if (examSystemType == 1)
-                UpdateExamSystemTypeBodyPartInfos(GameController.SystemType.muscles);
-            else if (examSystemType == 2)
-            {
-                UpdateExamSystemTypeBodyPartInfos(GameController.SystemType.digestive);
-                UpdateExamSystemTypeBodyPartInfos(GameController.SystemType.endocrine);
-                UpdateExamSystemTypeBodyPartInfos(GameController.SystemType.excretory);
-                UpdateExamSystemTypeBodyPartInfos(GameController.SystemType.reproductive);
-                UpdateExamSystemTypeBodyPartInfos(GameController.SystemType.respiratory);
-            }
-            else
+            if (allInOne)
                 UpdateExamSystemTypeBodyPartInfos(GameController.SystemType.none);
+            else
+            {
+                if (examSystemType == 0)
+                    UpdateExamSystemTypeBodyPartInfos(GameController.SystemType.skeleton);
+                else if (examSystemType == 1)
+                    UpdateExamSystemTypeBodyPartInfos(GameController.SystemType.muscles);
+                else if (examSystemType == 2)
+                {
+                    UpdateExamSystemTypeBodyPartInfos(GameController.SystemType.digestive);
+                    UpdateExamSystemTypeBodyPartInfos(GameController.SystemType.endocrine);
+                    UpdateExamSystemTypeBodyPartInfos(GameController.SystemType.excretory);
+                    UpdateExamSystemTypeBodyPartInfos(GameController.SystemType.reproductive);
+                    UpdateExamSystemTypeBodyPartInfos(GameController.SystemType.respiratory);
+                }
+                else
+                    UpdateExamSystemTypeBodyPartInfos(GameController.SystemType.none);
+            }
 
             correctAnswers = 0;
             wrongAnswers = 0;
             totalAnswers = 0;
             currentTime = timeout * 60;
 
-            UIMainCanvas.Instance?.GetExaminationWindow().StartExamination();
-            UI3D_CentralCanvas.Instance?.GetExaminationWindow().StartExamination();
+            mainCanvas?.GetExaminationWindow().StartExamination();
+            centralCanvas_3D?.GetExaminationWindow().StartExamination();
 
             if (InputController.Instance)
                 InputController.Instance.isAlternativeInput = false;
@@ -108,12 +125,14 @@ namespace AnimalAnatomy
         {
             StopExamination();
 
-            UIMainCanvas.Instance?.GetExaminationWindow().FinishExamination();
-            UI3D_CentralCanvas.Instance?.GetExaminationWindow().FinishExamination();
+            mainCanvas?.GetExaminationWindow().FinishExamination();
+            centralCanvas_3D?.GetExaminationWindow().FinishExamination();
         }
 
         public void StopExamination()
         {
+            if (!gameController) return;
+
             isExamination = false;
             examSystemTypeBodyPartInfos.Clear();
             currentQuestionBodyPartInfos.Clear();
@@ -125,8 +144,7 @@ namespace AnimalAnatomy
                 gameController.allBodyParts[i].SetAsTransparent(false);
 
             gameController.ActivateAllSystems(true);
-
-            CameraController.Instance?.UpdatePosition();
+            cameraController?.UpdatePosition();
         }
 
         public void StartNextQuestion()
@@ -155,14 +173,9 @@ namespace AnimalAnatomy
             currentInfo = currentQuestionBodyPartInfos[correctId];
             currentInfo.SetAsTransparent(false);
 
-            if (CameraController.Instance)
-                CameraController.Instance.UpdatePositionOnBodyPart(currentInfo);
-
-            if (UIMainCanvas.Instance)
-                UIMainCanvas.Instance.GetExaminationWindow().StartNextQuestion(currentQuestionBodyPartInfos, correctId);
-
-            if (UI3D_CentralCanvas.Instance)
-                UI3D_CentralCanvas.Instance.GetExaminationWindow().StartNextQuestion(currentQuestionBodyPartInfos, correctId);
+            cameraController?.UpdatePositionOnBodyPart(currentInfo);
+            mainCanvas?.GetExaminationWindow().StartNextQuestion(currentQuestionBodyPartInfos, correctId);
+            centralCanvas_3D?.GetExaminationWindow().StartNextQuestion(currentQuestionBodyPartInfos, correctId);
 
             previousInfo = currentInfo;
         }
@@ -190,8 +203,8 @@ namespace AnimalAnatomy
 
             totalAnswers++;
 
-            UIMainCanvas.Instance?.GetExaminationWindow().FinishQuestion(isCorrect);
-            UI3D_CentralCanvas.Instance?.GetExaminationWindow().FinishQuestion(isCorrect);
+            mainCanvas?.GetExaminationWindow().FinishQuestion(isCorrect);
+            centralCanvas_3D?.GetExaminationWindow().FinishQuestion(isCorrect);
         }
     }
 }

@@ -45,6 +45,9 @@ namespace AnimalAnatomy
         List<UIExamAnswerButton> examAnswerButtons = new List<UIExamAnswerButton>();
         ExaminationController examinationController;
 
+        UIMainCanvas mainCanvas;
+        UI3D_CentralCanvas centralCanvas_3D;
+
         void Start()
         {
             Init();
@@ -65,6 +68,8 @@ namespace AnimalAnatomy
         public void Init()
         {
             examinationController = ExaminationController.Instance;
+            mainCanvas = UIMainCanvas.Instance;
+            centralCanvas_3D = UI3D_CentralCanvas.Instance;
         }
 
         public void StartExamination()
@@ -87,14 +92,20 @@ namespace AnimalAnatomy
 
         public void StartNextQuestion(List<BodyPartInfo> info, int correctId)
         {
-            answersPanel.SetActive(true);
-            finishQuestionPanel.SetActive(false);
-            exitButton.SetActive(true);
+            if (answersPanel)
+                answersPanel.SetActive(true);
+
+            if (finishQuestionPanel)
+                finishQuestionPanel.SetActive(false);
+
+            if (exitButton)
+                exitButton.SetActive(true);
 
             examAnswerButtons.Clear();
 
-            foreach (Transform t in answersContainer.transform)
-                Destroy(t.gameObject);
+            if (answersContainer)
+                foreach (Transform t in answersContainer.transform)
+                    Destroy(t.gameObject);
 
             List<int> randomIds = new List<int>();
 
@@ -105,24 +116,27 @@ namespace AnimalAnatomy
 
             int counter = 0;
 
-            for (int i = 0; i < info.Count; i++)
+            if (answersContainer)
             {
-                if (randomIds[i] == correctId)
+                for (int i = 0; i < info.Count; i++)
                 {
-                    GameObject correctButton = Instantiate(correctAnswerButtonPrefab, answersContainer.transform);
-                    UIExamAnswerButton examButton = correctButton.GetComponent<UIExamAnswerButton>();
-                    examButton.Init(info[correctId], true);
-                    examAnswerButtons.Add(examButton);
-                }
-                else
-                {
-                    GameObject wrongButton = Instantiate(wrongAnswerButtonPrefab, answersContainer.transform);
-                    UIExamAnswerButton examButton = wrongButton.GetComponent<UIExamAnswerButton>();
-                    examButton.Init(info[randomIds[i]], false);
-                    examAnswerButtons.Add(examButton);
-                }
+                    if (randomIds[i] == correctId)
+                    {
+                        GameObject correctButton = Instantiate(correctAnswerButtonPrefab, answersContainer.transform);
+                        UIExamAnswerButton examButton = correctButton.GetComponent<UIExamAnswerButton>();
+                        examButton.Init(info[correctId], true);
+                        examAnswerButtons.Add(examButton);
+                    }
+                    else
+                    {
+                        GameObject wrongButton = Instantiate(wrongAnswerButtonPrefab, answersContainer.transform);
+                        UIExamAnswerButton examButton = wrongButton.GetComponent<UIExamAnswerButton>();
+                        examButton.Init(info[randomIds[i]], false);
+                        examAnswerButtons.Add(examButton);
+                    }
 
-                counter++;
+                    counter++;
+                }
             }
         }
 
@@ -210,11 +224,8 @@ namespace AnimalAnatomy
 
         public void CallFinishExamination()
         {
-            if (UIMainCanvas.Instance)
-                UIMainCanvas.Instance.StopExamination();
-
-            if (UI3D_CentralCanvas.Instance)
-                UI3D_CentralCanvas.Instance.StopExamination();
+            mainCanvas?.StopExamination();
+            centralCanvas_3D?.StopExamination();
         }
 
         public void OpenExitExamWindow()
