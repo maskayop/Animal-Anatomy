@@ -23,6 +23,7 @@ namespace AnimalAnatomy
 
         GameController gameController;
         CameraController cameraController;
+        ExaminationController examinationController;
         UIMainCanvas mainCanvas;
 
         Vector2 mousePosition;
@@ -48,7 +49,10 @@ namespace AnimalAnatomy
         {
             if (!gameController) return;
             if (mainCanvas && mainCanvas.isLoading) return;
-            if (ExaminationController.Instance && ExaminationController.Instance.isExamination) return;
+
+            if (examinationController)
+                if (examinationController.isExamination)
+                    return;
 
             HandleMouseInput();
             HandleKeyboardInput();
@@ -58,6 +62,7 @@ namespace AnimalAnatomy
         {
             gameController = GameController.Instance;
             cameraController = CameraController.Instance;
+            examinationController = ExaminationController.Instance;
             mainCanvas = UIMainCanvas.Instance;
 
             EnhancedTouchSupport.Enable();
@@ -147,6 +152,7 @@ namespace AnimalAnatomy
                 if (info)
                 {
                     gameController.SelectBodyPart(info);
+                    cameraController?.UpdatePosition();
 
                     if (gameController.exclusionMode)
                         gameController.HideSelectedBodyPart();
