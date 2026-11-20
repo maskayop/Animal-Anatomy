@@ -251,12 +251,17 @@ namespace AnimalAnatomy
                 return;
             }
 
-            float[] floats = new float[3];
-            floats[0] = meshRenderers[0].bounds.size.x;
-            floats[1] = meshRenderers[0].bounds.size.y;
-            floats[2] = meshRenderers[0].bounds.size.z;
+            // Объединяем Bounds всех рендереров, чтобы получить общий размер
+            Bounds combined = meshRenderers[0].bounds;
 
-            cameraDistanceLimitsMultiplier = Mathf.Clamp(Mathf.Pow(Mathf.Max(floats), 0.6f), 0.25f, 1.0f);
+            for (int i = 1; i < meshRenderers.Count; i++)
+                combined.Encapsulate(meshRenderers[i].bounds);
+
+            // Берём максимальную сторону объединённого размера
+            Vector3 size = combined.size;
+            float maxSide = Mathf.Max(size.x, size.y, size.z);
+
+            cameraDistanceLimitsMultiplier = Mathf.Clamp(Mathf.Pow(maxSide, 0.6f), 0.25f, 1.0f);
         }
 
         void CreateTransformCenterGameObject()
