@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7710500250411973173}
   - component: {fileID: 85600139237935578}
   - component: {fileID: 7420509732360253617}
+  - component: {fileID: -429648124370941155}
   m_Layer: 0
   m_Name: Egg
   m_TagString: Untagged
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8640304180574546003}
-  m_Mesh: {fileID: 8048870288576412449, guid: 43bc60ff95db6c44abf41235ab5a3251, type: 3}
+  m_Mesh: {fileID: 8048870288576412449, guid: a4ed7eb5a875f9046b643fd62d6d0290, type: 3}
 --- !u!23 &7420509732360253617
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -90,3 +91,23 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!205 &-429648124370941155
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8640304180574546003}
+  serializedVersion: 3
+  m_LocalReferencePoint: {x: 0.000000004656613, y: -9.313226e-10, z: 0.0000000037252903}
+  m_Size: 0.030644594
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.0005
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 7420509732360253617}
+  m_Enabled: 1
+  m_GlobalIlluminationLOD: 0
