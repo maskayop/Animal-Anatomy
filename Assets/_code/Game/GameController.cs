@@ -91,6 +91,9 @@ namespace AnimalAnatomy
             UnSelectBodyPart(true);
 
             baseGameObject = GameObject.FindGameObjectWithTag("Player");
+
+            if (!baseGameObject) return;
+
             baseBodyPartGroup = baseGameObject.GetComponent<BodyPartGroup>();
             baseObjectRotator = baseGameObject.GetComponent<ObjectRotator>();
             baseObjectScaler = baseGameObject.GetComponent<ObjectScaler>();
@@ -433,14 +436,18 @@ namespace AnimalAnatomy
 
         public void ChangeBaseObjectRotationAngle(float INvalue)
         {
+            if (!baseObjectRotator) return;
+
             baseObjectRotator.angle = INvalue / 2;
-            DataSaveLoad.Instance.Save("XR_RotationSensitivity", INvalue);
+            DataSaveLoad.Instance?.Save("XR_RotationSensitivity", INvalue);
         }
 
         public void ChangeBaseObjectScalingDelta(float INvalue)
         {
+            if (!baseObjectScaler) return;
+
             baseObjectScaler.scaleDelta = INvalue / 200;
-            DataSaveLoad.Instance.Save("XR_ScalingSensitivity", INvalue);
+            DataSaveLoad.Instance?.Save("XR_ScalingSensitivity", INvalue);
         }
     }
 }

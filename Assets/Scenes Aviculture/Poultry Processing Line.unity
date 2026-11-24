@@ -1583,7 +1583,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1288319924
 Transform:
   m_ObjectHideFlags: 0
@@ -6000,6 +6000,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1229741719}
     m_Modifications:
+    - target: {fileID: 1876284039706445749, guid: 304e9b50abe6b024297b7da77029db67, type: 3}
+      propertyPath: m_Name
+      value: Game Controller Interactive Schemes
+      objectReference: {fileID: 0}
     - target: {fileID: 3307997336026123616, guid: 304e9b50abe6b024297b7da77029db67, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6039,10 +6043,6 @@ PrefabInstance:
     - target: {fileID: 3307997336026123616, guid: 304e9b50abe6b024297b7da77029db67, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1876284039706445749, guid: 304e9b50abe6b024297b7da77029db67, type: 3}
-      propertyPath: m_Name
-      value: Game Controller Interactive Schemes
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
