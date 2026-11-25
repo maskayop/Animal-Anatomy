@@ -12,6 +12,9 @@ namespace AnimalAnatomy
         [Header("Audio")]
         [SerializeField] UIAudioDescriptionPlayerPanel audioDescriptionPlayerPanel;
 
+        [Header("Image")]
+        [SerializeField] GameObject imageButton;
+
         void Start()
         {
             Init();
@@ -27,6 +30,9 @@ namespace AnimalAnatomy
 
             if (bodyPartDescriptionText)
                 bodyPartDescriptionText.text = "";
+
+            if (imageButton)
+                imageButton.SetActive(false);
         }
 
         public void ShowInfo(BodyPartInfo bodyPartInfo)
@@ -43,6 +49,17 @@ namespace AnimalAnatomy
 
             if (audioDescriptionPlayerPanel)
                 audioDescriptionPlayerPanel.SetCurrentDescriptionAudio(bodyPartInfo.info.nameClip, bodyPartInfo.info.clip);
+
+            if (bodyPartInfo.info.images.Count != 0)
+            {
+                imageButton.SetActive(true);
+                UIMainCanvas.Instance?.InitBodyPartImagesPanel(bodyPartInfo.info.images[0]);
+            }
+            else
+            {
+                imageButton.SetActive(false);
+                UIMainCanvas.Instance?.CloseBodyPartImagesPanel();
+            }
         }
 
         public void ShowInfo(BodyPartGroup bodyPartGroupInfo)
@@ -57,11 +74,27 @@ namespace AnimalAnatomy
 
             bodyPartDescriptionText.text = bodyPartGroupInfo.info.description;
             audioDescriptionPlayerPanel.SetCurrentDescriptionAudio(bodyPartGroupInfo.info.nameClip, bodyPartGroupInfo.info.clip);
+
+            if (bodyPartGroupInfo.info.images.Count != 0)
+            {
+                imageButton.SetActive(true);
+                UIMainCanvas.Instance?.InitBodyPartImagesPanel(bodyPartGroupInfo.info.images[0]);
+            }
+            else
+            {
+                imageButton.SetActive(false);
+                UIMainCanvas.Instance?.CloseBodyPartImagesPanel();
+            }
         }
 
         public void CollapseBodyPartDescription(bool state)
         {
             bodyPartDescriptionText.gameObject.SetActive(!state);
+        }
+
+        public void OpenBodyPartImagesPanel()
+        {
+            UIMainCanvas.Instance?.OpenBodyPartImagesPanel();
         }
     }
 }

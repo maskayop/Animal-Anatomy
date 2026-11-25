@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace AnimalAnatomy
@@ -18,5 +19,8 @@ namespace AnimalAnatomy
 
         [Space(10)]
         public AudioClip clip;
+
+        [Space(10)]
+        public List<Sprite> images = new List<Sprite>();
     }
 }

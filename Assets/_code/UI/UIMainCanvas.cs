@@ -25,6 +25,7 @@ namespace AnimalAnatomy
 
         [Header("Body Part Info")]
         [SerializeField] UIBodyPartDescriptionPanel bodyPartDescriptionPanel;
+        [SerializeField] UIBodyPartImagesPanel bodyPartImagesPanel;
 
         [Header("Modes")]
         [SerializeField] UIButtonIsolatedMode isolatedModeButton;
@@ -165,48 +166,67 @@ namespace AnimalAnatomy
 
         void ShowSystemActivatingButtonsPanel()
         {
+            if (!systemActivatingButtonsPanel) return;
 
             if (showSystemActivatingButtonsPanel)
-                systemActivatingButtonsPanel?.gameObject.SetActive(true);
+                systemActivatingButtonsPanel.gameObject.SetActive(true);
             else
-                systemActivatingButtonsPanel?.gameObject.SetActive(false);
+                systemActivatingButtonsPanel.gameObject.SetActive(false);
         }
 
         public void ActivateAllSystems(bool state)
         {
-            systemActivatingButtonsPanel?.ActivateAllSystems(state);
+            if (systemActivatingButtonsPanel)
+                systemActivatingButtonsPanel.ActivateAllSystems(state);
         }
 
         public void SelectBodyPart(BodyPartInfo info)
         {
             EnableIsolatedModeButtons(true);
 
-            bodyPartDescriptionPanel?.gameObject.SetActive(true);
-            bodyPartDescriptionPanel?.ShowInfo(info);
+            if (bodyPartDescriptionPanel)
+            {
+                bodyPartDescriptionPanel.gameObject.SetActive(true);
+                bodyPartDescriptionPanel.ShowInfo(info);
+            }
 
             if (info.bodyPartGroup)
             {
-                bodyPartsGroupPanel?.gameObject.SetActive(true);
+                if (bodyPartsGroupPanel)
+                    bodyPartsGroupPanel.gameObject.SetActive(true);
+
                 bodyPartsGroupButton?.Init(info.bodyPartGroup);
             }
             else
-                bodyPartsGroupPanel?.gameObject.SetActive(false);
+            {
+                if (bodyPartsGroupPanel)
+                    bodyPartsGroupPanel.gameObject.SetActive(false);
+            }
         }
 
         public void UnSelectBodyPart()
         {
             EnableIsolatedModeButtons(false);
 
-            bodyPartDescriptionPanel?.gameObject.SetActive(false);
-            bodyPartsGroupPanel?.gameObject.SetActive(false);
+            if (bodyPartDescriptionPanel)
+                bodyPartDescriptionPanel.gameObject.SetActive(false);
+
+            if (bodyPartsGroupPanel)
+                bodyPartsGroupPanel.gameObject.SetActive(false);
+
+            if (bodyPartImagesPanel)
+                bodyPartImagesPanel.gameObject.SetActive(false);
         }
 
         public void SelectBodyPartGroup(BodyPartGroup info)
         {
             EnableIsolatedModeButtons(true);
 
-            bodyPartDescriptionPanel?.gameObject.SetActive(true);
-            bodyPartDescriptionPanel?.ShowInfo(info);
+            if (bodyPartDescriptionPanel)
+            {
+                bodyPartDescriptionPanel.gameObject.SetActive(true);
+                bodyPartDescriptionPanel.ShowInfo(info);
+            }
 
             if (info.parentBodyPartGroup)
             {
@@ -314,6 +334,21 @@ namespace AnimalAnatomy
         public UIExaminationWindow GetExaminationWindow()
         {
             return examinationWindow;
+        }
+
+        public void InitBodyPartImagesPanel(Sprite sprite)
+        {
+            bodyPartImagesPanel.Init(sprite);
+        }
+
+        public void OpenBodyPartImagesPanel()
+        {
+            bodyPartImagesPanel.Open();
+        }
+
+        public void CloseBodyPartImagesPanel()
+        {
+            bodyPartImagesPanel.Close();
         }
     }
 }
